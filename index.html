@@ -11,7 +11,7 @@
     <div class="nav-container">
       <div class="logo">Basketball Stats</div>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="page1.html">Conference Stats</a></li>
         <li><a href="page2.html">Team Rankings</a></li>
         <li><a href="page3.html">Offensive Stats</a></li>
@@ -35,8 +35,24 @@
 
     <section class="table-section">
       <h2>Overview of Top Teams</h2>
+      
+      <!-- Search and Filter Controls -->
+      <div class="table-controls">
+        <div class="search-container">
+          <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+        </div>
+        <div class="filter-container">
+          <select id="conferenceFilter" class="filter-select">
+            <option value="">All Conferences</option>
+            <option value="LAND">LAND</option>
+            <option value="MACC">MACC</option>
+            <option value="MACF">MACF</option>
+          </select>
+        </div>
+      </div>
+      
       <div class="table-container">
-        <table class="stats-table">
+        <table class="stats-table" id="statsTable">
           <thead>
             <tr>
               <th>TEAM</th>
@@ -103,5 +119,8 @@
   <footer>
     <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript for search, filter and active page functionality -->
+  <script src="script.js"></script>
 </body>
 </html>

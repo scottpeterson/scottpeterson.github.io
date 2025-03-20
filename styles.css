@@ -225,3 +225,66 @@
       padding: 8px 10px;
     }
   }
+
+  /* Table Controls (Search & Filter) */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .search-container, .filter-container {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .search-input, .filter-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+  }
+  
+  .search-input:focus, .filter-select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  
+  .filter-select {
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* Hide rows that don't match search/filter */
+  .stats-table tr.hidden {
+    display: none;
+  }
+  
+  /* No results message */
+  .no-results {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-style: italic;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .table-controls {
+      flex-direction: column;
+    }
+    
+    .search-container, .filter-container {
+      width: 100%;
+    }
+  }
