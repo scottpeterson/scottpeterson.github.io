@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const navMenu = document.getElementById('navMenu');
       const navOverlay = document.getElementById('navOverlay');
       
-      // Exit if essential elements don't exist
+      // Exit if elements don't exist
       if (!menuToggle || !navMenu || !navOverlay) {
         console.log("Mobile nav elements not found");
         return;
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function openMenu() {
         navMenu.classList.add('active');
         navOverlay.classList.add('active');
+        menuToggle.classList.add('hidden'); // Hide hamburger when menu is open
         document.body.style.overflow = 'hidden';
       }
       
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function closeMenu() {
         navMenu.classList.remove('active');
         navOverlay.classList.remove('active');
+        menuToggle.classList.remove('hidden'); // Show hamburger when menu is closed
         document.body.style.overflow = '';
       }
       
