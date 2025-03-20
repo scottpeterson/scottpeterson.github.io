@@ -1,0 +1,224 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+  }
+  
+  /* Navigation */
+  .main-nav {
+    background-color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin: 0 5px;
+  }
+  
+  .nav-links a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 15px 10px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .nav-links a:hover {
+    background-color: #34495e;
+  }
+  
+  .nav-links a.active {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e1e5e8;
+    padding-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  /* Table Styles */
+  .table-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+  }
+  
+  .stats-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+  }
+  
+  /* Header Row */
+  .stats-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 2px solid #e1e5e8;
+    z-index: 2;
+  }
+  
+  /* First Column (Sticky) */
+  .stats-table td:first-child,
+  .stats-table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    font-weight: 500;
+    z-index: 1;
+  }
+  
+  /* Header cell that is both sticky header AND first column */
+  .stats-table thead th:first-child {
+    background-color: #3498db;
+    color: #ffffff;
+    z-index: 3;
+  }
+  
+  /* Table Body */
+  .stats-table tbody tr {
+    border-bottom: 1px solid #e1e5e8;
+  }
+  
+  .stats-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .stats-table tbody tr:hover {
+    background-color: #ecf0f1;
+  }
+  
+  /* Ensure first column background remains consistent on hover */
+  .stats-table tbody tr:hover td:first-child {
+    background-color: #ecf0f1;
+  }
+  
+  /* Table Cells */
+  .stats-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e1e5e8;
+  }
+  
+  /* Numeric Columns */
+  .stats-table td:nth-child(2),
+  .stats-table td:nth-child(3),
+  .stats-table td:nth-child(5),
+  .stats-table td:nth-child(6) {
+    text-align: right;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-links li {
+      margin: 0;
+      width: 100%;
+    }
+    
+    .nav-links a {
+      padding: 10px;
+      border-bottom: 1px solid #34495e;
+    }
+    
+    .logo {
+      padding: 10px 0;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    .stats-table {
+      font-size: 13px;
+    }
+    
+    .stats-table th,
+    .stats-table td {
+      padding: 8px 10px;
+    }
+  }
