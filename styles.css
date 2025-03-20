@@ -289,7 +289,9 @@
     }
   }
 
-  /* Hamburger Menu Icon */
+  /* Aggressive Fix for Mobile Navigation */
+
+/* Hamburger Menu Icon */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -297,7 +299,7 @@
     width: 30px;
     height: 21px;
     cursor: pointer;
-    z-index: 98; /* Lowered z-index to be below the menu and close button */
+    z-index: 98;
   }
   
   .menu-toggle span {
@@ -309,7 +311,7 @@
     transition: all 0.3s ease;
   }
   
-  /* Close Button - Explicit Styling */
+  /* Close Button */
   .menu-close {
     display: none;
     position: absolute;
@@ -318,7 +320,7 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    z-index: 102; /* Highest z-index to always be on top */
+    z-index: 102;
   }
   
   .menu-close:before, 
@@ -346,19 +348,22 @@
     .nav-container {
       padding: 15px 20px;
       justify-content: space-between;
-      position: relative; /* Ensure relative positioning for z-index context */
     }
     
     .menu-toggle {
       display: flex;
+      position: relative;
     }
     
-    /* Make the hamburger icon not visible when menu is open */
+    /* Completely hide the hamburger when hidden class is applied */
     .menu-toggle.hidden {
+      display: none !important;
       visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      left: -9999px;
     }
     
-    /* Explicitly show the close button on mobile */
     .menu-close {
       display: block;
     }
@@ -375,7 +380,7 @@
       align-items: flex-start;
       padding: 60px 0 30px;
       transition: right 0.3s ease;
-      z-index: 100; /* Higher than hamburger but lower than close button */
+      z-index: 100;
       overflow-y: auto;
       box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
@@ -390,7 +395,7 @@
     }
     
     .nav-links li:first-child {
-      margin-top: 10px; /* Add extra space after the close button */
+      margin-top: 10px;
     }
     
     .nav-links a {
@@ -408,7 +413,7 @@
       right: 0;
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
-      z-index: 99; /* Higher than hamburger but lower than nav-links */
+      z-index: 99;
     }
     
     .nav-overlay.active {

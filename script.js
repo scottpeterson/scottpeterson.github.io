@@ -1,3 +1,5 @@
+// Complete script.js with aggressive hamburger hiding
+
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     try {
@@ -22,20 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
       const navMenu = document.getElementById('navMenu');
       const navOverlay = document.getElementById('navOverlay');
       
-      // Exit if elements don't exist
+      // Exit if essential elements don't exist
       if (!menuToggle || !navMenu || !navOverlay) {
         console.log("Mobile nav elements not found");
         return;
       }
       
       // Toggle menu when hamburger is clicked
-      menuToggle.addEventListener('click', function() {
+      menuToggle.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent event bubbling
         openMenu();
       });
       
       // Close menu when X button is clicked (if it exists)
       if (menuClose) {
-        menuClose.addEventListener('click', function() {
+        menuClose.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent event bubbling
           closeMenu();
         });
       }
@@ -53,20 +57,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
       
-      // Open menu function
+      // Open menu function with aggressive hamburger hiding
       function openMenu() {
-        navMenu.classList.add('active');
-        navOverlay.classList.add('active');
-        menuToggle.classList.add('hidden'); // Hide hamburger when menu is open
-        document.body.style.overflow = 'hidden';
+        // First hide the hamburger to prevent overlap issues
+        menuToggle.classList.add('hidden');
+        
+        // Then show the menu and overlay
+        setTimeout(function() {
+          navMenu.classList.add('active');
+          navOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }, 10);
       }
       
       // Close menu function
       function closeMenu() {
         navMenu.classList.remove('active');
         navOverlay.classList.remove('active');
-        menuToggle.classList.remove('hidden'); // Show hamburger when menu is closed
         document.body.style.overflow = '';
+        
+        // Delay hamburger display to ensure menu has transitioned out
+        setTimeout(function() {
+          menuToggle.classList.remove('hidden');
+        }, 300); // Match this to your transition time
       }
       
       // Close menu when window is resized to desktop size
