@@ -119,10 +119,15 @@
     background-color: #3498db;
     color: #ffffff;
     font-weight: 600;
-    text-align: left;
+    text-align: center; /* Center all header text */
     padding: 12px 15px;
     border-bottom: 2px solid #e1e5e8;
     z-index: 2;
+  }
+  
+  /* First Column Header - Keep left-aligned to match first column data */
+  .stats-table thead th:first-child {
+    text-align: left;
   }
   
   /* First Column (Sticky) */
@@ -164,14 +169,12 @@
   .stats-table td {
     padding: 10px 15px;
     border-bottom: 1px solid #e1e5e8;
+    text-align: center; /* Center all table cell content */
   }
   
-  /* Numeric Columns */
-  .stats-table td:nth-child(2),
-  .stats-table td:nth-child(3),
-  .stats-table td:nth-child(5),
-  .stats-table td:nth-child(6) {
-    text-align: right;
+  /* First Column (Team names or categories) - Keep these left-aligned */
+  .stats-table td:first-child {
+    text-align: left;
   }
   
   /* Footer */
