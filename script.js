@@ -145,3 +145,81 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error("Error in showNoResults:", error);
     }
   }
+
+  // Mobile Navigation Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+      // Initialize mobile navigation
+      initMobileNav();
+      
+      // Your existing script functions...
+      setActiveNavLink();
+      initSearchAndFilter();
+    } catch (error) {
+      console.error("Error initializing script:", error);
+    }
+  });
+  
+  // Function to initialize mobile navigation
+  function initMobileNav() {
+    try {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const navOverlay = document.getElementById('navOverlay');
+      
+      // Exit if elements don't exist
+      if (!menuToggle || !navMenu || !navOverlay) {
+        console.log("Mobile nav elements not found");
+        return;
+      }
+      
+      // Toggle menu when hamburger is clicked
+      menuToggle.addEventListener('click', function() {
+        toggleMenu();
+      });
+      
+      // Close menu when overlay is clicked
+      navOverlay.addEventListener('click', function() {
+        closeMenu();
+      });
+      
+      // Close menu when a nav link is clicked
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+      
+      // Toggle menu function
+      function toggleMenu() {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        
+        // Prevent body scrolling when menu is open
+        if (navMenu.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      }
+      
+      // Close menu function
+      function closeMenu() {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      // Close menu when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    } catch (error) {
+      console.error("Error in initMobileNav:", error);
+    }
+  }
