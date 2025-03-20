@@ -1,15 +1,82 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     try {
+      // Initialize mobile navigation
+      initMobileNav();
+      
       // Set active navigation link
       setActiveNavLink();
       
-      // Initialize search and filter functionality if on a page with a table
+      // Initialize search and filter functionality
       initSearchAndFilter();
     } catch (error) {
       console.error("Error initializing script:", error);
     }
   });
+  
+  // Function to initialize mobile navigation
+  function initMobileNav() {
+    try {
+      const menuToggle = document.getElementById('menuToggle');
+      const menuClose = document.getElementById('menuClose');
+      const navMenu = document.getElementById('navMenu');
+      const navOverlay = document.getElementById('navOverlay');
+      
+      // Exit if essential elements don't exist
+      if (!menuToggle || !navMenu || !navOverlay) {
+        console.log("Mobile nav elements not found");
+        return;
+      }
+      
+      // Toggle menu when hamburger is clicked
+      menuToggle.addEventListener('click', function() {
+        openMenu();
+      });
+      
+      // Close menu when X button is clicked (if it exists)
+      if (menuClose) {
+        menuClose.addEventListener('click', function() {
+          closeMenu();
+        });
+      }
+      
+      // Close menu when overlay is clicked
+      navOverlay.addEventListener('click', function() {
+        closeMenu();
+      });
+      
+      // Close menu when a nav link is clicked
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+      
+      // Open menu function
+      function openMenu() {
+        navMenu.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      // Close menu function
+      function closeMenu() {
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      // Close menu when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    } catch (error) {
+      console.error("Error in initMobileNav:", error);
+    }
+  }
   
   // Function to set the active navigation link
   function setActiveNavLink() {
@@ -143,83 +210,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     } catch (error) {
       console.error("Error in showNoResults:", error);
-    }
-  }
-
-  // Mobile Navigation Menu Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    try {
-      // Initialize mobile navigation
-      initMobileNav();
-      
-      // Your existing script functions...
-      setActiveNavLink();
-      initSearchAndFilter();
-    } catch (error) {
-      console.error("Error initializing script:", error);
-    }
-  });
-  
-  // Function to initialize mobile navigation
-  function initMobileNav() {
-    try {
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      const navOverlay = document.getElementById('navOverlay');
-      
-      // Exit if elements don't exist
-      if (!menuToggle || !navMenu || !navOverlay) {
-        console.log("Mobile nav elements not found");
-        return;
-      }
-      
-      // Toggle menu when hamburger is clicked
-      menuToggle.addEventListener('click', function() {
-        toggleMenu();
-      });
-      
-      // Close menu when overlay is clicked
-      navOverlay.addEventListener('click', function() {
-        closeMenu();
-      });
-      
-      // Close menu when a nav link is clicked
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-          closeMenu();
-        });
-      });
-      
-      // Toggle menu function
-      function toggleMenu() {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        
-        // Prevent body scrolling when menu is open
-        if (navMenu.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = '';
-        }
-      }
-      
-      // Close menu function
-      function closeMenu() {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      
-      // Close menu when window is resized to desktop size
-      window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-          closeMenu();
-        }
-      });
-    } catch (error) {
-      console.error("Error in initMobileNav:", error);
     }
   }
