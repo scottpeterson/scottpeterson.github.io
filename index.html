@@ -1,164 +1,284 @@
-<table>
-    <tr>
-        <td>TEAM ---------------</td>
-        <td>adjEm---------</td>
-        <td>Rank---------</td>
-        <td>Conf--------</td>
-    </tr>
-    <tr>
-        <td>Scranton</td>
-        <td>54.2 </td>
-        <td>2</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Catholic</td>
-        <td>36.4 </td>
-        <td>10</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Messiah</td>
-        <td>32.8 </td>
-        <td>13</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Elizabethtown</td>
-        <td>30.0 </td>
-        <td>19</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Lebanon Val</td>
-        <td>20.3 </td>
-        <td>67</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>York PA</td>
-        <td>12.8 </td>
-        <td>118</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Widener</td>
-        <td>11.4 </td>
-        <td>127</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Susquehanna</td>
-        <td>11.3 </td>
-        <td>128</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Arcadia</td>
-        <td>10.4 </td>
-        <td>138</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>Stevens</td>
-        <td>9.4 </td>
-        <td>146</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>DeSales</td>
-        <td>8.8 </td>
-        <td>153</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>Albright</td>
-        <td>4.3 </td>
-        <td>189</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Drew</td>
-        <td>3.0 </td>
-        <td>210</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Stevenson</td>
-        <td>(0.9)</td>
-        <td>241</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Juniata</td>
-        <td>(1.4)</td>
-        <td>245</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Alvernia</td>
-        <td>(2.7)</td>
-        <td>255</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Goucher</td>
-        <td>(2.8)</td>
-        <td>257</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Hood</td>
-        <td>(4.5)</td>
-        <td>267</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Moravian</td>
-        <td>(9.0)</td>
-        <td>295</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>King&#39;s PA</td>
-        <td>(12.6)</td>
-        <td>314</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>Lycoming</td>
-        <td>(12.7)</td>
-        <td>315</td>
-        <td>LAND</td>
-    </tr>
-    <tr>
-        <td>Misericordia</td>
-        <td>(13.2)</td>
-        <td>323</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>FDU Madison</td>
-        <td>(14.1)</td>
-        <td>325</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>Delaware Val</td>
-        <td>(16.0)</td>
-        <td>333</td>
-        <td>MACF</td>
-    </tr>
-    <tr>
-        <td>Eastern Univ</td>
-        <td>(23.5)</td>
-        <td>363</td>
-        <td>MACC</td>
-    </tr>
-    <tr>
-        <td>Wilkes</td>
-        <td>(27.6)</td>
-        <td>372</td>
-        <td>LAND</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Team Statistics</title>
+  <style>
+    /* Table Container */
+    .table-container {
+      width: 100%;
+      max-height: 600px;  /* Adjust based on your needs */
+      overflow: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    /* Table Styling */
+    .stats-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* Header Row */
+    .stats-table thead th {
+      position: sticky;
+      top: 0;
+      background-color: #2c3e50;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 2px solid #dee2e6;
+      z-index: 2;  /* Higher z-index for header cells */
+    }
+
+    /* First Column (Sticky) */
+    .stats-table td:first-child,
+    .stats-table th:first-child {
+      position: sticky;
+      left: 0;
+      background-color: #f8f9fa;
+      font-weight: 500;
+      z-index: 1;  /* Higher z-index for first column */
+    }
+
+    /* Header cell that is both sticky header AND first column */
+    .stats-table thead th:first-child {
+      background-color: #2c3e50;
+      color: #ffffff;
+      z-index: 3;  /* Highest z-index for top-left cell */
+    }
+
+    /* Table Body */
+    .stats-table tbody tr {
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .stats-table tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .stats-table tbody tr:hover {
+      background-color: #e9ecef;
+    }
+
+    /* Ensure first column background remains consistent on hover */
+    .stats-table tbody tr:hover td:first-child {
+      background-color: #e9ecef;
+    }
+
+    /* Table Cells */
+    .stats-table td {
+      padding: 10px 15px;
+      border-right: 1px solid #dee2e6;
+    }
+
+    /* Numeric Columns */
+    .stats-table td:nth-child(2),
+    .stats-table td:nth-child(3) {
+      text-align: right;
+    }
+
+    /* Last Column */
+    .stats-table th:last-child,
+    .stats-table td:last-child {
+      border-right: none;
+    }
+
+    /* Responsive adjustment */
+    @media screen and (max-width: 768px) {
+      .table-container {
+        max-height: 400px;
+      }
+      
+      .stats-table {
+        font-size: 13px;
+      }
+      
+      .stats-table th,
+      .stats-table td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <table class="stats-table">
+      <thead>
+        <tr>
+          <th>TEAM</th>
+          <th>adjEm</th>
+          <th>Rank</th>
+          <th>Conf</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scranton</td>
+          <td>54.2</td>
+          <td>2</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Catholic</td>
+          <td>36.4</td>
+          <td>10</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Messiah</td>
+          <td>32.8</td>
+          <td>13</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Elizabethtown</td>
+          <td>30.0</td>
+          <td>19</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Lebanon Val</td>
+          <td>20.3</td>
+          <td>67</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>York PA</td>
+          <td>12.8</td>
+          <td>118</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Widener</td>
+          <td>11.4</td>
+          <td>127</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Susquehanna</td>
+          <td>11.3</td>
+          <td>128</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Arcadia</td>
+          <td>10.4</td>
+          <td>138</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>Stevens</td>
+          <td>9.4</td>
+          <td>146</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>DeSales</td>
+          <td>8.8</td>
+          <td>153</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>Albright</td>
+          <td>4.3</td>
+          <td>189</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Drew</td>
+          <td>3.0</td>
+          <td>210</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Stevenson</td>
+          <td>(0.9)</td>
+          <td>241</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Juniata</td>
+          <td>(1.4)</td>
+          <td>245</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Alvernia</td>
+          <td>(2.7)</td>
+          <td>255</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Goucher</td>
+          <td>(2.8)</td>
+          <td>257</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Hood</td>
+          <td>(4.5)</td>
+          <td>267</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Moravian</td>
+          <td>(9.0)</td>
+          <td>295</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>King's PA</td>
+          <td>(12.6)</td>
+          <td>314</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>Lycoming</td>
+          <td>(12.7)</td>
+          <td>315</td>
+          <td>LAND</td>
+        </tr>
+        <tr>
+          <td>Misericordia</td>
+          <td>(13.2)</td>
+          <td>323</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>FDU Madison</td>
+          <td>(14.1)</td>
+          <td>325</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>Delaware Val</td>
+          <td>(16.0)</td>
+          <td>333</td>
+          <td>MACF</td>
+        </tr>
+        <tr>
+          <td>Eastern Univ</td>
+          <td>(23.5)</td>
+          <td>363</td>
+          <td>MACC</td>
+        </tr>
+        <tr>
+          <td>Wilkes</td>
+          <td>(27.6)</td>
+          <td>372</td>
+          <td>LAND</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
