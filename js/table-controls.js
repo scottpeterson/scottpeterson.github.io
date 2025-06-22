@@ -103,7 +103,7 @@ class TableController {
   getValueFromRow(row, headerText) {
     const normalizedHeader = headerText.toLowerCase().trim();
     
-    // Direct property mapping
+    // Direct property mapping with explicit mappings for multi-word headers
     const directMapping = {
       'team': row.team,
       'conference': row.conference, 
@@ -149,15 +149,47 @@ class TableController {
       return directMapping[normalizedHeader];
     }
 
-    // Fallback: try to find property by fuzzy matching
+    // Smart fallback: try various approaches to match headers to properties
     const rowKeys = Object.keys(row);
+    
+    // Method 1: Exact match (case insensitive)
     for (const key of rowKeys) {
-      if (key.toLowerCase().includes(normalizedHeader) || normalizedHeader.includes(key.toLowerCase())) {
+      if (key.toLowerCase() === normalizedHeader) {
+        return row[key];
+      }
+    }
+    
+    // Method 2: Convert header to camelCase and try to match
+    const camelCaseHeader = this.toCamelCase(normalizedHeader);
+    if (row[camelCaseHeader] !== undefined) {
+      return row[camelCaseHeader];
+    }
+    
+    // Method 3: Fuzzy matching - remove spaces/symbols and compare
+    const cleanHeader = normalizedHeader.replace(/[^a-z0-9]/g, '');
+    for (const key of rowKeys) {
+      const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (cleanKey === cleanHeader) {
+        return row[key];
+      }
+    }
+    
+    // Method 4: Partial matching
+    for (const key of rowKeys) {
+      const cleanKey = key.toLowerCase();
+      if (cleanKey.includes(normalizedHeader) || normalizedHeader.includes(cleanKey)) {
         return row[key];
       }
     }
 
     return '';
+  }
+
+  // Convert string to camelCase
+  toCamelCase(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
+    }).replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
   }
 
   // Populate conference filter with unique values
