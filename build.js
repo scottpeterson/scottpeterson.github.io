@@ -15,7 +15,10 @@ class TemplateEngine {
   async loadTemplates() {
     try {
       this.templates.base = await fs.readFile('templates/base.html', 'utf8');
-      this.templates.tablePage = await fs.readFile('templates/table-page.html', 'utf8');
+      this.templates.tablePage = await fs.readFile(
+        'templates/table-page.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -38,70 +41,87 @@ class TemplateEngine {
   // Simple template replacement
   renderTemplate(template, data) {
     let result = template;
-    
+
     // Handle conditional sections first
     result = this.handleConditionals(result, data);
-    
+
     // Handle arrays
     result = this.handleArrays(result, data);
-    
+
     // Replace simple variables (case-insensitive mapping)
     const mappings = {
-      'PAGE_TITLE': data.title,
-      'PAGE_HEADING': data.heading,
-      'PAGE_DESCRIPTION': data.description,
-      'SECTION_TITLE': data.sectionTitle,
-      'SEARCH_PLACEHOLDER': data.searchPlaceholder,
-      'LAST_UPDATED': data.lastUpdated,
-      'CONTENT': data.content || ''
+      PAGE_TITLE: data.title,
+      PAGE_HEADING: data.heading,
+      PAGE_DESCRIPTION: data.description,
+      SECTION_TITLE: data.sectionTitle,
+      SEARCH_PLACEHOLDER: data.searchPlaceholder,
+      LAST_UPDATED: data.lastUpdated,
+      CONTENT: data.content || '',
     };
-    
+
     Object.keys(mappings).forEach(key => {
       const regex = new RegExp(`{{${key}}}`, 'g');
       result = result.replace(regex, mappings[key] || '');
     });
-    
+
     return result;
   }
 
   // Handle conditional sections {{#VAR}} content {{/VAR}}
   handleConditionals(template, data) {
     let result = template;
-    
+
     // Handle HAS_SEARCH conditional
     if (data.hasSearch) {
-      result = result.replace(/{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g, '$1');
+      result = result.replace(
+        /{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g,
+        '$1'
+      );
     } else {
       result = result.replace(/{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g, '');
     }
-    
+
     // Handle SHOW_PROGRESS conditional
     if (data.showProgress) {
-      result = result.replace(/{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g, '$1');
+      result = result.replace(
+        /{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g,
+        '$1'
+      );
     } else {
-      result = result.replace(/{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g, '');
+      result = result.replace(
+        /{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g,
+        ''
+      );
     }
-    
+
     // Handle LAST_UPDATED conditional
     if (data.lastUpdated) {
-      result = result.replace(/{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g, '$1');
+      result = result.replace(
+        /{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g,
+        '$1'
+      );
     } else {
-      result = result.replace(/{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g, '');
+      result = result.replace(
+        /{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g,
+        ''
+      );
     }
-    
+
     return result;
   }
 
   // Handle array iterations {{#ARRAY}} {{.}} {{/ARRAY}}
   handleArrays(template, data) {
     let result = template;
-    
+
     // Handle COLUMNS array
     if (data.columns && Array.isArray(data.columns)) {
-      const columnHtml = data.columns.map(col => `<th>${col}</th>`).join('\n          ');
+      const columnHtml = data.columns
+        .map(col => `<th>${col}</th>`)
+        .join('\n          ');
       result = result.replace(/{{#COLUMNS}}[\s\S]*?{{\/COLUMNS}}/g, columnHtml);
     }
-    
+
     return result;
   }
 
@@ -115,10 +135,13 @@ class TemplateEngine {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        timeZoneName: 'short'
+        timeZoneName: 'short',
       });
     } catch (error) {
-      console.warn(`Could not get modification date for ${filePath}:`, error.message);
+      console.warn(
+        `Could not get modification date for ${filePath}:`,
+        error.message
+      );
       return null;
     }
   }
@@ -134,7 +157,7 @@ class TemplateEngine {
           hasSearch: pageConfig.hasSearch,
           showProgress: pageConfig.showProgress,
           searchPlaceholder: pageConfig.searchPlaceholder,
-          columns: pageConfig.columns
+          columns: pageConfig.columns,
         });
       }
 
@@ -151,16 +174,15 @@ class TemplateEngine {
         heading: pageConfig.heading,
         description: pageConfig.description,
         lastUpdated: lastUpdated,
-        content: tableContent
+        content: tableContent,
       });
 
       // Determine output filename
       const filename = pageKey === 'index' ? 'index.html' : `${pageKey}.html`;
-      
+
       // Write file
       await fs.writeFile(filename, fullPage, 'utf8');
       console.log(`✓ Generated ${filename}`);
-      
     } catch (error) {
       console.error(`Error generating ${pageKey}:`, error);
       throw error;
@@ -170,20 +192,19 @@ class TemplateEngine {
   // Generate all pages
   async generateAll() {
     console.log('🔨 Starting build process...\n');
-    
+
     try {
       await this.loadTemplates();
       await this.loadConfig();
-      
+
       const pages = Object.keys(this.config);
       console.log(`📄 Generating ${pages.length} pages...\n`);
-      
+
       for (const pageKey of pages) {
         await this.generatePage(pageKey, this.config[pageKey]);
       }
-      
+
       console.log(`\n✅ Build complete! Generated ${pages.length} pages.`);
-      
     } catch (error) {
       console.error('\n❌ Build failed:', error);
       process.exit(1);
@@ -194,9 +215,9 @@ class TemplateEngine {
 // CLI usage
 if (require.main === module) {
   const engine = new TemplateEngine();
-  
+
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'build':
     case undefined:

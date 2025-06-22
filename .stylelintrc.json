@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-named": "never",
+    "selector-combinator-space-after": "always",
+    "selector-combinator-space-before": "always",
+    "selector-class-pattern": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "-webkit-background-clip",
+          "-webkit-text-fill-color",
+          "backdrop-filter"
+        ]
+      }
+    ],
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "number-leading-zero": "always",
+    "function-url-quotes": "always"
+  }
+}
