@@ -41,6 +41,10 @@ class TableController {
     try {
       this.currentData = await window.dataLoader.loadData(dataSource);
       
+      // Get page config for column mappings
+      const pageConfig = window.dataLoader.getCurrentPageConfig();
+      this.columnMappings = pageConfig ? pageConfig.columnMappings : {};
+      
       if (this.currentData && this.currentData.length > 0) {
         this.populateTable(this.currentData);
         this.populateConferenceFilter();
@@ -101,9 +105,15 @@ class TableController {
 
   // Map header text to data property
   getValueFromRow(row, headerText) {
+    // Priority 1: Use explicit column mapping if defined
+    if (this.columnMappings && this.columnMappings[headerText]) {
+      const mappedKey = this.columnMappings[headerText];
+      return row[mappedKey] !== undefined ? row[mappedKey] : '';
+    }
+    
     const normalizedHeader = headerText.toLowerCase().trim();
     
-    // Direct property mapping with explicit mappings for multi-word headers
+    // Priority 2: Direct property mapping for common cases
     const directMapping = {
       'team': row.team,
       'conference': row.conference, 
@@ -144,12 +154,11 @@ class TableController {
       'feature': row.feature
     };
 
-    // Try direct mapping first
     if (directMapping[normalizedHeader] !== undefined) {
       return directMapping[normalizedHeader];
     }
 
-    // Smart fallback: try various approaches to match headers to properties
+    // Priority 3: Smart fallback methods
     const rowKeys = Object.keys(row);
     
     // Method 1: Exact match (case insensitive)

@@ -7,7 +7,13 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "teams",
-    "columns": ["TEAM", "adjEm", "Rank", "Conf"]
+    "columns": ["Team Name", "Efficiency Rating", "National Rank", "Conference"],
+    "columnMappings": {
+      "Team Name": "team",
+      "Efficiency Rating": "adjEm",
+      "National Rank": "rank",
+      "Conference": "conf"
+    }
   },
   "page1": {
     "title": "Conference Stats",
@@ -17,7 +23,14 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for conference...",
     "dataSource": "conferences",
-    "columns": ["Conference", "Teams", "Avg Rating", "Top Team", "Win %"]
+    "columns": ["Conference", "Teams", "Avg Rating", "Top Team", "Win %"],
+    "columnMappings": {
+      "Conference": "conference",
+      "Teams": "teams",
+      "Avg Rating": "avgRating",
+      "Top Team": "topTeam",
+      "Win %": "winPct"
+    }
   },
   "page2": {
     "title": "Team Rankings",
@@ -27,7 +40,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "rankings",
-    "columns": ["Rank", "Team", "adjEm", "Conf", "W-L", "SOS"]
+    "columns": ["Rank", "Team", "adjEm", "Conf", "W-L", "SOS"],
+    "columnMappings": {
+      "Rank": "rank",
+      "Team": "team",
+      "adjEm": "adjEm",
+      "Conf": "conf",
+      "W-L": "record",
+      "SOS": "sos"
+    }
   },
   "page3": {
     "title": "Offensive Stats",
@@ -37,7 +58,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "offensive",
-    "columns": ["Team", "PPG", "FG%", "3P%", "FT%", "Conf"]
+    "columns": ["Team", "PPG", "FG%", "3P%", "FT%", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "PPG": "ppg",
+      "FG%": "fgPct",
+      "3P%": "threePct",
+      "FT%": "ftPct",
+      "Conf": "conf"
+    }
   },
   "page4": {
     "title": "Defensive Stats",
@@ -47,7 +76,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "defensive",
-    "columns": ["Team", "OPPG", "Def FG%", "Steals", "Blocks", "Conf"]
+    "columns": ["Team", "OPPG", "Def FG%", "Steals", "Blocks", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "OPPG": "oppg",
+      "Def FG%": "defFgPct",
+      "Steals": "steals",
+      "Blocks": "blocks",
+      "Conf": "conf"
+    }
   },
   "page5": {
     "title": "Player Stats",
@@ -57,7 +94,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for player...",
     "dataSource": "players",
-    "columns": ["Player", "Team", "PPG", "RPG", "APG", "Conf"]
+    "columns": ["Player", "Team", "PPG", "RPG", "APG", "Conf"],
+    "columnMappings": {
+      "Player": "player",
+      "Team": "team",
+      "PPG": "ppg",
+      "RPG": "rpg",
+      "APG": "apg",
+      "Conf": "conf"
+    }
   },
   "page6": {
     "title": "Season Records",
@@ -67,7 +112,14 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "records",
-    "columns": ["Team", "W-L", "Conf W-L", "Streak", "Conf"]
+    "columns": ["Team", "W-L", "Conf W-L", "Streak", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "W-L": "record",
+      "Conf W-L": "confRecord",
+      "Streak": "streak",
+      "Conf": "conf"
+    }
   },
   "page7": {
     "title": "Historical Data",
@@ -77,7 +129,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "historical",
-    "columns": ["Team", "2023", "2022", "2021", "Trend", "Conf"]
+    "columns": ["Team", "2023", "2022", "2021", "Trend", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "2023": "year2023",
+      "2022": "year2022",
+      "2021": "year2021",
+      "Trend": "trend",
+      "Conf": "conf"
+    }
   },
   "page8": {
     "title": "Tournament Results",
@@ -87,7 +147,14 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "tournament",
-    "columns": ["Team", "Conference", "Seed", "Result", "Conf"]
+    "columns": ["Team", "Conference", "Seed", "Result", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "Conference": "conference",
+      "Seed": "seed",
+      "Result": "result",
+      "Conf": "conf"
+    }
   },
   "page9": {
     "title": "Coach Records",
@@ -97,7 +164,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for coach...",
     "dataSource": "coaches",
-    "columns": ["Coach", "Team", "Years", "W-L", "Win %", "Conf"]
+    "columns": ["Coach", "Team", "Years", "W-L", "Win %", "Conf"],
+    "columnMappings": {
+      "Coach": "coach",
+      "Team": "team",
+      "Years": "years",
+      "W-L": "record",
+      "Win %": "winPct",
+      "Conf": "conf"
+    }
   },
   "page10": {
     "title": "Team Trends",
@@ -107,7 +182,14 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "trends",
-    "columns": ["Team", "Momentum", "Last 10", "Trend", "Conf"]
+    "columns": ["Team", "Momentum", "Last 10", "Trend", "Conf"],
+    "columnMappings": {
+      "Team": "team",
+      "Momentum": "momentum",
+      "Last 10": "last10",
+      "Trend": "trend",
+      "Conf": "conf"
+    }
   },
   "page11": {
     "title": "About",
@@ -117,6 +199,11 @@
     "hasSearch": false,
     "searchPlaceholder": "",
     "dataSource": "about",
-    "columns": ["Feature", "Description", "Status"]
+    "columns": ["Feature", "Description", "Status"],
+    "columnMappings": {
+      "Feature": "feature",
+      "Description": "description",
+      "Status": "status"
+    }
   }
 }
