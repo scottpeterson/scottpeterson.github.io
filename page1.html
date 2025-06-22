@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basketball Statistics - Conference Stats</title>
+  <title>Basketball Statistics - Publishing Tracker</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,18 +44,18 @@
 
   <main>
     <header>
-      <h1>Conference Statistics</h1>
-      <p>Detailed breakdown of statistics across different conferences.</p>
+      <h1>Publishing Tracker</h1>
+      <p>Track publishing progress and status across various teams.</p>
     </header>
 
     <section class="table-section">
-  <h2>Conference Performance Metrics</h2>
+  <h2>Schedule and Roster Publishing Status</h2>
   
   
   <!-- Search and Filter Controls -->
   <div class="table-controls">
     <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for conference..." class="search-input">
+      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
     </div>
     <div class="filter-container">
       <select id="conferenceFilter" class="filter-select">
@@ -69,11 +69,10 @@
     <table class="stats-table" id="statsTable">
       <thead>
         <tr>
-          <th>Conference</th>
-          <th>Teams</th>
-          <th>Avg Rating</th>
-          <th>Top Team</th>
-          <th>Win %</th>
+          <th>Team</th>
+          <th>Conf</th>
+          <th>Schedule Published?</th>
+          <th>Roster Published?</th>
         </tr>
       </thead>
       <tbody id="tableBody">

@@ -16,20 +16,19 @@
     }
   },
   "page1": {
-    "title": "Conference Stats",
-    "heading": "Conference Statistics",
-    "description": "Detailed breakdown of statistics across different conferences.",
-    "sectionTitle": "Conference Performance Metrics",
+    "title": "Publishing Tracker",
+    "heading": "Publishing Tracker",
+    "description": "Track publishing progress and status across various teams.",
+    "sectionTitle": "Team Publishing Status",
     "hasSearch": true,
-    "searchPlaceholder": "Search for conference...",
-    "dataSource": "conferences",
-    "columns": ["Conference", "Teams", "Avg Rating", "Top Team", "Win %"],
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "publishingTracker",
+    "columns": ["Team", "Conf", "Schedule Published?", "Roster Published?"],
     "columnMappings": {
-      "Conference": "conference",
-      "Teams": "teams",
-      "Avg Rating": "avgRating",
-      "Top Team": "topTeam",
-      "Win %": "winPct"
+      "Team": "Team",
+      "Conf": "Conf",
+      "Schedule Published?": "Schedule Published?",
+      "Roster Published?": "Roster Published?"
     }
   },
   "page2": {
