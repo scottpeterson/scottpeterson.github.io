@@ -93,13 +93,16 @@ class TemplateEngine {
   // Generate a single page
   async generatePage(pageKey, pageConfig) {
     try {
-      // Render table page content
-      const tableContent = this.renderTemplate(this.templates.tablePage, {
-        sectionTitle: pageConfig.sectionTitle,
-        hasSearch: pageConfig.hasSearch,
-        searchPlaceholder: pageConfig.searchPlaceholder,
-        columns: pageConfig.columns
-      });
+      // Render table page content only if dataSource exists
+      let tableContent = '';
+      if (pageConfig.dataSource) {
+        tableContent = this.renderTemplate(this.templates.tablePage, {
+          sectionTitle: pageConfig.sectionTitle,
+          hasSearch: pageConfig.hasSearch,
+          searchPlaceholder: pageConfig.searchPlaceholder,
+          columns: pageConfig.columns
+        });
+      }
 
       // Render full page
       const fullPage = this.renderTemplate(this.templates.base, {
