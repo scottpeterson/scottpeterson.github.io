@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Historical Data</title>
+    <title>Basketball Statistics - Publishing Tracker</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -46,16 +46,38 @@
 
     <main>
       <header>
-        <h1>Historical Data</h1>
-        <p>Historical performance trends and multi-year comparisons.</p>
+        <h1>Publishing Tracker</h1>
+        <p>Track publishing progress and status across various teams.</p>
 
         <p class="last-updated">
-          <em>Last updated: June 22, 2025 at 12:34 PM EDT</em>
+          <em>Last updated: June 22, 2025 at 02:19 PM EDT</em>
         </p>
       </header>
 
       <section class="table-section">
-        <h2>Historical Performance Trends</h2>
+        <h2>Team Publishing Status</h2>
+
+        <!-- Progress Indicators -->
+        <div class="progress-indicators">
+          <div class="progress-item">
+            <div class="progress-label">
+              <span class="progress-title">Schedule Publishing Progress</span>
+              <span class="progress-percentage" id="scheduleProgress">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="scheduleProgressFill"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span class="progress-title">Roster Publishing Progress</span>
+              <span class="progress-percentage" id="rosterProgress">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="rosterProgressFill"></div>
+            </div>
+          </div>
+        </div>
 
         <!-- Search and Filter Controls -->
         <div class="table-controls">
@@ -79,11 +101,9 @@
             <thead>
               <tr>
                 <th>Team</th>
-                <th>2023</th>
-                <th>2022</th>
-                <th>2021</th>
-                <th>Trend</th>
                 <th>Conf</th>
+                <th>Schedule Published?</th>
+                <th>Roster Published?</th>
               </tr>
             </thead>
             <tbody id="tableBody">

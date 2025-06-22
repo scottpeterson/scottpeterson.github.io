@@ -1,7 +1,7 @@
 {
   "index": {
     "title": "Home",
-    "heading": "D3 Women's Basketball Statistics Warehouse",
+    "heading": "D3 Women's Basketball Stat Lab",
     "description": "I love crunching data of all kind. This site primarily houses Division III Women's Basketball data (like NPI!) but also data from MLB, PGA Tour, NFL, and more!",
     "hasSearch": false,
     "dataSource": null
@@ -31,7 +31,15 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for conference...",
     "dataSource": "preseasonRankings",
-    "columns": ["Conf", "# of Teams", "Returning", "Returning among 0.700+ Teams", "AVG Pre Rank", "Min Rank", "% of Rosters Published"],
+    "columns": [
+      "Conf",
+      "# of Teams",
+      "Returning",
+      "Returning among 0.700+ Teams",
+      "AVG Pre Rank",
+      "Min Rank",
+      "% of Rosters Published"
+    ],
     "columnMappings": {
       "Conf": "Conf",
       "# of Teams": "# of Teams",
@@ -185,7 +193,7 @@
   },
   "page11": {
     "title": "About",
-    "heading": "About Basketball Statistics Warehouse",
+    "heading": "About D3 Stat Lab",
     "description": "Information about this basketball statistics platform and data sources.",
     "sectionTitle": "About This Site",
     "hasSearch": false,

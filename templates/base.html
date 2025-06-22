@@ -1,67 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basketball Statistics - {{PAGE_TITLE}}</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="logo">Basketball Stats</div>
-      
-      <!-- Hamburger Menu Toggle (only appears on mobile) -->
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Statistics - {{PAGE_TITLE}}</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo">D3 Stat Lab</div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li>
+            <a href="preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="page3.html">Offensive Stats</a></li>
+          <li><a href="page4.html">Defensive Stats</a></li>
+          <li><a href="page5.html">Player Stats</a></li>
+          <li><a href="page6.html">Season Records</a></li>
+          <li><a href="page7.html">Historical Data</a></li>
+          <li><a href="page8.html">Tournament Results</a></li>
+          <li><a href="page9.html">Coach Records</a></li>
+          <li><a href="page10.html">Team Trends</a></li>
+          <li><a href="page11.html">About</a></li>
+        </ul>
       </div>
-      
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="navMenu">
-        <!-- Close button placed separately at the top of the menu -->
-        <div class="menu-close" id="menuClose"></div>
-        
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page1.html">Publishing Tracker</a></li>
-        <li><a href="page2.html">25-26 Preseason Rankings</a></li>
-        <li><a href="page3.html">Offensive Stats</a></li>
-        <li><a href="page4.html">Defensive Stats</a></li>
-        <li><a href="page5.html">Player Stats</a></li>
-        <li><a href="page6.html">Season Records</a></li>
-        <li><a href="page7.html">Historical Data</a></li>
-        <li><a href="page8.html">Tournament Results</a></li>
-        <li><a href="page9.html">Coach Records</a></li>
-        <li><a href="page10.html">Team Trends</a></li>
-        <li><a href="page11.html">About</a></li>
-      </ul>
-    </div>
-    
-    <!-- Overlay for mobile -->
-    <div class="nav-overlay" id="navOverlay"></div>
-  </nav>
 
-  <main>
-    <header>
-      <h1>{{PAGE_HEADING}}</h1>
-      <p>{{PAGE_DESCRIPTION}}</p>
-      {{#LAST_UPDATED}}
-      <p class="last-updated"><em>Last updated: {{LAST_UPDATED}}</em></p>
-      {{/LAST_UPDATED}}
-    </header>
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
 
-    {{CONTENT}}
-  </main>
+    <main>
+      <header>
+        <h1>{{PAGE_HEADING}}</h1>
+        <p>{{PAGE_DESCRIPTION}}</p>
+        {{#LAST_UPDATED}}
+        <p class="last-updated"><em>Last updated: {{LAST_UPDATED}}</em></p>
+        {{/LAST_UPDATED}}
+      </header>
 
-  <footer>
-    <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
-  </footer>
+      {{CONTENT}}
+    </main>
 
-  <!-- JavaScript for search, filter and active page functionality -->
-  <script src="js/navigation.js"></script>
-  <script src="js/table-controls.js"></script>
-  <script src="js/data-loader.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for search, filter and active page functionality -->
+    <script src="js/navigation.js"></script>
+    <script src="js/table-controls.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

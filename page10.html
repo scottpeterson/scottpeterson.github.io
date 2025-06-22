@@ -1,102 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basketball Statistics - Team Trends</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="logo">Basketball Stats</div>
-      
-      <!-- Hamburger Menu Toggle (only appears on mobile) -->
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Statistics - Team Trends</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo">D3 Stat Lab</div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li>
+            <a href="preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="page3.html">Offensive Stats</a></li>
+          <li><a href="page4.html">Defensive Stats</a></li>
+          <li><a href="page5.html">Player Stats</a></li>
+          <li><a href="page6.html">Season Records</a></li>
+          <li><a href="page7.html">Historical Data</a></li>
+          <li><a href="page8.html">Tournament Results</a></li>
+          <li><a href="page9.html">Coach Records</a></li>
+          <li><a href="page10.html">Team Trends</a></li>
+          <li><a href="page11.html">About</a></li>
+        </ul>
       </div>
-      
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="navMenu">
-        <!-- Close button placed separately at the top of the menu -->
-        <div class="menu-close" id="menuClose"></div>
-        
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page1.html">Publishing Tracker</a></li>
-        <li><a href="page2.html">25-26 Preseason Rankings</a></li>
-        <li><a href="page3.html">Offensive Stats</a></li>
-        <li><a href="page4.html">Defensive Stats</a></li>
-        <li><a href="page5.html">Player Stats</a></li>
-        <li><a href="page6.html">Season Records</a></li>
-        <li><a href="page7.html">Historical Data</a></li>
-        <li><a href="page8.html">Tournament Results</a></li>
-        <li><a href="page9.html">Coach Records</a></li>
-        <li><a href="page10.html">Team Trends</a></li>
-        <li><a href="page11.html">About</a></li>
-      </ul>
-    </div>
-    
-    <!-- Overlay for mobile -->
-    <div class="nav-overlay" id="navOverlay"></div>
-  </nav>
 
-  <main>
-    <header>
-      <h1>Team Trends</h1>
-      <p>Performance trends and momentum analysis for teams.</p>
-      
-      <p class="last-updated"><em>Last updated: June 22, 2025 at 12:35 PM EDT</em></p>
-      
-    </header>
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
 
-    <section class="table-section">
-  <h2>Team Performance Trends</h2>
-  
-  
-  
-  
-  <!-- Search and Filter Controls -->
-  <div class="table-controls">
-    <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
-    </div>
-    <div class="filter-container">
-      <select id="conferenceFilter" class="filter-select">
-        <option value="">All Conferences</option>
-      </select>
-    </div>
-  </div>
-  
-  
-  <div class="table-container">
-    <table class="stats-table" id="statsTable">
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>Momentum</th>
-          <th>Last 10</th>
-          <th>Trend</th>
-          <th>Conf</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Data will be loaded dynamically -->
-      </tbody>
-    </table>
-  </div>
-</section>
-  </main>
+    <main>
+      <header>
+        <h1>Team Trends</h1>
+        <p>Performance trends and momentum analysis for teams.</p>
 
-  <footer>
-    <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
-  </footer>
+        <p class="last-updated">
+          <em>Last updated: June 22, 2025 at 12:35 PM EDT</em>
+        </p>
+      </header>
 
-  <!-- JavaScript for search, filter and active page functionality -->
-  <script src="js/navigation.js"></script>
-  <script src="js/table-controls.js"></script>
-  <script src="js/data-loader.js"></script>
-  <script src="js/main.js"></script>
-</body>
+      <section class="table-section">
+        <h2>Team Performance Trends</h2>
+
+        <!-- Search and Filter Controls -->
+        <div class="table-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="teamSearch"
+              placeholder="Search for team..."
+              class="search-input"
+            />
+          </div>
+          <div class="filter-container">
+            <select id="conferenceFilter" class="filter-select">
+              <option value="">All Conferences</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="stats-table" id="statsTable">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Momentum</th>
+                <th>Last 10</th>
+                <th>Trend</th>
+                <th>Conf</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for search, filter and active page functionality -->
+    <script src="js/navigation.js"></script>
+    <script src="js/table-controls.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

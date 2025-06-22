@@ -203,7 +203,7 @@ h2 {
 
 /* First column background for even rows (matches row stripe) */
 .stats-table tbody tr:nth-child(even) td:first-child {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 
 /* Header cell that is both sticky header AND first column */
@@ -226,11 +226,11 @@ h2 {
 }
 
 .stats-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 
 .stats-table tbody tr:nth-child(even) td {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 
 .stats-table tbody tr:hover {
@@ -326,6 +326,7 @@ h2 {
   );
   border-radius: 12px;
   border: 1px solid rgb(255 255 255 / 20%);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
   transition: all 0.3s ease;
 }
 
@@ -429,7 +430,8 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 6px 16px rgb(0 0 0 / 15%);
   transform: translateY(-2px);
   background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
@@ -448,6 +450,11 @@ footer {
 .filter-select {
   background-color: #fff;
   cursor: pointer;
+}
+
+.filter-select option:checked {
+  background-color: #3498db;
+  color: #fff;
 }
 
 /* Hide rows that don't match search/filter */
@@ -569,7 +576,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;

@@ -186,7 +186,16 @@ class TemplateEngine {
       });
 
       // Determine output filename
-      const filename = pageKey === 'index' ? 'index.html' : `${pageKey}.html`;
+      let filename;
+      if (pageKey === 'index') {
+        filename = 'index.html';
+      } else if (pageKey === 'page1') {
+        filename = 'publishing_tracker.html';
+      } else if (pageKey === 'page2') {
+        filename = 'preseason_rankings.html';
+      } else {
+        filename = `${pageKey}.html`;
+      }
 
       // Write file
       await fs.writeFile(filename, fullPage, 'utf8');
