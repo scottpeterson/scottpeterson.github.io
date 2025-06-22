@@ -278,6 +278,20 @@
     font-style: italic;
   }
   
+  /* Sort indicators */
+  .sort-indicator {
+    opacity: 0.6;
+    font-size: 0.8em;
+    margin-left: 5px;
+    user-select: none;
+  }
+  
+  .stats-table th[data-sort="asc"] .sort-indicator,
+  .stats-table th[data-sort="desc"] .sort-indicator {
+    opacity: 1;
+    font-weight: bold;
+  }
+  
   /* Responsive adjustments */
   @media screen and (max-width: 768px) {
     .table-controls {

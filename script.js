@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Initialize search and filter functionality
       initSearchAndFilter();
+      
+      // Initialize table sorting functionality
+      initTableSorting();
     } catch (error) {
       console.error("Error initializing script:", error);
     }
@@ -135,6 +138,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
+      // Populate conference filter with unique values from table
+      populateConferenceFilter(table, conferenceFilter);
+      
       // Add event listeners for search and filter
       searchInput.addEventListener('input', function() {
         filterTable();
@@ -143,6 +149,63 @@ document.addEventListener('DOMContentLoaded', function() {
       conferenceFilter.addEventListener('change', function() {
         filterTable();
       });
+      
+      // Function to populate conference filter with unique values
+      function populateConferenceFilter(table, filter) {
+        try {
+          const tbody = table.querySelector('tbody');
+          if (!tbody) return;
+          
+          const conferences = new Set();
+          const rows = tbody.querySelectorAll('tr');
+          
+          // Find column that contains conference data
+          const headers = table.querySelectorAll('th');
+          let confColumnIndex = -1;
+          
+          headers.forEach((header, index) => {
+            const headerText = header.textContent.toLowerCase();
+            if (headerText.includes('conf') || headerText.includes('conference')) {
+              confColumnIndex = index;
+            }
+          });
+          
+          // If no conference column found, try common positions
+          if (confColumnIndex === -1) {
+            rows.forEach(row => {
+              if (row.cells.length > 3) {
+                const cellText = row.cells[3].textContent.trim().toUpperCase();
+                if (cellText.length <= 10 && cellText.match(/^[A-Z]+$/)) {
+                  confColumnIndex = 3;
+                }
+              }
+            });
+          }
+          
+          // Collect unique conferences
+          if (confColumnIndex >= 0) {
+            rows.forEach(row => {
+              if (row.cells[confColumnIndex]) {
+                const conf = row.cells[confColumnIndex].textContent.trim();
+                if (conf) conferences.add(conf);
+              }
+            });
+            
+            // Clear existing options except "All Conferences"
+            filter.innerHTML = '<option value="">All Conferences</option>';
+            
+            // Add conference options
+            Array.from(conferences).sort().forEach(conf => {
+              const option = document.createElement('option');
+              option.value = conf;
+              option.textContent = conf;
+              filter.appendChild(option);
+            });
+          }
+        } catch (error) {
+          console.error("Error populating conference filter:", error);
+        }
+      }
       
       // Function to filter the table based on search and conference filter
       function filterTable() {
@@ -159,23 +222,47 @@ document.addEventListener('DOMContentLoaded', function() {
           const rows = tbody.querySelectorAll('tr');
           let visibleRows = 0;
           
+          // Find team and conference column indices
+          const headers = table.querySelectorAll('th');
+          let teamColumnIndex = 0; // Default to first column
+          let confColumnIndex = -1;
+          
+          headers.forEach((header, index) => {
+            const headerText = header.textContent.toLowerCase();
+            if (headerText.includes('team') || index === 0) {
+              teamColumnIndex = index;
+            }
+            if (headerText.includes('conf') || headerText.includes('conference')) {
+              confColumnIndex = index;
+            }
+          });
+          
+          // If no conference column found, try common positions
+          if (confColumnIndex === -1 && rows.length > 0) {
+            for (let i = 0; i < Math.min(rows[0].cells.length, 6); i++) {
+              const cellText = rows[0].cells[i].textContent.trim().toUpperCase();
+              if (cellText.length <= 10 && cellText.match(/^[A-Z]+$/)) {
+                confColumnIndex = i;
+                break;
+              }
+            }
+          }
+          
           // Process each row
           rows.forEach(function(row) {
-            if (!row.cells || row.cells.length < 4) {
-              console.log("Row has insufficient cells:", row);
+            if (!row.cells || row.cells.length === 0) {
               return;
             }
             
-            const teamCell = row.cells[0];
-            const confCell = row.cells[3];
+            const teamCell = row.cells[teamColumnIndex];
+            const confCell = confColumnIndex >= 0 ? row.cells[confColumnIndex] : null;
             
-            if (!teamCell || !confCell) {
-              console.log("Required cells not found in row:", row);
+            if (!teamCell) {
               return;
             }
             
             const teamName = teamCell.textContent.toLowerCase();
-            const rowConference = confCell.textContent.trim();
+            const rowConference = confCell ? confCell.textContent.trim() : '';
             
             // Check if row matches both search term and conference filter
             const matchesSearch = teamName.includes(searchTerm);
@@ -225,5 +312,86 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     } catch (error) {
       console.error("Error in showNoResults:", error);
+    }
+  }
+  
+  // Function to initialize table sorting functionality
+  function initTableSorting() {
+    try {
+      const table = document.getElementById('statsTable');
+      if (!table) {
+        console.log("Stats table not found on this page");
+        return;
+      }
+      
+      const headers = table.querySelectorAll('th');
+      headers.forEach(function(header, index) {
+        header.style.cursor = 'pointer';
+        header.style.userSelect = 'none';
+        header.style.position = 'relative';
+        
+        // Add sorting indicator
+        const sortIndicator = document.createElement('span');
+        sortIndicator.className = 'sort-indicator';
+        sortIndicator.innerHTML = ' ↕';
+        header.appendChild(sortIndicator);
+        
+        header.addEventListener('click', function() {
+          sortTable(table, index, header);
+        });
+      });
+    } catch (error) {
+      console.error("Error in initTableSorting:", error);
+    }
+  }
+  
+  // Function to sort table by column
+  function sortTable(table, columnIndex, header) {
+    try {
+      const tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      
+      const rows = Array.from(tbody.querySelectorAll('tr')).filter(row => row.style.display !== 'none');
+      const isAscending = header.getAttribute('data-sort') !== 'asc';
+      
+      // Clear all sort indicators
+      table.querySelectorAll('th .sort-indicator').forEach(indicator => {
+        indicator.innerHTML = ' ↕';
+        indicator.parentElement.removeAttribute('data-sort');
+      });
+      
+      // Set current sort indicator
+      const indicator = header.querySelector('.sort-indicator');
+      if (isAscending) {
+        indicator.innerHTML = ' ↑';
+        header.setAttribute('data-sort', 'asc');
+      } else {
+        indicator.innerHTML = ' ↓';
+        header.setAttribute('data-sort', 'desc');
+      }
+      
+      // Sort rows
+      rows.sort(function(a, b) {
+        const aVal = a.cells[columnIndex].textContent.trim();
+        const bVal = b.cells[columnIndex].textContent.trim();
+        
+        // Try to parse as numbers
+        const aNum = parseFloat(aVal.replace(/[^\d.-]/g, ''));
+        const bNum = parseFloat(bVal.replace(/[^\d.-]/g, ''));
+        
+        let result;
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+          result = aNum - bNum;
+        } else {
+          result = aVal.localeCompare(bVal);
+        }
+        
+        return isAscending ? result : -result;
+      });
+      
+      // Reorder rows in DOM
+      rows.forEach(row => tbody.appendChild(row));
+    } catch (error) {
+      console.error("Error in sortTable:", error);
     }
   }
