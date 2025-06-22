@@ -192,18 +192,13 @@
     }
   },
   "page11": {
-    "title": "About",
-    "heading": "About D3 Stat Lab",
-    "description": "Information about this basketball statistics platform and data sources.",
-    "sectionTitle": "About This Site",
+    "title": "Contact",
+    "heading": "Get in Touch",
+    "description": "Have questions about D3 basketball data or want to collaborate? Send me a message!",
+    "sectionTitle": "Contact Form",
     "hasSearch": false,
     "searchPlaceholder": "",
-    "dataSource": "about",
-    "columns": ["Feature", "Description", "Status"],
-    "columnMappings": {
-      "Feature": "feature",
-      "Description": "description",
-      "Status": "status"
-    }
+    "dataSource": null,
+    "isContactPage": true
   }
 }

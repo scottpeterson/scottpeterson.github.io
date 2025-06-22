@@ -23,6 +23,10 @@ class TemplateEngine {
         'templates/home-content.html',
         'utf8'
       );
+      this.templates.contactPage = await fs.readFile(
+        'templates/contact-page.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -158,6 +162,11 @@ class TemplateEngine {
       if (pageKey === 'index') {
         // Use home content template for index page
         tableContent = this.templates.homeContent;
+      } else if (pageConfig.isContactPage) {
+        // Use contact page template for contact page
+        tableContent = this.renderTemplate(this.templates.contactPage, {
+          sectionTitle: pageConfig.sectionTitle,
+        });
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {
