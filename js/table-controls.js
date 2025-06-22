@@ -220,7 +220,7 @@ class TableController {
       const conferences = new Set();
       
       this.currentData.forEach(row => {
-        const conf = row.conf || row.conference;
+        const conf = row.conf || row.conference || row.Conf;
         if (conf) conferences.add(conf);
       });
       
@@ -251,21 +251,18 @@ class TableController {
       const rows = tbody.querySelectorAll('tr');
       let visibleRows = 0;
       
-      rows.forEach(row => {
+      rows.forEach((row, index) => {
         if (!row.cells || row.cells.length === 0) return;
         
         // Get team name (usually first column)
         const teamCell = row.cells[0];
         const teamName = teamCell ? teamCell.textContent.toLowerCase() : '';
         
-        // Find conference column
+        // Get conference from data instead of guessing from table
         let rowConference = '';
-        Array.from(row.cells).forEach(cell => {
-          const cellText = cell.textContent.trim().toUpperCase();
-          if (cellText.length <= 10 && cellText.match(/^[A-Z]+$/)) {
-            rowConference = cellText;
-          }
-        });
+        if (this.currentData && this.currentData[index]) {
+          rowConference = this.currentData[index].conf || this.currentData[index].conference || this.currentData[index].Conf || '';
+        }
         
         // Check matches
         const matchesSearch = teamName.includes(searchTerm);
