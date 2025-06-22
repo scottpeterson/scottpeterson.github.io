@@ -74,6 +74,13 @@ class TemplateEngine {
       result = result.replace(/{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g, '');
     }
     
+    // Handle SHOW_PROGRESS conditional
+    if (data.showProgress) {
+      result = result.replace(/{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g, '$1');
+    } else {
+      result = result.replace(/{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g, '');
+    }
+    
     return result;
   }
 
@@ -99,6 +106,7 @@ class TemplateEngine {
         tableContent = this.renderTemplate(this.templates.tablePage, {
           sectionTitle: pageConfig.sectionTitle,
           hasSearch: pageConfig.hasSearch,
+          showProgress: pageConfig.showProgress,
           searchPlaceholder: pageConfig.searchPlaceholder,
           columns: pageConfig.columns
         });

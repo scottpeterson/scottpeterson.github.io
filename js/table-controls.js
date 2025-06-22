@@ -48,6 +48,7 @@ class TableController {
       if (this.currentData && this.currentData.length > 0) {
         this.populateTable(this.currentData);
         this.populateConferenceFilter();
+        this.updateProgressIndicators();
       } else {
         // Fallback: show a message if no data loaded
         this.showDataLoadingError(dataSource);
@@ -377,6 +378,57 @@ class TableController {
       rows.forEach(row => tbody.appendChild(row));
     } catch (error) {
       console.error("Error in sortTable:", error);
+    }
+  }
+
+  // Update progress indicators for Publishing Tracker
+  updateProgressIndicators() {
+    try {
+      // Check if progress indicators exist on this page
+      const scheduleProgressElement = document.getElementById('scheduleProgress');
+      const rosterProgressElement = document.getElementById('rosterProgress');
+      
+      if (!scheduleProgressElement || !rosterProgressElement || !this.currentData) {
+        return; // Not the Publishing Tracker page or no data
+      }
+
+      const totalTeams = this.currentData.length;
+      if (totalTeams === 0) return;
+
+      // Count TRUE values for Schedule Published
+      const schedulePublished = this.currentData.filter(row => 
+        row['Schedule Published?'] === 'TRUE' || row['Schedule Published?'] === true
+      ).length;
+
+      // Count TRUE values for Roster Published
+      const rosterPublished = this.currentData.filter(row => 
+        row['Roster Published?'] === 'TRUE' || row['Roster Published?'] === true
+      ).length;
+
+      // Calculate percentages
+      const schedulePercentage = Math.round((schedulePublished / totalTeams) * 100);
+      const rosterPercentage = Math.round((rosterPublished / totalTeams) * 100);
+
+      // Update text displays
+      scheduleProgressElement.textContent = `${schedulePercentage}%`;
+      rosterProgressElement.textContent = `${rosterPercentage}%`;
+
+      // Update progress bars
+      const scheduleProgressFill = document.getElementById('scheduleProgressFill');
+      const rosterProgressFill = document.getElementById('rosterProgressFill');
+
+      if (scheduleProgressFill) {
+        scheduleProgressFill.style.width = `${schedulePercentage}%`;
+      }
+      
+      if (rosterProgressFill) {
+        rosterProgressFill.style.width = `${rosterPercentage}%`;
+      }
+
+      console.log(`Progress updated: Schedules ${schedulePercentage}% (${schedulePublished}/${totalTeams}), Rosters ${rosterPercentage}% (${rosterPublished}/${totalTeams})`);
+      
+    } catch (error) {
+      console.error("Error updating progress indicators:", error);
     }
   }
 }

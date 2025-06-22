@@ -1,6 +1,30 @@
 <section class="table-section">
   <h2>{{SECTION_TITLE}}</h2>
   
+  {{#SHOW_PROGRESS}}
+  <!-- Progress Indicators -->
+  <div class="progress-indicators">
+    <div class="progress-item">
+      <div class="progress-label">
+        <span class="progress-title">Schedule Publishing Progress</span>
+        <span class="progress-percentage" id="scheduleProgress">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="scheduleProgressFill"></div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-label">
+        <span class="progress-title">Roster Publishing Progress</span>
+        <span class="progress-percentage" id="rosterProgress">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="rosterProgressFill"></div>
+      </div>
+    </div>
+  </div>
+  {{/SHOW_PROGRESS}}
+  
   {{#HAS_SEARCH}}
   <!-- Search and Filter Controls -->
   <div class="table-controls">

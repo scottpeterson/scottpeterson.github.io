@@ -14,6 +14,7 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "publishingTracker",
+    "showProgress": true,
     "columns": ["Team", "Conf", "Schedule Published?", "Roster Published?"],
     "columnMappings": {
       "Team": "Team",
