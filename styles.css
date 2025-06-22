@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -12,7 +12,7 @@ body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
 }
-  
+
 /* Navigation */
 .main-nav {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
@@ -22,7 +22,7 @@ body {
   z-index: 100;
   backdrop-filter: blur(10px);
 }
-  
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,24 +31,24 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-  
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   padding: 15px 0;
 }
-  
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
 }
-  
+
 .nav-links li {
   margin: 0 5px;
 }
-  
+
 .nav-links a {
   display: block;
   color: #ecf0f1;
@@ -57,28 +57,28 @@ body {
   transition: all 0.3s ease;
   font-size: 0.9rem;
 }
-  
+
 .nav-links a:hover {
   background: linear-gradient(135deg, #34495e 0%, #3498db 100%);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgb(52 152 219 / 30%);
   transition: all 0.3s ease;
 }
-  
+
 .nav-links a.active {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: white;
+  color: #fff;
   box-shadow: 0 2px 10px rgb(52 152 219 / 40%);
   transform: translateY(-1px);
 }
-  
+
 /* Main Content */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-  
+
 header {
   margin-bottom: 30px;
   border-bottom: 3px solid transparent;
@@ -90,35 +90,33 @@ header {
   padding: 25px;
   box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
 }
-  
+
 .last-updated {
   color: #6c757d;
   font-size: 0.9rem;
   margin-top: 8px;
   margin-bottom: 0;
 }
-  
+
 h1 {
   font-size: 2rem;
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 10px;
   font-weight: 700;
   text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
-  
+
 h2 {
   font-size: 1.5rem;
   background: linear-gradient(135deg, #2c3e50 0%, #ff4f00 100%);
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 15px;
   font-weight: 600;
 }
-  
+
 /* Table Styles */
 .table-section {
   background: rgb(255 255 255 / 95%);
@@ -130,58 +128,65 @@ h2 {
   border: 1px solid rgb(255 255 255 / 20%);
   transition: all 0.3s ease;
 }
-  
+
 .table-section:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 48px rgb(0 0 0 / 20%);
 }
-  
+
 .table-container {
   width: 100%;
   overflow-x: auto;
   margin-top: 15px;
 
-  /* Ensure sticky positioning works in all contexts */
-  position: relative;
-
-  /* Fix for sticky headers in scrollable containers */
+  /* Scrollable container for large tables */
   max-height: 70vh;
   overflow-y: auto;
+
+  /* Essential for sticky headers to work properly */
+  position: relative;
+  border: 1px solid #e1e5e8;
+  border-radius: 8px;
 }
-  
+
 .stats-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   font-size: 14px;
+  position: relative;
 }
-  
+
 /* Header Row */
 .stats-table thead th {
   position: sticky;
-  top: 0; /* Stick to top of scrollable container */
+  top: 0;
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: #fff;
   font-weight: 600;
-  text-align: center; /* Center all header text */
+  text-align: center;
   padding: 12px 15px;
+  border: 1px solid #2980b9;
   border-bottom: 3px solid #2980b9;
   z-index: 10;
   box-shadow: 0 2px 8px rgb(52 152 219 / 30%);
   transition: all 0.3s ease;
+
+  /* Ensure sticky works properly */
+  background-clip: padding-box;
+  will-change: transform;
 }
-  
+
 .stats-table thead th:hover {
   background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgb(52 152 219 / 40%);
 }
-  
+
 /* First Column Header - Keep left-aligned to match first column data */
 .stats-table thead th:first-child {
   text-align: left;
 }
-  
+
 /* First Column (Sticky) */
 .stats-table td:first-child,
 .stats-table th:first-child {
@@ -190,57 +195,63 @@ h2 {
   font-weight: 500;
   z-index: 1;
 }
-  
+
 /* First column background for odd rows (default white) */
 .stats-table tbody tr:nth-child(odd) td:first-child {
   background-color: #fff;
 }
-  
+
 /* First column background for even rows (matches row stripe) */
 .stats-table tbody tr:nth-child(even) td:first-child {
   background-color: #f8f9fa;
 }
-  
+
 /* Header cell that is both sticky header AND first column */
 .stats-table thead th:first-child {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: #fff;
   z-index: 15;
 }
-  
+
 /* Table Body */
 .stats-table tbody tr {
   border-bottom: 1px solid #e1e5e8;
 }
-  
+
+.stats-table td {
+  padding: 10px 12px;
+  text-align: center;
+  border: 1px solid #e1e5e8;
+  background-color: #fff;
+}
+
 .stats-table tbody tr:nth-child(even) {
   background-color: #f8f9fa;
 }
-  
+
+.stats-table tbody tr:nth-child(even) td {
+  background-color: #f8f9fa;
+}
+
 .stats-table tbody tr:hover {
   background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
   transform: translateX(4px);
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
   transition: all 0.3s ease;
 }
-  
+
 /* Ensure first column background remains consistent on hover */
 .stats-table tbody tr:hover td:first-child {
   background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
 }
-  
-/* Table Cells */
-.stats-table td {
-  padding: 10px 15px;
-  border-bottom: 1px solid #e1e5e8;
-  text-align: center; /* Center all table cell content */
-}
-  
+
+/* Table cells already defined above */
+
 /* First Column (Team names or categories) - Keep these left-aligned */
 .stats-table td:first-child {
   text-align: left;
 }
-  
+
 /* Footer */
 footer {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
@@ -253,46 +264,46 @@ footer {
   border-top: 3px solid transparent;
   border-image: linear-gradient(135deg, #3498db, #2980b9, #ff4f00) 1;
 }
-  
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .nav-container {
     flex-direction: column;
     padding: 10px;
   }
-    
+
   .nav-links {
     flex-direction: column;
     width: 100%;
   }
-    
+
   .nav-links li {
     margin: 0;
     width: 100%;
   }
-    
+
   .nav-links a {
     padding: 10px;
     border-bottom: 1px solid #34495e;
   }
-    
+
   .logo {
     padding: 10px 0;
   }
-    
+
   h1 {
     font-size: 1.8rem;
   }
-    
+
   .stats-table {
     font-size: 13px;
   }
-    
+
   .stats-table th,
   .stats-table td {
     padding: 8px 10px;
   }
-    
+
   /* Adjust sticky header position for mobile navigation */
   .stats-table thead th {
     top: 0; /* Stick to top of scrollable container on mobile too */
@@ -307,13 +318,15 @@ footer {
   flex-wrap: wrap;
   gap: 15px;
 }
-  
-.search-container, .filter-container {
+
+.search-container,
+.filter-container {
   flex: 1;
   min-width: 200px;
 }
-  
-.search-input, .filter-select {
+
+.search-input,
+.filter-select {
   width: 100%;
   padding: 12px 16px;
   border: 2px solid transparent;
@@ -324,34 +337,37 @@ footer {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
-  
-.search-input:focus, .filter-select:focus {
+
+.search-input:focus,
+.filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%), 0 6px 16px rgb(0 0 0 / 15%);
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+    0 6px 16px rgb(0 0 0 / 15%);
   transform: translateY(-2px);
   background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
 }
-  
-.search-input:hover, .filter-select:hover {
+
+.search-input:hover,
+.filter-select:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
 }
-  
+
 .search-input::placeholder {
   color: #aaa;
 }
-  
+
 .filter-select {
-  background-color: white;
+  background-color: #fff;
   cursor: pointer;
 }
-  
+
 /* Hide rows that don't match search/filter */
 .stats-table tr.hidden {
   display: none;
 }
-  
+
 /* No results message */
 .no-results {
   text-align: center;
@@ -359,7 +375,7 @@ footer {
   color: #777;
   font-style: italic;
 }
-  
+
 /* Progress Indicators */
 .progress-indicators {
   display: grid;
@@ -367,44 +383,48 @@ footer {
   gap: 30px;
   margin-bottom: 25px;
   padding: 25px;
-  background: linear-gradient(135deg, rgb(255 255 255 / 90%) 0%, rgb(248 249 250 / 80%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 90%) 0%,
+    rgb(248 249 250 / 80%) 100%
+  );
   backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgb(255 255 255 / 30%);
   box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
   transition: all 0.3s ease;
 }
-  
+
 .progress-indicators:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
 }
-  
+
 .progress-item {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-  
+
 .progress-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
 }
-  
+
 .progress-title {
   font-weight: 600;
   color: #2c3e50;
   font-size: 14px;
 }
-  
+
 .progress-percentage {
   font-weight: bold;
   color: #3498db;
   font-size: 16px;
 }
-  
+
 .progress-bar {
   width: 100%;
   height: 24px;
@@ -414,7 +434,7 @@ footer {
   box-shadow: inset 0 2px 4px rgb(0 0 0 / 10%);
   border: 1px solid rgb(255 255 255 / 20%);
 }
-  
+
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #3498db 0%, #2980b9 50%, #ff4f00 100%);
@@ -424,7 +444,7 @@ footer {
   position: relative;
   box-shadow: 0 2px 8px rgb(52 152 219 / 40%);
 }
-  
+
 .progress-fill::before {
   content: '';
   position: absolute;
@@ -432,13 +452,15 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, 
-  rgb(255 255 255 / 30%) 0%, 
-  rgb(255 255 255 / 10%) 50%, 
-  rgb(255 255 255 / 30%) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 30%) 0%,
+    rgb(255 255 255 / 10%) 50%,
+    rgb(255 255 255 / 30%) 100%
+  );
   border-radius: 12px;
 }
-  
+
 .progress-fill::after {
   content: '';
   position: absolute;
@@ -446,49 +468,53 @@ footer {
   left: 2px;
   right: 2px;
   height: 4px;
-  background: linear-gradient(90deg, 
-  rgb(255 255 255 / 60%) 0%, 
-  rgb(255 255 255 / 20%) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 60%) 0%,
+    rgb(255 255 255 / 20%) 100%
+  );
   border-radius: 10px;
 }
-  
+
 /* Sort indicators */
 .sort-indicator {
   opacity: 0.6;
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+    sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
 }
-  
+
 .stats-table th[data-sort='asc'] .sort-indicator,
 .stats-table th[data-sort='desc'] .sort-indicator {
   opacity: 1;
   font-weight: bold;
 }
-  
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .table-controls {
     flex-direction: column;
   }
-    
-  .search-container, .filter-container {
+
+  .search-container,
+  .filter-container {
     width: 100%;
   }
-    
+
   .progress-indicators {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 15px;
   }
-    
+
   .progress-title {
     font-size: 13px;
   }
-    
+
   .progress-percentage {
     font-size: 15px;
   }
@@ -506,7 +532,7 @@ footer {
   cursor: pointer;
   z-index: 98;
 }
-  
+
 .menu-toggle span {
   display: block;
   height: 3px;
@@ -515,7 +541,7 @@ footer {
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-  
+
 /* Close Button */
 .menu-close {
   display: none;
@@ -527,8 +553,8 @@ footer {
   cursor: pointer;
   z-index: 102;
 }
-  
-.menu-close::before, 
+
+.menu-close::before,
 .menu-close::after {
   content: '';
   position: absolute;
@@ -539,27 +565,27 @@ footer {
   top: 50%;
   left: 0;
 }
-  
+
 .menu-close::before {
   transform: rotate(45deg);
 }
-  
+
 .menu-close::after {
   transform: rotate(-45deg);
 }
-  
+
 /* Responsive Navigation Adjustments */
 @media screen and (max-width: 768px) {
   .nav-container {
     padding: 15px 20px;
     justify-content: space-between;
   }
-    
+
   .menu-toggle {
     display: flex;
     position: relative;
   }
-    
+
   /* Completely hide the hamburger when hidden class is applied */
   .menu-toggle.hidden {
     display: none !important;
@@ -568,11 +594,11 @@ footer {
     position: absolute;
     left: -9999px;
   }
-    
+
   .menu-close {
     display: block;
   }
-    
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -589,26 +615,26 @@ footer {
     overflow-y: auto;
     box-shadow: -5px 0 15px rgb(0 0 0 / 10%);
   }
-    
+
   .nav-links.active {
     right: 0;
   }
-    
+
   .nav-links li {
     width: 100%;
     margin: 0;
   }
-    
+
   .nav-links li:first-child {
     margin-top: 10px;
   }
-    
+
   .nav-links a {
     padding: 15px 25px;
     width: 100%;
     border-bottom: 1px solid #34495e;
   }
-    
+
   /* Overlay when menu is open */
   .nav-overlay {
     display: none;
@@ -620,7 +646,7 @@ footer {
     background-color: rgb(0 0 0 / 50%);
     z-index: 99;
   }
-    
+
   .nav-overlay.active {
     display: block;
   }
