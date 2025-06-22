@@ -112,6 +112,16 @@ class TableController {
       return value !== undefined ? value : '';
     }
     
+    // Priority 1.5: Try exact header match in mappings (handles special characters)
+    if (this.columnMappings) {
+      for (const [configHeader, jsonKey] of Object.entries(this.columnMappings)) {
+        if (configHeader === headerText) {
+          const value = row[jsonKey];
+          return value !== undefined ? value : '';
+        }
+      }
+    }
+    
     const normalizedHeader = headerText.toLowerCase().trim();
     
     // Priority 2: Direct property mapping for common cases
@@ -125,6 +135,7 @@ class TableController {
       'avg rating': row.avgRating,
       'top team': row.topTeam,
       'win %': row.winPct,
+      'win%': row.winPct,  // Handle without space
       'w-l': row.record,
       'sos': row.sos,
       'ppg': row.ppg,
