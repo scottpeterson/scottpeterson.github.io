@@ -82,7 +82,7 @@
   header {
     margin-bottom: 30px;
     border-bottom: 3px solid transparent;
-    border-image: linear-gradient(135deg, #3498db, #2980b9, #e74c3c) 1;
+    border-image: linear-gradient(135deg, #3498db, #2980b9, #FF4F00) 1;
     padding-bottom: 20px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -111,7 +111,7 @@
   
   h2 {
     font-size: 1.5rem;
-    background: linear-gradient(135deg, #2c3e50 0%, #e74c3c 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #FF4F00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -249,7 +249,7 @@
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     border-top: 3px solid transparent;
-    border-image: linear-gradient(135deg, #3498db, #2980b9, #e74c3c) 1;
+    border-image: linear-gradient(135deg, #3498db, #2980b9, #FF4F00) 1;
   }
   
   /* Responsive Styles */
@@ -415,7 +415,7 @@
   
   .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #3498db 0%, #2980b9 50%, #e74c3c 100%);
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 50%, #FF4F00 100%);
     border-radius: 12px;
     transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     width: 0%;
