@@ -52,6 +52,7 @@ class TemplateEngine {
       'PAGE_DESCRIPTION': data.description,
       'SECTION_TITLE': data.sectionTitle,
       'SEARCH_PLACEHOLDER': data.searchPlaceholder,
+      'LAST_UPDATED': data.lastUpdated,
       'CONTENT': data.content || ''
     };
     
@@ -81,6 +82,13 @@ class TemplateEngine {
       result = result.replace(/{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g, '');
     }
     
+    // Handle LAST_UPDATED conditional
+    if (data.lastUpdated) {
+      result = result.replace(/{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g, '$1');
+    } else {
+      result = result.replace(/{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g, '');
+    }
+    
     return result;
   }
 
@@ -95,6 +103,24 @@ class TemplateEngine {
     }
     
     return result;
+  }
+
+  // Get file modification date
+  async getFileModificationDate(filePath) {
+    try {
+      const stats = await fs.stat(filePath);
+      return stats.mtime.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+    } catch (error) {
+      console.warn(`Could not get modification date for ${filePath}:`, error.message);
+      return null;
+    }
   }
 
   // Generate a single page
@@ -112,11 +138,19 @@ class TemplateEngine {
         });
       }
 
+      // Get last updated date for data file
+      let lastUpdated = null;
+      if (pageConfig.dataSource) {
+        const dataFilePath = `data/${pageConfig.dataSource}.json`;
+        lastUpdated = await this.getFileModificationDate(dataFilePath);
+      }
+
       // Render full page
       const fullPage = this.renderTemplate(this.templates.base, {
         title: pageConfig.title,
         heading: pageConfig.heading,
         description: pageConfig.description,
+        lastUpdated: lastUpdated,
         content: tableContent
       });
 
