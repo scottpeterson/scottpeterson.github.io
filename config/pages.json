@@ -24,21 +24,22 @@
     }
   },
   "page2": {
-    "title": "Team Rankings",
-    "heading": "Team Rankings Overview",
-    "description": "Comprehensive rankings of all teams based on performance metrics.",
-    "sectionTitle": "National Team Rankings",
+    "title": "25-26 Preseason Rankings",
+    "heading": "25-26 Preseason Rankings",
+    "description": "Early predictions and rankings for the upcoming 2025-26 basketball season.",
+    "sectionTitle": "Preseason Team Rankings",
     "hasSearch": true,
-    "searchPlaceholder": "Search for team...",
-    "dataSource": "rankings",
-    "columns": ["Rank", "Team", "adjEm", "Conf", "W-L", "SOS"],
+    "searchPlaceholder": "Search for conference...",
+    "dataSource": "preseasonRankings",
+    "columns": ["Conf", "# of Teams", "Returning", "Returning among 0.700+ Teams", "AVG Pre Rank", "Min Rank", "% of Rosters Published"],
     "columnMappings": {
-      "Rank": "rank",
-      "Team": "team",
-      "adjEm": "adjEm",
-      "Conf": "conf",
-      "W-L": "record",
-      "SOS": "sos"
+      "Conf": "Conf",
+      "# of Teams": "# of Teams",
+      "Returning": "Returning",
+      "Returning among 0.700+ Teams": "Returning among 0.700+ Teams",
+      "AVG Pre Rank": "AVG Pre Rank",
+      "Min Rank": "Min Rank",
+      "% of Rosters Published": "% of Rosters Published"
     }
   },
   "page3": {

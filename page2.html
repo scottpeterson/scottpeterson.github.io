@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basketball Statistics - Team Rankings</title>
+  <title>Basketball Statistics - 25-26 Preseason Rankings</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
         
         <li><a href="index.html">Home</a></li>
         <li><a href="page1.html">Publishing Tracker</a></li>
-        <li><a href="page2.html">Team Rankings</a></li>
+        <li><a href="page2.html">25-26 Preseason Rankings</a></li>
         <li><a href="page3.html">Offensive Stats</a></li>
         <li><a href="page4.html">Defensive Stats</a></li>
         <li><a href="page5.html">Player Stats</a></li>
@@ -44,15 +44,15 @@
 
   <main>
     <header>
-      <h1>Team Rankings Overview</h1>
-      <p>Comprehensive rankings of all teams based on performance metrics.</p>
+      <h1>25-26 Preseason Rankings</h1>
+      <p>Early predictions and rankings for the upcoming 2025-26 basketball season.</p>
       
-      <p class="last-updated"><em>Last updated: June 22, 2025 at 12:34 PM EDT</em></p>
+      <p class="last-updated"><em>Last updated: June 22, 2025 at 02:53 PM EDT</em></p>
       
     </header>
 
     <section class="table-section">
-  <h2>National Team Rankings</h2>
+  <h2>Preseason Team Rankings</h2>
   
   
   
@@ -60,7 +60,7 @@
   <!-- Search and Filter Controls -->
   <div class="table-controls">
     <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+      <input type="text" id="teamSearch" placeholder="Search for conference..." class="search-input">
     </div>
     <div class="filter-container">
       <select id="conferenceFilter" class="filter-select">
@@ -74,12 +74,13 @@
     <table class="stats-table" id="statsTable">
       <thead>
         <tr>
-          <th>Rank</th>
-          <th>Team</th>
-          <th>adjEm</th>
           <th>Conf</th>
-          <th>W-L</th>
-          <th>SOS</th>
+          <th># of Teams</th>
+          <th>Returning</th>
+          <th>Returning among 0.700+ Teams</th>
+          <th>AVG Pre Rank</th>
+          <th>Min Rank</th>
+          <th>% of Rosters Published</th>
         </tr>
       </thead>
       <tbody id="tableBody">
