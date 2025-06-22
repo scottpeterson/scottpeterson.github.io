@@ -1,0 +1,122 @@
+{
+  "index": {
+    "title": "Home",
+    "heading": "D3 Women's Basketball Statistics Warehouse",
+    "description": "I love crunching data of all kind. This site primarily houses Division III Women's Basketball data (like NPI!) but also data from MLB, PGA Tour, NFL, and more!",
+    "sectionTitle": "Overview of Top Teams",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "teams",
+    "columns": ["TEAM", "adjEm", "Rank", "Conf"]
+  },
+  "page1": {
+    "title": "Conference Stats",
+    "heading": "Conference Statistics",
+    "description": "Detailed breakdown of statistics across different conferences.",
+    "sectionTitle": "Conference Performance Metrics",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for conference...",
+    "dataSource": "conferences",
+    "columns": ["Conference", "Teams", "Avg Rating", "Top Team", "Win %"]
+  },
+  "page2": {
+    "title": "Team Rankings",
+    "heading": "Team Rankings Overview",
+    "description": "Comprehensive rankings of all teams based on performance metrics.",
+    "sectionTitle": "National Team Rankings",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "rankings",
+    "columns": ["Rank", "Team", "adjEm", "Conf", "W-L", "SOS"]
+  },
+  "page3": {
+    "title": "Offensive Stats",
+    "heading": "Offensive Statistics",
+    "description": "Detailed offensive performance metrics for all teams.",
+    "sectionTitle": "Offensive Performance Metrics",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "offensive",
+    "columns": ["Team", "PPG", "FG%", "3P%", "FT%", "Conf"]
+  },
+  "page4": {
+    "title": "Defensive Stats",
+    "heading": "Defensive Statistics",
+    "description": "Comprehensive defensive performance data across all teams.",
+    "sectionTitle": "Defensive Performance Metrics",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "defensive",
+    "columns": ["Team", "OPPG", "Def FG%", "Steals", "Blocks", "Conf"]
+  },
+  "page5": {
+    "title": "Player Stats",
+    "heading": "Player Statistics",
+    "description": "Individual player performance statistics and rankings.",
+    "sectionTitle": "Top Player Performances",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for player...",
+    "dataSource": "players",
+    "columns": ["Player", "Team", "PPG", "RPG", "APG", "Conf"]
+  },
+  "page6": {
+    "title": "Season Records",
+    "heading": "Season Records",
+    "description": "Complete season records and standings for all teams.",
+    "sectionTitle": "Season Performance Records",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "records",
+    "columns": ["Team", "W-L", "Conf W-L", "Streak", "Conf"]
+  },
+  "page7": {
+    "title": "Historical Data",
+    "heading": "Historical Data",
+    "description": "Historical performance trends and multi-year comparisons.",
+    "sectionTitle": "Historical Performance Trends",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "historical",
+    "columns": ["Team", "2023", "2022", "2021", "Trend", "Conf"]
+  },
+  "page8": {
+    "title": "Tournament Results",
+    "heading": "Tournament Results",
+    "description": "Conference and national tournament results and brackets.",
+    "sectionTitle": "Tournament Performance",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "tournament",
+    "columns": ["Team", "Conference", "Seed", "Result", "Conf"]
+  },
+  "page9": {
+    "title": "Coach Records",
+    "heading": "Coach Records",
+    "description": "Coaching performance statistics and career records.",
+    "sectionTitle": "Coaching Performance Records",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for coach...",
+    "dataSource": "coaches",
+    "columns": ["Coach", "Team", "Years", "W-L", "Win %", "Conf"]
+  },
+  "page10": {
+    "title": "Team Trends",
+    "heading": "Team Trends",
+    "description": "Performance trends and momentum analysis for teams.",
+    "sectionTitle": "Team Performance Trends",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "trends",
+    "columns": ["Team", "Momentum", "Last 10", "Trend", "Conf"]
+  },
+  "page11": {
+    "title": "About",
+    "heading": "About Basketball Statistics Warehouse",
+    "description": "Information about this basketball statistics platform and data sources.",
+    "sectionTitle": "About This Site",
+    "hasSearch": false,
+    "searchPlaceholder": "",
+    "dataSource": "about",
+    "columns": ["Feature", "Description", "Status"]
+  }
+}

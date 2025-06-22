@@ -1,0 +1,32 @@
+<section class="table-section">
+  <h2>{{SECTION_TITLE}}</h2>
+  
+  {{#HAS_SEARCH}}
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="{{SEARCH_PLACEHOLDER}}" class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  {{/HAS_SEARCH}}
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          {{#COLUMNS}}
+          <th>{{.}}</th>
+          {{/COLUMNS}}
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>

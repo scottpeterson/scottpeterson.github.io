@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Loading Test</title>
+</head>
+<body>
+    <h1>Data Loading Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testDataLoading() {
+            const results = document.getElementById('results');
+            
+            try {
+                results.innerHTML += '<p>Testing data loading...</p>';
+                
+                // Test config loading
+                const configResponse = await fetch('config/pages.json');
+                const config = await configResponse.json();
+                results.innerHTML += `<p>✅ Config loaded: ${Object.keys(config).length} pages</p>`;
+                
+                // Test teams data loading
+                const teamsResponse = await fetch('data/teams.json');
+                const teams = await teamsResponse.json();
+                results.innerHTML += `<p>✅ Teams data loaded: ${teams.length} teams</p>`;
+                results.innerHTML += `<pre>${JSON.stringify(teams[0], null, 2)}</pre>`;
+                
+                // Test page config
+                const indexConfig = config.index;
+                results.innerHTML += `<p>✅ Index page config: ${indexConfig.title}</p>`;
+                results.innerHTML += `<p>Data source: ${indexConfig.dataSource}</p>`;
+                results.innerHTML += `<p>Columns: ${indexConfig.columns.join(', ')}</p>`;
+                
+            } catch (error) {
+                results.innerHTML += `<p>❌ Error: ${error.message}</p>`;
+                console.error('Test error:', error);
+            }
+        }
+        
+        testDataLoading();
+    </script>
+</body>
+</html>

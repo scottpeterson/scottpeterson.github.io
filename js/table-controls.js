@@ -1,0 +1,332 @@
+// table-controls.js - Search, filter, and sorting functionality
+
+class TableController {
+  constructor() {
+    this.table = null;
+    this.searchInput = null;
+    this.conferenceFilter = null;
+    this.currentData = [];
+  }
+
+  // Initialize table controls
+  init() {
+    try {
+      // Get DOM elements
+      this.searchInput = document.getElementById('teamSearch');
+      this.conferenceFilter = document.getElementById('conferenceFilter');
+      this.table = document.getElementById('statsTable');
+      
+      // Exit if the current page doesn't have the table or filters
+      if (!this.searchInput || !this.conferenceFilter || !this.table) {
+        console.log("Search/filter elements not found on this page");
+        return false;
+      }
+      
+      // Add event listeners for search and filter
+      this.searchInput.addEventListener('input', () => this.filterTable());
+      this.conferenceFilter.addEventListener('change', () => this.filterTable());
+      
+      // Initialize table sorting
+      this.initTableSorting();
+      
+      return true;
+    } catch (error) {
+      console.error("Error in TableController.init:", error);
+      return false;
+    }
+  }
+
+  // Load and display data
+  async loadData(dataSource) {
+    try {
+      this.currentData = await window.dataLoader.loadData(dataSource);
+      
+      if (this.currentData && this.currentData.length > 0) {
+        this.populateTable(this.currentData);
+        this.populateConferenceFilter();
+      } else {
+        // Fallback: show a message if no data loaded
+        this.showDataLoadingError(dataSource);
+      }
+    } catch (error) {
+      console.error("Error loading table data:", error);
+      this.showDataLoadingError(dataSource);
+    }
+  }
+
+  // Show error message when data fails to load
+  showDataLoadingError(dataSource) {
+    const tbody = this.table.querySelector('tbody');
+    if (tbody) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="100%" style="text-align: center; padding: 20px; color: #666;">
+            Unable to load data for ${dataSource}. Please ensure you're viewing this page through a web server.
+            <br><small>Try running: <code>npm start</code> or <code>python -m http.server</code></small>
+          </td>
+        </tr>
+      `;
+    }
+  }
+
+  // Populate table with data
+  populateTable(data) {
+    const tbody = this.table.querySelector('tbody');
+    if (!tbody) {
+      console.error('No tbody found in table');
+      return;
+    }
+
+    tbody.innerHTML = '';
+    
+    // Get column names from table headers
+    const headers = Array.from(this.table.querySelectorAll('th'));
+    
+    data.forEach((row, index) => {
+      const tr = document.createElement('tr');
+      
+      headers.forEach((header, headerIndex) => {
+        const td = document.createElement('td');
+        const headerText = header.textContent.toLowerCase();
+        
+        // Map header text to data property
+        const value = this.getValueFromRow(row, headerText);
+        td.textContent = value || '';
+        tr.appendChild(td);
+      });
+      
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Map header text to data property
+  getValueFromRow(row, headerText) {
+    const normalizedHeader = headerText.toLowerCase().trim();
+    
+    // Direct property mapping
+    const directMapping = {
+      'team': row.team,
+      'conference': row.conference, 
+      'conf': row.conf,
+      'adjem': row.adjEm,
+      'rank': row.rank,
+      'teams': row.teams,
+      'avg rating': row.avgRating,
+      'top team': row.topTeam,
+      'win %': row.winPct,
+      'w-l': row.record,
+      'sos': row.sos,
+      'ppg': row.ppg,
+      'fg%': row.fgPct,
+      '3p%': row.threePct,
+      'ft%': row.ftPct,
+      'oppg': row.oppg,
+      'def fg%': row.defFgPct,
+      'steals': row.steals,
+      'blocks': row.blocks,
+      'rpg': row.rpg,
+      'apg': row.apg,
+      'player': row.player,
+      'conf w-l': row.confRecord,
+      'streak': row.streak,
+      '2023': row.year2023,
+      '2022': row.year2022,
+      '2021': row.year2021,
+      'trend': row.trend,
+      'seed': row.seed,
+      'result': row.result,
+      'coach': row.coach,
+      'years': row.years,
+      'momentum': row.momentum,
+      'last 10': row.last10,
+      'description': row.description,
+      'status': row.status,
+      'feature': row.feature
+    };
+
+    // Try direct mapping first
+    if (directMapping[normalizedHeader] !== undefined) {
+      return directMapping[normalizedHeader];
+    }
+
+    // Fallback: try to find property by fuzzy matching
+    const rowKeys = Object.keys(row);
+    for (const key of rowKeys) {
+      if (key.toLowerCase().includes(normalizedHeader) || normalizedHeader.includes(key.toLowerCase())) {
+        return row[key];
+      }
+    }
+
+    return '';
+  }
+
+  // Populate conference filter with unique values
+  populateConferenceFilter() {
+    try {
+      const conferences = new Set();
+      
+      this.currentData.forEach(row => {
+        const conf = row.conf || row.conference;
+        if (conf) conferences.add(conf);
+      });
+      
+      // Clear existing options except "All Conferences"
+      this.conferenceFilter.innerHTML = '<option value="">All Conferences</option>';
+      
+      // Add conference options
+      Array.from(conferences).sort().forEach(conf => {
+        const option = document.createElement('option');
+        option.value = conf;
+        option.textContent = conf;
+        this.conferenceFilter.appendChild(option);
+      });
+    } catch (error) {
+      console.error("Error populating conference filter:", error);
+    }
+  }
+
+  // Filter table based on search and conference filter
+  filterTable() {
+    try {
+      const searchTerm = this.searchInput.value.toLowerCase();
+      const conference = this.conferenceFilter.value;
+      
+      const tbody = this.table.querySelector('tbody');
+      if (!tbody) return;
+      
+      const rows = tbody.querySelectorAll('tr');
+      let visibleRows = 0;
+      
+      rows.forEach(row => {
+        if (!row.cells || row.cells.length === 0) return;
+        
+        // Get team name (usually first column)
+        const teamCell = row.cells[0];
+        const teamName = teamCell ? teamCell.textContent.toLowerCase() : '';
+        
+        // Find conference column
+        let rowConference = '';
+        Array.from(row.cells).forEach(cell => {
+          const cellText = cell.textContent.trim().toUpperCase();
+          if (cellText.length <= 10 && cellText.match(/^[A-Z]+$/)) {
+            rowConference = cellText;
+          }
+        });
+        
+        // Check matches
+        const matchesSearch = teamName.includes(searchTerm);
+        const matchesConference = conference === '' || rowConference === conference;
+        
+        if (matchesSearch && matchesConference) {
+          row.style.display = '';
+          visibleRows++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+      
+      this.showNoResults(visibleRows === 0);
+    } catch (error) {
+      console.error("Error in filterTable:", error);
+    }
+  }
+
+  // Show/hide "No results" message
+  showNoResults(show) {
+    try {
+      let noResultsMsg = document.querySelector('.no-results');
+      
+      if (noResultsMsg) {
+        noResultsMsg.remove();
+      }
+      
+      if (show && this.table) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.className = 'no-results';
+        noResultsMsg.textContent = 'No matching results found';
+        
+        if (this.table.parentNode) {
+          this.table.parentNode.insertBefore(noResultsMsg, this.table.nextSibling);
+        }
+      }
+    } catch (error) {
+      console.error("Error in showNoResults:", error);
+    }
+  }
+
+  // Initialize table sorting functionality
+  initTableSorting() {
+    try {
+      const headers = this.table.querySelectorAll('th');
+      headers.forEach((header, index) => {
+        header.style.cursor = 'pointer';
+        header.style.userSelect = 'none';
+        header.style.position = 'relative';
+        
+        // Add sorting indicator
+        const sortIndicator = document.createElement('span');
+        sortIndicator.className = 'sort-indicator';
+        sortIndicator.innerHTML = ' ↕';
+        header.appendChild(sortIndicator);
+        
+        header.addEventListener('click', () => this.sortTable(index, header));
+      });
+    } catch (error) {
+      console.error("Error in initTableSorting:", error);
+    }
+  }
+
+  // Sort table by column
+  sortTable(columnIndex, header) {
+    try {
+      const tbody = this.table.querySelector('tbody');
+      if (!tbody) return;
+      
+      const rows = Array.from(tbody.querySelectorAll('tr')).filter(row => row.style.display !== 'none');
+      const isAscending = header.getAttribute('data-sort') !== 'asc';
+      
+      // Clear all sort indicators
+      this.table.querySelectorAll('th .sort-indicator').forEach(indicator => {
+        indicator.innerHTML = ' ↕';
+        indicator.parentElement.removeAttribute('data-sort');
+      });
+      
+      // Set current sort indicator
+      const indicator = header.querySelector('.sort-indicator');
+      if (isAscending) {
+        indicator.innerHTML = ' ↑';
+        header.setAttribute('data-sort', 'asc');
+      } else {
+        indicator.innerHTML = ' ↓';
+        header.setAttribute('data-sort', 'desc');
+      }
+      
+      // Sort rows
+      rows.sort((a, b) => {
+        const aVal = a.cells[columnIndex].textContent.trim();
+        const bVal = b.cells[columnIndex].textContent.trim();
+        
+        // Try to parse as numbers
+        const aNum = parseFloat(aVal.replace(/[^\d.-]/g, ''));
+        const bNum = parseFloat(bVal.replace(/[^\d.-]/g, ''));
+        
+        let result;
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+          result = aNum - bNum;
+        } else {
+          result = aVal.localeCompare(bVal);
+        }
+        
+        return isAscending ? result : -result;
+      });
+      
+      // Reorder rows in DOM
+      rows.forEach(row => tbody.appendChild(row));
+    } catch (error) {
+      console.error("Error in sortTable:", error);
+    }
+  }
+}
+
+// Create global instance
+window.tableController = new TableController();

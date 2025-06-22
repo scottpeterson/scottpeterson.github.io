@@ -49,86 +49,38 @@
     </header>
 
     <section class="table-section">
-      <h2>Overview of Top Teams</h2>
-      
-      <!-- Search and Filter Controls -->
-      <div class="table-controls">
-        <div class="search-container">
-          <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
-        </div>
-        <div class="filter-container">
-          <select id="conferenceFilter" class="filter-select">
-            <option value="">All Conferences</option>
-            <option value="LAND">LAND</option>
-            <option value="MACC">MACC</option>
-            <option value="MACF">MACF</option>
-          </select>
-        </div>
-      </div>
-      
-      <div class="table-container">
-        <table class="stats-table" id="statsTable">
-          <thead>
-            <tr>
-              <th>TEAM</th>
-              <th>adjEm</th>
-              <th>Rank</th>
-              <th>Conf</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Scranton</td>
-              <td>54.2</td>
-              <td>2</td>
-              <td>LAND</td>
-            </tr>
-            <tr>
-              <td>Catholic</td>
-              <td>36.4</td>
-              <td>10</td>
-              <td>LAND</td>
-            </tr>
-            <tr>
-              <td>Messiah</td>
-              <td>32.8</td>
-              <td>13</td>
-              <td>MACC</td>
-            </tr>
-            <tr>
-              <td>Elizabethtown</td>
-              <td>30.0</td>
-              <td>19</td>
-              <td>LAND</td>
-            </tr>
-            <tr>
-              <td>Lebanon Val</td>
-              <td>20.3</td>
-              <td>67</td>
-              <td>MACF</td>
-            </tr>
-            <tr>
-              <td>York PA</td>
-              <td>12.8</td>
-              <td>118</td>
-              <td>MACC</td>
-            </tr>
-            <tr>
-              <td>Widener</td>
-              <td>11.4</td>
-              <td>127</td>
-              <td>MACC</td>
-            </tr>
-            <tr>
-              <td>Susquehanna</td>
-              <td>11.3</td>
-              <td>128</td>
-              <td>LAND</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <h2>Overview of Top Teams</h2>
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>TEAM</th>
+          <th>adjEm</th>
+          <th>Rank</th>
+          <th>Conf</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
   </main>
 
   <footer>
@@ -136,6 +88,9 @@
   </footer>
 
   <!-- JavaScript for search, filter and active page functionality -->
-  <script src="script.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/table-controls.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

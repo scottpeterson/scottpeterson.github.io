@@ -7,40 +7,40 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-          <div class="logo">Basketball Stats</div>
-          
-          <!-- Hamburger Menu Toggle (only appears on mobile) -->
-          <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          
-          <!-- Navigation Links -->
-          <ul class="nav-links" id="navMenu">
-            <!-- Close button placed separately at the top of the menu -->
-            <div class="menu-close" id="menuClose"></div>
-            
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page1.html">Conference Stats</a></li>
-            <li><a href="page2.html">Team Rankings</a></li>
-            <li><a href="page3.html">Offensive Stats</a></li>
-            <li><a href="page4.html">Defensive Stats</a></li>
-            <li><a href="page5.html">Player Stats</a></li>
-            <li><a href="page6.html">Season Records</a></li>
-            <li><a href="page7.html">Historical Data</a></li>
-            <li><a href="page8.html">Tournament Results</a></li>
-            <li><a href="page9.html">Coach Records</a></li>
-            <li><a href="page10.html">Team Trends</a></li>
-            <li><a href="page11.html">About</a></li>
-          </ul>
-        </div>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">Basketball Stats</div>
+      
+      <!-- Hamburger Menu Toggle (only appears on mobile) -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navMenu">
+        <!-- Close button placed separately at the top of the menu -->
+        <div class="menu-close" id="menuClose"></div>
         
-        <!-- Overlay for mobile -->
-        <div class="nav-overlay" id="navOverlay"></div>
-      </nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page1.html">Conference Stats</a></li>
+        <li><a href="page2.html">Team Rankings</a></li>
+        <li><a href="page3.html">Offensive Stats</a></li>
+        <li><a href="page4.html">Defensive Stats</a></li>
+        <li><a href="page5.html">Player Stats</a></li>
+        <li><a href="page6.html">Season Records</a></li>
+        <li><a href="page7.html">Historical Data</a></li>
+        <li><a href="page8.html">Tournament Results</a></li>
+        <li><a href="page9.html">Coach Records</a></li>
+        <li><a href="page10.html">Team Trends</a></li>
+        <li><a href="page11.html">About</a></li>
+      </ul>
+    </div>
+    
+    <!-- Overlay for mobile -->
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
 
   <main>
     <header>
@@ -49,97 +49,49 @@
     </header>
 
     <section class="table-section">
-      <h2>Conference Performance Metrics</h2>
-      
-      <!-- Search and Filter Controls -->
-      <div class="table-controls">
-        <div class="search-container">
-          <input type="text" id="teamSearch" placeholder="Search for conference..." class="search-input">
-        </div>
-        <div class="filter-container">
-          <select id="conferenceFilter" class="filter-select">
-            <option value="">All Conferences</option>
-          </select>
-        </div>
-      </div>
-      
-      <div class="table-container">
-        <table class="stats-table" id="statsTable">
-          <thead>
-            <tr>
-              <th>Conference</th>
-              <th>Teams</th>
-              <th>Avg Rating</th>
-              <th>Top Team</th>
-              <th>Win %</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>LAND</td>
-              <td>8</td>
-              <td>14.2</td>
-              <td>Scranton</td>
-              <td>68.5%</td>
-            </tr>
-            <tr>
-              <td>MACC</td>
-              <td>7</td>
-              <td>10.8</td>
-              <td>Messiah</td>
-              <td>62.3%</td>
-            </tr>
-            <tr>
-              <td>MACF</td>
-              <td>7</td>
-              <td>3.9</td>
-              <td>Lebanon Val</td>
-              <td>54.8%</td>
-            </tr>
-            <tr>
-              <td>ATLANTIC</td>
-              <td>10</td>
-              <td>18.7</td>
-              <td>Rowan</td>
-              <td>71.2%</td>
-            </tr>
-            <tr>
-              <td>MIDWEST</td>
-              <td>12</td>
-              <td>16.3</td>
-              <td>Augustana</td>
-              <td>69.7%</td>
-            </tr>
-            <tr>
-              <td>SOUTHERN</td>
-              <td>9</td>
-              <td>12.5</td>
-              <td>Christopher Newport</td>
-              <td>65.1%</td>
-            </tr>
-            <tr>
-              <td>WESTERN</td>
-              <td>11</td>
-              <td>8.4</td>
-              <td>Occidental</td>
-              <td>58.9%</td>
-            </tr>
-            <tr>
-              <td>NORTHEAST</td>
-              <td>9</td>
-              <td>7.2</td>
-              <td>Amherst</td>
-              <td>57.3%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <h2>Conference Performance Metrics</h2>
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for conference..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Conference</th>
+          <th>Teams</th>
+          <th>Avg Rating</th>
+          <th>Top Team</th>
+          <th>Win %</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
   </main>
 
   <footer>
     <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- JavaScript for search, filter and active page functionality -->
+  <script src="js/navigation.js"></script>
+  <script src="js/table-controls.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "name": "basketball-stats-warehouse",
+  "version": "1.0.0",
+  "description": "D3 Women's Basketball Statistics Warehouse",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js build",
+    "dev": "node build.js dev",
+    "clean": "node build.js clean",
+    "serve": "npx serve -p 8000",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": ["basketball", "statistics", "d3", "sports"],
+  "author": "Basketball Stats Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

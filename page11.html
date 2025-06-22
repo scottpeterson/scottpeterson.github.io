@@ -7,94 +7,77 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-          <div class="logo">Basketball Stats</div>
-          
-          <!-- Hamburger Menu Toggle (only appears on mobile) -->
-          <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          
-          <!-- Navigation Links -->
-          <ul class="nav-links" id="navMenu">
-            <!-- Close button placed separately at the top of the menu -->
-            <div class="menu-close" id="menuClose"></div>
-            
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page1.html">Conference Stats</a></li>
-            <li><a href="page2.html">Team Rankings</a></li>
-            <li><a href="page3.html">Offensive Stats</a></li>
-            <li><a href="page4.html">Defensive Stats</a></li>
-            <li><a href="page5.html">Player Stats</a></li>
-            <li><a href="page6.html">Season Records</a></li>
-            <li><a href="page7.html">Historical Data</a></li>
-            <li><a href="page8.html">Tournament Results</a></li>
-            <li><a href="page9.html">Coach Records</a></li>
-            <li><a href="page10.html">Team Trends</a></li>
-            <li><a href="page11.html">About</a></li>
-          </ul>
-        </div>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">Basketball Stats</div>
+      
+      <!-- Hamburger Menu Toggle (only appears on mobile) -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navMenu">
+        <!-- Close button placed separately at the top of the menu -->
+        <div class="menu-close" id="menuClose"></div>
         
-        <!-- Overlay for mobile -->
-        <div class="nav-overlay" id="navOverlay"></div>
-      </nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page1.html">Conference Stats</a></li>
+        <li><a href="page2.html">Team Rankings</a></li>
+        <li><a href="page3.html">Offensive Stats</a></li>
+        <li><a href="page4.html">Defensive Stats</a></li>
+        <li><a href="page5.html">Player Stats</a></li>
+        <li><a href="page6.html">Season Records</a></li>
+        <li><a href="page7.html">Historical Data</a></li>
+        <li><a href="page8.html">Tournament Results</a></li>
+        <li><a href="page9.html">Coach Records</a></li>
+        <li><a href="page10.html">Team Trends</a></li>
+        <li><a href="page11.html">About</a></li>
+      </ul>
+    </div>
+    
+    <!-- Overlay for mobile -->
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
 
   <main>
     <header>
-      <h1>About</h1>
-      <p>Information about this basketball statistics warehouse and data sources.</p>
+      <h1>About Basketball Statistics Warehouse</h1>
+      <p>Information about this basketball statistics platform and data sources.</p>
     </header>
 
     <section class="table-section">
-      <h2>About This Site</h2>
-      <div class="table-container">
-        <p>Welcome to the D3 Women's Basketball Statistics Warehouse. This comprehensive database provides detailed statistics, rankings, and analysis for Division III women's basketball teams.</p>
-        
-        <h3>Features</h3>
-        <ul>
-          <li>Team rankings and performance metrics</li>
-          <li>Offensive and defensive statistics</li>
-          <li>Player statistics and records</li>
-          <li>Historical data and trends</li>
-          <li>Tournament results and brackets</li>
-          <li>Coach records and achievements</li>
-        </ul>
-        
-        <h3>Data Sources</h3>
-        <p>Our statistics are compiled from official game reports, conference data, and verified sources to ensure accuracy and completeness.</p>
-        
-        <table class="stats-table" id="statsTable"
-          <thead>
-            <tr>
-              <th>Contact</th>
-              <th>Information</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Website</td>
-              <td>Basketball Statistics Warehouse</td>
-            </tr>
-            <tr>
-              <td>Data Updates</td>
-              <td>Updated regularly during basketball season</td>
-            </tr>
-            <tr>
-              <td>Coverage</td>
-              <td>Division III Women's Basketball</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <h2>About This Site</h2>
+  
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
   </main>
 
   <footer>
     <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- JavaScript for search, filter and active page functionality -->
+  <script src="js/navigation.js"></script>
+  <script src="js/table-controls.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
