@@ -142,6 +142,9 @@
     margin-top: 15px;
     /* Ensure sticky positioning works in all contexts */
     position: relative;
+    /* Fix for sticky headers in scrollable containers */
+    max-height: 70vh;
+    overflow-y: auto;
   }
   
   .stats-table {
@@ -154,14 +157,14 @@
   /* Header Row */
   .stats-table thead th {
     position: sticky;
-    top: 70px; /* Account for navigation bar height */
+    top: 0; /* Stick to top of scrollable container */
     background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: #ffffff;
     font-weight: 600;
     text-align: center; /* Center all header text */
     padding: 12px 15px;
     border-bottom: 3px solid #2980b9;
-    z-index: 2;
+    z-index: 10;
     box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
     transition: all 0.3s ease;
   }
@@ -200,7 +203,7 @@
   .stats-table thead th:first-child {
     background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: #ffffff;
-    z-index: 3;
+    z-index: 15;
   }
   
   /* Table Body */
@@ -290,7 +293,7 @@
     
     /* Adjust sticky header position for mobile navigation */
     .stats-table thead th {
-      top: 55px; /* Smaller navigation height on mobile */
+      top: 0; /* Stick to top of scrollable container on mobile too */
     }
   }
 
