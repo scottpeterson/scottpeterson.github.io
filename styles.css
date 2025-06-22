@@ -144,9 +144,18 @@
   .stats-table th:first-child {
     position: sticky;
     left: 0;
-    background-color: #f8f9fa;
     font-weight: 500;
     z-index: 1;
+  }
+  
+  /* First column background for odd rows (default white) */
+  .stats-table tbody tr:nth-child(odd) td:first-child {
+    background-color: #ffffff;
+  }
+  
+  /* First column background for even rows (matches row stripe) */
+  .stats-table tbody tr:nth-child(even) td:first-child {
+    background-color: #f8f9fa;
   }
   
   /* Header cell that is both sticky header AND first column */
