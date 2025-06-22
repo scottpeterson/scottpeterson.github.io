@@ -110,6 +110,8 @@
     width: 100%;
     overflow-x: auto;
     margin-top: 15px;
+    /* Ensure sticky positioning works in all contexts */
+    position: relative;
   }
   
   .stats-table {
@@ -122,7 +124,7 @@
   /* Header Row */
   .stats-table thead th {
     position: sticky;
-    top: 0;
+    top: 70px; /* Account for navigation bar height */
     background-color: #3498db;
     color: #ffffff;
     font-weight: 600;
@@ -230,6 +232,11 @@
     .stats-table th,
     .stats-table td {
       padding: 8px 10px;
+    }
+    
+    /* Adjust sticky header position for mobile navigation */
+    .stats-table thead th {
+      top: 55px; /* Smaller navigation height on mobile */
     }
   }
 
