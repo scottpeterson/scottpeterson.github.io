@@ -36,16 +36,8 @@
     "lint-staged": "^15.2.2"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix --ignore-path .gitignore",
-      "prettier --write"
-    ],
-    "*.css": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{html,json,md}": [
-      "prettier --write"
-    ]
+    "*.{js,css,html,json,md}": "prettier --write",
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix"
   }
 }
