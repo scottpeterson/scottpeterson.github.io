@@ -319,7 +319,7 @@ class TableController {
         // Add sorting indicator
         const sortIndicator = document.createElement('span');
         sortIndicator.className = 'sort-indicator';
-        sortIndicator.innerHTML = ' ↕';
+        sortIndicator.innerHTML = ' &#8597;'; // HTML entity for up-down arrow
         header.appendChild(sortIndicator);
         
         header.addEventListener('click', () => this.sortTable(index, header));
@@ -340,17 +340,17 @@ class TableController {
       
       // Clear all sort indicators
       this.table.querySelectorAll('th .sort-indicator').forEach(indicator => {
-        indicator.innerHTML = ' ↕';
+        indicator.innerHTML = ' &#8597;'; // HTML entity for up-down arrow
         indicator.parentElement.removeAttribute('data-sort');
       });
       
       // Set current sort indicator
       const indicator = header.querySelector('.sort-indicator');
       if (isAscending) {
-        indicator.innerHTML = ' ↑';
+        indicator.innerHTML = ' &#8593;'; // HTML entity for up arrow
         header.setAttribute('data-sort', 'asc');
       } else {
-        indicator.innerHTML = ' ↓';
+        indicator.innerHTML = ' &#8595;'; // HTML entity for down arrow
         header.setAttribute('data-sort', 'desc');
       }
       
