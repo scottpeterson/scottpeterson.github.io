@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page1 Debug</title>
+    <style>
+        .debug { background: #f0f0f0; padding: 10px; margin: 10px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Page1 Debug Tool</h1>
+    
+    <div class="debug">
+        <h3>1. Config Check</h3>
+        <div id="configResult"></div>
+    </div>
+    
+    <div class="debug">
+        <h3>2. Data Loading Check</h3>
+        <div id="dataResult"></div>
+    </div>
+    
+    <div class="debug">
+        <h3>3. Mapping Test</h3>
+        <div id="mappingResult"></div>
+    </div>
+    
+    <script>
+        async function debugPage1() {
+            try {
+                // 1. Check config
+                const configDiv = document.getElementById('configResult');
+                const configResponse = await fetch('config/pages.json');
+                const config = await configResponse.json();
+                const page1Config = config.page1;
+                
+                configDiv.innerHTML = `
+                    <p><strong>Columns:</strong> ${JSON.stringify(page1Config.columns)}</p>
+                    <p><strong>Mappings:</strong> ${JSON.stringify(page1Config.columnMappings, null, 2)}</p>
+                    <p><strong>Data Source:</strong> ${page1Config.dataSource}</p>
+                `;
+                
+                // 2. Check data loading
+                const dataDiv = document.getElementById('dataResult');
+                const dataResponse = await fetch('data/conferences.json');
+                const conferences = await dataResponse.json();
+                
+                dataDiv.innerHTML = `
+                    <p><strong>Records loaded:</strong> ${conferences.length}</p>
+                    <p><strong>Sample record:</strong></p>
+                    <pre>${JSON.stringify(conferences[0], null, 2)}</pre>
+                `;
+                
+                // 3. Test mapping
+                const mappingDiv = document.getElementById('mappingResult');
+                const sampleConf = conferences[0];
+                const mappings = page1Config.columnMappings;
+                
+                let mappingResults = '<table border="1"><tr><th>Header</th><th>JSON Key</th><th>Value</th><th>Status</th></tr>';
+                
+                for (const [header, jsonKey] of Object.entries(mappings)) {
+                    const value = sampleConf[jsonKey];
+                    const status = value !== undefined ? 
+                        '<span class="success">✓ FOUND</span>' : 
+                        '<span class="error">✗ MISSING</span>';
+                    
+                    mappingResults += `<tr>
+                        <td>${header}</td>
+                        <td>${jsonKey}</td>
+                        <td>${value}</td>
+                        <td>${status}</td>
+                    </tr>`;
+                }
+                mappingResults += '</table>';
+                
+                mappingDiv.innerHTML = mappingResults;
+                
+            } catch (error) {
+                document.body.innerHTML += `<div class="debug error">ERROR: ${error.message}</div>`;
+            }
+        }
+        
+        debugPage1();
+    </script>
+</body>
+</html>

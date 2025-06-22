@@ -108,7 +108,8 @@ class TableController {
     // Priority 1: Use explicit column mapping if defined
     if (this.columnMappings && this.columnMappings[headerText]) {
       const mappedKey = this.columnMappings[headerText];
-      return row[mappedKey] !== undefined ? row[mappedKey] : '';
+      const value = row[mappedKey];
+      return value !== undefined ? value : '';
     }
     
     const normalizedHeader = headerText.toLowerCase().trim();
