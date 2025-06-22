@@ -19,6 +19,10 @@ class TemplateEngine {
         'templates/table-page.html',
         'utf8'
       );
+      this.templates.homeContent = await fs.readFile(
+        'templates/home-content.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -149,9 +153,13 @@ class TemplateEngine {
   // Generate a single page
   async generatePage(pageKey, pageConfig) {
     try {
-      // Render table page content only if dataSource exists
+      // Handle special home page content
       let tableContent = '';
-      if (pageConfig.dataSource) {
+      if (pageKey === 'index') {
+        // Use home content template for index page
+        tableContent = this.templates.homeContent;
+      } else if (pageConfig.dataSource) {
+        // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {
           sectionTitle: pageConfig.sectionTitle,
           hasSearch: pageConfig.hasSearch,

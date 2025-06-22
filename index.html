@@ -1,65 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basketball Statistics - Home</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="logo">Basketball Stats</div>
-      
-      <!-- Hamburger Menu Toggle (only appears on mobile) -->
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Statistics - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo">Basketball Stats</div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="page1.html">Publishing Tracker</a></li>
+          <li><a href="page2.html">25-26 Preseason Rankings</a></li>
+          <li><a href="page3.html">Offensive Stats</a></li>
+          <li><a href="page4.html">Defensive Stats</a></li>
+          <li><a href="page5.html">Player Stats</a></li>
+          <li><a href="page6.html">Season Records</a></li>
+          <li><a href="page7.html">Historical Data</a></li>
+          <li><a href="page8.html">Tournament Results</a></li>
+          <li><a href="page9.html">Coach Records</a></li>
+          <li><a href="page10.html">Team Trends</a></li>
+          <li><a href="page11.html">About</a></li>
+        </ul>
       </div>
-      
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="navMenu">
-        <!-- Close button placed separately at the top of the menu -->
-        <div class="menu-close" id="menuClose"></div>
-        
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page1.html">Publishing Tracker</a></li>
-        <li><a href="page2.html">25-26 Preseason Rankings</a></li>
-        <li><a href="page3.html">Offensive Stats</a></li>
-        <li><a href="page4.html">Defensive Stats</a></li>
-        <li><a href="page5.html">Player Stats</a></li>
-        <li><a href="page6.html">Season Records</a></li>
-        <li><a href="page7.html">Historical Data</a></li>
-        <li><a href="page8.html">Tournament Results</a></li>
-        <li><a href="page9.html">Coach Records</a></li>
-        <li><a href="page10.html">Team Trends</a></li>
-        <li><a href="page11.html">About</a></li>
-      </ul>
-    </div>
-    
-    <!-- Overlay for mobile -->
-    <div class="nav-overlay" id="navOverlay"></div>
-  </nav>
 
-  <main>
-    <header>
-      <h1>D3 Women's Basketball Statistics Warehouse</h1>
-      <p>I love crunching data of all kind. This site primarily houses Division III Women's Basketball data (like NPI!) but also data from MLB, PGA Tour, NFL, and more!</p>
-      
-    </header>
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
 
-    
-  </main>
+    <main>
+      <header>
+        <h1>D3 Women's Basketball Statistics Warehouse</h1>
+        <p>
+          I love crunching data of all kind. This site primarily houses Division
+          III Women's Basketball data (like NPI!) but also data from MLB, PGA
+          Tour, NFL, and more!
+        </p>
+      </header>
 
-  <footer>
-    <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
-  </footer>
+      <section class="home-content">
+        <div class="intro-section">
+          <p
+            style="
+              color: #d5d5d5;
+              font-size: 1.25rem;
+              line-height: 1.6;
+              margin-bottom: 20px;
+            "
+          >
+            I love crunching data and D3 basketball is one of my current
+            interests.
+          </p>
 
-  <!-- JavaScript for search, filter and active page functionality -->
-  <script src="js/navigation.js"></script>
-  <script src="js/table-controls.js"></script>
-  <script src="js/data-loader.js"></script>
-  <script src="js/main.js"></script>
-</body>
+          <p
+            style="
+              color: #d5d5d5;
+              font-size: 1.25rem;
+              line-height: 1.6;
+              margin-bottom: 30px;
+            "
+          >
+            If you appreciate and enjoy my work and want to send some thanks,
+            <a
+              href="/get-in-touch.html"
+              style="color: #3498db; text-decoration: none; font-weight: 600"
+              >buy me a coffee/beer</a
+            >!
+          </p>
+        </div>
+
+        <div class="data-sources-section">
+          <h3
+            style="
+              color: #2c3e50;
+              font-size: 1.4rem;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Data comes from:
+          </h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px">
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://www.d3hoops.com/landing/index"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >D3Hoops</a
+              >
+            </li>
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://masseyratings.com/cbw2025/ncaa-d3/ratings"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >Massey Ratings</a
+              >
+            </li>
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://d3datacast.com/"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >D3Datacast</a
+              >
+            </li>
+            <li style="margin-bottom: 8px">
+              <span style="color: #666; font-weight: 500; font-size: 1.1rem"
+                >Official School Athletics Team Sites (for Pt Diff, Reb Diff, TO
+                Diff data)</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="inspiration-section">
+          <h3
+            style="
+              color: #2c3e50;
+              font-size: 1.4rem;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Additionally inspiration comes from:
+          </h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px">
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://www.fantastic50.net/"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >Drew Pasteur's work/blog</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="media-section">
+          <h3
+            style="
+              color: #2c3e50;
+              font-size: 1.4rem;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Catch me periodically on:
+          </h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px">
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://www.youtube.com/@dishingonD3BBALL"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >Dishing on D3 WBB</a
+              >
+              <span style="color: #666">(YouTube)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="github-section">
+          <h3
+            style="
+              color: #2c3e50;
+              font-size: 1.4rem;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Software Programming work found here:
+          </h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px">
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://github.com/scottpeterson/d3-bball-npi"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >D3 WBB NPI Github Repository</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="links-section">
+          <h3
+            style="
+              color: #2c3e50;
+              font-size: 1.4rem;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Division III Basketball Links of Interest:
+          </h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 30px">
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://www.youtube.com/@d3datacast"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >D3 Datacast</a
+              >
+            </li>
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://www.youtube.com/@bobquill"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >The Q-Cast</a
+              >
+            </li>
+            <li style="margin-bottom: 8px">
+              <a
+                href="https://d3wbbscoop.substack.com/"
+                target="_blank"
+                style="
+                  color: #3498db;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 1.1rem;
+                "
+                >The Scoop on D3 Newsletter by Riley Zayas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Basketball Statistics. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for search, filter and active page functionality -->
+    <script src="js/navigation.js"></script>
+    <script src="js/table-controls.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
