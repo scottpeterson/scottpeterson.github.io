@@ -216,6 +216,9 @@ h2 {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: #fff;
   z-index: 150;
+  position: sticky;
+  left: 0;
+  top: 0;
 }
 
 /* Table Body */
