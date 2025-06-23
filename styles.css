@@ -39,6 +39,16 @@ body {
   padding: 15px 0;
 }
 
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: #3498db;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -875,5 +885,97 @@ footer {
 
   .nav-overlay.active {
     display: block;
+  }
+}
+
+/* Legend Section */
+.legend-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  border: 1px solid #e9ecef;
+}
+
+.legend-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  border-color: #3498db;
+}
+
+.legend-column {
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.legend-description {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Mobile responsive adjustments for legend */
+@media (max-width: 768px) {
+  .legend-section {
+    margin-top: 30px;
+    padding: 15px;
+  }
+  
+  .legend-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .legend-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .legend-item {
+    padding: 10px;
+  }
+  
+  .legend-column {
+    font-size: 0.85rem;
+  }
+  
+  .legend-description {
+    font-size: 0.8rem;
   }
 }

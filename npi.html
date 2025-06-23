@@ -16,7 +16,7 @@
   <body>
     <nav class="main-nav">
       <div class="nav-container">
-        <div class="logo">D3 Stat Lab</div>
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
 
         <!-- Hamburger Menu Toggle (only appears on mobile) -->
         <div class="menu-toggle" id="menuToggle">
@@ -111,6 +111,102 @@
               <!-- Data will be loaded dynamically -->
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section class="legend-section">
+        <h2>Column Legend</h2>
+        <div class="legend-grid">
+          <div class="legend-item">
+            <span class="legend-column">Team</span>
+            <span class="legend-description"
+              >Name of the college or university basketball team</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Conf</span>
+            <span class="legend-description"
+              >Conference affiliation of the team</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">NPI Value</span>
+            <span class="legend-description"
+              >Current NCAA Power Index numerical value</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Value Old</span>
+            <span class="legend-description"
+              >Previous NPI value for comparison</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Value Diff</span>
+            <span class="legend-description"
+              >Change in NPI value from previous calculation</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">NPI Rank</span>
+            <span class="legend-description"
+              >Current national ranking based on NPI value</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Rank Old</span>
+            <span class="legend-description"
+              >Previous national ranking for comparison</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Rank Diff</span>
+            <span class="legend-description"
+              >Change in ranking position from previous update</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Qual Games</span>
+            <span class="legend-description"
+              >Number of qualifying games played for NPI calculation</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Qual Wins</span>
+            <span class="legend-description"
+              >Number of qualifying wins counted in NPI</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Lowest Counting Win</span>
+            <span class="legend-description"
+              >NPI value of the weakest win that still counts</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Next Game Win NPI</span>
+            <span class="legend-description"
+              >Potential NPI gain if next game is won</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Potential Increase</span>
+            <span class="legend-description"
+              >Maximum possible NPI increase from next win</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Next Game Loss NPI</span>
+            <span class="legend-description"
+              >Potential NPI impact if next game is lost</span
+            >
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Rem Games < 50.00 NPI</span>
+            <span class="legend-description"
+              >Remaining games against teams with NPI below 50</span
+            >
+          </div>
         </div>
       </section>
     </main>

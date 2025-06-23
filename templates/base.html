@@ -16,7 +16,7 @@
   <body>
     <nav class="main-nav">
       <div class="nav-container">
-        <div class="logo">D3 Stat Lab</div>
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
 
         <!-- Hamburger Menu Toggle (only appears on mobile) -->
         <div class="menu-toggle" id="menuToggle">
@@ -60,7 +60,19 @@
         {{/LAST_UPDATED}}
       </header>
 
-      {{CONTENT}}
+      {{CONTENT}} {{#LEGEND}}
+      <section class="legend-section">
+        <h2>Column Legend</h2>
+        <div class="legend-grid">
+          {{#LEGEND_ITEMS}}
+          <div class="legend-item">
+            <span class="legend-column">{{COLUMN}}</span>
+            <span class="legend-description">{{DESCRIPTION}}</span>
+          </div>
+          {{/LEGEND_ITEMS}}
+        </div>
+      </section>
+      {{/LEGEND}}
     </main>
 
     <footer>

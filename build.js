@@ -115,6 +115,13 @@ class TemplateEngine {
       );
     }
 
+    // Handle LEGEND conditional
+    if (data.legend) {
+      result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '$1');
+    } else {
+      result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '');
+    }
+
     return result;
   }
 
@@ -128,6 +135,23 @@ class TemplateEngine {
         .map(col => `<th>${col}</th>`)
         .join('\n          ');
       result = result.replace(/{{#COLUMNS}}[\s\S]*?{{\/COLUMNS}}/g, columnHtml);
+    }
+
+    // Handle LEGEND_ITEMS array
+    if (data.legend && typeof data.legend === 'object') {
+      const legendItems = Object.entries(data.legend)
+        .map(
+          ([column, description]) =>
+            `          <div class="legend-item">
+            <span class="legend-column">${column}</span>
+            <span class="legend-description">${description}</span>
+          </div>`
+        )
+        .join('\n');
+      result = result.replace(
+        /{{#LEGEND_ITEMS}}[\s\S]*?{{\/LEGEND_ITEMS}}/g,
+        legendItems
+      );
     }
 
     return result;
@@ -192,6 +216,7 @@ class TemplateEngine {
         description: pageConfig.description,
         lastUpdated: lastUpdated,
         content: tableContent,
+        legend: pageConfig.legend,
       });
 
       // Determine output filename
