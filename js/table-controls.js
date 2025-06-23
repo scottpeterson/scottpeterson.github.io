@@ -102,6 +102,14 @@ class TableController {
         // Apply number formatting for specific columns
         value = this.formatValue(value, headerText);
 
+        // Debug logging for preseason rankings page
+        if (window.location.pathname.includes('preseason_rankings')) {
+          const originalValue = this.getValueFromRow(row, headerText);
+          console.log(
+            `Header: "${headerText}", Original value: "${originalValue}", Formatted value: "${value}"`
+          );
+        }
+
         td.textContent = value || '';
         tr.appendChild(td);
       });
@@ -230,6 +238,8 @@ class TableController {
 
   // Format values based on column type
   formatValue(value, headerText) {
+    const originalValue = value;
+
     if (value === null || value === undefined) {
       value = 0; // Convert null/undefined to 0 for numeric columns
     }
@@ -240,6 +250,13 @@ class TableController {
     }
 
     const normalizedHeader = headerText.toLowerCase().trim();
+
+    // Debug logging
+    if (window.location.pathname.includes('preseason_rankings')) {
+      console.log(
+        `formatValue called: header="${headerText}", normalizedHeader="${normalizedHeader}", originalValue="${originalValue}", processedValue="${value}"`
+      );
+    }
 
     // Handle percentage values (Returning column)
     if (normalizedHeader === 'returning') {
