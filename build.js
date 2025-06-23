@@ -198,9 +198,9 @@ class TemplateEngine {
       let filename;
       if (pageKey === 'index') {
         filename = 'index.html';
-      } else if (pageKey === 'page1') {
+      } else if (pageKey === 'publishing_tracker') {
         filename = 'publishing_tracker.html';
-      } else if (pageKey === 'page2') {
+      } else if (pageKey === 'preseason_rankings') {
         filename = 'preseason_rankings.html';
       } else {
         filename = `${pageKey}.html`;
