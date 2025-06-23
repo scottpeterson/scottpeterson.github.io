@@ -175,6 +175,7 @@ h2 {
   text-align: left;
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: #fff;
+  font-weight: 600;
   z-index: 150;
   position: sticky;
   left: 0;
