@@ -131,10 +131,6 @@ h2 {
   overflow: visible;
 }
 
-.table-section:hover {
-  box-shadow: 0 16px 48px rgb(0 0 0 / 20%);
-}
-
 .table-container {
   width: 100%;
   overflow-x: auto;
@@ -176,11 +172,6 @@ h2 {
 
   /* Critical for sticky to work */
   background-clip: padding-box;
-}
-
-.stats-table thead th:hover {
-  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-  box-shadow: 0 4px 12px rgb(52 152 219 / 40%);
 }
 
 /* First Column Header - Keep left-aligned to match first column data */
@@ -237,17 +228,6 @@ h2 {
   background-color: #e9ecef;
 }
 
-.stats-table tbody tr:hover {
-  background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-  transition: all 0.3s ease;
-}
-
-/* Ensure first column background remains consistent on hover */
-.stats-table tbody tr:hover td:first-child {
-  background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
-}
-
 /* Table cells already defined above */
 
 /* First Column (Team names or categories) - Keep these left-aligned */
@@ -267,10 +247,6 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.home-content:hover {
-  box-shadow: 0 16px 48px rgb(0 0 0 / 20%);
-}
-
 .home-content h3 {
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
   -webkit-text-fill-color: transparent;
@@ -284,11 +260,6 @@ h2 {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-}
-
-.home-content a:hover {
-  color: #2980b9;
-  text-decoration: underline;
 }
 
 .home-content ul {
@@ -328,15 +299,6 @@ h2 {
   border: 1px solid rgb(255 255 255 / 20%);
   box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
   transition: all 0.3s ease;
-}
-
-.home-content .data-sources-section:hover,
-.home-content .inspiration-section:hover,
-.home-content .media-section:hover,
-.home-content .github-section:hover,
-.home-content .links-section:hover,
-.home-content .intro-section:hover {
-  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
 }
 
 /* Footer */
