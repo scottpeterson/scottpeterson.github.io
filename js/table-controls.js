@@ -113,9 +113,12 @@ class TableController {
 
   // Map header text to data property
   getValueFromRow(row, headerText) {
-    // Priority 1: Use explicit column mapping if defined
-    if (this.columnMappings && this.columnMappings[headerText]) {
-      const mappedKey = this.columnMappings[headerText];
+    // Clean header text by removing sorting arrows and extra spaces
+    const cleanHeaderText = headerText.replace(/[↕↑↓]/g, '').trim();
+
+    // Priority 1: Use explicit column mapping if defined (use clean header text)
+    if (this.columnMappings && this.columnMappings[cleanHeaderText]) {
+      const mappedKey = this.columnMappings[cleanHeaderText];
       const value = row[mappedKey];
       return value !== undefined ? value : '';
     }
@@ -125,14 +128,14 @@ class TableController {
       for (const [configHeader, jsonKey] of Object.entries(
         this.columnMappings
       )) {
-        if (configHeader === headerText) {
+        if (configHeader === cleanHeaderText) {
           const value = row[jsonKey];
           return value !== undefined ? value : '';
         }
       }
     }
 
-    const normalizedHeader = headerText.toLowerCase().trim();
+    const normalizedHeader = cleanHeaderText.toLowerCase().trim();
 
     // Priority 2: Direct property mapping for common cases
     const directMapping = {
