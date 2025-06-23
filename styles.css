@@ -127,6 +127,11 @@ h2 {
   margin-bottom: 30px;
   border: 1px solid rgb(255 255 255 / 20%);
   transition: all 0.3s ease;
+
+  /* Ensure no height constraints */
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .table-section:hover {
@@ -424,7 +429,8 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 6px 16px rgb(0 0 0 / 15%);
   transform: translateY(-2px);
   background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
@@ -569,7 +575,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -633,7 +640,8 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 6px 16px rgb(0 0 0 / 15%);
   transform: translateY(-2px);
   background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
