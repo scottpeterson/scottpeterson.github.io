@@ -42,11 +42,11 @@ body {
 .logo a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: none;
 }
 
 .logo a:hover {
-  color: #3498db;
+  color: #fff;
 }
 
 .nav-links {
@@ -956,25 +956,25 @@ footer {
     margin-top: 30px;
     padding: 15px;
   }
-  
+
   .legend-section h2 {
     font-size: 1.2rem;
     margin-bottom: 15px;
   }
-  
+
   .legend-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .legend-item {
     padding: 10px;
   }
-  
+
   .legend-column {
     font-size: 0.85rem;
   }
-  
+
   .legend-description {
     font-size: 0.8rem;
   }
