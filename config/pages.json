@@ -210,22 +210,39 @@
       "STDEV": "STDEV"
     }
   },
-  "page7": {
-    "title": "Team Rankings",
-    "heading": "Team Rankings",
+  "composite_rankings": {
+    "title": "Composite Rankings",
+    "heading": "Composite Rankings",
     "description": "Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results.",
-    "sectionTitle": "Team Rankings",
+    "sectionTitle": "Composite Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
-    "dataSource": "historical",
-    "columns": ["Team", "2023", "2022", "2021", "Trend", "Conf"],
+    "dataSource": "compositeRankings",
+    "columns": [
+      "Team",
+      "Conf",
+      "Region",
+      "Massey Rank",
+      "Eff Rank",
+      "NPI Rank",
+      "Curr Season Results Rank",
+      "Preseason Rank",
+      "MEDIAN",
+      "OVR_RANK",
+      "Stdev"
+    ],
     "columnMappings": {
-      "Team": "team",
-      "2023": "year2023",
-      "2022": "year2022",
-      "2021": "year2021",
-      "Trend": "trend",
-      "Conf": "conf"
+      "Team": "Team",
+      "Conf": "Conf",
+      "Region": "Region",
+      "Massey Rank": "Massey Rank",
+      "Eff Rank": "Eff Rank",
+      "NPI Rank": "NPI Rank",
+      "Curr Season Results Rank": "Curr Season Results Rank",
+      "Preseason Rank": "Preseason Rank",
+      "MEDIAN": "MEDIAN",
+      "OVR_RANK": "OVR_RANK",
+      "Stdev": "Stdev"
     }
   },
   "page8": {

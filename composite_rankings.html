@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Returning and Non-Returning</title>
+    <title>Basketball Statistics - Composite Rankings</title>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GoatCounter Analytics -->
@@ -53,20 +53,15 @@
 
     <main>
       <header>
-        <h1>Returning and Non-Returning</h1>
+        <h1>Composite Rankings</h1>
         <p>
-          For teams with published rosters, which teams have the most
-          underclassmen minutes not returning, minutes incoming from D3
-          transfers, minutes returning from 5th years, and more.
-        </p>
-
-        <p class="last-updated">
-          <em>Last updated: June 23, 2025 at 01:00 PM EDT</em>
+          Team Rankings based off median of NPI, Massey, Efficiency, and Current
+          Season Results.
         </p>
       </header>
 
       <section class="table-section">
-        <h2>Returning and Non-Returning</h2>
+        <h2>Composite Rankings</h2>
 
         <!-- Search and Filter Controls -->
         <div class="table-controls">
@@ -91,12 +86,15 @@
               <tr>
                 <th>Team</th>
                 <th>Conf</th>
-                <th>Pub?</th>
-                <th>Surp Gone</th>
-                <th>Exp Gone</th>
-                <th>Transfers In</th>
-                <th>5th</th>
-                <th>5th Year Last Names</th>
+                <th>Region</th>
+                <th>Massey Rank</th>
+                <th>Eff Rank</th>
+                <th>NPI Rank</th>
+                <th>Curr Season Results Rank</th>
+                <th>Preseason Rank</th>
+                <th>MEDIAN</th>
+                <th>OVR_RANK</th>
+                <th>Stdev</th>
               </tr>
             </thead>
             <tbody id="tableBody">
