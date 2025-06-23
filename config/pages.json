@@ -126,22 +126,53 @@
       "Rem Games < 50.00 NPI": "Rem Games < 50.00 NPI"
     }
   },
-  "page5": {
+  "season_simulations": {
     "title": "Season Simulations",
     "heading": "Season Simulations",
     "description": "D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates.",
     "sectionTitle": "Season Simulations",
     "hasSearch": true,
-    "searchPlaceholder": "Search for player...",
-    "dataSource": "players",
-    "columns": ["Player", "Team", "PPG", "RPG", "APG", "Conf"],
+    "searchPlaceholder": "Search for team...",
+    "dataSource": "seasonSimulations",
+    "columns": [
+      "Team",
+      "Conf",
+      "MedW",
+      "MedL",
+      "Tourn%",
+      "A%",
+      "C%",
+      "ALWYNI%",
+      "F-C%",
+      "SF-C%",
+      "QF-C%",
+      "Top4%",
+      "Top8%",
+      "Top16%",
+      "Med-NPI",
+      "Min",
+      "Max",
+      "Rank"
+    ],
     "columnMappings": {
-      "Player": "player",
-      "Team": "team",
-      "PPG": "ppg",
-      "RPG": "rpg",
-      "APG": "apg",
-      "Conf": "conf"
+      "Team": "Team",
+      "Conf": "Conf",
+      "MedW": "MedW",
+      "MedL": "MedL",
+      "Tourn%": "Tourn%",
+      "A%": "A%",
+      "C%": "C%",
+      "ALWYNI%": "ALWYNI%",
+      "F-C%": "F-C%",
+      "SF-C%": "SF-C%",
+      "QF-C%": "QF-C%",
+      "Top4%": "Top4%",
+      "Top8%": "Top8%",
+      "Top16%": "Top16%",
+      "Med-NPI": "Med-NPI",
+      "Min": "Min",
+      "Max": "Max",
+      "Rank": "Rank"
     }
   },
   "page6": {

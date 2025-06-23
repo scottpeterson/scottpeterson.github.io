@@ -37,7 +37,7 @@
           </li>
           <li><a href="returners.html">Returning and Non-Returning</a></li>
           <li><a href="npi.html">NPI</a></li>
-          <li><a href="page5.html">Season Simulations</a></li>
+          <li><a href="season_simulations.html">Season Simulations</a></li>
           <li><a href="page6.html">Current Season Results</a></li>
           <li><a href="page7.html">Composite Rankings</a></li>
           <li><a href="page8.html">Conference Rankings</a></li>
@@ -53,47 +53,49 @@
       <header>
         <h1>Current Season Results</h1>
         <p>Ranking of teams based on this season's results.</p>
-        
-        <p class="last-updated"><em>Last updated: June 23, 2025 at 09:10 AM EDT</em></p>
-        
+
+        <p class="last-updated">
+          <em>Last updated: June 22, 2025 at 12:34 PM EDT</em>
+        </p>
       </header>
 
       <section class="table-section">
-  <h2>Current Season Results</h2>
-  
-  
-  
-  
-  <!-- Search and Filter Controls -->
-  <div class="table-controls">
-    <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
-    </div>
-    <div class="filter-container">
-      <select id="conferenceFilter" class="filter-select">
-        <option value="">All Conferences</option>
-      </select>
-    </div>
-  </div>
-  
-  
-  <div class="table-container">
-    <table class="stats-table" id="statsTable">
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>W-L</th>
-          <th>Conf W-L</th>
-          <th>Streak</th>
-          <th>Conf</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Data will be loaded dynamically -->
-      </tbody>
-    </table>
-  </div>
-</section>
+        <h2>Current Season Results</h2>
+
+        <!-- Search and Filter Controls -->
+        <div class="table-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="teamSearch"
+              placeholder="Search for team..."
+              class="search-input"
+            />
+          </div>
+          <div class="filter-container">
+            <select id="conferenceFilter" class="filter-select">
+              <option value="">All Conferences</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="stats-table" id="statsTable">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>W-L</th>
+                <th>Conf W-L</th>
+                <th>Streak</th>
+                <th>Conf</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
     <footer>
