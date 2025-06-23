@@ -54,51 +54,56 @@
     <main>
       <header>
         <h1>Conference Rankings</h1>
-        <p>Ranking of Conferences based off non-conference results.</p>
-        
-        <p class="last-updated"><em>Last updated: June 23, 2025 at 01:52 PM EDT</em></p>
-        
+        <p>
+          Ranking of Conferences based off non-conference results. <br />
+          This data is not updated for the 2025-26 season yet.
+        </p>
+
+        <p class="last-updated">
+          <em>Last updated: June 23, 2025 at 02:01 PM EDT</em>
+        </p>
       </header>
 
       <section class="table-section">
-  <h2>Conference Rankings</h2>
-  
-  
-  
-  
-  <!-- Search and Filter Controls -->
-  <div class="table-controls">
-    <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for conference..." class="search-input">
-    </div>
-    <div class="filter-container">
-      <select id="conferenceFilter" class="filter-select">
-        <option value="">All Conferences</option>
-      </select>
-    </div>
-  </div>
-  
-  
-  <div class="table-container">
-    <table class="stats-table" id="statsTable">
-      <thead>
-        <tr>
-          <th>Conf</th>
-          <th>Rank</th>
-          <th>Region</th>
-          <th>Win</th>
-          <th>Loss</th>
-          <th>Win%</th>
-          <th>Wins</th>
-          <th>STAT</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Data will be loaded dynamically -->
-      </tbody>
-    </table>
-  </div>
-</section>
+        <h2>Conference Rankings</h2>
+
+        <!-- Search and Filter Controls -->
+        <div class="table-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="teamSearch"
+              placeholder="Search for conference..."
+              class="search-input"
+            />
+          </div>
+          <div class="filter-container">
+            <select id="conferenceFilter" class="filter-select">
+              <option value="">All Conferences</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="stats-table" id="statsTable">
+            <thead>
+              <tr>
+                <th>Conf</th>
+                <th>Rank</th>
+                <th>Region</th>
+                <th>Win</th>
+                <th>Loss</th>
+                <th>Win%</th>
+                <th>Wins</th>
+                <th>STAT</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
     <footer>
