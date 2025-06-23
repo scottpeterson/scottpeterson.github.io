@@ -9,7 +9,7 @@
   "publishing_tracker": {
     "title": "Publishing Tracker",
     "heading": "Publishing Tracker",
-    "description": "Track publishing progress and status across various teams.",
+    "description": "Track 2025-26 Schedule and Roster publishing progress.",
     "sectionTitle": "Team Publishing Status",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -26,7 +26,7 @@
   "preseason_rankings": {
     "title": "25-26 Preseason Rankings",
     "heading": "25-26 Preseason Rankings",
-    "description": "Early predictions and rankings for the upcoming 2025-26 basketball season.",
+    "description": "Way too early preseason rankings for the upcoming 2025-26 D3 WBB season.",
     "sectionTitle": "Preseason Team Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -55,10 +55,10 @@
     }
   },
   "page3": {
-    "title": "Offensive Stats",
-    "heading": "Offensive Statistics",
-    "description": "Detailed offensive performance metrics for all teams.",
-    "sectionTitle": "Offensive Performance Metrics",
+    "title": "Returning and Non-Returning",
+    "heading": "Returning and Non-Returning",
+    "description": "For teams with published rosters, which teams have the most underclassmen minutes not returning, minutes incoming from D3 transfers, minutes returning from 5th years, and more.",
+    "sectionTitle": "Returning and Non-Returning",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "offensive",

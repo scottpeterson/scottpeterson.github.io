@@ -97,7 +97,11 @@ class TableController {
         const headerText = header.textContent.toLowerCase();
 
         // Map header text to data property
-        const value = this.getValueFromRow(row, headerText);
+        let value = this.getValueFromRow(row, headerText);
+
+        // Apply number formatting for specific columns
+        value = this.formatValue(value, headerText);
+
         td.textContent = value || '';
         tr.appendChild(td);
       });
@@ -222,6 +226,53 @@ class TableController {
       })
       .replace(/\s+/g, '')
       .replace(/[^a-zA-Z0-9]/g, '');
+  }
+
+  // Format values based on column type
+  formatValue(value, headerText) {
+    if (value === null || value === undefined || value === '') {
+      return value;
+    }
+
+    const normalizedHeader = headerText.toLowerCase().trim();
+
+    // Handle percentage values (Returning column)
+    if (normalizedHeader === 'returning') {
+      // If it's already a percentage string (e.g., "74.70%"), extract the number
+      if (typeof value === 'string' && value.includes('%')) {
+        const numericValue = parseFloat(value.replace('%', ''));
+        if (!isNaN(numericValue)) {
+          return numericValue.toFixed(2) + '%';
+        }
+      }
+      // If it's a decimal (e.g., 0.747), convert to percentage
+      else if (typeof value === 'number' && value < 1) {
+        return (value * 100).toFixed(2) + '%';
+      }
+      // If it's already a number greater than 1, assume it's already a percentage
+      else if (typeof value === 'number') {
+        return value.toFixed(2) + '%';
+      }
+    }
+
+    // Handle decimal formatting for specific columns
+    const numericValue = parseFloat(value);
+    if (!isNaN(numericValue)) {
+      // 3 decimal places for Win%, SOS, NPI
+      if (
+        normalizedHeader === 'win%' ||
+        normalizedHeader === 'sos' ||
+        normalizedHeader === 'npi'
+      ) {
+        return numericValue.toFixed(3);
+      }
+      // 2 decimal places for Height
+      else if (normalizedHeader === 'height') {
+        return numericValue.toFixed(2);
+      }
+    }
+
+    return value;
   }
 
   // Populate conference filter with unique values
