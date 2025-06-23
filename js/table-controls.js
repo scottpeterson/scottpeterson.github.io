@@ -100,7 +100,22 @@ class TableController {
         let value = this.getValueFromRow(row, headerText);
 
         // Apply number formatting for specific columns
+        const originalValue = value;
         value = this.formatValue(value, headerText);
+
+        // Debug only for first few rows on preseason rankings
+        if (
+          window.location.pathname.includes('preseason_rankings') &&
+          index < 3
+        ) {
+          const cleanHeader = headerText
+            .replace(/[↕↑↓]/g, '')
+            .toLowerCase()
+            .trim();
+          console.log(
+            `Row ${index}, Header: "${headerText}" -> Clean: "${cleanHeader}", Original: "${originalValue}", Formatted: "${value}"`
+          );
+        }
 
         td.textContent = value || '';
         tr.appendChild(td);
@@ -235,10 +250,14 @@ class TableController {
       value = 0;
     }
 
-    const normalizedHeader = headerText.toLowerCase().trim();
+    // Clean header text by removing sort indicators and other symbols
+    const cleanHeader = headerText
+      .replace(/[↕↑↓]/g, '')
+      .toLowerCase()
+      .trim();
 
     // Handle percentage values (Returning column) - do this first
-    if (normalizedHeader === 'returning') {
+    if (cleanHeader === 'returning') {
       // If it's already a percentage string (e.g., "74.70%"), extract and reformat
       if (typeof value === 'string' && value.includes('%')) {
         const numericValue = parseFloat(value.replace('%', ''));
@@ -264,14 +283,14 @@ class TableController {
     if (!isNaN(numericValue)) {
       // 3 decimal places for Win%, SOS, NPI
       if (
-        normalizedHeader === 'win%' ||
-        normalizedHeader === 'sos' ||
-        normalizedHeader === 'npi'
+        cleanHeader === 'win%' ||
+        cleanHeader === 'sos' ||
+        cleanHeader === 'npi'
       ) {
         return numericValue.toFixed(3);
       }
       // 2 decimal places for Height
-      else if (normalizedHeader === 'height') {
+      else if (cleanHeader === 'height') {
         return numericValue.toFixed(2);
       }
     }
