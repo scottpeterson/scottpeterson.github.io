@@ -20,13 +20,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     // If we have table controls, load the data
     if (tableInitialized) {
       const pageConfig = window.dataLoader.getCurrentPageConfig();
+      console.log('Current page config:', pageConfig);
 
       if (pageConfig && pageConfig.dataSource) {
+        console.log('Loading data for:', pageConfig.dataSource);
         try {
           await window.tableController.loadData(pageConfig.dataSource);
         } catch (error) {
           console.error('Failed to load data:', error);
         }
+      } else {
+        console.warn('No page config or data source found for current page');
       }
     }
 

@@ -49,6 +49,11 @@ class DataLoader {
     const path = window.location.pathname;
     const currentPage =
       path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
+    console.log('Path:', path, 'Current page:', currentPage);
+    console.log(
+      'Available page configs:',
+      this.pageConfig ? Object.keys(this.pageConfig) : 'No config loaded'
+    );
     return this.pageConfig ? this.pageConfig[currentPage] : null;
   }
 
