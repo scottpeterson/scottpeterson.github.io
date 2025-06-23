@@ -346,9 +346,21 @@ footer {
     padding: 8px 10px;
   }
 
+  /* Mobile table container adjustments */
+  .table-container {
+    height: 400px; /* Reduce height for mobile */
+    max-height: 70vh; /* Ensure it doesn't exceed viewport */
+  }
+
   /* Adjust sticky header position for mobile navigation */
   .stats-table thead th {
-    top: 60px; /* Account for mobile nav height */
+    top: 0; /* Reset to 0 for proper sticky behavior in smaller container */
+  }
+
+  /* Ensure first column sticky header works on mobile */
+  .stats-table thead th:first-child {
+    top: 0;
+    left: 0;
   }
 }
 
