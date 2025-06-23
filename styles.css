@@ -134,6 +134,8 @@ h2 {
 .table-container {
   width: 100%;
   overflow-x: auto;
+  height: 1400px;
+  overflow-y: auto; 
   margin-top: 15px;
 
   /* Only horizontal scrolling - let page handle vertical scroll */
