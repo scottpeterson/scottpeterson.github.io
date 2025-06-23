@@ -245,21 +245,33 @@
       "Stdev": "Stdev"
     }
   },
-  "page8": {
+  "conference_rankings": {
     "title": "Conference Rankings",
     "heading": "Conference Rankings",
     "description": "Ranking of Conferences based off non-conference results.",
     "sectionTitle": "Conference Rankings",
     "hasSearch": true,
-    "searchPlaceholder": "Search for team...",
-    "dataSource": "tournament",
-    "columns": ["Team", "Conference", "Seed", "Result", "Conf"],
+    "searchPlaceholder": "Search for conference...",
+    "dataSource": "conferenceRankings",
+    "columns": [
+      "Conf",
+      "Rank",
+      "Region",
+      "Win",
+      "Loss",
+      "Win%",
+      "Wins",
+      "STAT"
+    ],
     "columnMappings": {
-      "Team": "team",
-      "Conference": "conference",
-      "Seed": "seed",
-      "Result": "result",
-      "Conf": "conf"
+      "Conf": "Conf",
+      "Rank": "Rank",
+      "Region": "Region",
+      "Win": "Win",
+      "Loss": "Loss",
+      "Win%": "Win%",
+      "Wins": "Wins",
+      "STAT": "STAT"
     }
   },
   "page11": {
