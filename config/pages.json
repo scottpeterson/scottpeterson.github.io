@@ -29,25 +29,29 @@
     "description": "Early predictions and rankings for the upcoming 2025-26 basketball season.",
     "sectionTitle": "Preseason Team Rankings",
     "hasSearch": true,
-    "searchPlaceholder": "Search for conference...",
+    "searchPlaceholder": "Search for team...",
     "dataSource": "preseasonRankings",
     "columns": [
+      "Team",
       "Conf",
-      "# of Teams",
+      "Region",
+      "Win%",
+      "SOS",
+      "NPI",
+      "Height",
       "Returning",
-      "Returning among 0.700+ Teams",
-      "AVG Pre Rank",
-      "Min Rank",
-      "% of Rosters Published"
+      "Projected Preseason Rank"
     ],
     "columnMappings": {
+      "Team": "Team",
       "Conf": "Conf",
-      "# of Teams": "# of Teams",
+      "Region": "Region",
+      "Win%": "Win%",
+      "SOS": "SOS",
+      "NPI": "NPI",
+      "Height": "Height",
       "Returning": "Returning",
-      "Returning among 0.700+ Teams": "Returning among 0.700+ Teams",
-      "AVG Pre Rank": "AVG Pre Rank",
-      "Min Rank": "Min Rank",
-      "% of Rosters Published": "% of Rosters Published"
+      "Projected Preseason Rank": "Projected Preseason Rank"
     }
   },
   "page3": {
