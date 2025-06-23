@@ -26,7 +26,7 @@
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
       "Schedule Published?": "Whether the team has published their 2025-26 season schedule",
-      "Roster Published?": "Whether the team has published their 2025-26 roster information"
+      "Roster Published?": "Whether the team has published their 2025-26 roster"
     }
   },
   "preseason_rankings": {
@@ -63,11 +63,11 @@
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
       "Region": "NCAA tournament region the team belongs to",
-      "Win%": "Projected winning percentage for the upcoming season",
-      "SOS": "Strength of Schedule rating based on opponent quality",
-      "NPI": "NCAA Power Index value for the team",
-      "Height": "Average team height measurement",
-      "Returning": "Percentage of production returning from previous season",
+      "Win%": "2024-25 Win%",
+      "SOS": "2024-25 Strength of Schedule",
+      "NPI": "2024-25 NPI",
+      "Height": "2024-25 Minutes-weighted team height (inches)",
+      "Returning": "Percentage of scoring production returning from previous season",
       "Projected Preseason Rank": "Projected ranking for the start of the season"
     }
   },
@@ -105,8 +105,8 @@
       "Pub?": "Whether the team has published their roster publicly",
       "Surp Gone": "Unexpected player departures and lost minutes",
       "Exp Gone": "Expected player departures and lost minutes",
-      "Transfers In": "Minutes gained from incoming transfer players",
-      "5th": "Fifth-year players returning for an additional season",
+      "Transfers In": "Minutes gained from incoming D3 transfer players",
+      "5th": "Minutes by Fifth-year players returning for an additional season",
       "5th Year Last Names": "Names of the fifth-year players on the roster"
     }
   },
@@ -161,13 +161,13 @@
       "NPI Rank": "Current national ranking based on NPI value",
       "Rank Old": "Previous national ranking for comparison",
       "Rank Diff": "Change in ranking position from previous update",
-      "Qual Games": "Number of qualifying games played for NPI calculation",
+      "Qual Games": "Number of qualifying games included in NPI calculation",
       "Qual Wins": "Number of qualifying wins counted in NPI",
       "Lowest Counting Win": "NPI value of the weakest win that still counts",
-      "Next Game Win NPI": "Potential NPI gain if next game is won",
-      "Potential Increase": "Maximum possible NPI increase from next win",
-      "Next Game Loss NPI": "Potential NPI impact if next game is lost",
-      "Rem Games < 50.00 NPI": "Remaining games against teams with NPI below 50"
+      "Next Game Win NPI": "Game NPI of next game, if won",
+      "Potential Increase": "NPI increase if next game is won",
+      "Next Game Loss NPI": "Game NPI of next game, if lost",
+      "Rem Games < 50.00 NPI": "Remaining games against teams with NPI below 50.00"
     }
   },
   "season_simulations": {
@@ -223,20 +223,20 @@
       "Conf": "Conference affiliation of the team",
       "MedW": "Median number of wins projected across simulations",
       "MedL": "Median number of losses projected across simulations",
-      "Tourn%": "Percentage chance of making the NCAA tournament",
-      "A%": "Percentage chance of receiving an at-large bid",
-      "C%": "Percentage chance of qualifying as conference champion",
-      "ALWYNI%": "Percentage chance of always needing to win conference",
-      "F-C%": "Percentage chance of reaching conference finals",
-      "SF-C%": "Percentage chance of reaching conference semifinals",
-      "QF-C%": "Percentage chance of reaching conference quarterfinals",
-      "Top4%": "Percentage chance of finishing in top 4 nationally",
-      "Top8%": "Percentage chance of finishing in top 8 nationally",
-      "Top16%": "Percentage chance of finishing in top 16 nationally",
-      "Med-NPI": "Median projected NPI value across simulations",
-      "Min": "Minimum projected wins in simulations",
-      "Max": "Maximum projected wins in simulations",
-      "Rank": "Overall ranking based on simulation results"
+      "Tourn%": "Percentage of simulations making the NCAA Tournament",
+      "A%": "Percentage of simulations winning their conference's AQ",
+      "C%": "Percentage of simulations getting an at-large bid",
+      "ALWYNI%": "Percentage of simulations NOT winning their conference's AQ, and getting an at-large bid",
+      "F-C%": "Percentage of simulations getting a Pool C when final loss was in conference finals",
+      "SF-C%": "Percentage of simulations getting a Pool C when final loss was in conference semifinals",
+      "QF-C%": "Percentage of simulations getting a Pool C when final loss was in conference quarterfinals",
+      "Top4%": "Percentage of simulations finishing in top 4 nationally",
+      "Top8%": "Percentage of simulations finishing in top 8 nationally",
+      "Top16%": "Percentage of simulations finishing in top 16 nationally",
+      "Med-NPI": "Median NPI value across simulations",
+      "Min": "Minimum NPI value across simulations",
+      "Max": "Maximum NPI value across simulations",
+      "Rank": "Rank of ALWYNI&"
     }
   },
   "current_season_rankings": {
@@ -276,15 +276,15 @@
     "legend": {
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
-      "Rank": "Current season ranking position",
+      "Rank": "Current season ranking",
       "Value of Results": "Numerical value representing quality of season results",
       "TOP 50 W": "Number of wins against teams ranked in top 50",
       "OUT OF TOP 30 L": "Number of losses to teams ranked outside top 30",
       "Overall Wins Massey": "Total wins according to Massey ratings system",
       "Eff": "Team efficiency rating for the current season",
       "Underlying": "Underlying performance metrics beyond wins/losses",
-      "STAT": "Statistical performance indicator",
-      "STDEV": "Standard deviation of performance metrics"
+      "STAT": "Aggregate of the other stats",
+      "STDEV": "Standard deviation of STAT"
     }
   },
   "composite_rankings": {
@@ -330,7 +330,7 @@
       "NPI Rank": "Team ranking based on NCAA Power Index",
       "Curr Season Results Rank": "Ranking based on current season performance",
       "Preseason Rank": "Team's preseason ranking prediction",
-      "MEDIAN": "Median value across all ranking systems",
+      "MEDIAN": "Median value across all ranking systems (not including preseason)",
       "OVR_RANK": "Overall composite ranking position",
       "Stdev": "Standard deviation across different ranking systems"
     }
@@ -370,7 +370,7 @@
       "Win": "Total wins by conference teams in non-conference play",
       "Loss": "Total losses by conference teams in non-conference play",
       "Win%": "Winning percentage in non-conference games",
-      "Wins": "Additional wins metric for conference evaluation",
+      "Wins": "Average Massey ranking of non-conference teams beat",
       "STAT": "Statistical performance indicator for the conference"
     }
   },
