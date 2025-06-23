@@ -144,8 +144,8 @@ class TableController {
       teams: row.teams,
       'avg rating': row.avgRating,
       'top team': row.topTeam,
-      'win %': row.winPct,
-      'win%': row.winPct, // Handle without space
+      'win %': row['Win%'],
+      'win%': row['Win%'], // Handle without space
       'w-l': row.record,
       sos: row.sos,
       ppg: row.ppg,
