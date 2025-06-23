@@ -135,7 +135,7 @@ h2 {
   width: 100%;
   overflow-x: auto;
   height: 600px;
-  overflow-y: auto; 
+  overflow-y: auto;
   margin-top: 15px;
 
   /* Only horizontal scrolling - let page handle vertical scroll */
@@ -225,6 +225,7 @@ h2 {
 /* First Column (Team names or categories) - Keep these left-aligned */
 .stats-table td:first-child {
   text-align: left;
+  white-space: nowrap;
 }
 
 /* Home Page Content */
