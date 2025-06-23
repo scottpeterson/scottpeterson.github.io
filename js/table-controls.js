@@ -103,7 +103,7 @@ class TableController {
         const originalValue = value;
         value = this.formatValue(value, headerText);
 
-        td.textContent = value || '';
+        td.textContent = value !== null && value !== undefined ? value : '';
         tr.appendChild(td);
       });
 
@@ -231,9 +231,9 @@ class TableController {
 
   // Format values based on column type
   formatValue(value, headerText) {
-    // Handle null/undefined/empty values
+    // Handle null/undefined/empty values but preserve zero
     if (value === null || value === undefined || value === '') {
-      value = 0;
+      return '';
     }
 
     // Clean header text by removing sort indicators and other symbols
