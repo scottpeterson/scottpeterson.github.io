@@ -64,6 +64,7 @@
     "dataSource": "returners",
     "columns": [
       "Team",
+      "Conf",
       "Pub?",
       "Surp Gone",
       "Exp Gone",
@@ -73,6 +74,7 @@
     ],
     "columnMappings": {
       "Team": "Team",
+      "Conf": "Conf",
       "Pub?": "Pub?",
       "Surp Gone": "Surp Gone",
       "Exp Gone": "Exp Gone",
@@ -91,6 +93,7 @@
     "dataSource": "npi",
     "columns": [
       "Team",
+      "Conf",
       "NPI Value",
       "Value Old",
       "Value Diff",
@@ -107,6 +110,7 @@
     ],
     "columnMappings": {
       "Team": "Team",
+      "Conf": "Conf",
       "NPI Value": "NPI Value",
       "Value Old": "Value Old",
       "Value Diff": "Value Diff",
@@ -123,10 +127,10 @@
     }
   },
   "page5": {
-    "title": "Player Stats",
-    "heading": "Player Statistics",
-    "description": "Individual player performance statistics and rankings.",
-    "sectionTitle": "Top Player Performances",
+    "title": "Season Simulations",
+    "heading": "Season Simulations",
+    "description": "D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates.",
+    "sectionTitle": "Season Simulations",
     "hasSearch": true,
     "searchPlaceholder": "Search for player...",
     "dataSource": "players",
@@ -141,10 +145,10 @@
     }
   },
   "page6": {
-    "title": "Season Records",
-    "heading": "Season Records",
-    "description": "Complete season records and standings for all teams.",
-    "sectionTitle": "Season Performance Records",
+    "title": "Current Season Results",
+    "heading": "Current Season Results",
+    "description": "Ranking of teams based on this season's results.",
+    "sectionTitle": "Current Season Results",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "records",
@@ -158,10 +162,10 @@
     }
   },
   "page7": {
-    "title": "Historical Data",
-    "heading": "Historical Data",
-    "description": "Historical performance trends and multi-year comparisons.",
-    "sectionTitle": "Historical Performance Trends",
+    "title": "Team Rankings",
+    "heading": "Team Rankings",
+    "description": "Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results.",
+    "sectionTitle": "Team Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "historical",
@@ -176,10 +180,10 @@
     }
   },
   "page8": {
-    "title": "Tournament Results",
-    "heading": "Tournament Results",
-    "description": "Conference and national tournament results and brackets.",
-    "sectionTitle": "Tournament Performance",
+    "title": "Conference Rankings",
+    "heading": "Conference Rankings",
+    "description": "Ranking of Conferences based off non-conference results.",
+    "sectionTitle": "Conference Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "tournament",
@@ -189,41 +193,6 @@
       "Conference": "conference",
       "Seed": "seed",
       "Result": "result",
-      "Conf": "conf"
-    }
-  },
-  "page9": {
-    "title": "Coach Records",
-    "heading": "Coach Records",
-    "description": "Coaching performance statistics and career records.",
-    "sectionTitle": "Coaching Performance Records",
-    "hasSearch": true,
-    "searchPlaceholder": "Search for coach...",
-    "dataSource": "coaches",
-    "columns": ["Coach", "Team", "Years", "W-L", "Win %", "Conf"],
-    "columnMappings": {
-      "Coach": "coach",
-      "Team": "team",
-      "Years": "years",
-      "W-L": "record",
-      "Win %": "winPct",
-      "Conf": "conf"
-    }
-  },
-  "page10": {
-    "title": "Team Trends",
-    "heading": "Team Trends",
-    "description": "Performance trends and momentum analysis for teams.",
-    "sectionTitle": "Team Performance Trends",
-    "hasSearch": true,
-    "searchPlaceholder": "Search for team...",
-    "dataSource": "trends",
-    "columns": ["Team", "Momentum", "Last 10", "Trend", "Conf"],
-    "columnMappings": {
-      "Team": "team",
-      "Momentum": "momentum",
-      "Last 10": "last10",
-      "Trend": "trend",
       "Conf": "conf"
     }
   },

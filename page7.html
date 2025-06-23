@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Historical Data</title>
+    <title>Basketball Statistics - Team Rankings</title>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GoatCounter Analytics -->
@@ -37,12 +37,10 @@
           </li>
           <li><a href="returners.html">Returning and Non-Returning</a></li>
           <li><a href="npi.html">NPI</a></li>
-          <li><a href="page5.html">Player Stats</a></li>
-          <li><a href="page6.html">Season Records</a></li>
-          <li><a href="page7.html">Historical Data</a></li>
-          <li><a href="page8.html">Tournament Results</a></li>
-          <li><a href="page9.html">Coach Records</a></li>
-          <li><a href="page10.html">Team Trends</a></li>
+          <li><a href="page5.html">Season Simulations</a></li>
+          <li><a href="page6.html">Current Season Results</a></li>
+          <li><a href="page7.html">Composite Rankings</a></li>
+          <li><a href="page8.html">Conference Rankings</a></li>
           <li><a href="page11.html">Contact</a></li>
         </ul>
       </div>
@@ -53,52 +51,50 @@
 
     <main>
       <header>
-        <h1>Historical Data</h1>
-        <p>Historical performance trends and multi-year comparisons.</p>
-
-        <p class="last-updated">
-          <em>Last updated: June 22, 2025 at 12:34 PM EDT</em>
-        </p>
+        <h1>Team Rankings</h1>
+        <p>Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results.</p>
+        
+        <p class="last-updated"><em>Last updated: June 23, 2025 at 09:10 AM EDT</em></p>
+        
       </header>
 
       <section class="table-section">
-        <h2>Historical Performance Trends</h2>
-
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
-          </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>2023</th>
-                <th>2022</th>
-                <th>2021</th>
-                <th>Trend</th>
-                <th>Conf</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
-        </div>
-      </section>
+  <h2>Team Rankings</h2>
+  
+  
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>2023</th>
+          <th>2022</th>
+          <th>2021</th>
+          <th>Trend</th>
+          <th>Conf</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
     </main>
 
     <footer>

@@ -37,12 +37,10 @@
           </li>
           <li><a href="returners.html">Returning and Non-Returning</a></li>
           <li><a href="npi.html">NPI</a></li>
-          <li><a href="page5.html">Player Stats</a></li>
-          <li><a href="page6.html">Season Records</a></li>
-          <li><a href="page7.html">Historical Data</a></li>
-          <li><a href="page8.html">Tournament Results</a></li>
-          <li><a href="page9.html">Coach Records</a></li>
-          <li><a href="page10.html">Team Trends</a></li>
+          <li><a href="page5.html">Season Simulations</a></li>
+          <li><a href="page6.html">Current Season Results</a></li>
+          <li><a href="page7.html">Composite Rankings</a></li>
+          <li><a href="page8.html">Conference Rankings</a></li>
           <li><a href="page11.html">Contact</a></li>
         </ul>
       </div>
@@ -55,50 +53,48 @@
       <header>
         <h1>Coach Records</h1>
         <p>Coaching performance statistics and career records.</p>
-
-        <p class="last-updated">
-          <em>Last updated: June 22, 2025 at 12:35 PM EDT</em>
-        </p>
+        
+        <p class="last-updated"><em>Last updated: June 23, 2025 at 09:10 AM EDT</em></p>
+        
       </header>
 
       <section class="table-section">
-        <h2>Coaching Performance Records</h2>
-
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for coach..."
-              class="search-input"
-            />
-          </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Coach</th>
-                <th>Team</th>
-                <th>Years</th>
-                <th>W-L</th>
-                <th>Win %</th>
-                <th>Conf</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
-        </div>
-      </section>
+  <h2>Coaching Performance Records</h2>
+  
+  
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for coach..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Coach</th>
+          <th>Team</th>
+          <th>Years</th>
+          <th>W-L</th>
+          <th>Win %</th>
+          <th>Conf</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section>
     </main>
 
     <footer>
