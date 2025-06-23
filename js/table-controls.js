@@ -94,7 +94,7 @@ class TableController {
 
       headers.forEach((header, headerIndex) => {
         const td = document.createElement('td');
-        const headerText = header.textContent.toLowerCase();
+        const headerText = header.textContent;
 
         // Map header text to data property
         let value = this.getValueFromRow(row, headerText);
@@ -230,8 +230,13 @@ class TableController {
 
   // Format values based on column type
   formatValue(value, headerText) {
-    if (value === null || value === undefined || value === '') {
-      return value;
+    if (value === null || value === undefined) {
+      value = 0; // Convert null/undefined to 0 for numeric columns
+    }
+
+    // Convert empty string to 0 for numeric formatting
+    if (value === '') {
+      value = 0;
     }
 
     const normalizedHeader = headerText.toLowerCase().trim();
@@ -246,7 +251,7 @@ class TableController {
         }
       }
       // If it's a decimal (e.g., 0.747), convert to percentage
-      else if (typeof value === 'number' && value < 1) {
+      else if (typeof value === 'number' && value < 1 && value > 0) {
         return (value * 100).toFixed(2) + '%';
       }
       // If it's already a number greater than 1, assume it's already a percentage
