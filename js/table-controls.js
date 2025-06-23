@@ -103,20 +103,6 @@ class TableController {
         const originalValue = value;
         value = this.formatValue(value, headerText);
 
-        // Debug only for first few rows on preseason rankings
-        if (
-          window.location.pathname.includes('preseason_rankings') &&
-          index < 3
-        ) {
-          const cleanHeader = headerText
-            .replace(/[↕↑↓]/g, '')
-            .toLowerCase()
-            .trim();
-          console.log(
-            `Row ${index}, Header: "${headerText}" -> Clean: "${cleanHeader}", Original: "${originalValue}", Formatted: "${value}"`
-          );
-        }
-
         td.textContent = value || '';
         tr.appendChild(td);
       });
@@ -292,6 +278,15 @@ class TableController {
       // 2 decimal places for Height
       else if (cleanHeader === 'height') {
         return numericValue.toFixed(2);
+      }
+      // Integer formatting with thousand separators for returners columns
+      else if (
+        cleanHeader === 'surp gone' ||
+        cleanHeader === 'exp gone' ||
+        cleanHeader === 'transfers in' ||
+        cleanHeader === '5th'
+      ) {
+        return Math.round(numericValue).toLocaleString();
       }
     }
 

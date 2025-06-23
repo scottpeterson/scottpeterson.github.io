@@ -54,22 +54,31 @@
       "Projected Preseason Rank": "Projected Preseason Rank"
     }
   },
-  "page3": {
+  "returners": {
     "title": "Returning and Non-Returning",
     "heading": "Returning and Non-Returning",
     "description": "For teams with published rosters, which teams have the most underclassmen minutes not returning, minutes incoming from D3 transfers, minutes returning from 5th years, and more.",
     "sectionTitle": "Returning and Non-Returning",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
-    "dataSource": "offensive",
-    "columns": ["Team", "PPG", "FG%", "3P%", "FT%", "Conf"],
+    "dataSource": "returners",
+    "columns": [
+      "Team",
+      "Pub?",
+      "Surp Gone",
+      "Exp Gone",
+      "Transfers In",
+      "5th",
+      "5th Year Last Names"
+    ],
     "columnMappings": {
-      "Team": "team",
-      "PPG": "ppg",
-      "FG%": "fgPct",
-      "3P%": "threePct",
-      "FT%": "ftPct",
-      "Conf": "conf"
+      "Team": "Team",
+      "Pub?": "Pub?",
+      "Surp Gone": "Surp Gone",
+      "Exp Gone": "Exp Gone",
+      "Transfers In": "Transfers In",
+      "5th": "5th",
+      "5th Year Last Names": "5th Year Last Names"
     }
   },
   "page4": {
