@@ -304,6 +304,17 @@ class TableController {
       ) {
         return numericValue.toFixed(3);
       }
+      // 2 decimal places for Current Season Rankings columns
+      else if (
+        cleanHeader === 'value of results' ||
+        cleanHeader === 'overall wins massey' ||
+        cleanHeader === 'eff' ||
+        cleanHeader === 'underlying' ||
+        cleanHeader === 'stat' ||
+        cleanHeader === 'stdev'
+      ) {
+        return numericValue.toFixed(2);
+      }
     }
 
     // Return original value if no formatting rules apply

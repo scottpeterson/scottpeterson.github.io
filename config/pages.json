@@ -175,21 +175,39 @@
       "Rank": "Rank"
     }
   },
-  "page6": {
-    "title": "Current Season Results",
-    "heading": "Current Season Results",
+  "current_season_rankings": {
+    "title": "Current Season Rankings",
+    "heading": "Current Season Rankings",
     "description": "Ranking of teams based on this season's results.",
-    "sectionTitle": "Current Season Results",
+    "sectionTitle": "Current Season Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
-    "dataSource": "records",
-    "columns": ["Team", "W-L", "Conf W-L", "Streak", "Conf"],
+    "dataSource": "currentSeasonRankings",
+    "columns": [
+      "Team",
+      "Conf",
+      "Rank",
+      "Value of Results",
+      "TOP 50 W",
+      "OUT OF TOP 30 L",
+      "Overall Wins Massey",
+      "Eff",
+      "Underlying",
+      "STAT",
+      "STDEV"
+    ],
     "columnMappings": {
-      "Team": "team",
-      "W-L": "record",
-      "Conf W-L": "confRecord",
-      "Streak": "streak",
-      "Conf": "conf"
+      "Team": "Team",
+      "Conf": "Conf",
+      "Rank": "Rank",
+      "Value of Results": "Value of Results",
+      "TOP 50 W": "TOP 50 W",
+      "OUT OF TOP 30 L": "OUT OF TOP 30 L",
+      "Overall Wins Massey": "Overall Wins Massey",
+      "Eff": "Eff",
+      "Underlying": "Underlying",
+      "STAT": "STAT",
+      "STDEV": "STDEV"
     }
   },
   "page7": {
