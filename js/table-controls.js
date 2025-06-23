@@ -102,14 +102,6 @@ class TableController {
         // Apply number formatting for specific columns
         value = this.formatValue(value, headerText);
 
-        // Debug logging for preseason rankings page
-        if (window.location.pathname.includes('preseason_rankings')) {
-          const originalValue = this.getValueFromRow(row, headerText);
-          console.log(
-            `Header: "${headerText}", Original value: "${originalValue}", Formatted value: "${value}"`
-          );
-        }
-
         td.textContent = value || '';
         tr.appendChild(td);
       });
@@ -238,46 +230,36 @@ class TableController {
 
   // Format values based on column type
   formatValue(value, headerText) {
-    const originalValue = value;
-
-    if (value === null || value === undefined) {
-      value = 0; // Convert null/undefined to 0 for numeric columns
-    }
-
-    // Convert empty string to 0 for numeric formatting
-    if (value === '') {
+    // Handle null/undefined/empty values
+    if (value === null || value === undefined || value === '') {
       value = 0;
     }
 
     const normalizedHeader = headerText.toLowerCase().trim();
 
-    // Debug logging
-    if (window.location.pathname.includes('preseason_rankings')) {
-      console.log(
-        `formatValue called: header="${headerText}", normalizedHeader="${normalizedHeader}", originalValue="${originalValue}", processedValue="${value}"`
-      );
-    }
-
-    // Handle percentage values (Returning column)
+    // Handle percentage values (Returning column) - do this first
     if (normalizedHeader === 'returning') {
-      // If it's already a percentage string (e.g., "74.70%"), extract the number
+      // If it's already a percentage string (e.g., "74.70%"), extract and reformat
       if (typeof value === 'string' && value.includes('%')) {
         const numericValue = parseFloat(value.replace('%', ''));
         if (!isNaN(numericValue)) {
           return numericValue.toFixed(2) + '%';
         }
       }
-      // If it's a decimal (e.g., 0.747), convert to percentage
-      else if (typeof value === 'number' && value < 1 && value > 0) {
+      // If it's a decimal between 0 and 1, convert to percentage
+      else if (typeof value === 'number' && value >= 0 && value <= 1) {
         return (value * 100).toFixed(2) + '%';
       }
-      // If it's already a number greater than 1, assume it's already a percentage
-      else if (typeof value === 'number') {
-        return value.toFixed(2) + '%';
+      // If it's a number > 1, assume it's already a percentage value
+      else {
+        const numericValue = parseFloat(value);
+        if (!isNaN(numericValue)) {
+          return numericValue.toFixed(2) + '%';
+        }
       }
     }
 
-    // Handle decimal formatting for specific columns
+    // Handle decimal formatting for numeric columns
     const numericValue = parseFloat(value);
     if (!isNaN(numericValue)) {
       // 3 decimal places for Win%, SOS, NPI
@@ -294,6 +276,7 @@ class TableController {
       }
     }
 
+    // Return original value if no formatting rules apply
     return value;
   }
 
