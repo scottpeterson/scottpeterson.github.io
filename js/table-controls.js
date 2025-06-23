@@ -286,6 +286,10 @@ class TableController {
         cleanHeader === 'transfers in' ||
         cleanHeader === '5th'
       ) {
+        // If the original value is already a formatted string, return it as-is
+        if (typeof value === 'string' && value.includes(',')) {
+          return value;
+        }
         return Math.round(numericValue).toLocaleString();
       }
       // 3 decimal places for NPI columns
