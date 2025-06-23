@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Publishing Tracker</title>
+    <title>Basketball Statistics - Contact</title>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GoatCounter Analytics -->
@@ -53,70 +53,89 @@
 
     <main>
       <header>
-        <h1>Publishing Tracker</h1>
-        <p>Track 2025-26 Schedule and Roster publishing progress.</p>
-
-        <p class="last-updated">
-          <em>Last updated: June 22, 2025 at 02:19 PM EDT</em>
+        <h1>Get in Touch</h1>
+        <p>
+          Have questions about D3 basketball data or want to collaborate? Send
+          me a message!
         </p>
       </header>
 
       <section class="table-section">
-        <h2>Team Publishing Status</h2>
+        <h2>Contact Form</h2>
 
-        <!-- Progress Indicators -->
-        <div class="progress-indicators">
-          <div class="progress-item">
-            <div class="progress-label">
-              <span class="progress-title">Schedule Publishing Progress</span>
-              <span class="progress-percentage" id="scheduleProgress">0%</span>
+        <div class="contact-form-container">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xjkragkq"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-input"
+              />
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" id="scheduleProgressFill"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span class="progress-title">Roster Publishing Progress</span>
-              <span class="progress-percentage" id="rosterProgress">0%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" id="rosterProgressFill"></div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
-          </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-input"
+              />
+            </div>
 
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Schedule Published?</th>
-                <th>Roster Published?</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="form-textarea"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <h3>Other Ways to Connect</h3>
+            <p>You can also find me on:</p>
+            <ul class="contact-links">
+              <li>
+                <a
+                  href="https://www.youtube.com/@dishingonD3BBALL"
+                  target="_blank"
+                  >Dishing on D3 WBB (YouTube)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/scottpeterson/d3-bball-npi"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
