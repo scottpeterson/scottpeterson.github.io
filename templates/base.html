@@ -61,17 +61,20 @@
       </header>
 
       {{CONTENT}} {{#LEGEND}}
-      <section class="legend-section">
-        <h2>Column Legend</h2>
-        <div class="legend-grid">
-          {{#LEGEND_ITEMS}}
-          <div class="legend-item">
-            <span class="legend-column">{{COLUMN}}</span>
-            <span class="legend-description">{{DESCRIPTION}}</span>
+      <div class="table-section">
+        <section class="legend-section">
+          <h2>Column Legend</h2>
+          <div class="legend-grid">
+            {{#LEGEND_ITEMS}}
+            <div class="legend-item">
+              <span class="legend-description"
+                ><strong>{{COLUMN}}</strong>: {{DESCRIPTION}}</span
+              >
+            </div>
+            {{/LEGEND_ITEMS}}
           </div>
-          {{/LEGEND_ITEMS}}
-        </div>
-      </section>
+        </section>
+      </div>
       {{/LEGEND}}
     </main>
 
