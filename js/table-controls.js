@@ -425,7 +425,7 @@ class TableController {
       headers.forEach((header, index) => {
         header.style.cursor = 'pointer';
         header.style.userSelect = 'none';
-        header.style.position = 'relative';
+        // Don't override position - let CSS sticky positioning work
 
         // Add sorting indicator
         const sortIndicator = document.createElement('span');
