@@ -81,22 +81,45 @@
       "5th Year Last Names": "5th Year Last Names"
     }
   },
-  "page4": {
-    "title": "Defensive Stats",
-    "heading": "Defensive Statistics",
-    "description": "Comprehensive defensive performance data across all teams.",
-    "sectionTitle": "Defensive Performance Metrics",
+  "npi": {
+    "title": "NPI",
+    "heading": "NPI",
+    "description": "Net Power Index (NPI) ratings and analysis for all teams.",
+    "sectionTitle": "NPI Analysis",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
-    "dataSource": "defensive",
-    "columns": ["Team", "OPPG", "Def FG%", "Steals", "Blocks", "Conf"],
+    "dataSource": "npi",
+    "columns": [
+      "Team",
+      "NPI Value",
+      "Value Old",
+      "Value Diff",
+      "NPI",
+      "Rank Old",
+      "Rank Diff",
+      "Qual Games",
+      "Qual Wins",
+      "Lowest Counting Win",
+      "Next Game Win NPI",
+      "Potential Increase",
+      "Next Game Loss NPI",
+      "Rem Games < 50.00 NPI"
+    ],
     "columnMappings": {
-      "Team": "team",
-      "OPPG": "oppg",
-      "Def FG%": "defFgPct",
-      "Steals": "steals",
-      "Blocks": "blocks",
-      "Conf": "conf"
+      "Team": "Team",
+      "NPI Value": "NPI Value",
+      "Value Old": "Value Old",
+      "Value Diff": "Value Diff",
+      "NPI": "NPI",
+      "Rank Old": "Rank Old",
+      "Rank Diff": "Rank Diff",
+      "Qual Games": "Qual Games",
+      "Qual Wins": "Qual Wins",
+      "Lowest Counting Win": "Lowest Counting Win",
+      "Next Game Win NPI": "Next Game Win NPI",
+      "Potential Increase": "Potential Increase",
+      "Next Game Loss NPI": "Next Game Loss NPI",
+      "Rem Games < 50.00 NPI": "Rem Games < 50.00 NPI"
     }
   },
   "page5": {

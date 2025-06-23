@@ -288,6 +288,18 @@ class TableController {
       ) {
         return Math.round(numericValue).toLocaleString();
       }
+      // 3 decimal places for NPI columns
+      else if (
+        cleanHeader === 'npi value' ||
+        cleanHeader === 'value old' ||
+        cleanHeader === 'value diff' ||
+        cleanHeader === 'lowest counting win' ||
+        cleanHeader === 'next game win npi' ||
+        cleanHeader === 'potential increase' ||
+        cleanHeader === 'next game loss npi'
+      ) {
+        return numericValue.toFixed(3);
+      }
     }
 
     // Return original value if no formatting rules apply
