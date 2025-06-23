@@ -267,7 +267,7 @@ class TableController {
     // Handle decimal formatting for numeric columns
     const numericValue = parseFloat(value);
     if (!isNaN(numericValue)) {
-      // 3 decimal places for Win%, SOS, NPI
+      // 3 decimal places for Win%, SOS
       if (
         cleanHeader === 'win%' ||
         cleanHeader === 'sos' ||

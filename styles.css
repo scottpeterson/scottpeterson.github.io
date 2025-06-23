@@ -135,7 +135,6 @@ h2 {
 }
 
 .table-section:hover {
-  transform: translateY(-2px);
   box-shadow: 0 16px 48px rgb(0 0 0 / 20%);
 }
 
@@ -243,7 +242,6 @@ h2 {
 
 .stats-table tbody tr:hover {
   background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
-  transform: translateX(4px);
   box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
   transition: all 0.3s ease;
 }
@@ -273,7 +271,6 @@ h2 {
 }
 
 .home-content:hover {
-  transform: translateY(-2px);
   box-shadow: 0 16px 48px rgb(0 0 0 / 20%);
 }
 
@@ -295,7 +292,6 @@ h2 {
 .home-content a:hover {
   color: #2980b9;
   text-decoration: underline;
-  transform: translateX(2px);
 }
 
 .home-content ul {
@@ -312,7 +308,6 @@ h2 {
 
 .home-content li:hover {
   background: rgb(248 249 250 / 50%);
-  padding-left: 10px;
   border-radius: 6px;
 }
 
@@ -345,7 +340,6 @@ h2 {
 .home-content .github-section:hover,
 .home-content .links-section:hover,
 .home-content .intro-section:hover {
-  transform: translateY(-1px);
   box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
 }
 
@@ -447,7 +441,6 @@ footer {
 
 .search-input:hover,
 .filter-select:hover {
-  transform: translateY(-1px);
   box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
 }
 
@@ -498,7 +491,6 @@ footer {
 }
 
 .progress-indicators:hover {
-  transform: translateY(-2px);
   box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
 }
 
@@ -675,7 +667,6 @@ footer {
 
 .form-submit:hover {
   background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-  transform: translateY(-2px);
   box-shadow: 0 6px 16px rgb(52 152 219 / 50%);
 }
 
