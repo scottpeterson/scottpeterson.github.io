@@ -20,6 +20,16 @@
     "5th Year Last Names": "Walsh"
   },
   {
+    "Team": "Buena Vista",
+    "Conf": "ARC",
+    "Pub?": "TRUE",
+    "Surp Gone": 716,
+    "Exp Gone": 724,
+    "Transfers In": 0,
+    "5th": 680,
+    "5th Year Last Names": "Cone, Humphrey"
+  },
+  {
     "Team": "Aurora",
     "Conf": "NACC",
     "Pub?": "TRUE",
@@ -38,6 +48,16 @@
     "Transfers In": 0,
     "5th": 292,
     "5th Year Last Names": "DeRubbo"
+  },
+  {
+    "Team": "Concordia-Chicago",
+    "Conf": "NACC",
+    "Pub?": "TRUE",
+    "Surp Gone": "1,876",
+    "Exp Gone": "3,107",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
   },
   {
     "Team": "Cornell",
@@ -185,6 +205,16 @@
     "Pub?": "TRUE",
     "Surp Gone": 171,
     "Exp Gone": "2,019",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Knox",
+    "Conf": "MWC",
+    "Pub?": "TRUE",
+    "Surp Gone": 150,
+    "Exp Gone": "2,117",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1780,16 +1810,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Knox",
-    "Conf": "MWC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,967",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Mt. St. Joseph",
     "Conf": "HCAC",
     "Pub?": "FALSE",
@@ -2392,7 +2412,7 @@
   {
     "Team": "Chicago",
     "Conf": "UAA",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": "1,530",
     "Transfers In": 0,
@@ -2415,7 +2435,7 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "1,528",
-    "Transfers In": 0,
+    "Transfers In": 645,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -2815,16 +2835,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "1,234",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Concordia-Chicago",
-    "Conf": "NACC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,231",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3545,16 +3555,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 691,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Buena Vista",
-    "Conf": "ARC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 688,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
