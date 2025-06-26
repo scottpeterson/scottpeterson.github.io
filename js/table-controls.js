@@ -109,6 +109,9 @@ class TableController {
 
       tbody.appendChild(tr);
     });
+
+    // Apply initial alternating row colors
+    this.reapplyRowColors();
   }
 
   // Map header text to data property
@@ -400,9 +403,62 @@ class TableController {
         }
       });
 
+      // Reapply alternating row colors to visible rows
+      this.reapplyRowColors();
+
       this.showNoResults(visibleRows === 0);
     } catch (error) {
       console.error('Error in filterTable:', error);
+    }
+  }
+
+  // Reapply alternating row colors to visible rows only
+  reapplyRowColors() {
+    try {
+      const tbody = this.table.querySelector('tbody');
+      if (!tbody) {
+        return;
+      }
+
+      const allRows = tbody.querySelectorAll('tr');
+      const visibleRows = Array.from(allRows).filter(
+        row => row.style.display !== 'none'
+      );
+
+      // Reset all row colors first
+      allRows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        cells.forEach(cell => {
+          // Reset background color for all cells except first column (which has special styling)
+          if (cell !== row.cells[0]) {
+            cell.style.backgroundColor = '';
+          }
+        });
+        // Reset row background
+        row.style.backgroundColor = '';
+      });
+
+      // Apply alternating colors to visible rows only
+      visibleRows.forEach((row, visibleIndex) => {
+        const isEven = visibleIndex % 2 === 1; // 0-based index, so second row (index 1) is "even" in display
+        const cells = row.querySelectorAll('td');
+
+        if (isEven) {
+          // Apply gray background for even rows
+          row.style.backgroundColor = '#e9ecef';
+          cells.forEach(cell => {
+            cell.style.backgroundColor = '#e9ecef';
+          });
+        } else {
+          // Apply white background for odd rows
+          row.style.backgroundColor = '#fff';
+          cells.forEach(cell => {
+            cell.style.backgroundColor = '#fff';
+          });
+        }
+      });
+    } catch (error) {
+      console.error('Error in reapplyRowColors:', error);
     }
   }
 
@@ -504,6 +560,9 @@ class TableController {
 
       // Reorder rows in DOM
       rows.forEach(row => tbody.appendChild(row));
+
+      // Reapply alternating row colors after sorting
+      this.reapplyRowColors();
     } catch (error) {
       console.error('Error in sortTable:', error);
     }
