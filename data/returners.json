@@ -130,6 +130,16 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Keystone",
+    "Conf": "UEC",
+    "Pub?": "FALSE",
+    "Surp Gone": 664,
+    "Exp Gone": "2,229",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Christopher Newport",
     "Conf": "C2C",
     "Pub?": "TRUE",
@@ -195,6 +205,16 @@
     "Pub?": "TRUE",
     "Surp Gone": 200,
     "Exp Gone": "2,128",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Claremont-Mudd-Scripps",
+    "Conf": "SCIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 188,
+    "Exp Gone": "2,280",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1095,7 +1115,7 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "2,489",
-    "Transfers In": 0,
+    "Transfers In": 664,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -1615,16 +1635,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "2,108",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Claremont-Mudd-Scripps",
-    "Conf": "SCIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,092",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2330,16 +2340,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Keystone",
-    "Conf": "UEC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,565",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Houghton",
     "Conf": "E8",
     "Pub?": "FALSE",
@@ -2765,16 +2765,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "1,252",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Northland",
-    "Conf": "UMAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,250",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3792,10 +3782,10 @@
   {
     "Team": "Monmouth",
     "Conf": "MWC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": 410,
-    "Transfers In": 0,
+    "Transfers In": 723,
     "5th": 0,
     "5th Year Last Names": ""
   },

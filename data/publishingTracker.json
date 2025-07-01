@@ -18,6 +18,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Hanover",
+    "Conf": "HCAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "William Smith",
     "Conf": "LL",
     "Schedule Published?": "TRUE",
@@ -32,6 +38,18 @@
   {
     "Team": "Lake Forest",
     "Conf": "MWC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Monmouth",
+    "Conf": "MWC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Husson",
+    "Conf": "NAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "TRUE"
   },
@@ -114,12 +132,6 @@
     "Roster Published?": "TRUE"
   },
   {
-    "Team": "Hanover",
-    "Conf": "HCAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "TRUE"
-  },
-  {
     "Team": "Worcester St.",
     "Conf": "MASCAC",
     "Schedule Published?": "FALSE",
@@ -140,12 +152,6 @@
   {
     "Team": "Knox",
     "Conf": "MWC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "TRUE"
-  },
-  {
-    "Team": "Husson",
-    "Conf": "NAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "TRUE"
   },
@@ -186,6 +192,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Claremont-Mudd-Scripps",
+    "Conf": "SCIAC",
+    "Schedule Published?": "FALSE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Chicago",
     "Conf": "UAA",
     "Schedule Published?": "FALSE",
@@ -204,6 +216,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Hilbert",
+    "Conf": "AMCC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Mt. Aloysius",
     "Conf": "AMCC",
     "Schedule Published?": "TRUE",
@@ -211,6 +229,12 @@
   },
   {
     "Team": "Central (IA)",
+    "Conf": "ARC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Wartburg",
     "Conf": "ARC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
@@ -252,7 +276,19 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Lehman",
+    "Conf": "CUNYAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Brockport St.",
+    "Conf": "E8",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "SUNY Geneseo",
     "Conf": "E8",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
@@ -289,6 +325,12 @@
   },
   {
     "Team": "Calvin",
+    "Conf": "MIAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Hope",
     "Conf": "MIAA",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
@@ -348,6 +390,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Dominican",
+    "Conf": "NACC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Lakeland",
     "Conf": "NACC",
     "Schedule Published?": "TRUE",
@@ -379,6 +427,12 @@
   },
   {
     "Team": "Salve Regina",
+    "Conf": "NEWMAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Smith",
     "Conf": "NEWMAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
@@ -438,6 +492,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Redlands",
+    "Conf": "SCIAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Whittier",
     "Conf": "SCIAC",
     "Schedule Published?": "TRUE",
@@ -452,6 +512,12 @@
   {
     "Team": "SUNY Purchase",
     "Conf": "SKY",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Morrisville St.",
+    "Conf": "SUNYAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -552,12 +618,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Hilbert",
-    "Conf": "AMCC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "La Roche",
     "Conf": "AMCC",
     "Schedule Published?": "FALSE",
@@ -607,12 +667,6 @@
   },
   {
     "Team": "Simpson (IA)",
-    "Conf": "ARC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Wartburg",
     "Conf": "ARC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -882,12 +936,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Lehman",
-    "Conf": "CUNYAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Medgar Evers",
     "Conf": "CUNYAC",
     "Schedule Published?": "FALSE",
@@ -943,12 +991,6 @@
   },
   {
     "Team": "St. John Fisher",
-    "Conf": "E8",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "SUNY Geneseo",
     "Conf": "E8",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1392,12 +1434,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Hope",
-    "Conf": "MIAA",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Olivet",
     "Conf": "MIAA",
     "Schedule Published?": "FALSE",
@@ -1459,12 +1495,6 @@
   },
   {
     "Team": "Lawrence",
-    "Conf": "MWC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Monmouth",
     "Conf": "MWC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1537,12 +1567,6 @@
   },
   {
     "Team": "Concordia (WI)",
-    "Conf": "NACC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Dominican",
     "Conf": "NACC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1711,12 +1735,6 @@
   },
   {
     "Team": "Mt. Holyoke",
-    "Conf": "NEWMAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Smith",
     "Conf": "NEWMAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -2076,12 +2094,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Claremont-Mudd-Scripps",
-    "Conf": "SCIAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "La Verne",
     "Conf": "SCIAC",
     "Schedule Published?": "FALSE",
@@ -2095,12 +2107,6 @@
   },
   {
     "Team": "Pomona-Pitzer",
-    "Conf": "SCIAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Redlands",
     "Conf": "SCIAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -2221,12 +2227,6 @@
   },
   {
     "Team": "Fredonia",
-    "Conf": "SUNYAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Morrisville St.",
     "Conf": "SUNYAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -2389,12 +2389,6 @@
   },
   {
     "Team": "North Central (MN)",
-    "Conf": "UMAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Northland",
     "Conf": "UMAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
