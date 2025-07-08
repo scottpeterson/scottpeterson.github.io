@@ -54,128 +54,106 @@
     <main>
       <header>
         <h1>Current Season Rankings</h1>
-        <p>
-          Ranking of teams based on this season's results. <br />
-          This data is not updated for the 2025-26 season yet.
-        </p>
-
-        <p class="last-updated">
-          <em>Last updated: June 23, 2025 at 01:31 PM EDT</em>
-        </p>
+        <p>Ranking of teams based on this season's results. <br> This data is not updated for the 2025-26 season yet.</p>
+        
+        <p class="last-updated"><em>Last updated: June 23, 2025 at 12:31 PM CDT</em></p>
+        
       </header>
 
       <section class="table-section">
-        <h2>Current Season Rankings</h2>
-
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
-          </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Rank</th>
-                <th>Value of Results</th>
-                <th>TOP 50 W</th>
-                <th>OUT OF TOP 30 L</th>
-                <th>Overall Wins Massey</th>
-                <th>Eff</th>
-                <th>Underlying</th>
-                <th>STAT</th>
-                <th>STDEV</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
-        </div>
-      </section>
+  <h2>Current Season Rankings</h2>
+  
+  
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Conf</th>
+          <th>Rank</th>
+          <th>Value of Results</th>
+          <th>TOP 50 W</th>
+          <th>OUT OF TOP 30 L</th>
+          <th>Overall Wins Massey</th>
+          <th>Eff</th>
+          <th>Underlying</th>
+          <th>STAT</th>
+          <th>STDEV</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section> 
       <div class="table-section">
         <section class="legend-section">
           <h2>Column Legend</h2>
           <div class="legend-grid">
-            <div class="legend-item">
-              <span class="legend-column">Team</span>
-              <span class="legend-description"
-                >Name of the college or university basketball team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Conf</span>
-              <span class="legend-description"
-                >Conference affiliation of the team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Rank</span>
-              <span class="legend-description">Current season ranking</span>
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Value of Results</span>
-              <span class="legend-description"
-                >Numerical value representing quality of season results</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">TOP 50 W</span>
-              <span class="legend-description"
-                >Number of wins against teams ranked in top 50</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">OUT OF TOP 30 L</span>
-              <span class="legend-description"
-                >Number of losses to teams ranked outside top 30</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Overall Wins Massey</span>
-              <span class="legend-description"
-                >Total wins according to Massey ratings system</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Eff</span>
-              <span class="legend-description"
-                >Team efficiency rating for the current season</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Underlying</span>
-              <span class="legend-description"
-                >Underlying performance metrics beyond wins/losses</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">STAT</span>
-              <span class="legend-description"
-                >Aggregate of the other stats</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">STDEV</span>
-              <span class="legend-description">Standard deviation of STAT</span>
-            </div>
+                      <div class="legend-item">
+            <span class="legend-column">Team</span>
+            <span class="legend-description">Name of the college or university basketball team</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Conf</span>
+            <span class="legend-description">Conference affiliation of the team</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Rank</span>
+            <span class="legend-description">Current season ranking</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Value of Results</span>
+            <span class="legend-description">Numerical value representing quality of season results</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">TOP 50 W</span>
+            <span class="legend-description">Number of wins against teams ranked in top 50</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">OUT OF TOP 30 L</span>
+            <span class="legend-description">Number of losses to teams ranked outside top 30</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Overall Wins Massey</span>
+            <span class="legend-description">Total wins according to Massey ratings system</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Eff</span>
+            <span class="legend-description">Team efficiency rating for the current season</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Underlying</span>
+            <span class="legend-description">Underlying performance metrics beyond wins/losses</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">STAT</span>
+            <span class="legend-description">Aggregate of the other stats</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">STDEV</span>
+            <span class="legend-description">Standard deviation of STAT</span>
+          </div>
           </div>
         </section>
       </div>
+      
     </main>
 
     <footer>

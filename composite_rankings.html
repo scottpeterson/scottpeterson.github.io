@@ -54,134 +54,106 @@
     <main>
       <header>
         <h1>Composite Rankings</h1>
-        <p>
-          Team Rankings based off median of NPI, Massey, Efficiency, and Current
-          Season Results. <br />
-          This data is not updated for the 2025-26 season yet.
-        </p>
-
-        <p class="last-updated">
-          <em>Last updated: June 23, 2025 at 01:45 PM EDT</em>
-        </p>
+        <p>Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results. <br> This data is not updated for the 2025-26 season yet.</p>
+        
+        <p class="last-updated"><em>Last updated: June 23, 2025 at 12:44 PM CDT</em></p>
+        
       </header>
 
       <section class="table-section">
-        <h2>Composite Rankings</h2>
-
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
-          </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Region</th>
-                <th>Massey Rank</th>
-                <th>Eff Rank</th>
-                <th>NPI Rank</th>
-                <th>Curr Season Results Rank</th>
-                <th>Preseason Rank</th>
-                <th>MEDIAN</th>
-                <th>OVR_RANK</th>
-                <th>Stdev</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
-        </div>
-      </section>
+  <h2>Composite Rankings</h2>
+  
+  
+  
+  
+  <!-- Search and Filter Controls -->
+  <div class="table-controls">
+    <div class="search-container">
+      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
+    </div>
+    <div class="filter-container">
+      <select id="conferenceFilter" class="filter-select">
+        <option value="">All Conferences</option>
+      </select>
+    </div>
+  </div>
+  
+  
+  <div class="table-container">
+    <table class="stats-table" id="statsTable">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Conf</th>
+          <th>Region</th>
+          <th>Massey Rank</th>
+          <th>Eff Rank</th>
+          <th>NPI Rank</th>
+          <th>Curr Season Results Rank</th>
+          <th>Preseason Rank</th>
+          <th>MEDIAN</th>
+          <th>OVR_RANK</th>
+          <th>Stdev</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Data will be loaded dynamically -->
+      </tbody>
+    </table>
+  </div>
+</section> 
       <div class="table-section">
         <section class="legend-section">
           <h2>Column Legend</h2>
           <div class="legend-grid">
-            <div class="legend-item">
-              <span class="legend-column">Team</span>
-              <span class="legend-description"
-                >Name of the college or university basketball team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Conf</span>
-              <span class="legend-description"
-                >Conference affiliation of the team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Region</span>
-              <span class="legend-description"
-                >NCAA tournament region the team belongs to</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Massey Rank</span>
-              <span class="legend-description"
-                >Team ranking according to Massey rating system</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Eff Rank</span>
-              <span class="legend-description"
-                >Team ranking based on efficiency metrics</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">NPI Rank</span>
-              <span class="legend-description"
-                >Team ranking based on NCAA Power Index</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Curr Season Results Rank</span>
-              <span class="legend-description"
-                >Ranking based on current season performance</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Preseason Rank</span>
-              <span class="legend-description"
-                >Team's preseason ranking prediction</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">MEDIAN</span>
-              <span class="legend-description"
-                >Median value across all ranking systems (not including
-                preseason)</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">OVR_RANK</span>
-              <span class="legend-description"
-                >Overall composite ranking position</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Stdev</span>
-              <span class="legend-description"
-                >Standard deviation across different ranking systems</span
-              >
-            </div>
+                      <div class="legend-item">
+            <span class="legend-column">Team</span>
+            <span class="legend-description">Name of the college or university basketball team</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Conf</span>
+            <span class="legend-description">Conference affiliation of the team</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Region</span>
+            <span class="legend-description">NCAA tournament region the team belongs to</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Massey Rank</span>
+            <span class="legend-description">Team ranking according to Massey rating system</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Eff Rank</span>
+            <span class="legend-description">Team ranking based on efficiency metrics</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">NPI Rank</span>
+            <span class="legend-description">Team ranking based on NCAA Power Index</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Curr Season Results Rank</span>
+            <span class="legend-description">Ranking based on current season performance</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Preseason Rank</span>
+            <span class="legend-description">Team's preseason ranking prediction</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">MEDIAN</span>
+            <span class="legend-description">Median value across all ranking systems (not including preseason)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">OVR_RANK</span>
+            <span class="legend-description">Overall composite ranking position</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-column">Stdev</span>
+            <span class="legend-description">Standard deviation across different ranking systems</span>
+          </div>
           </div>
         </section>
       </div>
+      
     </main>
 
     <footer>

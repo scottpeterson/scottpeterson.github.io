@@ -96,6 +96,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Rhodes",
+    "Conf": "SAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "MUW",
     "Conf": "SLIAC",
     "Schedule Published?": "TRUE",
@@ -126,8 +132,26 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Maryville",
+    "Conf": "CCS",
+    "Schedule Published?": "FALSE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Bluffton",
     "Conf": "HCAC",
+    "Schedule Published?": "FALSE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Rose-Hulman",
+    "Conf": "HCAC",
+    "Schedule Published?": "FALSE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Susquehanna",
+    "Conf": "LAND",
     "Schedule Published?": "FALSE",
     "Roster Published?": "TRUE"
   },
@@ -186,8 +210,8 @@
     "Roster Published?": "TRUE"
   },
   {
-    "Team": "Rhodes",
-    "Conf": "SAA",
+    "Team": "Bethany (WV)",
+    "Conf": "PAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "TRUE"
   },
@@ -288,6 +312,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Houghton",
+    "Conf": "E8",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "SUNY Geneseo",
     "Conf": "E8",
     "Schedule Published?": "TRUE",
@@ -318,6 +348,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Eastern Univ",
+    "Conf": "MACC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "York (PA)",
     "Conf": "MACC",
     "Schedule Published?": "TRUE",
@@ -337,6 +373,12 @@
   },
   {
     "Team": "Kalamazoo",
+    "Conf": "MIAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Trine",
     "Conf": "MIAA",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
@@ -386,6 +428,12 @@
   {
     "Team": "Ripon",
     "Conf": "MWC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Concordia (WI)",
+    "Conf": "NACC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -512,6 +560,12 @@
   {
     "Team": "SUNY Purchase",
     "Conf": "SKY",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Fredonia",
+    "Conf": "SUNYAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -834,12 +888,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Maryville",
-    "Conf": "CCS",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Piedmont",
     "Conf": "CCS",
     "Schedule Published?": "FALSE",
@@ -961,12 +1009,6 @@
   },
   {
     "Team": "Hartwick",
-    "Conf": "E8",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Houghton",
     "Conf": "E8",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1116,12 +1158,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Rose-Hulman",
-    "Conf": "HCAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Transylvania",
     "Conf": "HCAC",
     "Schedule Published?": "FALSE",
@@ -1171,12 +1207,6 @@
   },
   {
     "Team": "Scranton",
-    "Conf": "LAND",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Susquehanna",
     "Conf": "LAND",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1297,12 +1327,6 @@
   },
   {
     "Team": "Alvernia",
-    "Conf": "MACC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Eastern Univ",
     "Conf": "MACC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1446,12 +1470,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Trine",
-    "Conf": "MIAA",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Bethel",
     "Conf": "MIAC",
     "Schedule Published?": "FALSE",
@@ -1561,12 +1579,6 @@
   },
   {
     "Team": "Benedictine",
-    "Conf": "NACC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Concordia (WI)",
     "Conf": "NACC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
@@ -1938,12 +1950,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Bethany (WV)",
-    "Conf": "PAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Chatham",
     "Conf": "PAC",
     "Schedule Published?": "FALSE",
@@ -2221,12 +2227,6 @@
   },
   {
     "Team": "Cortland",
-    "Conf": "SUNYAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Fredonia",
     "Conf": "SUNYAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"

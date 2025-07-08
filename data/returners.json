@@ -20,6 +20,16 @@
     "5th Year Last Names": "Walsh"
   },
   {
+    "Team": "Bethany (WV)",
+    "Conf": "PAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 165,
+    "Exp Gone": "1,991",
+    "Transfers In": 0,
+    "5th": 786,
+    "5th Year Last Names": "Garrison"
+  },
+  {
     "Team": "Buena Vista",
     "Conf": "ARC",
     "Pub?": "TRUE",
@@ -38,6 +48,16 @@
     "Transfers In": 0,
     "5th": 541,
     "5th Year Last Names": "Fischbach"
+  },
+  {
+    "Team": "Susquehanna",
+    "Conf": "LAND",
+    "Pub?": "TRUE",
+    "Surp Gone": 12,
+    "Exp Gone": 720,
+    "Transfers In": 0,
+    "5th": 534,
+    "5th Year Last Names": "Meehan"
   },
   {
     "Team": "Washington & Jefferson",
@@ -73,8 +93,8 @@
     "Team": "East Texas Baptist",
     "Conf": "ASC",
     "Pub?": "FALSE",
-    "Surp Gone": "1,306",
-    "Exp Gone": "2,968",
+    "Surp Gone": "1,316",
+    "Exp Gone": "2,978",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -106,6 +126,26 @@
     "Surp Gone": 840,
     "Exp Gone": "3,413",
     "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Maryville",
+    "Conf": "CCS",
+    "Pub?": "TRUE",
+    "Surp Gone": 811,
+    "Exp Gone": "1,365",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Monmouth",
+    "Conf": "MWC",
+    "Pub?": "TRUE",
+    "Surp Gone": 791,
+    "Exp Gone": "1,201",
+    "Transfers In": 723,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -925,16 +965,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "2,615",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Bethany (WV)",
-    "Conf": "PAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,612",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2810,16 +2840,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Susquehanna",
-    "Conf": "LAND",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,242",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Thomas (ME)",
     "Conf": "NAC",
     "Pub?": "FALSE",
@@ -3132,7 +3152,7 @@
   {
     "Team": "Rose-Hulman",
     "Conf": "HCAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": 954,
     "Transfers In": 0,
@@ -3650,16 +3670,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Maryville",
-    "Conf": "CCS",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 554,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Alverno",
     "Conf": "NACC",
     "Pub?": "FALSE",
@@ -3776,16 +3786,6 @@
     "Surp Gone": 0,
     "Exp Gone": 414,
     "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Monmouth",
-    "Conf": "MWC",
-    "Pub?": "TRUE",
-    "Surp Gone": 0,
-    "Exp Gone": 410,
-    "Transfers In": 723,
     "5th": 0,
     "5th Year Last Names": ""
   },
