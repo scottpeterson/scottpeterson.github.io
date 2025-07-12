@@ -110,6 +110,47 @@
       "5th Year Last Names": "Names of the fifth-year players on the roster"
     }
   },
+  "non_conf_tournaments": {
+    "title": "Non-Conference Tournaments",
+    "heading": "Non-Conference Tournaments",
+    "description": "A table listing the teams participating in various non-conference tournaments",
+    "sectionTitle": "Non-Conference Tournaments",
+    "hasSearch": true,
+    "searchPlaceholder": "Search for team or tournament...",
+    "dataSource": "nonConfTournaments",
+    "columns": [
+      "Date",
+      "Tournament",
+      "Team 1",
+      "Team 2",
+      "Team 3",
+      "Team 4",
+      "Team 5",
+      "Team 6",
+      "Team 7",
+      "Team 8"
+    ],
+    "columnMappings": {
+      "Team": "Team",
+      "Conf": "Conf",
+      "Tournament": "Tournament",
+      "Location": "Location",
+      "Date": "Date",
+      "Results": "Results",
+      "Opponents": "Opponents",
+      "Record": "Record"
+    },
+    "legend": {
+      "Team": "Name of the college or university basketball team",
+      "Conf": "Conference affiliation of the team",
+      "Tournament": "Name of the non-conference tournament",
+      "Location": "Host city and state where tournament was held",
+      "Date": "Date range when the tournament took place",
+      "Results": "Final tournament result (Champion, Runner-up, etc.)",
+      "Opponents": "Teams faced during the tournament",
+      "Record": "Win-loss record in the tournament"
+    }
+  },
   "npi": {
     "title": "NPI",
     "heading": "NPI",

@@ -36,6 +36,9 @@
             <a href="preseason_rankings.html">25-26 Preseason Rankings</a>
           </li>
           <li><a href="returners.html">Returning and Non-Returning</a></li>
+          <li>
+            <a href="non_conf_tournaments.html">Non-Conference Tournaments</a>
+          </li>
           <li><a href="npi.html">NPI</a></li>
           <li><a href="season_simulations.html">Season Simulations</a></li>
           <li>
@@ -54,141 +57,184 @@
     <main>
       <header>
         <h1>Season Simulations</h1>
-        <p>D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates. <br> This data is for the 2024-25 season.</p>
-        
-        <p class="last-updated"><em>Last updated: June 23, 2025 at 12:04 PM CDT</em></p>
-        
+        <p>
+          D3 WBB season simulations, based off Efficiency Ratings, to project
+          NCAA Qualification rates. <br />
+          This data is for the 2024-25 season.
+        </p>
+
+        <p class="last-updated">
+          <em>Last updated: June 23, 2025 at 01:06 PM EDT</em>
+        </p>
       </header>
 
       <section class="table-section">
-  <h2>Season Simulations</h2>
-  
-  
-  
-  
-  <!-- Search and Filter Controls -->
-  <div class="table-controls">
-    <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
-    </div>
-    <div class="filter-container">
-      <select id="conferenceFilter" class="filter-select">
-        <option value="">All Conferences</option>
-      </select>
-    </div>
-  </div>
-  
-  
-  <div class="table-container">
-    <table class="stats-table" id="statsTable">
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>Conf</th>
-          <th>MedW</th>
-          <th>MedL</th>
-          <th>Tourn%</th>
-          <th>A%</th>
-          <th>C%</th>
-          <th>ALWYNI%</th>
-          <th>F-C%</th>
-          <th>SF-C%</th>
-          <th>QF-C%</th>
-          <th>Top4%</th>
-          <th>Top8%</th>
-          <th>Top16%</th>
-          <th>Med-NPI</th>
-          <th>Min</th>
-          <th>Max</th>
-          <th>Rank</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Data will be loaded dynamically -->
-      </tbody>
-    </table>
-  </div>
-</section> 
+        <h2>Season Simulations</h2>
+
+        <!-- Search and Filter Controls -->
+        <div class="table-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="teamSearch"
+              placeholder="Search for team..."
+              class="search-input"
+            />
+          </div>
+          <div class="filter-container">
+            <select id="conferenceFilter" class="filter-select">
+              <option value="">All Conferences</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="stats-table" id="statsTable">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Conf</th>
+                <th>MedW</th>
+                <th>MedL</th>
+                <th>Tourn%</th>
+                <th>A%</th>
+                <th>C%</th>
+                <th>ALWYNI%</th>
+                <th>F-C%</th>
+                <th>SF-C%</th>
+                <th>QF-C%</th>
+                <th>Top4%</th>
+                <th>Top8%</th>
+                <th>Top16%</th>
+                <th>Med-NPI</th>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Rank</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
       <div class="table-section">
         <section class="legend-section">
           <h2>Column Legend</h2>
           <div class="legend-grid">
-                      <div class="legend-item">
-            <span class="legend-column">Team</span>
-            <span class="legend-description">Name of the college or university basketball team</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Conf</span>
-            <span class="legend-description">Conference affiliation of the team</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">MedW</span>
-            <span class="legend-description">Median number of wins projected across simulations</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">MedL</span>
-            <span class="legend-description">Median number of losses projected across simulations</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Tourn%</span>
-            <span class="legend-description">Percentage of simulations making the NCAA Tournament</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">A%</span>
-            <span class="legend-description">Percentage of simulations winning their conference's AQ</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">C%</span>
-            <span class="legend-description">Percentage of simulations getting an at-large bid</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">ALWYNI%</span>
-            <span class="legend-description">Percentage of simulations NOT winning their conference's AQ, and getting an at-large bid</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">F-C%</span>
-            <span class="legend-description">Percentage of simulations getting a Pool C when final loss was in conference finals</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">SF-C%</span>
-            <span class="legend-description">Percentage of simulations getting a Pool C when final loss was in conference semifinals</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">QF-C%</span>
-            <span class="legend-description">Percentage of simulations getting a Pool C when final loss was in conference quarterfinals</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Top4%</span>
-            <span class="legend-description">Percentage of simulations finishing in top 4 nationally</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Top8%</span>
-            <span class="legend-description">Percentage of simulations finishing in top 8 nationally</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Top16%</span>
-            <span class="legend-description">Percentage of simulations finishing in top 16 nationally</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Med-NPI</span>
-            <span class="legend-description">Median NPI value across simulations</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Min</span>
-            <span class="legend-description">Minimum NPI value across simulations</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Max</span>
-            <span class="legend-description">Maximum NPI value across simulations</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Rank</span>
-            <span class="legend-description">Rank of ALWYNI&</span>
-          </div>
+            <div class="legend-item">
+              <span class="legend-column">Team</span>
+              <span class="legend-description"
+                >Name of the college or university basketball team</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Conf</span>
+              <span class="legend-description"
+                >Conference affiliation of the team</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">MedW</span>
+              <span class="legend-description"
+                >Median number of wins projected across simulations</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">MedL</span>
+              <span class="legend-description"
+                >Median number of losses projected across simulations</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Tourn%</span>
+              <span class="legend-description"
+                >Percentage of simulations making the NCAA Tournament</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">A%</span>
+              <span class="legend-description"
+                >Percentage of simulations winning their conference's AQ</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">C%</span>
+              <span class="legend-description"
+                >Percentage of simulations getting an at-large bid</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">ALWYNI%</span>
+              <span class="legend-description"
+                >Percentage of simulations NOT winning their conference's AQ,
+                and getting an at-large bid</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">F-C%</span>
+              <span class="legend-description"
+                >Percentage of simulations getting a Pool C when final loss was
+                in conference finals</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">SF-C%</span>
+              <span class="legend-description"
+                >Percentage of simulations getting a Pool C when final loss was
+                in conference semifinals</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">QF-C%</span>
+              <span class="legend-description"
+                >Percentage of simulations getting a Pool C when final loss was
+                in conference quarterfinals</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Top4%</span>
+              <span class="legend-description"
+                >Percentage of simulations finishing in top 4 nationally</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Top8%</span>
+              <span class="legend-description"
+                >Percentage of simulations finishing in top 8 nationally</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Top16%</span>
+              <span class="legend-description"
+                >Percentage of simulations finishing in top 16 nationally</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Med-NPI</span>
+              <span class="legend-description"
+                >Median NPI value across simulations</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Min</span>
+              <span class="legend-description"
+                >Minimum NPI value across simulations</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Max</span>
+              <span class="legend-description"
+                >Maximum NPI value across simulations</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Rank</span>
+              <span class="legend-description">Rank of ALWYNI&</span>
+            </div>
           </div>
         </section>
       </div>
-      
     </main>
 
     <footer>

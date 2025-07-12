@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Current Season Rankings</title>
+    <title>Basketball Statistics - Non-Conference Tournaments</title>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GoatCounter Analytics -->
@@ -56,19 +56,19 @@
 
     <main>
       <header>
-        <h1>Current Season Rankings</h1>
+        <h1>Non-Conference Tournaments</h1>
         <p>
-          Ranking of teams based on this season's results. <br />
-          This data is not updated for the 2025-26 season yet.
+          A table listing the teams participating in various non-conference
+          tournaments
         </p>
 
         <p class="last-updated">
-          <em>Last updated: June 23, 2025 at 01:31 PM EDT</em>
+          <em>Last updated: July 11, 2025 at 09:54 PM EDT</em>
         </p>
       </header>
 
       <section class="table-section">
-        <h2>Current Season Rankings</h2>
+        <h2>Non-Conference Tournaments</h2>
 
         <!-- Search and Filter Controls -->
         <div class="table-controls">
@@ -76,7 +76,7 @@
             <input
               type="text"
               id="teamSearch"
-              placeholder="Search for team..."
+              placeholder="Search for team or tournament..."
               class="search-input"
             />
           </div>
@@ -91,17 +91,16 @@
           <table class="stats-table" id="statsTable">
             <thead>
               <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Rank</th>
-                <th>Value of Results</th>
-                <th>TOP 50 W</th>
-                <th>OUT OF TOP 30 L</th>
-                <th>Overall Wins Massey</th>
-                <th>Eff</th>
-                <th>Underlying</th>
-                <th>STAT</th>
-                <th>STDEV</th>
+                <th>Date</th>
+                <th>Tournament</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Team 3</th>
+                <th>Team 4</th>
+                <th>Team 5</th>
+                <th>Team 6</th>
+                <th>Team 7</th>
+                <th>Team 8</th>
               </tr>
             </thead>
             <tbody id="tableBody">
@@ -127,54 +126,40 @@
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">Rank</span>
-              <span class="legend-description">Current season ranking</span>
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Value of Results</span>
+              <span class="legend-column">Tournament</span>
               <span class="legend-description"
-                >Numerical value representing quality of season results</span
+                >Name of the non-conference tournament</span
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">TOP 50 W</span>
+              <span class="legend-column">Location</span>
               <span class="legend-description"
-                >Number of wins against teams ranked in top 50</span
+                >Host city and state where tournament was held</span
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">OUT OF TOP 30 L</span>
+              <span class="legend-column">Date</span>
               <span class="legend-description"
-                >Number of losses to teams ranked outside top 30</span
+                >Date range when the tournament took place</span
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">Overall Wins Massey</span>
+              <span class="legend-column">Results</span>
               <span class="legend-description"
-                >Total wins according to Massey ratings system</span
+                >Final tournament result (Champion, Runner-up, etc.)</span
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">Eff</span>
+              <span class="legend-column">Opponents</span>
               <span class="legend-description"
-                >Team efficiency rating for the current season</span
+                >Teams faced during the tournament</span
               >
             </div>
             <div class="legend-item">
-              <span class="legend-column">Underlying</span>
+              <span class="legend-column">Record</span>
               <span class="legend-description"
-                >Underlying performance metrics beyond wins/losses</span
+                >Win-loss record in the tournament</span
               >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">STAT</span>
-              <span class="legend-description"
-                >Aggregate of the other stats</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">STDEV</span>
-              <span class="legend-description">Standard deviation of STAT</span>
             </div>
           </div>
         </section>
