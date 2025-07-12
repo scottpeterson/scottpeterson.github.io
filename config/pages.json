@@ -131,24 +131,28 @@
       "Team 8"
     ],
     "columnMappings": {
-      "Team": "Team",
-      "Conf": "Conf",
-      "Tournament": "Tournament",
-      "Location": "Location",
       "Date": "Date",
-      "Results": "Results",
-      "Opponents": "Opponents",
-      "Record": "Record"
+      "Tournament": "Tournament",
+      "Team 1": "Team 1",
+      "Team 2": "Team 2",
+      "Team 3": "Team 3",
+      "Team 4": "Team 4",
+      "Team 5": "Team 5",
+      "Team 6": "Team 6",
+      "Team 7": "Team 7",
+      "Team 8": "Team 8"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
+      "Date": "Date when the tournament takes place",
       "Tournament": "Name of the non-conference tournament",
-      "Location": "Host city and state where tournament was held",
-      "Date": "Date range when the tournament took place",
-      "Results": "Final tournament result (Champion, Runner-up, etc.)",
-      "Opponents": "Teams faced during the tournament",
-      "Record": "Win-loss record in the tournament"
+      "Team 1": "First participating team",
+      "Team 2": "Second participating team",
+      "Team 3": "Third participating team",
+      "Team 4": "Fourth participating team",
+      "Team 5": "Fifth participating team",
+      "Team 6": "Sixth participating team",
+      "Team 7": "Seventh participating team",
+      "Team 8": "Eighth participating team"
     }
   },
   "npi": {
