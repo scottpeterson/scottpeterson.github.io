@@ -115,7 +115,7 @@
     "heading": "Non-Conference Tournaments",
     "description": "A table listing the teams participating in various non-conference tournaments",
     "sectionTitle": "Non-Conference Tournaments",
-    "hasSearch": true,
+    "hasSearch": false,
     "searchPlaceholder": "Search for team or tournament...",
     "dataSource": "nonConfTournaments",
     "columns": [
