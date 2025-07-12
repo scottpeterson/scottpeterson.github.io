@@ -16,17 +16,22 @@ class TableController {
       this.conferenceFilter = document.getElementById('conferenceFilter');
       this.table = document.getElementById('statsTable');
 
-      // Exit if the current page doesn't have the table or filters
-      if (!this.searchInput || !this.conferenceFilter || !this.table) {
-        console.log('Search/filter elements not found on this page');
+      // Table is required, but search/filter elements are optional
+      if (!this.table) {
+        console.log('Stats table not found on this page');
         return false;
       }
 
-      // Add event listeners for search and filter
-      this.searchInput.addEventListener('input', () => this.filterTable());
-      this.conferenceFilter.addEventListener('change', () =>
-        this.filterTable()
-      );
+      // Add event listeners for search and filter if they exist
+      if (this.searchInput) {
+        this.searchInput.addEventListener('input', () => this.filterTable());
+      }
+
+      if (this.conferenceFilter) {
+        this.conferenceFilter.addEventListener('change', () =>
+          this.filterTable()
+        );
+      }
 
       // Initialize table sorting
       this.initTableSorting();
@@ -330,6 +335,11 @@ class TableController {
   // Populate conference filter with unique values
   populateConferenceFilter() {
     try {
+      // Skip if no conference filter exists on this page
+      if (!this.conferenceFilter) {
+        return;
+      }
+
       const conferences = new Set();
 
       this.currentData.forEach(row => {
@@ -360,8 +370,12 @@ class TableController {
   // Filter table based on search and conference filter
   filterTable() {
     try {
-      const searchTerm = this.searchInput.value.toLowerCase();
-      const conference = this.conferenceFilter.value;
+      const searchTerm = this.searchInput
+        ? this.searchInput.value.toLowerCase()
+        : '';
+      const conference = this.conferenceFilter
+        ? this.conferenceFilter.value
+        : '';
 
       const tbody = this.table.querySelector('tbody');
       if (!tbody) {
