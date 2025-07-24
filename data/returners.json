@@ -90,6 +90,16 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Greensboro",
+    "Conf": "USAC",
+    "Pub?": "TRUE",
+    "Surp Gone": "2,018",
+    "Exp Gone": "3,270",
+    "Transfers In": 10,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Concordia-Chicago",
     "Conf": "NACC",
     "Pub?": "TRUE",
@@ -155,6 +165,16 @@
     "Pub?": "TRUE",
     "Surp Gone": 934,
     "Exp Gone": "1,629",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "PSU-Altoona",
+    "Conf": "AMCC",
+    "Pub?": "TRUE",
+    "Surp Gone": 845,
+    "Exp Gone": "1,437",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -292,7 +312,7 @@
   {
     "Team": "Alma",
     "Conf": "MIAA",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 224,
     "Exp Gone": "1,422",
     "Transfers In": 0,
@@ -2592,7 +2612,7 @@
   {
     "Team": "Carleton",
     "Conf": "MIAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": "1,453",
     "Transfers In": 0,
@@ -2805,16 +2825,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": "1,257",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Greensboro",
-    "Conf": "USAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,252",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3635,16 +3645,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 598,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "PSU-Altoona",
-    "Conf": "AMCC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 592,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
