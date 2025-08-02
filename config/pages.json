@@ -46,7 +46,9 @@
       "NPI",
       "Height",
       "Returning",
-      "Projected Preseason Rank"
+      "Projected Preseason Rank",
+      "Safe Losses Threshold",
+      "Dangerous"
     ],
     "columnMappings": {
       "Team": "Team",
@@ -57,7 +59,9 @@
       "NPI": "NPI",
       "Height": "Height",
       "Returning": "Returning",
-      "Projected Preseason Rank": "Projected Preseason Rank"
+      "Projected Preseason Rank": "Projected Preseason Rank",
+      "Safe Losses Threshold": "Safe Losses Threshold",
+      "Dangerous": "Dangerous"
     },
     "legend": {
       "Team": "Name of the college or university basketball team",
@@ -68,7 +72,9 @@
       "NPI": "2024-25 NPI",
       "Height": "2024-25 Minutes-weighted team height (inches)",
       "Returning": "Percentage of scoring production returning from previous season",
-      "Projected Preseason Rank": "Projected ranking for the start of the season"
+      "Projected Preseason Rank": "Projected ranking for the start of the season",
+      "Safe Losses Threshold": "Maximum number of losses a team can sustain while remaining safe for tournament selection",
+      "Dangerous": "This number of losses puts the team in a precarious position for tournament selection"
     }
   },
   "returners": {
