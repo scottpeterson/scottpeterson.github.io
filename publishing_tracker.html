@@ -58,92 +58,102 @@
       <header>
         <h1>Publishing Tracker</h1>
         <p>Track 2025-26 Schedule and Roster publishing progress.</p>
-        
-        <p class="last-updated"><em>Last updated: August 13, 2025 at 10:33 AM EDT</em></p>
-        
+
+        <p class="last-updated">
+          <em>Last updated: August 13, 2025 at 10:48 AM EDT</em>
+        </p>
       </header>
 
       <section class="table-section">
-  <h2>Team Publishing Status</h2>
-  
-  
-  <!-- Progress Indicators -->
-  <div class="progress-indicators">
-    <div class="progress-item">
-      <div class="progress-label">
-        <span class="progress-title">Schedule Publishing Progress</span>
-        <span class="progress-percentage" id="scheduleProgress">0%</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="scheduleProgressFill"></div>
-      </div>
-    </div>
-    <div class="progress-item">
-      <div class="progress-label">
-        <span class="progress-title">Roster Publishing Progress</span>
-        <span class="progress-percentage" id="rosterProgress">0%</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="rosterProgressFill"></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  <!-- Search and Filter Controls -->
-  <div class="table-controls">
-    <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="Search for team..." class="search-input">
-    </div>
-    <div class="filter-container">
-      <select id="conferenceFilter" class="filter-select">
-        <option value="">All Conferences</option>
-      </select>
-    </div>
-  </div>
-  
-  
-  <div class="table-container">
-    <table class="stats-table" id="statsTable">
-      <thead>
-        <tr>
-          <th>Team</th>
-          <th>Conf</th>
-          <th>Schedule Published?</th>
-          <th>Roster Published?</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Data will be loaded dynamically -->
-      </tbody>
-    </table>
-  </div>
-</section> 
+        <h2>Team Publishing Status</h2>
+
+        <!-- Progress Indicators -->
+        <div class="progress-indicators">
+          <div class="progress-item">
+            <div class="progress-label">
+              <span class="progress-title">Schedule Publishing Progress</span>
+              <span class="progress-percentage" id="scheduleProgress">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="scheduleProgressFill"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span class="progress-title">Roster Publishing Progress</span>
+              <span class="progress-percentage" id="rosterProgress">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="rosterProgressFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search and Filter Controls -->
+        <div class="table-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="teamSearch"
+              placeholder="Search for team..."
+              class="search-input"
+            />
+          </div>
+          <div class="filter-container">
+            <select id="conferenceFilter" class="filter-select">
+              <option value="">All Conferences</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="stats-table" id="statsTable">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Conf</th>
+                <th>Schedule Published?</th>
+                <th>Roster Published?</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Data will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
       <div class="table-section">
         <section class="legend-section">
           <h2>Column Legend</h2>
           <div class="legend-grid">
-                      <div class="legend-item">
-            <span class="legend-column">Team</span>
-            <span class="legend-description">Name of the college or university basketball team</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Conf</span>
-            <span class="legend-description">Conference affiliation of the team</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Schedule Published?</span>
-            <span class="legend-description">Whether the team has published their 2025-26 season schedule</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-column">Roster Published?</span>
-            <span class="legend-description">Whether the team has published their 2025-26 roster</span>
-          </div>
+            <div class="legend-item">
+              <span class="legend-column">Team</span>
+              <span class="legend-description"
+                >Name of the college or university basketball team</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Conf</span>
+              <span class="legend-description"
+                >Conference affiliation of the team</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Schedule Published?</span>
+              <span class="legend-description"
+                >Whether the team has published their 2025-26 season
+                schedule</span
+              >
+            </div>
+            <div class="legend-item">
+              <span class="legend-column">Roster Published?</span>
+              <span class="legend-description"
+                >Whether the team has published their 2025-26 roster</span
+              >
+            </div>
           </div>
         </section>
       </div>
-      
     </main>
 
     <footer>
