@@ -94,10 +94,10 @@ class TableController {
     // Get column names from table headers
     const headers = Array.from(this.table.querySelectorAll('th'));
 
-    data.forEach((row, index) => {
+    data.forEach((row, _index) => {
       const tr = document.createElement('tr');
 
-      headers.forEach((header, headerIndex) => {
+      headers.forEach((header, _headerIndex) => {
         const td = document.createElement('td');
         const headerText = header.textContent;
 
@@ -105,7 +105,6 @@ class TableController {
         let value = this.getValueFromRow(row, headerText);
 
         // Apply number formatting for specific columns
-        const originalValue = value;
         value = this.formatValue(value, headerText);
 
         td.textContent = value !== null && value !== undefined ? value : '';
@@ -127,8 +126,10 @@ class TableController {
     // Priority 1: Use explicit column mapping if defined (use clean header text)
     if (this.columnMappings && this.columnMappings[cleanHeaderText]) {
       const mappedKey = this.columnMappings[cleanHeaderText];
-      const value = row[mappedKey];
-      return value !== undefined ? value : '';
+      if (Object.prototype.hasOwnProperty.call(row, mappedKey)) {
+        const value = row[mappedKey];
+        return value !== null && value !== undefined ? value : '';
+      }
     }
 
     // Priority 1.5: Try exact header match in mappings (handles special characters)
