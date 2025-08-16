@@ -9,7 +9,7 @@
     "Height": 68.5,
     "Returning": "74.70%",
     "Adj": 0,
-    "STAT": 31.07,
+    "STAT": 31.1,
     "Projected Preseason Rank": 1,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -24,7 +24,7 @@
     "Height": 69.2,
     "Returning": "94.12%",
     "Adj": 0,
-    "STAT": 30.95,
+    "STAT": 30.96,
     "Projected Preseason Rank": 2,
     "Safe Loss Threshold": 5.46,
     "Dangerous": 7.18
@@ -39,7 +39,7 @@
     "Height": 68.5,
     "Returning": "78.98%",
     "Adj": 0,
-    "STAT": 30.87,
+    "STAT": 30.89,
     "Projected Preseason Rank": 3,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -54,7 +54,7 @@
     "Height": 68.6,
     "Returning": "65.01%",
     "Adj": 0,
-    "STAT": 30.62,
+    "STAT": 30.65,
     "Projected Preseason Rank": 4,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -68,8 +68,8 @@
     "NPI": 59.1,
     "Height": 68.8,
     "Returning": "92.58%",
-    "Adj": 0,
-    "STAT": 30.01,
+    "Adj": 0.3,
+    "STAT": 30.27,
     "Projected Preseason Rank": 5,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -84,7 +84,7 @@
     "Height": 70.6,
     "Returning": "43.35%",
     "Adj": 0,
-    "STAT": 29.5,
+    "STAT": 29.54,
     "Projected Preseason Rank": 6,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -99,9 +99,9 @@
     "Height": 68.3,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 28.6,
+    "STAT": 28.61,
     "Projected Preseason Rank": 7,
-    "Safe Loss Threshold": 4.46,
+    "Safe Loss Threshold": 4.45,
     "Dangerous": 6.18
   },
   {
@@ -114,10 +114,10 @@
     "Height": 69.6,
     "Returning": "69.26%",
     "Adj": 0,
-    "STAT": 26.52,
+    "STAT": 26.54,
     "Projected Preseason Rank": 8,
     "Safe Loss Threshold": 6.82,
-    "Dangerous": 8.52
+    "Dangerous": 8.53
   },
   {
     "Team": "Bates",
@@ -129,7 +129,7 @@
     "Height": 69.1,
     "Returning": "84.64%",
     "Adj": 0,
-    "STAT": 24.96,
+    "STAT": 24.97,
     "Projected Preseason Rank": 9,
     "Safe Loss Threshold": 9.12,
     "Dangerous": 10.81
@@ -144,7 +144,7 @@
     "Height": 69.1,
     "Returning": "55.05%",
     "Adj": 0,
-    "STAT": 24.69,
+    "STAT": 24.72,
     "Projected Preseason Rank": 10,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -159,10 +159,10 @@
     "Height": 68.6,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 24.12,
+    "STAT": 24.13,
     "Projected Preseason Rank": 11,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 8.81,
+    "Dangerous": 10.51
   },
   {
     "Team": "Mary Hardin-Baylor",
@@ -174,10 +174,10 @@
     "Height": 69,
     "Returning": "82.27%",
     "Adj": 0,
-    "STAT": 23.38,
+    "STAT": 23.4,
     "Projected Preseason Rank": 12,
-    "Safe Loss Threshold": 5.1,
-    "Dangerous": 6.81
+    "Safe Loss Threshold": 5.12,
+    "Dangerous": 6.83
   },
   {
     "Team": "Johns Hopkins",
@@ -189,10 +189,10 @@
     "Height": 68.9,
     "Returning": "62.41%",
     "Adj": 0,
-    "STAT": 22.88,
+    "STAT": 22.9,
     "Projected Preseason Rank": 13,
-    "Safe Loss Threshold": 8.5,
-    "Dangerous": 10.2
+    "Safe Loss Threshold": 9.03,
+    "Dangerous": 10.72
   },
   {
     "Team": "McDaniel",
@@ -202,9 +202,9 @@
     "SOS": 0.562,
     "NPI": 55.13,
     "Height": 68.2,
-    "Returning": "100.00%",
+    "Returning": "97.73%",
     "Adj": 0,
-    "STAT": 22.86,
+    "STAT": 22.19,
     "Projected Preseason Rank": 14,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -219,10 +219,10 @@
     "Height": 68.1,
     "Returning": "61.37%",
     "Adj": 0,
-    "STAT": 22.1,
+    "STAT": 22.13,
     "Projected Preseason Rank": 15,
-    "Safe Loss Threshold": 6.08,
-    "Dangerous": 7.79
+    "Safe Loss Threshold": 6.06,
+    "Dangerous": 7.77
   },
   {
     "Team": "Illinois Wesleyan",
@@ -234,7 +234,7 @@
     "Height": 69,
     "Returning": "43.07%",
     "Adj": 0,
-    "STAT": 21.15,
+    "STAT": 21.19,
     "Projected Preseason Rank": 16,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -249,7 +249,7 @@
     "Height": 69.5,
     "Returning": "86.50%",
     "Adj": 0,
-    "STAT": 20.93,
+    "STAT": 20.95,
     "Projected Preseason Rank": 17,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -264,7 +264,7 @@
     "Height": 67.9,
     "Returning": "94.84%",
     "Adj": 0,
-    "STAT": 20.9,
+    "STAT": 20.91,
     "Projected Preseason Rank": 18,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -279,7 +279,7 @@
     "Height": 70.4,
     "Returning": "69.63%",
     "Adj": 0,
-    "STAT": 20.05,
+    "STAT": 20.07,
     "Projected Preseason Rank": 19,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -294,7 +294,7 @@
     "Height": 68.9,
     "Returning": "70.64%",
     "Adj": 0,
-    "STAT": 19.57,
+    "STAT": 19.59,
     "Projected Preseason Rank": 20,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -309,7 +309,7 @@
     "Height": 69,
     "Returning": "96.57%",
     "Adj": 0,
-    "STAT": 19.13,
+    "STAT": 19.14,
     "Projected Preseason Rank": 21,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -324,7 +324,7 @@
     "Height": 69.4,
     "Returning": "52.74%",
     "Adj": 0,
-    "STAT": 18.87,
+    "STAT": 18.9,
     "Projected Preseason Rank": 22,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -339,7 +339,7 @@
     "Height": 68.4,
     "Returning": "44.99%",
     "Adj": 0,
-    "STAT": 18.79,
+    "STAT": 18.83,
     "Projected Preseason Rank": 23,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -354,7 +354,7 @@
     "Height": 69,
     "Returning": "57.34%",
     "Adj": 0,
-    "STAT": 18.78,
+    "STAT": 18.81,
     "Projected Preseason Rank": 24,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -369,7 +369,7 @@
     "Height": 69.9,
     "Returning": "48.82%",
     "Adj": 0,
-    "STAT": 18.07,
+    "STAT": 18.1,
     "Projected Preseason Rank": 25,
     "Safe Loss Threshold": 7.53,
     "Dangerous": 9.23
@@ -384,7 +384,7 @@
     "Height": 69.3,
     "Returning": "61.62%",
     "Adj": 0,
-    "STAT": 17.96,
+    "STAT": 17.99,
     "Projected Preseason Rank": 26,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -399,7 +399,7 @@
     "Height": 69.1,
     "Returning": "63.21%",
     "Adj": 0,
-    "STAT": 17.67,
+    "STAT": 17.7,
     "Projected Preseason Rank": 27,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -414,7 +414,7 @@
     "Height": 68.6,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 17.34,
+    "STAT": 17.35,
     "Projected Preseason Rank": 28,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -429,7 +429,7 @@
     "Height": 67.5,
     "Returning": "89.78%",
     "Adj": 0,
-    "STAT": 17.24,
+    "STAT": 17.26,
     "Projected Preseason Rank": 29,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -444,7 +444,7 @@
     "Height": 67.7,
     "Returning": "83.67%",
     "Adj": 0,
-    "STAT": 16.94,
+    "STAT": 16.96,
     "Projected Preseason Rank": 30,
     "Safe Loss Threshold": 3.67,
     "Dangerous": 5.4
@@ -459,7 +459,7 @@
     "Height": 69.2,
     "Returning": "76.87%",
     "Adj": 0,
-    "STAT": 16.84,
+    "STAT": 16.86,
     "Projected Preseason Rank": 31,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -474,10 +474,10 @@
     "Height": 68,
     "Returning": "81.87%",
     "Adj": 0,
-    "STAT": 16.34,
+    "STAT": 16.36,
     "Projected Preseason Rank": 32,
-    "Safe Loss Threshold": 4.16,
-    "Dangerous": 5.89
+    "Safe Loss Threshold": 4.17,
+    "Dangerous": 5.9
   },
   {
     "Team": "UW-La Crosse",
@@ -489,10 +489,10 @@
     "Height": 70.3,
     "Returning": "64.91%",
     "Adj": 0,
-    "STAT": 16.09,
+    "STAT": 16.11,
     "Projected Preseason Rank": 33,
-    "Safe Loss Threshold": 8.14,
-    "Dangerous": 9.84
+    "Safe Loss Threshold": 8.16,
+    "Dangerous": 9.86
   },
   {
     "Team": "Bridgewater (VA)",
@@ -504,7 +504,7 @@
     "Height": 69.6,
     "Returning": "66.46%",
     "Adj": 0,
-    "STAT": 15.8,
+    "STAT": 15.83,
     "Projected Preseason Rank": 34,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -519,7 +519,7 @@
     "Height": 69.9,
     "Returning": "35.86%",
     "Adj": 0,
-    "STAT": 15.46,
+    "STAT": 15.5,
     "Projected Preseason Rank": 35,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -534,25 +534,10 @@
     "Height": 69.5,
     "Returning": "68.12%",
     "Adj": 0,
-    "STAT": 15.2,
+    "STAT": 15.23,
     "Projected Preseason Rank": 36,
-    "Safe Loss Threshold": 3.98,
-    "Dangerous": 5.71
-  },
-  {
-    "Team": "Johnson & Wales (RI)",
-    "Conf": "CNE",
-    "Region": 2,
-    "Win%": 0.885,
-    "SOS": 0.447,
-    "NPI": 56.7,
-    "Height": 66.7,
-    "Returning": "95.00%",
-    "Adj": 0,
-    "STAT": 15.2,
-    "Projected Preseason Rank": 37,
-    "Safe Loss Threshold": 4.41,
-    "Dangerous": 6.13
+    "Safe Loss Threshold": 3.99,
+    "Dangerous": 5.72
   },
   {
     "Team": "UW-Whitewater",
@@ -564,10 +549,25 @@
     "Height": 70.4,
     "Returning": "32.00%",
     "Adj": 0,
-    "STAT": 15.18,
-    "Projected Preseason Rank": 38,
+    "STAT": 15.22,
+    "Projected Preseason Rank": 37,
     "Safe Loss Threshold": 8.75,
     "Dangerous": 10.44
+  },
+  {
+    "Team": "Johnson & Wales (RI)",
+    "Conf": "CNE",
+    "Region": 2,
+    "Win%": 0.885,
+    "SOS": 0.447,
+    "NPI": 56.7,
+    "Height": 66.7,
+    "Returning": "95.00%",
+    "Adj": 0,
+    "STAT": 15.21,
+    "Projected Preseason Rank": 38,
+    "Safe Loss Threshold": 4.41,
+    "Dangerous": 6.13
   },
   {
     "Team": "St. Lawrence",
@@ -579,7 +579,7 @@
     "Height": 69,
     "Returning": "97.81%",
     "Adj": 0,
-    "STAT": 14.94,
+    "STAT": 14.95,
     "Projected Preseason Rank": 39,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -594,7 +594,7 @@
     "Height": 69.2,
     "Returning": "73.15%",
     "Adj": 0,
-    "STAT": 14.62,
+    "STAT": 14.64,
     "Projected Preseason Rank": 40,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -609,23 +609,8 @@
     "Height": 68.4,
     "Returning": "85.28%",
     "Adj": 0,
-    "STAT": 14.47,
+    "STAT": 14.48,
     "Projected Preseason Rank": 41,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Linfield",
-    "Conf": "NWC",
-    "Region": 10,
-    "Win%": 0.696,
-    "SOS": 0.519,
-    "NPI": 55.56,
-    "Height": 68,
-    "Returning": "83.08%",
-    "Adj": 0,
-    "STAT": 13.94,
-    "Projected Preseason Rank": 42,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -639,10 +624,25 @@
     "Height": 68.7,
     "Returning": "47.22%",
     "Adj": 0,
-    "STAT": 13.94,
+    "STAT": 13.97,
+    "Projected Preseason Rank": 42,
+    "Safe Loss Threshold": 4.56,
+    "Dangerous": 6.29
+  },
+  {
+    "Team": "Linfield",
+    "Conf": "NWC",
+    "Region": 10,
+    "Win%": 0.696,
+    "SOS": 0.519,
+    "NPI": 55.56,
+    "Height": 68,
+    "Returning": "83.08%",
+    "Adj": 0,
+    "STAT": 13.96,
     "Projected Preseason Rank": 43,
-    "Safe Loss Threshold": 4.54,
-    "Dangerous": 6.26
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Endicott",
@@ -654,10 +654,10 @@
     "Height": 67.4,
     "Returning": "60.45%",
     "Adj": 0,
-    "STAT": 13.87,
+    "STAT": 13.9,
     "Projected Preseason Rank": 44,
-    "Safe Loss Threshold": 4.97,
-    "Dangerous": 6.69
+    "Safe Loss Threshold": 4.96,
+    "Dangerous": 6.68
   },
   {
     "Team": "Hope",
@@ -669,10 +669,10 @@
     "Height": 69.8,
     "Returning": "65.72%",
     "Adj": 0,
-    "STAT": 13.86,
+    "STAT": 13.89,
     "Projected Preseason Rank": 45,
-    "Safe Loss Threshold": 4.94,
-    "Dangerous": 6.66
+    "Safe Loss Threshold": 4.98,
+    "Dangerous": 6.7
   },
   {
     "Team": "Calvin",
@@ -684,10 +684,10 @@
     "Height": 70,
     "Returning": "79.84%",
     "Adj": 0,
-    "STAT": 13.84,
+    "STAT": 13.86,
     "Projected Preseason Rank": 46,
-    "Safe Loss Threshold": 5.47,
-    "Dangerous": 7.19
+    "Safe Loss Threshold": 5.52,
+    "Dangerous": 7.24
   },
   {
     "Team": "UW-River Falls",
@@ -699,10 +699,10 @@
     "Height": 68.9,
     "Returning": "78.96%",
     "Adj": 0,
-    "STAT": 13.75,
+    "STAT": 13.77,
     "Projected Preseason Rank": 47,
-    "Safe Loss Threshold": 7.56,
-    "Dangerous": 9.26
+    "Safe Loss Threshold": 7.58,
+    "Dangerous": 9.28
   },
   {
     "Team": "Christopher Newport",
@@ -714,10 +714,10 @@
     "Height": 69.4,
     "Returning": "44.71%",
     "Adj": 0.3,
-    "STAT": 13.46,
+    "STAT": 13.49,
     "Projected Preseason Rank": 48,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.11,
+    "Dangerous": 5.84
   },
   {
     "Team": "St. Norbert",
@@ -729,10 +729,10 @@
     "Height": 68.1,
     "Returning": "68.33%",
     "Adj": 0,
-    "STAT": 13.37,
+    "STAT": 13.4,
     "Projected Preseason Rank": 49,
     "Safe Loss Threshold": 4.7,
-    "Dangerous": 6.43
+    "Dangerous": 6.42
   },
   {
     "Team": "St. Joseph's (ME)",
@@ -744,10 +744,10 @@
     "Height": 68.1,
     "Returning": "73.85%",
     "Adj": 0,
-    "STAT": 13.36,
+    "STAT": 13.38,
     "Projected Preseason Rank": 50,
-    "Safe Loss Threshold": 1.47,
-    "Dangerous": 3.22
+    "Safe Loss Threshold": 1.49,
+    "Dangerous": 3.23
   },
   {
     "Team": "DePauw",
@@ -759,8 +759,23 @@
     "Height": 69.4,
     "Returning": "57.52%",
     "Adj": 0,
-    "STAT": 13.18,
+    "STAT": 13.21,
     "Projected Preseason Rank": 51,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Texas Lutheran",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Win%": 0.852,
+    "SOS": 0.52,
+    "NPI": 59.4,
+    "Height": 66.8,
+    "Returning": "65.90%",
+    "Adj": 0,
+    "STAT": 13.19,
+    "Projected Preseason Rank": 52,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -774,10 +789,10 @@
     "Height": 69.4,
     "Returning": "38.11%",
     "Adj": 0,
-    "STAT": 12.82,
-    "Projected Preseason Rank": 52,
-    "Safe Loss Threshold": 5.67,
-    "Dangerous": 7.38
+    "STAT": 12.86,
+    "Projected Preseason Rank": 53,
+    "Safe Loss Threshold": 5.66,
+    "Dangerous": 7.37
   },
   {
     "Team": "Drew",
@@ -789,8 +804,8 @@
     "Height": 68.5,
     "Returning": "92.57%",
     "Adj": 0,
-    "STAT": 12.72,
-    "Projected Preseason Rank": 53,
+    "STAT": 12.73,
+    "Projected Preseason Rank": 54,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -804,8 +819,8 @@
     "Height": 68.3,
     "Returning": "36.32%",
     "Adj": 0,
-    "STAT": 12.61,
-    "Projected Preseason Rank": 54,
+    "STAT": 12.65,
+    "Projected Preseason Rank": 55,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -819,8 +834,8 @@
     "Height": 68.6,
     "Returning": "93.64%",
     "Adj": 0,
-    "STAT": 12.6,
-    "Projected Preseason Rank": 55,
+    "STAT": 12.61,
+    "Projected Preseason Rank": 56,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -834,8 +849,8 @@
     "Height": 69.4,
     "Returning": "56.36%",
     "Adj": 0,
-    "STAT": 12.53,
-    "Projected Preseason Rank": 56,
+    "STAT": 12.56,
+    "Projected Preseason Rank": 57,
     "Safe Loss Threshold": 9.02,
     "Dangerous": 10.71
   },
@@ -849,9 +864,9 @@
     "Height": 68.8,
     "Returning": "54.50%",
     "Adj": 0,
-    "STAT": 12.44,
-    "Projected Preseason Rank": 57,
-    "Safe Loss Threshold": 3.22,
+    "STAT": 12.47,
+    "Projected Preseason Rank": 58,
+    "Safe Loss Threshold": 3.23,
     "Dangerous": 4.96
   },
   {
@@ -864,10 +879,10 @@
     "Height": 67.8,
     "Returning": "95.19%",
     "Adj": 0,
-    "STAT": 12.4,
-    "Projected Preseason Rank": 58,
-    "Safe Loss Threshold": 4.06,
-    "Dangerous": 5.79
+    "STAT": 12.41,
+    "Projected Preseason Rank": 59,
+    "Safe Loss Threshold": 4.08,
+    "Dangerous": 5.8
   },
   {
     "Team": "Ripon",
@@ -879,25 +894,10 @@
     "Height": 67.9,
     "Returning": "61.51%",
     "Adj": 0,
-    "STAT": 12.38,
-    "Projected Preseason Rank": 59,
-    "Safe Loss Threshold": 3.06,
-    "Dangerous": 4.79
-  },
-  {
-    "Team": "Texas Lutheran",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Win%": 0.852,
-    "SOS": 0.52,
-    "NPI": 59.4,
-    "Height": 66.8,
-    "Returning": "62.87%",
-    "Adj": 0,
-    "STAT": 12.31,
+    "STAT": 12.41,
     "Projected Preseason Rank": 60,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.06,
+    "Dangerous": 4.8
   },
   {
     "Team": "Stevens",
@@ -909,7 +909,7 @@
     "Height": 67.8,
     "Returning": "81.52%",
     "Adj": 0,
-    "STAT": 12.23,
+    "STAT": 12.25,
     "Projected Preseason Rank": 61,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -924,10 +924,10 @@
     "Height": 66.8,
     "Returning": "62.79%",
     "Adj": 0.3,
-    "STAT": 12.07,
+    "STAT": 12.09,
     "Projected Preseason Rank": 62,
-    "Safe Loss Threshold": 4.73,
-    "Dangerous": 6.45
+    "Safe Loss Threshold": 4.74,
+    "Dangerous": 6.46
   },
   {
     "Team": "Susquehanna",
@@ -939,25 +939,10 @@
     "Height": 68.9,
     "Returning": "83.80%",
     "Adj": 0.1,
-    "STAT": 11.92,
+    "STAT": 11.94,
     "Projected Preseason Rank": 63,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Mt. St. Joseph",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Win%": 0.714,
-    "SOS": 0.558,
-    "NPI": 56.03,
-    "Height": 68.7,
-    "Returning": "59.52%",
-    "Adj": 0,
-    "STAT": 11.78,
-    "Projected Preseason Rank": 64,
-    "Safe Loss Threshold": 4.21,
-    "Dangerous": 5.93
   },
   {
     "Team": "Whitman",
@@ -969,10 +954,25 @@
     "Height": 67.9,
     "Returning": "20.34%",
     "Adj": 0,
-    "STAT": 11.77,
+    "STAT": 11.82,
+    "Projected Preseason Rank": 64,
+    "Safe Loss Threshold": 5.22,
+    "Dangerous": 6.94
+  },
+  {
+    "Team": "Mt. St. Joseph",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Win%": 0.714,
+    "SOS": 0.558,
+    "NPI": 56.03,
+    "Height": 68.7,
+    "Returning": "59.52%",
+    "Adj": 0,
+    "STAT": 11.8,
     "Projected Preseason Rank": 65,
-    "Safe Loss Threshold": 5.28,
-    "Dangerous": 7
+    "Safe Loss Threshold": 4.22,
+    "Dangerous": 5.94
   },
   {
     "Team": "Colorado College",
@@ -984,7 +984,7 @@
     "Height": 69.4,
     "Returning": "45.99%",
     "Adj": 0,
-    "STAT": 11.68,
+    "STAT": 11.72,
     "Projected Preseason Rank": 66,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -999,7 +999,7 @@
     "Height": 68.7,
     "Returning": "17.00%",
     "Adj": 0,
-    "STAT": 11.65,
+    "STAT": 11.7,
     "Projected Preseason Rank": 67,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1013,8 +1013,8 @@
     "NPI": 57.39,
     "Height": 68.4,
     "Returning": "62.33%",
-    "Adj": 0.6,
-    "STAT": 11.05,
+    "Adj": 0.7,
+    "STAT": 11.1,
     "Projected Preseason Rank": 68,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1029,10 +1029,10 @@
     "Height": 69.4,
     "Returning": "64.98%",
     "Adj": 0,
-    "STAT": 10.97,
+    "STAT": 10.99,
     "Projected Preseason Rank": 69,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 8.67,
+    "Dangerous": 10.37
   },
   {
     "Team": "Washington College",
@@ -1044,7 +1044,7 @@
     "Height": 69.3,
     "Returning": "64.59%",
     "Adj": 0,
-    "STAT": 10.91,
+    "STAT": 10.94,
     "Projected Preseason Rank": 70,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1059,7 +1059,7 @@
     "Height": 68.4,
     "Returning": "70.69%",
     "Adj": 0,
-    "STAT": 10.91,
+    "STAT": 10.93,
     "Projected Preseason Rank": 71,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1074,7 +1074,7 @@
     "Height": 68.1,
     "Returning": "35.54%",
     "Adj": 0,
-    "STAT": 10.86,
+    "STAT": 10.9,
     "Projected Preseason Rank": 72,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1089,7 +1089,7 @@
     "Height": 68.4,
     "Returning": "93.13%",
     "Adj": 0,
-    "STAT": 10.85,
+    "STAT": 10.87,
     "Projected Preseason Rank": 73,
     "Safe Loss Threshold": 4.35,
     "Dangerous": 6.08
@@ -1104,10 +1104,10 @@
     "Height": 71,
     "Returning": "84.62%",
     "Adj": 0,
-    "STAT": 10.66,
+    "STAT": 10.67,
     "Projected Preseason Rank": 74,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 7.26,
+    "Dangerous": 8.96
   },
   {
     "Team": "Carroll",
@@ -1119,7 +1119,7 @@
     "Height": 68.4,
     "Returning": "60.70%",
     "Adj": 0,
-    "STAT": 10.6,
+    "STAT": 10.63,
     "Projected Preseason Rank": 75,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1134,7 +1134,7 @@
     "Height": 69.5,
     "Returning": "21.65%",
     "Adj": 0,
-    "STAT": 10.46,
+    "STAT": 10.51,
     "Projected Preseason Rank": 76,
     "Safe Loss Threshold": 4.89,
     "Dangerous": 6.61
@@ -1149,7 +1149,7 @@
     "Height": 68.6,
     "Returning": "91.73%",
     "Adj": 0,
-    "STAT": 10.39,
+    "STAT": 10.41,
     "Projected Preseason Rank": 77,
     "Safe Loss Threshold": 4.04,
     "Dangerous": 5.77
@@ -1164,7 +1164,7 @@
     "Height": 69.1,
     "Returning": "90.38%",
     "Adj": 0,
-    "STAT": 10.27,
+    "STAT": 10.28,
     "Projected Preseason Rank": 78,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1179,7 +1179,7 @@
     "Height": 68.5,
     "Returning": "33.49%",
     "Adj": 0,
-    "STAT": 10.23,
+    "STAT": 10.27,
     "Projected Preseason Rank": 79,
     "Safe Loss Threshold": 9.93,
     "Dangerous": 11.62
@@ -1194,7 +1194,7 @@
     "Height": 69.3,
     "Returning": "46.83%",
     "Adj": 0,
-    "STAT": 10.21,
+    "STAT": 10.25,
     "Projected Preseason Rank": 80,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1209,10 +1209,10 @@
     "Height": 68,
     "Returning": "59.43%",
     "Adj": 0,
-    "STAT": 10.21,
+    "STAT": 10.24,
     "Projected Preseason Rank": 81,
-    "Safe Loss Threshold": 4.62,
-    "Dangerous": 6.34
+    "Safe Loss Threshold": 4.65,
+    "Dangerous": 6.37
   },
   {
     "Team": "Williams",
@@ -1224,7 +1224,7 @@
     "Height": 70.3,
     "Returning": "46.93%",
     "Adj": 0,
-    "STAT": 10.03,
+    "STAT": 10.06,
     "Projected Preseason Rank": 82,
     "Safe Loss Threshold": 8.99,
     "Dangerous": 10.68
@@ -1239,10 +1239,10 @@
     "Height": 68.5,
     "Returning": "71.29%",
     "Adj": 0,
-    "STAT": 9.89,
+    "STAT": 9.91,
     "Projected Preseason Rank": 83,
-    "Safe Loss Threshold": 4.87,
-    "Dangerous": 6.59
+    "Safe Loss Threshold": 4.9,
+    "Dangerous": 6.62
   },
   {
     "Team": "Roanoke",
@@ -1254,10 +1254,10 @@
     "Height": 68.9,
     "Returning": "90.05%",
     "Adj": 0,
-    "STAT": 9.86,
+    "STAT": 9.87,
     "Projected Preseason Rank": 84,
-    "Safe Loss Threshold": 4.7,
-    "Dangerous": 6.42
+    "Safe Loss Threshold": 4.71,
+    "Dangerous": 6.43
   },
   {
     "Team": "UW-Stout",
@@ -1269,10 +1269,10 @@
     "Height": 69,
     "Returning": "21.55%",
     "Adj": 0.8,
-    "STAT": 9.35,
+    "STAT": 9.43,
     "Projected Preseason Rank": 85,
-    "Safe Loss Threshold": 7.44,
-    "Dangerous": 9.14
+    "Safe Loss Threshold": 7.45,
+    "Dangerous": 9.16
   },
   {
     "Team": "UW-Stevens Point",
@@ -1284,7 +1284,7 @@
     "Height": 68.3,
     "Returning": "47.66%",
     "Adj": 0,
-    "STAT": 9.26,
+    "STAT": 9.29,
     "Projected Preseason Rank": 86,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1299,7 +1299,7 @@
     "Height": 68.1,
     "Returning": "55.97%",
     "Adj": 0,
-    "STAT": 9.11,
+    "STAT": 9.14,
     "Projected Preseason Rank": 87,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1314,10 +1314,10 @@
     "Height": 69,
     "Returning": "52.50%",
     "Adj": 0,
-    "STAT": 9.03,
+    "STAT": 9.06,
     "Projected Preseason Rank": 88,
-    "Safe Loss Threshold": 4.9,
-    "Dangerous": 6.62
+    "Safe Loss Threshold": 4.91,
+    "Dangerous": 6.63
   },
   {
     "Team": "George Fox",
@@ -1329,7 +1329,7 @@
     "Height": 68.6,
     "Returning": "58.72%",
     "Adj": 0,
-    "STAT": 8.93,
+    "STAT": 8.95,
     "Projected Preseason Rank": 89,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1344,7 +1344,7 @@
     "Height": 68.4,
     "Returning": "46.70%",
     "Adj": 0,
-    "STAT": 8.88,
+    "STAT": 8.91,
     "Projected Preseason Rank": 90,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1359,7 +1359,7 @@
     "Height": 68.8,
     "Returning": "98.97%",
     "Adj": 0,
-    "STAT": 8.69,
+    "STAT": 8.7,
     "Projected Preseason Rank": 91,
     "Safe Loss Threshold": 1.67,
     "Dangerous": 3.42
@@ -1374,7 +1374,7 @@
     "Height": 68.2,
     "Returning": "67.48%",
     "Adj": 0,
-    "STAT": 8.65,
+    "STAT": 8.68,
     "Projected Preseason Rank": 92,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1389,7 +1389,7 @@
     "Height": 68.5,
     "Returning": "66.97%",
     "Adj": 0,
-    "STAT": 8.62,
+    "STAT": 8.65,
     "Projected Preseason Rank": 93,
     "Safe Loss Threshold": 2.69,
     "Dangerous": 4.43
@@ -1404,10 +1404,10 @@
     "Height": 66.9,
     "Returning": "99.90%",
     "Adj": 0,
-    "STAT": 8.57,
+    "STAT": 8.58,
     "Projected Preseason Rank": 94,
-    "Safe Loss Threshold": 1.33,
-    "Dangerous": 3.08
+    "Safe Loss Threshold": 1.6,
+    "Dangerous": 3.35
   },
   {
     "Team": "Maine-Maritime",
@@ -1419,10 +1419,10 @@
     "Height": 69.2,
     "Returning": "48.96%",
     "Adj": 0,
-    "STAT": 8.53,
+    "STAT": 8.57,
     "Projected Preseason Rank": 95,
-    "Safe Loss Threshold": 2.45,
-    "Dangerous": 4.19
+    "Safe Loss Threshold": 2.5,
+    "Dangerous": 4.23
   },
   {
     "Team": "Connecticut College",
@@ -1434,7 +1434,7 @@
     "Height": 68.7,
     "Returning": "86.76%",
     "Adj": 0,
-    "STAT": 8.52,
+    "STAT": 8.54,
     "Projected Preseason Rank": 96,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1449,10 +1449,10 @@
     "Height": 67.4,
     "Returning": "46.13%",
     "Adj": 0,
-    "STAT": 8.47,
+    "STAT": 8.5,
     "Projected Preseason Rank": 97,
-    "Safe Loss Threshold": 5.19,
-    "Dangerous": 6.9
+    "Safe Loss Threshold": 5.21,
+    "Dangerous": 6.93
   },
   {
     "Team": "Benedictine",
@@ -1464,7 +1464,7 @@
     "Height": 68.5,
     "Returning": "97.51%",
     "Adj": 0,
-    "STAT": 8.46,
+    "STAT": 8.47,
     "Projected Preseason Rank": 98,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1479,7 +1479,7 @@
     "Height": 67.7,
     "Returning": "66.43%",
     "Adj": 0,
-    "STAT": 8.45,
+    "STAT": 8.47,
     "Projected Preseason Rank": 99,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1494,7 +1494,7 @@
     "Height": 68.8,
     "Returning": "79.40%",
     "Adj": 0,
-    "STAT": 8.33,
+    "STAT": 8.35,
     "Projected Preseason Rank": 100,
     "Safe Loss Threshold": 4.48,
     "Dangerous": 6.2
@@ -1509,7 +1509,7 @@
     "Height": 68.1,
     "Returning": "74.68%",
     "Adj": 0,
-    "STAT": 8.28,
+    "STAT": 8.3,
     "Projected Preseason Rank": 101,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1524,7 +1524,7 @@
     "Height": 67.5,
     "Returning": "85.88%",
     "Adj": 0,
-    "STAT": 8,
+    "STAT": 8.02,
     "Projected Preseason Rank": 102,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1541,8 +1541,8 @@
     "Adj": 0,
     "STAT": 8,
     "Projected Preseason Rank": 103,
-    "Safe Loss Threshold": 3.97,
-    "Dangerous": 5.7
+    "Safe Loss Threshold": 3.96,
+    "Dangerous": 5.69
   },
   {
     "Team": "SUNY New Paltz",
@@ -1554,10 +1554,10 @@
     "Height": 68.1,
     "Returning": "50.90%",
     "Adj": 3,
-    "STAT": 7.96,
+    "STAT": 7.99,
     "Projected Preseason Rank": 104,
-    "Safe Loss Threshold": 4.78,
-    "Dangerous": 6.5
+    "Safe Loss Threshold": 4.77,
+    "Dangerous": 6.49
   },
   {
     "Team": "Vassar",
@@ -1569,7 +1569,7 @@
     "Height": 68.4,
     "Returning": "48.00%",
     "Adj": 0,
-    "STAT": 7.95,
+    "STAT": 7.98,
     "Projected Preseason Rank": 105,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1584,10 +1584,10 @@
     "Height": 67.8,
     "Returning": "74.39%",
     "Adj": 0,
-    "STAT": 7.83,
+    "STAT": 7.85,
     "Projected Preseason Rank": 106,
-    "Safe Loss Threshold": 4.95,
-    "Dangerous": 6.67
+    "Safe Loss Threshold": 4.93,
+    "Dangerous": 6.65
   },
   {
     "Team": "Rochester",
@@ -1599,7 +1599,7 @@
     "Height": 69.3,
     "Returning": "50.15%",
     "Adj": 0,
-    "STAT": 7.81,
+    "STAT": 7.84,
     "Projected Preseason Rank": 107,
     "Safe Loss Threshold": 9.12,
     "Dangerous": 10.81
@@ -1614,10 +1614,10 @@
     "Height": 68.5,
     "Returning": "48.83%",
     "Adj": 1.5,
-    "STAT": 7.69,
+    "STAT": 7.78,
     "Projected Preseason Rank": 108,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.16,
+    "Dangerous": 4.89
   },
   {
     "Team": "Millsaps",
@@ -1629,23 +1629,8 @@
     "Height": 67.5,
     "Returning": "58.53%",
     "Adj": 0,
-    "STAT": 7.68,
+    "STAT": 7.71,
     "Projected Preseason Rank": 109,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Haverford",
-    "Conf": "CC",
-    "Region": 5,
-    "Win%": 0.417,
-    "SOS": 0.532,
-    "NPI": 49.25,
-    "Height": 69.3,
-    "Returning": "93.57%",
-    "Adj": 0,
-    "STAT": 7.56,
-    "Projected Preseason Rank": 110,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -1659,7 +1644,22 @@
     "Height": 66.6,
     "Returning": "59.90%",
     "Adj": 0,
-    "STAT": 7.55,
+    "STAT": 7.58,
+    "Projected Preseason Rank": 110,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Haverford",
+    "Conf": "CC",
+    "Region": 5,
+    "Win%": 0.417,
+    "SOS": 0.532,
+    "NPI": 49.25,
+    "Height": 69.3,
+    "Returning": "93.57%",
+    "Adj": 0,
+    "STAT": 7.57,
     "Projected Preseason Rank": 111,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1674,7 +1674,7 @@
     "Height": 69.1,
     "Returning": "27.27%",
     "Adj": 0,
-    "STAT": 7.46,
+    "STAT": 7.5,
     "Projected Preseason Rank": 112,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1689,10 +1689,10 @@
     "Height": 69.3,
     "Returning": "42.39%",
     "Adj": 0,
-    "STAT": 7.4,
+    "STAT": 7.43,
     "Projected Preseason Rank": 113,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 8.23,
+    "Dangerous": 9.93
   },
   {
     "Team": "Oberlin",
@@ -1704,7 +1704,7 @@
     "Height": 69,
     "Returning": "74.76%",
     "Adj": 0,
-    "STAT": 7.37,
+    "STAT": 7.39,
     "Projected Preseason Rank": 114,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1719,23 +1719,8 @@
     "Height": 67.6,
     "Returning": "81.96%",
     "Adj": 0,
-    "STAT": 7.37,
+    "STAT": 7.39,
     "Projected Preseason Rank": 115,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Puget Sound",
-    "Conf": "NWC",
-    "Region": 10,
-    "Win%": 0.435,
-    "SOS": 0.575,
-    "NPI": 51.55,
-    "Height": 68.9,
-    "Returning": "74.24%",
-    "Adj": 0,
-    "STAT": 7.14,
-    "Projected Preseason Rank": 116,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -1749,23 +1734,8 @@
     "Height": 68.9,
     "Returning": "45.81%",
     "Adj": 0,
-    "STAT": 7.1,
-    "Projected Preseason Rank": 117,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Principia",
-    "Conf": "SLIAC",
-    "Region": 8,
-    "Win%": 0.577,
-    "SOS": 0.508,
-    "NPI": 49.97,
-    "Height": 66.9,
-    "Returning": "89.15%",
-    "Adj": 0,
-    "STAT": 7.05,
-    "Projected Preseason Rank": 118,
+    "STAT": 7.13,
+    "Projected Preseason Rank": 116,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -1779,10 +1749,25 @@
     "Height": 68.3,
     "Returning": "43.24%",
     "Adj": 0,
-    "STAT": 7.04,
-    "Projected Preseason Rank": 119,
-    "Safe Loss Threshold": 4.85,
+    "STAT": 7.08,
+    "Projected Preseason Rank": 117,
+    "Safe Loss Threshold": 4.84,
     "Dangerous": 6.57
+  },
+  {
+    "Team": "Principia",
+    "Conf": "SLIAC",
+    "Region": 8,
+    "Win%": 0.577,
+    "SOS": 0.508,
+    "NPI": 49.97,
+    "Height": 66.9,
+    "Returning": "89.15%",
+    "Adj": 0,
+    "STAT": 7.06,
+    "Projected Preseason Rank": 118,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Guilford",
@@ -1794,7 +1779,22 @@
     "Height": 68.1,
     "Returning": "66.42%",
     "Adj": 0,
-    "STAT": 6.83,
+    "STAT": 6.85,
+    "Projected Preseason Rank": 119,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Puget Sound",
+    "Conf": "NWC",
+    "Region": 10,
+    "Win%": 0.435,
+    "SOS": 0.575,
+    "NPI": 51.55,
+    "Height": 68.9,
+    "Returning": "72.63%",
+    "Adj": 0,
+    "STAT": 6.82,
     "Projected Preseason Rank": 120,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1809,10 +1809,10 @@
     "Height": 68.7,
     "Returning": "61.92%",
     "Adj": 0,
-    "STAT": 6.74,
+    "STAT": 6.76,
     "Projected Preseason Rank": 121,
     "Safe Loss Threshold": 4.53,
-    "Dangerous": 6.25
+    "Dangerous": 6.26
   },
   {
     "Team": "St. Thomas (TX)",
@@ -1824,7 +1824,7 @@
     "Height": 67.3,
     "Returning": "75.71%",
     "Adj": 0,
-    "STAT": 6.6,
+    "STAT": 6.62,
     "Projected Preseason Rank": 122,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1839,23 +1839,8 @@
     "Height": 69.2,
     "Returning": "75.80%",
     "Adj": 0,
-    "STAT": 6.6,
+    "STAT": 6.61,
     "Projected Preseason Rank": 123,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Coast Guard",
-    "Conf": "NEWMAC",
-    "Region": 2,
-    "Win%": 0.615,
-    "SOS": 0.534,
-    "NPI": 53.87,
-    "Height": 69.8,
-    "Returning": "55.86%",
-    "Adj": 0,
-    "STAT": 6.44,
-    "Projected Preseason Rank": 124,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -1869,7 +1854,22 @@
     "Height": 68.2,
     "Returning": "45.99%",
     "Adj": 0.5,
-    "STAT": 6.42,
+    "STAT": 6.48,
+    "Projected Preseason Rank": 124,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Coast Guard",
+    "Conf": "NEWMAC",
+    "Region": 2,
+    "Win%": 0.615,
+    "SOS": 0.534,
+    "NPI": 53.87,
+    "Height": 69.8,
+    "Returning": "55.86%",
+    "Adj": 0,
+    "STAT": 6.46,
     "Projected Preseason Rank": 125,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1884,7 +1884,7 @@
     "Height": 67.4,
     "Returning": "52.02%",
     "Adj": 0,
-    "STAT": 6.39,
+    "STAT": 6.42,
     "Projected Preseason Rank": 126,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1899,7 +1899,7 @@
     "Height": 70,
     "Returning": "64.16%",
     "Adj": 0,
-    "STAT": 6.33,
+    "STAT": 6.35,
     "Projected Preseason Rank": 127,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1914,7 +1914,7 @@
     "Height": 68.6,
     "Returning": "59.73%",
     "Adj": 0,
-    "STAT": 6.01,
+    "STAT": 6.03,
     "Projected Preseason Rank": 128,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1929,9 +1929,9 @@
     "Height": 69.1,
     "Returning": "63.55%",
     "Adj": 0,
-    "STAT": 6,
+    "STAT": 6.03,
     "Projected Preseason Rank": 129,
-    "Safe Loss Threshold": 1.89,
+    "Safe Loss Threshold": 1.88,
     "Dangerous": 3.63
   },
   {
@@ -1944,7 +1944,7 @@
     "Height": 68.3,
     "Returning": "63.54%",
     "Adj": 0,
-    "STAT": 5.97,
+    "STAT": 6,
     "Projected Preseason Rank": 130,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1959,7 +1959,7 @@
     "Height": 68.2,
     "Returning": "60.80%",
     "Adj": 0,
-    "STAT": 5.97,
+    "STAT": 5.99,
     "Projected Preseason Rank": 131,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1974,7 +1974,7 @@
     "Height": 68.6,
     "Returning": "63.70%",
     "Adj": 0,
-    "STAT": 5.95,
+    "STAT": 5.98,
     "Projected Preseason Rank": 132,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -1989,9 +1989,9 @@
     "Height": 68.1,
     "Returning": "44.28%",
     "Adj": 0.8,
-    "STAT": 5.84,
+    "STAT": 5.87,
     "Projected Preseason Rank": 133,
-    "Safe Loss Threshold": 5.41,
+    "Safe Loss Threshold": 5.4,
     "Dangerous": 7.12
   },
   {
@@ -2004,7 +2004,7 @@
     "Height": 70.3,
     "Returning": "94.51%",
     "Adj": 0,
-    "STAT": 5.81,
+    "STAT": 5.82,
     "Projected Preseason Rank": 134,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2019,7 +2019,7 @@
     "Height": 68.5,
     "Returning": "53.07%",
     "Adj": 0,
-    "STAT": 5.63,
+    "STAT": 5.66,
     "Projected Preseason Rank": 135,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2034,7 +2034,7 @@
     "Height": 68,
     "Returning": "52.41%",
     "Adj": 0.4,
-    "STAT": 5.54,
+    "STAT": 5.58,
     "Projected Preseason Rank": 136,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2049,7 +2049,7 @@
     "Height": 68.5,
     "Returning": "47.93%",
     "Adj": 0,
-    "STAT": 5.46,
+    "STAT": 5.49,
     "Projected Preseason Rank": 137,
     "Safe Loss Threshold": 6.78,
     "Dangerous": 8.49
@@ -2064,7 +2064,7 @@
     "Height": 68.1,
     "Returning": "47.30%",
     "Adj": 0,
-    "STAT": 5.23,
+    "STAT": 5.26,
     "Projected Preseason Rank": 138,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2079,7 +2079,7 @@
     "Height": 66.7,
     "Returning": "73.77%",
     "Adj": 0,
-    "STAT": 5.13,
+    "STAT": 5.15,
     "Projected Preseason Rank": 139,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2094,7 +2094,7 @@
     "Height": 69.2,
     "Returning": "85.12%",
     "Adj": 0,
-    "STAT": 5.05,
+    "STAT": 5.06,
     "Projected Preseason Rank": 140,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2109,10 +2109,10 @@
     "Height": 68.6,
     "Returning": "77.95%",
     "Adj": 0,
-    "STAT": 4.9,
+    "STAT": 4.92,
     "Projected Preseason Rank": 141,
-    "Safe Loss Threshold": 3.55,
-    "Dangerous": 5.28
+    "Safe Loss Threshold": 3.56,
+    "Dangerous": 5.29
   },
   {
     "Team": "William Paterson",
@@ -2124,7 +2124,7 @@
     "Height": 66.8,
     "Returning": "60.94%",
     "Adj": 0,
-    "STAT": 4.87,
+    "STAT": 4.89,
     "Projected Preseason Rank": 142,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2139,38 +2139,8 @@
     "Height": 67,
     "Returning": "68.84%",
     "Adj": 0,
-    "STAT": 4.86,
+    "STAT": 4.88,
     "Projected Preseason Rank": 143,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Rose-Hulman",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Win%": 0.48,
-    "SOS": 0.541,
-    "NPI": 51.06,
-    "Height": 68.3,
-    "Returning": "73.49%",
-    "Adj": 0,
-    "STAT": 4.79,
-    "Projected Preseason Rank": 144,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Anderson",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Win%": 0.5,
-    "SOS": 0.518,
-    "NPI": 50.84,
-    "Height": 68.8,
-    "Returning": "77.44%",
-    "Adj": 0,
-    "STAT": 4.79,
-    "Projected Preseason Rank": 145,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -2184,10 +2154,40 @@
     "Height": 67.3,
     "Returning": "32.69%",
     "Adj": 0,
-    "STAT": 4.79,
-    "Projected Preseason Rank": 146,
+    "STAT": 4.83,
+    "Projected Preseason Rank": 144,
     "Safe Loss Threshold": 3.18,
     "Dangerous": 4.91
+  },
+  {
+    "Team": "Rose-Hulman",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Win%": 0.48,
+    "SOS": 0.541,
+    "NPI": 51.06,
+    "Height": 68.3,
+    "Returning": "73.49%",
+    "Adj": 0,
+    "STAT": 4.81,
+    "Projected Preseason Rank": 145,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Anderson",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Win%": 0.5,
+    "SOS": 0.518,
+    "NPI": 50.84,
+    "Height": 68.8,
+    "Returning": "77.44%",
+    "Adj": 0,
+    "STAT": 4.81,
+    "Projected Preseason Rank": 146,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Plattsburgh St.",
@@ -2199,9 +2199,9 @@
     "Height": 68.3,
     "Returning": "78.70%",
     "Adj": 0,
-    "STAT": 4.77,
+    "STAT": 4.79,
     "Projected Preseason Rank": 147,
-    "Safe Loss Threshold": 3.45,
+    "Safe Loss Threshold": 3.44,
     "Dangerous": 5.18
   },
   {
@@ -2214,10 +2214,10 @@
     "Height": 67.9,
     "Returning": "76.21%",
     "Adj": 0,
-    "STAT": 4.73,
+    "STAT": 4.74,
     "Projected Preseason Rank": 148,
-    "Safe Loss Threshold": 4.28,
-    "Dangerous": 6
+    "Safe Loss Threshold": 4.26,
+    "Dangerous": 5.99
   },
   {
     "Team": "Middlebury",
@@ -2229,7 +2229,7 @@
     "Height": 68.6,
     "Returning": "36.61%",
     "Adj": 0,
-    "STAT": 4.7,
+    "STAT": 4.73,
     "Projected Preseason Rank": 149,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2244,9 +2244,9 @@
     "Height": 68.9,
     "Returning": "78.89%",
     "Adj": 0,
-    "STAT": 4.55,
+    "STAT": 4.56,
     "Projected Preseason Rank": 150,
-    "Safe Loss Threshold": 7.41,
+    "Safe Loss Threshold": 7.42,
     "Dangerous": 9.12
   },
   {
@@ -2259,10 +2259,10 @@
     "Height": 68.4,
     "Returning": "89.99%",
     "Adj": 0,
-    "STAT": 4.38,
+    "STAT": 4.39,
     "Projected Preseason Rank": 151,
-    "Safe Loss Threshold": 1.61,
-    "Dangerous": 3.36
+    "Safe Loss Threshold": 1.62,
+    "Dangerous": 3.37
   },
   {
     "Team": "Carthage",
@@ -2274,7 +2274,7 @@
     "Height": 68.5,
     "Returning": "43.27%",
     "Adj": 0,
-    "STAT": 4.24,
+    "STAT": 4.27,
     "Projected Preseason Rank": 152,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2289,7 +2289,7 @@
     "Height": 68.5,
     "Returning": "74.47%",
     "Adj": 0,
-    "STAT": 4.18,
+    "STAT": 4.2,
     "Projected Preseason Rank": 153,
     "Safe Loss Threshold": 5.07,
     "Dangerous": 6.79
@@ -2304,10 +2304,10 @@
     "Height": 63.5,
     "Returning": "98.07%",
     "Adj": 0,
-    "STAT": 4.14,
+    "STAT": 4.15,
     "Projected Preseason Rank": 154,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 2.94,
+    "Dangerous": 4.68
   },
   {
     "Team": "Stockton",
@@ -2334,7 +2334,7 @@
     "Height": 67.7,
     "Returning": "87.73%",
     "Adj": 0,
-    "STAT": 3.86,
+    "STAT": 3.87,
     "Projected Preseason Rank": 156,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2364,7 +2364,7 @@
     "Height": 68.8,
     "Returning": "75.36%",
     "Adj": 0,
-    "STAT": 3.73,
+    "STAT": 3.75,
     "Projected Preseason Rank": 158,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2379,10 +2379,10 @@
     "Height": 66.4,
     "Returning": "66.95%",
     "Adj": 0,
-    "STAT": 3.71,
+    "STAT": 3.73,
     "Projected Preseason Rank": 159,
-    "Safe Loss Threshold": 4.97,
-    "Dangerous": 6.69
+    "Safe Loss Threshold": 4.91,
+    "Dangerous": 6.63
   },
   {
     "Team": "Hunter",
@@ -2394,7 +2394,7 @@
     "Height": 67.7,
     "Returning": "64.29%",
     "Adj": 0,
-    "STAT": 3.44,
+    "STAT": 3.47,
     "Projected Preseason Rank": 160,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2409,7 +2409,7 @@
     "Height": 67.4,
     "Returning": "85.99%",
     "Adj": 0,
-    "STAT": 3.36,
+    "STAT": 3.37,
     "Projected Preseason Rank": 161,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2424,7 +2424,7 @@
     "Height": 68.9,
     "Returning": "60.79%",
     "Adj": 0,
-    "STAT": 3.22,
+    "STAT": 3.24,
     "Projected Preseason Rank": 162,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2439,7 +2439,7 @@
     "Height": 68.5,
     "Returning": "61.76%",
     "Adj": 0,
-    "STAT": 3.21,
+    "STAT": 3.24,
     "Projected Preseason Rank": 163,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2454,7 +2454,7 @@
     "Height": 68.4,
     "Returning": "80.71%",
     "Adj": 0,
-    "STAT": 3.2,
+    "STAT": 3.22,
     "Projected Preseason Rank": 164,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2469,10 +2469,10 @@
     "Height": 67.7,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 3.2,
+    "STAT": 3.21,
     "Projected Preseason Rank": 165,
-    "Safe Loss Threshold": 4.96,
-    "Dangerous": 6.68
+    "Safe Loss Threshold": 4.92,
+    "Dangerous": 6.64
   },
   {
     "Team": "Grinnell",
@@ -2484,10 +2484,10 @@
     "Height": 69,
     "Returning": "64.24%",
     "Adj": 0,
-    "STAT": 3.02,
+    "STAT": 3.04,
     "Projected Preseason Rank": 166,
-    "Safe Loss Threshold": 3.39,
-    "Dangerous": 5.12
+    "Safe Loss Threshold": 3.38,
+    "Dangerous": 5.11
   },
   {
     "Team": "St. Scholastica",
@@ -2499,10 +2499,10 @@
     "Height": 68.6,
     "Returning": "70.66%",
     "Adj": 0.1,
-    "STAT": 2.98,
+    "STAT": 3.01,
     "Projected Preseason Rank": 167,
-    "Safe Loss Threshold": 4.4,
-    "Dangerous": 6.12
+    "Safe Loss Threshold": 4.41,
+    "Dangerous": 6.13
   },
   {
     "Team": "Framingham St.",
@@ -2514,7 +2514,7 @@
     "Height": 68.1,
     "Returning": "59.85%",
     "Adj": 0,
-    "STAT": 2.97,
+    "STAT": 2.99,
     "Projected Preseason Rank": 168,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2529,7 +2529,7 @@
     "Height": 69.3,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 2.93,
+    "STAT": 2.94,
     "Projected Preseason Rank": 169,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2544,10 +2544,10 @@
     "Height": 68.7,
     "Returning": "64.61%",
     "Adj": 0,
-    "STAT": 2.87,
+    "STAT": 2.89,
     "Projected Preseason Rank": 170,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 5.63,
+    "Dangerous": 7.34
   },
   {
     "Team": "Sewanee",
@@ -2559,7 +2559,7 @@
     "Height": 67.2,
     "Returning": "86.69%",
     "Adj": 0,
-    "STAT": 2.83,
+    "STAT": 2.84,
     "Projected Preseason Rank": 171,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2574,7 +2574,7 @@
     "Height": 68.8,
     "Returning": "77.64%",
     "Adj": 0,
-    "STAT": 2.67,
+    "STAT": 2.68,
     "Projected Preseason Rank": 172,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2589,10 +2589,10 @@
     "Height": 68.9,
     "Returning": "36.76%",
     "Adj": 0,
-    "STAT": 2.63,
+    "STAT": 2.67,
     "Projected Preseason Rank": 173,
-    "Safe Loss Threshold": 5,
-    "Dangerous": 6.72
+    "Safe Loss Threshold": 5.01,
+    "Dangerous": 6.73
   },
   {
     "Team": "Mass-Boston",
@@ -2604,25 +2604,25 @@
     "Height": 66.7,
     "Returning": "99.87%",
     "Adj": 0,
-    "STAT": 2.55,
+    "STAT": 2.56,
     "Projected Preseason Rank": 174,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
   {
-    "Team": "Manchester",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Win%": 0.333,
-    "SOS": 0.509,
-    "NPI": 47.32,
-    "Height": 67.3,
-    "Returning": "95.59%",
-    "Adj": 0,
-    "STAT": 2.13,
+    "Team": "PSU-Harrisburg",
+    "Conf": "UEC",
+    "Region": 4,
+    "Win%": 0.667,
+    "SOS": 0.519,
+    "NPI": 51.83,
+    "Height": 69.9,
+    "Returning": "41.28%",
+    "Adj": 0.8,
+    "STAT": 2.53,
     "Projected Preseason Rank": 175,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.72,
+    "Dangerous": 6.45
   },
   {
     "Team": "Mass-Dartmouth",
@@ -2634,10 +2634,25 @@
     "Height": 68.5,
     "Returning": "12.70%",
     "Adj": 0,
-    "STAT": 2.13,
+    "STAT": 2.18,
     "Projected Preseason Rank": 176,
     "Safe Loss Threshold": 4.41,
     "Dangerous": 6.14
+  },
+  {
+    "Team": "Manchester",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Win%": 0.333,
+    "SOS": 0.509,
+    "NPI": 47.32,
+    "Height": 67.3,
+    "Returning": "95.59%",
+    "Adj": 0,
+    "STAT": 2.14,
+    "Projected Preseason Rank": 177,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Austin College",
@@ -2650,7 +2665,7 @@
     "Returning": "100.00%",
     "Adj": 0,
     "STAT": 2.09,
-    "Projected Preseason Rank": 177,
+    "Projected Preseason Rank": 178,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -2664,8 +2679,8 @@
     "Height": 68.5,
     "Returning": "52.49%",
     "Adj": 0,
-    "STAT": 2.05,
-    "Projected Preseason Rank": 178,
+    "STAT": 2.08,
+    "Projected Preseason Rank": 179,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -2679,10 +2694,10 @@
     "Height": 68.7,
     "Returning": "48.79%",
     "Adj": 0,
-    "STAT": 2.03,
-    "Projected Preseason Rank": 179,
-    "Safe Loss Threshold": 4.35,
-    "Dangerous": 6.07
+    "STAT": 2.05,
+    "Projected Preseason Rank": 180,
+    "Safe Loss Threshold": 4.64,
+    "Dangerous": 6.36
   },
   {
     "Team": "Franklin",
@@ -2694,25 +2709,10 @@
     "Height": 67.7,
     "Returning": "61.40%",
     "Adj": 0,
-    "STAT": 1.92,
-    "Projected Preseason Rank": 180,
-    "Safe Loss Threshold": 4.34,
-    "Dangerous": 6.07
-  },
-  {
-    "Team": "PSU-Harrisburg",
-    "Conf": "UEC",
-    "Region": 4,
-    "Win%": 0.667,
-    "SOS": 0.519,
-    "NPI": 51.83,
-    "Height": 69.9,
-    "Returning": "41.28%",
-    "Adj": 0,
-    "STAT": 1.83,
+    "STAT": 1.94,
     "Projected Preseason Rank": 181,
-    "Safe Loss Threshold": 4.74,
-    "Dangerous": 6.46
+    "Safe Loss Threshold": 4.28,
+    "Dangerous": 6
   },
   {
     "Team": "Greenville",
@@ -2724,7 +2724,7 @@
     "Height": 68.3,
     "Returning": "77.15%",
     "Adj": 0,
-    "STAT": 1.73,
+    "STAT": 1.75,
     "Projected Preseason Rank": 182,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2739,7 +2739,7 @@
     "Height": 68,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": 1.7,
+    "STAT": 1.71,
     "Projected Preseason Rank": 183,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2754,10 +2754,10 @@
     "Height": 69.2,
     "Returning": "92.83%",
     "Adj": 0,
-    "STAT": 1.62,
+    "STAT": 1.63,
     "Projected Preseason Rank": 184,
-    "Safe Loss Threshold": 3.2,
-    "Dangerous": 4.93
+    "Safe Loss Threshold": 3.21,
+    "Dangerous": 4.94
   },
   {
     "Team": "Muhlenberg",
@@ -2769,7 +2769,7 @@
     "Height": 68.8,
     "Returning": "56.52%",
     "Adj": 0,
-    "STAT": 1.6,
+    "STAT": 1.63,
     "Projected Preseason Rank": 185,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2784,25 +2784,10 @@
     "Height": 67.1,
     "Returning": "76.01%",
     "Adj": 0,
-    "STAT": 1.59,
+    "STAT": 1.6,
     "Projected Preseason Rank": 186,
-    "Safe Loss Threshold": 3.75,
-    "Dangerous": 5.48
-  },
-  {
-    "Team": "New Jersey City",
-    "Conf": "NJAC",
-    "Region": 4,
-    "Win%": 0.385,
-    "SOS": 0.562,
-    "NPI": 49.01,
-    "Height": 66.3,
-    "Returning": "72.70%",
-    "Adj": 0,
-    "STAT": 1.54,
-    "Projected Preseason Rank": 187,
-    "Safe Loss Threshold": 4.88,
-    "Dangerous": 6.61
+    "Safe Loss Threshold": 3.76,
+    "Dangerous": 5.49
   },
   {
     "Team": "Shenandoah",
@@ -2814,25 +2799,25 @@
     "Height": 67.8,
     "Returning": "27.76%",
     "Adj": 0,
-    "STAT": 1.54,
-    "Projected Preseason Rank": 188,
+    "STAT": 1.58,
+    "Projected Preseason Rank": 187,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
   {
-    "Team": "North Central (IL)",
-    "Conf": "CCIW",
-    "Region": 8,
-    "Win%": 0.4,
-    "SOS": 0.537,
-    "NPI": 50.05,
-    "Height": 68.3,
-    "Returning": "68.37%",
+    "Team": "New Jersey City",
+    "Conf": "NJAC",
+    "Region": 4,
+    "Win%": 0.385,
+    "SOS": 0.562,
+    "NPI": 49.01,
+    "Height": 66.3,
+    "Returning": "72.70%",
     "Adj": 0,
-    "STAT": 1.48,
-    "Projected Preseason Rank": 189,
-    "Safe Loss Threshold": 3.57,
-    "Dangerous": 5.3
+    "STAT": 1.56,
+    "Projected Preseason Rank": 188,
+    "Safe Loss Threshold": 4.89,
+    "Dangerous": 6.61
   },
   {
     "Team": "Houghton",
@@ -2844,10 +2829,25 @@
     "Height": 69.3,
     "Returning": "62.99%",
     "Adj": 0,
-    "STAT": 1.48,
+    "STAT": 1.5,
+    "Projected Preseason Rank": 189,
+    "Safe Loss Threshold": 1.1,
+    "Dangerous": 2.85
+  },
+  {
+    "Team": "North Central (IL)",
+    "Conf": "CCIW",
+    "Region": 8,
+    "Win%": 0.4,
+    "SOS": 0.537,
+    "NPI": 50.05,
+    "Height": 68.3,
+    "Returning": "68.37%",
+    "Adj": 0,
+    "STAT": 1.5,
     "Projected Preseason Rank": 190,
-    "Safe Loss Threshold": 1.09,
-    "Dangerous": 2.84
+    "Safe Loss Threshold": 3.59,
+    "Dangerous": 5.32
   },
   {
     "Team": "Wittenberg",
@@ -2859,7 +2859,7 @@
     "Height": 68.7,
     "Returning": "39.49%",
     "Adj": 0,
-    "STAT": 1.42,
+    "STAT": 1.46,
     "Projected Preseason Rank": 191,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2874,7 +2874,7 @@
     "Height": 68.1,
     "Returning": "45.17%",
     "Adj": 0,
-    "STAT": 1.4,
+    "STAT": 1.43,
     "Projected Preseason Rank": 192,
     "Safe Loss Threshold": 4.31,
     "Dangerous": 6.04
@@ -2889,7 +2889,7 @@
     "Height": 67.4,
     "Returning": "31.55%",
     "Adj": 0,
-    "STAT": 1.38,
+    "STAT": 1.42,
     "Projected Preseason Rank": 193,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2904,7 +2904,7 @@
     "Height": 68.5,
     "Returning": "51.96%",
     "Adj": 0,
-    "STAT": 1.36,
+    "STAT": 1.38,
     "Projected Preseason Rank": 194,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2919,10 +2919,10 @@
     "Height": 68.3,
     "Returning": "58.52%",
     "Adj": 0,
-    "STAT": 1.25,
+    "STAT": 1.28,
     "Projected Preseason Rank": 195,
-    "Safe Loss Threshold": 3.31,
-    "Dangerous": 5.04
+    "Safe Loss Threshold": 3.22,
+    "Dangerous": 4.95
   },
   {
     "Team": "Albion",
@@ -2934,10 +2934,10 @@
     "Height": 67.2,
     "Returning": "74.49%",
     "Adj": 0,
-    "STAT": 1.14,
+    "STAT": 1.16,
     "Projected Preseason Rank": 196,
-    "Safe Loss Threshold": 3.92,
-    "Dangerous": 5.65
+    "Safe Loss Threshold": 4.22,
+    "Dangerous": 5.95
   },
   {
     "Team": "Pacific",
@@ -2949,7 +2949,7 @@
     "Height": 66.2,
     "Returning": "73.55%",
     "Adj": 0,
-    "STAT": 1.13,
+    "STAT": 1.15,
     "Projected Preseason Rank": 197,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2964,7 +2964,7 @@
     "Height": 69.1,
     "Returning": "64.35%",
     "Adj": 0,
-    "STAT": 1.06,
+    "STAT": 1.08,
     "Projected Preseason Rank": 198,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2979,7 +2979,7 @@
     "Height": 67.4,
     "Returning": "55.24%",
     "Adj": 0,
-    "STAT": 1.01,
+    "STAT": 1.03,
     "Projected Preseason Rank": 199,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -2994,10 +2994,10 @@
     "Height": 66.8,
     "Returning": "80.29%",
     "Adj": 0,
-    "STAT": 1,
+    "STAT": 1.02,
     "Projected Preseason Rank": 200,
-    "Safe Loss Threshold": 2.31,
-    "Dangerous": 4.05
+    "Safe Loss Threshold": 2.32,
+    "Dangerous": 4.06
   },
   {
     "Team": "Hollins",
@@ -3009,7 +3009,7 @@
     "Height": 68.8,
     "Returning": "78.89%",
     "Adj": 0,
-    "STAT": 0.98,
+    "STAT": 0.99,
     "Projected Preseason Rank": 201,
     "Safe Loss Threshold": 5.1,
     "Dangerous": 6.82
@@ -3024,10 +3024,10 @@
     "Height": 68.8,
     "Returning": "72.13%",
     "Adj": 0,
-    "STAT": 0.9,
+    "STAT": 0.91,
     "Projected Preseason Rank": 202,
-    "Safe Loss Threshold": 4.27,
-    "Dangerous": 6
+    "Safe Loss Threshold": 4.29,
+    "Dangerous": 6.01
   },
   {
     "Team": "Emmanuel",
@@ -3039,7 +3039,7 @@
     "Height": 69.3,
     "Returning": "59.13%",
     "Adj": 0,
-    "STAT": 0.89,
+    "STAT": 0.91,
     "Projected Preseason Rank": 203,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3054,7 +3054,7 @@
     "Height": 66.9,
     "Returning": "70.24%",
     "Adj": 0,
-    "STAT": 0.73,
+    "STAT": 0.75,
     "Projected Preseason Rank": 204,
     "Safe Loss Threshold": 3.19,
     "Dangerous": 4.92
@@ -3069,10 +3069,10 @@
     "Height": 68.1,
     "Returning": "92.06%",
     "Adj": 0,
-    "STAT": 0.63,
+    "STAT": 0.64,
     "Projected Preseason Rank": 205,
-    "Safe Loss Threshold": 5.46,
-    "Dangerous": 7.17
+    "Safe Loss Threshold": 5.47,
+    "Dangerous": 7.19
   },
   {
     "Team": "MIT",
@@ -3084,7 +3084,7 @@
     "Height": 68.8,
     "Returning": "38.05%",
     "Adj": 0,
-    "STAT": 0.58,
+    "STAT": 0.6,
     "Projected Preseason Rank": 206,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3099,10 +3099,10 @@
     "Height": 66.4,
     "Returning": "90.09%",
     "Adj": 0,
-    "STAT": 0.46,
+    "STAT": 0.47,
     "Projected Preseason Rank": 207,
-    "Safe Loss Threshold": 2.38,
-    "Dangerous": 4.12
+    "Safe Loss Threshold": 2.39,
+    "Dangerous": 4.13
   },
   {
     "Team": "Alma",
@@ -3114,10 +3114,10 @@
     "Height": 69.4,
     "Returning": "70.50%",
     "Adj": 0,
-    "STAT": 0.4,
+    "STAT": 0.41,
     "Projected Preseason Rank": 208,
-    "Safe Loss Threshold": 3.56,
-    "Dangerous": 5.29
+    "Safe Loss Threshold": 3.61,
+    "Dangerous": 5.34
   },
   {
     "Team": "Moravian",
@@ -3129,7 +3129,7 @@
     "Height": 68.2,
     "Returning": "76.62%",
     "Adj": 0,
-    "STAT": 0.32,
+    "STAT": 0.33,
     "Projected Preseason Rank": 209,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3144,10 +3144,10 @@
     "Height": 69.4,
     "Returning": "66.01%",
     "Adj": 0,
-    "STAT": 0.17,
+    "STAT": 0.19,
     "Projected Preseason Rank": 210,
-    "Safe Loss Threshold": 3.28,
-    "Dangerous": 5.01
+    "Safe Loss Threshold": 3.27,
+    "Dangerous": 5
   },
   {
     "Team": "Elmhurst",
@@ -3159,7 +3159,7 @@
     "Height": 66.7,
     "Returning": "58.01%",
     "Adj": 0,
-    "STAT": 0.1,
+    "STAT": 0.13,
     "Projected Preseason Rank": 211,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3174,23 +3174,8 @@
     "Height": 68,
     "Returning": "74.75%",
     "Adj": 0,
-    "STAT": 0.09,
+    "STAT": 0.11,
     "Projected Preseason Rank": 212,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Adrian",
-    "Conf": "MIAA",
-    "Region": 7,
-    "Win%": 0.28,
-    "SOS": 0.515,
-    "NPI": 46.51,
-    "Height": 67.7,
-    "Returning": "85.45%",
-    "Adj": 0,
-    "STAT": "(0.04)",
-    "Projected Preseason Rank": 213,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -3204,10 +3189,25 @@
     "Height": 68.5,
     "Returning": "38.05%",
     "Adj": 0,
-    "STAT": "(0.04)",
+    "STAT": "(0.01)",
+    "Projected Preseason Rank": 213,
+    "Safe Loss Threshold": 5.07,
+    "Dangerous": 6.79
+  },
+  {
+    "Team": "Adrian",
+    "Conf": "MIAA",
+    "Region": 7,
+    "Win%": 0.28,
+    "SOS": 0.515,
+    "NPI": 46.51,
+    "Height": 67.7,
+    "Returning": "85.45%",
+    "Adj": 0,
+    "STAT": "(0.03)",
     "Projected Preseason Rank": 214,
-    "Safe Loss Threshold": 5.09,
-    "Dangerous": 6.81
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "York (PA)",
@@ -3219,10 +3219,10 @@
     "Height": 68.9,
     "Returning": "37.35%",
     "Adj": 0,
-    "STAT": "(0.15)",
+    "STAT": "(0.12)",
     "Projected Preseason Rank": 215,
     "Safe Loss Threshold": 6.09,
-    "Dangerous": 7.81
+    "Dangerous": 7.8
   },
   {
     "Team": "Mary Washington",
@@ -3234,10 +3234,10 @@
     "Height": 68.5,
     "Returning": "40.16%",
     "Adj": 0.2,
-    "STAT": "(0.32)",
+    "STAT": "(0.30)",
     "Projected Preseason Rank": 216,
-    "Safe Loss Threshold": 5.47,
-    "Dangerous": 7.19
+    "Safe Loss Threshold": 5.46,
+    "Dangerous": 7.17
   },
   {
     "Team": "Alvernia",
@@ -3249,7 +3249,7 @@
     "Height": 68.3,
     "Returning": "55.71%",
     "Adj": 0,
-    "STAT": "(0.39)",
+    "STAT": "(0.37)",
     "Projected Preseason Rank": 217,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3264,7 +3264,7 @@
     "Height": 68.9,
     "Returning": "55.94%",
     "Adj": 0,
-    "STAT": "(0.44)",
+    "STAT": "(0.42)",
     "Projected Preseason Rank": 219,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3279,7 +3279,7 @@
     "Height": 67.7,
     "Returning": "96.86%",
     "Adj": 0,
-    "STAT": "(0.46)",
+    "STAT": "(0.45)",
     "Projected Preseason Rank": 220,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3294,7 +3294,7 @@
     "Height": 67.7,
     "Returning": "86.26%",
     "Adj": 0,
-    "STAT": "(0.49)",
+    "STAT": "(0.48)",
     "Projected Preseason Rank": 221,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3309,7 +3309,7 @@
     "Height": 69.2,
     "Returning": "46.87%",
     "Adj": 0,
-    "STAT": "(0.52)",
+    "STAT": "(0.50)",
     "Projected Preseason Rank": 222,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3324,10 +3324,10 @@
     "Height": 66.4,
     "Returning": "52.26%",
     "Adj": 0,
-    "STAT": "(0.55)",
+    "STAT": "(0.52)",
     "Projected Preseason Rank": 223,
-    "Safe Loss Threshold": 2.55,
-    "Dangerous": 4.29
+    "Safe Loss Threshold": 2.59,
+    "Dangerous": 4.32
   },
   {
     "Team": "Rowan",
@@ -3339,10 +3339,10 @@
     "Height": 69.1,
     "Returning": "36.99%",
     "Adj": 0,
-    "STAT": "(0.58)",
+    "STAT": "(0.55)",
     "Projected Preseason Rank": 224,
     "Safe Loss Threshold": 4.19,
-    "Dangerous": 5.91
+    "Dangerous": 5.92
   },
   {
     "Team": "Oswego St.",
@@ -3354,10 +3354,10 @@
     "Height": 68.3,
     "Returning": "40.05%",
     "Adj": 0,
-    "STAT": "(0.61)",
+    "STAT": "(0.58)",
     "Projected Preseason Rank": 225,
     "Safe Loss Threshold": 4.74,
-    "Dangerous": 6.47
+    "Dangerous": 6.46
   },
   {
     "Team": "William Smith",
@@ -3369,10 +3369,10 @@
     "Height": 67.6,
     "Returning": "96.26%",
     "Adj": 0,
-    "STAT": "(0.66)",
+    "STAT": "(0.65)",
     "Projected Preseason Rank": 226,
-    "Safe Loss Threshold": 5.18,
-    "Dangerous": 6.9
+    "Safe Loss Threshold": 5.15,
+    "Dangerous": 6.87
   },
   {
     "Team": "Mt. St. Mary",
@@ -3384,23 +3384,8 @@
     "Height": 67.5,
     "Returning": "43.80%",
     "Adj": 0,
-    "STAT": "(0.70)",
+    "STAT": "(0.67)",
     "Projected Preseason Rank": 227,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Schreiner",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Win%": 0.227,
-    "SOS": 0.55,
-    "NPI": 45.99,
-    "Height": 67.3,
-    "Returning": "76.66%",
-    "Adj": 0,
-    "STAT": "(0.71)",
-    "Projected Preseason Rank": 228,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -3414,10 +3399,25 @@
     "Height": 68.5,
     "Returning": "23.26%",
     "Adj": 0,
-    "STAT": "(0.73)",
+    "STAT": "(0.69)",
+    "Projected Preseason Rank": 228,
+    "Safe Loss Threshold": 4.5,
+    "Dangerous": 6.22
+  },
+  {
+    "Team": "Schreiner",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Win%": 0.227,
+    "SOS": 0.55,
+    "NPI": 45.99,
+    "Height": 67.3,
+    "Returning": "76.66%",
+    "Adj": 0,
+    "STAT": "(0.70)",
     "Projected Preseason Rank": 229,
-    "Safe Loss Threshold": 4.51,
-    "Dangerous": 6.23
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Wilmington",
@@ -3429,7 +3429,7 @@
     "Height": 67,
     "Returning": "68.54%",
     "Adj": 0,
-    "STAT": "(0.80)",
+    "STAT": "(0.78)",
     "Projected Preseason Rank": 230,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3444,10 +3444,10 @@
     "Height": 67.5,
     "Returning": "57.06%",
     "Adj": 0,
-    "STAT": "(0.82)",
+    "STAT": "(0.80)",
     "Projected Preseason Rank": 231,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.83,
+    "Dangerous": 5.56
   },
   {
     "Team": "Dubuque",
@@ -3459,10 +3459,10 @@
     "Height": 68.5,
     "Returning": "60.96%",
     "Adj": 0,
-    "STAT": "(0.83)",
+    "STAT": "(0.81)",
     "Projected Preseason Rank": 232,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.34,
+    "Dangerous": 6.06
   },
   {
     "Team": "Curry",
@@ -3474,10 +3474,10 @@
     "Height": 66.9,
     "Returning": "79.07%",
     "Adj": 0,
-    "STAT": "(0.84)",
+    "STAT": "(0.83)",
     "Projected Preseason Rank": 233,
-    "Safe Loss Threshold": 4.85,
-    "Dangerous": 6.57
+    "Safe Loss Threshold": 4.83,
+    "Dangerous": 6.55
   },
   {
     "Team": "Concordia (TX)",
@@ -3489,7 +3489,7 @@
     "Height": 67.3,
     "Returning": "66.78%",
     "Adj": 0,
-    "STAT": "(0.92)",
+    "STAT": "(0.90)",
     "Projected Preseason Rank": 234,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3504,7 +3504,7 @@
     "Height": 68.7,
     "Returning": "63.75%",
     "Adj": 0,
-    "STAT": "(0.96)",
+    "STAT": "(0.95)",
     "Projected Preseason Rank": 235,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3519,7 +3519,7 @@
     "Height": 67,
     "Returning": "75.00%",
     "Adj": 0,
-    "STAT": "(1.03)",
+    "STAT": "(1.01)",
     "Projected Preseason Rank": 236,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3534,8 +3534,38 @@
     "Height": 67.5,
     "Returning": "42.98%",
     "Adj": 0,
-    "STAT": "(1.08)",
+    "STAT": "(1.05)",
     "Projected Preseason Rank": 237,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Maryville",
+    "Conf": "CCS",
+    "Region": 6,
+    "Win%": 0.423,
+    "SOS": 0.494,
+    "NPI": 46.23,
+    "Height": 68.6,
+    "Returning": "71.91%",
+    "Adj": 0.1,
+    "STAT": "(1.06)",
+    "Projected Preseason Rank": 238,
+    "Safe Loss Threshold": 3.24,
+    "Dangerous": 4.98
+  },
+  {
+    "Team": "Belhaven",
+    "Conf": "CCS",
+    "Region": 6,
+    "Win%": 0.63,
+    "SOS": 0.495,
+    "NPI": 50.78,
+    "Height": 67.6,
+    "Returning": "52.08%",
+    "Adj": 0,
+    "STAT": "(1.10)",
+    "Projected Preseason Rank": 239,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -3549,55 +3579,10 @@
     "Height": 68.4,
     "Returning": "100.00%",
     "Adj": 0,
-    "STAT": "(1.11)",
-    "Projected Preseason Rank": 238,
-    "Safe Loss Threshold": 4.5,
-    "Dangerous": 6.23
-  },
-  {
-    "Team": "Maryville",
-    "Conf": "CCS",
-    "Region": 6,
-    "Win%": 0.423,
-    "SOS": 0.494,
-    "NPI": 46.23,
-    "Height": 68.6,
-    "Returning": "71.91%",
-    "Adj": 0,
-    "STAT": "(1.13)",
-    "Projected Preseason Rank": 239,
-    "Safe Loss Threshold": 3.34,
-    "Dangerous": 5.08
-  },
-  {
-    "Team": "Belhaven",
-    "Conf": "CCS",
-    "Region": 6,
-    "Win%": 0.63,
-    "SOS": 0.495,
-    "NPI": 50.78,
-    "Height": 67.6,
-    "Returning": "52.08%",
-    "Adj": 0,
-    "STAT": "(1.13)",
+    "STAT": "(1.10)",
     "Projected Preseason Rank": 240,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Eureka",
-    "Conf": "SLIAC",
-    "Region": 8,
-    "Win%": 0.593,
-    "SOS": 0.454,
-    "NPI": 48.79,
-    "Height": 67.7,
-    "Returning": "70.65%",
-    "Adj": 0,
-    "STAT": "(1.20)",
-    "Projected Preseason Rank": 241,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.51,
+    "Dangerous": 6.24
   },
   {
     "Team": "Central (IA)",
@@ -3609,10 +3594,25 @@
     "Height": 68.9,
     "Returning": "52.49%",
     "Adj": 0,
-    "STAT": "(1.20)",
-    "Projected Preseason Rank": 242,
+    "STAT": "(1.18)",
+    "Projected Preseason Rank": 241,
     "Safe Loss Threshold": 4.44,
     "Dangerous": 6.16
+  },
+  {
+    "Team": "Eureka",
+    "Conf": "SLIAC",
+    "Region": 8,
+    "Win%": 0.593,
+    "SOS": 0.454,
+    "NPI": 48.79,
+    "Height": 67.7,
+    "Returning": "70.65%",
+    "Adj": 0,
+    "STAT": "(1.18)",
+    "Projected Preseason Rank": 242,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Bethany (WV)",
@@ -3624,7 +3624,7 @@
     "Height": 68.3,
     "Returning": "65.66%",
     "Adj": 0,
-    "STAT": "(1.24)",
+    "STAT": "(1.22)",
     "Projected Preseason Rank": 243,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3639,10 +3639,10 @@
     "Height": 69.2,
     "Returning": "87.54%",
     "Adj": 0,
-    "STAT": "(1.30)",
+    "STAT": "(1.29)",
     "Projected Preseason Rank": 244,
-    "Safe Loss Threshold": 3.42,
-    "Dangerous": 5.15
+    "Safe Loss Threshold": 3.45,
+    "Dangerous": 5.18
   },
   {
     "Team": "Macalester",
@@ -3654,10 +3654,10 @@
     "Height": 69,
     "Returning": "38.42%",
     "Adj": 0,
-    "STAT": "(1.37)",
+    "STAT": "(1.35)",
     "Projected Preseason Rank": 245,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.66,
+    "Dangerous": 6.38
   },
   {
     "Team": "St. Joseph's (LI)",
@@ -3669,7 +3669,7 @@
     "Height": 66.7,
     "Returning": "54.99%",
     "Adj": 0,
-    "STAT": "(1.43)",
+    "STAT": "(1.41)",
     "Projected Preseason Rank": 246,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3684,7 +3684,7 @@
     "Height": 67.5,
     "Returning": "77.30%",
     "Adj": 0,
-    "STAT": "(1.45)",
+    "STAT": "(1.44)",
     "Projected Preseason Rank": 247,
     "Safe Loss Threshold": 1.84,
     "Dangerous": 3.59
@@ -3699,25 +3699,10 @@
     "Height": 67.8,
     "Returning": "56.39%",
     "Adj": 0,
-    "STAT": "(1.54)",
+    "STAT": "(1.52)",
     "Projected Preseason Rank": 248,
-    "Safe Loss Threshold": 4.55,
+    "Safe Loss Threshold": 4.56,
     "Dangerous": 6.28
-  },
-  {
-    "Team": "Morrisville St.",
-    "Conf": "SUNYAC",
-    "Region": 3,
-    "Win%": 0.24,
-    "SOS": 0.492,
-    "NPI": 44.51,
-    "Height": 67.7,
-    "Returning": "91.07%",
-    "Adj": 0,
-    "STAT": "(1.56)",
-    "Projected Preseason Rank": 249,
-    "Safe Loss Threshold": 2.42,
-    "Dangerous": 4.16
   },
   {
     "Team": "Alfred",
@@ -3729,10 +3714,25 @@
     "Height": 66.6,
     "Returning": "67.90%",
     "Adj": 0,
-    "STAT": "(1.57)",
-    "Projected Preseason Rank": 250,
+    "STAT": "(1.55)",
+    "Projected Preseason Rank": 249,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Morrisville St.",
+    "Conf": "SUNYAC",
+    "Region": 3,
+    "Win%": 0.24,
+    "SOS": 0.492,
+    "NPI": 44.51,
+    "Height": 67.7,
+    "Returning": "91.07%",
+    "Adj": 0,
+    "STAT": "(1.55)",
+    "Projected Preseason Rank": 250,
+    "Safe Loss Threshold": 2.42,
+    "Dangerous": 4.16
   },
   {
     "Team": "Grove City",
@@ -3744,10 +3744,10 @@
     "Height": 68,
     "Returning": "55.99%",
     "Adj": 0,
-    "STAT": "(1.58)",
+    "STAT": "(1.55)",
     "Projected Preseason Rank": 251,
     "Safe Loss Threshold": 1.82,
-    "Dangerous": 3.57
+    "Dangerous": 3.56
   },
   {
     "Team": "Wellesley",
@@ -3759,7 +3759,7 @@
     "Height": 68.5,
     "Returning": "87.33%",
     "Adj": 0,
-    "STAT": "(1.59)",
+    "STAT": "(1.58)",
     "Projected Preseason Rank": 252,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3774,10 +3774,10 @@
     "Height": 67.1,
     "Returning": "38.32%",
     "Adj": 0,
-    "STAT": "(1.62)",
+    "STAT": "(1.59)",
     "Projected Preseason Rank": 253,
-    "Safe Loss Threshold": 6.22,
-    "Dangerous": 7.93
+    "Safe Loss Threshold": 6.23,
+    "Dangerous": 7.94
   },
   {
     "Team": "La Roche",
@@ -3789,7 +3789,7 @@
     "Height": 67.1,
     "Returning": "37.57%",
     "Adj": 0,
-    "STAT": "(1.63)",
+    "STAT": "(1.60)",
     "Projected Preseason Rank": 254,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3806,8 +3806,8 @@
     "Adj": 0,
     "STAT": "(1.64)",
     "Projected Preseason Rank": 255,
-    "Safe Loss Threshold": 1.84,
-    "Dangerous": 3.58
+    "Safe Loss Threshold": 1.85,
+    "Dangerous": 3.6
   },
   {
     "Team": "Lasell",
@@ -3819,7 +3819,7 @@
     "Height": 68.1,
     "Returning": "79.18%",
     "Adj": 0,
-    "STAT": "(1.73)",
+    "STAT": "(1.72)",
     "Projected Preseason Rank": 256,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3849,7 +3849,7 @@
     "Height": 68.2,
     "Returning": "67.92%",
     "Adj": 0,
-    "STAT": "(1.91)",
+    "STAT": "(1.90)",
     "Projected Preseason Rank": 258,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3864,7 +3864,7 @@
     "Height": 69.6,
     "Returning": "49.77%",
     "Adj": 0,
-    "STAT": "(1.94)",
+    "STAT": "(1.92)",
     "Projected Preseason Rank": 259,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3879,38 +3879,8 @@
     "Height": 68.4,
     "Returning": "83.99%",
     "Adj": 0,
-    "STAT": "(1.99)",
+    "STAT": "(1.98)",
     "Projected Preseason Rank": 260,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Southwestern",
-    "Conf": "SAA",
-    "Region": 6,
-    "Win%": 0.292,
-    "SOS": 0.504,
-    "NPI": 46.48,
-    "Height": 66.8,
-    "Returning": "78.88%",
-    "Adj": 0,
-    "STAT": "(2.03)",
-    "Projected Preseason Rank": 261,
-    "Safe Loss Threshold": 4.02,
-    "Dangerous": 5.75
-  },
-  {
-    "Team": "Claremont-Mudd-Scripps",
-    "Conf": "SCIAC",
-    "Region": 10,
-    "Win%": 0.4,
-    "SOS": 0.498,
-    "NPI": 49.07,
-    "Height": 67.7,
-    "Returning": "65.71%",
-    "Adj": 0,
-    "STAT": "(2.04)",
-    "Projected Preseason Rank": 262,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -3924,7 +3894,37 @@
     "Height": 67.4,
     "Returning": "34.33%",
     "Adj": 0,
-    "STAT": "(2.05)",
+    "STAT": "(2.01)",
+    "Projected Preseason Rank": 261,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Southwestern",
+    "Conf": "SAA",
+    "Region": 6,
+    "Win%": 0.292,
+    "SOS": 0.504,
+    "NPI": 46.48,
+    "Height": 66.8,
+    "Returning": "78.88%",
+    "Adj": 0,
+    "STAT": "(2.02)",
+    "Projected Preseason Rank": 262,
+    "Safe Loss Threshold": 4.01,
+    "Dangerous": 5.74
+  },
+  {
+    "Team": "Claremont-Mudd-Scripps",
+    "Conf": "SCIAC",
+    "Region": 10,
+    "Win%": 0.4,
+    "SOS": 0.498,
+    "NPI": 49.07,
+    "Height": 67.7,
+    "Returning": "65.71%",
+    "Adj": 0,
+    "STAT": "(2.03)",
     "Projected Preseason Rank": 263,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3939,10 +3939,10 @@
     "Height": 66.6,
     "Returning": "61.68%",
     "Adj": 0,
-    "STAT": "(2.11)",
+    "STAT": "(2.09)",
     "Projected Preseason Rank": 264,
-    "Safe Loss Threshold": 2.15,
-    "Dangerous": 3.89
+    "Safe Loss Threshold": 2.18,
+    "Dangerous": 3.92
   },
   {
     "Team": "Averett",
@@ -3954,10 +3954,10 @@
     "Height": 67.3,
     "Returning": "76.04%",
     "Adj": 0,
-    "STAT": "(2.17)",
+    "STAT": "(2.16)",
     "Projected Preseason Rank": 265,
-    "Safe Loss Threshold": 4.53,
-    "Dangerous": 6.26
+    "Safe Loss Threshold": 4.57,
+    "Dangerous": 6.29
   },
   {
     "Team": "Eastern Connecticut",
@@ -3969,7 +3969,7 @@
     "Height": 68.5,
     "Returning": "53.27%",
     "Adj": 0,
-    "STAT": "(2.34)",
+    "STAT": "(2.32)",
     "Projected Preseason Rank": 266,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -3984,10 +3984,10 @@
     "Height": 68.2,
     "Returning": "82.73%",
     "Adj": 0,
-    "STAT": "(2.38)",
+    "STAT": "(2.37)",
     "Projected Preseason Rank": 267,
-    "Safe Loss Threshold": 5.66,
-    "Dangerous": 7.37
+    "Safe Loss Threshold": 5.67,
+    "Dangerous": 7.39
   },
   {
     "Team": "Millikin",
@@ -3999,10 +3999,10 @@
     "Height": 68.5,
     "Returning": "42.25%",
     "Adj": 0,
-    "STAT": "(2.41)",
+    "STAT": "(2.39)",
     "Projected Preseason Rank": 268,
-    "Safe Loss Threshold": 5.46,
-    "Dangerous": 7.18
+    "Safe Loss Threshold": 5.49,
+    "Dangerous": 7.21
   },
   {
     "Team": "Juniata",
@@ -4014,7 +4014,7 @@
     "Height": 68.2,
     "Returning": "49.65%",
     "Adj": 0,
-    "STAT": "(2.45)",
+    "STAT": "(2.43)",
     "Projected Preseason Rank": 269,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4029,10 +4029,10 @@
     "Height": 67,
     "Returning": "70.99%",
     "Adj": 0,
-    "STAT": "(2.45)",
+    "STAT": "(2.44)",
     "Projected Preseason Rank": 270,
-    "Safe Loss Threshold": 3.84,
-    "Dangerous": 5.57
+    "Safe Loss Threshold": 3.83,
+    "Dangerous": 5.56
   },
   {
     "Team": "Rensselaer",
@@ -4044,7 +4044,7 @@
     "Height": 69.4,
     "Returning": "59.71%",
     "Adj": 0,
-    "STAT": "(2.49)",
+    "STAT": "(2.47)",
     "Projected Preseason Rank": 271,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4059,9 +4059,9 @@
     "Height": 68,
     "Returning": "75.80%",
     "Adj": 0,
-    "STAT": "(2.53)",
+    "STAT": "(2.51)",
     "Projected Preseason Rank": 272,
-    "Safe Loss Threshold": 4.71,
+    "Safe Loss Threshold": 4.72,
     "Dangerous": 6.44
   },
   {
@@ -4074,7 +4074,7 @@
     "Height": 66.8,
     "Returning": "83.77%",
     "Adj": 0,
-    "STAT": "(2.62)",
+    "STAT": "(2.61)",
     "Projected Preseason Rank": 273,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4089,7 +4089,7 @@
     "Height": 67.5,
     "Returning": "52.72%",
     "Adj": 0,
-    "STAT": "(2.73)",
+    "STAT": "(2.71)",
     "Projected Preseason Rank": 274,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4106,8 +4106,8 @@
     "Adj": 0,
     "STAT": "(2.81)",
     "Projected Preseason Rank": 275,
-    "Safe Loss Threshold": 2.81,
-    "Dangerous": 4.55
+    "Safe Loss Threshold": 2.83,
+    "Dangerous": 4.56
   },
   {
     "Team": "Maine-Farmington",
@@ -4119,7 +4119,7 @@
     "Height": 68.6,
     "Returning": "78.01%",
     "Adj": 0,
-    "STAT": "(2.96)",
+    "STAT": "(2.94)",
     "Projected Preseason Rank": 276,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4134,7 +4134,7 @@
     "Height": 67.9,
     "Returning": "62.45%",
     "Adj": 0,
-    "STAT": "(2.99)",
+    "STAT": "(2.97)",
     "Projected Preseason Rank": 277,
     "Safe Loss Threshold": 4.27,
     "Dangerous": 6
@@ -4149,7 +4149,7 @@
     "Height": 66.8,
     "Returning": "57.71%",
     "Adj": 0,
-    "STAT": "(3.04)",
+    "STAT": "(3.02)",
     "Projected Preseason Rank": 278,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4164,7 +4164,7 @@
     "Height": 66.4,
     "Returning": "65.83%",
     "Adj": 0,
-    "STAT": "(3.08)",
+    "STAT": "(3.06)",
     "Projected Preseason Rank": 279,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4179,10 +4179,10 @@
     "Height": 65.8,
     "Returning": "77.89%",
     "Adj": 0,
-    "STAT": "(3.17)",
+    "STAT": "(3.16)",
     "Projected Preseason Rank": 280,
     "Safe Loss Threshold": 4.85,
-    "Dangerous": 6.58
+    "Dangerous": 6.57
   },
   {
     "Team": "Elms",
@@ -4194,7 +4194,7 @@
     "Height": 66,
     "Returning": "77.92%",
     "Adj": 0,
-    "STAT": "(3.28)",
+    "STAT": "(3.27)",
     "Projected Preseason Rank": 281,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4209,25 +4209,10 @@
     "Height": 68.6,
     "Returning": "72.51%",
     "Adj": 0,
-    "STAT": "(3.29)",
+    "STAT": "(3.28)",
     "Projected Preseason Rank": 282,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Randolph Col",
-    "Conf": "ODAC",
-    "Region": 6,
-    "Win%": 0.417,
-    "SOS": 0.549,
-    "NPI": 49.41,
-    "Height": 68.5,
-    "Returning": "32.21%",
-    "Adj": 0,
-    "STAT": "(3.39)",
-    "Projected Preseason Rank": 283,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.52,
+    "Dangerous": 5.25
   },
   {
     "Team": "Hood",
@@ -4239,10 +4224,10 @@
     "Height": 67.8,
     "Returning": "56.88%",
     "Adj": 0,
-    "STAT": "(3.52)",
-    "Projected Preseason Rank": 284,
-    "Safe Loss Threshold": 4.74,
-    "Dangerous": 6.46
+    "STAT": "(3.51)",
+    "Projected Preseason Rank": 283,
+    "Safe Loss Threshold": 4.72,
+    "Dangerous": 6.45
   },
   {
     "Team": "Centenary (NJ)",
@@ -4254,7 +4239,22 @@
     "Height": 67.7,
     "Returning": "63.49%",
     "Adj": 0,
-    "STAT": "(3.57)",
+    "STAT": "(3.55)",
+    "Projected Preseason Rank": 284,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Randolph Col",
+    "Conf": "ODAC",
+    "Region": 6,
+    "Win%": 0.417,
+    "SOS": 0.549,
+    "NPI": 49.41,
+    "Height": 68.5,
+    "Returning": "30.67%",
+    "Adj": 0,
+    "STAT": "(3.60)",
     "Projected Preseason Rank": 285,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4269,7 +4269,7 @@
     "Height": 67.5,
     "Returning": "67.50%",
     "Adj": 0.1,
-    "STAT": "(3.66)",
+    "STAT": "(3.64)",
     "Projected Preseason Rank": 286,
     "Safe Loss Threshold": 4.45,
     "Dangerous": 6.17
@@ -4284,7 +4284,7 @@
     "Height": 65.9,
     "Returning": "84.09%",
     "Adj": 0.6,
-    "STAT": "(3.69)",
+    "STAT": "(3.67)",
     "Projected Preseason Rank": 287,
     "Safe Loss Threshold": 4.26,
     "Dangerous": 5.99
@@ -4299,7 +4299,7 @@
     "Height": 66.8,
     "Returning": "87.41%",
     "Adj": 0,
-    "STAT": "(3.70)",
+    "STAT": "(3.69)",
     "Projected Preseason Rank": 288,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4314,7 +4314,7 @@
     "Height": 66.4,
     "Returning": "69.26%",
     "Adj": 0,
-    "STAT": "(3.73)",
+    "STAT": "(3.72)",
     "Projected Preseason Rank": 289,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4329,9 +4329,9 @@
     "Height": 67.1,
     "Returning": "85.36%",
     "Adj": 0,
-    "STAT": "(3.80)",
+    "STAT": "(3.79)",
     "Projected Preseason Rank": 290,
-    "Safe Loss Threshold": 5.38,
+    "Safe Loss Threshold": 5.37,
     "Dangerous": 7.09
   },
   {
@@ -4344,7 +4344,7 @@
     "Height": 67.6,
     "Returning": "58.03%",
     "Adj": 0,
-    "STAT": "(3.84)",
+    "STAT": "(3.81)",
     "Projected Preseason Rank": 291,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4359,7 +4359,7 @@
     "Height": 67.6,
     "Returning": "47.91%",
     "Adj": 0,
-    "STAT": "(3.96)",
+    "STAT": "(3.94)",
     "Projected Preseason Rank": 292,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4374,7 +4374,7 @@
     "Height": 68.1,
     "Returning": "51.18%",
     "Adj": 0,
-    "STAT": "(3.97)",
+    "STAT": "(3.95)",
     "Projected Preseason Rank": 293,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4389,7 +4389,7 @@
     "Height": 67.9,
     "Returning": "61.73%",
     "Adj": 0,
-    "STAT": "(4.04)",
+    "STAT": "(4.02)",
     "Projected Preseason Rank": 294,
     "Safe Loss Threshold": 2.18,
     "Dangerous": 3.92
@@ -4404,25 +4404,10 @@
     "Height": 66.8,
     "Returning": "79.37%",
     "Adj": 0,
-    "STAT": "(4.09)",
+    "STAT": "(4.08)",
     "Projected Preseason Rank": 295,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Spalding",
-    "Conf": "SLIAC",
-    "Region": 8,
-    "Win%": 0.385,
-    "SOS": 0.488,
-    "NPI": 45.64,
-    "Height": 66.7,
-    "Returning": "68.63%",
-    "Adj": 0,
-    "STAT": "(4.10)",
-    "Projected Preseason Rank": 296,
-    "Safe Loss Threshold": 2.28,
-    "Dangerous": 4.02
+    "Safe Loss Threshold": 4.78,
+    "Dangerous": 6.5
   },
   {
     "Team": "Western Connecticut",
@@ -4434,8 +4419,8 @@
     "Height": 67.4,
     "Returning": "75.28%",
     "Adj": 0,
-    "STAT": "(4.10)",
-    "Projected Preseason Rank": 297,
+    "STAT": "(4.09)",
+    "Projected Preseason Rank": 296,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4449,10 +4434,10 @@
     "Height": 67,
     "Returning": "75.27%",
     "Adj": 0,
-    "STAT": "(4.20)",
-    "Projected Preseason Rank": 298,
-    "Safe Loss Threshold": 4.14,
-    "Dangerous": 5.87
+    "STAT": "(4.19)",
+    "Projected Preseason Rank": 297,
+    "Safe Loss Threshold": 4.15,
+    "Dangerous": 5.88
   },
   {
     "Team": "St. Olaf",
@@ -4464,10 +4449,10 @@
     "Height": 68.2,
     "Returning": "54.97%",
     "Adj": 0,
-    "STAT": "(4.31)",
-    "Projected Preseason Rank": 299,
+    "STAT": "(4.29)",
+    "Projected Preseason Rank": 298,
     "Safe Loss Threshold": 4.52,
-    "Dangerous": 6.24
+    "Dangerous": 6.25
   },
   {
     "Team": "Nichols",
@@ -4479,8 +4464,8 @@
     "Height": 66.3,
     "Returning": "61.13%",
     "Adj": 0,
-    "STAT": "(4.33)",
-    "Projected Preseason Rank": 300,
+    "STAT": "(4.31)",
+    "Projected Preseason Rank": 299,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4494,9 +4479,9 @@
     "Height": 67.2,
     "Returning": "77.73%",
     "Adj": 0,
-    "STAT": "(4.40)",
-    "Projected Preseason Rank": 301,
-    "Safe Loss Threshold": 3.34,
+    "STAT": "(4.39)",
+    "Projected Preseason Rank": 300,
+    "Safe Loss Threshold": 3.35,
     "Dangerous": 5.08
   },
   {
@@ -4509,8 +4494,8 @@
     "Height": 67.1,
     "Returning": "69.10%",
     "Adj": 0,
-    "STAT": "(4.41)",
-    "Projected Preseason Rank": 302,
+    "STAT": "(4.40)",
+    "Projected Preseason Rank": 301,
     "Safe Loss Threshold": 3.18,
     "Dangerous": 4.91
   },
@@ -4524,10 +4509,10 @@
     "Height": 68.1,
     "Returning": "67.39%",
     "Adj": 0,
-    "STAT": "(4.42)",
-    "Projected Preseason Rank": 303,
-    "Safe Loss Threshold": 3.77,
-    "Dangerous": 5.5
+    "STAT": "(4.40)",
+    "Projected Preseason Rank": 302,
+    "Safe Loss Threshold": 3.81,
+    "Dangerous": 5.53
   },
   {
     "Team": "Utica",
@@ -4539,7 +4524,22 @@
     "Height": 68.1,
     "Returning": "85.73%",
     "Adj": 0,
-    "STAT": "(4.44)",
+    "STAT": "(4.43)",
+    "Projected Preseason Rank": 303,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "NC Wesleyan",
+    "Conf": "USAC",
+    "Region": 6,
+    "Win%": 0.64,
+    "SOS": 0.486,
+    "NPI": 50.76,
+    "Height": 66.4,
+    "Returning": "46.25%",
+    "Adj": 0,
+    "STAT": "(4.48)",
     "Projected Preseason Rank": 304,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4554,40 +4554,10 @@
     "Height": 67.5,
     "Returning": "69.25%",
     "Adj": 0.1,
-    "STAT": "(4.50)",
+    "STAT": "(4.49)",
     "Projected Preseason Rank": 305,
     "Safe Loss Threshold": 3.98,
     "Dangerous": 5.71
-  },
-  {
-    "Team": "FDU Florham",
-    "Conf": "MACF",
-    "Region": 4,
-    "Win%": 0.28,
-    "SOS": 0.484,
-    "NPI": 44.64,
-    "Height": 66.4,
-    "Returning": "74.48%",
-    "Adj": 0,
-    "STAT": "(4.51)",
-    "Projected Preseason Rank": 306,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "NC Wesleyan",
-    "Conf": "USAC",
-    "Region": 6,
-    "Win%": 0.64,
-    "SOS": 0.486,
-    "NPI": 50.76,
-    "Height": 66.4,
-    "Returning": "46.25%",
-    "Adj": 0,
-    "STAT": "(4.51)",
-    "Projected Preseason Rank": 307,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "SUNYIT",
@@ -4599,8 +4569,8 @@
     "Height": 68.2,
     "Returning": "64.37%",
     "Adj": 0,
-    "STAT": "(4.57)",
-    "Projected Preseason Rank": 308,
+    "STAT": "(4.56)",
+    "Projected Preseason Rank": 306,
     "Safe Loss Threshold": 2.09,
     "Dangerous": 3.83
   },
@@ -4614,8 +4584,8 @@
     "Height": 65.2,
     "Returning": "99.04%",
     "Adj": 0,
-    "STAT": "(4.58)",
-    "Projected Preseason Rank": 309,
+    "STAT": "(4.57)",
+    "Projected Preseason Rank": 307,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4629,8 +4599,8 @@
     "Height": 67.2,
     "Returning": "76.47%",
     "Adj": 0,
-    "STAT": "(4.60)",
-    "Projected Preseason Rank": 310,
+    "STAT": "(4.58)",
+    "Projected Preseason Rank": 308,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4644,10 +4614,10 @@
     "Height": 69.7,
     "Returning": "63.64%",
     "Adj": 0,
-    "STAT": "(4.61)",
-    "Projected Preseason Rank": 311,
-    "Safe Loss Threshold": 4.03,
-    "Dangerous": 5.75
+    "STAT": "(4.60)",
+    "Projected Preseason Rank": 309,
+    "Safe Loss Threshold": 4.06,
+    "Dangerous": 5.79
   },
   {
     "Team": "North Park",
@@ -4659,10 +4629,10 @@
     "Height": 67.4,
     "Returning": "77.07%",
     "Adj": 0,
-    "STAT": "(4.62)",
-    "Projected Preseason Rank": 312,
-    "Safe Loss Threshold": 4.52,
-    "Dangerous": 6.24
+    "STAT": "(4.61)",
+    "Projected Preseason Rank": 310,
+    "Safe Loss Threshold": 4.53,
+    "Dangerous": 6.25
   },
   {
     "Team": "Colby-Sawyer",
@@ -4674,7 +4644,37 @@
     "Height": 67.7,
     "Returning": "78.12%",
     "Adj": 0,
-    "STAT": "(4.73)",
+    "STAT": "(4.71)",
+    "Projected Preseason Rank": 311,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "FDU Florham",
+    "Conf": "MACF",
+    "Region": 4,
+    "Win%": 0.28,
+    "SOS": 0.484,
+    "NPI": 44.64,
+    "Height": 66.4,
+    "Returning": "70.80%",
+    "Adj": 0,
+    "STAT": "(5.04)",
+    "Projected Preseason Rank": 312,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Pfeiffer",
+    "Conf": "USAC",
+    "Region": 6,
+    "Win%": 0.474,
+    "SOS": 0.471,
+    "NPI": 46.77,
+    "Height": 67.1,
+    "Returning": "49.80%",
+    "Adj": 0.4,
+    "STAT": "(5.20)",
     "Projected Preseason Rank": 313,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4689,25 +4689,10 @@
     "Height": 67.7,
     "Returning": "95.93%",
     "Adj": 0,
-    "STAT": "(5.21)",
+    "STAT": "(5.20)",
     "Projected Preseason Rank": 314,
-    "Safe Loss Threshold": 0.46,
-    "Dangerous": 2.21
-  },
-  {
-    "Team": "Pfeiffer",
-    "Conf": "USAC",
-    "Region": 6,
-    "Win%": 0.474,
-    "SOS": 0.471,
-    "NPI": 46.77,
-    "Height": 67.1,
-    "Returning": "49.80%",
-    "Adj": 0.3,
-    "STAT": "(5.22)",
-    "Projected Preseason Rank": 315,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 0.47,
+    "Dangerous": 2.22
   },
   {
     "Team": "Meredith",
@@ -4719,8 +4704,8 @@
     "Height": 66.9,
     "Returning": "74.04%",
     "Adj": 0,
-    "STAT": "(5.29)",
-    "Projected Preseason Rank": 316,
+    "STAT": "(5.27)",
+    "Projected Preseason Rank": 315,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4734,8 +4719,8 @@
     "Height": 67.6,
     "Returning": "45.20%",
     "Adj": 0,
-    "STAT": "(5.36)",
-    "Projected Preseason Rank": 317,
+    "STAT": "(5.33)",
+    "Projected Preseason Rank": 316,
     "Safe Loss Threshold": 4.34,
     "Dangerous": 6.06
   },
@@ -4749,8 +4734,8 @@
     "Height": 67.6,
     "Returning": "57.94%",
     "Adj": 0,
-    "STAT": "(5.41)",
-    "Projected Preseason Rank": 318,
+    "STAT": "(5.38)",
+    "Projected Preseason Rank": 317,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4764,8 +4749,8 @@
     "Height": 67.1,
     "Returning": "58.27%",
     "Adj": 0,
-    "STAT": "(5.44)",
-    "Projected Preseason Rank": 319,
+    "STAT": "(5.42)",
+    "Projected Preseason Rank": 318,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4779,8 +4764,8 @@
     "Height": 67.1,
     "Returning": "84.04%",
     "Adj": 0,
-    "STAT": "(5.48)",
-    "Projected Preseason Rank": 320,
+    "STAT": "(5.47)",
+    "Projected Preseason Rank": 319,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4794,8 +4779,8 @@
     "Height": 67,
     "Returning": "95.95%",
     "Adj": 0,
-    "STAT": "(5.61)",
-    "Projected Preseason Rank": 321,
+    "STAT": "(5.60)",
+    "Projected Preseason Rank": 320,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4809,8 +4794,8 @@
     "Height": 65.8,
     "Returning": "65.21%",
     "Adj": 0,
-    "STAT": "(5.62)",
-    "Projected Preseason Rank": 322,
+    "STAT": "(5.61)",
+    "Projected Preseason Rank": 321,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -4824,10 +4809,25 @@
     "Height": 66.8,
     "Returning": "80.60%",
     "Adj": 0,
-    "STAT": "(5.66)",
-    "Projected Preseason Rank": 323,
+    "STAT": "(5.65)",
+    "Projected Preseason Rank": 322,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Spalding",
+    "Conf": "SLIAC",
+    "Region": 8,
+    "Win%": 0.385,
+    "SOS": 0.488,
+    "NPI": 45.64,
+    "Height": 66.7,
+    "Returning": "53.37%",
+    "Adj": 0,
+    "STAT": "(5.67)",
+    "Projected Preseason Rank": 323,
+    "Safe Loss Threshold": 2.28,
+    "Dangerous": 4.02
   },
   {
     "Team": "Regis",
@@ -4839,25 +4839,10 @@
     "Height": 65.7,
     "Returning": "76.52%",
     "Adj": 0,
-    "STAT": "(5.69)",
+    "STAT": "(5.67)",
     "Projected Preseason Rank": 324,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Westminster (PA)",
-    "Conf": "PAC",
-    "Region": 7,
-    "Win%": 0.16,
-    "SOS": 0.479,
-    "NPI": 40.32,
-    "Height": 68,
-    "Returning": "77.75%",
-    "Adj": 0,
-    "STAT": "(5.72)",
-    "Projected Preseason Rank": 325,
-    "Safe Loss Threshold": 1.81,
-    "Dangerous": 3.55
   },
   {
     "Team": "Caltech",
@@ -4869,10 +4854,25 @@
     "Height": 67.3,
     "Returning": "51.88%",
     "Adj": 0,
-    "STAT": "(5.72)",
+    "STAT": "(5.70)",
+    "Projected Preseason Rank": 325,
+    "Safe Loss Threshold": 4.75,
+    "Dangerous": 6.47
+  },
+  {
+    "Team": "Westminster (PA)",
+    "Conf": "PAC",
+    "Region": 7,
+    "Win%": 0.16,
+    "SOS": 0.479,
+    "NPI": 40.32,
+    "Height": 68,
+    "Returning": "77.75%",
+    "Adj": 0,
+    "STAT": "(5.71)",
     "Projected Preseason Rank": 326,
-    "Safe Loss Threshold": 4.73,
-    "Dangerous": 6.45
+    "Safe Loss Threshold": 1.82,
+    "Dangerous": 3.57
   },
   {
     "Team": "Husson",
@@ -4884,40 +4884,10 @@
     "Height": 67.6,
     "Returning": "28.95%",
     "Adj": 0,
-    "STAT": "(5.76)",
+    "STAT": "(5.72)",
     "Projected Preseason Rank": 327,
-    "Safe Loss Threshold": 5.62,
-    "Dangerous": 7.34
-  },
-  {
-    "Team": "Kenyon",
-    "Conf": "NCAC",
-    "Region": 7,
-    "Win%": 0.043,
-    "SOS": 0.48,
-    "NPI": 36.94,
-    "Height": 67.9,
-    "Returning": "92.74%",
-    "Adj": 0,
-    "STAT": "(5.80)",
-    "Projected Preseason Rank": 328,
-    "Safe Loss Threshold": 4.76,
-    "Dangerous": 6.48
-  },
-  {
-    "Team": "Mitchell",
-    "Conf": "GNAC",
-    "Region": 1,
-    "Win%": 0.1,
-    "SOS": 0.468,
-    "NPI": 39.73,
-    "Height": 65.7,
-    "Returning": "87.16%",
-    "Adj": 0,
-    "STAT": "(5.81)",
-    "Projected Preseason Rank": 329,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 5.68,
+    "Dangerous": 7.39
   },
   {
     "Team": "SUNY Cobleskill",
@@ -4929,7 +4899,37 @@
     "Height": 69.4,
     "Returning": "17.87%",
     "Adj": 0,
-    "STAT": "(5.82)",
+    "STAT": "(5.77)",
+    "Projected Preseason Rank": 328,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Kenyon",
+    "Conf": "NCAC",
+    "Region": 7,
+    "Win%": 0.043,
+    "SOS": 0.48,
+    "NPI": 36.94,
+    "Height": 67.9,
+    "Returning": "92.74%",
+    "Adj": 0,
+    "STAT": "(5.79)",
+    "Projected Preseason Rank": 329,
+    "Safe Loss Threshold": 4.77,
+    "Dangerous": 6.49
+  },
+  {
+    "Team": "Mitchell",
+    "Conf": "GNAC",
+    "Region": 1,
+    "Win%": 0.1,
+    "SOS": 0.468,
+    "NPI": 39.73,
+    "Height": 65.7,
+    "Returning": "87.16%",
+    "Adj": 0,
+    "STAT": "(5.80)",
     "Projected Preseason Rank": 330,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4944,7 +4944,7 @@
     "Height": 66.6,
     "Returning": "40.69%",
     "Adj": 0,
-    "STAT": "(5.94)",
+    "STAT": "(5.90)",
     "Projected Preseason Rank": 331,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4959,10 +4959,10 @@
     "Height": 68.5,
     "Returning": "62.86%",
     "Adj": 0,
-    "STAT": "(6.05)",
+    "STAT": "(6.03)",
     "Projected Preseason Rank": 332,
-    "Safe Loss Threshold": 2.45,
-    "Dangerous": 4.19
+    "Safe Loss Threshold": 2.46,
+    "Dangerous": 4.2
   },
   {
     "Team": "Delaware Val",
@@ -4974,7 +4974,7 @@
     "Height": 66.9,
     "Returning": "72.00%",
     "Adj": 0,
-    "STAT": "(6.05)",
+    "STAT": "(6.04)",
     "Projected Preseason Rank": 333,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -4987,12 +4987,12 @@
     "SOS": 0.475,
     "NPI": 43.84,
     "Height": 68.1,
-    "Returning": "64.05%",
+    "Returning": "56.39%",
     "Adj": 0,
-    "STAT": "(6.09)",
+    "STAT": "(6.20)",
     "Projected Preseason Rank": 334,
-    "Safe Loss Threshold": 2.1,
-    "Dangerous": 3.85
+    "Safe Loss Threshold": 1.94,
+    "Dangerous": 3.68
   },
   {
     "Team": "Lycoming",
@@ -5004,9 +5004,9 @@
     "Height": 67.6,
     "Returning": "46.58%",
     "Adj": 0,
-    "STAT": "(6.27)",
+    "STAT": "(6.26)",
     "Projected Preseason Rank": 335,
-    "Safe Loss Threshold": 5.28,
+    "Safe Loss Threshold": 5.27,
     "Dangerous": 6.99
   },
   {
@@ -5019,7 +5019,7 @@
     "Height": 67.4,
     "Returning": "57.33%",
     "Adj": 0,
-    "STAT": "(6.29)",
+    "STAT": "(6.27)",
     "Projected Preseason Rank": 336,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5034,25 +5034,10 @@
     "Height": 66.5,
     "Returning": "65.15%",
     "Adj": 0,
-    "STAT": "(6.31)",
+    "STAT": "(6.30)",
     "Projected Preseason Rank": 337,
     "Safe Loss Threshold": 1.31,
-    "Dangerous": 3.05
-  },
-  {
-    "Team": "Medgar Evers",
-    "Conf": "CUNYAC",
-    "Region": 4,
-    "Win%": 0.143,
-    "SOS": 0.47,
-    "NPI": 39.26,
-    "Height": 66.4,
-    "Returning": "99.22%",
-    "Adj": 0,
-    "STAT": "(6.34)",
-    "Projected Preseason Rank": 338,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Dangerous": 3.06
   },
   {
     "Team": "New England College",
@@ -5064,7 +5049,22 @@
     "Height": 67.6,
     "Returning": "72.46%",
     "Adj": 0,
-    "STAT": "(6.35)",
+    "STAT": "(6.33)",
+    "Projected Preseason Rank": 338,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Medgar Evers",
+    "Conf": "CUNYAC",
+    "Region": 4,
+    "Win%": 0.143,
+    "SOS": 0.47,
+    "NPI": 39.26,
+    "Height": 66.4,
+    "Returning": "99.22%",
+    "Adj": 0,
+    "STAT": "(6.33)",
     "Projected Preseason Rank": 339,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5079,8 +5079,23 @@
     "Height": 68.8,
     "Returning": "43.27%",
     "Adj": 0,
-    "STAT": "(6.40)",
+    "STAT": "(6.38)",
     "Projected Preseason Rank": 340,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Edgewood",
+    "Conf": "NACC",
+    "Region": 8,
+    "Win%": 0.56,
+    "SOS": 0.483,
+    "NPI": 50.02,
+    "Height": 68.4,
+    "Returning": "37.04%",
+    "Adj": 0,
+    "STAT": "(6.41)",
+    "Projected Preseason Rank": 341,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -5094,25 +5109,10 @@
     "Height": 66.3,
     "Returning": "85.59%",
     "Adj": 0,
-    "STAT": "(6.43)",
-    "Projected Preseason Rank": 341,
-    "Safe Loss Threshold": 1.77,
-    "Dangerous": 3.51
-  },
-  {
-    "Team": "Edgewood",
-    "Conf": "NACC",
-    "Region": 8,
-    "Win%": 0.56,
-    "SOS": 0.483,
-    "NPI": 50.02,
-    "Height": 68.4,
-    "Returning": "37.04%",
-    "Adj": 0,
-    "STAT": "(6.45)",
+    "STAT": "(6.42)",
     "Projected Preseason Rank": 342,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 1.77,
+    "Dangerous": 3.52
   },
   {
     "Team": "Plymouth St.",
@@ -5124,10 +5124,10 @@
     "Height": 67.2,
     "Returning": "75.86%",
     "Adj": 0,
-    "STAT": "(6.47)",
+    "STAT": "(6.46)",
     "Projected Preseason Rank": 343,
-    "Safe Loss Threshold": 2.04,
-    "Dangerous": 3.78
+    "Safe Loss Threshold": 2.05,
+    "Dangerous": 3.79
   },
   {
     "Team": "Peace",
@@ -5139,7 +5139,7 @@
     "Height": 65.7,
     "Returning": "90.76%",
     "Adj": 0,
-    "STAT": "(6.48)",
+    "STAT": "(6.47)",
     "Projected Preseason Rank": 344,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5154,10 +5154,10 @@
     "Height": 66.2,
     "Returning": "76.49%",
     "Adj": 0,
-    "STAT": "(6.65)",
+    "STAT": "(6.64)",
     "Projected Preseason Rank": 345,
-    "Safe Loss Threshold": 0.31,
-    "Dangerous": 2.06
+    "Safe Loss Threshold": 0.37,
+    "Dangerous": 2.12
   },
   {
     "Team": "Norwich",
@@ -5169,7 +5169,7 @@
     "Height": 68.6,
     "Returning": "47.02%",
     "Adj": 0,
-    "STAT": "(6.69)",
+    "STAT": "(6.67)",
     "Projected Preseason Rank": 346,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5184,7 +5184,7 @@
     "Height": 66.8,
     "Returning": "51.36%",
     "Adj": 0.5,
-    "STAT": "(6.73)",
+    "STAT": "(6.70)",
     "Projected Preseason Rank": 347,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5199,7 +5199,7 @@
     "Height": 66.2,
     "Returning": "39.90%",
     "Adj": 0,
-    "STAT": "(6.73)",
+    "STAT": "(6.71)",
     "Projected Preseason Rank": 348,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5214,10 +5214,10 @@
     "Height": 66.6,
     "Returning": "10.00%",
     "Adj": 0,
-    "STAT": "(6.78)",
+    "STAT": "(6.74)",
     "Projected Preseason Rank": 349,
-    "Safe Loss Threshold": 0.3,
-    "Dangerous": 2.05
+    "Safe Loss Threshold": 0.31,
+    "Dangerous": 2.06
   },
   {
     "Team": "Rosemont",
@@ -5244,7 +5244,7 @@
     "Height": 67.4,
     "Returning": "48.20%",
     "Adj": 0,
-    "STAT": "(7.05)",
+    "STAT": "(7.02)",
     "Projected Preseason Rank": 351,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5259,10 +5259,10 @@
     "Height": 67.4,
     "Returning": "48.92%",
     "Adj": 0,
-    "STAT": "(7.19)",
+    "STAT": "(7.17)",
     "Projected Preseason Rank": 352,
-    "Safe Loss Threshold": 3.27,
-    "Dangerous": 5
+    "Safe Loss Threshold": 3.28,
+    "Dangerous": 5.01
   },
   {
     "Team": "Neumann",
@@ -5274,9 +5274,9 @@
     "Height": 66.7,
     "Returning": "26.90%",
     "Adj": 0,
-    "STAT": "(7.32)",
+    "STAT": "(7.28)",
     "Projected Preseason Rank": 353,
-    "Safe Loss Threshold": 3.29,
+    "Safe Loss Threshold": 3.3,
     "Dangerous": 5.03
   },
   {
@@ -5289,70 +5289,10 @@
     "Height": 67.2,
     "Returning": "52.30%",
     "Adj": 0,
-    "STAT": "(7.34)",
+    "STAT": "(7.33)",
     "Projected Preseason Rank": 354,
     "Safe Loss Threshold": 3.25,
-    "Dangerous": 4.98
-  },
-  {
-    "Team": "Wentworth Tech",
-    "Conf": "CNE",
-    "Region": 2,
-    "Win%": 0.08,
-    "SOS": 0.48,
-    "NPI": 39.47,
-    "Height": 67.7,
-    "Returning": "42.39%",
-    "Adj": 0,
-    "STAT": "(7.42)",
-    "Projected Preseason Rank": 355,
-    "Safe Loss Threshold": 3.8,
-    "Dangerous": 5.53
-  },
-  {
-    "Team": "Warren Wilson",
-    "Conf": "C2C",
-    "Region": 6,
-    "Win%": 0.133,
-    "SOS": 0.475,
-    "NPI": 40.39,
-    "Height": 65.6,
-    "Returning": "68.03%",
-    "Adj": 0,
-    "STAT": "(7.43)",
-    "Projected Preseason Rank": 356,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "PSU-Berks",
-    "Conf": "UEC",
-    "Region": 4,
-    "Win%": 0.13,
-    "SOS": 0.472,
-    "NPI": 39.19,
-    "Height": 66.8,
-    "Returning": "78.39%",
-    "Adj": 0,
-    "STAT": "(7.44)",
-    "Projected Preseason Rank": 357,
-    "Safe Loss Threshold": 0.73,
-    "Dangerous": 2.49
-  },
-  {
-    "Team": "Rutgers-Camden",
-    "Conf": "NJAC",
-    "Region": 4,
-    "Win%": 0.333,
-    "SOS": 0.467,
-    "NPI": 44.99,
-    "Height": 66.9,
-    "Returning": "52.94%",
-    "Adj": 0,
-    "STAT": "(7.44)",
-    "Projected Preseason Rank": 358,
-    "Safe Loss Threshold": 3.06,
-    "Dangerous": 4.79
+    "Dangerous": 4.99
   },
   {
     "Team": "Westfield St.",
@@ -5364,8 +5304,53 @@
     "Height": 66.3,
     "Returning": "33.12%",
     "Adj": 0,
-    "STAT": "(7.44)",
-    "Projected Preseason Rank": 359,
+    "STAT": "(7.40)",
+    "Projected Preseason Rank": 355,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Wentworth Tech",
+    "Conf": "CNE",
+    "Region": 2,
+    "Win%": 0.08,
+    "SOS": 0.48,
+    "NPI": 39.47,
+    "Height": 67.7,
+    "Returning": "42.39%",
+    "Adj": 0,
+    "STAT": "(7.41)",
+    "Projected Preseason Rank": 356,
+    "Safe Loss Threshold": 3.79,
+    "Dangerous": 5.51
+  },
+  {
+    "Team": "Rutgers-Camden",
+    "Conf": "NJAC",
+    "Region": 4,
+    "Win%": 0.333,
+    "SOS": 0.467,
+    "NPI": 44.99,
+    "Height": 66.9,
+    "Returning": "52.94%",
+    "Adj": 0,
+    "STAT": "(7.42)",
+    "Projected Preseason Rank": 357,
+    "Safe Loss Threshold": 3.03,
+    "Dangerous": 4.77
+  },
+  {
+    "Team": "Warren Wilson",
+    "Conf": "C2C",
+    "Region": 6,
+    "Win%": 0.133,
+    "SOS": 0.475,
+    "NPI": 40.39,
+    "Height": 65.6,
+    "Returning": "68.03%",
+    "Adj": 0,
+    "STAT": "(7.42)",
+    "Projected Preseason Rank": 358,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -5379,10 +5364,25 @@
     "Height": 67.7,
     "Returning": "63.58%",
     "Adj": 0,
-    "STAT": "(7.44)",
-    "Projected Preseason Rank": 360,
+    "STAT": "(7.42)",
+    "Projected Preseason Rank": 359,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "PSU-Berks",
+    "Conf": "UEC",
+    "Region": 4,
+    "Win%": 0.13,
+    "SOS": 0.472,
+    "NPI": 39.19,
+    "Height": 66.8,
+    "Returning": "78.39%",
+    "Adj": 0,
+    "STAT": "(7.43)",
+    "Projected Preseason Rank": 360,
+    "Safe Loss Threshold": 0.75,
+    "Dangerous": 2.5
   },
   {
     "Team": "Bryn Mawr",
@@ -5394,7 +5394,7 @@
     "Height": 67,
     "Returning": "51.85%",
     "Adj": 0,
-    "STAT": "(7.45)",
+    "STAT": "(7.43)",
     "Projected Preseason Rank": 361,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5409,10 +5409,10 @@
     "Height": 67.5,
     "Returning": "60.67%",
     "Adj": 0,
-    "STAT": "(7.49)",
+    "STAT": "(7.48)",
     "Projected Preseason Rank": 362,
-    "Safe Loss Threshold": 2.95,
-    "Dangerous": 4.68
+    "Safe Loss Threshold": 2.96,
+    "Dangerous": 4.69
   },
   {
     "Team": "Agnes Scott",
@@ -5424,7 +5424,7 @@
     "Height": 68.1,
     "Returning": "78.82%",
     "Adj": 0,
-    "STAT": "(7.55)",
+    "STAT": "(7.54)",
     "Projected Preseason Rank": 363,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5437,7 +5437,7 @@
     "SOS": 0.454,
     "NPI": 42.87,
     "Height": 68.1,
-    "Returning": "64.24%",
+    "Returning": "64.17%",
     "Adj": 0,
     "STAT": "(7.58)",
     "Projected Preseason Rank": 364,
@@ -5454,7 +5454,7 @@
     "Height": 67.2,
     "Returning": "35.33%",
     "Adj": 0,
-    "STAT": "(7.64)",
+    "STAT": "(7.60)",
     "Projected Preseason Rank": 365,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5469,7 +5469,7 @@
     "Height": 68.1,
     "Returning": "24.68%",
     "Adj": 0,
-    "STAT": "(7.81)",
+    "STAT": "(7.77)",
     "Projected Preseason Rank": 366,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5484,7 +5484,7 @@
     "Height": 66.6,
     "Returning": "65.27%",
     "Adj": 0,
-    "STAT": "(7.85)",
+    "STAT": "(7.84)",
     "Projected Preseason Rank": 367,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5499,7 +5499,7 @@
     "Height": 65.7,
     "Returning": "90.37%",
     "Adj": 0,
-    "STAT": "(7.86)",
+    "STAT": "(7.85)",
     "Projected Preseason Rank": 368,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5514,7 +5514,7 @@
     "Height": 66.1,
     "Returning": "52.73%",
     "Adj": 0,
-    "STAT": "(7.88)",
+    "STAT": "(7.86)",
     "Projected Preseason Rank": 369,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5529,7 +5529,7 @@
     "Height": 66.8,
     "Returning": "51.70%",
     "Adj": 0,
-    "STAT": "(7.93)",
+    "STAT": "(7.91)",
     "Projected Preseason Rank": 370,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5544,10 +5544,10 @@
     "Height": 66.6,
     "Returning": "76.46%",
     "Adj": 0,
-    "STAT": "(8.03)",
+    "STAT": "(8.02)",
     "Projected Preseason Rank": 371,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.28,
+    "Dangerous": 5.01
   },
   {
     "Team": "Wesleyan (GA)",
@@ -5559,10 +5559,10 @@
     "Height": 66.1,
     "Returning": "69.73%",
     "Adj": 0,
-    "STAT": "(8.05)",
+    "STAT": "(8.04)",
     "Projected Preseason Rank": 372,
-    "Safe Loss Threshold": 2.56,
-    "Dangerous": 4.3
+    "Safe Loss Threshold": 2.58,
+    "Dangerous": 4.31
   },
   {
     "Team": "Crown",
@@ -5574,10 +5574,10 @@
     "Height": 67.6,
     "Returning": "92.60%",
     "Adj": 0,
-    "STAT": "(8.08)",
+    "STAT": "(8.07)",
     "Projected Preseason Rank": 373,
-    "Safe Loss Threshold": 1.12,
-    "Dangerous": 2.87
+    "Safe Loss Threshold": 1.13,
+    "Dangerous": 2.88
   },
   {
     "Team": "Buffalo St.",
@@ -5589,7 +5589,7 @@
     "Height": 68.1,
     "Returning": "32.64%",
     "Adj": 0,
-    "STAT": "(8.13)",
+    "STAT": "(8.11)",
     "Projected Preseason Rank": 374,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5604,10 +5604,10 @@
     "Height": 67.6,
     "Returning": "79.44%",
     "Adj": 0,
-    "STAT": "(8.18)",
+    "STAT": "(8.17)",
     "Projected Preseason Rank": 375,
-    "Safe Loss Threshold": 3.23,
-    "Dangerous": 4.96
+    "Safe Loss Threshold": 3.25,
+    "Dangerous": 4.98
   },
   {
     "Team": "SUNY Purchase",
@@ -5619,10 +5619,10 @@
     "Height": 65.4,
     "Returning": "75.99%",
     "Adj": 0,
-    "STAT": "(8.27)",
+    "STAT": "(8.26)",
     "Projected Preseason Rank": 376,
-    "Safe Loss Threshold": 2.37,
-    "Dangerous": 4.11
+    "Safe Loss Threshold": 2.41,
+    "Dangerous": 4.15
   },
   {
     "Team": "Heidelberg",
@@ -5634,10 +5634,10 @@
     "Height": 68,
     "Returning": "37.96%",
     "Adj": 0,
-    "STAT": "(8.36)",
+    "STAT": "(8.34)",
     "Projected Preseason Rank": 377,
-    "Safe Loss Threshold": 3.59,
-    "Dangerous": 5.32
+    "Safe Loss Threshold": 3.6,
+    "Dangerous": 5.33
   },
   {
     "Team": "Northwestern (MN)",
@@ -5649,10 +5649,10 @@
     "Height": 68.7,
     "Returning": "35.66%",
     "Adj": 0,
-    "STAT": "(8.38)",
+    "STAT": "(8.35)",
     "Projected Preseason Rank": 378,
     "Safe Loss Threshold": 1.59,
-    "Dangerous": 3.33
+    "Dangerous": 3.34
   },
   {
     "Team": "Anna Maria",
@@ -5664,7 +5664,7 @@
     "Height": 66.4,
     "Returning": "45.82%",
     "Adj": 0,
-    "STAT": "(8.42)",
+    "STAT": "(8.39)",
     "Projected Preseason Rank": 379,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5679,7 +5679,7 @@
     "Height": 65.3,
     "Returning": "67.14%",
     "Adj": 0,
-    "STAT": "(8.50)",
+    "STAT": "(8.49)",
     "Projected Preseason Rank": 380,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5694,7 +5694,7 @@
     "Height": 67.2,
     "Returning": "76.69%",
     "Adj": 0,
-    "STAT": "(8.73)",
+    "STAT": "(8.72)",
     "Projected Preseason Rank": 381,
     "Safe Loss Threshold": 2.65,
     "Dangerous": 4.39
@@ -5709,10 +5709,10 @@
     "Height": 65.9,
     "Returning": "62.15%",
     "Adj": 0,
-    "STAT": "(8.76)",
+    "STAT": "(8.75)",
     "Projected Preseason Rank": 382,
-    "Safe Loss Threshold": "(1.06)",
-    "Dangerous": 0.71
+    "Safe Loss Threshold": "(1.00)",
+    "Dangerous": 0.77
   },
   {
     "Team": "Lancaster Bib",
@@ -5724,7 +5724,7 @@
     "Height": 65.4,
     "Returning": "57.43%",
     "Adj": 0,
-    "STAT": "(8.92)",
+    "STAT": "(8.91)",
     "Projected Preseason Rank": 383,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5739,7 +5739,7 @@
     "Height": 66.8,
     "Returning": "57.42%",
     "Adj": 0,
-    "STAT": "(8.95)",
+    "STAT": "(8.93)",
     "Projected Preseason Rank": 384,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5754,10 +5754,10 @@
     "Height": 65.3,
     "Returning": "47.38%",
     "Adj": 0,
-    "STAT": "(9.10)",
+    "STAT": "(9.08)",
     "Projected Preseason Rank": 385,
-    "Safe Loss Threshold": 2.49,
-    "Dangerous": 4.23
+    "Safe Loss Threshold": 2.52,
+    "Dangerous": 4.26
   },
   {
     "Team": "SUNY Delhi",
@@ -5784,7 +5784,7 @@
     "Height": 68.3,
     "Returning": "24.90%",
     "Adj": 0,
-    "STAT": "(9.28)",
+    "STAT": "(9.25)",
     "Projected Preseason Rank": 387,
     "Safe Loss Threshold": 3.35,
     "Dangerous": 5.08
@@ -5799,8 +5799,23 @@
     "Height": 66.2,
     "Returning": "53.97%",
     "Adj": 0,
-    "STAT": "(9.28)",
+    "STAT": "(9.27)",
     "Projected Preseason Rank": 388,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Marywood",
+    "Conf": "AEC",
+    "Region": 5,
+    "Win%": 0.462,
+    "SOS": 0.447,
+    "NPI": 47.05,
+    "Height": 66.1,
+    "Returning": "52.58%",
+    "Adj": 0.3,
+    "STAT": "(9.38)",
+    "Projected Preseason Rank": 389,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -5815,7 +5830,7 @@
     "Returning": "58.09%",
     "Adj": 0,
     "STAT": "(9.39)",
-    "Projected Preseason Rank": 389,
+    "Projected Preseason Rank": 390,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -5829,22 +5844,7 @@
     "Height": 66.5,
     "Returning": "65.37%",
     "Adj": 0,
-    "STAT": "(9.41)",
-    "Projected Preseason Rank": 390,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Marywood",
-    "Conf": "AEC",
-    "Region": 5,
-    "Win%": 0.462,
-    "SOS": 0.447,
-    "NPI": 47.05,
-    "Height": 66.1,
-    "Returning": "52.58%",
-    "Adj": 0.3,
-    "STAT": "(9.41)",
+    "STAT": "(9.40)",
     "Projected Preseason Rank": 391,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5861,8 +5861,23 @@
     "Adj": 0,
     "STAT": "(9.82)",
     "Projected Preseason Rank": 392,
-    "Safe Loss Threshold": 0.91,
-    "Dangerous": 2.66
+    "Safe Loss Threshold": 0.76,
+    "Dangerous": 2.51
+  },
+  {
+    "Team": "Lehman",
+    "Conf": "CUNYAC",
+    "Region": 4,
+    "Win%": 0.423,
+    "SOS": 0.429,
+    "NPI": 44.08,
+    "Height": 67.7,
+    "Returning": "58.12%",
+    "Adj": 0,
+    "STAT": "(9.94)",
+    "Projected Preseason Rank": 393,
+    "Safe Loss Threshold": 1.31,
+    "Dangerous": 3.06
   },
   {
     "Team": "Maranatha Bap",
@@ -5875,24 +5890,9 @@
     "Returning": "76.03%",
     "Adj": 0,
     "STAT": "(9.95)",
-    "Projected Preseason Rank": 393,
+    "Projected Preseason Rank": 394,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Lehman",
-    "Conf": "CUNYAC",
-    "Region": 4,
-    "Win%": 0.423,
-    "SOS": 0.429,
-    "NPI": 44.08,
-    "Height": 67.7,
-    "Returning": "58.12%",
-    "Adj": 0,
-    "STAT": "(9.97)",
-    "Projected Preseason Rank": 394,
-    "Safe Loss Threshold": 1.31,
-    "Dangerous": 3.05
   },
   {
     "Team": "Albertus Magnus",
@@ -5904,7 +5904,7 @@
     "Height": 65.2,
     "Returning": "7.78%",
     "Adj": 0,
-    "STAT": "(10.08)",
+    "STAT": "(10.03)",
     "Projected Preseason Rank": 395,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -5919,9 +5919,9 @@
     "Height": 67.6,
     "Returning": "88.51%",
     "Adj": 0,
-    "STAT": "(10.32)",
+    "STAT": "(10.31)",
     "Projected Preseason Rank": 396,
-    "Safe Loss Threshold": 1.9,
+    "Safe Loss Threshold": 1.91,
     "Dangerous": 3.65
   },
   {
@@ -5934,10 +5934,10 @@
     "Height": 66.8,
     "Returning": "53.72%",
     "Adj": 0,
-    "STAT": "(10.47)",
+    "STAT": "(10.45)",
     "Projected Preseason Rank": 397,
-    "Safe Loss Threshold": 0.5,
-    "Dangerous": 2.26
+    "Safe Loss Threshold": 0.52,
+    "Dangerous": 2.28
   },
   {
     "Team": "Dallas Univ",
@@ -5949,25 +5949,10 @@
     "Height": 68.5,
     "Returning": "28.49%",
     "Adj": 0,
-    "STAT": "(10.78)",
+    "STAT": "(10.76)",
     "Projected Preseason Rank": 398,
-    "Safe Loss Threshold": 2.33,
-    "Dangerous": 4.07
-  },
-  {
-    "Team": "North Central (MN)",
-    "Conf": "UMAC",
-    "Region": 9,
-    "Win%": 0.16,
-    "SOS": 0.429,
-    "NPI": 39.38,
-    "Height": 67.9,
-    "Returning": "40.15%",
-    "Adj": 0,
-    "STAT": "(11.25)",
-    "Projected Preseason Rank": 399,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 2.34,
+    "Dangerous": 4.08
   },
   {
     "Team": "Greensboro",
@@ -5979,10 +5964,10 @@
     "Height": 66.8,
     "Returning": "24.36%",
     "Adj": 0.1,
-    "STAT": "(11.26)",
-    "Projected Preseason Rank": 400,
-    "Safe Loss Threshold": "(0.56)",
-    "Dangerous": 1.2
+    "STAT": "(11.24)",
+    "Projected Preseason Rank": 399,
+    "Safe Loss Threshold": "(0.52)",
+    "Dangerous": 1.24
   },
   {
     "Team": "Rockford",
@@ -5994,9 +5979,9 @@
     "Height": 66.2,
     "Returning": "33.70%",
     "Adj": 0,
-    "STAT": "(11.57)",
-    "Projected Preseason Rank": 401,
-    "Safe Loss Threshold": 3.23,
+    "STAT": "(11.55)",
+    "Projected Preseason Rank": 400,
+    "Safe Loss Threshold": 3.24,
     "Dangerous": 4.97
   },
   {
@@ -6009,10 +5994,10 @@
     "Height": 65.8,
     "Returning": "34.35%",
     "Adj": 0,
-    "STAT": "(11.69)",
-    "Projected Preseason Rank": 402,
-    "Safe Loss Threshold": 0.1,
-    "Dangerous": 1.85
+    "STAT": "(11.67)",
+    "Projected Preseason Rank": 401,
+    "Safe Loss Threshold": 0.11,
+    "Dangerous": 1.87
   },
   {
     "Team": "St. Elizabeth",
@@ -6024,7 +6009,37 @@
     "Height": 65.1,
     "Returning": "49.21%",
     "Adj": 0,
-    "STAT": "(11.90)",
+    "STAT": "(11.87)",
+    "Projected Preseason Rank": 402,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "Pratt Inst",
+    "Conf": "AEC",
+    "Region": 5,
+    "Win%": 0,
+    "SOS": 0.48,
+    "NPI": 40,
+    "Height": 67,
+    "Returning": "0.00%",
+    "Adj": 0,
+    "STAT": "(11.96)",
+    "Projected Preseason Rank": 403,
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
+  },
+  {
+    "Team": "MA Col Lib Arts",
+    "Conf": "MASCAC",
+    "Region": 1,
+    "Win%": 0,
+    "SOS": 0.48,
+    "NPI": 40,
+    "Height": 67,
+    "Returning": "0.00%",
+    "Adj": 0,
+    "STAT": "(11.96)",
     "Projected Preseason Rank": 403,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -6039,40 +6054,10 @@
     "Height": 67,
     "Returning": "0.00%",
     "Adj": 0,
-    "STAT": "(11.98)",
-    "Projected Preseason Rank": 404,
-    "Safe Loss Threshold": 0.44,
-    "Dangerous": 2.19
-  },
-  {
-    "Team": "MA Col Lib Arts",
-    "Conf": "MASCAC",
-    "Region": 1,
-    "Win%": 0,
-    "SOS": 0.48,
-    "NPI": 40,
-    "Height": 67,
-    "Returning": "0.00%",
-    "Adj": 0,
-    "STAT": "(11.98)",
-    "Projected Preseason Rank": 404,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
-  },
-  {
-    "Team": "Pratt Inst",
-    "Conf": "AEC",
-    "Region": 5,
-    "Win%": 0,
-    "SOS": 0.48,
-    "NPI": 40,
-    "Height": 67,
-    "Returning": "0.00%",
-    "Adj": 0,
-    "STAT": "(11.98)",
-    "Projected Preseason Rank": 404,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "STAT": "(11.96)",
+    "Projected Preseason Rank": 403,
+    "Safe Loss Threshold": 0.46,
+    "Dangerous": 2.21
   },
   {
     "Team": "Maine-Presque Isle",
@@ -6084,8 +6069,8 @@
     "Height": 65.9,
     "Returning": "28.55%",
     "Adj": 0,
-    "STAT": "(12.12)",
-    "Projected Preseason Rank": 407,
+    "STAT": "(12.10)",
+    "Projected Preseason Rank": 406,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -6099,9 +6084,9 @@
     "Height": 64.9,
     "Returning": "33.79%",
     "Adj": 0,
-    "STAT": "(12.16)",
-    "Projected Preseason Rank": 408,
-    "Safe Loss Threshold": 0.79,
+    "STAT": "(12.13)",
+    "Projected Preseason Rank": 407,
+    "Safe Loss Threshold": 0.8,
     "Dangerous": 2.55
   },
   {
@@ -6114,8 +6099,8 @@
     "Height": 66.4,
     "Returning": "30.31%",
     "Adj": 0,
-    "STAT": "(12.20)",
-    "Projected Preseason Rank": 409,
+    "STAT": "(12.19)",
+    "Projected Preseason Rank": 408,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
   },
@@ -6129,10 +6114,25 @@
     "Height": 64.9,
     "Returning": "50.80%",
     "Adj": 0,
-    "STAT": "(12.24)",
+    "STAT": "(12.22)",
+    "Projected Preseason Rank": 409,
+    "Safe Loss Threshold": "(0.95)",
+    "Dangerous": 0.82
+  },
+  {
+    "Team": "North Central (MN)",
+    "Conf": "UMAC",
+    "Region": 9,
+    "Win%": 0.16,
+    "SOS": 0.429,
+    "NPI": 39.38,
+    "Height": 67.9,
+    "Returning": "30.33%",
+    "Adj": 0,
+    "STAT": "(12.40)",
     "Projected Preseason Rank": 410,
-    "Safe Loss Threshold": "(1.01)",
-    "Dangerous": 0.76
+    "Safe Loss Threshold": "#DIV/0!",
+    "Dangerous": "#DIV/0!"
   },
   {
     "Team": "Alverno",
@@ -6144,7 +6144,7 @@
     "Height": 66.5,
     "Returning": "12.90%",
     "Adj": 0,
-    "STAT": "(12.71)",
+    "STAT": "(12.69)",
     "Projected Preseason Rank": 411,
     "Safe Loss Threshold": 4.41,
     "Dangerous": 6.13
@@ -6159,10 +6159,10 @@
     "Height": 65.3,
     "Returning": "50.94%",
     "Adj": 0,
-    "STAT": "(13.23)",
+    "STAT": "(13.21)",
     "Projected Preseason Rank": 412,
-    "Safe Loss Threshold": 0,
-    "Dangerous": 1.76
+    "Safe Loss Threshold": 0.03,
+    "Dangerous": 1.79
   },
   {
     "Team": "Concordia-Chicago",
@@ -6174,10 +6174,10 @@
     "Height": 68.3,
     "Returning": "20.03%",
     "Adj": 0.4,
-    "STAT": "(13.29)",
+    "STAT": "(13.26)",
     "Projected Preseason Rank": 413,
     "Safe Loss Threshold": 2.82,
-    "Dangerous": 4.55
+    "Dangerous": 4.56
   },
   {
     "Team": "York (NY)",
@@ -6189,7 +6189,7 @@
     "Height": 67,
     "Returning": "32.48%",
     "Adj": 0,
-    "STAT": "(13.82)",
+    "STAT": "(13.80)",
     "Projected Preseason Rank": 414,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -6204,7 +6204,7 @@
     "Height": 65.8,
     "Returning": "43.82%",
     "Adj": 0,
-    "STAT": "(15.65)",
+    "STAT": "(15.62)",
     "Projected Preseason Rank": 415,
     "Safe Loss Threshold": "#DIV/0!",
     "Dangerous": "#DIV/0!"
@@ -6219,10 +6219,10 @@
     "Height": 66.7,
     "Returning": "30.61%",
     "Adj": 0,
-    "STAT": "(17.06)",
+    "STAT": "(17.03)",
     "Projected Preseason Rank": 416,
-    "Safe Loss Threshold": "(1.05)",
-    "Dangerous": 0.71
+    "Safe Loss Threshold": "(0.99)",
+    "Dangerous": 0.78
   },
   {
     "Team": "Carlow",
@@ -6234,9 +6234,9 @@
     "Height": 66.9,
     "Returning": "60.00%",
     "Adj": 0,
-    "STAT": "(0.41)",
+    "STAT": "(0.39)",
     "Projected Preseason Rank": "#N/A",
-    "Safe Loss Threshold": 2.75,
-    "Dangerous": 4.48
+    "Safe Loss Threshold": 2.76,
+    "Dangerous": 4.49
   }
 ]
