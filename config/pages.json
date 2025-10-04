@@ -1,4 +1,7 @@
 {
+  "_featureFlags": {
+    "premium": false
+  },
   "index": {
     "title": "Home",
     "heading": "The D3 Stat Lab",
@@ -434,5 +437,32 @@
     "searchPlaceholder": "",
     "dataSource": null,
     "isContactPage": true
+  },
+  "premium": {
+    "title": "Premium",
+    "heading": "Premium D3 Women's Basketball Single Team Report",
+    "description": "Receive a weekly report showing your favorite team's upcoming games, highest leverage games, playoff odds, change to playoff odds, reason for change to playoff odds, and more!",
+    "template": "premium-page",
+    "featureFlag": "premium",
+    "showInNav": true,
+    "isPremiumPage": true
+  },
+  "success": {
+    "title": "Success",
+    "heading": "Payment Successful! 🎉",
+    "description": "Your weekly team report is confirmed! The first report will arrive in your inbox on Monday, November 3.",
+    "template": "simple-page",
+    "featureFlag": "premium",
+    "showInNav": false,
+    "isSimplePage": true
+  },
+  "cancel": {
+    "title": "Canceled",
+    "heading": "Payment Canceled",
+    "description": "Your payment process was canceled. You have not been charged.",
+    "template": "simple-page",
+    "featureFlag": "premium",
+    "showInNav": false,
+    "isSimplePage": true
   }
 }

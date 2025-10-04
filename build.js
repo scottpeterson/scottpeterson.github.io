@@ -27,6 +27,14 @@ class TemplateEngine {
         'templates/contact-page.html',
         'utf8'
       );
+      this.templates.premiumPage = await fs.readFile(
+        'templates/premium-page.html',
+        'utf8'
+      );
+      this.templates.simplePage = await fs.readFile(
+        'templates/simple-page.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -44,6 +52,103 @@ class TemplateEngine {
       console.error('Error loading configuration:', error);
       throw error;
     }
+  }
+
+  // Get feature flags from config
+  getFeatureFlags() {
+    return this.config._featureFlags || {};
+  }
+
+  // Check if a feature is enabled
+  isFeatureEnabled(featureName) {
+    const flags = this.getFeatureFlags();
+    return flags[featureName] === true;
+  }
+
+  // Check if a page should be shown based on feature flags
+  shouldShowPage(pageConfig) {
+    // If no feature flag is specified, show the page
+    if (!pageConfig.featureFlag) {
+      return true;
+    }
+    // Check if the feature flag is enabled
+    return this.isFeatureEnabled(pageConfig.featureFlag);
+  }
+
+  // Generate navigation HTML based on config and feature flags
+  generateNavigation() {
+    const navItems = [];
+
+    // Define navigation order and structure
+    const navConfig = [
+      { key: 'index', label: 'Home', href: '/' },
+      {
+        key: 'publishing_tracker',
+        label: 'Publishing Tracker',
+        href: 'publishing_tracker.html',
+      },
+      {
+        key: 'preseason_rankings',
+        label: '25-26 Preseason Rankings',
+        href: 'preseason_rankings.html',
+      },
+      {
+        key: 'returners',
+        label: 'Returning and Non-Returning',
+        href: 'returners.html',
+      },
+      {
+        key: 'non_conf_tournaments',
+        label: 'Non-Conference Tournaments',
+        href: 'non_conf_tournaments.html',
+      },
+      { key: 'npi', label: 'NPI', href: 'npi.html' },
+      {
+        key: 'season_simulations',
+        label: 'Season Simulations',
+        href: 'season_simulations.html',
+      },
+      {
+        key: 'current_season_rankings',
+        label: 'Current Season Rankings',
+        href: 'current_season_rankings.html',
+      },
+      {
+        key: 'composite_rankings',
+        label: 'Composite Rankings',
+        href: 'composite_rankings.html',
+      },
+      {
+        key: 'conference_rankings',
+        label: 'Conference Rankings',
+        href: 'conference_rankings.html',
+      },
+      { key: 'premium', label: 'Premium', href: 'premium.html' },
+      { key: 'contact', label: 'Contact', href: 'contact.html' },
+    ];
+
+    for (const item of navConfig) {
+      const pageConfig = this.config[item.key];
+
+      // Skip if page doesn't exist in config
+      if (!pageConfig) {
+        continue;
+      }
+
+      // Skip if page shouldn't be shown in nav
+      if (pageConfig.showInNav === false) {
+        continue;
+      }
+
+      // Skip if feature flag is not enabled
+      if (!this.shouldShowPage(pageConfig)) {
+        continue;
+      }
+
+      navItems.push(`<li><a href="${item.href}">${item.label}</a></li>`);
+    }
+
+    return navItems.join('\n          ');
   }
 
   // Simple template replacement
@@ -65,6 +170,7 @@ class TemplateEngine {
       SEARCH_PLACEHOLDER: data.searchPlaceholder,
       LAST_UPDATED: data.lastUpdated,
       CONTENT: data.content || '',
+      NAV_ITEMS: data.navItems || '',
     };
 
     Object.keys(mappings).forEach(key => {
@@ -120,6 +226,19 @@ class TemplateEngine {
       result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '$1');
     } else {
       result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '');
+    }
+
+    // Handle IS_PREMIUM_PAGE conditional
+    if (data.isPremiumPage) {
+      result = result.replace(
+        /{{#IS_PREMIUM_PAGE}}([\s\S]*?){{\/IS_PREMIUM_PAGE}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#IS_PREMIUM_PAGE}}([\s\S]*?){{\/IS_PREMIUM_PAGE}}/g,
+        ''
+      );
     }
 
     return result;
@@ -191,6 +310,12 @@ class TemplateEngine {
         tableContent = this.renderTemplate(this.templates.contactPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
+      } else if (pageConfig.isPremiumPage) {
+        // Use premium page template
+        tableContent = this.templates.premiumPage;
+      } else if (pageConfig.isSimplePage) {
+        // Use simple page template for success/cancel pages
+        tableContent = this.templates.simplePage;
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {
@@ -210,6 +335,7 @@ class TemplateEngine {
       }
 
       // Render full page
+      const navItems = this.generateNavigation();
       const fullPage = this.renderTemplate(this.templates.base, {
         title: pageConfig.title,
         heading: pageConfig.heading,
@@ -217,6 +343,8 @@ class TemplateEngine {
         lastUpdated: lastUpdated,
         content: tableContent,
         legend: pageConfig.legend,
+        isPremiumPage: pageConfig.isPremiumPage || false,
+        navItems: navItems,
       });
 
       // Determine output filename
@@ -248,7 +376,10 @@ class TemplateEngine {
       await this.loadTemplates();
       await this.loadConfig();
 
-      const pages = Object.keys(this.config);
+      // Filter out special config keys that start with underscore
+      const pages = Object.keys(this.config).filter(
+        key => !key.startsWith('_')
+      );
       console.log(`📄 Generating ${pages.length} pages...\n`);
 
       for (const pageKey of pages) {

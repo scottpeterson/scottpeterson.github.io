@@ -108,3 +108,34 @@ The mobile navigation system includes:
 ## Deployment
 
 This site is deployed via GitHub Pages, so changes pushed to the main branch are automatically deployed. No build process is required.
+
+---
+
+## Code Documentation Best Practices
+
+### Add Comments on Tricky Parts
+
+When working in this codebase, **add code comments on tricky parts**. This helps both you and future agents (including Claude) understand:
+
+- Why certain approaches were chosen
+- What edge cases are being handled
+- Why seemingly redundant code is actually necessary
+- Browser-specific workarounds or quirks
+- Complex logic that isn't immediately obvious
+
+Comments should explain the **why**, not just the **what**.
+
+### Document Intent to Protect Against Misguided Refactors
+
+When creating new files or making significant changes, **add a section that explains the intent**. This protects the work from misguided refactors by:
+
+- Clarifying the purpose of the file or feature
+- Explaining what problem it solves
+- Setting boundaries on when/how it should be used
+- Preventing well-intentioned but incorrect "improvements"
+
+This is especially important for:
+- Configuration files
+- Design system documents
+- Build scripts
+- Complex CSS that might look "redundant" but serves a purpose

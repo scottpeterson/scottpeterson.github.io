@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Statistics - Premium</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li>
+            <a href="preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="returners.html">Returning and Non-Returning</a></li>
+          <li>
+            <a href="non_conf_tournaments.html">Non-Conference Tournaments</a>
+          </li>
+          <li><a href="npi.html">NPI</a></li>
+          <li><a href="season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Premium D3 Women's Basketball Single Team Report</h1>
+        <p>
+          Receive a weekly report showing your favorite team's upcoming games,
+          highest leverage games, playoff odds, change to playoff odds, reason
+          for change to playoff odds, and more!
+        </p>
+      </header>
+
+      <div class="premium-container">
+        <section class="premium-features">
+          <h2>What You'll Get</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>NCAA Tournament Odds</h3>
+              <p>
+                Detailed breakdown of NCAA Tournament odds based on 10,000
+                simulations
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔮</div>
+              <h3>Highest Leverage Games</h3>
+              <p>
+                Which upcoming games affect your team's NCAA Tournament chances
+                the most?
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📈</div>
+              <h3>Conference Breakdown</h3>
+              <p>
+                Shows your team's standings within their conference, chance of
+                winning the AQ, and more!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="premium-pricing">
+          <h2>Premium Access</h2>
+          <div class="pricing-card">
+            <div class="price">
+              <span class="price-amount">$49</span>
+              <span class="price-period">one time</span>
+            </div>
+            <ul class="pricing-features">
+              <li>
+                ✓ Weekly PDF report in your email inbox every Monday morning
+              </li>
+            </ul>
+            <button id="checkout-button" class="premium-button">
+              Get Premium Access
+            </button>
+          </div>
+        </section>
+
+        <section class="premium-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>When will I get access?</h3>
+            <p>The first report will be emailed on Monday, November 3</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I cancel my subscription?</h3>
+            <p>
+              Technically no, as this is a one-time payment, and there is no
+              recurring subscription.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>
+              We accept all major credit cards, debit cards, and digital payment
+              methods through Stripe.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is my payment information secure?</h3>
+            <p>
+              Absolutely. All payments are processed securely through Stripe,
+              and we never store your payment information.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for search, filter and active page functionality -->
+    <script src="js/navigation.js"></script>
+    <script src="js/table-controls.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Premium page payment logic -->
+    <script src="js/premium.js"></script>
+  </body>
+</html>

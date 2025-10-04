@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - {{PAGE_TITLE}}</title>
+    <title>Basketball Statistics - Success</title>
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GoatCounter Analytics -->
@@ -30,7 +30,23 @@
           <!-- Close button placed separately at the top of the menu -->
           <div class="menu-close" id="menuClose"></div>
 
-          {{NAV_ITEMS}}
+          <li><a href="/">Home</a></li>
+          <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li>
+            <a href="preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="returners.html">Returning and Non-Returning</a></li>
+          <li>
+            <a href="non_conf_tournaments.html">Non-Conference Tournaments</a>
+          </li>
+          <li><a href="npi.html">NPI</a></li>
+          <li><a href="season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
@@ -40,29 +56,20 @@
 
     <main>
       <header>
-        <h1>{{PAGE_HEADING}}</h1>
-        <p>{{PAGE_DESCRIPTION}}</p>
-        {{#LAST_UPDATED}}
-        <p class="last-updated"><em>Last updated: {{LAST_UPDATED}}</em></p>
-        {{/LAST_UPDATED}}
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your purchase. Your premium access is now active.</p>
       </header>
 
-      {{CONTENT}} {{#LEGEND}}
-      <div class="table-section">
-        <section class="legend-section">
-          <h2>Column Legend</h2>
-          <div class="legend-grid">
-            {{#LEGEND_ITEMS}}
-            <div class="legend-item">
-              <span class="legend-description"
-                ><strong>{{COLUMN}}</strong>: {{DESCRIPTION}}</span
-              >
-            </div>
-            {{/LEGEND_ITEMS}}
+      <div class="simple-page-container">
+        <div class="simple-page-content">
+          <p class="simple-page-text">
+            Check your email for next steps and access instructions.
+          </p>
+          <div class="simple-page-actions">
+            <a href="/" class="button button-primary">Return to Home</a>
           </div>
-        </section>
+        </div>
       </div>
-      {{/LEGEND}}
     </main>
 
     <footer>
@@ -74,9 +81,5 @@
     <script src="js/table-controls.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/main.js"></script>
-    {{#IS_PREMIUM_PAGE}}
-    <!-- Premium page payment logic -->
-    <script src="js/premium.js"></script>
-    {{/IS_PREMIUM_PAGE}}
   </body>
 </html>
