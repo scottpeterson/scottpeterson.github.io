@@ -107,9 +107,57 @@
                 ✓ Weekly PDF report in your email inbox every Monday morning
               </li>
             </ul>
-            <button id="checkout-button" class="premium-button">
-              Get Premium Access
-            </button>
+
+            <!-- Team Selection Form -->
+            <form id="premium-form" class="premium-form">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                  class="form-input"
+                />
+                <span class="form-hint"
+                  >We'll send your weekly report to this email</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="team">Select Your Team</label>
+                <select id="team" name="team" required class="form-select">
+                  <option value="">-- Choose a team --</option>
+                  <!-- Teams will be dynamically loaded by conference -->
+                </select>
+                <span class="form-hint">Select the team you want to track</span>
+              </div>
+
+              <div class="form-group form-checkbox-group">
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    id="honor-agreement"
+                    name="honor-agreement"
+                    required
+                    class="form-checkbox"
+                  />
+                  <span class="checkbox-text"
+                    >I will not share this report with others</span
+                  >
+                </label>
+              </div>
+
+              <button
+                id="checkout-button"
+                type="submit"
+                class="premium-button"
+                disabled
+              >
+                Get Premium Access
+              </button>
+            </form>
           </div>
         </section>
 
@@ -138,6 +186,31 @@
             <p>
               Absolutely. All payments are processed securely through Stripe,
               and we never store your payment information.
+            </p>
+          </div>
+        </section>
+
+        <section class="premium-honor">
+          <h2>Can I share this report with others?</h2>
+          <div class="honor-content">
+            <p>
+              <strong>Please don't.</strong> These reports represent countless
+              hours of data collection, model development, and analysis—all done
+              by one person who's passionate about D3 basketball. While there's
+              no way to technically prevent sharing, the viability of this
+              service depends on people doing the right thing.
+            </p>
+            <p>
+              Your purchase is intended for
+              <strong>your personal use only</strong>. When you share your
+              report with teammates, coaches, or fellow fans, it undermines the
+              work that makes this service possible and makes it harder to keep
+              providing these insights to the D3 community.
+            </p>
+            <p class="honor-thanks">
+              Thank you for respecting the effort that goes into these reports
+              and for supporting independent D3 basketball analytics. Your
+              integrity keeps this service alive.
             </p>
           </div>
         </section>
