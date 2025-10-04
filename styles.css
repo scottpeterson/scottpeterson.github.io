@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -107,19 +108,14 @@ header {
 
 h1 {
   font-size: 2rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2c3e50;
   margin-bottom: 10px;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 h2 {
   font-size: 1.5rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #ff4f00 100%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2c3e50;
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -157,7 +153,8 @@ h2 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .stats-table thead th {
@@ -217,7 +214,7 @@ h2 {
 }
 
 .stats-table td {
-  padding: 10px 12px;
+  padding: 12px 16px;
   text-align: center;
   border: 1px solid #e1e5e8;
   background-color: #fff;
@@ -252,9 +249,7 @@ h2 {
 }
 
 .home-content h3 {
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2c3e50;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -349,12 +344,12 @@ footer {
   }
 
   .stats-table {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .stats-table th,
   .stats-table td {
-    padding: 8px 10px;
+    padding: 10px 12px;
   }
 
   /* Mobile table container adjustments */
@@ -394,23 +389,22 @@ footer {
 .filter-select {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid transparent;
-  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 2px solid #e0e0e0;
+  background: #fff;
   border-radius: 12px;
   font-size: 14px;
   color: #333;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
 
 .search-input:focus,
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
-    0 6px 16px rgb(0 0 0 / 15%);
-  background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+    0 4px 12px rgb(0 0 0 / 12%);
+  background: #fff;
 }
 
 .search-input:hover,
@@ -443,6 +437,26 @@ footer {
   padding: 20px;
   color: #777;
   font-style: italic;
+}
+
+/* Loading states */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.loading::after {
+  content: '...';
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+  0% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
 }
 
 /* Progress Indicators */
@@ -550,8 +564,7 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -601,13 +614,13 @@ footer {
 .form-textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid transparent;
-  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 2px solid #e0e0e0;
+  background: #fff;
   border-radius: 12px;
   font-size: 14px;
   color: #333;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
   font-family: inherit;
 }
 
@@ -615,10 +628,9 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
-    0 6px 16px rgb(0 0 0 / 15%);
-  background: linear-gradient(135deg, #fff 0%, #ecf0f1 100%);
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+    0 4px 12px rgb(0 0 0 / 12%);
+  background: #fff;
 }
 
 .form-textarea {
@@ -660,16 +672,14 @@ footer {
 }
 
 .contact-info h3 {
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2c3e50;
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 1.2rem;
 }
 
 .contact-info p {
-  color: #666;
+  color: #555;
   margin-bottom: 15px;
 }
 
@@ -1025,8 +1035,7 @@ footer {
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -1049,7 +1058,7 @@ footer {
 }
 
 .feature-card p {
-  color: #666;
+  color: #555;
   line-height: 1.6;
   text-align: center;
 }
@@ -1087,7 +1096,7 @@ footer {
 
 .price-period {
   font-size: 1.2rem;
-  color: #666;
+  color: #555;
 }
 
 .pricing-features {
@@ -1166,7 +1175,7 @@ footer {
 }
 
 .faq-item p {
-  color: #666;
+  color: #555;
   line-height: 1.6;
 }
 
@@ -1338,7 +1347,7 @@ footer {
   display: block;
   margin-top: 6px;
   font-size: 0.85rem;
-  color: #666;
+  color: #555;
 }
 
 .form-checkbox-group {
@@ -1379,6 +1388,52 @@ footer {
   background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
 }
 
+/* Premium CTA Banner (Buy Button) */
+.premium-cta-banner {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  padding: 30px 20px;
+  margin: 40px 0 0;
+  text-align: center;
+  border-top: 4px solid #2c3e50;
+}
+
+.premium-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.premium-cta-content h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.premium-cta-content p {
+  color: #ecf0f1;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #fff;
+  color: #2980b9;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+}
+
+.cta-button:hover {
+  background: #ecf0f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 30%);
+}
+
 /* Mobile responsive adjustments for premium pages */
 @media (max-width: 768px) {
   .premium-tagline {
@@ -1409,5 +1464,18 @@ footer {
   .form-input,
   .form-select {
     font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .premium-cta-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .premium-cta-content p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 24px;
   }
 }

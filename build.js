@@ -241,6 +241,19 @@ class TemplateEngine {
       );
     }
 
+    // Handle SHOW_BUY_BUTTON conditional
+    if (data.showBuyButton) {
+      result = result.replace(
+        /{{#SHOW_BUY_BUTTON}}([\s\S]*?){{\/SHOW_BUY_BUTTON}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#SHOW_BUY_BUTTON}}([\s\S]*?){{\/SHOW_BUY_BUTTON}}/g,
+        ''
+      );
+    }
+
     return result;
   }
 
@@ -336,6 +349,12 @@ class TemplateEngine {
 
       // Render full page
       const navItems = this.generateNavigation();
+
+      // Determine if buy button should show (feature flagged)
+      const premiumEnabled = this.isFeatureEnabled('premium');
+      const showBuyButton =
+        premiumEnabled && !pageConfig.isPremiumPage && !pageConfig.isSimplePage;
+
       const fullPage = this.renderTemplate(this.templates.base, {
         title: pageConfig.title,
         heading: pageConfig.heading,
@@ -344,6 +363,7 @@ class TemplateEngine {
         content: tableContent,
         legend: pageConfig.legend,
         isPremiumPage: pageConfig.isPremiumPage || false,
+        showBuyButton: showBuyButton,
         navItems: navItems,
       });
 
