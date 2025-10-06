@@ -97,6 +97,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const team = teamData[0];
     const conference = teamData[1];
 
+    // Save email and team to localStorage for tracking
+    // This helps us track all form submissions, even if payment isn't completed
+    const submission = {
+      email: email,
+      team: team,
+      conference: conference,
+      timestamp: new Date().toISOString(),
+    };
+
+    // Get existing submissions or initialize empty array
+    const submissions =
+      JSON.parse(localStorage.getItem('premiumSubmissions')) || [];
+    submissions.push(submission);
+    localStorage.setItem('premiumSubmissions', JSON.stringify(submissions));
+
     // Build URL with email and team as query parameters
     const url = new URL(STRIPE_CONFIG.paymentLink);
     url.searchParams.append('prefilled_email', email);

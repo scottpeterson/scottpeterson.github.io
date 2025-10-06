@@ -9,6 +9,7 @@
     "clean": "node build.js clean",
     "serve": "npx serve -p 8000",
     "start": "npm run build && npm run serve",
+    "sync-stripe": "node scripts/sync-stripe-customers.js",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint '**/*.js' --fix --ignore-path .gitignore",
     "lint:css": "stylelint '**/*.css' --fix --ignore-path .gitignore",
