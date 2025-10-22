@@ -618,11 +618,14 @@ class TableController {
           row['Roster Published?'] === true
       ).length;
 
-      // Calculate percentages
-      const schedulePercentage = Math.round(
-        (schedulePublished / totalTeams) * 100
+      // Calculate percentages with one decimal place
+      const schedulePercentage = (
+        (schedulePublished / totalTeams) *
+        100
+      ).toFixed(1);
+      const rosterPercentage = ((rosterPublished / totalTeams) * 100).toFixed(
+        1
       );
-      const rosterPercentage = Math.round((rosterPublished / totalTeams) * 100);
 
       // Update text displays
       scheduleProgressElement.textContent = `${schedulePercentage}%`;
