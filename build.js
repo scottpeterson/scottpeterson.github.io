@@ -325,7 +325,12 @@ class TemplateEngine {
         });
       } else if (pageConfig.isPremiumPage) {
         // Use premium page template
-        tableContent = this.templates.premiumPage;
+        const premiumSalesEnabled = this.isFeatureEnabled(
+          'premiumSalesEnabled'
+        );
+        tableContent = this.renderTemplate(this.templates.premiumPage, {
+          salesEnabled: premiumSalesEnabled,
+        });
       } else if (pageConfig.isSimplePage) {
         // Use simple page template for success/cancel pages
         tableContent = this.templates.simplePage;

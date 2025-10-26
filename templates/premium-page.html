@@ -121,6 +121,7 @@
           </label>
         </div>
 
+        {{#salesEnabled}}
         <button
           id="checkout-button"
           type="submit"
@@ -129,6 +130,11 @@
         >
           Get Premium Access
         </button>
+        {{/salesEnabled}} {{^salesEnabled}}
+        <p class="sales-disabled-message">
+          Further sales of this report are not currently available.
+        </p>
+        {{/salesEnabled}}
       </form>
     </div>
   </section>
