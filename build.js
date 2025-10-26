@@ -228,6 +228,32 @@ class TemplateEngine {
       result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '');
     }
 
+    // Handle salesEnabled conditional (positive)
+    if (data.salesEnabled) {
+      result = result.replace(
+        /{{#salesEnabled}}([\s\S]*?){{\/salesEnabled}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#salesEnabled}}([\s\S]*?){{\/salesEnabled}}/g,
+        ''
+      );
+    }
+
+    // Handle salesEnabled conditional (negative)
+    if (!data.salesEnabled) {
+      result = result.replace(
+        /\{\{\^salesEnabled\}\}([\s\S]*?)\{\{\/salesEnabled\}\}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /\{\{\^salesEnabled\}\}([\s\S]*?)\{\{\/salesEnabled\}\}/g,
+        ''
+      );
+    }
+
     // Handle IS_PREMIUM_PAGE conditional
     if (data.isPremiumPage) {
       result = result.replace(
