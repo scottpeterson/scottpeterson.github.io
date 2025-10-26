@@ -454,9 +454,17 @@ footer {
 }
 
 @keyframes ellipsis {
-  0% { content: '.'; }
-  33% { content: '..'; }
-  66% { content: '...'; }
+  0% {
+    content: '.';
+  }
+
+  33% {
+    content: '..';
+  }
+
+  66% {
+    content: '...';
+  }
 }
 
 /* Progress Indicators */
@@ -1147,6 +1155,32 @@ footer {
   margin-top: 20px;
   color: #888;
   font-size: 0.9rem;
+}
+
+/* Premium Sample Section */
+.premium-sample {
+  text-align: center;
+  margin: 50px 0;
+  padding: 30px 20px;
+}
+
+.sample-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 45px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgb(39 174 96 / 30%);
+}
+
+.sample-button:hover {
+  background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+  box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
+  transform: translateY(-2px);
 }
 
 .premium-faq {
