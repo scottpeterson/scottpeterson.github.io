@@ -19,61 +19,26 @@ const STRIPE_CONFIG = {
 };
 
 /**
- * Load teams data and populate the dropdown
- */
-async function loadTeams() {
-  try {
-    const response = await fetch('/data/teams.json');
-    const conferences = await response.json();
-
-    const teamSelect = document.getElementById('team');
-
-    // Populate dropdown with conference optgroups
-    conferences.forEach(conf => {
-      const optgroup = document.createElement('optgroup');
-      optgroup.label = conf.conference;
-
-      conf.teams.forEach(team => {
-        const option = document.createElement('option');
-        option.value = `${team}|${conf.conference}`;
-        option.textContent = team;
-        optgroup.appendChild(option);
-      });
-
-      teamSelect.appendChild(optgroup);
-    });
-  } catch (error) {
-    console.error('Error loading teams:', error);
-  }
-}
-
-/**
  * Validate form and enable/disable checkout button
  */
 function validateForm() {
   const emailInput = document.getElementById('email');
-  const teamSelect = document.getElementById('team');
   const honorCheckbox = document.getElementById('honor-agreement');
   const checkoutButton = document.getElementById('checkout-button');
 
   const isEmailValid = emailInput.validity.valid && emailInput.value.trim();
-  const isTeamSelected = teamSelect.value !== '';
   const isHonorChecked = honorCheckbox.checked;
 
-  // Enable button only if email, team, and honor agreement are all valid
-  checkoutButton.disabled = !(isEmailValid && isTeamSelected && isHonorChecked);
+  // Enable button only if email and honor agreement are both valid
+  checkoutButton.disabled = !(isEmailValid && isHonorChecked);
 }
 
 /**
  * Initialize premium form and payment link redirect
  */
 document.addEventListener('DOMContentLoaded', async () => {
-  // Load teams data
-  await loadTeams();
-
   const premiumForm = document.getElementById('premium-form');
   const emailInput = document.getElementById('email');
-  const teamSelect = document.getElementById('team');
   const honorCheckbox = document.getElementById('honor-agreement');
 
   if (!premiumForm) {
@@ -85,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Add validation listeners
   emailInput.addEventListener('input', validateForm);
-  teamSelect.addEventListener('change', validateForm);
   honorCheckbox.addEventListener('change', validateForm);
 
   // Handle form submission
@@ -93,31 +57,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     e.preventDefault();
 
     const email = emailInput.value;
-    const teamData = teamSelect.value.split('|');
-    const team = teamData[0];
-    const conference = teamData[1];
 
-    // Save email and team to localStorage for tracking
-    // This helps us track all form submissions, even if payment isn't completed
-    const submission = {
-      email: email,
-      team: team,
-      conference: conference,
-      timestamp: new Date().toISOString(),
-    };
-
-    // Get existing submissions or initialize empty array
-    const submissions =
-      JSON.parse(localStorage.getItem('premiumSubmissions')) || [];
-    submissions.push(submission);
-    localStorage.setItem('premiumSubmissions', JSON.stringify(submissions));
-
-    // Build URL with email and team as query parameters
+    // Build URL with prefilled email
     const url = new URL(STRIPE_CONFIG.paymentLink);
     url.searchParams.append('prefilled_email', email);
-    url.searchParams.append('client_reference_id', `${team}|${conference}`);
 
-    // Redirect to Stripe Payment Link with user data
+    // Redirect to Stripe Payment Link with user email
+    // Team will be collected via Stripe's custom field
     window.location.href = url.toString();
   });
 
