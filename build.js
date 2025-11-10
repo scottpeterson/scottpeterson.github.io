@@ -82,26 +82,6 @@ class TemplateEngine {
     // Define navigation order and structure
     const navConfig = [
       { key: 'index', label: 'Home', href: '/' },
-      {
-        key: 'publishing_tracker',
-        label: 'Publishing Tracker',
-        href: 'publishing_tracker.html',
-      },
-      {
-        key: 'preseason_rankings',
-        label: '25-26 Preseason Rankings',
-        href: 'preseason_rankings.html',
-      },
-      {
-        key: 'returners',
-        label: 'Returning and Non-Returning',
-        href: 'returners.html',
-      },
-      {
-        key: 'non_conf_tournaments',
-        label: 'Non-Conference Tournaments',
-        href: 'non_conf_tournaments.html',
-      },
       { key: 'npi', label: 'NPI', href: 'npi.html' },
       {
         key: 'season_simulations',
@@ -114,14 +94,29 @@ class TemplateEngine {
         href: 'current_season_rankings.html',
       },
       {
+        key: 'conference_rankings',
+        label: 'Conference Rankings',
+        href: 'conference_rankings.html',
+      },
+      {
         key: 'composite_rankings',
         label: 'Composite Rankings',
         href: 'composite_rankings.html',
       },
       {
-        key: 'conference_rankings',
-        label: 'Conference Rankings',
-        href: 'conference_rankings.html',
+        key: 'preseason_rankings',
+        label: '25-26 Preseason Rankings',
+        href: 'preseason_rankings.html',
+      },
+      {
+        key: 'returners',
+        label: 'Returning and Non-Returning',
+        href: 'returners.html',
+      },
+      {
+        key: 'publishing_tracker',
+        label: 'Publishing Tracker',
+        href: 'publishing_tracker.html',
       },
       { key: 'premium', label: 'Premium', href: 'premium.html' },
       { key: 'contact', label: 'Contact', href: 'contact.html' },

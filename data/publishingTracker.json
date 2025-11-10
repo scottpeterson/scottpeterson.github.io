@@ -66,6 +66,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Mt. Aloysius",
+    "Conf": "AMCC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Penn State-Behrend",
     "Conf": "AMCC",
     "Schedule Published?": "TRUE",
@@ -444,6 +450,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "City College (NY)",
+    "Conf": "CUNYAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Hunter",
     "Conf": "CUNYAC",
     "Schedule Published?": "TRUE",
@@ -588,6 +600,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Norwich",
+    "Conf": "GNAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Regis",
     "Conf": "GNAC",
     "Schedule Published?": "TRUE",
@@ -696,6 +714,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Goucher",
+    "Conf": "LAND",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Juniata",
     "Conf": "LAND",
     "Schedule Published?": "TRUE",
@@ -732,6 +756,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Castleton",
+    "Conf": "LEC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Eastern Connecticut",
     "Conf": "LEC",
     "Schedule Published?": "TRUE",
@@ -762,7 +792,19 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Rhode Island College",
+    "Conf": "LEC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Southern Maine",
+    "Conf": "LEC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Western Connecticut",
     "Conf": "LEC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "TRUE"
@@ -1177,6 +1219,12 @@
   },
   {
     "Team": "NVU-Lyndon",
+    "Conf": "NAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "SUNY Cobleskill",
     "Conf": "NAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "TRUE"
@@ -1854,6 +1902,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "McMurry",
+    "Conf": "SCAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Schreiner",
     "Conf": "SCAC",
     "Schedule Published?": "TRUE",
@@ -1963,6 +2017,12 @@
   },
   {
     "Team": "Old Westbury",
+    "Conf": "SKY",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Sarah Lawrence",
     "Conf": "SKY",
     "Schedule Published?": "TRUE",
     "Roster Published?": "TRUE"
@@ -2196,6 +2256,12 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Penn State-Abington",
+    "Conf": "UEC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "PSU-Berks",
     "Conf": "UEC",
     "Schedule Published?": "TRUE",
@@ -2382,20 +2448,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Mt. Aloysius",
-    "Conf": "AMCC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "University of New England",
     "Conf": "CNE",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "City College (NY)",
-    "Conf": "CUNYAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -2406,38 +2460,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Norwich",
-    "Conf": "GNAC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Trinity (DC)",
     "Conf": "IND",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Goucher",
-    "Conf": "LAND",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Castleton",
-    "Conf": "LEC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Rhode Island College",
-    "Conf": "LEC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Western Connecticut",
-    "Conf": "LEC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -2454,32 +2478,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "SUNY Cobleskill",
-    "Conf": "NAC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Williams",
     "Conf": "NESCAC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "McMurry",
-    "Conf": "SCAC",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Sarah Lawrence",
-    "Conf": "SKY",
-    "Schedule Published?": "TRUE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Penn State-Abington",
-    "Conf": "UEC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   }

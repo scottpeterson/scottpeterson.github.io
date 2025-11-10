@@ -120,51 +120,6 @@
       "5th Year Last Names": "Names of the fifth-year players on the roster"
     }
   },
-  "non_conf_tournaments": {
-    "title": "Non-Conference Tournaments",
-    "heading": "Non-Conference Tournaments",
-    "description": "A table listing the teams participating in various non-conference tournaments",
-    "sectionTitle": "Non-Conference Tournaments",
-    "hasSearch": false,
-    "searchPlaceholder": "Search for team or tournament...",
-    "dataSource": "nonConfTournaments",
-    "columns": [
-      "Date",
-      "Tournament",
-      "Team 1",
-      "Team 2",
-      "Team 3",
-      "Team 4",
-      "Team 5",
-      "Team 6",
-      "Team 7",
-      "Team 8"
-    ],
-    "columnMappings": {
-      "Date": "Date",
-      "Tournament": "Tournament",
-      "Team 1": "Team 1",
-      "Team 2": "Team 2",
-      "Team 3": "Team 3",
-      "Team 4": "Team 4",
-      "Team 5": "Team 5",
-      "Team 6": "Team 6",
-      "Team 7": "Team 7",
-      "Team 8": "Team 8"
-    },
-    "legend": {
-      "Date": "Date when the tournament takes place",
-      "Tournament": "Name of the non-conference tournament",
-      "Team 1": "First participating team",
-      "Team 2": "Second participating team",
-      "Team 3": "Third participating team",
-      "Team 4": "Fourth participating team",
-      "Team 5": "Fifth participating team",
-      "Team 6": "Sixth participating team",
-      "Team 7": "Seventh participating team",
-      "Team 8": "Eighth participating team"
-    }
-  },
   "npi": {
     "title": "NPI",
     "heading": "NPI",
