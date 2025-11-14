@@ -94,8 +94,12 @@ class TableController {
     // Get column names from table headers
     const headers = Array.from(this.table.querySelectorAll('th'));
 
-    data.forEach((row, _index) => {
+    data.forEach((row, dataIndex) => {
       const tr = document.createElement('tr');
+
+      // Store the original data index on the row element
+      // This ensures we can always look up the correct data even after sorting
+      tr.setAttribute('data-index', dataIndex);
 
       headers.forEach((header, _headerIndex) => {
         const td = document.createElement('td');
@@ -108,6 +112,10 @@ class TableController {
         value = this.formatValue(value, headerText);
 
         td.textContent = value !== null && value !== undefined ? value : '';
+
+        // Apply red font color for negative values on specific columns
+        this.applyNegativeValueStyling(td, value, headerText);
+
         tr.appendChild(td);
       });
 
@@ -333,6 +341,41 @@ class TableController {
     return value;
   }
 
+  // Apply red font color for negative values on specific columns
+  applyNegativeValueStyling(td, value, headerText) {
+    // Clean header text by removing sort indicators and other symbols
+    const cleanHeader = headerText
+      .replace(/[↕↑↓]/g, '')
+      .toLowerCase()
+      .trim();
+
+    // Define which columns should have red font for negative values
+    // Format: { 'page-identifier': ['column1', 'column2'] }
+    const negativeValueColumns = {
+      npi: ['value diff', 'rank diff'],
+      current_season_rankings: ['value of results', 'stat'],
+      conference_rankings: ['stat'],
+    };
+
+    // Get current page identifier
+    const path = window.location.pathname;
+    const currentPage =
+      path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
+
+    // Check if this column should have red font for negative values
+    const pageColumns = negativeValueColumns[currentPage];
+    if (pageColumns && pageColumns.includes(cleanHeader)) {
+      // Parse the value and check if it's negative
+      const numericValue = parseFloat(
+        typeof value === 'string' ? value.replace(/[^\d.-]/g, '') : value
+      );
+
+      if (!isNaN(numericValue) && numericValue < 0) {
+        td.style.color = 'red';
+      }
+    }
+  }
+
   // Populate conference filter with unique values
   populateConferenceFilter() {
     try {
@@ -386,7 +429,7 @@ class TableController {
       const rows = tbody.querySelectorAll('tr');
       let visibleRows = 0;
 
-      rows.forEach((row, index) => {
+      rows.forEach(row => {
         if (!row.cells || row.cells.length === 0) {
           return;
         }
@@ -395,13 +438,19 @@ class TableController {
         const teamCell = row.cells[0];
         const teamName = teamCell ? teamCell.textContent.toLowerCase() : '';
 
-        // Get conference from data instead of guessing from table
+        // Get conference from data using the stored data index
+        // This works correctly even after sorting because we store the original index
         let rowConference = '';
-        if (this.currentData && this.currentData[index]) {
+        const dataIndex = parseInt(row.getAttribute('data-index'));
+        if (
+          this.currentData &&
+          !isNaN(dataIndex) &&
+          this.currentData[dataIndex]
+        ) {
           rowConference =
-            this.currentData[index].conf ||
-            this.currentData[index].conference ||
-            this.currentData[index].Conf ||
+            this.currentData[dataIndex].conf ||
+            this.currentData[dataIndex].conference ||
+            this.currentData[dataIndex].Conf ||
             '';
         }
 
