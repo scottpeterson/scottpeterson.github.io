@@ -574,6 +574,26 @@ class TableController {
     }
   }
 
+  // Parse a numeric value, handling accounting notation where parentheses denote negatives
+  // e.g., "(5.2)" becomes -5.2, "5.2" stays 5.2
+  parseNumericValue(value) {
+    if (typeof value !== 'string') {
+      return parseFloat(value);
+    }
+
+    const trimmed = value.trim();
+
+    // Check for accounting notation: (number) means negative
+    // Match pattern like "(123.45)" or "(123)"
+    const accountingMatch = trimmed.match(/^\((\d+\.?\d*)\)$/);
+    if (accountingMatch) {
+      return -parseFloat(accountingMatch[1]);
+    }
+
+    // Standard parsing: remove non-numeric characters except minus and decimal
+    return parseFloat(trimmed.replace(/[^\d.-]/g, ''));
+  }
+
   // Sort table by column
   sortTable(columnIndex, header) {
     try {
@@ -608,9 +628,9 @@ class TableController {
         const aVal = a.cells[columnIndex].textContent.trim();
         const bVal = b.cells[columnIndex].textContent.trim();
 
-        // Try to parse as numbers
-        const aNum = parseFloat(aVal.replace(/[^\d.-]/g, ''));
-        const bNum = parseFloat(bVal.replace(/[^\d.-]/g, ''));
+        // Try to parse as numbers, handling parentheses as negative values
+        const aNum = this.parseNumericValue(aVal);
+        const bNum = this.parseNumericValue(bVal);
 
         let result;
         if (!isNaN(aNum) && !isNaN(bNum)) {
