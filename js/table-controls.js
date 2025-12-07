@@ -461,6 +461,7 @@ class TableController {
     const gradientColumns = {
       'value diff': 'standard',
       'rem games < 50.00 npi': 'inverted',
+      'lowest counting win': 'standard',
     };
 
     const headers = Array.from(this.table.querySelectorAll('th'));
@@ -531,13 +532,23 @@ class TableController {
     let r, g, b;
 
     if (direction === 'inverted') {
-      // Inverted: green for min, red for max (lower is better)
+      // Inverted: green for min, white for middle, red for max (lower is better)
       // Normalize value to 0-1 range where 0 = min, 1 = max
       const ratio = (value - min) / (max - min);
-      // Interpolate from green (low) to red (high)
-      r = Math.round(ratio * 255); // 0 -> 255
-      g = Math.round(180 - ratio * 180); // 180 -> 0
-      b = 0;
+
+      if (ratio <= 0.5) {
+        // Lower half: green to white
+        const subRatio = ratio * 2; // 0 to 1 within this half
+        r = Math.round(subRatio * 255); // 0 -> 255
+        g = Math.round(180 + (255 - 180) * subRatio); // 180 -> 255
+        b = Math.round(subRatio * 255); // 0 -> 255
+      } else {
+        // Upper half: white to red
+        const subRatio = (ratio - 0.5) * 2; // 0 to 1 within this half
+        r = 255; // stays 255
+        g = Math.round(255 - 255 * subRatio); // 255 -> 0
+        b = Math.round(255 - 255 * subRatio); // 255 -> 0
+      }
     } else {
       // Standard: handle positive/negative values
       if (value >= 0) {
