@@ -116,6 +116,9 @@ class TableController {
         // Apply red font color for negative values on specific columns
         this.applyNegativeValueStyling(td, value, headerText);
 
+        // Apply bid type coloring to team name (first column) on NPI page
+        this.applyBidTypeColoring(td, row, headerText);
+
         tr.appendChild(td);
       });
 
@@ -372,6 +375,46 @@ class TableController {
 
       if (!isNaN(numericValue) && numericValue < 0) {
         td.style.color = 'red';
+      }
+    }
+  }
+
+  // Apply bid type coloring to team name on NPI page
+  // Green for "A" (automatic qualifier), Blue for "C-01" through "C-21" (pool C bids)
+  applyBidTypeColoring(td, row, headerText) {
+    // Clean header text
+    const cleanHeader = headerText
+      .replace(/[↕↑↓]/g, '')
+      .toLowerCase()
+      .trim();
+
+    // Only apply to Team column on NPI page
+    if (cleanHeader !== 'team') {
+      return;
+    }
+
+    // Check if we're on the NPI page
+    const path = window.location.pathname;
+    const currentPage =
+      path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
+
+    if (currentPage !== 'npi') {
+      return;
+    }
+
+    // Get bid type from row data
+    const bidType = row['Bid Type'] || row['bid type'] || row.bidType || '';
+
+    if (bidType === 'A') {
+      // Green for automatic qualifier
+      td.style.color = '#228B22'; // Forest green
+      td.style.fontWeight = 'bold';
+    } else if (/^C-\d{2}$/.test(bidType)) {
+      // Blue for Pool C bids (C-01 through C-21)
+      const bidNumber = parseInt(bidType.split('-')[1], 10);
+      if (bidNumber >= 1 && bidNumber <= 21) {
+        td.style.color = '#1E90FF'; // Dodger blue
+        td.style.fontWeight = 'bold';
       }
     }
   }
