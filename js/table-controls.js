@@ -510,19 +510,19 @@ class TableController {
     let r, g, b;
 
     if (value >= 0) {
-      // Positive values: white to green
+      // Positive values: white to bright green
       // Normalize to 0-1 range (0 = white, 1 = green)
       const ratio = max > 0 ? value / max : 0;
-      r = Math.round(255 - (255 - 34) * ratio); // 255 -> 34 (green)
-      g = Math.round(255 - (255 - 139) * ratio); // 255 -> 139 (green)
-      b = Math.round(255 - (255 - 34) * ratio); // 255 -> 34 (green)
+      r = Math.round(255 - 255 * ratio); // 255 -> 0
+      g = Math.round(255 - (255 - 180) * ratio); // 255 -> 180 (bright green)
+      b = Math.round(255 - 255 * ratio); // 255 -> 0
     } else {
-      // Negative values: white to red
+      // Negative values: white to bright red
       // Normalize to 0-1 range (0 = white, 1 = red)
       const ratio = min < 0 ? value / min : 0;
-      r = Math.round(255 - (255 - 220) * ratio); // 255 -> 220 (red)
-      g = Math.round(255 - (255 - 53) * ratio); // 255 -> 53 (red)
-      b = Math.round(255 - (255 - 69) * ratio); // 255 -> 69 (red)
+      r = 255; // stays at 255
+      g = Math.round(255 - 255 * ratio); // 255 -> 0
+      b = Math.round(255 - 255 * ratio); // 255 -> 0
     }
 
     return `rgb(${r}, ${g}, ${b})`;
@@ -836,6 +836,9 @@ class TableController {
 
       // Reapply alternating row colors after sorting
       this.reapplyRowColors();
+
+      // Reapply Value Diff gradient after sorting
+      this.applyValueDiffGradient();
     } catch (error) {
       console.error('Error in sortTable:', error);
     }
