@@ -330,6 +330,10 @@ class TableController {
       ) {
         return numericValue.toFixed(3);
       }
+      // 2 decimal places for QWB
+      else if (cleanHeader === 'qwb') {
+        return numericValue.toFixed(2);
+      }
       // 2 decimal places for Current Season Rankings columns
       else if (
         cleanHeader === 'value of results' ||
@@ -440,8 +444,7 @@ class TableController {
     }
   }
 
-  // Apply gradient coloring to Value Diff column on NPI page
-  // Green for highest positive, red for most negative, white for zero
+  // Apply gradient coloring to specified columns on NPI page
   applyValueDiffGradient() {
     // Only apply on NPI page
     const path = window.location.pathname;
@@ -452,56 +455,74 @@ class TableController {
       return;
     }
 
-    // Find the Value Diff column index
+    // Columns to apply gradient to, with their gradient direction
+    // 'standard' = green for high, red for low (good when high)
+    // 'inverted' = red for high, green for low (good when low)
+    const gradientColumns = {
+      'value diff': 'standard',
+      'rem games < 50.00 npi': 'inverted',
+    };
+
     const headers = Array.from(this.table.querySelectorAll('th'));
-    let valueDiffIndex = -1;
-
-    headers.forEach((header, index) => {
-      const headerText = header.textContent.replace(/[↕↑↓]/g, '').trim();
-      if (headerText.toLowerCase() === 'value diff') {
-        valueDiffIndex = index;
-      }
-    });
-
-    if (valueDiffIndex === -1) {
-      return;
-    }
-
-    // Get all values from the column
     const tbody = this.table.querySelector('tbody');
     const rows = tbody.querySelectorAll('tr');
-    const values = [];
 
-    rows.forEach(row => {
-      const cell = row.cells[valueDiffIndex];
-      if (cell) {
-        const value = this.parseNumericValue(cell.textContent);
-        if (!isNaN(value)) {
-          values.push({ cell, value });
+    // Process each gradient column
+    Object.entries(gradientColumns).forEach(([columnName, direction]) => {
+      let columnIndex = -1;
+
+      headers.forEach((header, index) => {
+        const headerText = header.textContent.replace(/[↕↑↓]/g, '').trim();
+        if (headerText.toLowerCase() === columnName) {
+          columnIndex = index;
         }
+      });
+
+      if (columnIndex === -1) {
+        return;
       }
-    });
 
-    if (values.length === 0) {
-      return;
-    }
+      // Get all values from the column
+      const values = [];
 
-    // Find min and max values
-    const allValues = values.map(v => v.value);
-    const maxValue = Math.max(...allValues);
-    const minValue = Math.min(...allValues);
+      rows.forEach(row => {
+        const cell = row.cells[columnIndex];
+        if (cell) {
+          const value = this.parseNumericValue(cell.textContent);
+          if (!isNaN(value)) {
+            values.push({ cell, value });
+          }
+        }
+      });
 
-    // Apply gradient colors
-    values.forEach(({ cell, value }) => {
-      const color = this.getGradientColor(value, minValue, maxValue);
-      cell.style.backgroundColor = color;
-      // Use dark text for readability
-      cell.style.color = '#000';
+      if (values.length === 0) {
+        return;
+      }
+
+      // Find min and max values
+      const allValues = values.map(v => v.value);
+      const maxValue = Math.max(...allValues);
+      const minValue = Math.min(...allValues);
+
+      // Apply gradient colors
+      values.forEach(({ cell, value }) => {
+        const color = this.getGradientColor(
+          value,
+          minValue,
+          maxValue,
+          direction
+        );
+        cell.style.backgroundColor = color;
+        // Use dark text for readability
+        cell.style.color = '#000';
+      });
     });
   }
 
-  // Calculate gradient color from red (negative) through white (zero) to green (positive)
-  getGradientColor(value, min, max) {
+  // Calculate gradient color
+  // direction: 'standard' = green for high/positive, red for low/negative
+  //            'inverted' = red for high, green for low (for columns where lower is better)
+  getGradientColor(value, min, max, direction = 'standard') {
     // Handle edge case where all values are the same
     if (min === max) {
       return '#ffffff';
@@ -509,20 +530,31 @@ class TableController {
 
     let r, g, b;
 
-    if (value >= 0) {
-      // Positive values: white to bright green
-      // Normalize to 0-1 range (0 = white, 1 = green)
-      const ratio = max > 0 ? value / max : 0;
-      r = Math.round(255 - 255 * ratio); // 255 -> 0
-      g = Math.round(255 - (255 - 180) * ratio); // 255 -> 180 (bright green)
-      b = Math.round(255 - 255 * ratio); // 255 -> 0
+    if (direction === 'inverted') {
+      // Inverted: green for min, red for max (lower is better)
+      // Normalize value to 0-1 range where 0 = min, 1 = max
+      const ratio = (value - min) / (max - min);
+      // Interpolate from green (low) to red (high)
+      r = Math.round(ratio * 255); // 0 -> 255
+      g = Math.round(180 - ratio * 180); // 180 -> 0
+      b = 0;
     } else {
-      // Negative values: white to bright red
-      // Normalize to 0-1 range (0 = white, 1 = red)
-      const ratio = min < 0 ? value / min : 0;
-      r = 255; // stays at 255
-      g = Math.round(255 - 255 * ratio); // 255 -> 0
-      b = Math.round(255 - 255 * ratio); // 255 -> 0
+      // Standard: handle positive/negative values
+      if (value >= 0) {
+        // Positive values: white to bright green
+        // Normalize to 0-1 range (0 = white, 1 = green)
+        const ratio = max > 0 ? value / max : 0;
+        r = Math.round(255 - 255 * ratio); // 255 -> 0
+        g = Math.round(255 - (255 - 180) * ratio); // 255 -> 180 (bright green)
+        b = Math.round(255 - 255 * ratio); // 255 -> 0
+      } else {
+        // Negative values: white to bright red
+        // Normalize to 0-1 range (0 = white, 1 = red)
+        const ratio = min < 0 ? value / min : 0;
+        r = 255; // stays at 255
+        g = Math.round(255 - 255 * ratio); // 255 -> 0
+        b = Math.round(255 - 255 * ratio); // 255 -> 0
+      }
     }
 
     return `rgb(${r}, ${g}, ${b})`;
