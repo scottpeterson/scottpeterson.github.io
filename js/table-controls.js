@@ -550,6 +550,24 @@ class TableController {
         g = Math.round(255 - (255 - 180) * subRatio); // 255 -> 180
         b = Math.round(255 - 255 * subRatio); // 255 -> 0
       }
+    } else if (direction === 'inverted') {
+      // Inverted: green (min) -> white (middle) -> red (max)
+      // Uses the column's own min/max range (lower is better)
+      const ratio = (value - min) / (max - min);
+
+      if (ratio <= 0.5) {
+        // Lower half: green to white
+        const subRatio = ratio * 2; // 0 to 1 within this half
+        r = Math.round(subRatio * 255); // 0 -> 255
+        g = Math.round(180 + (255 - 180) * subRatio); // 180 -> 255
+        b = Math.round(subRatio * 255); // 0 -> 255
+      } else {
+        // Upper half: white to red
+        const subRatio = (ratio - 0.5) * 2; // 0 to 1 within this half
+        r = 255; // stays 255
+        g = Math.round(255 - 255 * subRatio); // 255 -> 0
+        b = Math.round(255 - 255 * subRatio); // 255 -> 0
+      }
     } else {
       // Standard: handle positive/negative values
       if (value >= 0) {
