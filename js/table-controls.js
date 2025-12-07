@@ -127,6 +127,9 @@ class TableController {
 
     // Apply initial alternating row colors
     this.reapplyRowColors();
+
+    // Apply gradient coloring to Value Diff column on NPI page
+    this.applyValueDiffGradient();
   }
 
   // Map header text to data property
@@ -354,8 +357,9 @@ class TableController {
 
     // Define which columns should have red font for negative values
     // Format: { 'page-identifier': ['column1', 'column2'] }
+    // Note: 'value diff' uses gradient coloring instead, so it's not listed here
     const negativeValueColumns = {
-      npi: ['value diff', 'rank diff'],
+      npi: ['rank diff'],
       current_season_rankings: ['value of results', 'stat'],
       conference_rankings: ['stat'],
     };
@@ -369,11 +373,24 @@ class TableController {
     const pageColumns = negativeValueColumns[currentPage];
     if (pageColumns && pageColumns.includes(cleanHeader)) {
       // Parse the value and check if it's negative
-      const numericValue = parseFloat(
-        typeof value === 'string' ? value.replace(/[^\d.-]/g, '') : value
-      );
+      // Handle both standard negative notation (-5) and accounting notation (5)
+      let isNegative = false;
 
-      if (!isNaN(numericValue) && numericValue < 0) {
+      if (typeof value === 'string') {
+        const trimmed = value.trim();
+        // Check for accounting notation: (number) means negative
+        if (/^\(\d+\.?\d*\)$/.test(trimmed)) {
+          isNegative = true;
+        } else {
+          // Standard negative check
+          const numericValue = parseFloat(trimmed.replace(/[^\d.-]/g, ''));
+          isNegative = !isNaN(numericValue) && numericValue < 0;
+        }
+      } else {
+        isNegative = typeof value === 'number' && value < 0;
+      }
+
+      if (isNegative) {
         td.style.color = 'red';
       }
     }
@@ -410,13 +427,105 @@ class TableController {
       td.style.color = '#228B22'; // Forest green
       td.style.fontWeight = 'bold';
     } else if (/^C-\d{2}$/.test(bidType)) {
-      // Blue for Pool C bids (C-01 through C-21)
       const bidNumber = parseInt(bidType.split('-')[1], 10);
       if (bidNumber >= 1 && bidNumber <= 21) {
+        // Blue for Pool C bids (C-01 through C-21)
         td.style.color = '#1E90FF'; // Dodger blue
+        td.style.fontWeight = 'bold';
+      } else if (bidNumber >= 22 && bidNumber <= 36) {
+        // Orange for Pool C bids (C-22 through C-36)
+        td.style.color = '#FF8C00'; // Dark orange
         td.style.fontWeight = 'bold';
       }
     }
+  }
+
+  // Apply gradient coloring to Value Diff column on NPI page
+  // Green for highest positive, red for most negative, white for zero
+  applyValueDiffGradient() {
+    // Only apply on NPI page
+    const path = window.location.pathname;
+    const currentPage =
+      path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
+
+    if (currentPage !== 'npi') {
+      return;
+    }
+
+    // Find the Value Diff column index
+    const headers = Array.from(this.table.querySelectorAll('th'));
+    let valueDiffIndex = -1;
+
+    headers.forEach((header, index) => {
+      const headerText = header.textContent.replace(/[↕↑↓]/g, '').trim();
+      if (headerText.toLowerCase() === 'value diff') {
+        valueDiffIndex = index;
+      }
+    });
+
+    if (valueDiffIndex === -1) {
+      return;
+    }
+
+    // Get all values from the column
+    const tbody = this.table.querySelector('tbody');
+    const rows = tbody.querySelectorAll('tr');
+    const values = [];
+
+    rows.forEach(row => {
+      const cell = row.cells[valueDiffIndex];
+      if (cell) {
+        const value = this.parseNumericValue(cell.textContent);
+        if (!isNaN(value)) {
+          values.push({ cell, value });
+        }
+      }
+    });
+
+    if (values.length === 0) {
+      return;
+    }
+
+    // Find min and max values
+    const allValues = values.map(v => v.value);
+    const maxValue = Math.max(...allValues);
+    const minValue = Math.min(...allValues);
+
+    // Apply gradient colors
+    values.forEach(({ cell, value }) => {
+      const color = this.getGradientColor(value, minValue, maxValue);
+      cell.style.backgroundColor = color;
+      // Use dark text for readability
+      cell.style.color = '#000';
+    });
+  }
+
+  // Calculate gradient color from red (negative) through white (zero) to green (positive)
+  getGradientColor(value, min, max) {
+    // Handle edge case where all values are the same
+    if (min === max) {
+      return '#ffffff';
+    }
+
+    let r, g, b;
+
+    if (value >= 0) {
+      // Positive values: white to green
+      // Normalize to 0-1 range (0 = white, 1 = green)
+      const ratio = max > 0 ? value / max : 0;
+      r = Math.round(255 - (255 - 34) * ratio); // 255 -> 34 (green)
+      g = Math.round(255 - (255 - 139) * ratio); // 255 -> 139 (green)
+      b = Math.round(255 - (255 - 34) * ratio); // 255 -> 34 (green)
+    } else {
+      // Negative values: white to red
+      // Normalize to 0-1 range (0 = white, 1 = red)
+      const ratio = min < 0 ? value / min : 0;
+      r = Math.round(255 - (255 - 220) * ratio); // 255 -> 220 (red)
+      g = Math.round(255 - (255 - 53) * ratio); // 255 -> 53 (red)
+      b = Math.round(255 - (255 - 69) * ratio); // 255 -> 69 (red)
+    }
+
+    return `rgb(${r}, ${g}, ${b})`;
   }
 
   // Populate conference filter with unique values
@@ -617,6 +726,31 @@ class TableController {
     }
   }
 
+  // Parse bid type value for sorting
+  // Returns a numeric value where: A = 0, C-01 = 1, C-02 = 2, etc.
+  // Non-bid values get a high number to sort last
+  parseBidTypeValue(value) {
+    if (typeof value !== 'string') {
+      return 9999;
+    }
+
+    const trimmed = value.trim();
+
+    // "A" (automatic qualifier) sorts first
+    if (trimmed === 'A') {
+      return 0;
+    }
+
+    // C-XX values sort by their numeric portion
+    const cMatch = trimmed.match(/^C-(\d{2})$/);
+    if (cMatch) {
+      return parseInt(cMatch[1], 10);
+    }
+
+    // Everything else sorts last
+    return 9999;
+  }
+
   // Parse a numeric value, handling accounting notation where parentheses denote negatives
   // e.g., "(5.2)" becomes -5.2, "5.2" stays 5.2
   parseNumericValue(value) {
@@ -666,20 +800,32 @@ class TableController {
         header.setAttribute('data-sort', 'desc');
       }
 
+      // Check if sorting Bid Type column
+      const headerText = header.textContent.replace(/[↕↑↓]/g, '').trim();
+      const isBidTypeColumn = headerText.toLowerCase() === 'bid type';
+
       // Sort rows
       rows.sort((a, b) => {
         const aVal = a.cells[columnIndex].textContent.trim();
         const bVal = b.cells[columnIndex].textContent.trim();
 
-        // Try to parse as numbers, handling parentheses as negative values
-        const aNum = this.parseNumericValue(aVal);
-        const bNum = this.parseNumericValue(bVal);
-
         let result;
-        if (!isNaN(aNum) && !isNaN(bNum)) {
-          result = aNum - bNum;
+
+        // Use special sorting for Bid Type column
+        if (isBidTypeColumn) {
+          const aBid = this.parseBidTypeValue(aVal);
+          const bBid = this.parseBidTypeValue(bVal);
+          result = aBid - bBid;
         } else {
-          result = aVal.localeCompare(bVal);
+          // Try to parse as numbers, handling parentheses as negative values
+          const aNum = this.parseNumericValue(aVal);
+          const bNum = this.parseNumericValue(bVal);
+
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            result = aNum - bNum;
+          } else {
+            result = aVal.localeCompare(bVal);
+          }
         }
 
         return isAscending ? result : -result;
