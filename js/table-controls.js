@@ -458,9 +458,10 @@ class TableController {
     // Columns to apply gradient to, with their gradient direction
     // 'standard' = for columns with positive/negative values, pivots on 0 (green for positive, red for negative)
     // 'range' = for all-positive columns, green for max, red for min (higher is better)
+    // 'inverted' = for all-positive columns, red for max, green for min (lower is better)
     const gradientColumns = {
       'value diff': 'standard',
-      'rem games < 50.00 npi': 'range',
+      'rem games < 50.00 npi': 'inverted',
       'lowest counting win': 'range',
     };
 
@@ -802,6 +803,11 @@ class TableController {
     }
 
     const trimmed = value.trim();
+
+    // Skip error values like #DIV/0!, #N/A, #VALUE!, etc.
+    if (trimmed.startsWith('#') || trimmed === '' || trimmed === '-') {
+      return NaN;
+    }
 
     // Check for accounting notation: (number) means negative
     // Match pattern like "(123.45)" or "(123)"
