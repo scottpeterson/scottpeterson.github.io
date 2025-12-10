@@ -3,11 +3,11 @@
     "Conf": "WIAC",
     "Rank": 1,
     "Region": 9,
-    "Win": 49,
+    "Win": 50,
     "Loss": 11,
-    "Win%": "81.7%",
-    "Wins": 146.98,
-    "STAT": 4.84
+    "Win%": "82.0%",
+    "Wins": 146.58,
+    "STAT": 4.88
   },
   {
     "Conf": "SCIAC",
@@ -16,8 +16,8 @@
     "Win": 20,
     "Loss": 13,
     "Win%": "60.6%",
-    "Wins": 148.3,
-    "STAT": 3.39
+    "Wins": 148.95,
+    "STAT": 3.4
   },
   {
     "Conf": "UAA",
@@ -26,8 +26,8 @@
     "Win": 47,
     "Loss": 15,
     "Win%": "75.8%",
-    "Wins": 190.32,
-    "STAT": 3.37
+    "Wins": 189.6,
+    "STAT": 3.39
   },
   {
     "Conf": "NCAC",
@@ -37,17 +37,17 @@
     "Loss": 17,
     "Win%": "66.7%",
     "Wins": 171.03,
-    "STAT": 3.23
+    "STAT": 3.25
   },
   {
     "Conf": "NESCAC",
     "Rank": 5,
     "Region": 1,
-    "Win": 58,
+    "Win": 59,
     "Loss": 19,
-    "Win%": "75.3%",
-    "Wins": 212.29,
-    "STAT": 2.79
+    "Win%": "75.6%",
+    "Wins": 212.22,
+    "STAT": 2.81
   },
   {
     "Conf": "MIAC",
@@ -56,8 +56,8 @@
     "Win": 39,
     "Loss": 17,
     "Win%": "69.6%",
-    "Wins": 209.26,
-    "STAT": 2.48
+    "Wins": 208.62,
+    "STAT": 2.5
   },
   {
     "Conf": "MIAA",
@@ -66,28 +66,28 @@
     "Win": 26,
     "Loss": 22,
     "Win%": "54.2%",
-    "Wins": 172.92,
+    "Wins": 173.5,
     "STAT": 2.35
   },
   {
-    "Conf": "ASC",
-    "Rank": 8,
-    "Region": 10,
-    "Win": 24,
-    "Loss": 13,
-    "Win%": "64.9%",
-    "Wins": 207.13,
-    "STAT": 2.22
-  },
-  {
     "Conf": "NWC",
-    "Rank": 9,
+    "Rank": 8,
     "Region": 10,
     "Win": 16,
     "Loss": 18,
     "Win%": "47.1%",
-    "Wins": 161.06,
-    "STAT": 2.17
+    "Wins": 161.5,
+    "STAT": 2.18
+  },
+  {
+    "Conf": "ASC",
+    "Rank": 9,
+    "Region": 10,
+    "Win": 25,
+    "Loss": 13,
+    "Win%": "65.8%",
+    "Wins": 211.88,
+    "STAT": 2.16
   },
   {
     "Conf": "OAC",
@@ -96,18 +96,18 @@
     "Win": 30,
     "Loss": 28,
     "Win%": "51.7%",
-    "Wins": 182.63,
+    "Wins": 182.87,
     "STAT": 1.95
   },
   {
     "Conf": "CCIW",
     "Rank": 11,
     "Region": 8,
-    "Win": 28,
+    "Win": 29,
     "Loss": 25,
-    "Win%": "52.8%",
-    "Wins": 190.18,
-    "STAT": 1.83
+    "Win%": "53.7%",
+    "Wins": 189.83,
+    "STAT": 1.91
   },
   {
     "Conf": "ODAC",
@@ -116,8 +116,8 @@
     "Win": 44,
     "Loss": 14,
     "Win%": "75.9%",
-    "Wins": 267.61,
-    "STAT": 1.45
+    "Wins": 266.86,
+    "STAT": 1.46
   },
   {
     "Conf": "LAND",
@@ -126,68 +126,68 @@
     "Win": 24,
     "Loss": 13,
     "Win%": "64.9%",
-    "Wins": 243.54,
-    "STAT": 1.31
-  },
-  {
-    "Conf": "SCAC",
-    "Rank": 14,
-    "Region": 10,
-    "Win": 24,
-    "Loss": 40,
-    "Win%": "37.5%",
-    "Wins": 192.54,
-    "STAT": 0.75
+    "Wins": 242.21,
+    "STAT": 1.34
   },
   {
     "Conf": "NEWMAC",
-    "Rank": 15,
+    "Rank": 14,
     "Region": 2,
-    "Win": 51,
+    "Win": 54,
     "Loss": 47,
-    "Win%": "52.0%",
-    "Wins": 233.47,
-    "STAT": 0.7
+    "Win%": "53.5%",
+    "Wins": 236.24,
+    "STAT": 0.73
   },
   {
     "Conf": "HCAC",
-    "Rank": 16,
+    "Rank": 15,
     "Region": 8,
     "Win": 24,
     "Loss": 25,
     "Win%": "49.0%",
-    "Wins": 225.42,
-    "STAT": 0.7
+    "Wins": 225,
+    "STAT": 0.71
+  },
+  {
+    "Conf": "SCAC",
+    "Rank": 16,
+    "Region": 10,
+    "Win": 25,
+    "Loss": 41,
+    "Win%": "37.9%",
+    "Wins": 197.4,
+    "STAT": 0.66
   },
   {
     "Conf": "CC",
     "Rank": 17,
     "Region": 5,
-    "Win": 46,
+    "Win": 48,
     "Loss": 28,
-    "Win%": "62.2%",
-    "Wins": 274.87,
-    "STAT": 0.35
-  },
-  {
-    "Conf": "ARC",
-    "Rank": 18,
-    "Region": 9,
-    "Win": 22,
-    "Loss": 24,
-    "Win%": "47.8%",
-    "Wins": 238.09,
-    "STAT": 0.31
+    "Win%": "63.2%",
+    "Wins": 272.63,
+    "STAT": 0.46
   },
   {
     "Conf": "LEC",
-    "Rank": 19,
+    "Rank": 18,
     "Region": 2,
     "Win": 35,
     "Loss": 20,
     "Win%": "63.6%",
-    "Wins": 281.49,
-    "STAT": 0.29
+    "Wins": 281.83,
+    "STAT": 0.27
+  },
+  {
+    "Conf": "ARC",
+    "Rank": 19,
+    "Region": 9,
+    "Win": 22,
+    "Loss": 24,
+    "Win%": "47.8%",
+    "Wins": 240.09,
+    "STAT": 0.26
   },
   {
     "Conf": "SAA",
@@ -196,18 +196,18 @@
     "Win": 36,
     "Loss": 22,
     "Win%": "62.1%",
-    "Wins": 278.92,
-    "STAT": 0.25
+    "Wins": 279.17,
+    "STAT": 0.23
   },
   {
     "Conf": "CNE",
     "Rank": 21,
     "Region": 2,
-    "Win": 29,
-    "Loss": 39,
-    "Win%": "42.6%",
-    "Wins": 226.69,
-    "STAT": 0.24
+    "Win": 31,
+    "Loss": 41,
+    "Win%": "43.1%",
+    "Wins": 230,
+    "STAT": 0.19
   },
   {
     "Conf": "LL",
@@ -216,8 +216,8 @@
     "Win": 25,
     "Loss": 27,
     "Win%": "48.1%",
-    "Wins": 247.28,
-    "STAT": 0.09
+    "Wins": 247.68,
+    "STAT": 0.08
   },
   {
     "Conf": "C2C",
@@ -226,18 +226,18 @@
     "Win": 18,
     "Loss": 27,
     "Win%": "40.0%",
-    "Wins": 228,
-    "STAT": 0.03
+    "Wins": 228.78,
+    "STAT": 0.02
   },
   {
-    "Conf": "SUNYAC",
+    "Conf": "MACF",
     "Rank": 24,
-    "Region": 3,
-    "Win": 27,
+    "Region": 4,
+    "Win": 33,
     "Loss": 24,
-    "Win%": "52.9%",
-    "Wins": 266.26,
-    "STAT": "(0.05)"
+    "Win%": "57.9%",
+    "Wins": 278.18,
+    "STAT": "(0.03)"
   },
   {
     "Conf": "NACC",
@@ -246,37 +246,37 @@
     "Win": 23,
     "Loss": 39,
     "Win%": "37.1%",
-    "Wins": 223.61,
-    "STAT": "(0.05)"
+    "Wins": 224.61,
+    "STAT": "(0.07)"
   },
   {
-    "Conf": "MACF",
+    "Conf": "SUNYAC",
     "Rank": 26,
-    "Region": 4,
-    "Win": 32,
-    "Loss": 23,
-    "Win%": "58.2%",
-    "Wins": 281.75,
-    "STAT": "(0.09)"
-  },
-  {
-    "Conf": "MWC",
-    "Rank": 27,
-    "Region": 9,
-    "Win": 26,
-    "Loss": 26,
-    "Win%": "50.0%",
-    "Wins": 264.31,
-    "STAT": "(0.20)"
+    "Region": 3,
+    "Win": 27,
+    "Loss": 25,
+    "Win%": "51.9%",
+    "Wins": 265.41,
+    "STAT": "(0.10)"
   },
   {
     "Conf": "PAC",
-    "Rank": 28,
+    "Rank": 27,
     "Region": 7,
-    "Win": 26,
+    "Win": 28,
     "Loss": 36,
-    "Win%": "41.9%",
-    "Wins": 251.23,
+    "Win%": "43.8%",
+    "Wins": 250.29,
+    "STAT": "(0.27)"
+  },
+  {
+    "Conf": "MWC",
+    "Rank": 28,
+    "Region": 9,
+    "Win": 26,
+    "Loss": 29,
+    "Win%": "47.3%",
+    "Wins": 265.04,
     "STAT": "(0.41)"
   },
   {
@@ -284,30 +284,30 @@
     "Rank": 29,
     "Region": 5,
     "Win": 27,
-    "Loss": 27,
-    "Win%": "50.0%",
-    "Wins": 293.07,
-    "STAT": "(0.91)"
+    "Loss": 28,
+    "Win%": "49.1%",
+    "Wins": 293,
+    "STAT": "(0.99)"
+  },
+  {
+    "Conf": "E8",
+    "Rank": 30,
+    "Region": 3,
+    "Win": 46,
+    "Loss": 36,
+    "Win%": "56.1%",
+    "Wins": 311.8,
+    "STAT": "(0.99)"
   },
   {
     "Conf": "CCS",
-    "Rank": 30,
+    "Rank": 31,
     "Region": 6,
     "Win": 15,
     "Loss": 27,
     "Win%": "35.7%",
-    "Wins": 258.2,
+    "Wins": 258,
     "STAT": "(1.00)"
-  },
-  {
-    "Conf": "E8",
-    "Rank": 31,
-    "Region": 3,
-    "Win": 45,
-    "Loss": 36,
-    "Win%": "55.6%",
-    "Wins": 313.31,
-    "STAT": "(1.05)"
   },
   {
     "Conf": "NJAC",
@@ -316,28 +316,28 @@
     "Win": 23,
     "Loss": 22,
     "Win%": "51.1%",
-    "Wins": 320.04,
-    "STAT": "(1.51)"
-  },
-  {
-    "Conf": "AEC",
-    "Rank": 33,
-    "Region": 5,
-    "Win": 22,
-    "Loss": 34,
-    "Win%": "39.3%",
-    "Wins": 319.95,
-    "STAT": "(2.30)"
+    "Wins": 319.61,
+    "STAT": "(1.52)"
   },
   {
     "Conf": "UMAC",
-    "Rank": 34,
+    "Rank": 33,
     "Region": 9,
-    "Win": 13,
+    "Win": 14,
     "Loss": 41,
-    "Win%": "24.1%",
-    "Wins": 283.69,
-    "STAT": "(2.42)"
+    "Win%": "25.5%",
+    "Wins": 280.14,
+    "STAT": "(2.24)"
+  },
+  {
+    "Conf": "AEC",
+    "Rank": 34,
+    "Region": 5,
+    "Win": 22,
+    "Loss": 35,
+    "Win%": "38.6%",
+    "Wins": 318.32,
+    "STAT": "(2.32)"
   },
   {
     "Conf": "SKY",
@@ -346,38 +346,38 @@
     "Win": 19,
     "Loss": 16,
     "Win%": "54.3%",
-    "Wins": 366.79,
-    "STAT": "(2.46)"
+    "Wins": 366.58,
+    "STAT": "(2.49)"
   },
   {
     "Conf": "GNAC",
     "Rank": 36,
     "Region": 1,
-    "Win": 39,
-    "Loss": 67,
-    "Win%": "36.8%",
-    "Wins": 319.97,
-    "STAT": "(2.47)"
-  },
-  {
-    "Conf": "MASCAC",
-    "Rank": 37,
-    "Region": 1,
-    "Win": 20,
-    "Loss": 33,
-    "Win%": "37.7%",
-    "Wins": 327.15,
-    "STAT": "(2.58)"
+    "Win": 40,
+    "Loss": 68,
+    "Win%": "37.0%",
+    "Wins": 320.85,
+    "STAT": "(2.49)"
   },
   {
     "Conf": "SLIAC",
-    "Rank": 38,
+    "Rank": 37,
     "Region": 8,
     "Win": 11,
-    "Loss": 38,
-    "Win%": "22.4%",
-    "Wins": 289.73,
-    "STAT": "(2.68)"
+    "Loss": 39,
+    "Win%": "22.0%",
+    "Wins": 290.09,
+    "STAT": "(2.72)"
+  },
+  {
+    "Conf": "MASCAC",
+    "Rank": 38,
+    "Region": 1,
+    "Win": 20,
+    "Loss": 36,
+    "Win%": "35.7%",
+    "Wins": 327.5,
+    "STAT": "(2.74)"
   },
   {
     "Conf": "AMCC",
@@ -386,47 +386,47 @@
     "Win": 12,
     "Loss": 34,
     "Win%": "26.1%",
-    "Wins": 304.08,
-    "STAT": "(2.79)"
+    "Wins": 304,
+    "STAT": "(2.80)"
   },
   {
     "Conf": "CUNYAC",
     "Rank": 40,
     "Region": 4,
     "Win": 21,
-    "Loss": 36,
-    "Win%": "36.8%",
-    "Wins": 354.19,
-    "STAT": "(3.31)"
+    "Loss": 37,
+    "Win%": "36.2%",
+    "Wins": 353.33,
+    "STAT": "(3.36)"
+  },
+  {
+    "Conf": "UEC",
+    "Rank": 41,
+    "Region": 4,
+    "Win": 20,
+    "Loss": 54,
+    "Win%": "27.0%",
+    "Wins": 331.55,
+    "STAT": "(3.43)"
   },
   {
     "Conf": "NAC",
-    "Rank": 41,
+    "Rank": 42,
     "Region": 1,
-    "Win": 11,
-    "Loss": 19,
-    "Win%": "36.7%",
-    "Wins": 360,
-    "STAT": "(3.47)"
+    "Win": 12,
+    "Loss": 20,
+    "Win%": "37.5%",
+    "Wins": 365.5,
+    "STAT": "(3.58)"
   },
   {
     "Conf": "USAC",
-    "Rank": 42,
+    "Rank": 43,
     "Region": 6,
     "Win": 10,
     "Loss": 24,
     "Win%": "29.4%",
-    "Wins": 347.8,
-    "STAT": "(3.65)"
-  },
-  {
-    "Conf": "UEC",
-    "Rank": 43,
-    "Region": 4,
-    "Win": 19,
-    "Loss": 53,
-    "Win%": "26.4%",
-    "Wins": 340.95,
-    "STAT": "(3.68)"
+    "Wins": 347.3,
+    "STAT": "(3.66)"
   }
 ]
