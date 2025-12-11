@@ -1,0 +1,505 @@
+/**
+ * Command Palette (CMD+K) Styles
+ *
+ * A Superhuman-inspired command palette for quick navigation and team search.
+ * Feature-flagged via URL parameter: ?cmdK=true
+ *
+ * Structure:
+ * - .command-palette-overlay: Dark backdrop
+ * - .command-palette: Main modal container
+ * - .command-palette-input: Search input
+ * - .command-palette-results: Action list
+ * - .command-palette-item: Individual action items
+ * - .team-summary-modal: Team data aggregation modal
+ */
+
+/* ==========================================================================
+   Command Palette Overlay & Container
+   ========================================================================== */
+
+.command-palette-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 60%);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  /* Ultra-fast 30ms transition for snappy feel */
+  transition: opacity 30ms ease-out, visibility 30ms ease-out;
+  /* Remove backdrop-filter for speed - it's expensive */
+}
+
+.command-palette-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.command-palette {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 560px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 50%),
+    0 0 0 1px rgb(255 255 255 / 10%);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  /* Ultra-fast 30ms transition - no scale transform for speed */
+  transition: opacity 30ms ease-out, visibility 30ms ease-out;
+  overflow: hidden;
+  /* GPU acceleration hints */
+  will-change: opacity, visibility;
+  contain: layout style;
+}
+
+.command-palette.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   Command Palette Header & Input
+   ========================================================================== */
+
+.command-palette-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.command-palette-header-text {
+  flex: 1;
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Team search input that appears in the results area */
+.command-palette-team-search-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  margin-bottom: 8px;
+}
+
+.command-palette-team-search-header .command-palette-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.team-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  font-family: inherit;
+}
+
+.team-search-input::placeholder {
+  color: #666;
+}
+
+.command-palette-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #999;
+  font-size: 12px;
+  margin-left: 12px;
+}
+
+.command-palette-shortcut kbd {
+  background: rgb(255 255 255 / 15%);
+  color: #ccc;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid rgb(255 255 255 / 20%);
+}
+
+/* ==========================================================================
+   Command Palette Results List
+   ========================================================================== */
+
+.command-palette-results {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+/* Custom scrollbar for results */
+.command-palette-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.command-palette-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.command-palette-results::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 20%);
+  border-radius: 3px;
+}
+
+.command-palette-results::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 255 255 / 30%);
+}
+
+/* Section headers (Navigation, Actions) */
+.command-palette-section {
+  padding: 8px 20px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Individual result items */
+.command-palette-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.command-palette-item:hover,
+.command-palette-item.selected {
+  background: rgb(255 255 255 / 8%);
+}
+
+/* Flash animation when keyboard shortcut is triggered */
+.command-palette-item.flash {
+  animation: shortcut-flash 0.3s ease-out;
+}
+
+@keyframes shortcut-flash {
+  0% {
+    background: rgb(52 152 219 / 40%);
+  }
+  100% {
+    background: rgb(255 255 255 / 8%);
+  }
+}
+
+.command-palette-item-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 14px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.command-palette-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.command-palette-item-title {
+  font-size: 14px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.command-palette-item-description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.command-palette-item-shortcut {
+  font-size: 12px;
+  color: #999;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.command-palette-item-shortcut kbd {
+  background: rgb(255 255 255 / 15%);
+  color: #ccc;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid rgb(255 255 255 / 20%);
+}
+
+/* No results message */
+.command-palette-empty {
+  padding: 24px 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Team Summary Modal
+   ========================================================================== */
+
+.team-summary-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 50%),
+    0 0 0 1px rgb(255 255 255 / 10%);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-summary-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.team-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.team-summary-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.team-summary-close {
+  width: 32px;
+  height: 32px;
+  background: rgb(255 255 255 / 8%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.team-summary-close:hover {
+  background: rgb(255 255 255 / 15%);
+  color: #fff;
+}
+
+.team-summary-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+/* Custom scrollbar for team summary */
+.team-summary-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.team-summary-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.team-summary-content::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 20%);
+  border-radius: 3px;
+}
+
+/* Team Summary Sections */
+.team-summary-section {
+  margin-bottom: 24px;
+}
+
+.team-summary-section:last-child {
+  margin-bottom: 0;
+}
+
+.team-summary-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.team-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* Compact grid for sections with few items (e.g., Publishing Status) */
+/* Uses the same 4-column grid but items stay on the left */
+.team-summary-grid.compact {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-summary-stat {
+  background: rgb(255 255 255 / 5%);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.team-summary-stat-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.team-summary-stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+/* Loading state */
+.team-summary-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  color: #888;
+}
+
+.team-summary-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgb(255 255 255 / 10%);
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Not found state */
+.team-summary-not-found {
+  text-align: center;
+  padding: 48px 24px;
+  color: #888;
+}
+
+.team-summary-not-found-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .command-palette {
+    top: 10%;
+    width: 95%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .command-palette-header {
+    padding: 14px 16px;
+  }
+
+  .command-palette-item {
+    padding: 10px 16px;
+  }
+
+  .command-palette-shortcut {
+    display: none;
+  }
+
+  .command-palette-item-shortcut {
+    display: none;
+  }
+
+  .team-summary-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .team-summary-header {
+    padding: 16px;
+  }
+
+  .team-summary-content {
+    padding: 16px;
+  }
+
+  .team-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Focus Management & Accessibility
+   ========================================================================== */
+
+.command-palette-item:focus {
+  outline: none;
+  background: rgb(255 255 255 / 8%);
+}
+
+.command-palette-item:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: -2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .command-palette-overlay,
+  .command-palette,
+  .team-summary-modal {
+    transition: none;
+  }
+
+  .team-summary-loading-spinner {
+    animation: none;
+  }
+}

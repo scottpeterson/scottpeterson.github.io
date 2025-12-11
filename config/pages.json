@@ -1,7 +1,8 @@
 {
   "_featureFlags": {
     "premium": true,
-    "premiumSalesEnabled": true
+    "premiumSalesEnabled": true,
+    "commandPalette": false
   },
   "index": {
     "title": "Home",

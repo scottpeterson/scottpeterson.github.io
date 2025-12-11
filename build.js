@@ -275,6 +275,21 @@ class TemplateEngine {
       );
     }
 
+    // Handle COMMAND_PALETTE conditional
+    // Always include command palette assets - the feature flag check is done in JS
+    // This allows enabling via URL parameter without rebuilding
+    if (data.commandPaletteEnabled) {
+      result = result.replace(
+        /{{#COMMAND_PALETTE}}([\s\S]*?){{\/COMMAND_PALETTE}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#COMMAND_PALETTE}}([\s\S]*?){{\/COMMAND_PALETTE}}/g,
+        ''
+      );
+    }
+
     return result;
   }
 
@@ -381,6 +396,11 @@ class TemplateEngine {
       const showBuyButton =
         premiumEnabled && !pageConfig.isPremiumPage && !pageConfig.isSimplePage;
 
+      // Command palette is always included in the build
+      // The actual feature flag check is done client-side via URL parameter
+      // This allows testing without rebuilding
+      const commandPaletteEnabled = true;
+
       const fullPage = this.renderTemplate(this.templates.base, {
         title: pageConfig.title,
         heading: pageConfig.heading,
@@ -390,6 +410,7 @@ class TemplateEngine {
         legend: pageConfig.legend,
         isPremiumPage: pageConfig.isPremiumPage || false,
         showBuyButton: showBuyButton,
+        commandPaletteEnabled: commandPaletteEnabled,
         navItems: navItems,
       });
 
