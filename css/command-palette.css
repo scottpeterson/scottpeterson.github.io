@@ -25,7 +25,8 @@
   opacity: 0;
   visibility: hidden;
   /* Ultra-fast 30ms transition for snappy feel */
-  transition: opacity 30ms ease-out, visibility 30ms ease-out;
+  transition: opacity 30ms ease-out,
+    visibility 30ms ease-out;
   /* Remove backdrop-filter for speed - it's expensive */
 }
 
@@ -49,7 +50,8 @@
   opacity: 0;
   visibility: hidden;
   /* Ultra-fast 30ms transition - no scale transform for speed */
-  transition: opacity 30ms ease-out, visibility 30ms ease-out;
+  transition: opacity 30ms ease-out,
+    visibility 30ms ease-out;
   overflow: hidden;
   /* GPU acceleration hints */
   will-change: opacity, visibility;
@@ -271,7 +273,9 @@
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -309,7 +313,8 @@
   align-items: center;
   justify-content: center;
   color: #888;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease,
+    color 0.15s ease;
 }
 
 .team-summary-close:hover {
@@ -390,6 +395,109 @@
   font-weight: 600;
   color: #fff;
   text-align: center;
+}
+
+/* Bid highlight animations - 3 pulses then return to normal */
+/* Green: A or C-01 through C-21 (tournament bound) */
+.team-summary-stat.bid-highlight.bid-green {
+  animation: bid-pulse-green 0.8s ease-in-out 3;
+}
+
+.team-summary-stat.bid-highlight.bid-green .team-summary-stat-value {
+  color: #2ecc71;
+  animation: bid-text-green 0.8s ease-in-out 3;
+}
+
+@keyframes bid-pulse-green {
+  0%,
+  100% {
+    background: rgb(255 255 255 / 5%);
+    box-shadow: none;
+    border: none;
+  }
+  50% {
+    background: rgb(46 204 113 / 25%);
+    box-shadow: 0 0 15px 3px rgb(46 204 113 / 30%);
+    border: 1px solid rgb(46 204 113 / 40%);
+  }
+}
+
+@keyframes bid-text-green {
+  0%,
+  100% {
+    color: #fff;
+  }
+  50% {
+    color: #2ecc71;
+  }
+}
+
+/* Orange: C-22 through C-36 (bubble) */
+.team-summary-stat.bid-highlight.bid-orange {
+  animation: bid-pulse-orange 0.8s ease-in-out 3;
+}
+
+.team-summary-stat.bid-highlight.bid-orange .team-summary-stat-value {
+  color: #f39c12;
+  animation: bid-text-orange 0.8s ease-in-out 3;
+}
+
+@keyframes bid-pulse-orange {
+  0%,
+  100% {
+    background: rgb(255 255 255 / 5%);
+    box-shadow: none;
+    border: none;
+  }
+  50% {
+    background: rgb(243 156 18 / 25%);
+    box-shadow: 0 0 15px 3px rgb(243 156 18 / 30%);
+    border: 1px solid rgb(243 156 18 / 40%);
+  }
+}
+
+@keyframes bid-text-orange {
+  0%,
+  100% {
+    color: #fff;
+  }
+  50% {
+    color: #f39c12;
+  }
+}
+
+/* Red: All other values (outside looking in) */
+.team-summary-stat.bid-highlight.bid-red {
+  animation: bid-pulse-red 0.8s ease-in-out 3;
+}
+
+.team-summary-stat.bid-highlight.bid-red .team-summary-stat-value {
+  color: #e74c3c;
+  animation: bid-text-red 0.8s ease-in-out 3;
+}
+
+@keyframes bid-pulse-red {
+  0%,
+  100% {
+    background: rgb(255 255 255 / 5%);
+    box-shadow: none;
+    border: none;
+  }
+  50% {
+    background: rgb(231 76 60 / 25%);
+    box-shadow: 0 0 15px 3px rgb(231 76 60 / 30%);
+    border: 1px solid rgb(231 76 60 / 40%);
+  }
+}
+
+@keyframes bid-text-red {
+  0%,
+  100% {
+    color: #fff;
+  }
+  50% {
+    color: #e74c3c;
+  }
 }
 
 /* Loading state */

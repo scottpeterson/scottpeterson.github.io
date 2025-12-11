@@ -33,6 +33,11 @@
         { key: 'NPI Value', label: 'NPI Value', decimals: 3 },
         { key: 'Bid Type', label: 'Bid Type' },
         { key: 'Qual Wins', label: 'Qualifying Wins' },
+        {
+          key: 'Qual Losses',
+          label: 'Qualifying Losses',
+          computed: row => (row['Qual Games'] ?? 0) - (row['Qual Wins'] ?? 0),
+        },
         { key: 'QWB', label: 'QWB', decimals: 2 },
         {
           key: 'Lowest Counting Win',
@@ -54,7 +59,7 @@
       ],
     },
     currentSeasonRankings: {
-      title: 'Current Season',
+      title: 'Current Season Results Model',
       fields: [
         { key: 'Rank', label: 'Current Rank' },
         { key: 'Value of Results', label: 'Results Value', decimals: 2 },
@@ -262,7 +267,10 @@
 
         const stats = [];
         for (const field of config.fields) {
-          const value = teamRow[field.key];
+          // Support computed fields (calculated from other fields in the row)
+          const value = field.computed
+            ? field.computed(teamRow)
+            : teamRow[field.key];
           if (value !== undefined && value !== null && value !== '') {
             stats.push({
               label: field.label,
@@ -298,6 +306,31 @@
       return Math.round(value).toString();
     }
     return String(value);
+  }
+
+  /**
+   * Gets the bid status tier for highlighting.
+   * Returns: 'green' for A or C-01 through C-21 (tournament bound)
+   *          'orange' for C-22 through C-36 (bubble)
+   *          'red' for all other values (outside looking in)
+   */
+  function getBidTier(value) {
+    if (value === 'A') {
+      return 'green';
+    }
+
+    const match = String(value).match(/^C-(\d{2})$/);
+    if (match) {
+      const num = parseInt(match[1], 10);
+      if (num >= 1 && num <= 21) {
+        return 'green';
+      }
+      if (num >= 22 && num <= 36) {
+        return 'orange';
+      }
+    }
+
+    return 'red';
   }
 
   // ==========================================================================
@@ -431,14 +464,20 @@
           <h3 class="team-summary-section-title">${section.title}</h3>
           <div class="${gridClass}">
             ${section.stats
-              .map(
-                stat => `
-              <div class="team-summary-stat">
+              .map(stat => {
+                // Check if this is a Bid Type cell - apply tier-based highlighting
+                let statClass = 'team-summary-stat';
+                if (stat.label === 'Bid Type') {
+                  const tier = getBidTier(stat.value);
+                  statClass = `team-summary-stat bid-highlight bid-${tier}`;
+                }
+                return `
+              <div class="${statClass}">
                 <div class="team-summary-stat-label">${stat.label}</div>
                 <div class="team-summary-stat-value">${stat.value}</div>
               </div>
-            `
-              )
+            `;
+              })
               .join('')}
           </div>
         </div>
