@@ -283,15 +283,21 @@
 
   /**
    * Renders a single item in the results list.
+   * @param {Object} item - The item to render
+   * @param {number} index - The item's index
+   * @param {boolean} showShortcut - Whether to show keyboard shortcuts (default: true)
    */
-  function renderItem(item, index) {
+  function renderItem(item, index, showShortcut = true) {
     const isSelected = index === selectedIndex;
     const icon = ICONS[item.icon] || ICONS.navigate;
     const description = item.description
       ? `<div class="command-palette-item-description">${item.description}</div>`
       : '';
     // Use custom shortcut if defined, otherwise use numeric shortcut
-    const shortcutKey = item.shortcut || getShortcutKey(index);
+    // Only show shortcuts if showShortcut is true
+    const shortcutKey = showShortcut
+      ? item.shortcut || getShortcutKey(index)
+      : null;
     const shortcutHtml = shortcutKey
       ? `<span class="command-palette-item-shortcut"><kbd>${shortcutKey}</kbd></span>`
       : '';
@@ -377,7 +383,7 @@
 
     let html = '<div class="command-palette-section">Teams</div>';
     filteredItems.forEach((item, index) => {
-      html += renderItem(item, index);
+      html += renderItem(item, index, false); // Hide shortcuts in team search results
     });
 
     resultsContainer.innerHTML = html;
