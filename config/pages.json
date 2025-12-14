@@ -124,7 +124,7 @@
   "npi": {
     "title": "NPI",
     "heading": "NPI",
-    "description": "Daily NCAA Power Index (NPI) values, rankings, and analysis for D3 WBB. <br> This data is for the 2024-25 season and will be updated daily once the 2025-26 season starts until the end of the season.",
+    "description": "Daily NCAA Power Index (NPI) values, rankings, and analysis for D3 WBB.",
     "sectionTitle": "NPI Analysis",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -190,7 +190,7 @@
   "season_simulations": {
     "title": "Season Simulations",
     "heading": "Season Simulations",
-    "description": "D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates. <br> This data is for the 2025-26 pre-season.",
+    "description": "D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates.",
     "sectionTitle": "Season Simulations",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -259,7 +259,7 @@
   "current_season_rankings": {
     "title": "Current Season Rankings",
     "heading": "Current Season Rankings",
-    "description": "Ranking of teams based on this season's results. <br> This data is not updated for the 2025-26 season yet.",
+    "description": "Ranking of teams based on this season's results.",
     "sectionTitle": "Current Season Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -307,7 +307,7 @@
   "composite_rankings": {
     "title": "Composite Rankings",
     "heading": "Composite Rankings",
-    "description": "Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results. <br> This data is not updated for the 2025-26 season yet.",
+    "description": "Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results.",
     "sectionTitle": "Composite Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -355,7 +355,7 @@
   "conference_rankings": {
     "title": "Conference Rankings",
     "heading": "Conference Rankings",
-    "description": "Ranking of Conferences based off non-conference results. <br> This data is not updated for the 2025-26 season yet.",
+    "description": "Ranking of Conferences based off non-conference results.",
     "sectionTitle": "Conference Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for conference...",
