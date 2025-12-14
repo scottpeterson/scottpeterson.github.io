@@ -504,11 +504,6 @@
     // Get and render team data
     const teamData = getTeamData(teamName);
     renderTeamData(teamData);
-
-    // Easter egg: launch confetti for any team (can add team-specific logic later)
-    if (window.confetti) {
-      window.confetti.launch();
-    }
   }
 
   // ==========================================================================
