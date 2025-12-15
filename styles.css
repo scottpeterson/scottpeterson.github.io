@@ -402,8 +402,7 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -578,8 +577,7 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -643,8 +641,7 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1051,8 +1048,7 @@ footer {
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -1198,6 +1194,71 @@ footer {
   background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
   box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
   transform: translateY(-2px);
+}
+
+/* Premium Audience Section */
+.premium-audience {
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.premium-audience h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.audience-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.audience-card h3 {
+  color: #c75b12;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.audience-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Enhanced Sample Section */
+.premium-sample h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sample-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Urgency Note */
+.urgency-note {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #fff8e6;
+  border-radius: 4px;
+  border-left: 3px solid #f0a500;
 }
 
 .premium-faq {
