@@ -1554,6 +1554,85 @@ footer {
   box-shadow: 0 6px 20px rgb(0 0 0 / 30%);
 }
 
+/* Fire/Flame Text Effect for Premium Nav Link */
+@keyframes fire-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nav-links a[href='premium.html'],
+.nav-links a[href='/premium.html'] {
+  background: linear-gradient(
+    90deg,
+    #ff4500 0%,
+    /* Orange-red */ #ff8c00 15%,
+    /* Dark orange */ #ffd700 30%,
+    /* Gold/yellow */ #ff8c00 45%,
+    /* Dark orange */ #ff4500 60%,
+    /* Orange-red */ #dc143c 75%,
+    /* Crimson red */ #ff4500 90%,
+    /* Orange-red */ #ff8c00 100% /* Dark orange */
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fire-flow 5s ease-in-out infinite;
+  font-weight: 600;
+}
+
+/* Ensure the fire effect persists on hover - just add glow */
+.nav-links a[href='premium.html']:hover,
+.nav-links a[href='/premium.html']:hover {
+  background: linear-gradient(
+    90deg,
+    #ff4500 0%,
+    #ff8c00 15%,
+    #ffd700 30%,
+    #ff8c00 45%,
+    #ff4500 60%,
+    #dc143c 75%,
+    #ff4500 90%,
+    #ff8c00 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fire-flow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255, 100, 0, 0.5);
+  box-shadow: none;
+}
+
+/* Active state maintains fire effect */
+.nav-links a[href='premium.html'].active,
+.nav-links a[href='/premium.html'].active {
+  background: linear-gradient(
+    90deg,
+    #ff4500 0%,
+    #ff8c00 15%,
+    #ffd700 30%,
+    #ff8c00 45%,
+    #ff4500 60%,
+    #dc143c 75%,
+    #ff4500 90%,
+    #ff8c00 100%
+  ) !important;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  animation: fire-flow 5s ease-in-out infinite;
+  box-shadow: none;
+}
+
 /* Mobile responsive adjustments for premium pages */
 @media (max-width: 768px) {
   .premium-tagline {
