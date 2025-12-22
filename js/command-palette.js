@@ -565,6 +565,14 @@
     }
     isOpen = true;
 
+    // Track CMD+K opens in GoatCounter
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({
+        path: 'cmd-k-opened',
+        event: true,
+      });
+    }
+
     // Reset state
     mode = 'default';
 
