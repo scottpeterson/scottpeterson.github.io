@@ -15,7 +15,7 @@
 const STRIPE_CONFIG = {
   // Stripe Payment Link - Replace with your actual payment link URL
   // Create one at: https://dashboard.stripe.com/test/payment-links
-  paymentLink: 'https://buy.stripe.com/eVq4gA3qFdPY6ej2OR9sk00',
+  paymentLink: 'https://buy.stripe.com/8x2bJ24uJ13cgSX89b9sk01',
 };
 
 /**
