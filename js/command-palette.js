@@ -556,6 +556,27 @@
   // ==========================================================================
 
   /**
+   * Tracks an event in GoatCounter, handling the async loading race condition.
+   * If GoatCounter isn't loaded yet, retries with exponential backoff.
+   */
+  function trackEvent(path, maxRetries = 5, delay = 100) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({
+        path: path,
+        event: true,
+      });
+      return;
+    }
+
+    // GoatCounter not ready - retry with backoff if we have retries left
+    if (maxRetries > 0) {
+      setTimeout(() => {
+        trackEvent(path, maxRetries - 1, delay * 2);
+      }, delay);
+    }
+  }
+
+  /**
    * Opens the command palette.
    * Optimized for speed - target <50ms perceived latency.
    */
@@ -565,13 +586,8 @@
     }
     isOpen = true;
 
-    // Track CMD+K opens in GoatCounter
-    if (window.goatcounter && window.goatcounter.count) {
-      window.goatcounter.count({
-        path: 'cmd-k-opened',
-        event: true,
-      });
-    }
+    // Track CMD+K opens in GoatCounter (with retry for async loading)
+    trackEvent('cmd-k-opened');
 
     // Reset state
     mode = 'default';
