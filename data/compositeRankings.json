@@ -5,12 +5,12 @@
     "Region": 5,
     "Massey Rank": 2,
     "Eff Rank": 2,
-    "NPI Rank": 9,
-    "Curr Season Results Rank": 3,
+    "NPI Rank": 7,
+    "Curr Season Results Rank": 2,
     "Preseason Rank": 2,
-    "MEDIAN": 2.5,
+    "MEDIAN": 2,
     "OVR_RANK": 1,
-    "Stdev": 3.37
+    "Stdev": 2.5
   },
   {
     "Team": "NYU",
@@ -45,11 +45,11 @@
     "Massey Rank": 4,
     "Eff Rank": 9,
     "NPI Rank": 4,
-    "Curr Season Results Rank": 2,
+    "Curr Season Results Rank": 3,
     "Preseason Rank": 38,
     "MEDIAN": 4,
     "OVR_RANK": 3,
-    "Stdev": 2.99
+    "Stdev": 2.71
   },
   {
     "Team": "Johns Hopkins",
@@ -57,12 +57,12 @@
     "Region": 5,
     "Massey Rank": 6,
     "Eff Rank": 4,
-    "NPI Rank": 17,
+    "NPI Rank": 18,
     "Curr Season Results Rank": 4,
     "Preseason Rank": 9,
     "MEDIAN": 5,
     "OVR_RANK": 5,
-    "Stdev": 6.24
+    "Stdev": 6.73
   },
   {
     "Team": "WashU",
@@ -70,12 +70,12 @@
     "Region": 8,
     "Massey Rank": 8,
     "Eff Rank": 5,
-    "NPI Rank": 27,
+    "NPI Rank": 28,
     "Curr Season Results Rank": 5,
     "Preseason Rank": 16,
     "MEDIAN": 6.5,
     "OVR_RANK": 6,
-    "Stdev": 10.59
+    "Stdev": 11.09
   },
   {
     "Team": "UW-Oshkosh",
@@ -83,25 +83,25 @@
     "Region": 9,
     "Massey Rank": 3,
     "Eff Rank": 8,
-    "NPI Rank": 11,
+    "NPI Rank": 10,
     "Curr Season Results Rank": 7,
     "Preseason Rank": 5,
     "MEDIAN": 7.5,
     "OVR_RANK": 7,
-    "Stdev": 3.3
+    "Stdev": 2.94
   },
   {
     "Team": "Emory",
     "Conf": "UAA",
     "Region": 6,
-    "Massey Rank": 9,
+    "Massey Rank": 10,
     "Eff Rank": 7,
-    "NPI Rank": 7,
+    "NPI Rank": 8,
     "Curr Season Results Rank": 22,
     "Preseason Rank": 58,
-    "MEDIAN": 8,
+    "MEDIAN": 9,
     "OVR_RANK": 8,
-    "Stdev": 7.23
+    "Stdev": 6.95
   },
   {
     "Team": "Smith",
@@ -109,12 +109,12 @@
     "Region": 2,
     "Massey Rank": 7,
     "Eff Rank": 3,
-    "NPI Rank": 10,
+    "NPI Rank": 11,
     "Curr Season Results Rank": 16,
     "Preseason Rank": 12,
-    "MEDIAN": 8.5,
-    "OVR_RANK": 9,
-    "Stdev": 5.48
+    "MEDIAN": 9,
+    "OVR_RANK": 8,
+    "Stdev": 5.56
   },
   {
     "Team": "John Carroll",
@@ -133,14 +133,14 @@
     "Team": "Ohio Wesleyan",
     "Conf": "NCAC",
     "Region": 7,
-    "Massey Rank": 10,
+    "Massey Rank": 9,
     "Eff Rank": 34,
     "NPI Rank": 1,
     "Curr Season Results Rank": 14,
     "Preseason Rank": 85,
-    "MEDIAN": 12,
+    "MEDIAN": 11.5,
     "OVR_RANK": 11,
-    "Stdev": 13.94
+    "Stdev": 14.06
   },
   {
     "Team": "Denison",
@@ -161,25 +161,25 @@
     "Region": 6,
     "Massey Rank": 19,
     "Eff Rank": 11,
-    "NPI Rank": 8,
-    "Curr Season Results Rank": 23,
+    "NPI Rank": 9,
+    "Curr Season Results Rank": 24,
     "Preseason Rank": 1,
     "MEDIAN": 15,
     "OVR_RANK": 13,
-    "Stdev": 6.95
+    "Stdev": 6.99
   },
   {
     "Team": "Bethel",
     "Conf": "MIAC",
     "Region": 9,
     "Massey Rank": 16,
-    "Eff Rank": 28,
+    "Eff Rank": 29,
     "NPI Rank": 14,
     "Curr Season Results Rank": 12,
     "Preseason Rank": 6,
     "MEDIAN": 15,
     "OVR_RANK": 13,
-    "Stdev": 7.19
+    "Stdev": 7.68
   },
   {
     "Team": "Chicago",
@@ -187,25 +187,25 @@
     "Region": 8,
     "Massey Rank": 11,
     "Eff Rank": 19,
-    "NPI Rank": 21,
+    "NPI Rank": 22,
     "Curr Season Results Rank": 10,
     "Preseason Rank": 55,
     "MEDIAN": 15,
     "OVR_RANK": 13,
-    "Stdev": 5.56
+    "Stdev": 5.92
   },
   {
     "Team": "Carroll",
     "Conf": "CCIW",
     "Region": 8,
-    "Massey Rank": 15,
+    "Massey Rank": 14,
     "Eff Rank": 17,
-    "NPI Rank": 19,
+    "NPI Rank": 20,
     "Curr Season Results Rank": 8,
     "Preseason Rank": 70,
-    "MEDIAN": 16,
+    "MEDIAN": 15.5,
     "OVR_RANK": 16,
-    "Stdev": 4.79
+    "Stdev": 5.12
   },
   {
     "Team": "Concordia Moorhead",
@@ -217,21 +217,21 @@
     "Curr Season Results Rank": 11,
     "Preseason Rank": 110,
     "MEDIAN": 16,
-    "OVR_RANK": 16,
+    "OVR_RANK": 17,
     "Stdev": 11.09
   },
   {
     "Team": "UW-Eau Claire",
     "Conf": "WIAC",
     "Region": 9,
-    "Massey Rank": 14,
-    "Eff Rank": 27,
+    "Massey Rank": 15,
+    "Eff Rank": 28,
     "NPI Rank": 15,
-    "Curr Season Results Rank": 18,
+    "Curr Season Results Rank": 19,
     "Preseason Rank": 147,
-    "MEDIAN": 16.5,
+    "MEDIAN": 17,
     "OVR_RANK": 18,
-    "Stdev": 5.92
+    "Stdev": 6.13
   },
   {
     "Team": "Baldwin Wallace",
@@ -239,25 +239,12 @@
     "Region": 7,
     "Massey Rank": 22,
     "Eff Rank": 14,
-    "NPI Rank": 18,
+    "NPI Rank": 17,
     "Curr Season Results Rank": 25,
     "Preseason Rank": 11,
-    "MEDIAN": 20,
+    "MEDIAN": 19.5,
     "OVR_RANK": 19,
-    "Stdev": 4.79
-  },
-  {
-    "Team": "Bowdoin",
-    "Conf": "NESCAC",
-    "Region": 1,
-    "Massey Rank": 23,
-    "Eff Rank": 13,
-    "NPI Rank": 22,
-    "Curr Season Results Rank": 26,
-    "Preseason Rank": 3,
-    "MEDIAN": 22.5,
-    "OVR_RANK": 20,
-    "Stdev": 5.6
+    "Stdev": 4.93
   },
   {
     "Team": "Bates",
@@ -266,24 +253,37 @@
     "Massey Rank": 34,
     "Eff Rank": 12,
     "NPI Rank": 16,
-    "Curr Season Results Rank": 30,
+    "Curr Season Results Rank": 31,
     "Preseason Rank": 8,
-    "MEDIAN": 23,
+    "MEDIAN": 23.5,
+    "OVR_RANK": 20,
+    "Stdev": 10.87
+  },
+  {
+    "Team": "Bowdoin",
+    "Conf": "NESCAC",
+    "Region": 1,
+    "Massey Rank": 23,
+    "Eff Rank": 13,
+    "NPI Rank": 25,
+    "Curr Season Results Rank": 26,
+    "Preseason Rank": 3,
+    "MEDIAN": 24,
     "OVR_RANK": 21,
-    "Stdev": 10.65
+    "Stdev": 5.97
   },
   {
     "Team": "UW-Platteville",
     "Conf": "WIAC",
     "Region": 9,
     "Massey Rank": 17,
-    "Eff Rank": 73,
-    "NPI Rank": 25,
-    "Curr Season Results Rank": 24,
+    "Eff Rank": 74,
+    "NPI Rank": 26,
+    "Curr Season Results Rank": 23,
     "Preseason Rank": 196,
     "MEDIAN": 24.5,
     "OVR_RANK": 22,
-    "Stdev": 25.75
+    "Stdev": 26.27
   },
   {
     "Team": "Illinois Wesleyan",
@@ -291,12 +291,12 @@
     "Region": 8,
     "Massey Rank": 12,
     "Eff Rank": 36,
-    "NPI Rank": 29,
+    "NPI Rank": 32,
     "Curr Season Results Rank": 20,
     "Preseason Rank": 14,
-    "MEDIAN": 24.5,
-    "OVR_RANK": 22,
-    "Stdev": 10.47
+    "MEDIAN": 26,
+    "OVR_RANK": 23,
+    "Stdev": 11.02
   },
   {
     "Team": "Calvin",
@@ -308,7 +308,7 @@
     "Curr Season Results Rank": 15,
     "Preseason Rank": 50,
     "MEDIAN": 26,
-    "OVR_RANK": 24,
+    "OVR_RANK": 23,
     "Stdev": 10.53
   },
   {
@@ -316,39 +316,26 @@
     "Conf": "MWC",
     "Region": 9,
     "Massey Rank": 26,
-    "Eff Rank": 28,
-    "NPI Rank": 28,
+    "Eff Rank": 29,
+    "NPI Rank": 29,
     "Curr Season Results Rank": 17,
     "Preseason Rank": 41,
-    "MEDIAN": 27,
+    "MEDIAN": 27.5,
     "OVR_RANK": 25,
-    "Stdev": 5.25
+    "Stdev": 5.68
   },
   {
     "Team": "DePauw",
     "Conf": "NCAC",
     "Region": 7,
     "Massey Rank": 27,
-    "Eff Rank": 28,
-    "NPI Rank": 79,
+    "Eff Rank": 29,
+    "NPI Rank": 80,
     "Curr Season Results Rank": 21,
     "Preseason Rank": 53,
-    "MEDIAN": 27.5,
+    "MEDIAN": 28,
     "OVR_RANK": 26,
-    "Stdev": 27.01
-  },
-  {
-    "Team": "Christopher Newport",
-    "Conf": "C2C",
-    "Region": 6,
-    "Massey Rank": 30,
-    "Eff Rank": 21,
-    "NPI Rank": 31,
-    "Curr Season Results Rank": 29,
-    "Preseason Rank": 28,
-    "MEDIAN": 29.5,
-    "OVR_RANK": 27,
-    "Stdev": 4.57
+    "Stdev": 27.38
   },
   {
     "Team": "Wisconsin Lutheran",
@@ -356,12 +343,25 @@
     "Region": 8,
     "Massey Rank": 37,
     "Eff Rank": 22,
-    "NPI Rank": 60,
-    "Curr Season Results Rank": 19,
+    "NPI Rank": 61,
+    "Curr Season Results Rank": 18,
     "Preseason Rank": 124,
     "MEDIAN": 29.5,
     "OVR_RANK": 27,
-    "Stdev": 18.73
+    "Stdev": 19.47
+  },
+  {
+    "Team": "Christopher Newport",
+    "Conf": "C2C",
+    "Region": 6,
+    "Massey Rank": 30,
+    "Eff Rank": 21,
+    "NPI Rank": 33,
+    "Curr Season Results Rank": 30,
+    "Preseason Rank": 28,
+    "MEDIAN": 30,
+    "OVR_RANK": 28,
+    "Stdev": 5.2
   },
   {
     "Team": "Susquehanna",
@@ -369,12 +369,12 @@
     "Region": 5,
     "Massey Rank": 73,
     "Eff Rank": 20,
-    "NPI Rank": 20,
-    "Curr Season Results Rank": 43,
+    "NPI Rank": 21,
+    "Curr Season Results Rank": 44,
     "Preseason Rank": 119,
-    "MEDIAN": 31.5,
+    "MEDIAN": 32.5,
     "OVR_RANK": 29,
-    "Stdev": 25.13
+    "Stdev": 24.93
   },
   {
     "Team": "Trine",
@@ -386,8 +386,21 @@
     "Curr Season Results Rank": 32,
     "Preseason Rank": 74,
     "MEDIAN": 32.5,
-    "OVR_RANK": 30,
+    "OVR_RANK": 29,
     "Stdev": 21.11
+  },
+  {
+    "Team": "Cortland",
+    "Conf": "SUNYAC",
+    "Region": 3,
+    "Massey Rank": 44,
+    "Eff Rank": 22,
+    "NPI Rank": 30,
+    "Curr Season Results Rank": 38,
+    "Preseason Rank": 4,
+    "MEDIAN": 34,
+    "OVR_RANK": 31,
+    "Stdev": 9.57
   },
   {
     "Team": "UW-La Crosse",
@@ -395,38 +408,38 @@
     "Region": 9,
     "Massey Rank": 24,
     "Eff Rank": 42,
-    "NPI Rank": 51,
+    "NPI Rank": 50,
     "Curr Season Results Rank": 27,
     "Preseason Rank": 23,
     "MEDIAN": 34.5,
-    "OVR_RANK": 31,
-    "Stdev": 12.73
+    "OVR_RANK": 32,
+    "Stdev": 12.34
+  },
+  {
+    "Team": "Otterbein",
+    "Conf": "OAC",
+    "Region": 7,
+    "Massey Rank": 41,
+    "Eff Rank": 26,
+    "NPI Rank": 45,
+    "Curr Season Results Rank": 28,
+    "Preseason Rank": 127,
+    "MEDIAN": 34.5,
+    "OVR_RANK": 32,
+    "Stdev": 9.42
   },
   {
     "Team": "Cal Lutheran",
     "Conf": "SCIAC",
     "Region": 10,
     "Massey Rank": 55,
-    "Eff Rank": 26,
-    "NPI Rank": 38,
-    "Curr Season Results Rank": 34,
+    "Eff Rank": 27,
+    "NPI Rank": 39,
+    "Curr Season Results Rank": 35,
     "Preseason Rank": 87,
-    "MEDIAN": 36,
-    "OVR_RANK": 32,
-    "Stdev": 12.23
-  },
-  {
-    "Team": "Otterbein",
-    "Conf": "OAC",
-    "Region": 7,
-    "Massey Rank": 44,
-    "Eff Rank": 25,
-    "NPI Rank": 46,
-    "Curr Season Results Rank": 28,
-    "Preseason Rank": 127,
-    "MEDIAN": 36,
-    "OVR_RANK": 32,
-    "Stdev": 10.78
+    "MEDIAN": 37,
+    "OVR_RANK": 34,
+    "Stdev": 11.78
   },
   {
     "Team": "Randolph-Macon",
@@ -434,12 +447,12 @@
     "Region": 6,
     "Massey Rank": 58,
     "Eff Rank": 22,
-    "NPI Rank": 30,
+    "NPI Rank": 31,
     "Curr Season Results Rank": 45,
     "Preseason Rank": 17,
-    "MEDIAN": 37.5,
-    "OVR_RANK": 34,
-    "Stdev": 15.99
+    "MEDIAN": 38,
+    "OVR_RANK": 35,
+    "Stdev": 15.81
   },
   {
     "Team": "Shenandoah",
@@ -448,24 +461,11 @@
     "Massey Rank": 39,
     "Eff Rank": 37,
     "NPI Rank": 5,
-    "Curr Season Results Rank": 39,
+    "Curr Season Results Rank": 40,
     "Preseason Rank": 143,
     "MEDIAN": 38,
     "OVR_RANK": 35,
-    "Stdev": 16.69
-  },
-  {
-    "Team": "Cortland",
-    "Conf": "SUNYAC",
-    "Region": 3,
-    "Massey Rank": 56,
-    "Eff Rank": 31,
-    "NPI Rank": 39,
-    "Curr Season Results Rank": 40,
-    "Preseason Rank": 4,
-    "MEDIAN": 39.5,
-    "OVR_RANK": 36,
-    "Stdev": 10.47
+    "Stdev": 16.88
   },
   {
     "Team": "UW-Stout",
@@ -473,12 +473,25 @@
     "Region": 9,
     "Massey Rank": 18,
     "Eff Rank": 66,
-    "NPI Rank": 49,
+    "NPI Rank": 48,
     "Curr Season Results Rank": 33,
     "Preseason Rank": 80,
-    "MEDIAN": 41,
+    "MEDIAN": 40.5,
     "OVR_RANK": 37,
-    "Stdev": 20.66
+    "Stdev": 20.55
+  },
+  {
+    "Team": "Colorado College",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Massey Rank": 40,
+    "Eff Rank": 63,
+    "NPI Rank": 41,
+    "Curr Season Results Rank": 29,
+    "Preseason Rank": 49,
+    "MEDIAN": 40.5,
+    "OVR_RANK": 37,
+    "Stdev": 14.24
   },
   {
     "Team": "Redlands",
@@ -486,25 +499,12 @@
     "Region": 10,
     "Massey Rank": 53,
     "Eff Rank": 18,
-    "NPI Rank": 48,
+    "NPI Rank": 47,
     "Curr Season Results Rank": 36,
     "Preseason Rank": 51,
-    "MEDIAN": 42,
-    "OVR_RANK": 38,
-    "Stdev": 15.56
-  },
-  {
-    "Team": "Colorado College",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Massey Rank": 41,
-    "Eff Rank": 64,
-    "NPI Rank": 44,
-    "Curr Season Results Rank": 31,
-    "Preseason Rank": 49,
-    "MEDIAN": 42.5,
+    "MEDIAN": 41.5,
     "OVR_RANK": 39,
-    "Stdev": 13.83
+    "Stdev": 15.37
   },
   {
     "Team": "UW-Stevens Point",
@@ -524,26 +524,26 @@
     "Conf": "ASC",
     "Region": 10,
     "Massey Rank": 33,
-    "Eff Rank": 49,
-    "NPI Rank": 55,
+    "Eff Rank": 50,
+    "NPI Rank": 54,
     "Curr Season Results Rank": 41,
     "Preseason Rank": 103,
-    "MEDIAN": 45,
+    "MEDIAN": 45.5,
     "OVR_RANK": 41,
-    "Stdev": 9.57
+    "Stdev": 9.4
   },
   {
     "Team": "Trinity (CT)",
     "Conf": "NESCAC",
     "Region": 1,
     "Massey Rank": 46,
-    "Eff Rank": 41,
-    "NPI Rank": 53,
+    "Eff Rank": 42,
+    "NPI Rank": 52,
     "Curr Season Results Rank": 46,
     "Preseason Rank": 19,
     "MEDIAN": 46,
     "OVR_RANK": 42,
-    "Stdev": 4.93
+    "Stdev": 4.12
   },
   {
     "Team": "McDaniel",
@@ -551,51 +551,64 @@
     "Region": 5,
     "Massey Rank": 101,
     "Eff Rank": 22,
-    "NPI Rank": 34,
-    "Curr Season Results Rank": 59,
+    "NPI Rank": 35,
+    "Curr Season Results Rank": 58,
     "Preseason Rank": 52,
     "MEDIAN": 46.5,
     "OVR_RANK": 43,
-    "Stdev": 34.92
+    "Stdev": 34.69
   },
   {
     "Team": "Amherst",
     "Conf": "NESCAC",
     "Region": 1,
     "Massey Rank": 50,
-    "Eff Rank": 31,
-    "NPI Rank": 43,
-    "Curr Season Results Rank": 58,
+    "Eff Rank": 32,
+    "NPI Rank": 44,
+    "Curr Season Results Rank": 57,
     "Preseason Rank": 15,
-    "MEDIAN": 46.5,
-    "OVR_RANK": 43,
-    "Stdev": 11.45
+    "MEDIAN": 47,
+    "OVR_RANK": 44,
+    "Stdev": 10.59
   },
   {
     "Team": "St. Mary's (MN)",
     "Conf": "MIAC",
     "Region": 9,
     "Massey Rank": 60,
-    "Eff Rank": 75,
-    "NPI Rank": 36,
+    "Eff Rank": 77,
+    "NPI Rank": 37,
     "Curr Season Results Rank": 37,
     "Preseason Rank": 78,
     "MEDIAN": 48.5,
     "OVR_RANK": 45,
-    "Stdev": 18.92
+    "Stdev": 19.47
   },
   {
-    "Team": "East Texas Baptist",
-    "Conf": "ASC",
-    "Region": 10,
-    "Massey Rank": 40,
-    "Eff Rank": 92,
-    "NPI Rank": 45,
-    "Curr Season Results Rank": 53,
-    "Preseason Rank": 25,
-    "MEDIAN": 49,
+    "Team": "SUNY New Paltz",
+    "Conf": "SUNYAC",
+    "Region": 3,
+    "Massey Rank": 78,
+    "Eff Rank": 49,
+    "NPI Rank": 24,
+    "Curr Season Results Rank": 50,
+    "Preseason Rank": 142,
+    "MEDIAN": 49.5,
     "OVR_RANK": 46,
-    "Stdev": 23.61
+    "Stdev": 22.07
+  },
+  {
+    "Team": "Transylvania",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Massey Rank": 36,
+    "Eff Rank": 61,
+    "NPI Rank": 57,
+    "Curr Season Results Rank": 43,
+    "Preseason Rank": 27,
+    "MEDIAN": 50,
+    "OVR_RANK": 47,
+    "Stdev": 11.73
   },
   {
     "Team": "UW-River Falls",
@@ -603,116 +616,90 @@
     "Region": 9,
     "Massey Rank": 32,
     "Eff Rank": 66,
-    "NPI Rank": 61,
-    "Curr Season Results Rank": 38,
+    "NPI Rank": 62,
+    "Curr Season Results Rank": 39,
     "Preseason Rank": 44,
-    "MEDIAN": 49.5,
-    "OVR_RANK": 47,
-    "Stdev": 16.76
-  },
-  {
-    "Team": "SUNY New Paltz",
-    "Conf": "SUNYAC",
-    "Region": 3,
-    "Massey Rank": 77,
-    "Eff Rank": 49,
-    "NPI Rank": 24,
-    "Curr Season Results Rank": 51,
-    "Preseason Rank": 142,
-    "MEDIAN": 50,
-    "OVR_RANK": 48,
-    "Stdev": 21.65
-  },
-  {
-    "Team": "Transylvania",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Massey Rank": 36,
-    "Eff Rank": 62,
-    "NPI Rank": 57,
-    "Curr Season Results Rank": 44,
-    "Preseason Rank": 27,
     "MEDIAN": 50.5,
-    "OVR_RANK": 49,
-    "Stdev": 11.9
+    "OVR_RANK": 48,
+    "Stdev": 16.78
   },
   {
     "Team": "Coe",
     "Conf": "ARC",
     "Region": 9,
     "Massey Rank": 48,
-    "Eff Rank": 55,
-    "NPI Rank": 96,
+    "Eff Rank": 56,
+    "NPI Rank": 97,
     "Curr Season Results Rank": 42,
     "Preseason Rank": 56,
-    "MEDIAN": 51.5,
-    "OVR_RANK": 50,
-    "Stdev": 24.42
+    "MEDIAN": 52,
+    "OVR_RANK": 49,
+    "Stdev": 24.84
   },
   {
     "Team": "William Paterson",
     "Conf": "NJAC",
     "Region": 4,
-    "Massey Rank": 99,
-    "Eff Rank": 46,
-    "NPI Rank": 26,
+    "Massey Rank": 98,
+    "Eff Rank": 47,
+    "NPI Rank": 27,
     "Curr Season Results Rank": 63,
     "Preseason Rank": 141,
-    "MEDIAN": 54.5,
-    "OVR_RANK": 51,
-    "Stdev": 30.95
-  },
-  {
-    "Team": "Messiah",
-    "Conf": "MACC",
-    "Region": 5,
-    "Massey Rank": 66,
-    "Eff Rank": 55,
-    "NPI Rank": 50,
-    "Curr Season Results Rank": 57,
-    "Preseason Rank": 22,
-    "MEDIAN": 56,
-    "OVR_RANK": 52,
-    "Stdev": 6.68
+    "MEDIAN": 55,
+    "OVR_RANK": 50,
+    "Stdev": 30.03
   },
   {
     "Team": "Washington & Jefferson",
     "Conf": "PAC",
     "Region": 7,
     "Massey Rank": 52,
-    "Eff Rank": 47,
-    "NPI Rank": 77,
-    "Curr Season Results Rank": 61,
+    "Eff Rank": 46,
+    "NPI Rank": 76,
+    "Curr Season Results Rank": 59,
     "Preseason Rank": 66,
-    "MEDIAN": 56.5,
-    "OVR_RANK": 53,
-    "Stdev": 13.18
+    "MEDIAN": 55.5,
+    "OVR_RANK": 51,
+    "Stdev": 12.97
+  },
+  {
+    "Team": "Messiah",
+    "Conf": "MACC",
+    "Region": 5,
+    "Massey Rank": 66,
+    "Eff Rank": 56,
+    "NPI Rank": 49,
+    "Curr Season Results Rank": 56,
+    "Preseason Rank": 22,
+    "MEDIAN": 56,
+    "OVR_RANK": 52,
+    "Stdev": 6.99
   },
   {
     "Team": "Southern Maine",
     "Conf": "LEC",
     "Region": 2,
-    "Massey Rank": 89,
+    "Massey Rank": 90,
     "Eff Rank": 16,
     "NPI Rank": 66,
     "Curr Season Results Rank": 48,
     "Preseason Rank": 101,
     "MEDIAN": 57,
-    "OVR_RANK": 54,
-    "Stdev": 30.8
+    "OVR_RANK": 53,
+    "Stdev": 31.18
   },
   {
     "Team": "Brandeis",
     "Conf": "UAA",
     "Region": 2,
     "Massey Rank": 51,
-    "Eff Rank": 87,
-    "NPI Rank": 47,
+    "Eff Rank": 88,
+    "NPI Rank": 46,
     "Curr Season Results Rank": 64,
     "Preseason Rank": 122,
     "MEDIAN": 57.5,
-    "OVR_RANK": 55,
-    "Stdev": 18.03
+    "OVR_RANK": 54,
+    "Stdev": 18.77
   },
   {
     "Team": "Mt. Union",
@@ -721,24 +708,24 @@
     "Massey Rank": 65,
     "Eff Rank": 45,
     "NPI Rank": 64,
-    "Curr Season Results Rank": 52,
+    "Curr Season Results Rank": 51,
     "Preseason Rank": 202,
-    "MEDIAN": 58,
-    "OVR_RANK": 56,
-    "Stdev": 9.68
+    "MEDIAN": 57.5,
+    "OVR_RANK": 54,
+    "Stdev": 9.84
   },
   {
     "Team": "Dickinson",
     "Conf": "CC",
     "Region": 5,
-    "Massey Rank": 87,
-    "Eff Rank": 51,
-    "NPI Rank": 37,
-    "Curr Season Results Rank": 65,
+    "Massey Rank": 88,
+    "Eff Rank": 50,
+    "NPI Rank": 38,
+    "Curr Season Results Rank": 66,
     "Preseason Rank": 109,
     "MEDIAN": 58,
     "OVR_RANK": 56,
-    "Stdev": 21.32
+    "Stdev": 21.63
   },
   {
     "Team": "Claremont-Mudd-Scripps",
@@ -747,11 +734,11 @@
     "Massey Rank": 62,
     "Eff Rank": 54,
     "NPI Rank": 71,
-    "Curr Season Results Rank": 54,
+    "Curr Season Results Rank": 53,
     "Preseason Rank": 250,
     "MEDIAN": 58,
     "OVR_RANK": 56,
-    "Stdev": 8.1
+    "Stdev": 8.37
   },
   {
     "Team": "Gustavus Adolphus",
@@ -759,25 +746,38 @@
     "Region": 9,
     "Massey Rank": 31,
     "Eff Rank": 71,
-    "NPI Rank": 95,
-    "Curr Season Results Rank": 50,
+    "NPI Rank": 94,
+    "Curr Season Results Rank": 49,
     "Preseason Rank": 60,
-    "MEDIAN": 60.5,
-    "OVR_RANK": 59,
-    "Stdev": 27.54
+    "MEDIAN": 60,
+    "OVR_RANK": 58,
+    "Stdev": 27.28
   },
   {
-    "Team": "Union (NY)",
-    "Conf": "LL",
-    "Region": 3,
-    "Massey Rank": 130,
-    "Eff Rank": 53,
-    "NPI Rank": 54,
-    "Curr Season Results Rank": 69,
-    "Preseason Rank": 192,
-    "MEDIAN": 61.5,
-    "OVR_RANK": 60,
-    "Stdev": 36.41
+    "Team": "East Texas Baptist",
+    "Conf": "ASC",
+    "Region": 10,
+    "Massey Rank": 56,
+    "Eff Rank": 98,
+    "NPI Rank": 53,
+    "Curr Season Results Rank": 65,
+    "Preseason Rank": 25,
+    "MEDIAN": 60.5,
+    "OVR_RANK": 59,
+    "Stdev": 20.64
+  },
+  {
+    "Team": "Carnegie Mellon",
+    "Conf": "UAA",
+    "Region": 7,
+    "Massey Rank": 35,
+    "Eff Rank": 73,
+    "NPI Rank": 60,
+    "Curr Season Results Rank": 61,
+    "Preseason Rank": 20,
+    "MEDIAN": 60.5,
+    "OVR_RANK": 59,
+    "Stdev": 15.97
   },
   {
     "Team": "Tufts",
@@ -785,12 +785,12 @@
     "Region": 1,
     "Massey Rank": 45,
     "Eff Rank": 70,
-    "NPI Rank": 76,
-    "Curr Season Results Rank": 55,
+    "NPI Rank": 77,
+    "Curr Season Results Rank": 54,
     "Preseason Rank": 92,
-    "MEDIAN": 62.5,
+    "MEDIAN": 62,
     "OVR_RANK": 61,
-    "Stdev": 14.11
+    "Stdev": 14.62
   },
   {
     "Team": "Chatham",
@@ -799,11 +799,24 @@
     "Massey Rank": 69,
     "Eff Rank": 39,
     "NPI Rank": 91,
-    "Curr Season Results Rank": 56,
+    "Curr Season Results Rank": 55,
     "Preseason Rank": 81,
-    "MEDIAN": 62.5,
+    "MEDIAN": 62,
     "OVR_RANK": 61,
-    "Stdev": 21.93
+    "Stdev": 22.05
+  },
+  {
+    "Team": "Union (NY)",
+    "Conf": "LL",
+    "Region": 3,
+    "Massey Rank": 129,
+    "Eff Rank": 53,
+    "NPI Rank": 55,
+    "Curr Season Results Rank": 70,
+    "Preseason Rank": 192,
+    "MEDIAN": 62.5,
+    "OVR_RANK": 63,
+    "Stdev": 35.65
   },
   {
     "Team": "Puget Sound",
@@ -811,38 +824,51 @@
     "Region": 10,
     "Massey Rank": 54,
     "Eff Rank": 66,
-    "NPI Rank": 70,
+    "NPI Rank": 69,
     "Curr Season Results Rank": 60,
     "Preseason Rank": 118,
     "MEDIAN": 63,
-    "OVR_RANK": 63,
-    "Stdev": 7
+    "OVR_RANK": 64,
+    "Stdev": 6.65
   },
   {
     "Team": "St. Benedict",
     "Conf": "MIAC",
     "Region": 9,
     "Massey Rank": 49,
-    "Eff Rank": 83,
-    "NPI Rank": 80,
-    "Curr Season Results Rank": 35,
+    "Eff Rank": 82,
+    "NPI Rank": 79,
+    "Curr Season Results Rank": 34,
     "Preseason Rank": 128,
-    "MEDIAN": 64.5,
-    "OVR_RANK": 64,
-    "Stdev": 23.54
+    "MEDIAN": 64,
+    "OVR_RANK": 65,
+    "Stdev": 23.37
   },
   {
     "Team": "SUNY Geneseo",
     "Conf": "E8",
     "Region": 3,
-    "Massey Rank": 82,
+    "Massey Rank": 83,
     "Eff Rank": 55,
     "NPI Rank": 67,
     "Curr Season Results Rank": 62,
     "Preseason Rank": 33,
     "MEDIAN": 64.5,
-    "OVR_RANK": 64,
-    "Stdev": 11.45
+    "OVR_RANK": 66,
+    "Stdev": 11.9
+  },
+  {
+    "Team": "St. Thomas (TX)",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Massey Rank": 77,
+    "Eff Rank": 133,
+    "NPI Rank": 19,
+    "Curr Season Results Rank": 52,
+    "Preseason Rank": 151,
+    "MEDIAN": 64.5,
+    "OVR_RANK": 66,
+    "Stdev": 48.11
   },
   {
     "Team": "Stevens",
@@ -851,11 +877,11 @@
     "Massey Rank": 102,
     "Eff Rank": 58,
     "NPI Rank": 58,
-    "Curr Season Results Rank": 73,
+    "Curr Season Results Rank": 74,
     "Preseason Rank": 69,
-    "MEDIAN": 65.5,
-    "OVR_RANK": 66,
-    "Stdev": 20.74
+    "MEDIAN": 66,
+    "OVR_RANK": 68,
+    "Stdev": 20.75
   },
   {
     "Team": "Gettysburg",
@@ -864,11 +890,11 @@
     "Massey Rank": 67,
     "Eff Rank": 48,
     "NPI Rank": 74,
-    "Curr Season Results Rank": 66,
+    "Curr Season Results Rank": 67,
     "Preseason Rank": 13,
-    "MEDIAN": 66.5,
-    "OVR_RANK": 67,
-    "Stdev": 11.09
+    "MEDIAN": 67,
+    "OVR_RANK": 69,
+    "Stdev": 11.17
   },
   {
     "Team": "Catholic",
@@ -877,11 +903,11 @@
     "Massey Rank": 68,
     "Eff Rank": 37,
     "NPI Rank": 86,
-    "Curr Season Results Rank": 67,
+    "Curr Season Results Rank": 68,
     "Preseason Rank": 18,
-    "MEDIAN": 67.5,
-    "OVR_RANK": 68,
-    "Stdev": 20.31
+    "MEDIAN": 68,
+    "OVR_RANK": 70,
+    "Stdev": 20.35
   },
   {
     "Team": "Rhode Island College",
@@ -893,60 +919,34 @@
     "Curr Season Results Rank": 82,
     "Preseason Rank": 83,
     "MEDIAN": 68,
-    "OVR_RANK": 69,
-    "Stdev": 18.52
-  },
-  {
-    "Team": "Carnegie Mellon",
-    "Conf": "UAA",
-    "Region": 7,
-    "Massey Rank": 35,
-    "Eff Rank": 73,
-    "NPI Rank": 65,
-    "Curr Season Results Rank": 74,
-    "Preseason Rank": 20,
-    "MEDIAN": 69,
     "OVR_RANK": 70,
-    "Stdev": 18.28
-  },
-  {
-    "Team": "St. Thomas (TX)",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Massey Rank": 90,
-    "Eff Rank": 160,
-    "NPI Rank": 33,
-    "Curr Season Results Rank": 49,
-    "Preseason Rank": 151,
-    "MEDIAN": 69.5,
-    "OVR_RANK": 71,
-    "Stdev": 56.67
+    "Stdev": 18.52
   },
   {
     "Team": "Johnson & Wales (RI)",
     "Conf": "GNAC",
     "Region": 1,
-    "Massey Rank": 129,
+    "Massey Rank": 130,
     "Eff Rank": 60,
-    "NPI Rank": 63,
+    "NPI Rank": 65,
     "Curr Season Results Rank": 78,
     "Preseason Rank": 40,
-    "MEDIAN": 70.5,
+    "MEDIAN": 71.5,
     "OVR_RANK": 72,
-    "Stdev": 31.98
+    "Stdev": 32.08
   },
   {
     "Team": "Case Western",
     "Conf": "UAA",
     "Region": 7,
     "Massey Rank": 72,
-    "Eff Rank": 64,
+    "Eff Rank": 65,
     "NPI Rank": 90,
-    "Curr Season Results Rank": 72,
+    "Curr Season Results Rank": 73,
     "Preseason Rank": 150,
-    "MEDIAN": 72,
+    "MEDIAN": 72.5,
     "OVR_RANK": 73,
-    "Stdev": 11
+    "Stdev": 10.61
   },
   {
     "Team": "Franklin",
@@ -954,64 +954,64 @@
     "Region": 8,
     "Massey Rank": 92,
     "Eff Rank": 69,
-    "NPI Rank": 69,
-    "Curr Season Results Rank": 76,
+    "NPI Rank": 70,
+    "Curr Season Results Rank": 77,
     "Preseason Rank": 169,
-    "MEDIAN": 72.5,
+    "MEDIAN": 73.5,
     "OVR_RANK": 74,
-    "Stdev": 10.85
+    "Stdev": 10.61
   },
   {
     "Team": "Aurora",
     "Conf": "NACC",
     "Region": 8,
-    "Massey Rank": 75,
+    "Massey Rank": 76,
     "Eff Rank": 52,
-    "NPI Rank": 121,
-    "Curr Season Results Rank": 70,
-    "Preseason Rank": 154,
-    "MEDIAN": 72.5,
-    "OVR_RANK": 74,
-    "Stdev": 29.38
-  },
-  {
-    "Team": "Linfield",
-    "Conf": "NWC",
-    "Region": 10,
-    "Massey Rank": 42,
-    "Eff Rank": 94,
-    "NPI Rank": 78,
+    "NPI Rank": 118,
     "Curr Season Results Rank": 71,
-    "Preseason Rank": 30,
-    "MEDIAN": 74.5,
-    "OVR_RANK": 76,
-    "Stdev": 21.75
+    "Preseason Rank": 154,
+    "MEDIAN": 73.5,
+    "OVR_RANK": 74,
+    "Stdev": 27.83
   },
   {
     "Team": "Widener",
     "Conf": "MACC",
     "Region": 5,
     "Massey Rank": 117,
-    "Eff Rank": 61,
-    "NPI Rank": 41,
-    "Curr Season Results Rank": 88,
+    "Eff Rank": 62,
+    "NPI Rank": 43,
+    "Curr Season Results Rank": 86,
     "Preseason Rank": 61,
-    "MEDIAN": 74.5,
+    "MEDIAN": 74,
     "OVR_RANK": 76,
-    "Stdev": 33.03
+    "Stdev": 31.95
+  },
+  {
+    "Team": "Linfield",
+    "Conf": "NWC",
+    "Region": 10,
+    "Massey Rank": 43,
+    "Eff Rank": 94,
+    "NPI Rank": 78,
+    "Curr Season Results Rank": 72,
+    "Preseason Rank": 30,
+    "MEDIAN": 75,
+    "OVR_RANK": 77,
+    "Stdev": 21.3
   },
   {
     "Team": "St. Scholastica",
     "Conf": "MIAC",
     "Region": 9,
-    "Massey Rank": 85,
-    "Eff Rank": 97,
+    "Massey Rank": 86,
+    "Eff Rank": 96,
     "NPI Rank": 56,
-    "Curr Season Results Rank": 68,
+    "Curr Season Results Rank": 69,
     "Preseason Rank": 131,
-    "MEDIAN": 76.5,
+    "MEDIAN": 77.5,
     "OVR_RANK": 78,
-    "Stdev": 18.12
+    "Stdev": 17.76
   },
   {
     "Team": "Wartburg",
@@ -1020,24 +1020,37 @@
     "Massey Rank": 47,
     "Eff Rank": 84,
     "NPI Rank": 146,
-    "Curr Season Results Rank": 77,
+    "Curr Season Results Rank": 76,
     "Preseason Rank": 65,
-    "MEDIAN": 80.5,
+    "MEDIAN": 80,
     "OVR_RANK": 79,
-    "Stdev": 41.56
+    "Stdev": 41.65
   },
   {
     "Team": "Texas Lutheran",
     "Conf": "SCAC",
     "Region": 10,
     "Massey Rank": 64,
-    "Eff Rank": 81,
+    "Eff Rank": 83,
     "NPI Rank": 145,
     "Curr Season Results Rank": 81,
     "Preseason Rank": 47,
-    "MEDIAN": 81,
+    "MEDIAN": 82,
     "OVR_RANK": 80,
-    "Stdev": 35.74
+    "Stdev": 35.54
+  },
+  {
+    "Team": "Middlebury",
+    "Conf": "NESCAC",
+    "Region": 1,
+    "Massey Rank": 75,
+    "Eff Rank": 41,
+    "NPI Rank": 127,
+    "Curr Season Results Rank": 92,
+    "Preseason Rank": 90,
+    "MEDIAN": 83.5,
+    "OVR_RANK": 81,
+    "Stdev": 35.79
   },
   {
     "Team": "Immaculata",
@@ -1045,103 +1058,77 @@
     "Region": 5,
     "Massey Rank": 145,
     "Eff Rank": 79,
-    "NPI Rank": 52,
-    "Curr Season Results Rank": 90,
+    "NPI Rank": 51,
+    "Curr Season Results Rank": 89,
     "Preseason Rank": 133,
-    "MEDIAN": 84.5,
-    "OVR_RANK": 81,
-    "Stdev": 39.08
-  },
-  {
-    "Team": "Middlebury",
-    "Conf": "NESCAC",
-    "Region": 1,
-    "Massey Rank": 76,
-    "Eff Rank": 42,
-    "NPI Rank": 125,
-    "Curr Season Results Rank": 93,
-    "Preseason Rank": 90,
-    "MEDIAN": 84.5,
-    "OVR_RANK": 81,
-    "Stdev": 34.59
+    "MEDIAN": 84,
+    "OVR_RANK": 82,
+    "Stdev": 39.43
   },
   {
     "Team": "Guilford",
     "Conf": "ODAC",
     "Region": 6,
     "Massey Rank": 91,
-    "Eff Rank": 120,
-    "NPI Rank": 32,
+    "Eff Rank": 121,
+    "NPI Rank": 34,
     "Curr Season Results Rank": 79,
     "Preseason Rank": 167,
     "MEDIAN": 85,
     "OVR_RANK": 83,
-    "Stdev": 36.63
+    "Stdev": 36.11
   },
   {
     "Team": "Wittenberg",
     "Conf": "NCAC",
     "Region": 7,
     "Massey Rank": 59,
-    "Eff Rank": 122,
+    "Eff Rank": 121,
     "NPI Rank": 75,
     "Curr Season Results Rank": 97,
     "Preseason Rank": 178,
     "MEDIAN": 86,
     "OVR_RANK": 84,
-    "Stdev": 27.37
+    "Stdev": 26.96
   },
   {
     "Team": "Elizabethtown",
     "Conf": "LAND",
     "Region": 5,
-    "Massey Rank": 84,
+    "Massey Rank": 85,
     "Eff Rank": 89,
-    "NPI Rank": 35,
+    "NPI Rank": 36,
     "Curr Season Results Rank": 107,
     "Preseason Rank": 45,
-    "MEDIAN": 86.5,
+    "MEDIAN": 87,
     "OVR_RANK": 85,
-    "Stdev": 30.79
-  },
-  {
-    "Team": "Colby",
-    "Conf": "NESCAC",
-    "Region": 1,
-    "Massey Rank": 93,
-    "Eff Rank": 72,
-    "NPI Rank": 103,
-    "Curr Season Results Rank": 80,
-    "Preseason Rank": 10,
-    "MEDIAN": 86.5,
-    "OVR_RANK": 85,
-    "Stdev": 13.74
+    "Stdev": 30.38
   },
   {
     "Team": "Centre",
     "Conf": "SAA",
     "Region": 6,
-    "Massey Rank": 95,
+    "Massey Rank": 94,
     "Eff Rank": 90,
     "NPI Rank": 68,
-    "Curr Season Results Rank": 85,
+    "Curr Season Results Rank": 84,
     "Preseason Rank": 123,
-    "MEDIAN": 87.5,
-    "OVR_RANK": 87,
-    "Stdev": 11.73
+    "MEDIAN": 87,
+    "OVR_RANK": 85,
+    "Stdev": 11.43
   },
   {
     "Team": "Rochester",
     "Conf": "UAA",
     "Region": 3,
-    "Massey Rank": 79,
+    "Massey Rank": 80,
     "Eff Rank": 59,
-    "NPI Rank": 134,
-    "Curr Season Results Rank": 96,
+    "NPI Rank": 133,
+    "Curr Season Results Rank": 94,
     "Preseason Rank": 64,
-    "MEDIAN": 87.5,
-    "OVR_RANK": 87,
-    "Stdev": 31.82
+    "MEDIAN": 87,
+    "OVR_RANK": 85,
+    "Stdev": 31.18
   },
   {
     "Team": "Hamline",
@@ -1150,50 +1137,50 @@
     "Massey Rank": 57,
     "Eff Rank": 87,
     "NPI Rank": 89,
-    "Curr Season Results Rank": 89,
+    "Curr Season Results Rank": 88,
     "Preseason Rank": 62,
-    "MEDIAN": 88,
-    "OVR_RANK": 89,
-    "Stdev": 15.7
+    "MEDIAN": 87.5,
+    "OVR_RANK": 88,
+    "Stdev": 15.52
   },
   {
     "Team": "Bridgewater (VA)",
     "Conf": "ODAC",
     "Region": 6,
-    "Massey Rank": 94,
+    "Massey Rank": 93,
     "Eff Rank": 99,
     "NPI Rank": 83,
-    "Curr Season Results Rank": 83,
+    "Curr Season Results Rank": 80,
     "Preseason Rank": 35,
+    "MEDIAN": 88,
+    "OVR_RANK": 89,
+    "Stdev": 8.81
+  },
+  {
+    "Team": "Augustana",
+    "Conf": "CCIW",
+    "Region": 8,
+    "Massey Rank": 79,
+    "Eff Rank": 92,
+    "NPI Rank": 151,
+    "Curr Season Results Rank": 85,
+    "Preseason Rank": 163,
     "MEDIAN": 88.5,
     "OVR_RANK": 90,
-    "Stdev": 8.06
+    "Stdev": 33.26
   },
   {
     "Team": "Capital",
     "Conf": "OAC",
     "Region": 7,
     "Massey Rank": 71,
-    "Eff Rank": 144,
+    "Eff Rank": 145,
     "NPI Rank": 59,
     "Curr Season Results Rank": 108,
     "Preseason Rank": 132,
     "MEDIAN": 89.5,
     "OVR_RANK": 91,
-    "Stdev": 38.48
-  },
-  {
-    "Team": "Augustana",
-    "Conf": "CCIW",
-    "Region": 8,
-    "Massey Rank": 78,
-    "Eff Rank": 93,
-    "NPI Rank": 151,
-    "Curr Season Results Rank": 86,
-    "Preseason Rank": 163,
-    "MEDIAN": 89.5,
-    "OVR_RANK": 91,
-    "Stdev": 33.24
+    "Stdev": 38.9
   },
   {
     "Team": "Lebanon Val",
@@ -1205,47 +1192,60 @@
     "Curr Season Results Rank": 98,
     "Preseason Rank": 116,
     "MEDIAN": 91.5,
-    "OVR_RANK": 93,
+    "OVR_RANK": 92,
     "Stdev": 19.62
   },
   {
     "Team": "Whitman",
     "Conf": "NWC",
     "Region": 10,
-    "Massey Rank": 43,
-    "Eff Rank": 111,
-    "NPI Rank": 127,
+    "Massey Rank": 42,
+    "Eff Rank": 108,
+    "NPI Rank": 121,
     "Curr Season Results Rank": 75,
     "Preseason Rank": 43,
-    "MEDIAN": 93,
-    "OVR_RANK": 94,
-    "Stdev": 37.59
-  },
-  {
-    "Team": "Western New England",
-    "Conf": "CNE",
-    "Region": 2,
-    "Massey Rank": 121,
-    "Eff Rank": 81,
-    "NPI Rank": 81,
-    "Curr Season Results Rank": 106,
-    "Preseason Rank": 98,
-    "MEDIAN": 93.5,
-    "OVR_RANK": 95,
-    "Stdev": 19.74
+    "MEDIAN": 91.5,
+    "OVR_RANK": 92,
+    "Stdev": 35.43
   },
   {
     "Team": "Oglethorpe",
     "Conf": "SAA",
     "Region": 6,
     "Massey Rank": 135,
-    "Eff Rank": 96,
+    "Eff Rank": 94,
     "NPI Rank": 82,
-    "Curr Season Results Rank": 92,
+    "Curr Season Results Rank": 91,
     "Preseason Rank": 107,
-    "MEDIAN": 94,
+    "MEDIAN": 92.5,
+    "OVR_RANK": 94,
+    "Stdev": 23.56
+  },
+  {
+    "Team": "Western New England",
+    "Conf": "CNE",
+    "Region": 2,
+    "Massey Rank": 120,
+    "Eff Rank": 81,
+    "NPI Rank": 81,
+    "Curr Season Results Rank": 105,
+    "Preseason Rank": 98,
+    "MEDIAN": 93,
+    "OVR_RANK": 95,
+    "Stdev": 19.19
+  },
+  {
+    "Team": "Colby",
+    "Conf": "NESCAC",
+    "Region": 1,
+    "Massey Rank": 100,
+    "Eff Rank": 71,
+    "NPI Rank": 123,
+    "Curr Season Results Rank": 95,
+    "Preseason Rank": 10,
+    "MEDIAN": 97.5,
     "OVR_RANK": 96,
-    "Stdev": 23.26
+    "Stdev": 21.33
   },
   {
     "Team": "McMurry",
@@ -1253,12 +1253,12 @@
     "Region": 10,
     "Massey Rank": 63,
     "Eff Rank": 114,
-    "NPI Rank": 139,
+    "NPI Rank": 140,
     "Curr Season Results Rank": 87,
     "Preseason Rank": 76,
     "MEDIAN": 100.5,
     "OVR_RANK": 97,
-    "Stdev": 32.93
+    "Stdev": 33.32
   },
   {
     "Team": "Marietta",
@@ -1266,12 +1266,12 @@
     "Region": 7,
     "Massey Rank": 74,
     "Eff Rank": 101,
-    "NPI Rank": 119,
+    "NPI Rank": 116,
     "Curr Season Results Rank": 101,
     "Preseason Rank": 223,
     "MEDIAN": 101,
     "OVR_RANK": 98,
-    "Stdev": 18.55
+    "Stdev": 17.49
   },
   {
     "Team": "Simpson (IA)",
@@ -1279,90 +1279,90 @@
     "Region": 9,
     "Massey Rank": 70,
     "Eff Rank": 119,
-    "NPI Rank": 128,
-    "Curr Season Results Rank": 84,
+    "NPI Rank": 126,
+    "Curr Season Results Rank": 83,
     "Preseason Rank": 145,
-    "MEDIAN": 101.5,
-    "OVR_RANK": 99,
-    "Stdev": 27.69
+    "MEDIAN": 101,
+    "OVR_RANK": 98,
+    "Stdev": 27.23
   },
   {
     "Team": "St. Lawrence",
     "Conf": "LL",
     "Region": 3,
     "Massey Rank": 132,
-    "Eff Rank": 98,
-    "NPI Rank": 62,
-    "Curr Season Results Rank": 105,
+    "Eff Rank": 97,
+    "NPI Rank": 63,
+    "Curr Season Results Rank": 106,
     "Preseason Rank": 96,
     "MEDIAN": 101.5,
-    "OVR_RANK": 99,
-    "Stdev": 28.84
+    "OVR_RANK": 100,
+    "Stdev": 28.5
   },
   {
     "Team": "Rochester Tech",
     "Conf": "LL",
     "Region": 3,
-    "Massey Rank": 123,
+    "Massey Rank": 122,
     "Eff Rank": 79,
-    "NPI Rank": 108,
-    "Curr Season Results Rank": 95,
+    "NPI Rank": 107,
+    "Curr Season Results Rank": 96,
     "Preseason Rank": 59,
     "MEDIAN": 101.5,
-    "OVR_RANK": 99,
-    "Stdev": 18.73
-  },
-  {
-    "Team": "Chapman",
-    "Conf": "SCIAC",
-    "Region": 10,
-    "Massey Rank": 98,
-    "Eff Rank": 107,
-    "NPI Rank": 100,
-    "Curr Season Results Rank": 111,
-    "Preseason Rank": 136,
-    "MEDIAN": 103.5,
-    "OVR_RANK": 102,
-    "Stdev": 6.06
+    "OVR_RANK": 100,
+    "Stdev": 18.13
   },
   {
     "Team": "St. Norbert",
     "Conf": "NACC",
     "Region": 8,
-    "Massey Rank": 83,
-    "Eff Rank": 116,
-    "NPI Rank": 185,
-    "Curr Season Results Rank": 94,
+    "Massey Rank": 84,
+    "Eff Rank": 114,
+    "NPI Rank": 183,
+    "Curr Season Results Rank": 93,
     "Preseason Rank": 54,
+    "MEDIAN": 103.5,
+    "OVR_RANK": 102,
+    "Stdev": 44.8
+  },
+  {
+    "Team": "Chapman",
+    "Conf": "SCIAC",
+    "Region": 10,
+    "Massey Rank": 97,
+    "Eff Rank": 110,
+    "NPI Rank": 100,
+    "Curr Season Results Rank": 111,
+    "Preseason Rank": 136,
     "MEDIAN": 105,
     "OVR_RANK": 103,
-    "Stdev": 45.77
+    "Stdev": 7.05
   },
   {
     "Team": "MSOE",
     "Conf": "NACC",
     "Region": 8,
     "Massey Rank": 112,
-    "Eff Rank": 115,
+    "Eff Rank": 114,
     "NPI Rank": 84,
     "Curr Season Results Rank": 99,
     "Preseason Rank": 100,
     "MEDIAN": 105.5,
     "OVR_RANK": 104,
-    "Stdev": 14.15
+    "Stdev": 13.87
   },
   {
     "Team": "Franklin & Marshall",
     "Conf": "CC",
     "Region": 5,
     "Massey Rank": 147,
-    "Eff Rank": 95,
+    "Eff Rank": 93,
     "NPI Rank": 85,
     "Curr Season Results Rank": 118,
     "Preseason Rank": 112,
-    "MEDIAN": 106.5,
-    "OVR_RANK": 105,
-    "Stdev": 27.55
+    "MEDIAN": 105.5,
+    "OVR_RANK": 104,
+    "Stdev": 27.96
   },
   {
     "Team": "DeSales",
@@ -1370,12 +1370,12 @@
     "Region": 4,
     "Massey Rank": 113,
     "Eff Rank": 63,
-    "NPI Rank": 117,
+    "NPI Rank": 114,
     "Curr Season Results Rank": 104,
     "Preseason Rank": 82,
     "MEDIAN": 108.5,
     "OVR_RANK": 106,
-    "Stdev": 24.77
+    "Stdev": 24.09
   },
   {
     "Team": "Manhattanville",
@@ -1391,30 +1391,30 @@
     "Stdev": 57
   },
   {
-    "Team": "Springfield",
-    "Conf": "NEWMAC",
-    "Region": 2,
-    "Massey Rank": 111,
-    "Eff Rank": 109,
-    "NPI Rank": 114,
-    "Curr Season Results Rank": 128,
-    "Preseason Rank": 94,
-    "MEDIAN": 112.5,
+    "Team": "SUNY Canton",
+    "Conf": "SUNYAC",
+    "Region": 3,
+    "Massey Rank": 185,
+    "Eff Rank": 121,
+    "NPI Rank": 93,
+    "Curr Season Results Rank": 102,
+    "Preseason Rank": 183,
+    "MEDIAN": 111.5,
     "OVR_RANK": 108,
-    "Stdev": 8.58
+    "Stdev": 41.51
   },
   {
     "Team": "Arcadia",
     "Conf": "MACF",
     "Region": 4,
     "Massey Rank": 162,
-    "Eff Rank": 106,
+    "Eff Rank": 107,
     "NPI Rank": 88,
     "Curr Season Results Rank": 119,
     "Preseason Rank": 161,
-    "MEDIAN": 112.5,
-    "OVR_RANK": 108,
-    "Stdev": 31.51
+    "MEDIAN": 113,
+    "OVR_RANK": 109,
+    "Stdev": 31.38
   },
   {
     "Team": "Nazareth",
@@ -1422,64 +1422,51 @@
     "Region": 3,
     "Massey Rank": 114,
     "Eff Rank": 112,
-    "NPI Rank": 104,
+    "NPI Rank": 103,
     "Curr Season Results Rank": 124,
     "Preseason Rank": 21,
     "MEDIAN": 113,
-    "OVR_RANK": 110,
-    "Stdev": 8.23
-  },
-  {
-    "Team": "Lawrence",
-    "Conf": "MWC",
-    "Region": 9,
-    "Massey Rank": 108,
-    "Eff Rank": 135,
-    "NPI Rank": 118,
-    "Curr Season Results Rank": 91,
-    "Preseason Rank": 175,
-    "MEDIAN": 113,
-    "OVR_RANK": 110,
-    "Stdev": 18.42
-  },
-  {
-    "Team": "SUNY Canton",
-    "Conf": "SUNYAC",
-    "Region": 3,
-    "Massey Rank": 185,
-    "Eff Rank": 123,
-    "NPI Rank": 97,
-    "Curr Season Results Rank": 103,
-    "Preseason Rank": 183,
-    "MEDIAN": 113,
-    "OVR_RANK": 110,
-    "Stdev": 40.23
-  },
-  {
-    "Team": "Carthage",
-    "Conf": "CCIW",
-    "Region": 8,
-    "Massey Rank": 86,
-    "Eff Rank": 117,
-    "NPI Rank": 156,
-    "Curr Season Results Rank": 110,
-    "Preseason Rank": 149,
-    "MEDIAN": 113.5,
-    "OVR_RANK": 113,
-    "Stdev": 29.04
+    "OVR_RANK": 109,
+    "Stdev": 8.62
   },
   {
     "Team": "WPI",
     "Conf": "NEWMAC",
     "Region": 2,
-    "Massey Rank": 127,
+    "Massey Rank": 126,
     "Eff Rank": 85,
-    "NPI Rank": 115,
+    "NPI Rank": 113,
     "Curr Season Results Rank": 113,
     "Preseason Rank": 188,
-    "MEDIAN": 114,
-    "OVR_RANK": 114,
-    "Stdev": 17.78
+    "MEDIAN": 113,
+    "OVR_RANK": 109,
+    "Stdev": 17.29
+  },
+  {
+    "Team": "Lawrence",
+    "Conf": "MWC",
+    "Region": 9,
+    "Massey Rank": 110,
+    "Eff Rank": 136,
+    "NPI Rank": 117,
+    "Curr Season Results Rank": 90,
+    "Preseason Rank": 175,
+    "MEDIAN": 113.5,
+    "OVR_RANK": 112,
+    "Stdev": 19
+  },
+  {
+    "Team": "Carthage",
+    "Conf": "CCIW",
+    "Region": 8,
+    "Massey Rank": 87,
+    "Eff Rank": 117,
+    "NPI Rank": 156,
+    "Curr Season Results Rank": 110,
+    "Preseason Rank": 149,
+    "MEDIAN": 113.5,
+    "OVR_RANK": 112,
+    "Stdev": 28.69
   },
   {
     "Team": "Ursinus",
@@ -1487,77 +1474,103 @@
     "Region": 5,
     "Massey Rank": 170,
     "Eff Rank": 75,
-    "NPI Rank": 113,
+    "NPI Rank": 111,
     "Curr Season Results Rank": 116,
     "Preseason Rank": 86,
-    "MEDIAN": 114.5,
-    "OVR_RANK": 115,
-    "Stdev": 39.08
+    "MEDIAN": 113.5,
+    "OVR_RANK": 112,
+    "Stdev": 39.18
   },
   {
     "Team": "Hanover",
     "Conf": "HCAC",
     "Region": 8,
-    "Massey Rank": 88,
-    "Eff Rank": 137,
-    "NPI Rank": 116,
+    "Massey Rank": 89,
+    "Eff Rank": 138,
+    "NPI Rank": 115,
     "Curr Season Results Rank": 115,
     "Preseason Rank": 95,
-    "MEDIAN": 115.5,
-    "OVR_RANK": 116,
-    "Stdev": 20.08
+    "MEDIAN": 115,
+    "OVR_RANK": 115,
+    "Stdev": 20.02
   },
   {
     "Team": "Albion",
     "Conf": "MIAA",
     "Region": 7,
     "Massey Rank": 81,
-    "Eff Rank": 155,
-    "NPI Rank": 133,
+    "Eff Rank": 156,
+    "NPI Rank": 134,
     "Curr Season Results Rank": 100,
     "Preseason Rank": 220,
-    "MEDIAN": 116.5,
+    "MEDIAN": 117,
+    "OVR_RANK": 116,
+    "Stdev": 33.63
+  },
+  {
+    "Team": "Springfield",
+    "Conf": "NEWMAC",
+    "Region": 2,
+    "Massey Rank": 108,
+    "Eff Rank": 103,
+    "NPI Rank": 129,
+    "Curr Season Results Rank": 128,
+    "Preseason Rank": 94,
+    "MEDIAN": 118,
     "OVR_RANK": 117,
-    "Stdev": 33.09
+    "Stdev": 13.44
   },
   {
     "Team": "Merchant Marine",
     "Conf": "SKY",
     "Region": 3,
     "Massey Rank": 224,
-    "Eff Rank": 78,
+    "Eff Rank": 77,
     "NPI Rank": 138,
-    "Curr Season Results Rank": 102,
+    "Curr Season Results Rank": 103,
     "Preseason Rank": 29,
-    "MEDIAN": 120,
+    "MEDIAN": 120.5,
     "OVR_RANK": 118,
-    "Stdev": 63.95
+    "Stdev": 64.08
   },
   {
     "Team": "George Fox",
     "Conf": "NWC",
     "Region": 10,
-    "Massey Rank": 97,
-    "Eff Rank": 145,
+    "Massey Rank": 96,
+    "Eff Rank": 148,
     "NPI Rank": 124,
     "Curr Season Results Rank": 120,
     "Preseason Rank": 75,
     "MEDIAN": 122,
     "OVR_RANK": 119,
-    "Stdev": 19.67
+    "Stdev": 21.29
+  },
+  {
+    "Team": "St. Vincent",
+    "Conf": "PAC",
+    "Region": 7,
+    "Massey Rank": 131,
+    "Eff Rank": 120,
+    "NPI Rank": 120,
+    "Curr Season Results Rank": 125,
+    "Preseason Rank": 135,
+    "MEDIAN": 122.5,
+    "OVR_RANK": 120,
+    "Stdev": 5.23
   },
   {
     "Team": "Elmhurst",
     "Conf": "CCIW",
     "Region": 8,
     "Massey Rank": 105,
-    "Eff Rank": 133,
+    "Eff Rank": 134,
     "NPI Rank": 150,
     "Curr Season Results Rank": 112,
     "Preseason Rank": 243,
-    "MEDIAN": 122.5,
-    "OVR_RANK": 120,
-    "Stdev": 20.48
+    "MEDIAN": 123,
+    "OVR_RANK": 121,
+    "Stdev": 20.61
   },
   {
     "Team": "Grove City",
@@ -1569,7 +1582,7 @@
     "Curr Season Results Rank": 123,
     "Preseason Rank": 230,
     "MEDIAN": 123.5,
-    "OVR_RANK": 121,
+    "OVR_RANK": 122,
     "Stdev": 33.03
   },
   {
@@ -1577,26 +1590,13 @@
     "Conf": "NJAC",
     "Region": 4,
     "Massey Rank": 163,
-    "Eff Rank": 101,
-    "NPI Rank": 106,
-    "Curr Season Results Rank": 142,
+    "Eff Rank": 103,
+    "NPI Rank": 105,
+    "Curr Season Results Rank": 143,
     "Preseason Rank": 199,
     "MEDIAN": 124,
-    "OVR_RANK": 122,
-    "Stdev": 29.63
-  },
-  {
-    "Team": "St. Vincent",
-    "Conf": "PAC",
-    "Region": 7,
-    "Massey Rank": 131,
-    "Eff Rank": 120,
-    "NPI Rank": 123,
-    "Curr Season Results Rank": 125,
-    "Preseason Rank": 135,
-    "MEDIAN": 124,
-    "OVR_RANK": 122,
-    "Stdev": 4.65
+    "OVR_RANK": 123,
+    "Stdev": 29.46
   },
   {
     "Team": "Hollins",
@@ -1604,38 +1604,38 @@
     "Region": 6,
     "Massey Rank": 203,
     "Eff Rank": 127,
-    "NPI Rank": 110,
+    "NPI Rank": 109,
     "Curr Season Results Rank": 121,
     "Preseason Rank": 182,
     "MEDIAN": 124,
-    "OVR_RANK": 122,
-    "Stdev": 42.42
+    "OVR_RANK": 123,
+    "Stdev": 42.66
   },
   {
     "Team": "Hamilton",
     "Conf": "NESCAC",
     "Region": 1,
-    "Massey Rank": 120,
+    "Massey Rank": 121,
     "Eff Rank": 91,
-    "NPI Rank": 129,
+    "NPI Rank": 128,
     "Curr Season Results Rank": 129,
     "Preseason Rank": 26,
     "MEDIAN": 124.5,
     "OVR_RANK": 125,
-    "Stdev": 18.01
+    "Stdev": 17.86
   },
   {
     "Team": "Babson",
     "Conf": "NEWMAC",
     "Region": 2,
-    "Massey Rank": 96,
+    "Massey Rank": 95,
     "Eff Rank": 125,
-    "NPI Rank": 130,
+    "NPI Rank": 131,
     "Curr Season Results Rank": 137,
     "Preseason Rank": 77,
-    "MEDIAN": 127.5,
+    "MEDIAN": 128,
     "OVR_RANK": 126,
-    "Stdev": 18.02
+    "Stdev": 18.65
   },
   {
     "Team": "Clark",
@@ -1654,53 +1654,53 @@
     "Team": "Southwestern",
     "Conf": "SCAC",
     "Region": 10,
-    "Massey Rank": 125,
+    "Massey Rank": 127,
     "Eff Rank": 171,
-    "NPI Rank": 102,
-    "Curr Season Results Rank": 134,
+    "NPI Rank": 101,
+    "Curr Season Results Rank": 135,
     "Preseason Rank": 299,
-    "MEDIAN": 129.5,
-    "OVR_RANK": 127,
-    "Stdev": 28.69
+    "MEDIAN": 131,
+    "OVR_RANK": 128,
+    "Stdev": 28.91
   },
   {
     "Team": "Lynchburg",
     "Conf": "ODAC",
     "Region": 6,
     "Massey Rank": 172,
-    "Eff Rank": 147,
-    "NPI Rank": 107,
+    "Eff Rank": 148,
+    "NPI Rank": 106,
     "Curr Season Results Rank": 114,
     "Preseason Rank": 159,
-    "MEDIAN": 130.5,
-    "OVR_RANK": 129,
-    "Stdev": 30.21
+    "MEDIAN": 131,
+    "OVR_RANK": 128,
+    "Stdev": 30.66
   },
   {
     "Team": "Brooklyn College",
     "Conf": "CUNYAC",
     "Region": 4,
     "Massey Rank": 196,
-    "Eff Rank": 133,
-    "NPI Rank": 98,
+    "Eff Rank": 134,
+    "NPI Rank": 102,
     "Curr Season Results Rank": 130,
     "Preseason Rank": 226,
-    "MEDIAN": 131.5,
+    "MEDIAN": 132,
     "OVR_RANK": 130,
-    "Stdev": 41.02
+    "Stdev": 39.64
   },
   {
     "Team": "Williams",
     "Conf": "NESCAC",
     "Region": 1,
-    "Massey Rank": 126,
-    "Eff Rank": 156,
-    "NPI Rank": 142,
-    "Curr Season Results Rank": 126,
+    "Massey Rank": 125,
+    "Eff Rank": 157,
+    "NPI Rank": 143,
+    "Curr Season Results Rank": 127,
     "Preseason Rank": 68,
-    "MEDIAN": 134,
+    "MEDIAN": 135,
     "OVR_RANK": 131,
-    "Stdev": 14.46
+    "Stdev": 15.01
   },
   {
     "Team": "Bethany (WV)",
@@ -1712,7 +1712,7 @@
     "Curr Season Results Rank": 150,
     "Preseason Rank": 237,
     "MEDIAN": 135,
-    "OVR_RANK": 132,
+    "OVR_RANK": 131,
     "Stdev": 10.71
   },
   {
@@ -1720,39 +1720,39 @@
     "Conf": "GNAC",
     "Region": 1,
     "Massey Rank": 160,
-    "Eff Rank": 104,
-    "NPI Rank": 131,
+    "Eff Rank": 105,
+    "NPI Rank": 132,
     "Curr Season Results Rank": 139,
     "Preseason Rank": 216,
-    "MEDIAN": 135,
-    "OVR_RANK": 132,
-    "Stdev": 23.16
+    "MEDIAN": 135.5,
+    "OVR_RANK": 133,
+    "Stdev": 22.7
   },
   {
     "Team": "Keene St.",
     "Conf": "LEC",
     "Region": 2,
     "Massey Rank": 177,
-    "Eff Rank": 139,
-    "NPI Rank": 126,
+    "Eff Rank": 140,
+    "NPI Rank": 125,
     "Curr Season Results Rank": 132,
     "Preseason Rank": 158,
-    "MEDIAN": 135.5,
+    "MEDIAN": 136,
     "OVR_RANK": 134,
-    "Stdev": 22.96
+    "Stdev": 23.16
   },
   {
     "Team": "Emerson",
     "Conf": "NEWMAC",
     "Region": 2,
     "Massey Rank": 149,
-    "Eff Rank": 142,
-    "NPI Rank": 105,
+    "Eff Rank": 143,
+    "NPI Rank": 104,
     "Curr Season Results Rank": 133,
     "Preseason Rank": 32,
-    "MEDIAN": 137.5,
+    "MEDIAN": 138,
     "OVR_RANK": 135,
-    "Stdev": 19.31
+    "Stdev": 19.96
   },
   {
     "Team": "Ithaca",
@@ -1760,77 +1760,64 @@
     "Region": 3,
     "Massey Rank": 115,
     "Eff Rank": 110,
-    "NPI Rank": 207,
+    "NPI Rank": 206,
     "Curr Season Results Rank": 163,
     "Preseason Rank": 121,
     "MEDIAN": 139,
     "OVR_RANK": 136,
-    "Stdev": 45.6
+    "Stdev": 45.17
   },
   {
     "Team": "Manchester",
     "Conf": "HCAC",
     "Region": 8,
-    "Massey Rank": 140,
-    "Eff Rank": 153,
-    "NPI Rank": 140,
-    "Curr Season Results Rank": 136,
+    "Massey Rank": 139,
+    "Eff Rank": 151,
+    "NPI Rank": 139,
+    "Curr Season Results Rank": 134,
     "Preseason Rank": 172,
-    "MEDIAN": 140,
-    "OVR_RANK": 137,
-    "Stdev": 7.41
+    "MEDIAN": 139,
+    "OVR_RANK": 136,
+    "Stdev": 7.23
   },
   {
     "Team": "Connecticut College",
     "Conf": "NESCAC",
     "Region": 1,
     "Massey Rank": 146,
-    "Eff Rank": 104,
+    "Eff Rank": 105,
     "NPI Rank": 154,
-    "Curr Season Results Rank": 135,
+    "Curr Season Results Rank": 136,
     "Preseason Rank": 91,
-    "MEDIAN": 140.5,
+    "MEDIAN": 141,
     "OVR_RANK": 138,
-    "Stdev": 21.93
+    "Stdev": 21.47
   },
   {
     "Team": "Adrian",
     "Conf": "MIAA",
     "Region": 7,
     "Massey Rank": 133,
-    "Eff Rank": 107,
+    "Eff Rank": 108,
     "NPI Rank": 173,
     "Curr Season Results Rank": 149,
     "Preseason Rank": 217,
     "MEDIAN": 141,
-    "OVR_RANK": 139,
-    "Stdev": 27.73
+    "OVR_RANK": 138,
+    "Stdev": 27.33
   },
   {
     "Team": "Montclair St.",
     "Conf": "NJAC",
     "Region": 4,
-    "Massey Rank": 182,
+    "Massey Rank": 180,
     "Eff Rank": 128,
-    "NPI Rank": 99,
+    "NPI Rank": 98,
     "Curr Season Results Rank": 158,
     "Preseason Rank": 79,
     "MEDIAN": 143,
     "OVR_RANK": 140,
-    "Stdev": 36.06
-  },
-  {
-    "Team": "Trinity (TX)",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Massey Rank": 80,
-    "Eff Rank": 132,
-    "NPI Rank": 189,
-    "Curr Season Results Rank": 155,
-    "Preseason Rank": 73,
-    "MEDIAN": 143.5,
-    "OVR_RANK": 141,
-    "Stdev": 45.77
+    "Stdev": 35.72
   },
   {
     "Team": "Brockport St.",
@@ -1839,11 +1826,24 @@
     "Massey Rank": 148,
     "Eff Rank": 138,
     "NPI Rank": 149,
-    "Curr Season Results Rank": 141,
+    "Curr Season Results Rank": 140,
     "Preseason Rank": 102,
+    "MEDIAN": 144,
+    "OVR_RANK": 141,
+    "Stdev": 5.56
+  },
+  {
+    "Team": "Trinity (TX)",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Massey Rank": 82,
+    "Eff Rank": 132,
+    "NPI Rank": 190,
+    "Curr Season Results Rank": 157,
+    "Preseason Rank": 73,
     "MEDIAN": 144.5,
     "OVR_RANK": 142,
-    "Stdev": 5.35
+    "Stdev": 45.52
   },
   {
     "Team": "Belhaven",
@@ -1851,90 +1851,90 @@
     "Region": 6,
     "Massey Rank": 169,
     "Eff Rank": 178,
-    "NPI Rank": 94,
+    "NPI Rank": 96,
     "Curr Season Results Rank": 122,
     "Preseason Rank": 195,
     "MEDIAN": 145.5,
     "OVR_RANK": 143,
-    "Stdev": 39.68
+    "Stdev": 38.9
   },
   {
     "Team": "North Central (IL)",
     "Conf": "CCIW",
     "Region": 8,
-    "Massey Rank": 106,
-    "Eff Rank": 150,
+    "Massey Rank": 107,
+    "Eff Rank": 151,
     "NPI Rank": 155,
-    "Curr Season Results Rank": 143,
+    "Curr Season Results Rank": 142,
     "Preseason Rank": 179,
     "MEDIAN": 146.5,
     "OVR_RANK": 144,
-    "Stdev": 22.22
+    "Stdev": 21.85
   },
   {
     "Team": "Pacific",
     "Conf": "NWC",
     "Region": 10,
-    "Massey Rank": 110,
+    "Massey Rank": 111,
     "Eff Rank": 167,
     "NPI Rank": 171,
-    "Curr Season Results Rank": 127,
+    "Curr Season Results Rank": 126,
     "Preseason Rank": 259,
-    "MEDIAN": 147,
-    "OVR_RANK": 145,
-    "Stdev": 30.02
+    "MEDIAN": 146.5,
+    "OVR_RANK": 144,
+    "Stdev": 29.84
   },
   {
     "Team": "Southern Virginia",
     "Conf": "USAC",
     "Region": 6,
     "Massey Rank": 157,
-    "Eff Rank": 158,
+    "Eff Rank": 160,
     "NPI Rank": 137,
     "Curr Season Results Rank": 138,
     "Preseason Rank": 37,
     "MEDIAN": 147.5,
     "OVR_RANK": 146,
-    "Stdev": 11.56
+    "Stdev": 12.19
   },
   {
     "Team": "Benedictine",
     "Conf": "NACC",
     "Region": 8,
     "Massey Rank": 138,
-    "Eff Rank": 211,
-    "NPI Rank": 132,
+    "Eff Rank": 210,
+    "NPI Rank": 130,
     "Curr Season Results Rank": 160,
     "Preseason Rank": 99,
     "MEDIAN": 149,
     "OVR_RANK": 147,
-    "Stdev": 35.91
+    "Stdev": 35.98
   },
   {
     "Team": "Vassar",
     "Conf": "LL",
     "Region": 3,
     "Massey Rank": 137,
-    "Eff Rank": 140,
-    "NPI Rank": 195,
+    "Eff Rank": 141,
+    "NPI Rank": 194,
     "Curr Season Results Rank": 159,
     "Preseason Rank": 84,
-    "MEDIAN": 149.5,
+    "MEDIAN": 150,
     "OVR_RANK": 148,
-    "Stdev": 26.68
+    "Stdev": 25.99
   },
   {
     "Team": "Houghton",
     "Conf": "E8",
     "Region": 3,
     "Massey Rank": 159,
-    "Eff Rank": 145,
+    "Eff Rank": 146,
     "NPI Rank": 162,
     "Curr Season Results Rank": 109,
     "Preseason Rank": 177,
-    "MEDIAN": 152,
+    "MEDIAN": 152.5,
     "OVR_RANK": 149,
-    "Stdev": 24.32
+    "Stdev": 24.34
   },
   {
     "Team": "Drew",
@@ -1946,7 +1946,7 @@
     "Curr Season Results Rank": 144,
     "Preseason Rank": 48,
     "MEDIAN": 152.5,
-    "OVR_RANK": 150,
+    "OVR_RANK": 149,
     "Stdev": 32.99
   },
   {
@@ -1956,11 +1956,11 @@
     "Massey Rank": 103,
     "Eff Rank": 201,
     "NPI Rank": 153,
-    "Curr Season Results Rank": 153,
+    "Curr Season Results Rank": 154,
     "Preseason Rank": 67,
-    "MEDIAN": 153,
+    "MEDIAN": 153.5,
     "OVR_RANK": 151,
-    "Stdev": 40.01
+    "Stdev": 40.02
   },
   {
     "Team": "Roanoke",
@@ -1981,12 +1981,12 @@
     "Region": 3,
     "Massey Rank": 181,
     "Eff Rank": 163,
-    "NPI Rank": 109,
+    "NPI Rank": 108,
     "Curr Season Results Rank": 148,
     "Preseason Rank": 198,
     "MEDIAN": 155.5,
     "OVR_RANK": 153,
-    "Stdev": 30.63
+    "Stdev": 31.08
   },
   {
     "Team": "Alma",
@@ -2005,79 +2005,79 @@
     "Team": "Endicott",
     "Conf": "CNE",
     "Region": 2,
-    "Massey Rank": 155,
-    "Eff Rank": 156,
-    "NPI Rank": 164,
-    "Curr Season Results Rank": 156,
+    "Massey Rank": 154,
+    "Eff Rank": 157,
+    "NPI Rank": 166,
+    "Curr Season Results Rank": 155,
     "Preseason Rank": 36,
     "MEDIAN": 156,
     "OVR_RANK": 155,
-    "Stdev": 4.19
+    "Stdev": 5.48
   },
   {
     "Team": "Allegheny",
     "Conf": "PAC",
     "Region": 7,
     "Massey Rank": 166,
-    "Eff Rank": 136,
+    "Eff Rank": 137,
     "NPI Rank": 205,
     "Curr Season Results Rank": 147,
     "Preseason Rank": 126,
     "MEDIAN": 156.5,
     "OVR_RANK": 156,
-    "Stdev": 30.32
+    "Stdev": 30.02
   },
   {
     "Team": "St. Catherine",
     "Conf": "MIAC",
     "Region": 9,
-    "Massey Rank": 107,
+    "Massey Rank": 106,
     "Eff Rank": 176,
     "NPI Rank": 163,
     "Curr Season Results Rank": 152,
     "Preseason Rank": 191,
     "MEDIAN": 157.5,
     "OVR_RANK": 157,
-    "Stdev": 29.98
-  },
-  {
-    "Team": "Salisbury",
-    "Conf": "C2C",
-    "Region": 5,
-    "Massey Rank": 207,
-    "Eff Rank": 148,
-    "NPI Rank": 112,
-    "Curr Season Results Rank": 168,
-    "Preseason Rank": 155,
-    "MEDIAN": 158,
-    "OVR_RANK": 158,
-    "Stdev": 39.64
+    "Stdev": 30.46
   },
   {
     "Team": "Millsaps",
     "Conf": "SAA",
     "Region": 6,
     "Massey Rank": 152,
-    "Eff Rank": 226,
-    "NPI Rank": 93,
+    "Eff Rank": 225,
+    "NPI Rank": 95,
     "Curr Season Results Rank": 164,
     "Preseason Rank": 120,
     "MEDIAN": 158,
     "OVR_RANK": 158,
-    "Stdev": 54.52
+    "Stdev": 53.31
+  },
+  {
+    "Team": "Salisbury",
+    "Conf": "C2C",
+    "Region": 5,
+    "Massey Rank": 207,
+    "Eff Rank": 150,
+    "NPI Rank": 110,
+    "Curr Season Results Rank": 168,
+    "Preseason Rank": 155,
+    "MEDIAN": 159,
+    "OVR_RANK": 159,
+    "Stdev": 40.28
   },
   {
     "Team": "LaGrange",
     "Conf": "CCS",
     "Region": 6,
     "Massey Rank": 178,
-    "Eff Rank": 176,
-    "NPI Rank": 120,
-    "Curr Season Results Rank": 140,
+    "Eff Rank": 177,
+    "NPI Rank": 119,
+    "Curr Season Results Rank": 141,
     "Preseason Rank": 360,
-    "MEDIAN": 158,
-    "OVR_RANK": 158,
-    "Stdev": 28.35
+    "MEDIAN": 159,
+    "OVR_RANK": 159,
+    "Stdev": 28.86
   },
   {
     "Team": "Penn State-Behrend",
@@ -2089,7 +2089,7 @@
     "Curr Season Results Rank": 174,
     "Preseason Rank": 105,
     "MEDIAN": 159,
-    "OVR_RANK": 161,
+    "OVR_RANK": 159,
     "Stdev": 20.11
   },
   {
@@ -2097,13 +2097,13 @@
     "Conf": "SCIAC",
     "Region": 10,
     "Massey Rank": 116,
-    "Eff Rank": 152,
-    "NPI Rank": 186,
+    "Eff Rank": 154,
+    "NPI Rank": 184,
     "Curr Season Results Rank": 172,
     "Preseason Rank": 63,
-    "MEDIAN": 162,
+    "MEDIAN": 163,
     "OVR_RANK": 162,
-    "Stdev": 30.39
+    "Stdev": 29.68
   },
   {
     "Team": "SUNY Oneonta",
@@ -2123,13 +2123,13 @@
     "Conf": "SCIAC",
     "Region": 10,
     "Massey Rank": 119,
-    "Eff Rank": 154,
+    "Eff Rank": 155,
     "NPI Rank": 178,
     "Curr Season Results Rank": 173,
     "Preseason Rank": 201,
-    "MEDIAN": 163.5,
-    "OVR_RANK": 163,
-    "Stdev": 26.75
+    "MEDIAN": 164,
+    "OVR_RANK": 164,
+    "Stdev": 26.73
   },
   {
     "Team": "Virginia Wesleyan",
@@ -2138,24 +2138,24 @@
     "Massey Rank": 261,
     "Eff Rank": 172,
     "NPI Rank": 152,
-    "Curr Season Results Rank": 157,
+    "Curr Season Results Rank": 156,
     "Preseason Rank": 317,
-    "MEDIAN": 164.5,
-    "OVR_RANK": 165,
-    "Stdev": 51.05
+    "MEDIAN": 164,
+    "OVR_RANK": 164,
+    "Stdev": 51.23
   },
   {
     "Team": "Muskingum",
     "Conf": "OAC",
     "Region": 7,
-    "Massey Rank": 154,
+    "Massey Rank": 155,
     "Eff Rank": 201,
-    "NPI Rank": 143,
+    "NPI Rank": 142,
     "Curr Season Results Rank": 175,
     "Preseason Rank": 219,
-    "MEDIAN": 164.5,
-    "OVR_RANK": 165,
-    "Stdev": 25.55
+    "MEDIAN": 165,
+    "OVR_RANK": 166,
+    "Stdev": 25.71
   },
   {
     "Team": "Berry",
@@ -2167,7 +2167,7 @@
     "Curr Season Results Rank": 162,
     "Preseason Rank": 152,
     "MEDIAN": 165,
-    "OVR_RANK": 167,
+    "OVR_RANK": 166,
     "Stdev": 25.01
   },
   {
@@ -2177,11 +2177,11 @@
     "Massey Rank": 150,
     "Eff Rank": 130,
     "NPI Rank": 223,
-    "Curr Season Results Rank": 181,
+    "Curr Season Results Rank": 182,
     "Preseason Rank": 238,
-    "MEDIAN": 165.5,
+    "MEDIAN": 166,
     "OVR_RANK": 168,
-    "Stdev": 40.52
+    "Stdev": 40.61
   },
   {
     "Team": "Ohio Northern",
@@ -2203,24 +2203,11 @@
     "Massey Rank": 267,
     "Eff Rank": 161,
     "NPI Rank": 147,
-    "Curr Season Results Rank": 177,
+    "Curr Season Results Rank": 176,
     "Preseason Rank": 222,
-    "MEDIAN": 169,
+    "MEDIAN": 168.5,
     "OVR_RANK": 170,
-    "Stdev": 54.07
-  },
-  {
-    "Team": "UC Santa Cruz",
-    "Conf": "C2C",
-    "Region": 10,
-    "Massey Rank": 109,
-    "Eff Rank": 141,
-    "NPI Rank": 202,
-    "Curr Season Results Rank": 199,
-    "Preseason Rank": 162,
-    "MEDIAN": 170,
-    "OVR_RANK": 171,
-    "Stdev": 45.52
+    "Stdev": 54.14
   },
   {
     "Team": "Oberlin",
@@ -2236,17 +2223,30 @@
     "Stdev": 21.73
   },
   {
+    "Team": "UC Santa Cruz",
+    "Conf": "C2C",
+    "Region": 10,
+    "Massey Rank": 109,
+    "Eff Rank": 142,
+    "NPI Rank": 203,
+    "Curr Season Results Rank": 199,
+    "Preseason Rank": 162,
+    "MEDIAN": 170.5,
+    "OVR_RANK": 172,
+    "Stdev": 45.65
+  },
+  {
     "Team": "Hartford",
     "Conf": "CNE",
     "Region": 2,
     "Massey Rank": 164,
-    "Eff Rank": 150,
-    "NPI Rank": 183,
+    "Eff Rank": 151,
+    "NPI Rank": 188,
     "Curr Season Results Rank": 178,
     "Preseason Rank": 181,
     "MEDIAN": 171,
     "OVR_RANK": 173,
-    "Stdev": 14.86
+    "Stdev": 16.17
   },
   {
     "Team": "Mt. St. Joseph",
@@ -2267,51 +2267,64 @@
     "Region": 10,
     "Massey Rank": 156,
     "Eff Rank": 193,
-    "NPI Rank": 194,
+    "NPI Rank": 195,
     "Curr Season Results Rank": 151,
     "Preseason Rank": 211,
     "MEDIAN": 174.5,
     "OVR_RANK": 174,
-    "Stdev": 23.19
+    "Stdev": 23.49
   },
   {
     "Team": "Maryville",
     "Conf": "CCS",
     "Region": 6,
     "Massey Rank": 232,
-    "Eff Rank": 158,
+    "Eff Rank": 159,
     "NPI Rank": 196,
-    "Curr Season Results Rank": 154,
+    "Curr Season Results Rank": 153,
     "Preseason Rank": 209,
-    "MEDIAN": 177,
+    "MEDIAN": 177.5,
     "OVR_RANK": 176,
-    "Stdev": 36.61
+    "Stdev": 36.65
   },
   {
     "Team": "Millikin",
     "Conf": "CCIW",
     "Region": 8,
-    "Massey Rank": 100,
+    "Massey Rank": 99,
     "Eff Rank": 188,
-    "NPI Rank": 187,
+    "NPI Rank": 185,
     "Curr Season Results Rank": 170,
     "Preseason Rank": 249,
-    "MEDIAN": 178.5,
-    "OVR_RANK": 177,
-    "Stdev": 41.66
+    "MEDIAN": 177.5,
+    "OVR_RANK": 176,
+    "Stdev": 41.75
   },
   {
     "Team": "Roger Williams",
     "Conf": "CNE",
     "Region": 2,
     "Massey Rank": 161,
-    "Eff Rank": 143,
+    "Eff Rank": 144,
     "NPI Rank": 200,
     "Curr Season Results Rank": 197,
     "Preseason Rank": 39,
     "MEDIAN": 179,
     "OVR_RANK": 178,
-    "Stdev": 27.86
+    "Stdev": 27.48
+  },
+  {
+    "Team": "Salve Regina",
+    "Conf": "NEWMAC",
+    "Region": 2,
+    "Massey Rank": 179,
+    "Eff Rank": 181,
+    "NPI Rank": 175,
+    "Curr Season Results Rank": 220,
+    "Preseason Rank": 208,
+    "MEDIAN": 180,
+    "OVR_RANK": 179,
+    "Stdev": 20.98
   },
   {
     "Team": "Maine-Maritime",
@@ -2323,34 +2336,21 @@
     "Curr Season Results Rank": 166,
     "Preseason Rank": 93,
     "MEDIAN": 180.5,
-    "OVR_RANK": 179,
+    "OVR_RANK": 180,
     "Stdev": 40.04
-  },
-  {
-    "Team": "Salve Regina",
-    "Conf": "NEWMAC",
-    "Region": 2,
-    "Massey Rank": 180,
-    "Eff Rank": 181,
-    "NPI Rank": 175,
-    "Curr Season Results Rank": 220,
-    "Preseason Rank": 208,
-    "MEDIAN": 180.5,
-    "OVR_RANK": 179,
-    "Stdev": 20.83
   },
   {
     "Team": "Berea",
     "Conf": "HCAC",
     "Region": 8,
     "Massey Rank": 167,
-    "Eff Rank": 186,
+    "Eff Rank": 187,
     "NPI Rank": 180,
     "Curr Season Results Rank": 221,
     "Preseason Rank": 174,
-    "MEDIAN": 183,
+    "MEDIAN": 183.5,
     "OVR_RANK": 181,
-    "Stdev": 23.07
+    "Stdev": 23.04
   },
   {
     "Team": "Plattsburgh St.",
@@ -2358,12 +2358,12 @@
     "Region": 3,
     "Massey Rank": 200,
     "Eff Rank": 217,
-    "NPI Rank": 101,
+    "NPI Rank": 99,
     "Curr Season Results Rank": 167,
     "Preseason Rank": 108,
     "MEDIAN": 183.5,
-    "OVR_RANK": 182,
-    "Stdev": 51.23
+    "OVR_RANK": 181,
+    "Stdev": 52.14
   },
   {
     "Team": "Skidmore",
@@ -2384,25 +2384,25 @@
     "Region": 4,
     "Massey Rank": 186,
     "Eff Rank": 100,
-    "NPI Rank": 212,
+    "NPI Rank": 211,
     "Curr Season Results Rank": 190,
     "Preseason Rank": 88,
     "MEDIAN": 188,
     "OVR_RANK": 183,
-    "Stdev": 49.34
+    "Stdev": 49.07
   },
   {
     "Team": "Occidental",
     "Conf": "SCIAC",
     "Region": 10,
-    "Massey Rank": 139,
+    "Massey Rank": 140,
     "Eff Rank": 199,
     "NPI Rank": 193,
-    "Curr Season Results Rank": 183,
+    "Curr Season Results Rank": 184,
     "Preseason Rank": 144,
-    "MEDIAN": 188,
-    "OVR_RANK": 183,
-    "Stdev": 27.15
+    "MEDIAN": 188.5,
+    "OVR_RANK": 185,
+    "Stdev": 26.72
   },
   {
     "Team": "Muhlenberg",
@@ -2410,12 +2410,25 @@
     "Region": 5,
     "Massey Rank": 219,
     "Eff Rank": 175,
-    "NPI Rank": 158,
+    "NPI Rank": 157,
     "Curr Season Results Rank": 205,
     "Preseason Rank": 166,
     "MEDIAN": 190,
     "OVR_RANK": 186,
-    "Stdev": 27.77
+    "Stdev": 28.14
+  },
+  {
+    "Team": "Fredonia",
+    "Conf": "SUNYAC",
+    "Region": 3,
+    "Massey Rank": 246,
+    "Eff Rank": 191,
+    "NPI Rank": 189,
+    "Curr Season Results Rank": 181,
+    "Preseason Rank": 293,
+    "MEDIAN": 190,
+    "OVR_RANK": 186,
+    "Stdev": 29.81
   },
   {
     "Team": "Haverford",
@@ -2424,24 +2437,11 @@
     "Massey Rank": 241,
     "Eff Rank": 205,
     "NPI Rank": 174,
-    "Curr Season Results Rank": 176,
+    "Curr Season Results Rank": 177,
     "Preseason Rank": 164,
-    "MEDIAN": 190.5,
-    "OVR_RANK": 187,
-    "Stdev": 31.38
-  },
-  {
-    "Team": "Fredonia",
-    "Conf": "SUNYAC",
-    "Region": 3,
-    "Massey Rank": 246,
-    "Eff Rank": 191,
-    "NPI Rank": 190,
-    "Curr Season Results Rank": 182,
-    "Preseason Rank": 293,
-    "MEDIAN": 190.5,
-    "OVR_RANK": 187,
-    "Stdev": 29.44
+    "MEDIAN": 191,
+    "OVR_RANK": 188,
+    "Stdev": 31.14
   },
   {
     "Team": "Brevard",
@@ -2453,47 +2453,47 @@
     "Curr Season Results Rank": 169,
     "Preseason Rank": 239,
     "MEDIAN": 191,
-    "OVR_RANK": 189,
+    "OVR_RANK": 188,
     "Stdev": 37.73
   },
   {
     "Team": "Suffolk",
     "Conf": "CNE",
     "Region": 2,
-    "Massey Rank": 204,
+    "Massey Rank": 205,
     "Eff Rank": 206,
-    "NPI Rank": 157,
+    "NPI Rank": 158,
     "Curr Season Results Rank": 180,
     "Preseason Rank": 194,
-    "MEDIAN": 192,
+    "MEDIAN": 192.5,
     "OVR_RANK": 190,
-    "Stdev": 23.08
+    "Stdev": 22.91
   },
   {
     "Team": "Oswego St.",
     "Conf": "SUNYAC",
     "Region": 3,
     "Massey Rank": 202,
-    "Eff Rank": 148,
-    "NPI Rank": 237,
-    "Curr Season Results Rank": 184,
+    "Eff Rank": 146,
+    "NPI Rank": 236,
+    "Curr Season Results Rank": 183,
     "Preseason Rank": 197,
-    "MEDIAN": 193,
-    "OVR_RANK": 191,
-    "Stdev": 37.07
+    "MEDIAN": 192.5,
+    "OVR_RANK": 190,
+    "Stdev": 37.56
   },
   {
     "Team": "Lasell",
     "Conf": "GNAC",
     "Region": 1,
-    "Massey Rank": 227,
+    "Massey Rank": 228,
     "Eff Rank": 224,
-    "NPI Rank": 111,
+    "NPI Rank": 112,
     "Curr Season Results Rank": 165,
     "Preseason Rank": 281,
     "MEDIAN": 194.5,
     "OVR_RANK": 192,
-    "Stdev": 55.13
+    "Stdev": 54.98
   },
   {
     "Team": "Coast Guard",
@@ -2501,12 +2501,12 @@
     "Region": 2,
     "Massey Rank": 194,
     "Eff Rank": 161,
-    "NPI Rank": 211,
+    "NPI Rank": 212,
     "Curr Season Results Rank": 198,
     "Preseason Rank": 111,
     "MEDIAN": 196,
     "OVR_RANK": 193,
-    "Stdev": 21.28
+    "Stdev": 21.59
   },
   {
     "Team": "Penn State-Abington",
@@ -2527,25 +2527,12 @@
     "Region": 3,
     "Massey Rank": 265,
     "Eff Rank": 208,
-    "NPI Rank": 166,
+    "NPI Rank": 165,
     "Curr Season Results Rank": 185,
     "Preseason Rank": 279,
     "MEDIAN": 196.5,
     "OVR_RANK": 194,
-    "Stdev": 42.92
-  },
-  {
-    "Team": "Rutgers-Camden",
-    "Conf": "NJAC",
-    "Region": 4,
-    "Massey Rank": 289,
-    "Eff Rank": 186,
-    "NPI Rank": 182,
-    "Curr Season Results Rank": 218,
-    "Preseason Rank": 372,
-    "MEDIAN": 202,
-    "OVR_RANK": 196,
-    "Stdev": 49.53
+    "Stdev": 43.23
   },
   {
     "Team": "Augsburg",
@@ -2554,50 +2541,63 @@
     "Massey Rank": 187,
     "Eff Rank": 291,
     "NPI Rank": 191,
-    "Curr Season Results Rank": 213,
+    "Curr Season Results Rank": 212,
     "Preseason Rank": 248,
-    "MEDIAN": 202,
+    "MEDIAN": 201.5,
     "OVR_RANK": 196,
-    "Stdev": 48.37
+    "Stdev": 48.42
   },
   {
-    "Team": "Univ Ozarks",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Massey Rank": 191,
-    "Eff Rank": 256,
-    "NPI Rank": 168,
-    "Curr Season Results Rank": 215,
-    "Preseason Rank": 246,
-    "MEDIAN": 203,
-    "OVR_RANK": 198,
-    "Stdev": 37.6
+    "Team": "Rutgers-Camden",
+    "Conf": "NJAC",
+    "Region": 4,
+    "Massey Rank": 289,
+    "Eff Rank": 186,
+    "NPI Rank": 186,
+    "Curr Season Results Rank": 219,
+    "Preseason Rank": 372,
+    "MEDIAN": 202.5,
+    "OVR_RANK": 197,
+    "Stdev": 48.56
   },
   {
     "Team": "St. Mary's (MD)",
     "Conf": "UEC",
     "Region": 4,
-    "Massey Rank": 257,
+    "Massey Rank": 258,
     "Eff Rank": 197,
     "NPI Rank": 160,
     "Curr Season Results Rank": 209,
     "Preseason Rank": 130,
     "MEDIAN": 203,
     "OVR_RANK": 198,
-    "Stdev": 40.03
+    "Stdev": 40.46
   },
   {
     "Team": "Anderson",
     "Conf": "HCAC",
     "Region": 8,
     "Massey Rank": 175,
-    "Eff Rank": 185,
+    "Eff Rank": 184,
     "NPI Rank": 222,
-    "Curr Season Results Rank": 226,
+    "Curr Season Results Rank": 225,
     "Preseason Rank": 168,
+    "MEDIAN": 203,
+    "OVR_RANK": 198,
+    "Stdev": 25.7
+  },
+  {
+    "Team": "Univ Ozarks",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Massey Rank": 191,
+    "Eff Rank": 257,
+    "NPI Rank": 168,
+    "Curr Season Results Rank": 216,
+    "Preseason Rank": 246,
     "MEDIAN": 203.5,
     "OVR_RANK": 200,
-    "Stdev": 25.78
+    "Stdev": 38.1
   },
   {
     "Team": "Wooster",
@@ -2613,30 +2613,30 @@
     "Stdev": 26.62
   },
   {
-    "Team": "Stockton",
-    "Conf": "NJAC",
-    "Region": 4,
-    "Massey Rank": 233,
-    "Eff Rank": 219,
-    "NPI Rank": 165,
-    "Curr Season Results Rank": 196,
-    "Preseason Rank": 236,
-    "MEDIAN": 207.5,
-    "OVR_RANK": 202,
-    "Stdev": 29.71
-  },
-  {
     "Team": "Central (IA)",
     "Conf": "ARC",
     "Region": 9,
     "Massey Rank": 158,
     "Eff Rank": 215,
     "NPI Rank": 201,
-    "Curr Season Results Rank": 214,
+    "Curr Season Results Rank": 213,
     "Preseason Rank": 235,
-    "MEDIAN": 207.5,
+    "MEDIAN": 207,
     "OVR_RANK": 202,
-    "Stdev": 26.77
+    "Stdev": 26.56
+  },
+  {
+    "Team": "Stockton",
+    "Conf": "NJAC",
+    "Region": 4,
+    "Massey Rank": 233,
+    "Eff Rank": 219,
+    "NPI Rank": 164,
+    "Curr Season Results Rank": 196,
+    "Preseason Rank": 236,
+    "MEDIAN": 207.5,
+    "OVR_RANK": 203,
+    "Stdev": 30.14
   },
   {
     "Team": "Washington College",
@@ -2658,11 +2658,11 @@
     "Massey Rank": 153,
     "Eff Rank": 223,
     "NPI Rank": 204,
-    "Curr Season Results Rank": 219,
+    "Curr Season Results Rank": 218,
     "Preseason Rank": 117,
-    "MEDIAN": 211.5,
+    "MEDIAN": 211,
     "OVR_RANK": 205,
-    "Stdev": 32.22
+    "Stdev": 32.03
   },
   {
     "Team": "Loras",
@@ -2670,12 +2670,12 @@
     "Region": 9,
     "Massey Rank": 128,
     "Eff Rank": 228,
-    "NPI Rank": 270,
+    "NPI Rank": 269,
     "Curr Season Results Rank": 200,
     "Preseason Rank": 218,
     "MEDIAN": 214,
     "OVR_RANK": 206,
-    "Stdev": 59.72
+    "Stdev": 59.37
   },
   {
     "Team": "Misericordia",
@@ -2684,11 +2684,11 @@
     "Massey Rank": 249,
     "Eff Rank": 179,
     "NPI Rank": 199,
-    "Curr Season Results Rank": 229,
+    "Curr Season Results Rank": 230,
     "Preseason Rank": 247,
-    "MEDIAN": 214,
-    "OVR_RANK": 206,
-    "Stdev": 31.09
+    "MEDIAN": 214.5,
+    "OVR_RANK": 207,
+    "Stdev": 31.26
   },
   {
     "Team": "Maine-Farmington",
@@ -2704,30 +2704,43 @@
     "Stdev": 49.83
   },
   {
+    "Team": "New England College",
+    "Conf": "GNAC",
+    "Region": 1,
+    "Massey Rank": 307,
+    "Eff Rank": 231,
+    "NPI Rank": 198,
+    "Curr Season Results Rank": 201,
+    "Preseason Rank": 341,
+    "MEDIAN": 216,
+    "OVR_RANK": 209,
+    "Stdev": 50.74
+  },
+  {
     "Team": "Luther",
     "Conf": "ARC",
     "Region": 9,
     "Massey Rank": 143,
     "Eff Rank": 231,
     "NPI Rank": 226,
-    "Curr Season Results Rank": 206,
+    "Curr Season Results Rank": 207,
     "Preseason Rank": 146,
-    "MEDIAN": 216,
-    "OVR_RANK": 209,
-    "Stdev": 40.47
+    "MEDIAN": 216.5,
+    "OVR_RANK": 210,
+    "Stdev": 40.51
   },
   {
-    "Team": "New England College",
-    "Conf": "GNAC",
-    "Region": 1,
-    "Massey Rank": 307,
-    "Eff Rank": 231,
+    "Team": "New Jersey City",
+    "Conf": "NJAC",
+    "Region": 4,
+    "Massey Rank": 237,
+    "Eff Rank": 255,
     "NPI Rank": 197,
-    "Curr Season Results Rank": 201,
-    "Preseason Rank": 341,
-    "MEDIAN": 216,
-    "OVR_RANK": 209,
-    "Stdev": 50.98
+    "Curr Season Results Rank": 191,
+    "Preseason Rank": 305,
+    "MEDIAN": 217,
+    "OVR_RANK": 211,
+    "Stdev": 31.01
   },
   {
     "Team": "Nichols",
@@ -2736,37 +2749,11 @@
     "Massey Rank": 264,
     "Eff Rank": 222,
     "NPI Rank": 179,
-    "Curr Season Results Rank": 212,
+    "Curr Season Results Rank": 214,
     "Preseason Rank": 207,
-    "MEDIAN": 217,
-    "OVR_RANK": 211,
-    "Stdev": 35.04
-  },
-  {
-    "Team": "New Jersey City",
-    "Conf": "NJAC",
-    "Region": 4,
-    "Massey Rank": 237,
-    "Eff Rank": 255,
-    "NPI Rank": 198,
-    "Curr Season Results Rank": 191,
-    "Preseason Rank": 305,
-    "MEDIAN": 217.5,
+    "MEDIAN": 218,
     "OVR_RANK": 212,
-    "Stdev": 30.76
-  },
-  {
-    "Team": "Plymouth St.",
-    "Conf": "LEC",
-    "Region": 2,
-    "Massey Rank": 275,
-    "Eff Rank": 249,
-    "NPI Rank": 144,
-    "Curr Season Results Rank": 189,
-    "Preseason Rank": 315,
-    "MEDIAN": 219,
-    "OVR_RANK": 213,
-    "Stdev": 59.08
+    "Stdev": 34.91
   },
   {
     "Team": "Buena Vista",
@@ -2775,11 +2762,24 @@
     "Massey Rank": 193,
     "Eff Rank": 209,
     "NPI Rank": 229,
-    "Curr Season Results Rank": 230,
+    "Curr Season Results Rank": 228,
     "Preseason Rank": 193,
-    "MEDIAN": 219,
+    "MEDIAN": 218.5,
     "OVR_RANK": 213,
-    "Stdev": 17.71
+    "Stdev": 17.17
+  },
+  {
+    "Team": "Plymouth St.",
+    "Conf": "LEC",
+    "Region": 2,
+    "Massey Rank": 277,
+    "Eff Rank": 251,
+    "NPI Rank": 144,
+    "Curr Season Results Rank": 189,
+    "Preseason Rank": 315,
+    "MEDIAN": 220,
+    "OVR_RANK": 214,
+    "Stdev": 60.16
   },
   {
     "Team": "Wesleyan (CT)",
@@ -2800,25 +2800,12 @@
     "Region": 5,
     "Massey Rank": 234,
     "Eff Rank": 193,
-    "NPI Rank": 268,
+    "NPI Rank": 267,
     "Curr Season Results Rank": 208,
     "Preseason Rank": 187,
     "MEDIAN": 221,
     "OVR_RANK": 215,
-    "Stdev": 32.87
-  },
-  {
-    "Team": "Moravian",
-    "Conf": "LAND",
-    "Region": 5,
-    "Massey Rank": 263,
-    "Eff Rank": 168,
-    "NPI Rank": 217,
-    "Curr Season Results Rank": 225,
-    "Preseason Rank": 242,
-    "MEDIAN": 221,
-    "OVR_RANK": 215,
-    "Stdev": 39.05
+    "Stdev": 32.44
   },
   {
     "Team": "Minn-Morris",
@@ -2834,43 +2821,17 @@
     "Stdev": 41.55
   },
   {
-    "Team": "Mass-Boston",
-    "Conf": "LEC",
-    "Region": 2,
-    "Massey Rank": 280,
-    "Eff Rank": 201,
-    "NPI Rank": 241,
-    "Curr Season Results Rank": 193,
-    "Preseason Rank": 215,
-    "MEDIAN": 221,
-    "OVR_RANK": 215,
-    "Stdev": 40.1
-  },
-  {
-    "Team": "Peace",
-    "Conf": "USAC",
-    "Region": 6,
-    "Massey Rank": 316,
-    "Eff Rank": 212,
-    "NPI Rank": 215,
-    "Curr Season Results Rank": 228,
-    "Preseason Rank": 377,
+    "Team": "Moravian",
+    "Conf": "LAND",
+    "Region": 5,
+    "Massey Rank": 263,
+    "Eff Rank": 168,
+    "NPI Rank": 217,
+    "Curr Season Results Rank": 226,
+    "Preseason Rank": 242,
     "MEDIAN": 221.5,
-    "OVR_RANK": 220,
-    "Stdev": 49.32
-  },
-  {
-    "Team": "Mary Washington",
-    "Conf": "C2C",
-    "Region": 6,
-    "Massey Rank": 210,
-    "Eff Rank": 189,
-    "NPI Rank": 234,
-    "Curr Season Results Rank": 337,
-    "Preseason Rank": 224,
-    "MEDIAN": 222,
-    "OVR_RANK": 221,
-    "Stdev": 65.63
+    "OVR_RANK": 218,
+    "Stdev": 39.11
   },
   {
     "Team": "UW-Superior",
@@ -2879,11 +2840,50 @@
     "Massey Rank": 184,
     "Eff Rank": 237,
     "NPI Rank": 238,
-    "Curr Season Results Rank": 207,
+    "Curr Season Results Rank": 206,
     "Preseason Rank": 298,
+    "MEDIAN": 221.5,
+    "OVR_RANK": 218,
+    "Stdev": 26.13
+  },
+  {
+    "Team": "Mass-Boston",
+    "Conf": "LEC",
+    "Region": 2,
+    "Massey Rank": 280,
+    "Eff Rank": 203,
+    "NPI Rank": 241,
+    "Curr Season Results Rank": 193,
+    "Preseason Rank": 215,
     "MEDIAN": 222,
-    "OVR_RANK": 221,
-    "Stdev": 26.01
+    "OVR_RANK": 220,
+    "Stdev": 39.65
+  },
+  {
+    "Team": "Peace",
+    "Conf": "USAC",
+    "Region": 6,
+    "Massey Rank": 316,
+    "Eff Rank": 212,
+    "NPI Rank": 215,
+    "Curr Season Results Rank": 229,
+    "Preseason Rank": 377,
+    "MEDIAN": 222,
+    "OVR_RANK": 220,
+    "Stdev": 49.23
+  },
+  {
+    "Team": "Mary Washington",
+    "Conf": "C2C",
+    "Region": 6,
+    "Massey Rank": 210,
+    "Eff Rank": 188,
+    "NPI Rank": 234,
+    "Curr Season Results Rank": 337,
+    "Preseason Rank": 224,
+    "MEDIAN": 222,
+    "OVR_RANK": 220,
+    "Stdev": 65.9
   },
   {
     "Team": "Pfeiffer",
@@ -2902,27 +2902,27 @@
     "Team": "Bethany Luth",
     "Conf": "UMAC",
     "Region": 9,
-    "Massey Rank": 183,
+    "Massey Rank": 182,
     "Eff Rank": 215,
-    "NPI Rank": 243,
+    "NPI Rank": 242,
     "Curr Season Results Rank": 235,
     "Preseason Rank": 277,
     "MEDIAN": 225,
     "OVR_RANK": 224,
-    "Stdev": 26.73
+    "Stdev": 26.89
   },
   {
     "Team": "Westfield St.",
     "Conf": "MASCAC",
     "Region": 1,
     "Massey Rank": 238,
-    "Eff Rank": 287,
+    "Eff Rank": 288,
     "NPI Rank": 167,
-    "Curr Season Results Rank": 216,
+    "Curr Season Results Rank": 215,
     "Preseason Rank": 273,
-    "MEDIAN": 227,
+    "MEDIAN": 226.5,
     "OVR_RANK": 225,
-    "Stdev": 49.81
+    "Stdev": 50.29
   },
   {
     "Team": "Knox",
@@ -2934,21 +2934,21 @@
     "Curr Season Results Rank": 255,
     "Preseason Rank": 205,
     "MEDIAN": 227,
-    "OVR_RANK": 225,
+    "OVR_RANK": 226,
     "Stdev": 47.87
   },
   {
     "Team": "Mary Hardin-Baylor",
     "Conf": "ASC",
     "Region": 10,
-    "Massey Rank": 122,
+    "Massey Rank": 123,
     "Eff Rank": 193,
-    "NPI Rank": 273,
+    "NPI Rank": 274,
     "Curr Season Results Rank": 262,
     "Preseason Rank": 31,
     "MEDIAN": 227.5,
     "OVR_RANK": 227,
-    "Stdev": 69.95
+    "Stdev": 69.81
   },
   {
     "Team": "King's",
@@ -2968,13 +2968,13 @@
     "Conf": "LEC",
     "Region": 2,
     "Massey Rank": 221,
-    "Eff Rank": 207,
-    "NPI Rank": 239,
+    "Eff Rank": 206,
+    "NPI Rank": 240,
     "Curr Season Results Rank": 238,
     "Preseason Rank": 231,
     "MEDIAN": 229.5,
     "OVR_RANK": 228,
-    "Stdev": 15.26
+    "Stdev": 15.97
   },
   {
     "Team": "Webster",
@@ -2983,50 +2983,37 @@
     "Massey Rank": 171,
     "Eff Rank": 234,
     "NPI Rank": 230,
-    "Curr Season Results Rank": 232,
+    "Curr Season Results Rank": 231,
     "Preseason Rank": 125,
-    "MEDIAN": 231,
+    "MEDIAN": 230.5,
     "OVR_RANK": 230,
-    "Stdev": 30.54
+    "Stdev": 30.38
   },
   {
     "Team": "St. Olaf",
     "Conf": "MIAC",
     "Region": 9,
-    "Massey Rank": 205,
+    "Massey Rank": 204,
     "Eff Rank": 298,
     "NPI Rank": 216,
     "Curr Season Results Rank": 248,
     "Preseason Rank": 280,
     "MEDIAN": 232,
     "OVR_RANK": 231,
-    "Stdev": 41.7
+    "Stdev": 42
   },
   {
     "Team": "St. John Fisher",
     "Conf": "E8",
     "Region": 3,
     "Massey Rank": 209,
-    "Eff Rank": 204,
+    "Eff Rank": 203,
     "NPI Rank": 315,
     "Curr Season Results Rank": 257,
     "Preseason Rank": 140,
     "MEDIAN": 233,
     "OVR_RANK": 232,
-    "Stdev": 51.69
-  },
-  {
-    "Team": "Bluffton",
-    "Conf": "HCAC",
-    "Region": 8,
-    "Massey Rank": 208,
-    "Eff Rank": 190,
-    "NPI Rank": 294,
-    "Curr Season Results Rank": 259,
-    "Preseason Rank": 254,
-    "MEDIAN": 233.5,
-    "OVR_RANK": 233,
-    "Stdev": 47.54
+    "Stdev": 51.96
   },
   {
     "Team": "Cornell",
@@ -3042,17 +3029,30 @@
     "Stdev": 41.84
   },
   {
+    "Team": "Bluffton",
+    "Conf": "HCAC",
+    "Region": 8,
+    "Massey Rank": 208,
+    "Eff Rank": 190,
+    "NPI Rank": 294,
+    "Curr Season Results Rank": 260,
+    "Preseason Rank": 254,
+    "MEDIAN": 234,
+    "OVR_RANK": 234,
+    "Stdev": 47.69
+  },
+  {
     "Team": "Randolph Col",
     "Conf": "ODAC",
     "Region": 6,
-    "Massey Rank": 252,
-    "Eff Rank": 273,
-    "NPI Rank": 188,
+    "Massey Rank": 251,
+    "Eff Rank": 272,
+    "NPI Rank": 187,
     "Curr Season Results Rank": 217,
     "Preseason Rank": 269,
-    "MEDIAN": 234.5,
-    "OVR_RANK": 235,
-    "Stdev": 37.6
+    "MEDIAN": 234,
+    "OVR_RANK": 234,
+    "Stdev": 37.46
   },
   {
     "Team": "Sewanee",
@@ -3064,8 +3064,21 @@
     "Curr Season Results Rank": 224,
     "Preseason Rank": 266,
     "MEDIAN": 234.5,
-    "OVR_RANK": 235,
+    "OVR_RANK": 236,
     "Stdev": 22.32
+  },
+  {
+    "Team": "St. Mary's (IN)",
+    "Conf": "MIAA",
+    "Region": 7,
+    "Massey Rank": 206,
+    "Eff Rank": 252,
+    "NPI Rank": 231,
+    "Curr Season Results Rank": 239,
+    "Preseason Rank": 276,
+    "MEDIAN": 235,
+    "OVR_RANK": 237,
+    "Stdev": 19.37
   },
   {
     "Team": "Delaware Val",
@@ -3077,21 +3090,8 @@
     "Curr Season Results Rank": 253,
     "Preseason Rank": 291,
     "MEDIAN": 235.5,
-    "OVR_RANK": 237,
+    "OVR_RANK": 238,
     "Stdev": 37.57
-  },
-  {
-    "Team": "St. Mary's (IN)",
-    "Conf": "MIAA",
-    "Region": 7,
-    "Massey Rank": 206,
-    "Eff Rank": 252,
-    "NPI Rank": 231,
-    "Curr Season Results Rank": 240,
-    "Preseason Rank": 276,
-    "MEDIAN": 235.5,
-    "OVR_RANK": 237,
-    "Stdev": 19.5
   },
   {
     "Team": "Swarthmore",
@@ -3112,12 +3112,12 @@
     "Region": 9,
     "Massey Rank": 151,
     "Eff Rank": 293,
-    "NPI Rank": 236,
+    "NPI Rank": 237,
     "Curr Season Results Rank": 236,
     "Preseason Rank": 319,
-    "MEDIAN": 236,
-    "OVR_RANK": 239,
-    "Stdev": 58.53
+    "MEDIAN": 236.5,
+    "OVR_RANK": 240,
+    "Stdev": 58.57
   },
   {
     "Team": "York (PA)",
@@ -3138,12 +3138,12 @@
     "Region": 7,
     "Massey Rank": 285,
     "Eff Rank": 249,
-    "NPI Rank": 203,
+    "NPI Rank": 202,
     "Curr Season Results Rank": 227,
     "Preseason Rank": 204,
     "MEDIAN": 238,
     "OVR_RANK": 241,
-    "Stdev": 34.83
+    "Stdev": 35.2
   },
   {
     "Team": "University of New England",
@@ -3151,25 +3151,25 @@
     "Region": 2,
     "Massey Rank": 218,
     "Eff Rank": 192,
-    "NPI Rank": 264,
+    "NPI Rank": 265,
     "Curr Season Results Rank": 263,
     "Preseason Rank": 89,
     "MEDIAN": 240.5,
     "OVR_RANK": 243,
-    "Stdev": 35.41
+    "Stdev": 35.69
   },
   {
     "Team": "Austin College",
     "Conf": "SCAC",
     "Region": 10,
-    "Massey Rank": 239,
+    "Massey Rank": 240,
     "Eff Rank": 268,
     "NPI Rank": 214,
     "Curr Season Results Rank": 245,
     "Preseason Rank": 190,
-    "MEDIAN": 242,
+    "MEDIAN": 242.5,
     "OVR_RANK": 244,
-    "Stdev": 22.19
+    "Stdev": 22.16
   },
   {
     "Team": "Mt. St. Mary",
@@ -3202,13 +3202,13 @@
     "Conf": "GNAC",
     "Region": 1,
     "Massey Rank": 223,
-    "Eff Rank": 241,
+    "Eff Rank": 242,
     "NPI Rank": 246,
-    "Curr Season Results Rank": 284,
+    "Curr Season Results Rank": 283,
     "Preseason Rank": 46,
-    "MEDIAN": 243.5,
+    "MEDIAN": 244,
     "OVR_RANK": 247,
-    "Stdev": 25.65
+    "Stdev": 25.09
   },
   {
     "Team": "Asbury",
@@ -3228,13 +3228,13 @@
     "Conf": "CCS",
     "Region": 6,
     "Massey Rank": 230,
-    "Eff Rank": 183,
+    "Eff Rank": 184,
     "NPI Rank": 261,
-    "Curr Season Results Rank": 278,
+    "Curr Season Results Rank": 280,
     "Preseason Rank": 104,
     "MEDIAN": 245.5,
     "OVR_RANK": 249,
-    "Stdev": 41.71
+    "Stdev": 41.92
   },
   {
     "Team": "Martin Luther",
@@ -3242,12 +3242,12 @@
     "Region": 9,
     "Massey Rank": 229,
     "Eff Rank": 306,
-    "NPI Rank": 240,
+    "NPI Rank": 239,
     "Curr Season Results Rank": 252,
     "Preseason Rank": 333,
-    "MEDIAN": 246,
-    "OVR_RANK": 250,
-    "Stdev": 34.15
+    "MEDIAN": 245.5,
+    "OVR_RANK": 249,
+    "Stdev": 34.32
   },
   {
     "Team": "Marywood",
@@ -3267,13 +3267,13 @@
     "Conf": "MASCAC",
     "Region": 1,
     "Massey Rank": 212,
-    "Eff Rank": 209,
-    "NPI Rank": 311,
+    "Eff Rank": 210,
+    "NPI Rank": 312,
     "Curr Season Results Rank": 285,
     "Preseason Rank": 129,
     "MEDIAN": 248.5,
     "OVR_RANK": 252,
-    "Stdev": 51.64
+    "Stdev": 51.71
   },
   {
     "Team": "Farmingdale",
@@ -3282,11 +3282,11 @@
     "Massey Rank": 325,
     "Eff Rank": 256,
     "NPI Rank": 227,
-    "Curr Season Results Rank": 243,
+    "Curr Season Results Rank": 244,
     "Preseason Rank": 171,
-    "MEDIAN": 249.5,
+    "MEDIAN": 250,
     "OVR_RANK": 253,
-    "Stdev": 43.16
+    "Stdev": 43.01
   },
   {
     "Team": "SUNY Cobleskill",
@@ -3294,25 +3294,25 @@
     "Region": 1,
     "Massey Rank": 286,
     "Eff Rank": 262,
-    "NPI Rank": 242,
+    "NPI Rank": 243,
     "Curr Season Results Rank": 241,
     "Preseason Rank": 264,
-    "MEDIAN": 252,
+    "MEDIAN": 252.5,
     "OVR_RANK": 254,
-    "Stdev": 21.17
+    "Stdev": 20.93
   },
   {
     "Team": "FDU Florham",
     "Conf": "MACF",
     "Region": 4,
-    "Massey Rank": 312,
+    "Massey Rank": 313,
     "Eff Rank": 266,
     "NPI Rank": 210,
-    "Curr Season Results Rank": 244,
+    "Curr Season Results Rank": 243,
     "Preseason Rank": 267,
-    "MEDIAN": 255,
+    "MEDIAN": 254.5,
     "OVR_RANK": 255,
-    "Stdev": 42.74
+    "Stdev": 43.27
   },
   {
     "Team": "Howard Payne",
@@ -3320,12 +3320,12 @@
     "Region": 10,
     "Massey Rank": 231,
     "Eff Rank": 244,
-    "NPI Rank": 269,
+    "NPI Rank": 268,
     "Curr Season Results Rank": 321,
     "Preseason Rank": 332,
-    "MEDIAN": 256.5,
+    "MEDIAN": 256,
     "OVR_RANK": 256,
-    "Stdev": 39.76
+    "Stdev": 39.74
   },
   {
     "Team": "Alvernia",
@@ -3337,7 +3337,7 @@
     "Curr Season Results Rank": 276,
     "Preseason Rank": 160,
     "MEDIAN": 256.5,
-    "OVR_RANK": 256,
+    "OVR_RANK": 257,
     "Stdev": 21.49
   },
   {
@@ -3350,21 +3350,8 @@
     "Curr Season Results Rank": 256,
     "Preseason Rank": 318,
     "MEDIAN": 256.5,
-    "OVR_RANK": 256,
+    "OVR_RANK": 257,
     "Stdev": 31.38
-  },
-  {
-    "Team": "Framingham St.",
-    "Conf": "MASCAC",
-    "Region": 1,
-    "Massey Rank": 250,
-    "Eff Rank": 219,
-    "NPI Rank": 280,
-    "Curr Season Results Rank": 267,
-    "Preseason Rank": 184,
-    "MEDIAN": 258.5,
-    "OVR_RANK": 259,
-    "Stdev": 26.37
   },
   {
     "Team": "Edgewood",
@@ -3373,11 +3360,24 @@
     "Massey Rank": 197,
     "Eff Rank": 341,
     "NPI Rank": 232,
-    "Curr Season Results Rank": 286,
+    "Curr Season Results Rank": 284,
     "Preseason Rank": 382,
-    "MEDIAN": 259,
+    "MEDIAN": 258,
+    "OVR_RANK": 259,
+    "Stdev": 62.83
+  },
+  {
+    "Team": "Framingham St.",
+    "Conf": "MASCAC",
+    "Region": 1,
+    "Massey Rank": 252,
+    "Eff Rank": 221,
+    "NPI Rank": 279,
+    "Curr Season Results Rank": 267,
+    "Preseason Rank": 184,
+    "MEDIAN": 259.5,
     "OVR_RANK": 260,
-    "Stdev": 63.05
+    "Stdev": 25.06
   },
   {
     "Team": "La Verne",
@@ -3398,12 +3398,12 @@
     "Region": 8,
     "Massey Rank": 222,
     "Eff Rank": 278,
-    "NPI Rank": 279,
+    "NPI Rank": 278,
     "Curr Season Results Rank": 242,
     "Preseason Rank": 227,
     "MEDIAN": 260,
     "OVR_RANK": 261,
-    "Stdev": 28.06
+    "Stdev": 27.78
   },
   {
     "Team": "Penn College",
@@ -3425,63 +3425,24 @@
     "Massey Rank": 236,
     "Eff Rank": 279,
     "NPI Rank": 247,
-    "Curr Season Results Rank": 292,
+    "Curr Season Results Rank": 294,
     "Preseason Rank": 200,
     "MEDIAN": 263,
     "OVR_RANK": 264,
-    "Stdev": 26.34
-  },
-  {
-    "Team": "Spalding",
-    "Conf": "SLIAC",
-    "Region": 8,
-    "Massey Rank": 272,
-    "Eff Rank": 260,
-    "NPI Rank": 254,
-    "Curr Season Results Rank": 266,
-    "Preseason Rank": 306,
-    "MEDIAN": 263,
-    "OVR_RANK": 264,
-    "Stdev": 7.75
+    "Stdev": 27.07
   },
   {
     "Team": "Wheaton (MA)",
     "Conf": "NEWMAC",
     "Region": 2,
-    "Massey Rank": 253,
-    "Eff Rank": 258,
+    "Massey Rank": 254,
+    "Eff Rank": 257,
     "NPI Rank": 300,
-    "Curr Season Results Rank": 268,
+    "Curr Season Results Rank": 269,
     "Preseason Rank": 221,
     "MEDIAN": 263,
     "OVR_RANK": 264,
-    "Stdev": 21.11
-  },
-  {
-    "Team": "Thomas (ME)",
-    "Conf": "NAC",
-    "Region": 1,
-    "Massey Rank": 343,
-    "Eff Rank": 265,
-    "NPI Rank": 262,
-    "Curr Season Results Rank": 247,
-    "Preseason Rank": 380,
-    "MEDIAN": 263.5,
-    "OVR_RANK": 267,
-    "Stdev": 43.22
-  },
-  {
-    "Team": "Centenary (NJ)",
-    "Conf": "AEC",
-    "Region": 5,
-    "Massey Rank": 310,
-    "Eff Rank": 277,
-    "NPI Rank": 206,
-    "Curr Season Results Rank": 250,
-    "Preseason Rank": 272,
-    "MEDIAN": 263.5,
-    "OVR_RANK": 267,
-    "Stdev": 43.98
+    "Stdev": 21.02
   },
   {
     "Team": "Waynesburg",
@@ -3489,25 +3450,51 @@
     "Region": 7,
     "Massey Rank": 278,
     "Eff Rank": 248,
-    "NPI Rank": 249,
+    "NPI Rank": 248,
     "Curr Season Results Rank": 282,
     "Preseason Rank": 206,
-    "MEDIAN": 263.5,
-    "OVR_RANK": 267,
-    "Stdev": 18.26
+    "MEDIAN": 263,
+    "OVR_RANK": 264,
+    "Stdev": 18.55
   },
   {
     "Team": "Alfred",
     "Conf": "E8",
     "Region": 3,
     "Massey Rank": 296,
-    "Eff Rank": 276,
+    "Eff Rank": 275,
     "NPI Rank": 251,
     "Curr Season Results Rank": 251,
     "Preseason Rank": 265,
+    "MEDIAN": 263,
+    "OVR_RANK": 264,
+    "Stdev": 21.69
+  },
+  {
+    "Team": "Spalding",
+    "Conf": "SLIAC",
+    "Region": 8,
+    "Massey Rank": 272,
+    "Eff Rank": 261,
+    "NPI Rank": 255,
+    "Curr Season Results Rank": 266,
+    "Preseason Rank": 306,
     "MEDIAN": 263.5,
-    "OVR_RANK": 267,
-    "Stdev": 21.79
+    "OVR_RANK": 268,
+    "Stdev": 7.23
+  },
+  {
+    "Team": "Centenary (NJ)",
+    "Conf": "AEC",
+    "Region": 5,
+    "Massey Rank": 310,
+    "Eff Rank": 277,
+    "NPI Rank": 207,
+    "Curr Season Results Rank": 250,
+    "Preseason Rank": 272,
+    "MEDIAN": 263.5,
+    "OVR_RANK": 268,
+    "Stdev": 43.57
   },
   {
     "Team": "Illinois Col",
@@ -3519,8 +3506,21 @@
     "Curr Season Results Rank": 274,
     "Preseason Rank": 225,
     "MEDIAN": 263.5,
-    "OVR_RANK": 267,
+    "OVR_RANK": 268,
     "Stdev": 39.15
+  },
+  {
+    "Team": "Thomas (ME)",
+    "Conf": "NAC",
+    "Region": 1,
+    "Massey Rank": 343,
+    "Eff Rank": 265,
+    "NPI Rank": 263,
+    "Curr Season Results Rank": 247,
+    "Preseason Rank": 380,
+    "MEDIAN": 264,
+    "OVR_RANK": 271,
+    "Stdev": 43.09
   },
   {
     "Team": "Geneva",
@@ -3532,7 +3532,7 @@
     "Curr Season Results Rank": 272,
     "Preseason Rank": 232,
     "MEDIAN": 264,
-    "OVR_RANK": 272,
+    "OVR_RANK": 271,
     "Stdev": 26.73
   },
   {
@@ -3545,7 +3545,7 @@
     "Curr Season Results Rank": 270,
     "Preseason Rank": 327,
     "MEDIAN": 264,
-    "OVR_RANK": 272,
+    "OVR_RANK": 271,
     "Stdev": 31.42
   },
   {
@@ -3553,26 +3553,26 @@
     "Conf": "AMCC",
     "Region": 7,
     "Massey Rank": 225,
-    "Eff Rank": 243,
-    "NPI Rank": 290,
-    "Curr Season Results Rank": 291,
+    "Eff Rank": 242,
+    "NPI Rank": 289,
+    "Curr Season Results Rank": 289,
     "Preseason Rank": 262,
-    "MEDIAN": 266.5,
+    "MEDIAN": 265.5,
     "OVR_RANK": 274,
-    "Stdev": 33.44
+    "Stdev": 32.79
   },
   {
     "Team": "Hendrix",
     "Conf": "SAA",
     "Region": 6,
-    "Massey Rank": 258,
-    "Eff Rank": 299,
-    "NPI Rank": 275,
+    "Massey Rank": 257,
+    "Eff Rank": 300,
+    "NPI Rank": 276,
     "Curr Season Results Rank": 223,
     "Preseason Rank": 322,
     "MEDIAN": 266.5,
-    "OVR_RANK": 274,
-    "Stdev": 31.95
+    "OVR_RANK": 275,
+    "Stdev": 32.51
   },
   {
     "Team": "Husson",
@@ -3581,11 +3581,11 @@
     "Massey Rank": 260,
     "Eff Rank": 275,
     "NPI Rank": 283,
-    "Curr Season Results Rank": 231,
+    "Curr Season Results Rank": 232,
     "Preseason Rank": 302,
     "MEDIAN": 267.5,
     "OVR_RANK": 276,
-    "Stdev": 22.91
+    "Stdev": 22.46
   },
   {
     "Team": "Principia",
@@ -3604,27 +3604,27 @@
     "Team": "Westminster (PA)",
     "Conf": "PAC",
     "Region": 7,
-    "Massey Rank": 254,
+    "Massey Rank": 253,
     "Eff Rank": 262,
-    "NPI Rank": 276,
+    "NPI Rank": 275,
     "Curr Season Results Rank": 281,
     "Preseason Rank": 314,
-    "MEDIAN": 269,
+    "MEDIAN": 268.5,
     "OVR_RANK": 278,
-    "Stdev": 12.45
+    "Stdev": 12.63
   },
   {
     "Team": "Grinnell",
     "Conf": "MWC",
     "Region": 9,
     "Massey Rank": 199,
-    "Eff Rank": 280,
-    "NPI Rank": 271,
-    "Curr Season Results Rank": 269,
+    "Eff Rank": 279,
+    "NPI Rank": 270,
+    "Curr Season Results Rank": 268,
     "Preseason Rank": 148,
-    "MEDIAN": 270,
+    "MEDIAN": 269,
     "OVR_RANK": 279,
-    "Stdev": 37.47
+    "Stdev": 36.98
   },
   {
     "Team": "Huntingdon",
@@ -3640,56 +3640,43 @@
     "Stdev": 19.84
   },
   {
+    "Team": "Lewis & Clark",
+    "Conf": "NWC",
+    "Region": 10,
+    "Massey Rank": 239,
+    "Eff Rank": 304,
+    "NPI Rank": 348,
+    "Curr Season Results Rank": 194,
+    "Preseason Rank": 173,
+    "MEDIAN": 271.5,
+    "OVR_RANK": 281,
+    "Stdev": 68.24
+  },
+  {
     "Team": "Wellesley",
     "Conf": "NEWMAC",
     "Region": 2,
     "Massey Rank": 298,
     "Eff Rank": 270,
-    "NPI Rank": 266,
+    "NPI Rank": 271,
     "Curr Season Results Rank": 273,
     "Preseason Rank": 260,
-    "MEDIAN": 271.5,
-    "OVR_RANK": 281,
-    "Stdev": 14.45
-  },
-  {
-    "Team": "Lewis & Clark",
-    "Conf": "NWC",
-    "Region": 10,
-    "Massey Rank": 240,
-    "Eff Rank": 304,
-    "NPI Rank": 349,
-    "Curr Season Results Rank": 194,
-    "Preseason Rank": 173,
     "MEDIAN": 272,
     "OVR_RANK": 282,
-    "Stdev": 68.46
+    "Stdev": 13.39
   },
   {
     "Team": "Salem St.",
     "Conf": "MASCAC",
     "Region": 1,
     "Massey Rank": 284,
-    "Eff Rank": 261,
-    "NPI Rank": 248,
-    "Curr Season Results Rank": 289,
+    "Eff Rank": 262,
+    "NPI Rank": 250,
+    "Curr Season Results Rank": 291,
     "Preseason Rank": 342,
-    "MEDIAN": 272.5,
+    "MEDIAN": 273,
     "OVR_RANK": 283,
-    "Stdev": 19.33
-  },
-  {
-    "Team": "Concordia (TX)",
-    "Conf": "SCAC",
-    "Region": 10,
-    "Massey Rank": 179,
-    "Eff Rank": 272,
-    "NPI Rank": 305,
-    "Curr Season Results Rank": 283,
-    "Preseason Rank": 137,
-    "MEDIAN": 277.5,
-    "OVR_RANK": 284,
-    "Stdev": 55.55
+    "Stdev": 19.05
   },
   {
     "Team": "Eastern Mennonite",
@@ -3698,50 +3685,63 @@
     "Massey Rank": 314,
     "Eff Rank": 246,
     "NPI Rank": 298,
-    "Curr Season Results Rank": 260,
+    "Curr Season Results Rank": 259,
     "Preseason Rank": 240,
-    "MEDIAN": 279,
-    "OVR_RANK": 285,
-    "Stdev": 31.81
+    "MEDIAN": 278.5,
+    "OVR_RANK": 284,
+    "Stdev": 32.01
   },
   {
     "Team": "Lycoming",
     "Conf": "LAND",
     "Region": 5,
     "Massey Rank": 302,
-    "Eff Rank": 280,
+    "Eff Rank": 279,
     "NPI Rank": 253,
     "Curr Season Results Rank": 279,
     "Preseason Rank": 329,
-    "MEDIAN": 279.5,
+    "MEDIAN": 279,
+    "OVR_RANK": 285,
+    "Stdev": 20.02
+  },
+  {
+    "Team": "Concordia (TX)",
+    "Conf": "SCAC",
+    "Region": 10,
+    "Massey Rank": 183,
+    "Eff Rank": 274,
+    "NPI Rank": 305,
+    "Curr Season Results Rank": 286,
+    "Preseason Rank": 137,
+    "MEDIAN": 280,
     "OVR_RANK": 286,
-    "Stdev": 20.04
+    "Stdev": 54.19
   },
   {
     "Team": "Elmira",
     "Conf": "E8",
     "Region": 3,
     "Massey Rank": 322,
-    "Eff Rank": 289,
-    "NPI Rank": 274,
+    "Eff Rank": 290,
+    "NPI Rank": 273,
     "Curr Season Results Rank": 264,
     "Preseason Rank": 309,
     "MEDIAN": 281.5,
     "OVR_RANK": 287,
-    "Stdev": 25.34
+    "Stdev": 25.55
   },
   {
     "Team": "Rose-Hulman",
     "Conf": "HCAC",
     "Region": 8,
     "Massey Rank": 217,
-    "Eff Rank": 273,
+    "Eff Rank": 272,
     "NPI Rank": 296,
-    "Curr Season Results Rank": 301,
+    "Curr Season Results Rank": 300,
     "Preseason Rank": 113,
-    "MEDIAN": 284.5,
+    "MEDIAN": 284,
     "OVR_RANK": 288,
-    "Stdev": 38.48
+    "Stdev": 38.22
   },
   {
     "Team": "Clarkson",
@@ -3749,12 +3749,12 @@
     "Region": 3,
     "Massey Rank": 300,
     "Eff Rank": 306,
-    "NPI Rank": 250,
+    "NPI Rank": 249,
     "Curr Season Results Rank": 271,
     "Preseason Rank": 287,
     "MEDIAN": 285.5,
     "OVR_RANK": 289,
-    "Stdev": 26.11
+    "Stdev": 26.51
   },
   {
     "Team": "Carleton",
@@ -3762,25 +3762,25 @@
     "Region": 9,
     "Massey Rank": 226,
     "Eff Rank": 329,
-    "NPI Rank": 265,
-    "Curr Season Results Rank": 307,
+    "NPI Rank": 264,
+    "Curr Season Results Rank": 308,
     "Preseason Rank": 284,
     "MEDIAN": 286,
     "OVR_RANK": 290,
-    "Stdev": 45.68
+    "Stdev": 45.99
   },
   {
     "Team": "Pac Lutheran",
     "Conf": "NWC",
     "Region": 10,
     "Massey Rank": 248,
-    "Eff Rank": 286,
+    "Eff Rank": 285,
     "NPI Rank": 376,
     "Curr Season Results Rank": 287,
     "Preseason Rank": 337,
-    "MEDIAN": 286.5,
-    "OVR_RANK": 291,
-    "Stdev": 54.29
+    "MEDIAN": 286,
+    "OVR_RANK": 290,
+    "Stdev": 54.38
   },
   {
     "Team": "Wilmington",
@@ -3788,12 +3788,25 @@
     "Region": 7,
     "Massey Rank": 198,
     "Eff Rank": 319,
-    "NPI Rank": 281,
-    "Curr Season Results Rank": 293,
+    "NPI Rank": 280,
+    "Curr Season Results Rank": 292,
     "Preseason Rank": 270,
-    "MEDIAN": 287,
-    "OVR_RANK": 292,
-    "Stdev": 52.3
+    "MEDIAN": 286,
+    "OVR_RANK": 290,
+    "Stdev": 52.12
+  },
+  {
+    "Team": "Whitworth",
+    "Conf": "NWC",
+    "Region": 10,
+    "Massey Rank": 216,
+    "Eff Rank": 260,
+    "NPI Rank": 376,
+    "Curr Season Results Rank": 313,
+    "Preseason Rank": 255,
+    "MEDIAN": 286.5,
+    "OVR_RANK": 293,
+    "Stdev": 69.03
   },
   {
     "Team": "Averett",
@@ -3805,21 +3818,8 @@
     "Curr Season Results Rank": 246,
     "Preseason Rank": 251,
     "MEDIAN": 288,
-    "OVR_RANK": 293,
-    "Stdev": 38.2
-  },
-  {
-    "Team": "Whitworth",
-    "Conf": "NWC",
-    "Region": 10,
-    "Massey Rank": 216,
-    "Eff Rank": 264,
-    "NPI Rank": 376,
-    "Curr Season Results Rank": 314,
-    "Preseason Rank": 255,
-    "MEDIAN": 289,
     "OVR_RANK": 294,
-    "Stdev": 68.55
+    "Stdev": 38.2
   },
   {
     "Team": "NC Wesleyan",
@@ -3841,11 +3841,11 @@
     "Massey Rank": 279,
     "Eff Rank": 292,
     "NPI Rank": 291,
-    "Curr Season Results Rank": 308,
+    "Curr Season Results Rank": 307,
     "Preseason Rank": 176,
     "MEDIAN": 291.5,
     "OVR_RANK": 296,
-    "Stdev": 11.9
+    "Stdev": 11.47
   },
   {
     "Team": "Eastern Univ",
@@ -3853,12 +3853,12 @@
     "Region": 5,
     "Massey Rank": 324,
     "Eff Rank": 285,
-    "NPI Rank": 255,
-    "Curr Season Results Rank": 300,
+    "NPI Rank": 254,
+    "Curr Season Results Rank": 301,
     "Preseason Rank": 288,
-    "MEDIAN": 292.5,
+    "MEDIAN": 293,
     "OVR_RANK": 297,
-    "Stdev": 28.88
+    "Stdev": 29.41
   },
   {
     "Team": "Concordia (WI)",
@@ -3879,12 +3879,12 @@
     "Region": 3,
     "Massey Rank": 365,
     "Eff Rank": 312,
-    "NPI Rank": 184,
-    "Curr Season Results Rank": 280,
+    "NPI Rank": 182,
+    "Curr Season Results Rank": 278,
     "Preseason Rank": 300,
-    "MEDIAN": 296,
+    "MEDIAN": 295,
     "OVR_RANK": 299,
-    "Stdev": 76.06
+    "Stdev": 77
   },
   {
     "Team": "St. Elizabeth",
@@ -3896,7 +3896,7 @@
     "Curr Season Results Rank": 295,
     "Preseason Rank": 362,
     "MEDIAN": 296,
-    "OVR_RANK": 299,
+    "OVR_RANK": 300,
     "Stdev": 37.12
   },
   {
@@ -3906,11 +3906,11 @@
     "Massey Rank": 355,
     "Eff Rank": 299,
     "NPI Rank": 285,
-    "Curr Season Results Rank": 294,
+    "Curr Season Results Rank": 293,
     "Preseason Rank": 335,
-    "MEDIAN": 296.5,
-    "OVR_RANK": 301,
-    "Stdev": 31.7
+    "MEDIAN": 296,
+    "OVR_RANK": 300,
+    "Stdev": 31.85
   },
   {
     "Team": "Castleton",
@@ -3922,7 +3922,7 @@
     "Curr Season Results Rank": 311,
     "Preseason Rank": 271,
     "MEDIAN": 296.5,
-    "OVR_RANK": 301,
+    "OVR_RANK": 302,
     "Stdev": 21.12
   },
   {
@@ -3958,24 +3958,24 @@
     "Massey Rank": 371,
     "Eff Rank": 295,
     "NPI Rank": 304,
-    "Curr Season Results Rank": 239,
+    "Curr Season Results Rank": 240,
     "Preseason Rank": 399,
     "MEDIAN": 299.5,
     "OVR_RANK": 304,
-    "Stdev": 54.11
+    "Stdev": 53.72
   },
   {
     "Team": "Caltech",
     "Conf": "SCIAC",
     "Region": 10,
-    "Massey Rank": 251,
+    "Massey Rank": 250,
     "Eff Rank": 303,
     "NPI Rank": 354,
     "Curr Season Results Rank": 297,
     "Preseason Rank": 307,
     "MEDIAN": 300,
     "OVR_RANK": 306,
-    "Stdev": 42.15
+    "Stdev": 42.54
   },
   {
     "Team": "North Park",
@@ -3997,11 +3997,11 @@
     "Massey Rank": 282,
     "Eff Rank": 326,
     "NPI Rank": 287,
-    "Curr Season Results Rank": 313,
+    "Curr Season Results Rank": 314,
     "Preseason Rank": 397,
-    "MEDIAN": 300,
-    "OVR_RANK": 306,
-    "Stdev": 20.99
+    "MEDIAN": 300.5,
+    "OVR_RANK": 308,
+    "Stdev": 21.17
   },
   {
     "Team": "Utica",
@@ -4009,12 +4009,12 @@
     "Region": 3,
     "Massey Rank": 319,
     "Eff Rank": 318,
-    "NPI Rank": 263,
+    "NPI Rank": 262,
     "Curr Season Results Rank": 298,
     "Preseason Rank": 275,
     "MEDIAN": 308,
     "OVR_RANK": 309,
-    "Stdev": 26.19
+    "Stdev": 26.65
   },
   {
     "Team": "Kenyon",
@@ -4022,12 +4022,12 @@
     "Region": 7,
     "Massey Rank": 295,
     "Eff Rank": 308,
-    "NPI Rank": 309,
-    "Curr Season Results Rank": 326,
+    "NPI Rank": 308,
+    "Curr Season Results Rank": 327,
     "Preseason Rank": 301,
-    "MEDIAN": 308.5,
-    "OVR_RANK": 310,
-    "Stdev": 12.71
+    "MEDIAN": 308,
+    "OVR_RANK": 309,
+    "Stdev": 13.18
   },
   {
     "Team": "Olivet",
@@ -4099,13 +4099,13 @@
     "Conf": "MIAA",
     "Region": 7,
     "Massey Rank": 287,
-    "Eff Rank": 296,
+    "Eff Rank": 295,
     "NPI Rank": 356,
     "Curr Season Results Rank": 336,
     "Preseason Rank": 233,
-    "MEDIAN": 316,
-    "OVR_RANK": 316,
-    "Stdev": 32.71
+    "MEDIAN": 315.5,
+    "OVR_RANK": 315,
+    "Stdev": 32.95
   },
   {
     "Team": "Juniata",
@@ -4113,12 +4113,12 @@
     "Region": 5,
     "Massey Rank": 304,
     "Eff Rank": 302,
-    "NPI Rank": 341,
+    "NPI Rank": 340,
     "Curr Season Results Rank": 332,
     "Preseason Rank": 229,
     "MEDIAN": 318,
     "OVR_RANK": 317,
-    "Stdev": 19.7
+    "Stdev": 19.35
   },
   {
     "Team": "SUNY Purchase",
@@ -4126,12 +4126,12 @@
     "Region": 3,
     "Massey Rank": 387,
     "Eff Rank": 339,
-    "NPI Rank": 267,
+    "NPI Rank": 266,
     "Curr Season Results Rank": 299,
     "Preseason Rank": 366,
     "MEDIAN": 319,
     "OVR_RANK": 318,
-    "Stdev": 51.85
+    "Stdev": 52.21
   },
   {
     "Team": "Mt. Aloysius",
@@ -4152,12 +4152,12 @@
     "Region": 7,
     "Massey Rank": 268,
     "Eff Rank": 322,
-    "NPI Rank": 318,
+    "NPI Rank": 317,
     "Curr Season Results Rank": 328,
     "Preseason Rank": 358,
-    "MEDIAN": 320,
+    "MEDIAN": 319.5,
     "OVR_RANK": 320,
-    "Stdev": 27.64
+    "Stdev": 27.54
   },
   {
     "Team": "St. Joseph's (NY)",
@@ -4165,12 +4165,12 @@
     "Region": 3,
     "Massey Rank": 379,
     "Eff Rank": 324,
-    "NPI Rank": 289,
+    "NPI Rank": 290,
     "Curr Season Results Rank": 316,
     "Preseason Rank": 245,
     "MEDIAN": 320,
-    "OVR_RANK": 320,
-    "Stdev": 37.76
+    "OVR_RANK": 321,
+    "Stdev": 37.43
   },
   {
     "Team": "Wilkes",
@@ -4178,25 +4178,25 @@
     "Region": 5,
     "Massey Rank": 344,
     "Eff Rank": 310,
-    "NPI Rank": 312,
+    "NPI Rank": 311,
     "Curr Season Results Rank": 334,
     "Preseason Rank": 295,
-    "MEDIAN": 323,
+    "MEDIAN": 322.5,
     "OVR_RANK": 322,
-    "Stdev": 16.69
+    "Stdev": 16.96
   },
   {
     "Team": "Northwestern (MN)",
     "Conf": "UMAC",
     "Region": 9,
-    "Massey Rank": 228,
+    "Massey Rank": 227,
     "Eff Rank": 326,
     "NPI Rank": 322,
     "Curr Season Results Rank": 331,
     "Preseason Rank": 414,
     "MEDIAN": 324,
     "OVR_RANK": 323,
-    "Stdev": 49.3
+    "Stdev": 49.8
   },
   {
     "Team": "St. Joseph's (LI)",
@@ -4204,12 +4204,12 @@
     "Region": 3,
     "Massey Rank": 348,
     "Eff Rank": 340,
-    "NPI Rank": 282,
+    "NPI Rank": 281,
     "Curr Season Results Rank": 309,
     "Preseason Rank": 359,
     "MEDIAN": 324.5,
     "OVR_RANK": 324,
-    "Stdev": 30.27
+    "Stdev": 30.69
   },
   {
     "Team": "Alfred St.",
@@ -4218,24 +4218,11 @@
     "Massey Rank": 361,
     "Eff Rank": 323,
     "NPI Rank": 306,
-    "Curr Season Results Rank": 327,
+    "Curr Season Results Rank": 326,
     "Preseason Rank": 325,
-    "MEDIAN": 325,
-    "OVR_RANK": 325,
-    "Stdev": 23.04
-  },
-  {
-    "Team": "Albertus Magnus",
-    "Conf": "GNAC",
-    "Region": 1,
-    "Massey Rank": 313,
-    "Eff Rank": 315,
-    "NPI Rank": 339,
-    "Curr Season Results Rank": 366,
-    "Preseason Rank": 369,
-    "MEDIAN": 327,
-    "OVR_RANK": 326,
-    "Stdev": 24.82
+    "MEDIAN": 324.5,
+    "OVR_RANK": 324,
+    "Stdev": 23.08
   },
   {
     "Team": "Neumann",
@@ -4243,25 +4230,38 @@
     "Region": 5,
     "Massey Rank": 309,
     "Eff Rank": 289,
-    "NPI Rank": 345,
+    "NPI Rank": 344,
     "Curr Season Results Rank": 348,
     "Preseason Rank": 213,
-    "MEDIAN": 327,
+    "MEDIAN": 326.5,
     "OVR_RANK": 326,
-    "Stdev": 28.64
+    "Stdev": 28.38
+  },
+  {
+    "Team": "Albertus Magnus",
+    "Conf": "GNAC",
+    "Region": 1,
+    "Massey Rank": 312,
+    "Eff Rank": 312,
+    "NPI Rank": 342,
+    "Curr Season Results Rank": 366,
+    "Preseason Rank": 369,
+    "MEDIAN": 327,
+    "OVR_RANK": 327,
+    "Stdev": 26.15
   },
   {
     "Team": "Gwynedd-Mercy",
     "Conf": "AEC",
     "Region": 5,
     "Massey Rank": 330,
-    "Eff Rank": 301,
+    "Eff Rank": 300,
     "NPI Rank": 326,
     "Curr Season Results Rank": 329,
     "Preseason Rank": 257,
     "MEDIAN": 327.5,
     "OVR_RANK": 328,
-    "Stdev": 13.77
+    "Stdev": 14.27
   },
   {
     "Team": "Dominican",
@@ -4294,13 +4294,13 @@
     "Conf": "ASC",
     "Region": 10,
     "Massey Rank": 292,
-    "Eff Rank": 334,
-    "NPI Rank": 348,
-    "Curr Season Results Rank": 324,
+    "Eff Rank": 336,
+    "NPI Rank": 349,
+    "Curr Season Results Rank": 323,
     "Preseason Rank": 308,
-    "MEDIAN": 329,
+    "MEDIAN": 329.5,
     "OVR_RANK": 331,
-    "Stdev": 23.8
+    "Stdev": 24.43
   },
   {
     "Team": "Regis",
@@ -4346,13 +4346,13 @@
     "Conf": "SCAC",
     "Region": 10,
     "Massey Rank": 338,
-    "Eff Rank": 380,
-    "NPI Rank": 278,
-    "Curr Season Results Rank": 323,
+    "Eff Rank": 382,
+    "NPI Rank": 282,
+    "Curr Season Results Rank": 324,
     "Preseason Rank": 274,
-    "MEDIAN": 330.5,
-    "OVR_RANK": 332,
-    "Stdev": 42.1
+    "MEDIAN": 331,
+    "OVR_RANK": 335,
+    "Stdev": 41.23
   },
   {
     "Team": "Beloit",
@@ -4361,11 +4361,11 @@
     "Massey Rank": 320,
     "Eff Rank": 376,
     "NPI Rank": 313,
-    "Curr Season Results Rank": 346,
+    "Curr Season Results Rank": 345,
     "Preseason Rank": 348,
-    "MEDIAN": 333,
+    "MEDIAN": 332.5,
     "OVR_RANK": 336,
-    "Stdev": 28.61
+    "Stdev": 28.52
   },
   {
     "Team": "Cedar Crest",
@@ -4412,12 +4412,12 @@
     "Region": 2,
     "Massey Rank": 332,
     "Eff Rank": 328,
-    "NPI Rank": 344,
+    "NPI Rank": 345,
     "Curr Season Results Rank": 361,
     "Preseason Rank": 244,
-    "MEDIAN": 338,
+    "MEDIAN": 338.5,
     "OVR_RANK": 340,
-    "Stdev": 14.82
+    "Stdev": 14.89
   },
   {
     "Team": "Ramapo",
@@ -4426,11 +4426,11 @@
     "Massey Rank": 346,
     "Eff Rank": 325,
     "NPI Rank": 331,
-    "Curr Season Results Rank": 345,
+    "Curr Season Results Rank": 346,
     "Preseason Rank": 330,
-    "MEDIAN": 338,
+    "MEDIAN": 338.5,
     "OVR_RANK": 340,
-    "Stdev": 10.4
+    "Stdev": 10.68
   },
   {
     "Team": "William Smith",
@@ -4514,14 +4514,14 @@
     "Team": "Nebraska Wesleyan",
     "Conf": "ARC",
     "Region": 9,
-    "Massey Rank": 277,
-    "Eff Rank": 350,
+    "Massey Rank": 275,
+    "Eff Rank": 349,
     "NPI Rank": 392,
     "Curr Season Results Rank": 344,
     "Preseason Rank": 283,
-    "MEDIAN": 347,
+    "MEDIAN": 346.5,
     "OVR_RANK": 348,
-    "Stdev": 47.56
+    "Stdev": 48.39
   },
   {
     "Team": "Dallas Univ",
@@ -4581,12 +4581,12 @@
     "Region": 4,
     "Massey Rank": 366,
     "Eff Rank": 338,
-    "NPI Rank": 317,
+    "NPI Rank": 318,
     "Curr Season Results Rank": 377,
     "Preseason Rank": 405,
     "MEDIAN": 352,
     "OVR_RANK": 353,
-    "Stdev": 27.18
+    "Stdev": 26.79
   },
   {
     "Team": "Mt. St. Vincent",
@@ -4641,6 +4641,19 @@
     "Stdev": 16.86
   },
   {
+    "Team": "Monmouth",
+    "Conf": "MWC",
+    "Region": 9,
+    "Massey Rank": 327,
+    "Eff Rank": 375,
+    "NPI Rank": 339,
+    "Curr Season Results Rank": 374,
+    "Preseason Rank": 285,
+    "MEDIAN": 356.5,
+    "OVR_RANK": 358,
+    "Stdev": 24.46
+  },
+  {
     "Team": "Greensboro",
     "Conf": "USAC",
     "Region": 6,
@@ -4650,21 +4663,8 @@
     "Curr Season Results Rank": 351,
     "Preseason Rank": 391,
     "MEDIAN": 357,
-    "OVR_RANK": 358,
+    "OVR_RANK": 359,
     "Stdev": 16.01
-  },
-  {
-    "Team": "Monmouth",
-    "Conf": "MWC",
-    "Region": 9,
-    "Massey Rank": 327,
-    "Eff Rank": 375,
-    "NPI Rank": 340,
-    "Curr Season Results Rank": 374,
-    "Preseason Rank": 285,
-    "MEDIAN": 357,
-    "OVR_RANK": 358,
-    "Stdev": 24.26
   },
   {
     "Team": "St. Joseph (CT)",
@@ -4710,13 +4710,13 @@
     "Conf": "CUNYAC",
     "Region": 4,
     "Massey Rank": 367,
-    "Eff Rank": 362,
-    "NPI Rank": 308,
+    "Eff Rank": 361,
+    "NPI Rank": 309,
     "Curr Season Results Rank": 362,
     "Preseason Rank": 355,
-    "MEDIAN": 362,
+    "MEDIAN": 361.5,
     "OVR_RANK": 363,
-    "Stdev": 27.93
+    "Stdev": 27.29
   },
   {
     "Team": "Bryn Mawr",
@@ -4724,12 +4724,12 @@
     "Region": 5,
     "Massey Rank": 375,
     "Eff Rank": 369,
-    "NPI Rank": 342,
+    "NPI Rank": 341,
     "Curr Season Results Rank": 355,
     "Preseason Rank": 323,
     "MEDIAN": 362,
-    "OVR_RANK": 363,
-    "Stdev": 14.77
+    "OVR_RANK": 364,
+    "Stdev": 15.19
   },
   {
     "Team": "PSU-Harrisburg",
@@ -4788,13 +4788,13 @@
     "Conf": "CCS",
     "Region": 6,
     "Massey Rank": 390,
-    "Eff Rank": 382,
+    "Eff Rank": 381,
     "NPI Rank": 357,
     "Curr Season Results Rank": 350,
     "Preseason Rank": 383,
-    "MEDIAN": 369.5,
+    "MEDIAN": 369,
     "OVR_RANK": 369,
-    "Stdev": 19.26
+    "Stdev": 19.05
   },
   {
     "Team": "Gordon",
@@ -4840,13 +4840,13 @@
     "Conf": "UMAC",
     "Region": 9,
     "Massey Rank": 349,
-    "Eff Rank": 361,
+    "Eff Rank": 360,
     "NPI Rank": 382,
     "Curr Season Results Rank": 383,
     "Preseason Rank": 346,
-    "MEDIAN": 371.5,
-    "OVR_RANK": 373,
-    "Stdev": 16.62
+    "MEDIAN": 371,
+    "OVR_RANK": 372,
+    "Stdev": 16.78
   },
   {
     "Team": "Earlham",
@@ -4875,19 +4875,6 @@
     "Stdev": 10.03
   },
   {
-    "Team": "Rivier",
-    "Conf": "GNAC",
-    "Region": 1,
-    "Massey Rank": 351,
-    "Eff Rank": 360,
-    "NPI Rank": 404,
-    "Curr Season Results Rank": 385,
-    "Preseason Rank": 352,
-    "MEDIAN": 372.5,
-    "OVR_RANK": 375,
-    "Stdev": 24.1
-  },
-  {
     "Team": "Rutgers-Newark",
     "Conf": "NJAC",
     "Region": 4,
@@ -4897,7 +4884,7 @@
     "Curr Season Results Rank": 380,
     "Preseason Rank": 368,
     "MEDIAN": 373,
-    "OVR_RANK": 377,
+    "OVR_RANK": 376,
     "Stdev": 10.4
   },
   {
@@ -4905,13 +4892,13 @@
     "Conf": "SUNYAC",
     "Region": 3,
     "Massey Rank": 373,
-    "Eff Rank": 363,
+    "Eff Rank": 362,
     "NPI Rank": 395,
     "Curr Season Results Rank": 373,
     "Preseason Rank": 340,
     "MEDIAN": 373,
-    "OVR_RANK": 377,
-    "Stdev": 13.52
+    "OVR_RANK": 376,
+    "Stdev": 13.84
   },
   {
     "Team": "Salem (NC)",
@@ -4923,7 +4910,7 @@
     "Curr Season Results Rank": 306,
     "Preseason Rank": 331,
     "MEDIAN": 373.5,
-    "OVR_RANK": 379,
+    "OVR_RANK": 378,
     "Stdev": 35.9
   },
   {
@@ -4936,7 +4923,7 @@
     "Curr Season Results Rank": 376,
     "Preseason Rank": 339,
     "MEDIAN": 374,
-    "OVR_RANK": 380,
+    "OVR_RANK": 379,
     "Stdev": 8.06
   },
   {
@@ -4949,8 +4936,21 @@
     "Curr Season Results Rank": 368,
     "Preseason Rank": 410,
     "MEDIAN": 374.5,
-    "OVR_RANK": 381,
+    "OVR_RANK": 380,
     "Stdev": 5.06
+  },
+  {
+    "Team": "Rivier",
+    "Conf": "GNAC",
+    "Region": 1,
+    "Massey Rank": 351,
+    "Eff Rank": 362,
+    "NPI Rank": 404,
+    "Curr Season Results Rank": 392,
+    "Preseason Rank": 352,
+    "MEDIAN": 377,
+    "OVR_RANK": 381,
+    "Stdev": 24.86
   },
   {
     "Team": "Mitchell",
@@ -4985,11 +4985,11 @@
     "Massey Rank": 345,
     "Eff Rank": 383,
     "NPI Rank": 388,
-    "Curr Season Results Rank": 387,
+    "Curr Season Results Rank": 386,
     "Preseason Rank": 370,
-    "MEDIAN": 385,
-    "OVR_RANK": 384,
-    "Stdev": 20.61
+    "MEDIAN": 384.5,
+    "OVR_RANK": 382,
+    "Stdev": 20.44
   },
   {
     "Team": "Wesleyan (GA)",
@@ -5001,21 +5001,21 @@
     "Curr Season Results Rank": 320,
     "Preseason Rank": 350,
     "MEDIAN": 385,
-    "OVR_RANK": 384,
+    "OVR_RANK": 385,
     "Stdev": 37.63
   },
   {
     "Team": "NVU-Johnson",
     "Conf": "NAC",
     "Region": 1,
-    "Massey Rank": 401,
+    "Massey Rank": 402,
     "Eff Rank": 384,
     "NPI Rank": 368,
-    "Curr Season Results Rank": 388,
+    "Curr Season Results Rank": 387,
     "Preseason Rank": 376,
-    "MEDIAN": 386,
+    "MEDIAN": 385.5,
     "OVR_RANK": 386,
-    "Stdev": 13.6
+    "Stdev": 13.94
   },
   {
     "Team": "Mary Baldwin",
@@ -5024,11 +5024,11 @@
     "Massey Rank": 386,
     "Eff Rank": 389,
     "NPI Rank": 381,
-    "Curr Season Results Rank": 389,
+    "Curr Season Results Rank": 388,
     "Preseason Rank": 400,
-    "MEDIAN": 387.5,
+    "MEDIAN": 387,
     "OVR_RANK": 387,
-    "Stdev": 3.77
+    "Stdev": 3.56
   },
   {
     "Team": "Illinois Tech",
@@ -5037,11 +5037,11 @@
     "Massey Rank": 352,
     "Eff Rank": 390,
     "NPI Rank": 389,
-    "Curr Season Results Rank": 386,
+    "Curr Season Results Rank": 385,
     "Preseason Rank": 320,
-    "MEDIAN": 387.5,
+    "MEDIAN": 387,
     "OVR_RANK": 387,
-    "Stdev": 18.25
+    "Stdev": 18.13
   },
   {
     "Team": "Mt. Holyoke",
@@ -5050,11 +5050,24 @@
     "Massey Rank": 394,
     "Eff Rank": 387,
     "NPI Rank": 380,
-    "Curr Season Results Rank": 390,
+    "Curr Season Results Rank": 389,
     "Preseason Rank": 353,
-    "MEDIAN": 388.5,
+    "MEDIAN": 388,
     "OVR_RANK": 389,
-    "Stdev": 5.91
+    "Stdev": 5.8
+  },
+  {
+    "Team": "Blackburn",
+    "Conf": "SLIAC",
+    "Region": 8,
+    "Massey Rank": 395,
+    "Eff Rank": 391,
+    "NPI Rank": 390,
+    "Curr Season Results Rank": 390,
+    "Preseason Rank": 381,
+    "MEDIAN": 390.5,
+    "OVR_RANK": 390,
+    "Stdev": 2.38
   },
   {
     "Team": "Warren Wilson",
@@ -5066,21 +5079,8 @@
     "Curr Season Results Rank": 395,
     "Preseason Rank": 365,
     "MEDIAN": 391,
-    "OVR_RANK": 390,
+    "OVR_RANK": 391,
     "Stdev": 20.75
-  },
-  {
-    "Team": "Blackburn",
-    "Conf": "SLIAC",
-    "Region": 8,
-    "Massey Rank": 395,
-    "Eff Rank": 391,
-    "NPI Rank": 390,
-    "Curr Season Results Rank": 391,
-    "Preseason Rank": 381,
-    "MEDIAN": 391,
-    "OVR_RANK": 390,
-    "Stdev": 2.22
   },
   {
     "Team": "Fitchburg St.",
@@ -5258,11 +5258,11 @@
     "Massey Rank": 409,
     "Eff Rank": 400,
     "NPI Rank": 386,
-    "Curr Season Results Rank": 409,
+    "Curr Season Results Rank": 408,
     "Preseason Rank": 356,
-    "MEDIAN": 404.5,
-    "OVR_RANK": 405,
-    "Stdev": 10.86
+    "MEDIAN": 404,
+    "OVR_RANK": 404,
+    "Stdev": 10.63
   },
   {
     "Team": "Hilbert",
@@ -5284,11 +5284,11 @@
     "Massey Rank": 418,
     "Eff Rank": 406,
     "NPI Rank": 405,
-    "Curr Season Results Rank": 392,
+    "Curr Season Results Rank": 391,
     "Preseason Rank": 409,
     "MEDIAN": 405.5,
     "OVR_RANK": 407,
-    "Stdev": 10.63
+    "Stdev": 11.05
   },
   {
     "Team": "City College (NY)",
@@ -5336,11 +5336,11 @@
     "Massey Rank": 417,
     "Eff Rank": 411,
     "NPI Rank": 410,
-    "Curr Season Results Rank": 408,
+    "Curr Season Results Rank": 409,
     "Preseason Rank": 403,
     "MEDIAN": 410.5,
     "OVR_RANK": 411,
-    "Stdev": 3.87
+    "Stdev": 3.59
   },
   {
     "Team": "Maranatha Bap",
