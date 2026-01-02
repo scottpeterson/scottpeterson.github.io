@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Set active navigation link
     setActiveNavLink();
 
+    // Assemble obfuscated email addresses
+    initEmailProtection();
+
     // Load page configuration
     await window.dataLoader.loadPageConfig();
 

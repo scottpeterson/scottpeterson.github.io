@@ -1,5 +1,23 @@
 // navigation.js - Mobile navigation functionality
 
+// Assembles obfuscated email addresses on page load to prevent scraping.
+// Usage: <span class="email-protect" data-user="name" data-domain="example.com"></span>
+// The email is never in the HTML source as a complete string, defeating simple scrapers.
+function initEmailProtection() {
+  try {
+    const emailElements = document.querySelectorAll('.email-protect');
+    emailElements.forEach(function (el) {
+      const user = el.dataset.user;
+      const domain = el.dataset.domain;
+      if (user && domain) {
+        el.textContent = user + '@' + domain;
+      }
+    });
+  } catch (error) {
+    console.error('Error in initEmailProtection:', error);
+  }
+}
+
 // Function to initialize mobile navigation
 function initMobileNav() {
   try {
