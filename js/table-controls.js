@@ -345,6 +345,14 @@ class TableController {
       ) {
         return numericValue.toFixed(2);
       }
+      // 3 decimal places for Season Simulations NPI columns
+      else if (
+        cleanHeader === 'med-npi' ||
+        cleanHeader === 'min' ||
+        cleanHeader === 'max'
+      ) {
+        return numericValue.toFixed(3);
+      }
     }
 
     // Return original value if no formatting rules apply
