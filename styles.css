@@ -395,7 +395,9 @@ footer {
   border-radius: 12px;
   font-size: 14px;
   color: #333;
-  transition: all 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
 
@@ -403,7 +405,8 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -578,7 +581,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -642,7 +646,8 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1049,7 +1054,8 @@ footer {
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition: transform 0.3s ease,
+  transition:
+    transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -1453,7 +1459,9 @@ footer {
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   background-color: #fff;
 }
 
