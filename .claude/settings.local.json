@@ -8,9 +8,33 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd NCAA Tournament odds to coaches copy\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(qmd --version:*)",
+      "Bash(qmd status:*)",
+      "Bash(timeout 2 qmd mcp:*)",
+      "Bash(echo:*)",
+      "Bash(qmd mcp:*)",
+      "Bash(bun --version:*)",
+      "Bash(readlink:*)",
+      "Bash(ls:*)",
+      "Bash(/Users/scottpeterson/.bun/bin/qmd mcp:*)",
+      "Bash(bun run:*)",
+      "Bash(timeout 5 bun:*)",
+      "Bash(# Check if dependencies are installed cd /Users/scottpeterson/.bun/install/global/node_modules/qmd ls -la node_modules/@modelcontextprotocol/sdk || echo \"\"SDK not in local node_modules\"\" ls -la ../\\\\@modelcontextprotocol/sdk)",
+      "Bash(# Search for todoist MCP config find ~ -name \"\".mcp.json\"\" -o -name \"\"mcp.json\"\")",
+      "Bash(# Check project-specific MCP configs ls -la ~/projects/*/.mcp.json)",
+      "Bash(head:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(bun:*)",
+      "Bash(xxd:*)",
+      "Bash(__NEW_LINE_178fba86550c7ac7__ rm test_qmd_path.ts)",
+      "Bash(exec \"$BUN\" \"$SCRIPT_DIR/src/qmd.ts\" mcp)",
+      "Bash(curl:*)",
+      "Bash(/Users/scottpeterson/.bun/bin/bun:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": ["qmd"]
 }
