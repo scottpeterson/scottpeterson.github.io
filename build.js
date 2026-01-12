@@ -1,14 +1,82 @@
 #!/usr/bin/env node
 
 // build.js - Simple build system for generating HTML pages from templates
+//
+// Data Obfuscation:
+// This build system includes a data encoding step that transforms raw JSON files
+// in /data/ into obfuscated versions in /data-encoded/. The encoding uses XOR
+// with a rotating key followed by base64. This deters casual scraping and makes
+// it harder for LLMs to directly parse the data from network requests.
+//
+// The client-side data-loader.js contains the corresponding decode function.
 
 const fs = require('fs').promises;
 const path = require('path');
+
+// Obfuscation key - used for XOR encoding
+// This isn't cryptographic security, just obfuscation to deter casual scraping
+const OBFUSCATION_KEY = 'D3StatLab2025';
 
 class TemplateEngine {
   constructor() {
     this.templates = {};
     this.config = {};
+  }
+
+  // Encode data using XOR + base64 obfuscation
+  // This makes the data unreadable without the decode function
+  encodeData(jsonString) {
+    const keyBytes = OBFUSCATION_KEY.split('').map(c => c.charCodeAt(0));
+    const dataBytes = Buffer.from(jsonString, 'utf8');
+    const encoded = Buffer.alloc(dataBytes.length);
+
+    for (let i = 0; i < dataBytes.length; i++) {
+      encoded[i] = dataBytes[i] ^ keyBytes[i % keyBytes.length];
+    }
+
+    return encoded.toString('base64');
+  }
+
+  // Encode all JSON files from /data/ to /data-encoded/
+  async encodeDataFiles() {
+    const dataDir = 'data';
+    const encodedDir = 'data-encoded';
+
+    try {
+      // Ensure encoded directory exists
+      await fs.mkdir(encodedDir, { recursive: true });
+
+      // Read all JSON files from data directory
+      const files = await fs.readdir(dataDir);
+      const jsonFiles = files.filter(f => f.endsWith('.json'));
+
+      console.log(`\n🔐 Encoding ${jsonFiles.length} data files...`);
+
+      for (const file of jsonFiles) {
+        const sourcePath = path.join(dataDir, file);
+        const destPath = path.join(encodedDir, file);
+
+        // Read raw JSON
+        const rawData = await fs.readFile(sourcePath, 'utf8');
+
+        // Encode the data
+        const encodedData = this.encodeData(rawData);
+
+        // Write encoded version (wrapped in JSON for consistent fetch handling)
+        await fs.writeFile(
+          destPath,
+          JSON.stringify({ _encoded: encodedData }),
+          'utf8'
+        );
+
+        console.log(`  ✓ Encoded ${file}`);
+      }
+
+      console.log('✓ Data encoding complete');
+    } catch (error) {
+      console.error('Error encoding data files:', error);
+      throw error;
+    }
   }
 
   // Load templates
@@ -452,6 +520,9 @@ class TemplateEngine {
       for (const pageKey of pages) {
         await this.generatePage(pageKey, this.config[pageKey]);
       }
+
+      // Encode data files for obfuscation
+      await this.encodeDataFiles();
 
       console.log(`\n✅ Build complete! Generated ${pages.length} pages.`);
     } catch (error) {

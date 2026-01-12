@@ -1,0 +1,90 @@
+# robots.txt - Crawler access rules for The D3 Stat Lab
+#
+# Intent: Protect statistical data from automated scraping while allowing
+# normal page indexing for search engines.
+
+# Block data directories from all crawlers
+User-agent: *
+Disallow: /data/
+Disallow: /data-encoded/
+Disallow: /config/
+
+# Block known AI/LLM training crawlers
+# These crawlers are used to train large language models
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /data/
+Disallow: /data-encoded/
+
+# Common scraper user agents
+User-agent: ia_archiver
+Disallow: /data/
+Disallow: /data-encoded/
+
+User-agent: AhrefsBot
+Disallow: /data/
+Disallow: /data-encoded/
+
+User-agent: SemrushBot
+Disallow: /data/
+Disallow: /data-encoded/
+
+User-agent: MJ12bot
+Disallow: /data/
+Disallow: /data-encoded/
+
+User-agent: DotBot
+Disallow: /data/
+Disallow: /data-encoded/
+
+# Allow legitimate search engines to index pages (but not data)
+User-agent: Googlebot
+Disallow: /data/
+Disallow: /data-encoded/
+Disallow: /config/
+
+User-agent: Bingbot
+Disallow: /data/
+Disallow: /data-encoded/
+Disallow: /config/
