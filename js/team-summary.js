@@ -79,6 +79,8 @@
         { key: 'MEDIAN', label: 'Median Rank' },
         { key: 'Massey Rank', label: 'Massey' },
         { key: 'Eff Rank', label: 'Efficiency Rank' },
+        { key: 'Strength of Record', label: 'Strength of Record' },
+        { key: 'Wins Above Bubble', label: 'Wins Above Bubble' },
       ],
     },
     preseasonRankings: {
