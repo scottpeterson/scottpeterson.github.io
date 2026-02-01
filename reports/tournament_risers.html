@@ -707,104 +707,104 @@
     <script>
       const ctx = document.getElementById('tournChart').getContext('2d');
 
-              const data = {{
-                  labels: {js_labels},
-                  datasets: [
-      {js_datasets_str}
-                  ]
-              }};
+                    const data = {{
+                        labels: {js_labels},
+                        datasets: [
+            {js_datasets_str}
+                        ]
+                    }};
 
-              new Chart(ctx, {{
-                  type: 'line',
-                  data: data,
-                  options: {{
-                      responsive: true,
-                      maintainAspectRatio: true,
-                      aspectRatio: 2.5,
-                      interaction: {{
-                          intersect: false,
-                          mode: 'index'
-                      }},
-                      plugins: {{
-                          legend: {{
-                              position: 'right',
-                              labels: {{
-                                  color: '#e0e0e0',
-                                  padding: 12,
-                                  usePointStyle: true,
-                                  pointStyle: 'circle',
-                                  font: {{
-                                      size: 11
-                                  }}
-                              }}
-                          }},
-                          title: {{
-                              display: true,
-                              text: 'Tournament Probability Over Time',
-                              color: '#fff',
-                              font: {{
-                                  size: 18,
-                                  weight: '600'
-                              }},
-                              padding: {{
-                                  bottom: 20
-                              }}
-                          }},
-                          tooltip: {{
-                              backgroundColor: 'rgba(26, 26, 46, 0.95)',
-                              titleColor: '#fff',
-                              bodyColor: '#e0e0e0',
-                              borderColor: 'rgba(255, 255, 255, 0.1)',
-                              borderWidth: 1,
-                              padding: 12,
-                              callbacks: {{
-                                  label: function(context) {{
-                                      return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
-                                  }}
-                              }}
-                          }}
-                      }},
-                      scales: {{
-                          y: {{
-                              beginAtZero: true,
-                              max: 100,
-                              title: {{
-                                  display: true,
-                                  text: 'Tournament %',
-                                  color: '#8892b0',
-                                  font: {{
-                                      size: 12
-                                  }}
-                              }},
-                              ticks: {{
-                                  color: '#8892b0',
-                                  callback: function(value) {{
-                                      return value + '%';
-                                  }}
-                              }},
-                              grid: {{
-                                  color: 'rgba(255, 255, 255, 0.05)'
-                              }}
-                          }},
-                          x: {{
-                              title: {{
-                                  display: true,
-                                  text: '{x_axis_label}',
-                                  color: '#8892b0',
-                                  font: {{
-                                      size: 12
-                                  }}
-                              }},
-                              ticks: {{
-                                  color: '#8892b0'
-                              }},
-                              grid: {{
-                                  color: 'rgba(255, 255, 255, 0.05)'
-                              }}
-                          }}
-                      }}
-                  }}
-              }});
+                    new Chart(ctx, {{
+                        type: 'line',
+                        data: data,
+                        options: {{
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            aspectRatio: 2.5,
+                            interaction: {{
+                                intersect: false,
+                                mode: 'index'
+                            }},
+                            plugins: {{
+                                legend: {{
+                                    position: 'right',
+                                    labels: {{
+                                        color: '#e0e0e0',
+                                        padding: 12,
+                                        usePointStyle: true,
+                                        pointStyle: 'circle',
+                                        font: {{
+                                            size: 11
+                                        }}
+                                    }}
+                                }},
+                                title: {{
+                                    display: true,
+                                    text: 'Tournament Probability Over Time',
+                                    color: '#fff',
+                                    font: {{
+                                        size: 18,
+                                        weight: '600'
+                                    }},
+                                    padding: {{
+                                        bottom: 20
+                                    }}
+                                }},
+                                tooltip: {{
+                                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                                    titleColor: '#fff',
+                                    bodyColor: '#e0e0e0',
+                                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                                    borderWidth: 1,
+                                    padding: 12,
+                                    callbacks: {{
+                                        label: function(context) {{
+                                            return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
+                                        }}
+                                    }}
+                                }}
+                            }},
+                            scales: {{
+                                y: {{
+                                    beginAtZero: true,
+                                    max: 100,
+                                    title: {{
+                                        display: true,
+                                        text: 'Tournament %',
+                                        color: '#8892b0',
+                                        font: {{
+                                            size: 12
+                                        }}
+                                    }},
+                                    ticks: {{
+                                        color: '#8892b0',
+                                        callback: function(value) {{
+                                            return value + '%';
+                                        }}
+                                    }},
+                                    grid: {{
+                                        color: 'rgba(255, 255, 255, 0.05)'
+                                    }}
+                                }},
+                                x: {{
+                                    title: {{
+                                        display: true,
+                                        text: '{x_axis_label}',
+                                        color: '#8892b0',
+                                        font: {{
+                                            size: 12
+                                        }}
+                                    }},
+                                    ticks: {{
+                                        color: '#8892b0'
+                                    }},
+                                    grid: {{
+                                        color: 'rgba(255, 255, 255, 0.05)'
+                                    }}
+                                }}
+                            }}
+                        }}
+                    }});
     </script>
   </body>
 </html>
