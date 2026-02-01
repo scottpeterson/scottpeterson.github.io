@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>At-Large Tiers - D3 Women's Basketball - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-atlarge_tiers * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .report-atlarge_tiers {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+      .report-atlarge_tiers .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .report-atlarge_tiers h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .report-atlarge_tiers .subtitle {
+        text-align: center;
+        color: #00d4ff;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .report-atlarge_tiers .explainer {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 30px;
+        font-size: 0.85rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .report-atlarge_tiers .tiers-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+      }
+      .report-atlarge_tiers .tier-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+      }
+      .report-atlarge_tiers .tier-header {
+        padding: 16px;
+        border-bottom: 3px solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .report-atlarge_tiers .tier-title-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .report-atlarge_tiers .tier-icon {
+        font-size: 1.2rem;
+      }
+      .report-atlarge_tiers .tier-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .report-atlarge_tiers .tier-count {
+        font-size: 0.75rem;
+        color: #8892b0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 12px;
+      }
+      .report-atlarge_tiers .tier-description {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+        color: #6b7280;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .report-atlarge_tiers .teams-list {
+        padding: 8px 12px;
+      }
+      .report-atlarge_tiers .team-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .report-atlarge_tiers .team-row:last-child {
+        border-bottom: none;
+      }
+      .report-atlarge_tiers .team-row:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+      }
+      .report-atlarge_tiers .team-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        min-width: 0;
+        flex: 1;
+      }
+      .report-atlarge_tiers .team-name {
+        font-weight: 500;
+        color: #e0e0e0;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .report-atlarge_tiers .team-conf {
+        font-size: 0.65rem;
+        color: #6b7280;
+      }
+      .report-atlarge_tiers .team-stats {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .report-atlarge_tiers .alwyni-bar-container {
+        width: 50px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .report-atlarge_tiers .alwyni-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        border-radius: 3px;
+      }
+      .report-atlarge_tiers .alwyni-value {
+        font-weight: 700;
+        min-width: 36px;
+        text-align: right;
+        font-size: 0.75rem;
+      }
+      .report-atlarge_tiers .alwyni-lock {
+        color: #10b981;
+      }
+      .report-atlarge_tiers .alwyni-likely {
+        color: #00d4ff;
+      }
+      .report-atlarge_tiers .alwyni-bubble {
+        color: #fbbf24;
+      }
+      .report-atlarge_tiers .alwyni-out {
+        color: #f97316;
+      }
+      .report-atlarge_tiers .alwyni-longshot {
+        color: #8892b0;
+      }
+      .report-atlarge_tiers .no-teams {
+        color: #6b7280;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 20px;
+      }
+      .report-atlarge_tiers .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 30px;
+        font-size: 0.85rem;
+      }
+      .report-atlarge_tiers .footer a {
+        color: #00d4ff;
+        text-decoration: none;
+      }
+      @media (max-width: 1200px) {
+        .report-atlarge_tiers .tiers-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .report-atlarge_tiers .tiers-grid {
+          grid-template-columns: 1fr;
+        }
+        .report-atlarge_tiers h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html" class="active"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-01.html"
+                  >Team Simulation Stats Comparison | Feb 1, 2026 vs Jan 31,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >Top 25 NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-atlarge_tiers">
+        <div class="container">
+          <h1>D3 WBB At-Large Tiers</h1>
+          <p class="explainer">
+            ALWYNI% = "At-Large Win You Need It" — number of times a team makes
+            the tournament as an at-large selection. Teams grouped by their
+            current at-large likelihood based on season simulations.
+          </p>
+
+          <div class="tiers-grid">
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #10b981">
+                <div class="tier-title-row">
+                  <span class="tier-icon">🔒</span>
+                  <span class="tier-name" style="color: #10b981">Locks</span>
+                </div>
+                <span class="tier-count">16 teams</span>
+              </div>
+              <div class="tier-description">99.5%+ ALWYNI</div>
+              <div class="teams-list">
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-Oshkosh</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">John Carroll</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">WashU</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Hope</span>
+                    <span class="team-conf">MIAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Ohio Wesleyan</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Bowdoin</span>
+                    <span class="team-conf">NESCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Baldwin Wallace</span>
+                    <span class="team-conf">OAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Denison</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Johns Hopkins</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-Whitewater</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Washington & Lee</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Scranton</span>
+                    <span class="team-conf">LAND</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Bates</span>
+                    <span class="team-conf">NESCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Carroll</span>
+                    <span class="team-conf">CCIW</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Illinois Wesleyan</span>
+                    <span class="team-conf">CCIW</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.8%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Smith</span>
+                    <span class="team-conf">NEWMAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.7%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-lock">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #00d4ff">
+                <div class="tier-title-row">
+                  <span class="tier-icon">✓</span>
+                  <span class="tier-name" style="color: #00d4ff">Likely</span>
+                </div>
+                <span class="tier-count">14 teams</span>
+              </div>
+              <div class="tier-description">80-99% ALWYNI</div>
+              <div class="teams-list">
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Concordia Moorhead</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">99%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Emory</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.3%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">99%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-La Crosse</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 99.2%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">99%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Bethel</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 98.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">99%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Trine</span>
+                    <span class="team-conf">MIAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 97%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">97%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-Platteville</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 94.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">95%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">SUNY New Paltz</span>
+                    <span class="team-conf">SUNYAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 94.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">94%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Chicago</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 93.6%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">94%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Shenandoah</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 91.3%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">91%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Bridgewater (VA)</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 90.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">91%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Cortland</span>
+                    <span class="team-conf">SUNYAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 89.2%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">89%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">William Paterson</span>
+                    <span class="team-conf">NJAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 89%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">89%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Southern Maine</span>
+                    <span class="team-conf">LEC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 86.2%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">86%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Ripon</span>
+                    <span class="team-conf">MWC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 82.9%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-likely">83%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #fbbf24">
+                <div class="tier-title-row">
+                  <span class="tier-icon">⚖️</span>
+                  <span class="tier-name" style="color: #fbbf24"
+                    >Bubble In</span
+                  >
+                </div>
+                <span class="tier-count">7 teams</span>
+              </div>
+              <div class="tier-description">Above C-21 cutoff</div>
+              <div class="teams-list">
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">McDaniel</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 65.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">65%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Christopher Newport</span>
+                    <span class="team-conf">C2C</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 62%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">62%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">St. Mary's (MN)</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 57.8%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">58%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Otterbein</span>
+                    <span class="team-conf">OAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 49.7%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">50%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Gettysburg</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 44.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">44%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Susquehanna</span>
+                    <span class="team-conf">LAND</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 40.5%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">40%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Cal Lutheran</span>
+                    <span class="team-conf">SCIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 40.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-bubble">40%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #f97316">
+                <div class="tier-title-row">
+                  <span class="tier-icon">⚠️</span>
+                  <span class="tier-name" style="color: #f97316"
+                    >Bubble Out</span
+                  >
+                </div>
+                <span class="tier-count">Top 16 of 24</span>
+              </div>
+              <div class="tier-description">Below C-21 cutoff</div>
+              <div class="teams-list">
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Colorado College</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 39.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">39%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Hardin-Simmons</span>
+                    <span class="team-conf">ASC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 37.6%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">38%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Randolph-Macon</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 34.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">34%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Guilford</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 31.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">31%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Linfield</span>
+                    <span class="team-conf">NWC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 31.3%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">31%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Catholic</span>
+                    <span class="team-conf">LAND</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 22%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">22%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Gustavus Adolphus</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 21.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">21%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Wisconsin Lutheran</span>
+                    <span class="team-conf">NACC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 19.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">19%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">DePauw</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 14%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">14%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-River Falls</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 13%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">13%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Messiah</span>
+                    <span class="team-conf">MACC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 8.6%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">8.6%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-Eau Claire</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 7%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">7.0%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Centre</span>
+                    <span class="team-conf">SAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 6.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">6.1%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Carnegie Mellon</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 5.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">5.1%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">UW-Stevens Point</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 4.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">4.1%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Amherst</span>
+                    <span class="team-conf">NESCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 3.7%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-out">3.7%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #8892b0">
+                <div class="tier-title-row">
+                  <span class="tier-icon">🎲</span>
+                  <span class="tier-name" style="color: #8892b0"
+                    >Long Shot</span
+                  >
+                </div>
+                <span class="tier-count">Top 8 of 24</span>
+              </div>
+              <div class="tier-description">showing 16 teams</div>
+              <div class="teams-list">
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Hamline</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.4%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.4%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Washington & Jefferson</span>
+                    <span class="team-conf">PAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.3%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.3%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Dickinson</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.3%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.3%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Claremont-Mudd-Scripps</span>
+                    <span class="team-conf">SCIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.2%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.2%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Brandeis</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.2%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.2%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">Calvin</span>
+                    <span class="team-conf">MIAA</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.1%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">McMurry</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.1%</span>
+                  </div>
+                </div>
+                <div class="team-row">
+                  <div class="team-info">
+                    <span class="team-name">St. Scholastica</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <div class="team-stats">
+                    <div class="alwyni-bar-container">
+                      <div class="alwyni-bar" style="width: 0.1%"></div>
+                    </div>
+                    <span class="alwyni-value alwyni-longshot">0.1%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="footer">
+            Generated February 01, 2026 at 10:38 AM<br />
+            <a href="https://thed3statlab.com">TheD3StatLab</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>

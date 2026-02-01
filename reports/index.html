@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-01.html"
+                  >Team Simulation Stats Comparison | Feb 1, 2026 vs Jan 31,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >Top 25 NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Reports</h1>
+        <p>Interactive reports and visualizations for D3 Women's Basketball</p>
+      </header>
+
+      <div class="reports-grid">
+        <a href="16th_win_countdown.html" class="report-card">
+          <h3>16th Win Countdown - D3 WBB</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="alwyni_threshold_chart.html" class="report-card">
+          <h3>ALWYNI% Threshold Chart</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="atlarge_tiers.html" class="report-card">
+          <h3>At-Large Tiers - D3 Women's Basketball</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="best_games_this_week.html" class="report-card">
+          <h3>Best Upcoming Games - D3 Women's Basketball</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="bubble_watch.html" class="report-card">
+          <h3>D3 WBB At-Large Bubble Watch</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="conference_race_infographic.html" class="report-card">
+          <h3>D3 WBB Most Competitive Conference Races</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="player_plus_minus_rankings.html" class="report-card">
+          <h3>D3 WBB Player Plus/Minus Rankings</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="atlarge_powerhouse_conferences.html" class="report-card">
+          <h3>D3 Women's Basketball At-Large Picture</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="high_npi_low_alwyni.html" class="report-card">
+          <h3>High NPI, Low ALWYNI Teams</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="host_projections.html" class="report-card">
+          <h3>NCAA D3 WBB Host Projections</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="tournament_field_infographic.html" class="report-card">
+          <h3>NCAA D3 WBB Tournament Field - TheD3StatLab</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="team_comparison_2026-02-01.html" class="report-card">
+          <h3>
+            Team Simulation Stats Comparison | Feb 1, 2026 vs Jan 31, 2026
+          </h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="top25_schedule_quality.html" class="report-card">
+          <h3>Top 25 NPI Teams - Schedule Quality</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="tournament_risers.html" class="report-card">
+          <h3>Top Tournament % Risers - D3 WBB</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+        <a href="undefeated_watch.html" class="report-card">
+          <h3>Undefeated Teams Watch - D3 WBB</h3>
+          <span class="report-card-arrow">→</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>

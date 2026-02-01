@@ -1,0 +1,276 @@
+/**
+ * reports.css - Styles for the static reports system
+ *
+ * PURPOSE:
+ * Provides styling for the reports index page and wrapped report pages.
+ * Includes dropdown navigation for the Reports menu and the reports grid.
+ *
+ * LAYOUT:
+ * - Reports index: Grid of clickable cards
+ * - Wrapped reports: Full-width container with back link
+ * - Dropdown nav: Hover on desktop, toggle on mobile
+ */
+
+/* ==========================================================================
+   Reports Index Grid
+   ========================================================================== */
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.report-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: #2c3e50;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  border-color: #3498db;
+}
+
+.report-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.report-card-arrow {
+  font-size: 1.2rem;
+  color: #3498db;
+  transition: transform 0.2s ease;
+}
+
+.report-card:hover .report-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Report Wrapper (individual report pages)
+   ========================================================================== */
+
+.report-wrapper {
+  /* Full width - reports may need more space than typical pages */
+  max-width: none;
+  padding: 20px;
+}
+
+.report-back-link {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.report-back-link a {
+  display: inline-block;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  background: rgb(255 255 255 / 90%);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  transition: all 0.2s ease;
+}
+
+.report-back-link a:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  transform: translateX(-2px);
+}
+
+/* Report content container - starts with .report- prefix */
+[class^='report-']:not(.report-wrapper):not(.report-back-link):not(
+.report-card
+):not(.report-card-arrow) {
+  /* Allow reports to define their own layout */
+  /* This selector catches .report-bubble_watch, .report-undefeated_watch, etc. */
+}
+
+/* ==========================================================================
+   CSS Reset for Report Content
+   --------------------------------------------------------------------------
+   The site's global styles (styles.css) define styles for common class names
+   like .legend-item, .table-container, etc. Reports often use these same
+   class names with different styling (especially dark-themed reports).
+
+   These resets neutralize site styles within report containers so the
+   report's scoped styles can take effect without conflicts.
+   ========================================================================== */
+
+[class^='report-'] .legend-item {
+  background: none;
+  border: none;
+  padding: 0;
+  flex-direction: row;
+  box-shadow: none;
+}
+
+[class^='report-'] .legend-item:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+[class^='report-'] .table-container {
+  height: auto;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+[class^='report-'] table {
+  border-collapse: collapse;
+}
+
+[class^='report-'] th,
+[class^='report-'] td {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   Dropdown Navigation (Reports menu)
+   ========================================================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  padding: 8px 0;
+  z-index: 200;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #34495e;
+}
+
+.dropdown-menu a.active {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #34495e;
+  margin: 8px 0;
+}
+
+/* Desktop hover behavior */
+@media screen and (min-width: 769px) {
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* ==========================================================================
+   Mobile Dropdown
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    min-width: 100%;
+    background: #1a252f;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 35px;
+    border-bottom: 1px solid #2c3e50;
+  }
+
+  .dropdown-arrow.open {
+    transform: rotate(180deg);
+  }
+
+  /* Reports grid on mobile */
+  .reports-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .report-card {
+    padding: 16px 20px;
+  }
+
+  .report-wrapper {
+    padding: 15px;
+  }
+
+  .report-back-link {
+    margin-bottom: 15px;
+  }
+}

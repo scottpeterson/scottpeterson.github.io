@@ -1,0 +1,914 @@
+<!doctype html>
+<!-- Generator: uv run python create_best_games_infographic.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Upcoming Games - D3 Women's Basketball</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .date-range {
+        text-align: center;
+        color: #00d4ff;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .explainer {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 30px;
+        font-size: 0.85rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .column-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .card-header {
+        padding: 12px 16px;
+        background: linear-gradient(
+          90deg,
+          rgba(16, 185, 129, 0.2),
+          transparent
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #10b981;
+      }
+
+      .card-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 8px 6px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #8892b0;
+        background: rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
+      }
+
+      .header-detail {
+        color: #10b981;
+        margin-left: 2px;
+      }
+      .header-conf {
+        color: #6b7280;
+        margin-left: 2px;
+      }
+
+      td {
+        padding: 8px 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.85rem;
+        vertical-align: middle;
+      }
+
+      tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tr.top-game {
+        background: rgba(16, 185, 129, 0.05);
+      }
+
+      tr.top-game:hover {
+        background: rgba(16, 185, 129, 0.1);
+      }
+
+      .rank-col {
+        width: 32px;
+        text-align: center;
+      }
+
+      .rank-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+
+      .date-col {
+        white-space: nowrap;
+        color: #8892b0;
+        font-size: 0.75rem;
+      }
+
+      .today-date {
+        color: #fbbf24;
+        font-weight: 700;
+        background: rgba(251, 191, 36, 0.15);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+
+      .past-date {
+        color: #ef4444;
+        text-decoration: line-through;
+      }
+
+      .matchup-col {
+        /* Let content determine width */
+      }
+
+      .matchup {
+        display: inline;
+      }
+
+      .team-name {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .team-name.winner {
+        color: #10b981;
+        font-weight: 700;
+      }
+
+      .team-name.loser {
+        color: #6b7280;
+        font-weight: 400;
+      }
+
+      tr.completed {
+        opacity: 0.85;
+      }
+
+      .team-name.flame {
+        background: linear-gradient(90deg, #ff6b35, #f7c531, #ff6b35);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: flame-shimmer 2s ease-in-out infinite;
+      }
+
+      @keyframes flame-shimmer {
+        0% {
+          background-position: 0% center;
+        }
+        50% {
+          background-position: 100% center;
+        }
+        100% {
+          background-position: 0% center;
+        }
+      }
+
+      .team-alwyni {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #10b981;
+        margin-left: 4px;
+      }
+
+      .team-conf {
+        font-size: 0.7rem;
+        color: #8892b0;
+        margin-left: 4px;
+      }
+
+      .vs-text {
+        color: #6b7280;
+        font-size: 0.75rem;
+        margin: 0 6px;
+      }
+
+      .total-col {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .total-value {
+        font-size: 0.95rem;
+        font-weight: 700;
+        display: block;
+      }
+
+      .tier-badge {
+        display: inline-block;
+        font-size: 0.55rem;
+        font-weight: 600;
+        padding: 2px 5px;
+        border-radius: 3px;
+        margin-top: 2px;
+        letter-spacing: 0.3px;
+      }
+
+      .legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: #8892b0;
+      }
+
+      .legend-flame {
+        font-weight: 600;
+        background: linear-gradient(90deg, #ff6b35, #f7c531, #ff6b35);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: flame-shimmer 2s ease-in-out infinite;
+      }
+
+      .legend-text {
+        color: #8892b0;
+      }
+
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+      }
+
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 25px;
+        font-size: 0.8rem;
+      }
+
+      .footer a {
+        color: #00d4ff;
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .two-column-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Best Upcoming Games for At-Large Implications</h1>
+      <p class="date-range">
+        D3 Women's Basketball • February 01 - February 08, 2026
+      </p>
+      <p class="explainer">
+        Ranked by geometric mean of both teams' ALWYNI% (At-Large Win You Need
+        It). High scores = both teams have significant tournament implications
+        at stake.
+      </p>
+
+      <div class="two-column-grid">
+        <div class="column-card">
+          <div class="card-header">
+            <span class="card-icon">🔥</span>
+            <span class="card-title">Games 1-13</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">#</th>
+                <th>Date</th>
+                <th>
+                  Team <span class="header-detail">ALWYNI%</span>
+                  <span class="header-conf">Conf</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="top-game">
+                <td class="rank-col">
+                  <span class="rank-num">1</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">John Carroll</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Ohio Wesleyan</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="top-game">
+                <td class="rank-col">
+                  <span class="rank-num">2</span>
+                </td>
+                <td class="date-col">Fri 2/6</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">WashU</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Emory</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="top-game">
+                <td class="rank-col">
+                  <span class="rank-num">3</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">UW-Whitewater</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-La Crosse</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="top-game">
+                <td class="rank-col">
+                  <span class="rank-num">4</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">UW-Oshkosh</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-Platteville</span>
+                    <span class="team-alwyni">95%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="top-game">
+                <td class="rank-col">
+                  <span class="rank-num">5</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">UW-La Crosse</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-Platteville</span>
+                    <span class="team-alwyni">95%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">6</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Emory</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Chicago</span>
+                    <span class="team-alwyni">94%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">7</span>
+                </td>
+                <td class="date-col">Sun 2/8</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Chicago</span>
+                    <span class="team-alwyni">94%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Emory</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">8</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Johns Hopkins</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name flame">Gettysburg</span>
+                    <span class="team-alwyni">44%</span>
+                    <span class="team-conf">CC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">9</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Bridgewater (VA)</span>
+                    <span class="team-alwyni">91%</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name flame">Randolph-Macon</span>
+                    <span class="team-alwyni">34%</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">10</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Bridgewater (VA)</span>
+                    <span class="team-alwyni">91%</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name flame">Guilford</span>
+                    <span class="team-alwyni">31%</span>
+                    <span class="team-conf">ODAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">11</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name flame">DePauw</span>
+                    <span class="team-alwyni">14%</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Denison</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">NCAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">12</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name flame">UW-River Falls</span>
+                    <span class="team-alwyni">13%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-Oshkosh</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">13</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">UW-Eau Claire</span>
+                    <span class="team-alwyni">7.0%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-River Falls</span>
+                    <span class="team-alwyni">13%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="column-card">
+          <div class="card-header">
+            <span class="card-icon">🏀</span>
+            <span class="card-title">Games 14-26</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">#</th>
+                <th>Date</th>
+                <th>
+                  Team <span class="header-detail">ALWYNI%</span>
+                  <span class="header-conf">Conf</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">14</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Hamline</span>
+                    <span class="team-alwyni">0.4%</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Concordia Moorhead</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">15</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">UW-Eau Claire</span>
+                    <span class="team-alwyni">7.0%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">UW-Stevens Point</span>
+                    <span class="team-alwyni">4.1%</span>
+                    <span class="team-conf">WIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">16</span>
+                </td>
+                <td class="date-col">Sat 2/7</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">St. Scholastica</span>
+                    <span class="team-alwyni">0.1%</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Bethel</span>
+                    <span class="team-alwyni">99%</span>
+                    <span class="team-conf">MIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">17</span>
+                </td>
+                <td class="date-col">Wed 2/4</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Claremont-Mudd-Scripps</span>
+                    <span class="team-alwyni">0.2%</span>
+                    <span class="team-conf">SCIAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name flame">Cal Lutheran</span>
+                    <span class="team-alwyni">40%</span>
+                    <span class="team-conf">SCIAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">18</span>
+                </td>
+                <td class="date-col">Fri 2/6</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Colorado College</span>
+                    <span class="team-alwyni">39%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">McMurry</span>
+                    <span class="team-alwyni">0.1%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">19</span>
+                </td>
+                <td class="date-col">Fri 2/6</td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Brandeis</span>
+                    <span class="team-alwyni">0.2%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Carnegie Mellon</span>
+                    <span class="team-alwyni">5.1%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">20</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Hendrix</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Schreiner</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">21</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name flame">Merchant Marine</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SKY</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Yeshiva</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SKY</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">22</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Millsaps</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Oglethorpe</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">23</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Bates</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">NESCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Middlebury</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">NESCAC</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">24</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Rhodes</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Berry</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">25</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">Rochester</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">WashU</span>
+                    <span class="team-alwyni">100%</span>
+                    <span class="team-conf">UAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="rank-col">
+                  <span class="rank-num">26</span>
+                </td>
+                <td class="date-col">
+                  <span class="today-date">TODAY 2/1</span>
+                </td>
+                <td class="matchup-col">
+                  <div class="matchup">
+                    <span class="team-name">St. Thomas (TX)</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                  <span class="vs-text">vs</span>
+                  <div class="matchup">
+                    <span class="team-name">Concordia (TX)</span>
+                    <span class="team-alwyni">0.0%</span>
+                    <span class="team-conf">SCAC</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-flame">Team Name</span>
+          <span class="legend-text"
+            >= High leverage game (> 25% NCAA Tournament Make % swing)</span
+          >
+        </div>
+      </div>
+
+      <p class="footer">
+        Generated February 01, 2026 at 10:38 AM<br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,678 @@
+<!doctype html>
+<!-- Generator: uv run python create_atlarge_powerhouse.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3 Women's Basketball At-Large Picture</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .explainer {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 30px;
+        font-size: 0.9rem;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .conference-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+      }
+      .conference-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .conference-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+      }
+      .conference-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .conference-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .conference-rank {
+        font-size: 0.9rem;
+        color: #8892b0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+      .expected-bids {
+        font-size: 1.1rem;
+        color: #10b981;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .team-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .team-row:last-child {
+        border-bottom: none;
+      }
+      .team-name {
+        font-weight: 500;
+        color: #e0e0e0;
+      }
+      .team-stats {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .alwyni-bar-container {
+        width: 80px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .alwyni-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        border-radius: 4px;
+      }
+      .alwyni-bar.autobid {
+        background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      }
+      .alwyni-value {
+        font-weight: 700;
+        color: #10b981;
+        min-width: 50px;
+        text-align: right;
+        font-size: 0.95rem;
+      }
+      .alwyni-lock {
+        color: #fbbf24;
+      }
+      .autobid-tag {
+        font-size: 0.7rem;
+        color: #f59e0b;
+        background: rgba(251, 191, 36, 0.2);
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 6px;
+      }
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>D3 Women's Basketball At-Large Picture</h1>
+      <p class="explainer">
+        ALWYNI% = "At-Large When You Need It" — Teams with 99.8%+ ALWYNI or 100%
+        Auto-Bid are tournament locks
+      </p>
+
+      <div class="conference-grid">
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #00d4ff"
+              >WIAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(4.19 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#1</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-Oshkosh 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-Whitewater 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-La Crosse</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.2%"></div>
+              </div>
+              <span class="alwyni-value">99%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-Platteville</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 94.9%"></div>
+              </div>
+              <span class="alwyni-value">95%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-River Falls</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 13%"></div>
+              </div>
+              <span class="alwyni-value">13%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-Eau Claire</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 7%"></div>
+              </div>
+              <span class="alwyni-value">7%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">UW-Stevens Point</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 4.1%"></div>
+              </div>
+              <span class="alwyni-value">4%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #7c3aed"
+              >UAA
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(3.98 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#2</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">WashU 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Emory</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.3%"></div>
+              </div>
+              <span class="alwyni-value">99%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Chicago</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 93.6%"></div>
+              </div>
+              <span class="alwyni-value">94%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Carnegie Mellon</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 5.1%"></div>
+              </div>
+              <span class="alwyni-value">5%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name"
+              >NYU 🔒<span class="autobid-tag">AUTO</span></span
+            >
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar autobid" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">A:100%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #10b981"
+              >ODAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(3.53 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#3</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Washington & Lee 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Shenandoah</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 91.3%"></div>
+              </div>
+              <span class="alwyni-value">91%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Bridgewater (VA)</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 90.9%"></div>
+              </div>
+              <span class="alwyni-value">91%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Randolph-Macon</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 34.1%"></div>
+              </div>
+              <span class="alwyni-value">34%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Guilford</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 31.4%"></div>
+              </div>
+              <span class="alwyni-value">31%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #f59e0b"
+              >NCAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(3.19 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#4</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">John Carroll 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Denison 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Ohio Wesleyan 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">DePauw</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 14%"></div>
+              </div>
+              <span class="alwyni-value">14%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #ef4444"
+              >MIAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(2.97 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#5</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Concordia Moorhead</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.4%"></div>
+              </div>
+              <span class="alwyni-value">99%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Bethel</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 98.9%"></div>
+              </div>
+              <span class="alwyni-value">99%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">St. Mary's (MN)</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 57.8%"></div>
+              </div>
+              <span class="alwyni-value">58%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Gustavus Adolphus</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 21.4%"></div>
+              </div>
+              <span class="alwyni-value">21%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #ec4899"
+              >CC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(2.20 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#6</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Johns Hopkins 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">McDaniel</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 65.4%"></div>
+              </div>
+              <span class="alwyni-value">65%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Gettysburg</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 44.1%"></div>
+              </div>
+              <span class="alwyni-value">44%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #8b5cf6"
+              >NESCAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(2.12 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#7</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Bowdoin 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Bates 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.9%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Amherst</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 3.7%"></div>
+              </div>
+              <span class="alwyni-value">4%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #06b6d4"
+              >CCIW
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(2.03 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#8</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Carroll 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.9%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Illinois Wesleyan 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 99.8%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #84cc16"
+              >MIAA
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(2.02 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#9</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Hope 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Trine</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 97%"></div>
+              </div>
+              <span class="alwyni-value">97%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #f97316"
+              >SUNYAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(1.95 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#10</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">SUNY New Paltz</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 94.4%"></div>
+              </div>
+              <span class="alwyni-value">94%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Cortland</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 89.2%"></div>
+              </div>
+              <span class="alwyni-value">89%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #6366f1"
+              >OAC
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(1.71 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#11</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Baldwin Wallace 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Otterbein</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 49.7%"></div>
+              </div>
+              <span class="alwyni-value">50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="conference-card">
+          <div class="conference-header">
+            <span class="conference-name" style="color: #14b8a6"
+              >LAND
+              <span style="font-size: 0.8rem; color: #8892b0"
+                >(1.64 bids/sim)</span
+              ></span
+            >
+            <span class="conference-rank">#12</span>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Scranton 🔒</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 100%"></div>
+              </div>
+              <span class="alwyni-value alwyni-lock">100%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Susquehanna</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 40.5%"></div>
+              </div>
+              <span class="alwyni-value">40%</span>
+            </div>
+          </div>
+          <div class="team-row">
+            <span class="team-name">Catholic</span>
+            <div class="team-stats">
+              <div class="alwyni-bar-container">
+                <div class="alwyni-bar" style="width: 22%"></div>
+              </div>
+              <span class="alwyni-value">22%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer">
+        Generated February 01, 2026 at 10:50 AM • <br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,669 @@
+<!doctype html>
+<!-- Generator: uv run python create_host_projections.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCAA D3 WBB Host Projections</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #00d4ff, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      .regions-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+        justify-content: center;
+      }
+
+      .region-card {
+        flex: 0 1 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .region-header {
+        padding: 14px 20px;
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .region-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .region-expected {
+        margin-left: auto;
+        font-size: 0.8rem;
+        font-weight: 400;
+        opacity: 0.8;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 10px 6px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #8892b0;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      td {
+        padding: 8px 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+      }
+
+      tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tr.divider td {
+        border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
+      }
+
+      .team-name {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .conf-name {
+        color: #8892b0;
+        font-size: 0.8rem;
+      }
+
+      .stat-col {
+        font-weight: 600;
+        text-align: right;
+      }
+
+      .npi-value {
+        color: #00d4ff;
+      }
+
+      .top16-value {
+        color: #10b981;
+      }
+
+      .region-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      .team-red {
+        color: #ef4444 !important;
+      }
+
+      .team-green {
+        color: #10b981 !important;
+      }
+
+      .mbb-lock {
+        display: inline-block;
+        background: linear-gradient(135deg, #dc2626, #991b1b);
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      .team-name-strikethrough {
+        text-decoration: line-through;
+        text-decoration-color: #dc2626;
+        text-decoration-thickness: 1px;
+      }
+
+      .mbb-gray {
+        display: inline-block;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        color: #000;
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      .mbb-legend {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .mbb-legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: #ccd6f6;
+      }
+
+      .region-note {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        color: #8892b0;
+        font-style: italic;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 30px;
+        font-size: 0.9rem;
+      }
+
+      .methodology table {
+        font-size: 0.85rem;
+      }
+
+      .methodology th {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 6px 8px;
+        text-align: center;
+      }
+
+      .methodology td {
+        padding: 6px 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Opening Weekend Host Projections</h1>
+      <p class="subtitle">
+        Projected Host Sites for NCAA D3 Women's Basketball Tournament
+      </p>
+      <p class="subtitle" style="margin-top: -20px; font-size: 0.95rem">
+        Based on season simulations through 01/31/2026 results
+      </p>
+      <p class="subtitle" style="margin-top: -20px; font-size: 0.85rem">
+        "The deadline to submit all materials for hosting preliminary rounds is
+        Feb. 20 at 5 p.m. Eastern time." -- NCAA D3 Women's Basketball
+        Pre-Championship Handbook
+      </p>
+      <p class="subtitle" style="margin-top: -20px; font-size: 0.85rem">
+        The current projections list 17 hosts. If we do not have a Region 10
+        host, the geography that has the most Reg 10 teams flown into it will
+        likely be the one that gets an "extra" host.
+      </p>
+
+      <div class="mbb-legend">
+        <div class="mbb-legend-item">
+          <span class="mbb-lock">MBB</span>
+          <span>MBB Likely (60%+) - MBB will likely host opening weekend</span>
+        </div>
+        <div class="mbb-legend-item">
+          <span class="mbb-gray">MBB</span>
+          <span>MBB Possible (30-60%) - MBB hosting uncertain</span>
+        </div>
+      </div>
+
+      <div class="regions-grid">
+        <div class="region-card">
+          <div
+            class="region-header"
+            style="background: linear-gradient(90deg, #f59e0b40, transparent)"
+          >
+            <span class="region-icon" style="background: #f59e0b">MW</span>
+            <span style="color: #f59e0b">Reg 8 to 9: Midwest</span>
+            <span class="region-expected">17 teams → 5.29 expected</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Reg</th>
+                <th>Team</th>
+                <th>Conf</th>
+                <th style="text-align: right">Top16%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="region-num">9</span></td>
+                <td class="team-name">UW-Oshkosh</td>
+                <td class="conf-name">WIAC</td>
+                <td class="stat-col top16-value">100.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">9</span></td>
+                <td class="team-name">UW-Whitewater</td>
+                <td class="conf-name">WIAC</td>
+                <td class="stat-col top16-value">99.5%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">8</span></td>
+                <td class="team-name">WashU</td>
+                <td class="conf-name">UAA</td>
+                <td class="stat-col top16-value">86.2%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">9</span></td>
+                <td class="team-name">Concordia Moorhead</td>
+                <td class="conf-name">MIAC</td>
+                <td class="stat-col top16-value">39.2%</td>
+              </tr>
+              <tr class="divider">
+                <td><span class="region-num">8</span></td>
+                <td class="team-name">Carroll</td>
+                <td class="conf-name">CCIW</td>
+                <td class="stat-col top16-value">37.9%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">9</span></td>
+                <td class="team-name">UW-La Crosse</td>
+                <td class="conf-name">WIAC</td>
+                <td class="stat-col top16-value">34.4%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">8</span></td>
+                <td class="team-name">Illinois Wesleyan</td>
+                <td class="conf-name">CCIW</td>
+                <td class="stat-col top16-value">26.9%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">9</span></td>
+                <td class="team-name">UW-Platteville</td>
+                <td class="conf-name">WIAC</td>
+                <td class="stat-col top16-value">20.5%</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="region-note">
+            * 4 WI/MN hosts not named Whitewater are unlikely
+          </div>
+        </div>
+        <div class="region-card">
+          <div
+            class="region-header"
+            style="background: linear-gradient(90deg, #00d4ff40, transparent)"
+          >
+            <span class="region-icon" style="background: #00d4ff">MA</span>
+            <span style="color: #00d4ff">Reg 5 to 6: Mid-Atlantic</span>
+            <span class="region-expected">15 teams → 4.50 expected</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Reg</th>
+                <th>Team</th>
+                <th>Conf</th>
+                <th style="text-align: right">Top16%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="region-num">6</span></td>
+                <td class="team-name">Washington & Lee</td>
+                <td class="conf-name">ODAC</td>
+                <td class="stat-col top16-value">100.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">5</span></td>
+                <td class="team-name">Johns Hopkins</td>
+                <td class="conf-name">CC</td>
+                <td class="stat-col top16-value">100.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">5</span></td>
+                <td class="team-name">Scranton</td>
+                <td class="conf-name">LAND</td>
+                <td class="stat-col top16-value">100.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">6</span></td>
+                <td class="team-name team-name-strikethrough">
+                  Emory
+                  <span class="mbb-lock" title="MBB 99% to host">MBB</span>
+                </td>
+                <td class="conf-name">UAA</td>
+                <td class="stat-col top16-value">48.9%</td>
+              </tr>
+              <tr class="divider">
+                <td><span class="region-num">6</span></td>
+                <td class="team-name">Bridgewater (VA)</td>
+                <td class="conf-name">ODAC</td>
+                <td class="stat-col top16-value">15.7%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">6</span></td>
+                <td class="team-name">Shenandoah</td>
+                <td class="conf-name">ODAC</td>
+                <td class="stat-col top16-value">3.9%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">5</span></td>
+                <td class="team-name">McDaniel</td>
+                <td class="conf-name">CC</td>
+                <td class="stat-col top16-value">1.6%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="region-card">
+          <div
+            class="region-header"
+            style="background: linear-gradient(90deg, #7c3aed40, transparent)"
+          >
+            <span class="region-icon" style="background: #7c3aed">NE</span>
+            <span style="color: #7c3aed">Reg 1 to 4: Northeast</span>
+            <span class="region-expected">18 teams → 4.03 expected</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Reg</th>
+                <th>Team</th>
+                <th>Conf</th>
+                <th style="text-align: right">Top16%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="region-num">4</span></td>
+                <td class="team-name">NYU</td>
+                <td class="conf-name">UAA</td>
+                <td class="stat-col top16-value">100.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">1</span></td>
+                <td class="team-name">Bowdoin</td>
+                <td class="conf-name">NESCAC</td>
+                <td class="stat-col top16-value">97.2%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">1</span></td>
+                <td class="team-name">Bates</td>
+                <td class="conf-name">NESCAC</td>
+                <td class="stat-col top16-value">71.4%</td>
+              </tr>
+              <tr class="divider">
+                <td><span class="region-num">2</span></td>
+                <td class="team-name">Smith</td>
+                <td class="conf-name">NEWMAC</td>
+                <td class="stat-col top16-value">48.0%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">3</span></td>
+                <td class="team-name">SUNY New Paltz</td>
+                <td class="conf-name">SUNYAC</td>
+                <td class="stat-col top16-value">3.6%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">2</span></td>
+                <td class="team-name">Southern Maine</td>
+                <td class="conf-name">LEC</td>
+                <td class="stat-col top16-value">0.9%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">3</span></td>
+                <td class="team-name">Cortland</td>
+                <td class="conf-name">SUNYAC</td>
+                <td class="stat-col top16-value">0.9%</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="region-note">* A 3rd ME host is unlikely</div>
+        </div>
+        <div class="region-card">
+          <div
+            class="region-header"
+            style="background: linear-gradient(90deg, #10b98140, transparent)"
+          >
+            <span class="region-icon" style="background: #10b981">GL</span>
+            <span style="color: #10b981">Reg 7: Great Lakes</span>
+            <span class="region-expected">9 teams → 1.80 expected</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Reg</th>
+                <th>Team</th>
+                <th>Conf</th>
+                <th style="text-align: right">Top16%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="region-num">7</span></td>
+                <td class="team-name">Ohio Wesleyan</td>
+                <td class="conf-name">NCAC</td>
+                <td class="stat-col top16-value">96.1%</td>
+              </tr>
+              <tr class="divider">
+                <td><span class="region-num">7</span></td>
+                <td class="team-name">Denison</td>
+                <td class="conf-name">NCAC</td>
+                <td class="stat-col top16-value">95.3%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">7</span></td>
+                <td class="team-name">John Carroll</td>
+                <td class="conf-name">NCAC</td>
+                <td class="stat-col top16-value">92.8%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">7</span></td>
+                <td class="team-name">Hope</td>
+                <td class="conf-name">MIAA</td>
+                <td class="stat-col top16-value">90.8%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="region-card">
+          <div
+            class="region-header"
+            style="background: linear-gradient(90deg, #ec489940, transparent)"
+          >
+            <span class="region-icon" style="background: #ec4899">W</span>
+            <span style="color: #ec4899">Reg 10: West/Southwest</span>
+            <span class="region-expected">5 teams → 0.67 expected</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Reg</th>
+                <th>Team</th>
+                <th>Conf</th>
+                <th style="text-align: right">NPI</th>
+                <th style="text-align: right">Top16%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="divider">
+                <td><span class="region-num">10</span></td>
+                <td class="team-name team-red">Linfield</td>
+                <td class="conf-name">NWC</td>
+                <td class="stat-col npi-value">59.6</td>
+                <td class="stat-col top16-value">0.00%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">10</span></td>
+                <td class="team-name">Hardin-Simmons</td>
+                <td class="conf-name">ASC</td>
+                <td class="stat-col npi-value">59.6</td>
+                <td class="stat-col top16-value">1.00%</td>
+              </tr>
+              <tr>
+                <td><span class="region-num">10</span></td>
+                <td class="team-name team-red">Colorado College</td>
+                <td class="conf-name">SCAC</td>
+                <td class="stat-col npi-value">59.4</td>
+                <td class="stat-col top16-value">0.00%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="region-card methodology">
+          <div
+            class="region-header"
+            style="
+              background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1),
+                transparent
+              );
+            "
+          >
+            <span class="region-icon" style="background: #8892b0">🧪</span>
+            <span style="color: #8892b0">Methodology</span>
+          </div>
+          <div style="padding: 12px 16px">
+            <p
+              style="
+                color: #8892b0;
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 12px;
+              "
+            >
+              Teams ranked by Top16% probability within each geographic region.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Regions</th>
+                  <th>Teams</th>
+                  <th>Expected</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    style="color: #f59e0b; font-weight: 600; text-align: left"
+                  >
+                    Midwest
+                  </td>
+                  <td>8 to 9</td>
+                  <td>17</td>
+                  <td>5.29</td>
+                </tr>
+                <tr>
+                  <td
+                    style="color: #00d4ff; font-weight: 600; text-align: left"
+                  >
+                    Mid-Atlantic
+                  </td>
+                  <td>5 to 6</td>
+                  <td>15</td>
+                  <td>4.50</td>
+                </tr>
+                <tr>
+                  <td
+                    style="color: #7c3aed; font-weight: 600; text-align: left"
+                  >
+                    Northeast
+                  </td>
+                  <td>1 to 4</td>
+                  <td>18</td>
+                  <td>4.03</td>
+                </tr>
+                <tr>
+                  <td
+                    style="color: #10b981; font-weight: 600; text-align: left"
+                  >
+                    Great Lakes
+                  </td>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>1.80</td>
+                </tr>
+                <tr>
+                  <td
+                    style="color: #ec4899; font-weight: 600; text-align: left"
+                  >
+                    West/Southwest
+                  </td>
+                  <td>10</td>
+                  <td>5</td>
+                  <td>0.67</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p class="footer">
+        Generated February 01, 2026 at 10:38 AM<br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+  </body>
+</html>

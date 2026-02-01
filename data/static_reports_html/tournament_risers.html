@@ -1,0 +1,631 @@
+<!doctype html>
+<!-- Generator: uv run python create_tournament_risers.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Tournament % Risers - D3 WBB</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #00d4ff, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      .stats-summary {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 20px 30px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #00d4ff;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #8892b0;
+        margin-top: 5px;
+      }
+
+      .chart-container {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
+      }
+
+      .table-container {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: rgba(124, 58, 237, 0.3);
+        padding: 16px 12px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #e0e0e0;
+        position: sticky;
+        top: 0;
+      }
+
+      th:first-child {
+        padding-left: 24px;
+      }
+
+      td {
+        padding: 14px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      td:first-child {
+        padding-left: 24px;
+      }
+
+      tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .rank {
+        font-weight: 700;
+        color: #8892b0;
+        width: 50px;
+      }
+
+      .team-name {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .conf-name {
+        color: #8892b0;
+        font-size: 0.9rem;
+      }
+
+      .pct-value {
+        font-weight: 700;
+        min-width: 55px;
+        font-size: 1rem;
+      }
+
+      .change-positive {
+        color: #10b981;
+        font-weight: 700;
+      }
+
+      .change-negative {
+        color: #ef4444;
+        font-weight: 700;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #e0e0e0;
+      }
+
+      .section-title.risers {
+        color: #10b981;
+      }
+
+      .section-title.fallers {
+        color: #ef4444;
+      }
+
+      .color-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 30px;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tournament % Movers</h1>
+      <p class="subtitle">Biggest changes from January 21-31, 2026</p>
+
+      <h2 class="section-title risers">📈 Top 15 Risers</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Conference</th>
+              <th>1/21</th>
+              <th>1/31</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #00d4ff"></span
+                >1
+              </td>
+              <td class="team-name">Bridgewater (VA)</td>
+              <td class="conf-name">ODAC</td>
+              <td class="pct-value" style="color: #8892b0">42.9%</td>
+              <td class="pct-value" style="color: #00d4ff">93.2%</td>
+              <td class="change-positive">+50.3%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #7c3aed"></span
+                >2
+              </td>
+              <td class="team-name">Gettysburg</td>
+              <td class="conf-name">CC</td>
+              <td class="pct-value" style="color: #8892b0">13.1%</td>
+              <td class="pct-value" style="color: #00d4ff">48.7%</td>
+              <td class="change-positive">+35.6%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #10b981"></span
+                >3
+              </td>
+              <td class="team-name">Chicago</td>
+              <td class="conf-name">UAA</td>
+              <td class="pct-value" style="color: #8892b0">65.8%</td>
+              <td class="pct-value" style="color: #00d4ff">94.1%</td>
+              <td class="change-positive">+28.3%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #f59e0b"></span
+                >4
+              </td>
+              <td class="team-name">Guilford</td>
+              <td class="conf-name">ODAC</td>
+              <td class="pct-value" style="color: #8892b0">5.0%</td>
+              <td class="pct-value" style="color: #00d4ff">32.2%</td>
+              <td class="change-positive">+27.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #ef4444"></span
+                >5
+              </td>
+              <td class="team-name">Gustavus Adolphus</td>
+              <td class="conf-name">MIAC</td>
+              <td class="pct-value" style="color: #8892b0">30.2%</td>
+              <td class="pct-value" style="color: #00d4ff">52.1%</td>
+              <td class="change-positive">+21.9%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #ec4899"></span
+                >6
+              </td>
+              <td class="team-name">La Roche</td>
+              <td class="conf-name">AMCC</td>
+              <td class="pct-value" style="color: #8892b0">24.9%</td>
+              <td class="pct-value" style="color: #00d4ff">40.8%</td>
+              <td class="change-positive">+15.9%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #8b5cf6"></span
+                >7
+              </td>
+              <td class="team-name">LaGrange</td>
+              <td class="conf-name">CCS</td>
+              <td class="pct-value" style="color: #8892b0">16.7%</td>
+              <td class="pct-value" style="color: #00d4ff">32.2%</td>
+              <td class="change-positive">+15.5%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #06b6d4"></span
+                >8
+              </td>
+              <td class="team-name">Catholic</td>
+              <td class="conf-name">LAND</td>
+              <td class="pct-value" style="color: #8892b0">8.8%</td>
+              <td class="pct-value" style="color: #00d4ff">24.0%</td>
+              <td class="change-positive">+15.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #84cc16"></span
+                >9
+              </td>
+              <td class="team-name">UW-River Falls</td>
+              <td class="conf-name">WIAC</td>
+              <td class="pct-value" style="color: #8892b0">1.9%</td>
+              <td class="pct-value" style="color: #00d4ff">15.7%</td>
+              <td class="change-positive">+13.8%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #f97316"></span
+                >10
+              </td>
+              <td class="team-name">Cal Lutheran</td>
+              <td class="conf-name">SCIAC</td>
+              <td class="pct-value" style="color: #8892b0">31.8%</td>
+              <td class="pct-value" style="color: #00d4ff">42.6%</td>
+              <td class="change-positive">+10.8%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #6366f1"></span
+                >11
+              </td>
+              <td class="team-name">Bethel</td>
+              <td class="conf-name">MIAC</td>
+              <td class="pct-value" style="color: #8892b0">89.3%</td>
+              <td class="pct-value" style="color: #00d4ff">99.5%</td>
+              <td class="change-positive">+10.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #14b8a6"></span
+                >12
+              </td>
+              <td class="team-name">Merchant Marine</td>
+              <td class="conf-name">SKY</td>
+              <td class="pct-value" style="color: #8892b0">61.2%</td>
+              <td class="pct-value" style="color: #00d4ff">71.2%</td>
+              <td class="change-positive">+10.0%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #eab308"></span
+                >13
+              </td>
+              <td class="team-name">DeSales</td>
+              <td class="conf-name">MACF</td>
+              <td class="pct-value" style="color: #8892b0">40.9%</td>
+              <td class="pct-value" style="color: #00d4ff">50.3%</td>
+              <td class="change-positive">+9.4%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #e11d48"></span
+                >14
+              </td>
+              <td class="team-name">Colorado College</td>
+              <td class="conf-name">SCAC</td>
+              <td class="pct-value" style="color: #8892b0">43.5%</td>
+              <td class="pct-value" style="color: #00d4ff">52.8%</td>
+              <td class="change-positive">+9.3%</td>
+            </tr>
+            <tr>
+              <td class="rank">
+                <span class="color-dot" style="background-color: #22c55e"></span
+                >15
+              </td>
+              <td class="team-name">Bridgewater St.</td>
+              <td class="conf-name">MASCAC</td>
+              <td class="pct-value" style="color: #8892b0">47.1%</td>
+              <td class="pct-value" style="color: #00d4ff">56.4%</td>
+              <td class="change-positive">+9.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title fallers">📉 Top 15 Fallers</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Conference</th>
+              <th>1/21</th>
+              <th>1/31</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rank">1</td>
+              <td class="team-name">McDaniel</td>
+              <td class="conf-name">CC</td>
+              <td class="pct-value" style="color: #8892b0">99.1%</td>
+              <td class="pct-value" style="color: #ef4444">71.8%</td>
+              <td class="change-negative">-27.3%</td>
+            </tr>
+            <tr>
+              <td class="rank">2</td>
+              <td class="team-name">St. Mary's (MN)</td>
+              <td class="conf-name">MIAC</td>
+              <td class="pct-value" style="color: #8892b0">73.7%</td>
+              <td class="pct-value" style="color: #ef4444">47.3%</td>
+              <td class="change-negative">-26.4%</td>
+            </tr>
+            <tr>
+              <td class="rank">3</td>
+              <td class="team-name">UW-Stevens Point</td>
+              <td class="conf-name">WIAC</td>
+              <td class="pct-value" style="color: #8892b0">29.7%</td>
+              <td class="pct-value" style="color: #ef4444">5.0%</td>
+              <td class="change-negative">-24.7%</td>
+            </tr>
+            <tr>
+              <td class="rank">4</td>
+              <td class="team-name">Randolph-Macon</td>
+              <td class="conf-name">ODAC</td>
+              <td class="pct-value" style="color: #8892b0">50.4%</td>
+              <td class="pct-value" style="color: #ef4444">26.2%</td>
+              <td class="change-negative">-24.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">5</td>
+              <td class="team-name">Susquehanna</td>
+              <td class="conf-name">LAND</td>
+              <td class="pct-value" style="color: #8892b0">69.7%</td>
+              <td class="pct-value" style="color: #ef4444">46.8%</td>
+              <td class="change-negative">-22.9%</td>
+            </tr>
+            <tr>
+              <td class="rank">6</td>
+              <td class="team-name">Otterbein</td>
+              <td class="conf-name">OAC</td>
+              <td class="pct-value" style="color: #8892b0">84.6%</td>
+              <td class="pct-value" style="color: #ef4444">61.8%</td>
+              <td class="change-negative">-22.8%</td>
+            </tr>
+            <tr>
+              <td class="rank">7</td>
+              <td class="team-name">DePauw</td>
+              <td class="conf-name">NCAC</td>
+              <td class="pct-value" style="color: #8892b0">46.1%</td>
+              <td class="pct-value" style="color: #ef4444">25.4%</td>
+              <td class="change-negative">-20.7%</td>
+            </tr>
+            <tr>
+              <td class="rank">8</td>
+              <td class="team-name">Stevens</td>
+              <td class="conf-name">MACF</td>
+              <td class="pct-value" style="color: #8892b0">39.5%</td>
+              <td class="pct-value" style="color: #ef4444">19.3%</td>
+              <td class="change-negative">-20.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">9</td>
+              <td class="team-name">SUNY Geneseo</td>
+              <td class="conf-name">E8</td>
+              <td class="pct-value" style="color: #8892b0">74.1%</td>
+              <td class="pct-value" style="color: #ef4444">55.3%</td>
+              <td class="change-negative">-18.8%</td>
+            </tr>
+            <tr>
+              <td class="rank">10</td>
+              <td class="team-name">Penn State-Behrend</td>
+              <td class="conf-name">AMCC</td>
+              <td class="pct-value" style="color: #8892b0">70.5%</td>
+              <td class="pct-value" style="color: #ef4444">54.9%</td>
+              <td class="change-negative">-15.6%</td>
+            </tr>
+            <tr>
+              <td class="rank">11</td>
+              <td class="team-name">Chatham</td>
+              <td class="conf-name">PAC</td>
+              <td class="pct-value" style="color: #8892b0">30.3%</td>
+              <td class="pct-value" style="color: #ef4444">17.9%</td>
+              <td class="change-negative">-12.4%</td>
+            </tr>
+            <tr>
+              <td class="rank">12</td>
+              <td class="team-name">Maryville</td>
+              <td class="conf-name">CCS</td>
+              <td class="pct-value" style="color: #8892b0">43.7%</td>
+              <td class="pct-value" style="color: #ef4444">32.5%</td>
+              <td class="change-negative">-11.2%</td>
+            </tr>
+            <tr>
+              <td class="rank">13</td>
+              <td class="team-name">Colby</td>
+              <td class="conf-name">NESCAC</td>
+              <td class="pct-value" style="color: #8892b0">13.6%</td>
+              <td class="pct-value" style="color: #ef4444">2.6%</td>
+              <td class="change-negative">-11.0%</td>
+            </tr>
+            <tr>
+              <td class="rank">14</td>
+              <td class="team-name">Wisconsin Lutheran</td>
+              <td class="conf-name">NACC</td>
+              <td class="pct-value" style="color: #8892b0">74.7%</td>
+              <td class="pct-value" style="color: #ef4444">64.6%</td>
+              <td class="change-negative">-10.1%</td>
+            </tr>
+            <tr>
+              <td class="rank">15</td>
+              <td class="team-name">Manhattanville</td>
+              <td class="conf-name">SKY</td>
+              <td class="pct-value" style="color: #8892b0">36.6%</td>
+              <td class="pct-value" style="color: #ef4444">27.0%</td>
+              <td class="change-negative">-9.6%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="tournChart"></canvas>
+      </div>
+
+      <p class="footer">
+        Generated February 01, 2026 at 10:38 AM<br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+
+    <script>
+              const ctx = document.getElementById('tournChart').getContext('2d');
+
+              const data = {{
+                  labels: {js_labels},
+                  datasets: [
+      {js_datasets_str}
+                  ]
+              }};
+
+              new Chart(ctx, {{
+                  type: 'line',
+                  data: data,
+                  options: {{
+                      responsive: true,
+                      maintainAspectRatio: true,
+                      aspectRatio: 2.5,
+                      interaction: {{
+                          intersect: false,
+                          mode: 'index'
+                      }},
+                      plugins: {{
+                          legend: {{
+                              position: 'right',
+                              labels: {{
+                                  color: '#e0e0e0',
+                                  padding: 12,
+                                  usePointStyle: true,
+                                  pointStyle: 'circle',
+                                  font: {{
+                                      size: 11
+                                  }}
+                              }}
+                          }},
+                          title: {{
+                              display: true,
+                              text: 'Tournament Probability Over Time',
+                              color: '#fff',
+                              font: {{
+                                  size: 18,
+                                  weight: '600'
+                              }},
+                              padding: {{
+                                  bottom: 20
+                              }}
+                          }},
+                          tooltip: {{
+                              backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                              titleColor: '#fff',
+                              bodyColor: '#e0e0e0',
+                              borderColor: 'rgba(255, 255, 255, 0.1)',
+                              borderWidth: 1,
+                              padding: 12,
+                              callbacks: {{
+                                  label: function(context) {{
+                                      return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
+                                  }}
+                              }}
+                          }}
+                      }},
+                      scales: {{
+                          y: {{
+                              beginAtZero: true,
+                              max: 100,
+                              title: {{
+                                  display: true,
+                                  text: 'Tournament %',
+                                  color: '#8892b0',
+                                  font: {{
+                                      size: 12
+                                  }}
+                              }},
+                              ticks: {{
+                                  color: '#8892b0',
+                                  callback: function(value) {{
+                                      return value + '%';
+                                  }}
+                              }},
+                              grid: {{
+                                  color: 'rgba(255, 255, 255, 0.05)'
+                              }}
+                          }},
+                          x: {{
+                              title: {{
+                                  display: true,
+                                  text: '{x_axis_label}',
+                                  color: '#8892b0',
+                                  font: {{
+                                      size: 12
+                                  }}
+                              }},
+                              ticks: {{
+                                  color: '#8892b0'
+                              }},
+                              grid: {{
+                                  color: 'rgba(255, 255, 255, 0.05)'
+                              }}
+                          }}
+                      }}
+                  }}
+              }});
+    </script>
+  </body>
+</html>

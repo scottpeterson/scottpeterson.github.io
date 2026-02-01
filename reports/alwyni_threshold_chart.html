@@ -1,0 +1,1541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALWYNI% Threshold Chart - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-alwyni_threshold_chart {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #1a1a2e;
+        color: #eee;
+      }
+      .report-alwyni_threshold_chart h1 {
+        color: #fff;
+        text-align: center;
+      }
+      .report-alwyni_threshold_chart h2 {
+        color: #ccc;
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+      }
+      .report-alwyni_threshold_chart .chart-container {
+        background: #2a2a4a;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 30px 0;
+      }
+      .report-alwyni_threshold_chart table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+      }
+      .report-alwyni_threshold_chart th,
+      .report-alwyni_threshold_chart td {
+        padding: 8px 12px;
+        text-align: center;
+        border: 1px solid #444;
+      }
+      .report-alwyni_threshold_chart th {
+        background: #2a2a4a;
+        color: #fff;
+        position: sticky;
+        top: 0;
+      }
+      .report-alwyni_threshold_chart tr:nth-child(even) {
+        background: #252540;
+      }
+      .report-alwyni_threshold_chart tr:hover {
+        background: #3a3a5a;
+      }
+      .report-alwyni_threshold_chart .footer {
+        text-align: center;
+        color: #666;
+        margin-top: 40px;
+        font-size: 12px;
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html" class="active"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-01.html"
+                  >Team Simulation Stats Comparison | Feb 1, 2026 vs Jan 31,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >Top 25 NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-alwyni_threshold_chart">
+        <h1>ALWYNI% Threshold Analysis</h1>
+        <p style="text-align: center; color: #888">
+          Tracking how many teams are above various At-Large "When You Need It"
+          percentage thresholds over time
+        </p>
+
+        <div class="chart-container">
+          <canvas id="thresholdChart"></canvas>
+        </div>
+
+        <h2>Historical Data</h2>
+        <div style="overflow-x: auto">
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>≥90%</th>
+              <th>≥80%</th>
+              <th>≥70%</th>
+              <th>≥60%</th>
+              <th>≥50%</th>
+              <th>≥40%</th>
+              <th>≥30%</th>
+              <th>≥20%</th>
+              <th>≥10%</th>
+              <th>≥5%</th>
+              <th>>0%</th>
+            </tr>
+            <tr>
+              <td>2026-01-30</td>
+              <td>27</td>
+              <td>30</td>
+              <td>31</td>
+              <td>33</td>
+              <td>33</td>
+              <td>36</td>
+              <td>39</td>
+              <td>44</td>
+              <td>49</td>
+              <td>55</td>
+              <td>71</td>
+            </tr>
+            <tr>
+              <td>2026-01-29</td>
+              <td>27</td>
+              <td>30</td>
+              <td>31</td>
+              <td>33</td>
+              <td>34</td>
+              <td>37</td>
+              <td>39</td>
+              <td>45</td>
+              <td>51</td>
+              <td>54</td>
+              <td>71</td>
+            </tr>
+            <tr>
+              <td>2026-01-28</td>
+              <td>27</td>
+              <td>29</td>
+              <td>31</td>
+              <td>32</td>
+              <td>34</td>
+              <td>37</td>
+              <td>37</td>
+              <td>41</td>
+              <td>51</td>
+              <td>55</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td>2026-01-27</td>
+              <td>27</td>
+              <td>30</td>
+              <td>32</td>
+              <td>33</td>
+              <td>35</td>
+              <td>38</td>
+              <td>38</td>
+              <td>44</td>
+              <td>52</td>
+              <td>56</td>
+              <td>77</td>
+            </tr>
+            <tr>
+              <td>2026-01-26</td>
+              <td>28</td>
+              <td>30</td>
+              <td>32</td>
+              <td>33</td>
+              <td>35</td>
+              <td>38</td>
+              <td>38</td>
+              <td>42</td>
+              <td>52</td>
+              <td>56</td>
+              <td>77</td>
+            </tr>
+            <tr>
+              <td>2026-01-25</td>
+              <td>26</td>
+              <td>29</td>
+              <td>31</td>
+              <td>33</td>
+              <td>34</td>
+              <td>37</td>
+              <td>37</td>
+              <td>42</td>
+              <td>51</td>
+              <td>55</td>
+              <td>74</td>
+            </tr>
+            <tr>
+              <td>2026-01-24</td>
+              <td>27</td>
+              <td>30</td>
+              <td>32</td>
+              <td>34</td>
+              <td>36</td>
+              <td>37</td>
+              <td>38</td>
+              <td>42</td>
+              <td>53</td>
+              <td>56</td>
+              <td>78</td>
+            </tr>
+            <tr>
+              <td>2026-01-23</td>
+              <td>27</td>
+              <td>29</td>
+              <td>31</td>
+              <td>35</td>
+              <td>36</td>
+              <td>37</td>
+              <td>38</td>
+              <td>43</td>
+              <td>53</td>
+              <td>57</td>
+              <td>78</td>
+            </tr>
+            <tr>
+              <td>2026-01-22</td>
+              <td>27</td>
+              <td>29</td>
+              <td>31</td>
+              <td>35</td>
+              <td>36</td>
+              <td>37</td>
+              <td>38</td>
+              <td>43</td>
+              <td>53</td>
+              <td>57</td>
+              <td>79</td>
+            </tr>
+            <tr>
+              <td>2026-01-21</td>
+              <td>26</td>
+              <td>29</td>
+              <td>30</td>
+              <td>33</td>
+              <td>36</td>
+              <td>39</td>
+              <td>39</td>
+              <td>44</td>
+              <td>51</td>
+              <td>56</td>
+              <td>84</td>
+            </tr>
+            <tr>
+              <td>2026-01-20</td>
+              <td>26</td>
+              <td>28</td>
+              <td>30</td>
+              <td>33</td>
+              <td>35</td>
+              <td>39</td>
+              <td>40</td>
+              <td>44</td>
+              <td>50</td>
+              <td>57</td>
+              <td>83</td>
+            </tr>
+            <tr>
+              <td>2026-01-19</td>
+              <td>26</td>
+              <td>28</td>
+              <td>29</td>
+              <td>33</td>
+              <td>36</td>
+              <td>40</td>
+              <td>42</td>
+              <td>44</td>
+              <td>51</td>
+              <td>57</td>
+              <td>81</td>
+            </tr>
+            <tr>
+              <td>2026-01-18</td>
+              <td>26</td>
+              <td>28</td>
+              <td>30</td>
+              <td>32</td>
+              <td>36</td>
+              <td>39</td>
+              <td>42</td>
+              <td>44</td>
+              <td>51</td>
+              <td>59</td>
+              <td>82</td>
+            </tr>
+            <tr>
+              <td>2026-01-17</td>
+              <td>25</td>
+              <td>27</td>
+              <td>30</td>
+              <td>32</td>
+              <td>36</td>
+              <td>39</td>
+              <td>42</td>
+              <td>46</td>
+              <td>52</td>
+              <td>59</td>
+              <td>83</td>
+            </tr>
+            <tr>
+              <td>2026-01-16</td>
+              <td>25</td>
+              <td>27</td>
+              <td>30</td>
+              <td>32</td>
+              <td>35</td>
+              <td>39</td>
+              <td>42</td>
+              <td>46</td>
+              <td>53</td>
+              <td>58</td>
+              <td>84</td>
+            </tr>
+            <tr>
+              <td>2026-01-15</td>
+              <td>26</td>
+              <td>28</td>
+              <td>30</td>
+              <td>32</td>
+              <td>35</td>
+              <td>39</td>
+              <td>42</td>
+              <td>46</td>
+              <td>53</td>
+              <td>58</td>
+              <td>89</td>
+            </tr>
+            <tr>
+              <td>2026-01-14</td>
+              <td>23</td>
+              <td>27</td>
+              <td>32</td>
+              <td>35</td>
+              <td>35</td>
+              <td>40</td>
+              <td>42</td>
+              <td>45</td>
+              <td>50</td>
+              <td>58</td>
+              <td>88</td>
+            </tr>
+            <tr>
+              <td>2026-01-13</td>
+              <td>23</td>
+              <td>27</td>
+              <td>32</td>
+              <td>34</td>
+              <td>36</td>
+              <td>40</td>
+              <td>42</td>
+              <td>45</td>
+              <td>52</td>
+              <td>59</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>2026-01-12</td>
+              <td>23</td>
+              <td>27</td>
+              <td>32</td>
+              <td>34</td>
+              <td>35</td>
+              <td>41</td>
+              <td>42</td>
+              <td>45</td>
+              <td>52</td>
+              <td>60</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>2026-01-11</td>
+              <td>24</td>
+              <td>26</td>
+              <td>32</td>
+              <td>34</td>
+              <td>35</td>
+              <td>41</td>
+              <td>42</td>
+              <td>45</td>
+              <td>52</td>
+              <td>61</td>
+              <td>92</td>
+            </tr>
+            <tr>
+              <td>2026-01-10</td>
+              <td>24</td>
+              <td>28</td>
+              <td>29</td>
+              <td>34</td>
+              <td>37</td>
+              <td>38</td>
+              <td>42</td>
+              <td>46</td>
+              <td>51</td>
+              <td>59</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>2026-01-09</td>
+              <td>24</td>
+              <td>28</td>
+              <td>29</td>
+              <td>35</td>
+              <td>37</td>
+              <td>38</td>
+              <td>42</td>
+              <td>43</td>
+              <td>51</td>
+              <td>60</td>
+              <td>98</td>
+            </tr>
+            <tr>
+              <td>2026-01-08</td>
+              <td>24</td>
+              <td>28</td>
+              <td>29</td>
+              <td>35</td>
+              <td>37</td>
+              <td>39</td>
+              <td>43</td>
+              <td>43</td>
+              <td>50</td>
+              <td>60</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>2026-01-07</td>
+              <td>23</td>
+              <td>25</td>
+              <td>29</td>
+              <td>32</td>
+              <td>36</td>
+              <td>39</td>
+              <td>41</td>
+              <td>45</td>
+              <td>55</td>
+              <td>63</td>
+              <td>98</td>
+            </tr>
+            <tr>
+              <td>2026-01-06</td>
+              <td>22</td>
+              <td>25</td>
+              <td>28</td>
+              <td>32</td>
+              <td>36</td>
+              <td>38</td>
+              <td>43</td>
+              <td>47</td>
+              <td>54</td>
+              <td>62</td>
+              <td>99</td>
+            </tr>
+            <tr>
+              <td>2026-01-05</td>
+              <td>21</td>
+              <td>23</td>
+              <td>27</td>
+              <td>31</td>
+              <td>35</td>
+              <td>39</td>
+              <td>42</td>
+              <td>48</td>
+              <td>55</td>
+              <td>64</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td>2026-01-04</td>
+              <td>20</td>
+              <td>23</td>
+              <td>27</td>
+              <td>31</td>
+              <td>35</td>
+              <td>38</td>
+              <td>43</td>
+              <td>48</td>
+              <td>55</td>
+              <td>64</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td>2026-01-03</td>
+              <td>19</td>
+              <td>24</td>
+              <td>25</td>
+              <td>31</td>
+              <td>34</td>
+              <td>39</td>
+              <td>43</td>
+              <td>51</td>
+              <td>57</td>
+              <td>66</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td>2026-01-02</td>
+              <td>21</td>
+              <td>23</td>
+              <td>25</td>
+              <td>31</td>
+              <td>34</td>
+              <td>38</td>
+              <td>43</td>
+              <td>50</td>
+              <td>57</td>
+              <td>67</td>
+              <td>103</td>
+            </tr>
+            <tr>
+              <td>2026-01-01</td>
+              <td>21</td>
+              <td>22</td>
+              <td>24</td>
+              <td>31</td>
+              <td>34</td>
+              <td>39</td>
+              <td>44</td>
+              <td>49</td>
+              <td>57</td>
+              <td>67</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td>2025-12-31</td>
+              <td>20</td>
+              <td>22</td>
+              <td>24</td>
+              <td>30</td>
+              <td>35</td>
+              <td>39</td>
+              <td>42</td>
+              <td>48</td>
+              <td>58</td>
+              <td>67</td>
+              <td>103</td>
+            </tr>
+            <tr>
+              <td>2025-12-30</td>
+              <td>20</td>
+              <td>24</td>
+              <td>26</td>
+              <td>28</td>
+              <td>31</td>
+              <td>37</td>
+              <td>40</td>
+              <td>51</td>
+              <td>63</td>
+              <td>70</td>
+              <td>108</td>
+            </tr>
+            <tr>
+              <td>2025-12-29</td>
+              <td>20</td>
+              <td>22</td>
+              <td>26</td>
+              <td>29</td>
+              <td>31</td>
+              <td>36</td>
+              <td>42</td>
+              <td>51</td>
+              <td>62</td>
+              <td>70</td>
+              <td>109</td>
+            </tr>
+            <tr>
+              <td>2025-12-28</td>
+              <td>18</td>
+              <td>22</td>
+              <td>26</td>
+              <td>30</td>
+              <td>34</td>
+              <td>38</td>
+              <td>43</td>
+              <td>50</td>
+              <td>60</td>
+              <td>67</td>
+              <td>111</td>
+            </tr>
+            <tr>
+              <td>2025-12-27</td>
+              <td>18</td>
+              <td>22</td>
+              <td>27</td>
+              <td>30</td>
+              <td>33</td>
+              <td>38</td>
+              <td>45</td>
+              <td>51</td>
+              <td>60</td>
+              <td>68</td>
+              <td>111</td>
+            </tr>
+            <tr>
+              <td>2025-12-26</td>
+              <td>18</td>
+              <td>23</td>
+              <td>27</td>
+              <td>30</td>
+              <td>33</td>
+              <td>36</td>
+              <td>44</td>
+              <td>50</td>
+              <td>61</td>
+              <td>67</td>
+              <td>112</td>
+            </tr>
+            <tr>
+              <td>2025-12-25</td>
+              <td>18</td>
+              <td>23</td>
+              <td>25</td>
+              <td>30</td>
+              <td>33</td>
+              <td>38</td>
+              <td>43</td>
+              <td>51</td>
+              <td>61</td>
+              <td>67</td>
+              <td>109</td>
+            </tr>
+            <tr>
+              <td>2025-12-24</td>
+              <td>18</td>
+              <td>23</td>
+              <td>27</td>
+              <td>30</td>
+              <td>33</td>
+              <td>37</td>
+              <td>45</td>
+              <td>51</td>
+              <td>60</td>
+              <td>67</td>
+              <td>111</td>
+            </tr>
+            <tr>
+              <td>2025-12-23</td>
+              <td>18</td>
+              <td>22</td>
+              <td>27</td>
+              <td>30</td>
+              <td>33</td>
+              <td>38</td>
+              <td>44</td>
+              <td>51</td>
+              <td>60</td>
+              <td>67</td>
+              <td>111</td>
+            </tr>
+            <tr>
+              <td>2025-12-22</td>
+              <td>17</td>
+              <td>23</td>
+              <td>26</td>
+              <td>30</td>
+              <td>33</td>
+              <td>38</td>
+              <td>43</td>
+              <td>52</td>
+              <td>61</td>
+              <td>67</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <td>2025-12-21</td>
+              <td>18</td>
+              <td>22</td>
+              <td>28</td>
+              <td>31</td>
+              <td>32</td>
+              <td>38</td>
+              <td>43</td>
+              <td>51</td>
+              <td>63</td>
+              <td>71</td>
+              <td>114</td>
+            </tr>
+            <tr>
+              <td>2025-12-20</td>
+              <td>18</td>
+              <td>22</td>
+              <td>25</td>
+              <td>28</td>
+              <td>33</td>
+              <td>41</td>
+              <td>46</td>
+              <td>49</td>
+              <td>60</td>
+              <td>68</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <td>2025-12-19</td>
+              <td>17</td>
+              <td>22</td>
+              <td>25</td>
+              <td>27</td>
+              <td>35</td>
+              <td>41</td>
+              <td>46</td>
+              <td>50</td>
+              <td>58</td>
+              <td>70</td>
+              <td>115</td>
+            </tr>
+            <tr>
+              <td>2025-12-18</td>
+              <td>17</td>
+              <td>21</td>
+              <td>26</td>
+              <td>29</td>
+              <td>36</td>
+              <td>41</td>
+              <td>48</td>
+              <td>53</td>
+              <td>60</td>
+              <td>70</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>2025-12-17</td>
+              <td>17</td>
+              <td>21</td>
+              <td>27</td>
+              <td>32</td>
+              <td>35</td>
+              <td>39</td>
+              <td>45</td>
+              <td>54</td>
+              <td>61</td>
+              <td>72</td>
+              <td>114</td>
+            </tr>
+            <tr>
+              <td>2025-12-16</td>
+              <td>16</td>
+              <td>21</td>
+              <td>25</td>
+              <td>32</td>
+              <td>34</td>
+              <td>41</td>
+              <td>49</td>
+              <td>52</td>
+              <td>59</td>
+              <td>71</td>
+              <td>114</td>
+            </tr>
+            <tr>
+              <td>2025-12-15</td>
+              <td>15</td>
+              <td>19</td>
+              <td>31</td>
+              <td>35</td>
+              <td>37</td>
+              <td>39</td>
+              <td>42</td>
+              <td>48</td>
+              <td>62</td>
+              <td>72</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <td>2025-12-14</td>
+              <td>14</td>
+              <td>18</td>
+              <td>29</td>
+              <td>32</td>
+              <td>37</td>
+              <td>39</td>
+              <td>44</td>
+              <td>48</td>
+              <td>62</td>
+              <td>73</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <td>2025-12-13</td>
+              <td>16</td>
+              <td>20</td>
+              <td>28</td>
+              <td>31</td>
+              <td>38</td>
+              <td>41</td>
+              <td>45</td>
+              <td>49</td>
+              <td>63</td>
+              <td>74</td>
+              <td>116</td>
+            </tr>
+            <tr>
+              <td>2025-12-12</td>
+              <td>14</td>
+              <td>18</td>
+              <td>27</td>
+              <td>29</td>
+              <td>36</td>
+              <td>40</td>
+              <td>43</td>
+              <td>48</td>
+              <td>64</td>
+              <td>75</td>
+              <td>113</td>
+            </tr>
+            <tr>
+              <td>2025-12-11</td>
+              <td>14</td>
+              <td>18</td>
+              <td>25</td>
+              <td>29</td>
+              <td>34</td>
+              <td>38</td>
+              <td>43</td>
+              <td>48</td>
+              <td>57</td>
+              <td>72</td>
+              <td>108</td>
+            </tr>
+            <tr>
+              <td>2025-12-10</td>
+              <td>12</td>
+              <td>19</td>
+              <td>26</td>
+              <td>29</td>
+              <td>35</td>
+              <td>36</td>
+              <td>42</td>
+              <td>46</td>
+              <td>57</td>
+              <td>72</td>
+              <td>104</td>
+            </tr>
+            <tr>
+              <td>2025-12-09</td>
+              <td>12</td>
+              <td>19</td>
+              <td>26</td>
+              <td>29</td>
+              <td>36</td>
+              <td>37</td>
+              <td>44</td>
+              <td>46</td>
+              <td>60</td>
+              <td>71</td>
+              <td>107</td>
+            </tr>
+            <tr>
+              <td>2025-12-08</td>
+              <td>11</td>
+              <td>19</td>
+              <td>26</td>
+              <td>29</td>
+              <td>35</td>
+              <td>37</td>
+              <td>43</td>
+              <td>47</td>
+              <td>60</td>
+              <td>72</td>
+              <td>107</td>
+            </tr>
+            <tr>
+              <td>2025-12-07</td>
+              <td>12</td>
+              <td>21</td>
+              <td>26</td>
+              <td>30</td>
+              <td>35</td>
+              <td>38</td>
+              <td>41</td>
+              <td>46</td>
+              <td>64</td>
+              <td>74</td>
+              <td>108</td>
+            </tr>
+            <tr>
+              <td>2025-12-06</td>
+              <td>12</td>
+              <td>20</td>
+              <td>23</td>
+              <td>30</td>
+              <td>34</td>
+              <td>40</td>
+              <td>44</td>
+              <td>52</td>
+              <td>64</td>
+              <td>67</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>2025-12-05</td>
+              <td>11</td>
+              <td>18</td>
+              <td>22</td>
+              <td>29</td>
+              <td>35</td>
+              <td>38</td>
+              <td>44</td>
+              <td>51</td>
+              <td>62</td>
+              <td>64</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>2025-12-04</td>
+              <td>12</td>
+              <td>18</td>
+              <td>23</td>
+              <td>31</td>
+              <td>35</td>
+              <td>39</td>
+              <td>45</td>
+              <td>51</td>
+              <td>62</td>
+              <td>68</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>2025-12-03</td>
+              <td>10</td>
+              <td>14</td>
+              <td>25</td>
+              <td>31</td>
+              <td>35</td>
+              <td>38</td>
+              <td>41</td>
+              <td>46</td>
+              <td>61</td>
+              <td>72</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>2025-12-02</td>
+              <td>11</td>
+              <td>17</td>
+              <td>21</td>
+              <td>29</td>
+              <td>34</td>
+              <td>39</td>
+              <td>41</td>
+              <td>47</td>
+              <td>59</td>
+              <td>70</td>
+              <td>125</td>
+            </tr>
+            <tr>
+              <td>2025-12-01</td>
+              <td>12</td>
+              <td>18</td>
+              <td>23</td>
+              <td>29</td>
+              <td>33</td>
+              <td>39</td>
+              <td>45</td>
+              <td>49</td>
+              <td>61</td>
+              <td>70</td>
+              <td>127</td>
+            </tr>
+            <tr>
+              <td>2025-11-29</td>
+              <td>13</td>
+              <td>18</td>
+              <td>24</td>
+              <td>29</td>
+              <td>35</td>
+              <td>42</td>
+              <td>46</td>
+              <td>47</td>
+              <td>62</td>
+              <td>73</td>
+              <td>136</td>
+            </tr>
+            <tr>
+              <td>2025-11-28</td>
+              <td>11</td>
+              <td>18</td>
+              <td>24</td>
+              <td>28</td>
+              <td>38</td>
+              <td>42</td>
+              <td>46</td>
+              <td>49</td>
+              <td>59</td>
+              <td>70</td>
+              <td>131</td>
+            </tr>
+            <tr>
+              <td>2025-11-26</td>
+              <td>10</td>
+              <td>20</td>
+              <td>27</td>
+              <td>31</td>
+              <td>36</td>
+              <td>39</td>
+              <td>41</td>
+              <td>47</td>
+              <td>59</td>
+              <td>73</td>
+              <td>139</td>
+            </tr>
+            <tr>
+              <td>2025-11-25</td>
+              <td>10</td>
+              <td>20</td>
+              <td>27</td>
+              <td>31</td>
+              <td>36</td>
+              <td>39</td>
+              <td>41</td>
+              <td>47</td>
+              <td>59</td>
+              <td>73</td>
+              <td>139</td>
+            </tr>
+            <tr>
+              <td>2025-11-24</td>
+              <td>11</td>
+              <td>20</td>
+              <td>24</td>
+              <td>33</td>
+              <td>38</td>
+              <td>40</td>
+              <td>41</td>
+              <td>48</td>
+              <td>56</td>
+              <td>73</td>
+              <td>138</td>
+            </tr>
+            <tr>
+              <td>2025-11-23</td>
+              <td>11</td>
+              <td>19</td>
+              <td>25</td>
+              <td>31</td>
+              <td>37</td>
+              <td>40</td>
+              <td>42</td>
+              <td>47</td>
+              <td>57</td>
+              <td>72</td>
+              <td>137</td>
+            </tr>
+            <tr>
+              <td>2025-11-22</td>
+              <td>12</td>
+              <td>14</td>
+              <td>25</td>
+              <td>30</td>
+              <td>35</td>
+              <td>42</td>
+              <td>42</td>
+              <td>47</td>
+              <td>59</td>
+              <td>74</td>
+              <td>149</td>
+            </tr>
+            <tr>
+              <td>2025-11-20</td>
+              <td>13</td>
+              <td>14</td>
+              <td>23</td>
+              <td>29</td>
+              <td>35</td>
+              <td>39</td>
+              <td>42</td>
+              <td>48</td>
+              <td>61</td>
+              <td>75</td>
+              <td>142</td>
+            </tr>
+            <tr>
+              <td>2025-11-18</td>
+              <td>12</td>
+              <td>19</td>
+              <td>26</td>
+              <td>30</td>
+              <td>32</td>
+              <td>36</td>
+              <td>39</td>
+              <td>48</td>
+              <td>63</td>
+              <td>81</td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>2025-11-17</td>
+              <td>12</td>
+              <td>19</td>
+              <td>26</td>
+              <td>30</td>
+              <td>32</td>
+              <td>36</td>
+              <td>39</td>
+              <td>48</td>
+              <td>63</td>
+              <td>81</td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>2025-11-15</td>
+              <td>11</td>
+              <td>18</td>
+              <td>21</td>
+              <td>27</td>
+              <td>33</td>
+              <td>35</td>
+              <td>37</td>
+              <td>49</td>
+              <td>71</td>
+              <td>89</td>
+              <td>165</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="footer">
+          Generated 2026-01-31 10:41 | Data from 72 snapshots
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById('thresholdChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [
+            '2025-11-15',
+            '2025-11-17',
+            '2025-11-18',
+            '2025-11-20',
+            '2025-11-22',
+            '2025-11-23',
+            '2025-11-24',
+            '2025-11-25',
+            '2025-11-26',
+            '2025-11-28',
+            '2025-11-29',
+            '2025-12-01',
+            '2025-12-02',
+            '2025-12-03',
+            '2025-12-04',
+            '2025-12-05',
+            '2025-12-06',
+            '2025-12-07',
+            '2025-12-08',
+            '2025-12-09',
+            '2025-12-10',
+            '2025-12-11',
+            '2025-12-12',
+            '2025-12-13',
+            '2025-12-14',
+            '2025-12-15',
+            '2025-12-16',
+            '2025-12-17',
+            '2025-12-18',
+            '2025-12-19',
+            '2025-12-20',
+            '2025-12-21',
+            '2025-12-22',
+            '2025-12-23',
+            '2025-12-24',
+            '2025-12-25',
+            '2025-12-26',
+            '2025-12-27',
+            '2025-12-28',
+            '2025-12-29',
+            '2025-12-30',
+            '2025-12-31',
+            '2026-01-01',
+            '2026-01-02',
+            '2026-01-03',
+            '2026-01-04',
+            '2026-01-05',
+            '2026-01-06',
+            '2026-01-07',
+            '2026-01-08',
+            '2026-01-09',
+            '2026-01-10',
+            '2026-01-11',
+            '2026-01-12',
+            '2026-01-13',
+            '2026-01-14',
+            '2026-01-15',
+            '2026-01-16',
+            '2026-01-17',
+            '2026-01-18',
+            '2026-01-19',
+            '2026-01-20',
+            '2026-01-21',
+            '2026-01-22',
+            '2026-01-23',
+            '2026-01-24',
+            '2026-01-25',
+            '2026-01-26',
+            '2026-01-27',
+            '2026-01-28',
+            '2026-01-29',
+            '2026-01-30',
+          ],
+          datasets: [
+            {
+              label: '\u226590%',
+              data: [
+                11, 12, 12, 13, 12, 11, 11, 10, 10, 11, 13, 12, 11, 10, 12, 11,
+                12, 12, 11, 12, 12, 14, 14, 16, 14, 15, 16, 17, 17, 17, 18, 18,
+                17, 18, 18, 18, 18, 18, 18, 20, 20, 20, 21, 21, 19, 20, 21, 22,
+                23, 24, 24, 24, 24, 23, 23, 23, 26, 25, 25, 26, 26, 26, 26, 27,
+                27, 27, 26, 28, 27, 27, 27, 27,
+              ],
+              borderColor: '#d62728',
+              backgroundColor: '#d62728',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226580%',
+              data: [
+                18, 19, 19, 14, 14, 19, 20, 20, 20, 18, 18, 18, 17, 14, 18, 18,
+                20, 21, 19, 19, 19, 18, 18, 20, 18, 19, 21, 21, 21, 22, 22, 22,
+                23, 22, 23, 23, 23, 22, 22, 22, 24, 22, 22, 23, 24, 23, 23, 25,
+                25, 28, 28, 28, 26, 27, 27, 27, 28, 27, 27, 28, 28, 28, 29, 29,
+                29, 30, 29, 30, 30, 29, 30, 30,
+              ],
+              borderColor: '#e74c3c',
+              backgroundColor: '#e74c3c',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226570%',
+              data: [
+                21, 26, 26, 23, 25, 25, 24, 27, 27, 24, 24, 23, 21, 25, 23, 22,
+                23, 26, 26, 26, 26, 25, 27, 28, 29, 31, 25, 27, 26, 25, 25, 28,
+                26, 27, 27, 25, 27, 27, 26, 26, 26, 24, 24, 25, 25, 27, 27, 28,
+                29, 29, 29, 29, 32, 32, 32, 32, 30, 30, 30, 30, 29, 30, 30, 31,
+                31, 32, 31, 32, 32, 31, 31, 31,
+              ],
+              borderColor: '#ff7f0e',
+              backgroundColor: '#ff7f0e',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226560%',
+              data: [
+                27, 30, 30, 29, 30, 31, 33, 31, 31, 28, 29, 29, 29, 31, 31, 29,
+                30, 30, 29, 29, 29, 29, 29, 31, 32, 35, 32, 32, 29, 27, 28, 31,
+                30, 30, 30, 30, 30, 30, 30, 29, 28, 30, 31, 31, 31, 31, 31, 32,
+                32, 35, 35, 34, 34, 34, 34, 35, 32, 32, 32, 32, 33, 33, 33, 35,
+                35, 34, 33, 33, 33, 32, 33, 33,
+              ],
+              borderColor: '#f39c12',
+              backgroundColor: '#f39c12',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226550%',
+              data: [
+                33, 32, 32, 35, 35, 37, 38, 36, 36, 38, 35, 33, 34, 35, 35, 35,
+                34, 35, 35, 36, 35, 34, 36, 38, 37, 37, 34, 35, 36, 35, 33, 32,
+                33, 33, 33, 33, 33, 33, 34, 31, 31, 35, 34, 34, 34, 35, 35, 36,
+                36, 37, 37, 37, 35, 35, 36, 35, 35, 35, 36, 36, 36, 35, 36, 36,
+                36, 36, 34, 35, 35, 34, 34, 33,
+              ],
+              borderColor: '#f1c40f',
+              backgroundColor: '#f1c40f',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226540%',
+              data: [
+                35, 36, 36, 39, 42, 40, 40, 39, 39, 42, 42, 39, 39, 38, 39, 38,
+                40, 38, 37, 37, 36, 38, 40, 41, 39, 39, 41, 39, 41, 41, 41, 38,
+                38, 38, 37, 38, 36, 38, 38, 36, 37, 39, 39, 38, 39, 38, 39, 38,
+                39, 39, 38, 38, 41, 41, 40, 40, 39, 39, 39, 39, 40, 39, 39, 37,
+                37, 37, 37, 38, 38, 37, 37, 36,
+              ],
+              borderColor: '#2ecc71',
+              backgroundColor: '#2ecc71',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226530%',
+              data: [
+                37, 39, 39, 42, 42, 42, 41, 41, 41, 46, 46, 45, 41, 41, 45, 44,
+                44, 41, 43, 44, 42, 43, 43, 45, 44, 42, 49, 45, 48, 46, 46, 43,
+                43, 44, 45, 43, 44, 45, 43, 42, 40, 42, 44, 43, 43, 43, 42, 43,
+                41, 43, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 40, 39, 38,
+                38, 38, 37, 38, 38, 37, 39, 39,
+              ],
+              borderColor: '#27ae60',
+              backgroundColor: '#27ae60',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226520%',
+              data: [
+                49, 48, 48, 48, 47, 47, 48, 47, 47, 49, 47, 49, 47, 46, 51, 51,
+                52, 46, 47, 46, 46, 48, 48, 49, 48, 48, 52, 54, 53, 50, 49, 51,
+                52, 51, 51, 51, 50, 51, 50, 51, 51, 48, 49, 50, 51, 48, 48, 47,
+                45, 43, 43, 46, 45, 45, 45, 45, 46, 46, 46, 44, 44, 44, 44, 43,
+                43, 42, 42, 42, 44, 41, 45, 44,
+              ],
+              borderColor: '#1abc9c',
+              backgroundColor: '#1abc9c',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u226510%',
+              data: [
+                71, 63, 63, 61, 59, 57, 56, 59, 59, 59, 62, 61, 59, 61, 62, 62,
+                64, 64, 60, 60, 57, 57, 64, 63, 62, 62, 59, 61, 60, 58, 60, 63,
+                61, 60, 60, 61, 61, 60, 60, 62, 63, 58, 57, 57, 57, 55, 55, 54,
+                55, 50, 51, 51, 52, 52, 52, 50, 53, 53, 52, 51, 51, 50, 51, 53,
+                53, 53, 51, 52, 52, 51, 51, 49,
+              ],
+              borderColor: '#3498db',
+              backgroundColor: '#3498db',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '\u22655%',
+              data: [
+                89, 81, 81, 75, 74, 72, 73, 73, 73, 70, 73, 70, 70, 72, 68, 64,
+                67, 74, 72, 71, 72, 72, 75, 74, 73, 72, 71, 72, 70, 70, 68, 71,
+                67, 67, 67, 67, 67, 68, 67, 70, 70, 67, 67, 67, 66, 64, 64, 62,
+                63, 60, 60, 59, 61, 60, 59, 58, 58, 58, 59, 59, 57, 57, 56, 57,
+                57, 56, 55, 56, 56, 55, 54, 55,
+              ],
+              borderColor: '#9b59b6',
+              backgroundColor: '#9b59b6',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+            {
+              label: '>0%',
+              data: [
+                165, 161, 161, 142, 149, 137, 138, 139, 139, 131, 136, 127, 125,
+                119, 119, 120, 119, 108, 107, 107, 104, 108, 113, 116, 110, 110,
+                114, 114, 120, 115, 110, 114, 110, 111, 111, 109, 112, 111, 111,
+                109, 108, 103, 102, 103, 102, 102, 102, 99, 98, 95, 98, 95, 92,
+                90, 90, 88, 89, 84, 83, 82, 81, 83, 84, 79, 78, 78, 74, 77, 77,
+                75, 71, 71,
+              ],
+              borderColor: '#7f8c8d',
+              backgroundColor: '#7f8c8d',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Teams Above ALWYNI% Thresholds Over Time',
+              color: '#fff',
+              font: { size: 16 },
+            },
+            legend: {
+              position: 'right',
+              labels: { color: '#ccc' },
+            },
+          },
+          scales: {
+            x: {
+              ticks: { color: '#888' },
+              grid: { color: '#444' },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: { color: '#888' },
+              grid: { color: '#444' },
+              title: {
+                display: true,
+                text: 'Number of Teams',
+                color: '#888',
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

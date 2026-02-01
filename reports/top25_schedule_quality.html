@@ -1,0 +1,2759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 25 NPI Teams - Schedule Quality - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-top25_schedule_quality * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .report-top25_schedule_quality {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #1a1a2e;
+        color: #eee;
+        padding: 20px;
+      }
+      .report-top25_schedule_quality h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 28px;
+      }
+      .report-top25_schedule_quality .subtitle {
+        text-align: center;
+        color: #888;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+      .report-top25_schedule_quality .legend {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .report-top25_schedule_quality .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .report-top25_schedule_quality .legend-box {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+      }
+      .report-top25_schedule_quality .legend-win {
+        background: linear-gradient(135deg, #2d5a27 0%, #1e3d1a 100%);
+        border: 1px solid #3d7a37;
+      }
+      .report-top25_schedule_quality .legend-loss {
+        background: linear-gradient(135deg, #8b2635 0%, #5a1a23 100%);
+        border: 1px solid #a33040;
+      }
+      .report-top25_schedule_quality .container {
+        overflow-x: auto;
+        max-width: 100%;
+      }
+      .report-top25_schedule_quality table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        background: #16213e;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      .report-top25_schedule_quality th {
+        background: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
+        color: #fff;
+        padding: 12px 6px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 2px solid #e94560;
+        white-space: nowrap;
+      }
+      .report-top25_schedule_quality th .rank {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #e94560;
+      }
+      .report-top25_schedule_quality th .team-name {
+        display: block;
+        font-size: 10px;
+        color: #aaa;
+        margin-top: 2px;
+      }
+      .report-top25_schedule_quality th .record {
+        display: block;
+        font-size: 9px;
+        color: #888;
+        margin-top: 2px;
+      }
+      .report-top25_schedule_quality td {
+        padding: 4px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        min-width: 44px;
+        height: 36px;
+        vertical-align: middle;
+      }
+      .report-top25_schedule_quality .game-cell {
+        border-radius: 4px;
+        margin: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        cursor: default;
+        transition: transform 0.1s ease;
+      }
+      .report-top25_schedule_quality .game-cell:hover {
+        transform: scale(1.1);
+        z-index: 5;
+        position: relative;
+      }
+      .report-top25_schedule_quality .win {
+        background: linear-gradient(135deg, #2d5a27 0%, #1e3d1a 100%);
+        color: #8fff8f;
+        border: 1px solid #3d7a37;
+      }
+      .report-top25_schedule_quality .loss {
+        background: linear-gradient(135deg, #8b2635 0%, #5a1a23 100%);
+        color: #ff9999;
+        border: 1px solid #a33040;
+      }
+      .report-top25_schedule_quality .empty-cell {
+        background: transparent;
+      }
+      .report-top25_schedule_quality tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .report-top25_schedule_quality .row-num {
+        color: #555;
+        font-size: 10px;
+        padding-right: 8px;
+        text-align: right;
+        min-width: 30px;
+      }
+      .report-top25_schedule_quality /* Massey rank coloring - darker = better opponent */
+        .rank-elite {
+        filter: brightness(1.3);
+      }
+      .report-top25_schedule_quality .rank-great {
+        filter: brightness(1.15);
+      }
+      .report-top25_schedule_quality .rank-good {
+        filter: brightness(1);
+      }
+      .report-top25_schedule_quality .rank-mid {
+        filter: brightness(0.9);
+      }
+      .report-top25_schedule_quality .rank-low {
+        filter: brightness(0.8);
+      }
+      .report-top25_schedule_quality .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #666;
+        font-size: 12px;
+      }
+      .report-top25_schedule_quality .chunk-header {
+        text-align: center;
+        color: #e94560;
+        font-size: 20px;
+        margin: 40px 0 20px 0;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+      .report-top25_schedule_quality .chunk-header:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-01.html"
+                  >Team Simulation Stats Comparison | Feb 1, 2026 vs Jan 31,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html" class="active"
+                  >Top 25 NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-top25_schedule_quality">
+        <h1>Top 20 NPI Teams - Counting Games</h1>
+        <p class="subtitle">
+          Only games that count toward NPI calculation | Cell values show
+          opponent's NPI rank (lower = tougher)
+        </p>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-box legend-win"></div>
+            <span>Win</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-box legend-loss"></div>
+            <span>Loss</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>
+                  <span class="rank">#1</span>
+                  <span class="team-name">UW-Oshkosh</span>
+                  <span class="record">19-0 (15 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#2</span>
+                  <span class="team-name">Washington & Lee</span>
+                  <span class="record">19-0 (15 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#3</span>
+                  <span class="team-name">Johns Hopkins</span>
+                  <span class="record">18-0 (15 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#4</span>
+                  <span class="team-name">NYU</span>
+                  <span class="record">17-0 (15 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#5</span>
+                  <span class="team-name">Ohio Wesleyan</span>
+                  <span class="record">17-1 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#6</span>
+                  <span class="team-name">Scranton</span>
+                  <span class="record">19-0 (15 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#7</span>
+                  <span class="team-name">Bowdoin</span>
+                  <span class="record">17-1 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#8</span>
+                  <span class="team-name">Denison</span>
+                  <span class="record">18-1 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#9</span>
+                  <span class="team-name">John Carroll</span>
+                  <span class="record">17-2 (17 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#10</span>
+                  <span class="team-name">UW-Whitewater</span>
+                  <span class="record">15-4 (19 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#11</span>
+                  <span class="team-name">Bates</span>
+                  <span class="record">17-2 (17 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#12</span>
+                  <span class="team-name">Smith</span>
+                  <span class="record">18-1 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#13</span>
+                  <span class="team-name">Baldwin Wallace</span>
+                  <span class="record">18-2 (17 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#14</span>
+                  <span class="team-name">Carroll</span>
+                  <span class="record">16-4 (19 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#15</span>
+                  <span class="team-name">Hope</span>
+                  <span class="record">17-3 (18 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#16</span>
+                  <span class="team-name">Southern Maine</span>
+                  <span class="record">19-1 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#17</span>
+                  <span class="team-name">Concordia Moorhead</span>
+                  <span class="record">16-3 (18 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#18</span>
+                  <span class="team-name">WashU</span>
+                  <span class="record">13-4 (17 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#19</span>
+                  <span class="team-name">Chicago</span>
+                  <span class="record">12-4 (16 counting)</span>
+                </th>
+                <th>
+                  <span class="rank">#20</span>
+                  <span class="team-name">William Paterson</span>
+                  <span class="record">19-1 (16 counting)</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-num">1</td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-Whitewater (71-63)"
+                  >
+                    10
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Carroll (76-66)">
+                    14
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="William Paterson (64-43)"
+                  >
+                    20
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="WashU (77-64)">
+                    18
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Denison (72-65)">
+                    8
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Susquehanna (79-57)"
+                  >
+                    34
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Bates (77-70)">
+                    11
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Ohio Wesleyan (65-72)"
+                  >
+                    5
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Ohio Wesleyan (63-65)"
+                  >
+                    5
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Oshkosh (63-71)"
+                  >
+                    1
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Bowdoin (70-77)"
+                  >
+                    7
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Trinity (CT) (72-61)"
+                  >
+                    51
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="John Carroll (45-52)"
+                  >
+                    9
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Oshkosh (59-62)"
+                  >
+                    1
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Ohio Wesleyan (62-65)"
+                  >
+                    5
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-elite" title="Bates (66-70)">
+                    11
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Bethel (44-52)">
+                    28
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-elite" title="NYU (64-77)">
+                    4
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Oshkosh (58-60)"
+                  >
+                    1
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Johns Hopkins (43-64)"
+                  >
+                    3
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">2</td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-Whitewater (55-43)"
+                  >
+                    10
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Bridgewater (VA) (63-57)"
+                  >
+                    22
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Christopher Newport (59-38)"
+                  >
+                    27
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Chicago (67-55)">
+                    19
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="John Carroll (65-63)"
+                  >
+                    9
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Cortland (69-50)"
+                  >
+                    39
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Bates (62-49)">
+                    11
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="John Carroll (58-41)"
+                  >
+                    9
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Denison (41-58)"
+                  >
+                    8
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Oshkosh (43-55)"
+                  >
+                    1
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Bowdoin (49-62)"
+                  >
+                    7
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Johnson & Wales (RI) (78-60)"
+                  >
+                    63
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Trine (38-42)">
+                    26
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Washington & Lee (66-76)"
+                  >
+                    2
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-La Crosse (82-61)"
+                  >
+                    23
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Rhode Island College (57-48)"
+                  >
+                    60
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Bethel (53-59)">
+                    28
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Whitewater (58-63)"
+                  >
+                    10
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-elite" title="NYU (55-67)">
+                    4
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Rowan (76-44)">
+                    129
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">3</td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Carroll (62-59)">
+                    14
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Shenandoah (69-52)"
+                  >
+                    31
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="McDaniel (72-56)"
+                  >
+                    33
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="SUNY New Paltz (99-37)"
+                  >
+                    29
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Hope (65-62)">
+                    15
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Catholic (71-41)"
+                  >
+                    49
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Amherst (57-52)">
+                    46
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Otterbein (62-55)"
+                  >
+                    43
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Baldwin Wallace (52-45)"
+                  >
+                    13
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Carroll (73-62)">
+                    14
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Southern Maine (70-66)"
+                  >
+                    16
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-good" title="Tufts (57-60)">
+                    87
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Otterbein (64-55)"
+                  >
+                    43
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-Whitewater (62-73)"
+                  >
+                    10
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Illinois Wesleyan (76-73)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Emmanuel (86-77)">
+                    97
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Hardin-Simmons (67-65)"
+                  >
+                    30
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Chicago (68-39)">
+                    19
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Carroll (52-73)"
+                  >
+                    14
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Rowan (58-49)">
+                    129
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">4</td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Chicago (60-58)">
+                    19
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Emory (68-63)">
+                    32
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Gettysburg (67-46)"
+                  >
+                    36
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Emory (93-66)">
+                    32
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Otterbein (72-62)"
+                  >
+                    43
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Stevens (76-32)">
+                    70
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Union (NY) (68-56)"
+                  >
+                    59
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DePauw (59-52)">
+                    58
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Carnegie Mellon (61-41)"
+                  >
+                    35
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="WashU (63-58)">
+                    18
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Amherst (63-54)">
+                    46
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Springfield (62-54)"
+                  >
+                    113
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Otterbein (67-52)"
+                  >
+                    43
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Chicago (73-52)">
+                    19
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Trine (61-67)">
+                    26
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Keene St. (71-47)"
+                  >
+                    111
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-great"
+                    title="St. Mary's (MN) (51-63)"
+                  >
+                    44
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Illinois Wesleyan (54-59)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-elite" title="WashU (39-68)">
+                    18
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="TCNJ (64-54)">
+                    143
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">5</td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-Platteville (56-44)"
+                  >
+                    21
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Guilford (81-78)"
+                  >
+                    40
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Catholic (73-49)"
+                  >
+                    49
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Brandeis (79-49)">
+                    76
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Washington & Jefferson (61-50)"
+                  >
+                    54
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Elizabethtown (59-50)"
+                  >
+                    73
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Calvin (51-61)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Franklin (76-70)"
+                  >
+                    61
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DePauw (83-78)">
+                    58
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-Platteville (63-49)"
+                  >
+                    21
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Emmanuel (49-42)">
+                    97
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Springfield (66-47)"
+                  >
+                    113
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Capital (74-64)">
+                    77
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Illinois Wesleyan (68-48)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Colorado College (71-47)"
+                  >
+                    37
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Keene St. (67-48)"
+                  >
+                    111
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-River Falls (64-57)"
+                  >
+                    53
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Christopher Newport (72-53)"
+                  >
+                    27
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Illinois Wesleyan (73-54)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="TCNJ (61-47)">
+                    143
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">6</td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="UW-La Crosse (55-48)"
+                  >
+                    23
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Randolph-Macon (72-54)"
+                  >
+                    47
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Trinity (CT) (69-62)"
+                  >
+                    51
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Brooklyn College (90-48)"
+                  >
+                    86
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DePauw (55-50)">
+                    58
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DeSales (74-48)">
+                    75
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Tufts (76-60)">
+                    87
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Transylvania (77-73)"
+                  >
+                    67
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DePauw (59-50)">
+                    58
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="UW-La Crosse (54-77)"
+                  >
+                    23
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Colby (61-50)">
+                    99
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Middlebury (65-52)"
+                  >
+                    128
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Mt. Union (54-52)"
+                  >
+                    108
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-elite"
+                    title="Illinois Wesleyan (52-85)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-River Falls (58-41)"
+                  >
+                    53
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="University of New England (76-58)"
+                  >
+                    165
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Gustavus Adolphus (70-66)"
+                  >
+                    55
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Emory (67-56)">
+                    32
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Carnegie Mellon (61-58)"
+                  >
+                    35
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Montclair St. (65-60)"
+                  >
+                    145
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">7</td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Linfield (57-32)"
+                  >
+                    38
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Southern Virginia (71-38)"
+                  >
+                    92
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Dickinson (60-40)"
+                  >
+                    66
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Rochester (75-54)"
+                  >
+                    93
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Calvin (45-70)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Tufts (73-42)">
+                    87
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Colby (53-42)">
+                    99
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Case Western (74-61)"
+                  >
+                    117
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Vincent (62-51)"
+                  >
+                    83
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-elite"
+                    title="Illinois Wesleyan (60-51)"
+                  >
+                    24
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Colby (57-52)">
+                    99
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hamilton (66-54)">
+                    133
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Marietta (62-51)">
+                    114
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-elite" title="Ripon (86-74)">
+                    25
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Calvin (67-56)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Maine-Farmington (73-42)"
+                  >
+                    166
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Gustavus Adolphus (66-59)"
+                  >
+                    55
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell loss rank-great"
+                    title="Carnegie Mellon (61-64)"
+                  >
+                    35
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Calvin (73-65)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Montclair St. (87-69)"
+                  >
+                    145
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">8</td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-Eau Claire (64-52)"
+                  >
+                    48
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Chatham (77-65)">
+                    95
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Wartburg (70-49)"
+                  >
+                    69
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Case Western (93-64)"
+                  >
+                    117
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Capital (68-53)">
+                    77
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="SUNY Geneseo (60-35)"
+                  >
+                    91
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Colby (61-59)">
+                    99
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Wittenberg (84-68)"
+                  >
+                    119
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Brockport St. (96-70)"
+                  >
+                    102
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-Eau Claire (65-48)"
+                  >
+                    48
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="WPI (63-53)">
+                    122
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Williams (67-48)">
+                    138
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Marietta (89-66)">
+                    114
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Wartburg (67-61)"
+                  >
+                    69
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="Calvin (57-55)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Maine-Maritime (63-51)"
+                  >
+                    199
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="St. Scholastica (68-41)"
+                  >
+                    65
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-great" title="DePauw (70-52)">
+                    58
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Brandeis (57-36)">
+                    76
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Stockton (58-49)">
+                    176
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">9</td>
+                <td>
+                  <div class="game-cell win rank-great" title="Coe (53-46)">
+                    52
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Virginia Wesleyan (80-57)"
+                  >
+                    103
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Franklin & Marshall (74-44)"
+                  >
+                    124
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Merchant Marine (102-70)"
+                  >
+                    125
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Wittenberg (76-67)"
+                  >
+                    119
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Drew (71-48)">
+                    146
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Connecticut College (67-43)"
+                  >
+                    115
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Muskingum (104-48)"
+                  >
+                    167
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Marietta (68-54)">
+                    114
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-River Falls (68-54)"
+                  >
+                    53
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hamilton (69-60)">
+                    133
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hartford (74-41)">
+                    140
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Case Western (76-52)"
+                  >
+                    117
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="WPI (64-48)">
+                    122
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-good" title="Albion (54-60)">
+                    82
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mass-Boston (64-47)"
+                  >
+                    210
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Benedict (77-64)"
+                  >
+                    85
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Brandeis (62-49)">
+                    76
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Albion (79-57)">
+                    82
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Stockton (60-51)">
+                    176
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">10</td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="UW-River Falls (65-33)"
+                  >
+                    53
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Virginia Wesleyan (64-59)"
+                  >
+                    103
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Rowan (64-43)">
+                    129
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hamilton (86-48)">
+                    133
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Berry (61-44)">
+                    141
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Drew (76-35)">
+                    146
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="WPI (62-43)">
+                    122
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Roanoke (80-57)">
+                    183
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Wittenberg (65-55)"
+                  >
+                    119
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="Gustavus Adolphus (47-44)"
+                  >
+                    55
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Williams (64-51)">
+                    138
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="TCNJ (85-61)">
+                    143
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Penn State-Behrend (69-58)"
+                  >
+                    153
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Elmhurst (88-83)">
+                    130
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Oglethorpe (68-57)"
+                  >
+                    96
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mass-Boston (74-51)"
+                  >
+                    210
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Benedict (57-53)"
+                  >
+                    85
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Southern Virginia (83-66)"
+                  >
+                    92
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Tufts (66-57)">
+                    87
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Rutgers-Camden (77-54)"
+                  >
+                    192
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">11</td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="UW-Stevens Point (64-41)"
+                  >
+                    88
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hollins (78-61)">
+                    105
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Muhlenberg (72-36)"
+                  >
+                    171
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="SUNY Oneonta (89-37)"
+                  >
+                    182
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Simpson (IA) (67-59)"
+                  >
+                    144
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Moravian (90-53)">
+                    215
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hamilton (59-50)">
+                    133
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Oberlin (93-56)">
+                    193
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Williams (70-61)">
+                    138
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell loss rank-great" title="Calvin (53-61)">
+                    68
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Roger Williams (65-44)"
+                  >
+                    164
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="MIT (78-45)">
+                    158
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Muskingum (106-60)"
+                  >
+                    167
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Norbert (75-48)"
+                  >
+                    132
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Carthage (80-52)">
+                    151
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mass-Dartmouth (81-54)"
+                  >
+                    212
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="UW-Stout (81-66)">
+                    104
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Case Western (66-52)"
+                  >
+                    117
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Rochester (60-53)"
+                  >
+                    93
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="York (PA) (62-41)">
+                    221
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">12</td>
+                <td>
+                  <div class="game-cell win rank-good" title="UW-Stout (75-49)">
+                    104
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Lynchburg (67-54)"
+                  >
+                    121
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Luther (95-60)">
+                    177
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Skidmore (118-52)">
+                    207
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Oberlin (80-61)">
+                    193
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="New Jersey City (87-46)"
+                  >
+                    244
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Hartford (62-48)">
+                    140
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Wooster (88-47)">
+                    194
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Berry (73-47)">
+                    141
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-great"
+                    title="East Texas Baptist (75-40)"
+                  >
+                    71
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="University of New England (88-56)"
+                  >
+                    165
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Coast Guard (76-48)"
+                  >
+                    172
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Muskingum (63-39)">
+                    167
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="North Central (IL) (78-74)"
+                  >
+                    135
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Alma (85-59)">
+                    188
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="St. Joseph's (ME) (70-35)"
+                  >
+                    213
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Catherine (56-42)"
+                  >
+                    149
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="Elmhurst (83-70)">
+                    130
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Case Western (52-44)"
+                  >
+                    117
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Marywood (70-57)">
+                    236
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">13</td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (IL) (84-59)"
+                  >
+                    187
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="University of New England (68-33)"
+                  >
+                    165
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Washington College (68-42)"
+                  >
+                    195
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="New Jersey City (112-40)"
+                  >
+                    244
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Oberlin (71-39)">
+                    193
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Lycoming (88-36)">
+                    286
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Vassar (64-44)">
+                    159
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Ohio Northern (63-54)"
+                  >
+                    198
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (IL) (73-51)"
+                  >
+                    187
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="UW-Stevens Point (56-48)"
+                  >
+                    88
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Maine-Farmington (90-48)"
+                  >
+                    166
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Husson (106-36)">
+                    175
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Grove City (75-57)"
+                  >
+                    179
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="North Central (IL) (74-63)"
+                  >
+                    135
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Adrian (84-65)">
+                    206
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Eastern Connecticut (76-62)"
+                  >
+                    232
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Howard Payne (71-55)"
+                  >
+                    220
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="Benedictine (94-53)"
+                  >
+                    150
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-good"
+                    title="St. Norbert (54-49)"
+                  >
+                    132
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="New Jersey City (87-53)"
+                  >
+                    244
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">14</td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Pacific (51-39)">
+                    223
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Roanoke (69-47)">
+                    183
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="York (PA) (59-35)">
+                    221
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Swarthmore (108-49)"
+                  >
+                    283
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Wooster (71-59)">
+                    194
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Juniata (92-40)">
+                    302
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Husson (74-46)">
+                    175
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Albright (72-48)">
+                    222
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Alma (97-56)">
+                    188
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-good" title="UW-Stout (72-53)">
+                    104
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Endicott (56-44)">
+                    169
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mass-Dartmouth (83-38)"
+                  >
+                    212
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Oberlin (60-45)">
+                    193
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Carthage (72-60)">
+                    151
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Adrian (88-46)">
+                    206
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Plymouth St. (75-51)"
+                  >
+                    250
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Carleton (78-50)">
+                    237
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Augustana (82-54)">
+                    161
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (IL) (65-47)"
+                  >
+                    187
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Western Connecticut (56-51)"
+                  >
+                    251
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">15</td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="UW-Superior (68-41)"
+                  >
+                    230
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Randolph Col (66-43)"
+                  >
+                    189
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Haverford (83-50)">
+                    231
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Regis (114-35)">
+                    301
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Ohio Northern (74-59)"
+                  >
+                    198
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Juniata (87-38)">
+                    302
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Skidmore (68-46)">
+                    207
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wilmington (85-46)"
+                  >
+                    279
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Oberlin (83-40)">
+                    193
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Knox (77-66)">
+                    190
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Husson (98-50)">
+                    175
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Bridgewater St. (74-64)"
+                  >
+                    227
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Wooster (84-56)">
+                    194
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Augustana (75-71)">
+                    161
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Pacific (72-52)">
+                    223
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Western Connecticut (79-55)"
+                  >
+                    251
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Minn-Morris (85-56)"
+                  >
+                    259
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Millikin (75-55)">
+                    226
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Rose-Hulman (85-54)"
+                  >
+                    298
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Waynesburg (84-44)"
+                  >
+                    261
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">16</td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Allegheny (75-60)">
+                    218
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (MA) (64-44)"
+                  >
+                    300
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Kenyon (85-54)">
+                    308
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Wooster (88-46)">
+                    194
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Millikin (70-50)">
+                    226
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Hunter (73-37)">
+                    178
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Wellesley (88-38)">
+                    239
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Ohio Northern (55-46)"
+                  >
+                    198
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (IL) (76-52)"
+                  >
+                    187
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="St. Mary's (IN) (82-42)"
+                  >
+                    253
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Western Connecticut (82-54)"
+                  >
+                    251
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Minn-Morris (79-53)"
+                  >
+                    259
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-low"
+                    title="Westminster (MO) (94-31)"
+                  >
+                    324
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Marian (84-29)">
+                    385
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-low" title="Ramapo (71-42)">
+                    314
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-num">17</td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="La Roche (69-59)">
+                    255
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Principia (81-49)">
+                    242
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mass-Dartmouth (74-51)"
+                  >
+                    212
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Stevenson (73-36)">
+                    241
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Wheaton (IL) (81-56)"
+                  >
+                    187
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="St. Mary's (IN) (90-48)"
+                  >
+                    253
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Augsburg (89-55)">
+                    273
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="game-cell win rank-low"
+                    title="Greenville (91-32)"
+                  >
+                    351
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+              </tr>
+              <tr>
+                <td class="row-num">18</td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div
+                    class="game-cell win rank-mid"
+                    title="Mary Hardin-Baylor (66-37)"
+                  >
+                    262
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Millikin (82-64)">
+                    226
+                  </div>
+                </td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Kalamazoo (93-40)">
+                    290
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-low" title="St. Olaf (80-54)">
+                    305
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+              </tr>
+              <tr>
+                <td class="row-num">19</td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div class="game-cell win rank-mid" title="Augsburg (89-51)">
+                    273
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td>
+                  <div
+                    class="game-cell win rank-low"
+                    title="North Park (79-63)"
+                  >
+                    329
+                  </div>
+                </td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+                <td><div class="game-cell empty-cell"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="footer">
+          Cell values show opponent NPI rank (lower = stronger) | Only games
+          counting toward NPI shown<br />
+          <a href="https://thed3statlab.com">TheD3StatLab</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>
