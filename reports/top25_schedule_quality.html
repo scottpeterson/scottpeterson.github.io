@@ -155,7 +155,7 @@
         min-width: 30px;
       }
       .report-top25_schedule_quality /* Massey rank coloring - darker = better opponent */
-        .rank-elite {
+      .rank-elite {
         filter: brightness(1.3);
       }
       .report-top25_schedule_quality .rank-great {
@@ -2749,8 +2749,15 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
     </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- JavaScript for navigation -->
     <script src="/js/navigation.js"></script>

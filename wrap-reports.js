@@ -375,8 +375,9 @@ ${body}
     </div>
 
     <footer>
-      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+      <p>&copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights reserved.</p>
     </footer>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 
     <!-- JavaScript for navigation -->
     <script src="/js/navigation.js"></script>
@@ -445,8 +446,9 @@ ${cards}
     </main>
 
     <footer>
-      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+      <p>&copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights reserved.</p>
     </footer>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 
     <!-- JavaScript for navigation -->
     <script src="/js/navigation.js"></script>

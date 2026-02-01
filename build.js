@@ -144,10 +144,11 @@ class TemplateEngine {
   }
 
   // Generate navigation HTML based on config and feature flags
-  generateNavigation() {
+  async generateNavigation() {
     const navItems = [];
 
     // Define navigation order and structure
+    // 'reports' is a special key that triggers the Reports dropdown
     const navConfig = [
       { key: 'index', label: 'Home', href: '/' },
       { key: 'npi', label: 'NPI', href: 'npi.html' },
@@ -186,11 +187,21 @@ class TemplateEngine {
         label: 'Publishing Tracker',
         href: 'publishing_tracker.html',
       },
+      { key: 'reports', label: 'Reports', href: 'reports/', isDropdown: true },
       { key: 'premium', label: 'Premium', href: 'premium.html' },
       { key: 'contact', label: 'Contact', href: 'contact.html' },
     ];
 
     for (const item of navConfig) {
+      // Handle Reports dropdown specially
+      if (item.isDropdown && item.key === 'reports') {
+        const reportsDropdown = await this.generateReportsDropdown();
+        if (reportsDropdown) {
+          navItems.push(reportsDropdown);
+        }
+        continue;
+      }
+
       const pageConfig = this.config[item.key];
 
       // Skip if page doesn't exist in config
@@ -212,6 +223,48 @@ class TemplateEngine {
     }
 
     return navItems.join('\n          ');
+  }
+
+  // Generate Reports dropdown menu by reading reports directory
+  async generateReportsDropdown() {
+    const reportsDir = 'reports';
+
+    try {
+      const files = await fs.readdir(reportsDir);
+      const htmlFiles = files.filter(
+        f => f.endsWith('.html') && f !== 'index.html'
+      );
+
+      if (htmlFiles.length === 0) {
+        return null;
+      }
+
+      // Build dropdown items from report files
+      const dropdownItems = htmlFiles
+        .map(file => {
+          const slug = path.basename(file, '.html');
+          // Convert slug to title (same logic as wrap-reports.js)
+          const title = slug
+            .replace(/_/g, ' ')
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, c => c.toUpperCase());
+          return `              <li><a href="reports/${file}">${title}</a></li>`;
+        })
+        .join('\n');
+
+      return `<li class="nav-dropdown">
+            <a href="reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+${dropdownItems}
+            </ul>
+          </li>`;
+    } catch (error) {
+      // No reports directory or error reading it
+      console.warn('Could not read reports directory:', error.message);
+      return null;
+    }
   }
 
   // Simple template replacement
@@ -457,7 +510,7 @@ class TemplateEngine {
       }
 
       // Render full page
-      const navItems = this.generateNavigation();
+      const navItems = await this.generateNavigation();
 
       // Determine if buy button should show (feature flagged)
       const premiumEnabled = this.isFeatureEnabled('premium');

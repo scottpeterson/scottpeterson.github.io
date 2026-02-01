@@ -52,6 +52,74 @@
           </li>
           <li><a href="returners.html">Returning and Non-Returning</a></li>
           <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="reports/" class="dropdown-trigger"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="reports/16th_win_countdown.html">16th Win Countdown</a>
+              </li>
+              <li>
+                <a href="reports/alwyni_threshold_chart.html"
+                  >Alwyni Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="reports/atlarge_powerhouse_conferences.html"
+                  >Atlarge Powerhouse Conferences</a
+                >
+              </li>
+              <li><a href="reports/atlarge_tiers.html">Atlarge Tiers</a></li>
+              <li>
+                <a href="reports/best_games_this_week.html"
+                  >Best Games This Week</a
+                >
+              </li>
+              <li><a href="reports/bubble_watch.html">Bubble Watch</a></li>
+              <li>
+                <a href="reports/conference_race_infographic.html"
+                  >Conference Race Infographic</a
+                >
+              </li>
+              <li>
+                <a href="reports/high_npi_low_alwyni.html"
+                  >High Npi Low Alwyni</a
+                >
+              </li>
+              <li>
+                <a href="reports/host_projections.html">Host Projections</a>
+              </li>
+              <li>
+                <a href="reports/player_plus_minus_rankings.html"
+                  >Player Plus Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="reports/team_comparison_2026-02-01.html"
+                  >Team Comparison 2026 02 01</a
+                >
+              </li>
+              <li>
+                <a href="reports/top25_schedule_quality.html"
+                  >Top25 Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="reports/tournament_field_infographic.html"
+                  >Tournament Field Infographic</a
+                >
+              </li>
+              <li>
+                <a href="reports/tournament_risers.html">Tournament Risers</a>
+              </li>
+              <li>
+                <a href="reports/undefeated_watch.html">Undefeated Watch</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="premium.html">Premium</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -301,11 +369,19 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
     </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- JavaScript for search, filter and active page functionality -->
     <script src="js/navigation.js"></script>
+    <script src="js/reports-nav.js"></script>
     <script src="js/table-controls.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/main.js"></script>

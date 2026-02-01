@@ -90,11 +90,19 @@
     {{/SHOW_BUY_BUTTON}}
 
     <footer>
-      <p>&copy; 2025 D3 Stat Lab. All rights reserved.</p>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
     </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- JavaScript for search, filter and active page functionality -->
     <script src="js/navigation.js"></script>
+    <script src="js/reports-nav.js"></script>
     <script src="js/table-controls.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/main.js"></script>
