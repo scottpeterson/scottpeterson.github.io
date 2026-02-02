@@ -50,7 +50,7 @@
         font-style: italic;
       }
       .report-tournament_field_infographic /* Legend */
-      .legend {
+        .legend {
         display: flex;
         justify-content: center;
         gap: 30px;
@@ -83,7 +83,7 @@
         color: #fff;
       }
       .report-tournament_field_infographic /* Main Grid - 5 columns: 4 seed columns + 1 bubble column */
-      .field-grid {
+        .field-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr) minmax(160px, 1fr);
         gap: 10px;
@@ -220,7 +220,7 @@
         white-space: nowrap;
       }
       .report-tournament_field_infographic /* Bubble Column - stacked vertically to the right */
-      .bubble-column {
+        .bubble-column {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -302,7 +302,7 @@
         margin-left: auto;
       }
       .report-tournament_field_infographic /* Footer */
-      .footer {
+        .footer {
         text-align: center;
         color: #8892b0;
         margin-top: 25px;
@@ -315,7 +315,7 @@
         text-decoration: underline;
       }
       .report-tournament_field_infographic /* Responsive */
-      @media (max-width: 1200px) {
+        @media (max-width: 1200px) {
         .field-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -611,25 +611,25 @@
                   <span class="quadrant-badge">2</span>
                 </div>
                 <div
-                  class="team-row"
-                  style="background: #041c2c; color: #ffffff"
+                  class="team-row projected-host"
+                  style="background: #000000; color: #b0b7bc"
                 >
                   <span class="seed-badge auto-bid">8</span>
                   <div class="team-info">
-                    <span class="team-name">John Carroll</span>
-                    <span class="team-meta">NCAC &bull; AUTO</span>
+                    <span class="team-name">Bowdoin</span>
+                    <span class="team-meta">NESCAC &bull; AUTO</span>
                   </div>
 
                   <span class="quadrant-badge">2</span>
                 </div>
                 <div
-                  class="team-row projected-host"
-                  style="background: #000000; color: #b0b7bc"
+                  class="team-row"
+                  style="background: #041c2c; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">9</span>
                   <div class="team-info">
-                    <span class="team-name">Bowdoin</span>
-                    <span class="team-meta">NESCAC &bull; AUTO</span>
+                    <span class="team-name">John Carroll</span>
+                    <span class="team-meta">NCAC &bull; AUTO</span>
                   </div>
 
                   <span class="quadrant-badge">3</span>
@@ -677,7 +677,7 @@
                   <span class="seed-badge at-large-bid">13</span>
                   <div class="team-info">
                     <span class="team-name">Bates</span>
-                    <span class="team-meta">NESCAC &bull; At-Large #5</span>
+                    <span class="team-meta">NESCAC &bull; At-Large #1</span>
                   </div>
                   <span class="alwyni-badge">100%</span>
                   <span class="quadrant-badge">4</span>
@@ -695,27 +695,24 @@
                   <span class="quadrant-badge">4</span>
                 </div>
                 <div
-                  class="team-row"
-                  style="background: #d08b04; color: #012c5d"
-                >
-                  <span class="seed-badge at-large-bid">15</span>
-                  <div class="team-info">
-                    <span class="team-name">Emory</span>
-                    <span class="team-meta">UAA &bull; At-Large #7</span>
-                  </div>
-                  <span class="alwyni-badge">99%</span>
-                  <span class="quadrant-badge">4</span>
-                </div>
-                <div
                   class="team-row projected-host"
                   style="background: #f26722; color: #ffffff"
                 >
-                  <span class="seed-badge at-large-bid">16</span>
+                  <span class="seed-badge at-large-bid">15</span>
                   <div class="team-info">
                     <span class="team-name">Carroll</span>
-                    <span class="team-meta">CCIW &bull; At-Large #5</span>
+                    <span class="team-meta">CCIW &bull; At-Large #6</span>
                   </div>
                   <span class="alwyni-badge">100%</span>
+                  <span class="quadrant-badge">4</span>
+                </div>
+                <div class="team-row" style="background: #3d2d1f; color: #fff">
+                  <span class="seed-badge auto-bid">16</span>
+                  <div class="team-info">
+                    <span class="team-name">Baldwin Wallace</span>
+                    <span class="team-meta">OAC &bull; AUTO</span>
+                  </div>
+
                   <span class="quadrant-badge">4</span>
                 </div>
               </div>
@@ -729,20 +726,11 @@
                 >
               </div>
               <div class="column-teams">
-                <div class="team-row" style="background: #3d2d1f; color: #fff">
-                  <span class="seed-badge auto-bid">17</span>
-                  <div class="team-info">
-                    <span class="team-name">Baldwin Wallace</span>
-                    <span class="team-meta">OAC &bull; AUTO</span>
-                  </div>
-
-                  <span class="quadrant-badge">5</span>
-                </div>
                 <div
                   class="team-row projected-host"
                   style="background: #660833; color: #ffffff"
                 >
-                  <span class="seed-badge auto-bid">18</span>
+                  <span class="seed-badge auto-bid">17</span>
                   <div class="team-info">
                     <span class="team-name">Concordia Moorhead</span>
                     <span class="team-meta">MIAC &bull; AUTO</span>
@@ -754,10 +742,10 @@
                   class="team-row"
                   style="background: #84001a; color: #ffffff"
                 >
-                  <span class="seed-badge at-large-bid">19</span>
+                  <span class="seed-badge at-large-bid">18</span>
                   <div class="team-info">
                     <span class="team-name">UW-La Crosse</span>
-                    <span class="team-meta">WIAC &bull; At-Large #8</span>
+                    <span class="team-meta">WIAC &bull; At-Large #7</span>
                   </div>
                   <span class="alwyni-badge">99%</span>
                   <span class="quadrant-badge">5</span>
@@ -766,12 +754,24 @@
                   class="team-row"
                   style="background: #006747; color: #ffffff"
                 >
-                  <span class="seed-badge auto-bid">20</span>
+                  <span class="seed-badge auto-bid">19</span>
                   <div class="team-info">
                     <span class="team-name">Illinois Wesleyan</span>
                     <span class="team-meta">CCIW &bull; AUTO</span>
                   </div>
 
+                  <span class="quadrant-badge">5</span>
+                </div>
+                <div
+                  class="team-row"
+                  style="background: #880000; color: #ffffff"
+                >
+                  <span class="seed-badge at-large-bid">20</span>
+                  <div class="team-info">
+                    <span class="team-name">Chicago</span>
+                    <span class="team-meta">UAA &bull; At-Large #8</span>
+                  </div>
+                  <span class="alwyni-badge">99%</span>
                   <span class="quadrant-badge">5</span>
                 </div>
                 <div
@@ -811,15 +811,15 @@
                   <span class="quadrant-badge">6</span>
                 </div>
                 <div
-                  class="team-row projected-host"
-                  style="background: #8e0020; color: #ffffff"
+                  class="team-row"
+                  style="background: #d08b04; color: #012c5d"
                 >
                   <span class="seed-badge at-large-bid">24</span>
                   <div class="team-info">
-                    <span class="team-name">Bridgewater (VA)</span>
-                    <span class="team-meta">ODAC &bull; At-Large #15</span>
+                    <span class="team-name">Emory</span>
+                    <span class="team-meta">UAA &bull; At-Large #12</span>
                   </div>
-                  <span class="alwyni-badge">91%</span>
+                  <span class="alwyni-badge">95%</span>
                   <span class="quadrant-badge">6</span>
                 </div>
                 <div
@@ -831,19 +831,19 @@
                     <span class="team-name">Trine</span>
                     <span class="team-meta">MIAA &bull; At-Large #10</span>
                   </div>
-                  <span class="alwyni-badge">97%</span>
+                  <span class="alwyni-badge">98%</span>
                   <span class="quadrant-badge">7</span>
                 </div>
                 <div
-                  class="team-row"
-                  style="background: #880000; color: #ffffff"
+                  class="team-row projected-host"
+                  style="background: #8e0020; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">26</span>
                   <div class="team-info">
-                    <span class="team-name">Chicago</span>
-                    <span class="team-meta">UAA &bull; At-Large #13</span>
+                    <span class="team-name">Bridgewater (VA)</span>
+                    <span class="team-meta">ODAC &bull; At-Large #15</span>
                   </div>
-                  <span class="alwyni-badge">94%</span>
+                  <span class="alwyni-badge">89%</span>
                   <span class="quadrant-badge">7</span>
                 </div>
                 <div
@@ -889,33 +889,33 @@
                   <span class="seed-badge at-large-bid">30</span>
                   <div class="team-info">
                     <span class="team-name">SUNY New Paltz</span>
-                    <span class="team-meta">SUNYAC &bull; At-Large #12</span>
+                    <span class="team-meta">SUNYAC &bull; At-Large #13</span>
                   </div>
                   <span class="alwyni-badge">94%</span>
                   <span class="quadrant-badge">8</span>
                 </div>
                 <div
                   class="team-row"
-                  style="background: #003e7e; color: #ffffff"
-                >
-                  <span class="seed-badge at-large-bid">31</span>
-                  <div class="team-info">
-                    <span class="team-name">Shenandoah</span>
-                    <span class="team-meta">ODAC &bull; At-Large #14</span>
-                  </div>
-                  <span class="alwyni-badge">91%</span>
-                  <span class="quadrant-badge">8</span>
-                </div>
-                <div
-                  class="team-row"
                   style="background: #005ca9; color: #fffefd"
                 >
-                  <span class="seed-badge auto-bid">32</span>
+                  <span class="seed-badge auto-bid">31</span>
                   <div class="team-info">
                     <span class="team-name">Christopher Newport</span>
                     <span class="team-meta">C2C &bull; AUTO</span>
                   </div>
 
+                  <span class="quadrant-badge">8</span>
+                </div>
+                <div
+                  class="team-row"
+                  style="background: #003e7e; color: #ffffff"
+                >
+                  <span class="seed-badge at-large-bid">32</span>
+                  <div class="team-info">
+                    <span class="team-name">Shenandoah</span>
+                    <span class="team-meta">ODAC &bull; At-Large #14</span>
+                  </div>
+                  <span class="alwyni-badge">90%</span>
                   <span class="quadrant-badge">8</span>
                 </div>
               </div>
@@ -938,17 +938,17 @@
                     <span class="team-name">McDaniel</span>
                     <span class="team-meta">CC &bull; At-Large #16</span>
                   </div>
-                  <span class="alwyni-badge">65%</span>
+                  <span class="alwyni-badge">64%</span>
                   <span class="quadrant-badge">9</span>
                 </div>
                 <div
                   class="team-row"
-                  style="background: #441166; color: #ffffff"
+                  style="background: #000000; color: #ffc82d"
                 >
                   <span class="seed-badge auto-bid">34</span>
                   <div class="team-info">
-                    <span class="team-name">Linfield</span>
-                    <span class="team-meta">NWC &bull; AUTO</span>
+                    <span class="team-name">Colorado College</span>
+                    <span class="team-meta">SCAC &bull; AUTO</span>
                   </div>
 
                   <span class="quadrant-badge">9</span>
@@ -967,26 +967,26 @@
                 </div>
                 <div
                   class="team-row"
+                  style="background: #441166; color: #ffffff"
+                >
+                  <span class="seed-badge auto-bid">36</span>
+                  <div class="team-info">
+                    <span class="team-name">Linfield</span>
+                    <span class="team-meta">NWC &bull; AUTO</span>
+                  </div>
+
+                  <span class="quadrant-badge">9</span>
+                </div>
+                <div
+                  class="team-row"
                   style="background: #002146; color: #ffffff"
                 >
-                  <span class="seed-badge at-large-bid">36</span>
+                  <span class="seed-badge at-large-bid">37</span>
                   <div class="team-info">
                     <span class="team-name">St. Mary's (MN)</span>
                     <span class="team-meta">MIAC &bull; At-Large #17</span>
                   </div>
                   <span class="alwyni-badge">58%</span>
-                  <span class="quadrant-badge">9</span>
-                </div>
-                <div
-                  class="team-row"
-                  style="background: #000000; color: #ffc82d"
-                >
-                  <span class="seed-badge auto-bid">37</span>
-                  <div class="team-info">
-                    <span class="team-name">Colorado College</span>
-                    <span class="team-meta">SCAC &bull; AUTO</span>
-                  </div>
-
                   <span class="quadrant-badge">10</span>
                 </div>
                 <div
@@ -998,7 +998,7 @@
                     <span class="team-name">Otterbein</span>
                     <span class="team-meta">OAC &bull; At-Large #18</span>
                   </div>
-                  <span class="alwyni-badge">50%</span>
+                  <span class="alwyni-badge">52%</span>
                   <span class="quadrant-badge">10</span>
                 </div>
                 <div
@@ -1022,7 +1022,7 @@
                     <span class="team-name">Cal Lutheran</span>
                     <span class="team-meta">SCIAC &bull; At-Large #21</span>
                   </div>
-                  <span class="alwyni-badge">40%</span>
+                  <span class="alwyni-badge">39%</span>
                   <span class="quadrant-badge">10</span>
                 </div>
                 <div
@@ -1034,7 +1034,7 @@
                     <span class="team-name">Gettysburg</span>
                     <span class="team-meta">CC &bull; At-Large #19</span>
                   </div>
-                  <span class="alwyni-badge">44%</span>
+                  <span class="alwyni-badge">42%</span>
                   <span class="quadrant-badge">11</span>
                 </div>
                 <div
@@ -1242,21 +1242,9 @@
                 </div>
                 <div
                   class="team-row"
-                  style="background: #ff6900; color: #ffffff"
-                >
-                  <span class="seed-badge auto-bid">58</span>
-                  <div class="team-info">
-                    <span class="team-name">LaGrange</span>
-                    <span class="team-meta">CCS &bull; AUTO</span>
-                  </div>
-
-                  <span class="quadrant-badge">15</span>
-                </div>
-                <div
-                  class="team-row"
                   style="background: #003c78; color: #ffffff"
                 >
-                  <span class="seed-badge auto-bid">59</span>
+                  <span class="seed-badge auto-bid">58</span>
                   <div class="team-info">
                     <span class="team-name">Brevard</span>
                     <span class="team-meta">USAC &bull; AUTO</span>
@@ -1268,7 +1256,7 @@
                   class="team-row"
                   style="background: #1e407c; color: #ffffff"
                 >
-                  <span class="seed-badge auto-bid">60</span>
+                  <span class="seed-badge auto-bid">59</span>
                   <div class="team-info">
                     <span class="team-name">Penn State-Behrend</span>
                     <span class="team-meta">AMCC &bull; AUTO</span>
@@ -1277,22 +1265,34 @@
                   <span class="quadrant-badge">15</span>
                 </div>
                 <div class="team-row" style="background: #0168b3; color: #fff">
-                  <span class="seed-badge auto-bid">61</span>
+                  <span class="seed-badge auto-bid">60</span>
                   <div class="team-info">
                     <span class="team-name">Maine-Maritime</span>
                     <span class="team-meta">NAC &bull; AUTO</span>
+                  </div>
+
+                  <span class="quadrant-badge">15</span>
+                </div>
+                <div
+                  class="team-row"
+                  style="background: #95111e; color: #ffffff"
+                >
+                  <span class="seed-badge auto-bid">61</span>
+                  <div class="team-info">
+                    <span class="team-name">Bethany Luth</span>
+                    <span class="team-meta">UMAC &bull; AUTO</span>
                   </div>
 
                   <span class="quadrant-badge">16</span>
                 </div>
                 <div
                   class="team-row"
-                  style="background: #95111e; color: #ffffff"
+                  style="background: #600015; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">62</span>
                   <div class="team-info">
-                    <span class="team-name">Bethany Luth</span>
-                    <span class="team-meta">UMAC &bull; AUTO</span>
+                    <span class="team-name">Maryville</span>
+                    <span class="team-meta">CCS &bull; AUTO</span>
                   </div>
 
                   <span class="quadrant-badge">16</span>
@@ -1340,7 +1340,7 @@
                       <span class="team-name">Randolph-Macon</span>
                       <span class="team-meta">ODAC &bull; At-Large #22</span>
                     </div>
-                    <span class="alwyni-badge">34%</span>
+                    <span class="alwyni-badge">30%</span>
                   </div>
                   <div
                     class="bubble-card"
@@ -1350,17 +1350,7 @@
                       <span class="team-name">Guilford</span>
                       <span class="team-meta">ODAC &bull; At-Large #23</span>
                     </div>
-                    <span class="alwyni-badge">31%</span>
-                  </div>
-                  <div
-                    class="bubble-card"
-                    style="background: #990000; color: #ffffff"
-                  >
-                    <div class="team-info">
-                      <span class="team-name">Catholic</span>
-                      <span class="team-meta">LAND &bull; At-Large #24</span>
-                    </div>
-                    <span class="alwyni-badge">22%</span>
+                    <span class="alwyni-badge">29%</span>
                   </div>
                   <div
                     class="bubble-card"
@@ -1368,17 +1358,27 @@
                   >
                     <div class="team-info">
                       <span class="team-name">Gustavus Adolphus</span>
-                      <span class="team-meta">MIAC &bull; At-Large #25</span>
+                      <span class="team-meta">MIAC &bull; At-Large #24</span>
+                    </div>
+                    <span class="alwyni-badge">22%</span>
+                  </div>
+                  <div
+                    class="bubble-card"
+                    style="background: #990000; color: #ffffff"
+                  >
+                    <div class="team-info">
+                      <span class="team-name">Catholic</span>
+                      <span class="team-meta">LAND &bull; At-Large #25</span>
                     </div>
                     <span class="alwyni-badge">21%</span>
                   </div>
                   <div
                     class="bubble-card"
-                    style="background: #111c24; color: #ffc72c"
+                    style="background: #bd0e35; color: #ffffff"
                   >
                     <div class="team-info">
-                      <span class="team-name">DePauw</span>
-                      <span class="team-meta">NCAC &bull; At-Large #26</span>
+                      <span class="team-name">UW-River Falls</span>
+                      <span class="team-meta">WIAC &bull; At-Large #26</span>
                     </div>
                     <span class="alwyni-badge">14%</span>
                   </div>
@@ -1394,33 +1394,13 @@
                 <div class="bubble-teams">
                   <div
                     class="bubble-card"
-                    style="background: #bd0e35; color: #ffffff"
+                    style="background: #111c24; color: #ffc72c"
                   >
                     <div class="team-info">
-                      <span class="team-name">UW-River Falls</span>
-                      <span class="team-meta">WIAC &bull; At-Large #27</span>
+                      <span class="team-name">DePauw</span>
+                      <span class="team-meta">NCAC &bull; At-Large #27</span>
                     </div>
                     <span class="alwyni-badge">13%</span>
-                  </div>
-                  <div
-                    class="bubble-card"
-                    style="background: #1c295b; color: #fcb930"
-                  >
-                    <div class="team-info">
-                      <span class="team-name">UW-Eau Claire</span>
-                      <span class="team-meta">WIAC &bull; At-Large #28</span>
-                    </div>
-                    <span class="alwyni-badge">7%</span>
-                  </div>
-                  <div
-                    class="bubble-card"
-                    style="background: #ffcd00; color: #040707"
-                  >
-                    <div class="team-info">
-                      <span class="team-name">Centre</span>
-                      <span class="team-meta">SAA &bull; At-Large #29</span>
-                    </div>
-                    <span class="alwyni-badge">6%</span>
                   </div>
                   <div
                     class="bubble-card"
@@ -1428,9 +1408,19 @@
                   >
                     <div class="team-info">
                       <span class="team-name">Carnegie Mellon</span>
-                      <span class="team-meta">UAA &bull; At-Large #30</span>
+                      <span class="team-meta">UAA &bull; At-Large #28</span>
                     </div>
-                    <span class="alwyni-badge">5%</span>
+                    <span class="alwyni-badge">12%</span>
+                  </div>
+                  <div
+                    class="bubble-card"
+                    style="background: #1c295b; color: #fcb930"
+                  >
+                    <div class="team-info">
+                      <span class="team-name">UW-Eau Claire</span>
+                      <span class="team-meta">WIAC &bull; At-Large #29</span>
+                    </div>
+                    <span class="alwyni-badge">8%</span>
                   </div>
                   <div
                     class="bubble-card"
@@ -1438,7 +1428,17 @@
                   >
                     <div class="team-info">
                       <span class="team-name">UW-Stevens Point</span>
-                      <span class="team-meta">WIAC &bull; At-Large #31</span>
+                      <span class="team-meta">WIAC &bull; At-Large #30</span>
+                    </div>
+                    <span class="alwyni-badge">4%</span>
+                  </div>
+                  <div
+                    class="bubble-card"
+                    style="background: #3f1f69; color: #ffffff"
+                  >
+                    <div class="team-info">
+                      <span class="team-name">Amherst</span>
+                      <span class="team-meta">NESCAC &bull; At-Large #31</span>
                     </div>
                     <span class="alwyni-badge">4%</span>
                   </div>
@@ -1454,23 +1454,13 @@
                 <div class="bubble-teams">
                   <div
                     class="bubble-card"
-                    style="background: #3f1f69; color: #ffffff"
-                  >
-                    <div class="team-info">
-                      <span class="team-name">Amherst</span>
-                      <span class="team-meta">NESCAC &bull; At-Large #32</span>
-                    </div>
-                    <span class="alwyni-badge">4%</span>
-                  </div>
-                  <div
-                    class="bubble-card"
                     style="background: #9c1f2f; color: #ffffff"
                   >
                     <div class="team-info">
                       <span class="team-name">Hamline</span>
-                      <span class="team-meta">MIAC &bull; At-Large #33</span>
+                      <span class="team-meta">MIAC &bull; At-Large #32</span>
                     </div>
-                    <span class="alwyni-badge">0%</span>
+                    <span class="alwyni-badge">1%</span>
                   </div>
                   <div
                     class="bubble-card"
@@ -1478,7 +1468,7 @@
                   >
                     <div class="team-info">
                       <span class="team-name">Dickinson</span>
-                      <span class="team-meta">CC &bull; At-Large #34</span>
+                      <span class="team-meta">CC &bull; At-Large #33</span>
                     </div>
                     <span class="alwyni-badge">0%</span>
                   </div>
@@ -1488,7 +1478,17 @@
                   >
                     <div class="team-info">
                       <span class="team-name">Claremont-Mudd-Scripps</span>
-                      <span class="team-meta">SCIAC &bull; At-Large #35</span>
+                      <span class="team-meta">SCIAC &bull; At-Large #34</span>
+                    </div>
+                    <span class="alwyni-badge">0%</span>
+                  </div>
+                  <div
+                    class="bubble-card"
+                    style="background: #00447c; color: #ffcb00"
+                  >
+                    <div class="team-info">
+                      <span class="team-name">St. Scholastica</span>
+                      <span class="team-meta">MIAC &bull; At-Large #34</span>
                     </div>
                     <span class="alwyni-badge">0%</span>
                   </div>
@@ -1498,7 +1498,7 @@
                   >
                     <div class="team-info">
                       <span class="team-name">Brandeis</span>
-                      <span class="team-meta">UAA &bull; At-Large #35</span>
+                      <span class="team-meta">UAA &bull; At-Large #34</span>
                     </div>
                     <span class="alwyni-badge">0%</span>
                   </div>
@@ -1508,7 +1508,7 @@
           </div>
 
           <p class="footer">
-            Generated February 01, 2026 at 12:41 PM<br />
+            Generated February 02, 2026 at 07:44 AM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
