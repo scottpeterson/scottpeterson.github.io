@@ -36,7 +36,8 @@
       "Bash(pkill:*)",
       "Bash(npm run serve:*)",
       "Bash(python -m http.server:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

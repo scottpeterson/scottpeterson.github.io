@@ -225,8 +225,9 @@ class TemplateEngine {
     return navItems.join('\n          ');
   }
 
-  // Generate Reports dropdown menu by reading reports directory
-  async generateReportsDropdown() {
+  // Get list of reports from the reports directory
+  // Returns array of { slug, title, file } objects
+  async getReportsList() {
     const reportsDir = 'reports';
 
     try {
@@ -235,24 +236,62 @@ class TemplateEngine {
         f => f.endsWith('.html') && f !== 'index.html'
       );
 
-      if (htmlFiles.length === 0) {
-        return null;
-      }
-
-      // Build dropdown items from report files
-      const dropdownItems = htmlFiles
-        .map(file => {
-          const slug = path.basename(file, '.html');
-          // Convert slug to title (same logic as wrap-reports.js)
-          const title = slug
+      const reports = [];
+      for (const file of htmlFiles) {
+        const slug = path.basename(file, '.html');
+        // Try to extract title from the HTML file
+        let title;
+        try {
+          const content = await fs.readFile(
+            path.join(reportsDir, file),
+            'utf8'
+          );
+          // Match multiline titles
+          const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);
+          if (titleMatch) {
+            // Normalize whitespace and remove " - The D3 Stat Lab" suffix if present
+            title = titleMatch[1]
+              .replace(/\s+/g, ' ')
+              .trim()
+              .replace(/\s*-\s*The D3 Stat Lab$/i, '')
+              .trim();
+          }
+        } catch (e) {
+          // Ignore read errors, fall back to slug-based title
+        }
+        // Fall back to slug-based title if no title found
+        if (!title) {
+          title = slug
             .replace(/_/g, ' ')
             .replace(/-/g, ' ')
             .replace(/\b\w/g, c => c.toUpperCase());
-          return `              <li><a href="reports/${file}">${title}</a></li>`;
-        })
-        .join('\n');
+        }
+        reports.push({ slug, title, file });
+      }
 
-      return `<li class="nav-dropdown">
+      return reports;
+    } catch (error) {
+      console.warn('Could not read reports directory:', error.message);
+      return [];
+    }
+  }
+
+  // Generate Reports dropdown menu by reading reports directory
+  async generateReportsDropdown() {
+    const reports = await this.getReportsList();
+
+    if (reports.length === 0) {
+      return null;
+    }
+
+    // Build dropdown items from report files
+    const dropdownItems = reports
+      .map(
+        r => `              <li><a href="reports/${r.file}">${r.title}</a></li>`
+      )
+      .join('\n');
+
+    return `<li class="nav-dropdown">
             <a href="reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li><a href="reports/">All Reports</a></li>
@@ -260,11 +299,134 @@ class TemplateEngine {
 ${dropdownItems}
             </ul>
           </li>`;
-    } catch (error) {
-      // No reports directory or error reading it
-      console.warn('Could not read reports directory:', error.message);
-      return null;
+  }
+
+  // Regenerate reports/index.html based on current reports directory contents
+  // This ensures the reports index stays in sync when files are added/removed
+  async regenerateReportsIndex() {
+    const reports = await this.getReportsList();
+
+    if (reports.length === 0) {
+      console.log(
+        'ℹ️  No reports found, skipping reports/index.html generation'
+      );
+      return;
     }
+
+    // Sort reports alphabetically by title
+    const sortedReports = [...reports].sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+
+    // Generate nav (same as main pages use)
+    const navItems = await this.generateNavigation();
+
+    // Generate report cards
+    const cards = sortedReports
+      .map(
+        r => `        <a href="${r.slug}.html" class="report-card">
+          <h3>${r.title}</h3>
+          <span class="report-card-arrow">→</span>
+        </a>`
+      )
+      .join('\n');
+
+    // Build dropdown items for reports nav
+    const dropdownItems = sortedReports
+      .map(
+        r => `              <li><a href="${r.slug}.html">${r.title}</a></li>`
+      )
+      .join('\n');
+
+    const html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li><a href="/current_season_rankings.html">Current Season Rankings</a></li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="/preseason_rankings.html">25-26 Preseason Rankings</a></li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+${dropdownItems}
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Reports</h1>
+        <p>Interactive reports and visualizations for D3 Women's Basketball</p>
+      </header>
+
+      <div class="reports-grid">
+${cards}
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights reserved.</p>
+    </footer>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>`;
+
+    await fs.writeFile('reports/index.html', html, 'utf8');
+    console.log('✓ Generated reports/index.html');
   }
 
   // Simple template replacement
@@ -573,6 +735,10 @@ ${dropdownItems}
       for (const pageKey of pages) {
         await this.generatePage(pageKey, this.config[pageKey]);
       }
+
+      // Regenerate reports/index.html based on current reports directory
+      // This ensures nav stays in sync when report files are added/removed
+      await this.regenerateReportsIndex();
 
       // Encode data files for obfuscation
       await this.encodeDataFiles();
