@@ -101,8 +101,9 @@ body {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 220px;
+  /* Align to right edge of trigger to avoid overflowing viewport */
+  left: auto;
+  right: 0;
   background: #2c3e50;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
@@ -110,10 +111,19 @@ body {
   z-index: 200;
   list-style: none;
   margin: 0;
+  /* Multi-column layout for long menus - splits items into 2 columns */
+  columns: 2;
+  column-gap: 0;
+  min-width: 440px;
+  /* Fallback: scrollable if viewport is too short */
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .dropdown-menu li {
   margin: 0;
+  /* Prevent items from being split across columns */
+  break-inside: avoid;
 }
 
 .dropdown-menu a {
@@ -1007,6 +1017,10 @@ footer {
     border-radius: 0;
     box-shadow: none;
     padding: 0;
+    /* Reset multi-column for mobile - single column in slide-out menu */
+    columns: 1;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .dropdown-menu.open {

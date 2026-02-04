@@ -146,6 +146,43 @@
   color: inherit;
 }
 
+/* Reset .stats-table styles from site - reports define their own table styling
+   Using !important because site styles have high specificity and load first */
+[class^='report-'] .stats-table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+[class^='report-'] .stats-table thead th,
+[class^='report-'] .stats-table thead th:first-child {
+  background: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  position: static !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[class^='report-'] .stats-table tbody tr {
+  background: none !important;
+}
+
+[class^='report-'] .stats-table tbody tr:nth-child(even),
+[class^='report-'] .stats-table tbody tr:nth-child(even) td,
+[class^='report-'] .stats-table tbody tr:nth-child(odd) td {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+[class^='report-'] .stats-table td:first-child,
+[class^='report-'] .stats-table th:first-child,
+[class^='report-'] .stats-table tbody tr:nth-child(odd) td:first-child,
+[class^='report-'] .stats-table tbody tr:nth-child(even) td:first-child {
+  position: static !important;
+  background: none !important;
+  background-color: transparent !important;
+}
+
 /* ==========================================================================
    Dropdown Navigation (Reports menu)
    ========================================================================== */
@@ -169,8 +206,9 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 220px;
+  /* Align to right edge of trigger to avoid overflowing viewport */
+  left: auto;
+  right: 0;
   background: #2c3e50;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
@@ -178,10 +216,19 @@
   z-index: 200;
   list-style: none;
   margin: 0;
+  /* Multi-column layout for long menus - splits items into 2 columns */
+  columns: 2;
+  column-gap: 0;
+  min-width: 440px;
+  /* Fallback: scrollable if viewport is too short */
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .dropdown-menu li {
   margin: 0;
+  /* Prevent items from being split across columns */
+  break-inside: avoid;
 }
 
 .dropdown-menu a {
@@ -241,6 +288,10 @@
     border-radius: 0;
     box-shadow: none;
     padding: 0;
+    /* Reset multi-column for mobile - single column in slide-out menu */
+    columns: 1;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .dropdown-menu.open {

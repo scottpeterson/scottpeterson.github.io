@@ -34,7 +34,9 @@
       "Bash(wc:*)",
       "Bash(npm run wrap-reports:*)",
       "Bash(pkill:*)",
-      "Bash(npm run serve:*)"
+      "Bash(npm run serve:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
