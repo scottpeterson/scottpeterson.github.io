@@ -524,7 +524,7 @@
       </div>
 
       <p class="footer">
-        Generated February 05, 2026 at 08:48 AM<br />
+        Generated February 05, 2026 at 09:02 AM<br />
         <a href="https://thed3statlab.com">TheD3StatLab</a>
       </p>
     </div>
@@ -533,266 +533,313 @@
       const ctx = document.getElementById('tournChart').getContext('2d');
 
       const data = {
-          labels: ["01-25", "01-26", "01-27", "01-28", "01-29", "01-30", "01-31", "02-01", "02-02", "02-03", "02-04"],
-          datasets: [
-              {
-                  label: 'Gettysburg',
-                  data: [18.6, 17.2, 16.9, 16.8, 54.5, 51.1, 48.7, 47.3, 45.6, 47.6, 45.7],
-                  borderColor: '#00d4ff',
-                  backgroundColor: '#00d4ff20',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Colorado College',
-                  data: [56.1, 56.1, 56.8, 56.5, 54.1, 53.8, 52.8, 71.2, 75.7, 76.1, 78.5],
-                  borderColor: '#7c3aed',
-                  backgroundColor: '#7c3aed20',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Guilford',
-                  data: [10.2, 10.3, 10.2, 9.9, 15.7, 16.7, 32.2, 32.3, 30.3, 30.5, 31.2],
-                  borderColor: '#10b981',
-                  backgroundColor: '#10b98120',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Chicago',
-                  data: [81.3, 90.2, 90.7, 91.3, 91.3, 91.8, 94.1, 93.6, 99.1, 99.0, 99.0],
-                  borderColor: '#f59e0b',
-                  backgroundColor: '#f59e0b20',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'St. Mary's (MN)',
-                  data: [51.7, 51.9, 52.5, 52.1, 47.6, 46.2, 47.3, 66.0, 66.6, 65.9, 67.2],
-                  borderColor: '#ef4444',
-                  backgroundColor: '#ef444420',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Cal Lutheran',
-                  data: [38.6, 39.6, 38.1, 36.4, 40.7, 41.2, 42.6, 54.1, 53.3, 52.8, 53.2],
-                  borderColor: '#ec4899',
-                  backgroundColor: '#ec489920',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Bridgewater (VA)',
-                  data: [77.6, 73.5, 72.6, 73.2, 74.8, 92.5, 93.2, 92.1, 91.0, 91.0, 91.0],
-                  borderColor: '#8b5cf6',
-                  backgroundColor: '#8b5cf620',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Trinity (TX)',
-                  data: [30.6, 30.4, 31.9, 30.8, 30.9, 31.3, 33.1, 32.0, 42.1, 43.3, 43.4],
-                  borderColor: '#06b6d4',
-                  backgroundColor: '#06b6d420',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Bridgewater St.',
-                  data: [50.4, 49.5, 51.0, 50.0, 55.4, 55.5, 56.4, 57.3, 62.6, 61.9, 63.1],
-                  borderColor: '#84cc16',
-                  backgroundColor: '#84cc1620',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Arcadia',
-                  data: [13.0, 13.7, 13.8, 13.2, 17.9, 18.9, 19.4, 23.2, 24.0, 23.9, 23.4],
-                  borderColor: '#f97316',
-                  backgroundColor: '#f9731620',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Washington & Jefferson',
-                  data: [47.5, 47.9, 48.0, 47.9, 56.7, 56.6, 57.5, 58.1, 58.5, 57.7, 57.4],
-                  borderColor: '#6366f1',
-                  backgroundColor: '#6366f120',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Houghton',
-                  data: [10.2, 10.5, 10.8, 13.6, 12.9, 13.4, 13.0, 18.2, 18.7, 18.4, 19.5],
-                  borderColor: '#14b8a6',
-                  backgroundColor: '#14b8a620',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Johnson & Wales (RI)',
-                  data: [53.0, 52.8, 52.7, 52.3, 56.7, 57.5, 58.4, 60.6, 61.0, 60.4, 61.7],
-                  borderColor: '#eab308',
-                  backgroundColor: '#eab30820',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'UW-Platteville',
-                  data: [87.2, 84.9, 85.5, 86.1, 95.6, 95.4, 96.0, 95.0, 95.2, 95.1, 95.0],
-                  borderColor: '#e11d48',
-                  backgroundColor: '#e11d4820',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              },
-              {
-                  label: 'Randolph-Macon',
-                  data: [24.7, 24.6, 23.1, 24.0, 27.3, 26.8, 26.2, 36.5, 32.1, 32.4, 32.2],
-                  borderColor: '#22c55e',
-                  backgroundColor: '#22c55e20',
-                  borderWidth: 2.5,
-                  tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6,
-                  fill: false
-              }
-          ]
+        labels: [
+          '01-25',
+          '01-26',
+          '01-27',
+          '01-28',
+          '01-29',
+          '01-30',
+          '01-31',
+          '02-01',
+          '02-02',
+          '02-03',
+          '02-04',
+        ],
+        datasets: [
+          {
+            label: 'Gettysburg',
+            data: [
+              18.6, 17.2, 16.9, 16.8, 54.5, 51.1, 48.7, 47.3, 45.6, 47.6, 45.7,
+            ],
+            borderColor: '#00d4ff',
+            backgroundColor: '#00d4ff20',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Colorado College',
+            data: [
+              56.1, 56.1, 56.8, 56.5, 54.1, 53.8, 52.8, 71.2, 75.7, 76.1, 78.5,
+            ],
+            borderColor: '#7c3aed',
+            backgroundColor: '#7c3aed20',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Guilford',
+            data: [
+              10.2, 10.3, 10.2, 9.9, 15.7, 16.7, 32.2, 32.3, 30.3, 30.5, 31.2,
+            ],
+            borderColor: '#10b981',
+            backgroundColor: '#10b98120',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Chicago',
+            data: [
+              81.3, 90.2, 90.7, 91.3, 91.3, 91.8, 94.1, 93.6, 99.1, 99.0, 99.0,
+            ],
+            borderColor: '#f59e0b',
+            backgroundColor: '#f59e0b20',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: "St. Mary's (MN)",
+            data: [
+              51.7, 51.9, 52.5, 52.1, 47.6, 46.2, 47.3, 66.0, 66.6, 65.9, 67.2,
+            ],
+            borderColor: '#ef4444',
+            backgroundColor: '#ef444420',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Cal Lutheran',
+            data: [
+              38.6, 39.6, 38.1, 36.4, 40.7, 41.2, 42.6, 54.1, 53.3, 52.8, 53.2,
+            ],
+            borderColor: '#ec4899',
+            backgroundColor: '#ec489920',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Bridgewater (VA)',
+            data: [
+              77.6, 73.5, 72.6, 73.2, 74.8, 92.5, 93.2, 92.1, 91.0, 91.0, 91.0,
+            ],
+            borderColor: '#8b5cf6',
+            backgroundColor: '#8b5cf620',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Trinity (TX)',
+            data: [
+              30.6, 30.4, 31.9, 30.8, 30.9, 31.3, 33.1, 32.0, 42.1, 43.3, 43.4,
+            ],
+            borderColor: '#06b6d4',
+            backgroundColor: '#06b6d420',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Bridgewater St.',
+            data: [
+              50.4, 49.5, 51.0, 50.0, 55.4, 55.5, 56.4, 57.3, 62.6, 61.9, 63.1,
+            ],
+            borderColor: '#84cc16',
+            backgroundColor: '#84cc1620',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Arcadia',
+            data: [
+              13.0, 13.7, 13.8, 13.2, 17.9, 18.9, 19.4, 23.2, 24.0, 23.9, 23.4,
+            ],
+            borderColor: '#f97316',
+            backgroundColor: '#f9731620',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Washington & Jefferson',
+            data: [
+              47.5, 47.9, 48.0, 47.9, 56.7, 56.6, 57.5, 58.1, 58.5, 57.7, 57.4,
+            ],
+            borderColor: '#6366f1',
+            backgroundColor: '#6366f120',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Houghton',
+            data: [
+              10.2, 10.5, 10.8, 13.6, 12.9, 13.4, 13.0, 18.2, 18.7, 18.4, 19.5,
+            ],
+            borderColor: '#14b8a6',
+            backgroundColor: '#14b8a620',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Johnson & Wales (RI)',
+            data: [
+              53.0, 52.8, 52.7, 52.3, 56.7, 57.5, 58.4, 60.6, 61.0, 60.4, 61.7,
+            ],
+            borderColor: '#eab308',
+            backgroundColor: '#eab30820',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'UW-Platteville',
+            data: [
+              87.2, 84.9, 85.5, 86.1, 95.6, 95.4, 96.0, 95.0, 95.2, 95.1, 95.0,
+            ],
+            borderColor: '#e11d48',
+            backgroundColor: '#e11d4820',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+          {
+            label: 'Randolph-Macon',
+            data: [
+              24.7, 24.6, 23.1, 24.0, 27.3, 26.8, 26.2, 36.5, 32.1, 32.4, 32.2,
+            ],
+            borderColor: '#22c55e',
+            backgroundColor: '#22c55e20',
+            borderWidth: 2.5,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: false,
+          },
+        ],
       };
 
       new Chart(ctx, {
-          type: 'line',
-          data: data,
-          options: {
-              responsive: true,
-              maintainAspectRatio: true,
-              aspectRatio: 2.5,
-              interaction: {
-                  intersect: false,
-                  mode: 'index'
+        type: 'line',
+        data: data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          aspectRatio: 2.5,
+          interaction: {
+            intersect: false,
+            mode: 'index',
+          },
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: {
+                color: '#e0e0e0',
+                padding: 12,
+                usePointStyle: true,
+                pointStyle: 'circle',
+                font: {
+                  size: 11,
+                },
               },
-              plugins: {
-                  legend: {
-                      position: 'right',
-                      labels: {
-                          color: '#e0e0e0',
-                          padding: 12,
-                          usePointStyle: true,
-                          pointStyle: 'circle',
-                          font: {
-                              size: 11
-                          }
-                      }
-                  },
-                  title: {
-                      display: true,
-                      text: 'Tournament Probability Over Time',
-                      color: '#fff',
-                      font: {
-                          size: 18,
-                          weight: '600'
-                      },
-                      padding: {
-                          bottom: 20
-                      }
-                  },
-                  tooltip: {
-                      backgroundColor: 'rgba(26, 26, 46, 0.95)',
-                      titleColor: '#fff',
-                      bodyColor: '#e0e0e0',
-                      borderColor: 'rgba(255, 255, 255, 0.1)',
-                      borderWidth: 1,
-                      padding: 12,
-                      callbacks: {
-                          label: function(context) {
-                              return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
-                          }
-                      }
-                  }
+            },
+            title: {
+              display: true,
+              text: 'Tournament Probability Over Time',
+              color: '#fff',
+              font: {
+                size: 18,
+                weight: '600',
               },
-              scales: {
-                  y: {
-                      beginAtZero: true,
-                      max: 100,
-                      title: {
-                          display: true,
-                          text: 'Tournament %',
-                          color: '#8892b0',
-                          font: {
-                              size: 12
-                          }
-                      },
-                      ticks: {
-                          color: '#8892b0',
-                          callback: function(value) {
-                              return value + '%';
-                          }
-                      },
-                      grid: {
-                          color: 'rgba(255, 255, 255, 0.05)'
-                      }
-                  },
-                  x: {
-                      title: {
-                          display: true,
-                          text: 'Date (Jan 2026 - Feb 2026)',
-                          color: '#8892b0',
-                          font: {
-                              size: 12
-                          }
-                      },
-                      ticks: {
-                          color: '#8892b0'
-                      },
-                      grid: {
-                          color: 'rgba(255, 255, 255, 0.05)'
-                      }
-                  }
-              }
-          }
+              padding: {
+                bottom: 20,
+              },
+            },
+            tooltip: {
+              backgroundColor: 'rgba(26, 26, 46, 0.95)',
+              titleColor: '#fff',
+              bodyColor: '#e0e0e0',
+              borderColor: 'rgba(255, 255, 255, 0.1)',
+              borderWidth: 1,
+              padding: 12,
+              callbacks: {
+                label: function (context) {
+                  return (
+                    context.dataset.label +
+                    ': ' +
+                    context.parsed.y.toFixed(1) +
+                    '%'
+                  );
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Tournament %',
+                color: '#8892b0',
+                font: {
+                  size: 12,
+                },
+              },
+              ticks: {
+                color: '#8892b0',
+                callback: function (value) {
+                  return value + '%';
+                },
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.05)',
+              },
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Date (Jan 2026 - Feb 2026)',
+                color: '#8892b0',
+                font: {
+                  size: 12,
+                },
+              },
+              ticks: {
+                color: '#8892b0',
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.05)',
+              },
+            },
+          },
+        },
       });
     </script>
   </body>
