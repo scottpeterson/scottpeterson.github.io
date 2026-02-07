@@ -1,0 +1,1784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bid Thieves Report - TheD3StatLab - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-bid_thieves_report * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .report-bid_thieves_report {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .report-bid_thieves_report .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .report-bid_thieves_report h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #ef4444, #f97316);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 4px;
+      }
+      .report-bid_thieves_report .subtitle {
+        color: #8892b0;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      .report-bid_thieves_report .threshold-note {
+        color: #00d4ff;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        padding: 8px 14px;
+        background: rgba(0, 212, 255, 0.1);
+        border-left: 3px solid #00d4ff;
+        border-radius: 0 6px 6px 0;
+        display: inline-block;
+      }
+      .report-bid_thieves_report .explainer {
+        color: #f97316;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+      }
+      .report-bid_thieves_report /* Summary Bar */
+        .summary-bar {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+      .report-bid_thieves_report .summary-box {
+        flex: 1;
+        min-width: 200px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 16px 20px;
+        text-align: center;
+      }
+      .report-bid_thieves_report .summary-value {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+      }
+      .report-bid_thieves_report .summary-label {
+        font-size: 0.8rem;
+        color: #8892b0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 2px;
+      }
+      .report-bid_thieves_report .summary-detail {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: 4px;
+      }
+      .report-bid_thieves_report /* Card Grid */
+        .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+        gap: 16px;
+      }
+      .report-bid_thieves_report /* Conference Card */
+        .conf-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 18px 20px;
+      }
+      .report-bid_thieves_report .card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .report-bid_thieves_report .conf-name {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .report-bid_thieves_report .risk-pct {
+        margin-left: auto;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #f97316;
+      }
+      .report-bid_thieves_report /* Status Dots */
+        .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+      .report-bid_thieves_report .status-not-started {
+        background: #64748b;
+      }
+      .report-bid_thieves_report .status-in-progress {
+        background: #eab308;
+        box-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
+      }
+      .report-bid_thieves_report .status-no-theft {
+        background: #10b981;
+      }
+      .report-bid_thieves_report .status-bid-stolen {
+        background: #ef4444;
+        box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+      }
+      .report-bid_thieves_report /* Section Labels */
+        .section-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 6px;
+        margin-top: 4px;
+        padding: 2px 0;
+      }
+      .report-bid_thieves_report .section-thieves {
+        color: #ef4444;
+      }
+      .report-bid_thieves_report .section-protected {
+        color: #00d4ff;
+        margin-top: 12px;
+      }
+      .report-bid_thieves_report /* Thief Row */
+        .thief-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        margin-bottom: 2px;
+      }
+      .report-bid_thieves_report .thief-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #e2e8f0;
+      }
+      .report-bid_thieves_report .thief-stat {
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: #f97316;
+        margin-left: auto;
+      }
+      .report-bid_thieves_report .thief-stat-dim {
+        font-size: 0.75rem;
+        color: #64748b;
+      }
+      .report-bid_thieves_report .eliminated-badge {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: #fff;
+        background: rgba(239, 68, 68, 0.6);
+        padding: 1px 6px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .report-bid_thieves_report /* Protected Row */
+        .protected-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        margin-bottom: 4px;
+      }
+      .report-bid_thieves_report .protected-name {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #e2e8f0;
+      }
+      .report-bid_thieves_report .protected-stat {
+        font-size: 0.72rem;
+        color: #00d4ff;
+        margin-left: 4px;
+      }
+      .report-bid_thieves_report /* Progress */
+        .progress-area {
+        margin-top: 14px;
+      }
+      .report-bid_thieves_report .progress-track {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .report-bid_thieves_report .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981, #00d4ff);
+        border-radius: 2px;
+      }
+      .report-bid_thieves_report .progress-label {
+        font-size: 0.72rem;
+        color: #64748b;
+        margin-top: 4px;
+      }
+      .report-bid_thieves_report /* Legend */
+        .legend {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+      }
+      .report-bid_thieves_report .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #8892b0;
+      }
+      .report-bid_thieves_report .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+      .report-bid_thieves_report .footer a {
+        color: #64ffda;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        .report-bid_thieves_report .card-grid {
+          grid-template-columns: 1fr;
+        }
+        .report-bid_thieves_report h1 {
+          font-size: 1.5rem;
+        }
+        .report-bid_thieves_report .summary-bar {
+          flex-direction: column;
+        }
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bid_thieves_report.html" class="active"
+                  >Bid Thieves Report - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-05.html"
+                  >Team Simulation Stats Comparison | Feb 5, 2026 vs Feb 4,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-06.html"
+                  >Team Simulation Stats Comparison | Feb 6, 2026 vs Feb 5,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-bid_thieves_report">
+        <div class="container">
+          <h1>Bid Thieves Report</h1>
+          <p class="subtitle">
+            Conference tournaments that could cost the at-large pool a bid
+          </p>
+          <div class="threshold-note">
+            Cutline: Susquehanna (ALWYNI 37.1%) &mdash; 21st at-large
+          </div>
+          <p class="explainer">
+            Bid thief % = simulations where the team wins the conference
+            auto-bid AND that win costs the at-large pool a bid.
+          </p>
+
+          <div class="summary-bar">
+            <div class="summary-box">
+              <div class="summary-value">1</div>
+              <div class="summary-label">Median Bids Stolen Per Sim</div>
+            </div>
+            <div class="summary-box">
+              <div class="summary-value">0&ndash;5</div>
+              <div class="summary-label">Min&ndash;Max Bids Stolen</div>
+            </div>
+            <div class="summary-box">
+              <div class="summary-value">21.9%</div>
+              <div class="summary-label">Sims With Zero Theft</div>
+            </div>
+            <div class="summary-box">
+              <div class="summary-value">
+                20 <span style="font-size: 1rem; color: #8892b0">of 42</span>
+              </div>
+              <div class="summary-label">At-Risk Conferences</div>
+            </div>
+            <div class="summary-box">
+              <div class="summary-value">
+                0 <span style="font-size: 1rem; color: #8892b0">/ 20</span>
+              </div>
+              <div class="summary-label">Tournaments Resolved</div>
+            </div>
+          </div>
+
+          <div class="legend">
+            <div class="legend-item">
+              <span class="status-dot status-not-started"></span> Not Started
+            </div>
+            <div class="legend-item">
+              <span class="status-dot status-in-progress"></span> In Progress
+            </div>
+            <div class="legend-item">
+              <span class="status-dot status-no-theft"></span> Complete — No
+              Theft
+            </div>
+            <div class="legend-item">
+              <span class="status-dot status-bid-stolen"></span> Complete — Bid
+              Stolen
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NJAC</span>
+                <span class="risk-pct">Bid Theft Risk: 25.6%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">TCNJ</span>
+
+                <span class="thief-stat">24.2%</span>
+                <span class="thief-stat-dim">A%: 31.6%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Montclair St.</span>
+
+                <span class="thief-stat">0.9%</span>
+                <span class="thief-stat-dim">A%: 2.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Rowan</span>
+
+                <span class="thief-stat">0.4%</span>
+                <span class="thief-stat-dim">A%: 1.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Stockton</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Rutgers-Camden</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">William Paterson</span>
+                <span class="protected-stat">ALWYNI: 92.7%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NACC</span>
+                <span class="risk-pct">Bid Theft Risk: 20.5%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Aurora</span>
+
+                <span class="thief-stat">16.3%</span>
+                <span class="thief-stat-dim">A%: 28.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">St. Norbert</span>
+
+                <span class="thief-stat">3.6%</span>
+                <span class="thief-stat-dim">A%: 8.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">MSOE</span>
+
+                <span class="thief-stat">0.6%</span>
+                <span class="thief-stat-dim">A%: 4.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Benedictine</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Wisconsin Lutheran</span>
+                <span class="protected-stat">ALWYNI: 68.3%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/7 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">SCIAC</span>
+                <span class="risk-pct">Bid Theft Risk: 19.7%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Redlands</span>
+
+                <span class="thief-stat">16.3%</span>
+                <span class="thief-stat-dim">A%: 52.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Claremont-Mudd-Scripps</span>
+
+                <span class="thief-stat">2.6%</span>
+                <span class="thief-stat-dim">A%: 17.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Pomona-Pitzer</span>
+
+                <span class="thief-stat">0.7%</span>
+                <span class="thief-stat-dim">A%: 2.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Chapman</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Occidental</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Cal Lutheran</span>
+                <span class="protected-stat">ALWYNI: 60.0%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/4 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">ASC</span>
+                <span class="risk-pct">Bid Theft Risk: 12.4%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">East Texas Baptist</span>
+
+                <span class="thief-stat">12.3%</span>
+                <span class="thief-stat-dim">A%: 27.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Mary Hardin-Baylor</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Howard Payne</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Hardin-Simmons</span>
+                <span class="protected-stat">ALWYNI: 47.5%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/3 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NWC</span>
+                <span class="risk-pct">Bid Theft Risk: 10.0%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Puget Sound</span>
+
+                <span class="thief-stat">6.2%</span>
+                <span class="thief-stat-dim">A%: 20.6%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Whitman</span>
+
+                <span class="thief-stat">3.8%</span>
+                <span class="thief-stat-dim">A%: 12.9%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">George Fox</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 5.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Linfield</span>
+                <span class="protected-stat">ALWYNI: 37.1%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/3 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">LEC</span>
+                <span class="risk-pct">Bid Theft Risk: 8.5%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Rhode Island College</span>
+
+                <span class="thief-stat">8.2%</span>
+                <span class="thief-stat-dim">A%: 16.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Keene St.</span>
+
+                <span class="thief-stat">0.3%</span>
+                <span class="thief-stat-dim">A%: 0.9%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Southern Maine</span>
+                <span class="protected-stat">ALWYNI: 49.9%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">MWC</span>
+                <span class="risk-pct">Bid Theft Risk: 4.7%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Lawrence</span>
+
+                <span class="thief-stat">3.8%</span>
+                <span class="thief-stat-dim">A%: 4.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Knox</span>
+
+                <span class="thief-stat">0.9%</span>
+                <span class="thief-stat-dim">A%: 1.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Ripon</span>
+                <span class="protected-stat">ALWYNI: 94.8%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/3 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">OAC</span>
+                <span class="risk-pct">Bid Theft Risk: 2.7%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Mt. Union</span>
+
+                <span class="thief-stat">2.4%</span>
+                <span class="thief-stat-dim">A%: 3.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Otterbein</span>
+
+                <span class="thief-stat">0.2%</span>
+                <span class="thief-stat-dim">A%: 31.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 61.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Marietta</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Capital</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Ohio Northern</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Baldwin Wallace</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Otterbein</span>
+                <span class="protected-stat">ALWYNI: 61.2%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">C2C</span>
+                <span class="risk-pct">Bid Theft Risk: 2.7%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Salisbury</span>
+
+                <span class="thief-stat">1.4%</span>
+                <span class="thief-stat-dim">A%: 4.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Mary Washington</span>
+
+                <span class="thief-stat">0.7%</span>
+                <span class="thief-stat-dim">A%: 2.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">UC Santa Cruz</span>
+
+                <span class="thief-stat">0.6%</span>
+                <span class="thief-stat-dim">A%: 1.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Christopher Newport</span>
+                <span class="protected-stat">ALWYNI: 62.7%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/4 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NESCAC</span>
+                <span class="risk-pct">Bid Theft Risk: 2.3%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Amherst</span>
+
+                <span class="thief-stat">1.1%</span>
+                <span class="thief-stat-dim">A%: 3.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Colby</span>
+
+                <span class="thief-stat">0.7%</span>
+                <span class="thief-stat-dim">A%: 1.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Trinity (CT)</span>
+
+                <span class="thief-stat">0.3%</span>
+                <span class="thief-stat-dim">A%: 0.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Tufts</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Hamilton</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Connecticut College</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Bowdoin</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Bates</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/7 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">SUNYAC</span>
+                <span class="risk-pct">Bid Theft Risk: 2.2%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">SUNY Canton</span>
+
+                <span class="thief-stat">1.7%</span>
+                <span class="thief-stat-dim">A%: 2.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Oswego St.</span>
+
+                <span class="thief-stat">0.3%</span>
+                <span class="thief-stat-dim">A%: 0.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Cortland</span>
+
+                <span class="thief-stat">0.2%</span>
+                <span class="thief-stat-dim">A%: 63.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 86.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">SUNY New Paltz</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 33.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 94.9%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Plattsburgh St.</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">SUNY Oneonta</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">SUNY New Paltz</span>
+                <span class="protected-stat">ALWYNI: 94.9%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Cortland</span>
+                <span class="protected-stat">ALWYNI: 86.2%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">MIAC</span>
+                <span class="risk-pct">Bid Theft Risk: 2.2%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Hamline</span>
+
+                <span class="thief-stat">1.4%</span>
+                <span class="thief-stat-dim">A%: 2.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.5%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Gustavus Adolphus</span>
+
+                <span class="thief-stat">0.3%</span>
+                <span class="thief-stat-dim">A%: 7.6%</span>
+                <span class="thief-stat-dim">ALWYNI: 30.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">St. Benedict</span>
+
+                <span class="thief-stat">0.3%</span>
+                <span class="thief-stat-dim">A%: 0.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">St. Scholastica</span>
+
+                <span class="thief-stat">0.2%</span>
+                <span class="thief-stat-dim">A%: 0.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.3%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">St. Mary's (MN)</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 21.5%</span>
+                <span class="thief-stat-dim">ALWYNI: 67.9%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Concordia Moorhead</span>
+                <span class="protected-stat">ALWYNI: 99.7%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Bethel</span>
+                <span class="protected-stat">ALWYNI: 99.3%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">St. Mary's (MN)</span>
+                <span class="protected-stat">ALWYNI: 67.9%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">MIAA</span>
+                <span class="risk-pct">Bid Theft Risk: 2.1%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Calvin</span>
+
+                <span class="thief-stat">2.1%</span>
+                <span class="thief-stat-dim">A%: 3.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Albion</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Hope</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Trine</span>
+                <span class="protected-stat">ALWYNI: 99.3%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">CCIW</span>
+                <span class="risk-pct">Bid Theft Risk: 1.9%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">North Central (IL)</span>
+
+                <span class="thief-stat">0.7%</span>
+                <span class="thief-stat-dim">A%: 1.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Elmhurst</span>
+
+                <span class="thief-stat">0.6%</span>
+                <span class="thief-stat-dim">A%: 0.9%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Carthage</span>
+
+                <span class="thief-stat">0.4%</span>
+                <span class="thief-stat-dim">A%: 0.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Augustana</span>
+
+                <span class="thief-stat">0.2%</span>
+                <span class="thief-stat-dim">A%: 0.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Carroll</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Illinois Wesleyan</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">CC</span>
+                <span class="risk-pct">Bid Theft Risk: 1.5%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Gettysburg</span>
+
+                <span class="thief-stat">0.9%</span>
+                <span class="thief-stat-dim">A%: 10.8%</span>
+                <span class="thief-stat-dim">ALWYNI: 32.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">McDaniel</span>
+
+                <span class="thief-stat">0.5%</span>
+                <span class="thief-stat-dim">A%: 12.6%</span>
+                <span class="thief-stat-dim">ALWYNI: 15.3%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Dickinson</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.1%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Ursinus</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Johns Hopkins</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NEWMAC</span>
+                <span class="risk-pct">Bid Theft Risk: 1.5%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Clark</span>
+
+                <span class="thief-stat">0.5%</span>
+                <span class="thief-stat-dim">A%: 0.9%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Babson</span>
+
+                <span class="thief-stat">0.5%</span>
+                <span class="thief-stat-dim">A%: 0.9%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Springfield</span>
+
+                <span class="thief-stat">0.2%</span>
+                <span class="thief-stat-dim">A%: 1.4%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">WPI</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">MIT</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Coast Guard</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Emerson</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Smith</span>
+                <span class="protected-stat">ALWYNI: 99.7%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/7 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">NCAC</span>
+                <span class="risk-pct">Bid Theft Risk: 1.0%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">DePauw</span>
+
+                <span class="thief-stat">1.0%</span>
+                <span class="thief-stat-dim">A%: 4.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 4.6%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Wittenberg</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.0%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Denison</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">John Carroll</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Ohio Wesleyan</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">ODAC</span>
+                <span class="risk-pct">Bid Theft Risk: 0.3%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Randolph-Macon</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 4.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 54.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Virginia Wesleyan</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Hollins</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Guilford</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 1.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 40.7%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Lynchburg</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Washington & Lee</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Shenandoah</span>
+                <span class="protected-stat">ALWYNI: 90.9%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Bridgewater (VA)</span>
+                <span class="protected-stat">ALWYNI: 75.4%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Randolph-Macon</span>
+                <span class="protected-stat">ALWYNI: 54.2%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Guilford</span>
+                <span class="protected-stat">ALWYNI: 40.7%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/7 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">LAND</span>
+                <span class="risk-pct">Bid Theft Risk: 0.1%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">Catholic</span>
+
+                <span class="thief-stat">0.1%</span>
+                <span class="thief-stat-dim">A%: 0.7%</span>
+                <span class="thief-stat-dim">ALWYNI: 13.4%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">Elizabethtown</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.1%</span>
+                <span class="thief-stat-dim">ALWYNI: 0.0%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Scranton</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">Susquehanna</span>
+                <span class="protected-stat">ALWYNI: 37.1%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+
+            <div class="conf-card">
+              <div class="card-header">
+                <span
+                  class="status-dot status-not-started"
+                  title="Not Started"
+                ></span>
+                <span class="conf-name">WIAC</span>
+                <span class="risk-pct">Bid Theft Risk: 0.0%</span>
+              </div>
+
+              <div class="section-label section-thieves">POTENTIAL THIEVES</div>
+
+              <div class="thief-row">
+                <span class="thief-name">UW-River Falls</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.2%</span>
+                <span class="thief-stat-dim">ALWYNI: 25.2%</span>
+              </div>
+
+              <div class="thief-row">
+                <span class="thief-name">UW-Stevens Point</span>
+
+                <span class="thief-stat">0.0%</span>
+                <span class="thief-stat-dim">A%: 0.3%</span>
+                <span class="thief-stat-dim">ALWYNI: 9.4%</span>
+              </div>
+
+              <div class="section-label section-protected">
+                PROTECTED AT-LARGE
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">UW-Oshkosh</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">UW-Whitewater</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">UW-Platteville</span>
+                <span class="protected-stat">ALWYNI: 100.0%</span>
+              </div>
+
+              <div class="protected-row">
+                <span class="protected-name">UW-La Crosse</span>
+                <span class="protected-stat">ALWYNI: 98.5%</span>
+              </div>
+
+              <div class="progress-area">
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-label">0/5 games played</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="footer">
+            Generated February 7, 2026 at 11:02 AM<br />
+            <a href="https://thed3statlab.com">TheD3StatLab</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>
