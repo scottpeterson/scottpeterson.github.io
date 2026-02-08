@@ -7,7 +7,7 @@
     "Loss": 13,
     "Win%": "85.2%",
     "Wins": 147.27,
-    "STAT": 4.98
+    "STAT": 4.99
   },
   {
     "Conf": "UAA",
@@ -130,24 +130,24 @@
     "STAT": 1.43
   },
   {
-    "Conf": "CC",
-    "Rank": 14,
-    "Region": 5,
-    "Win": 67,
-    "Loss": 39,
-    "Win%": "63.2%",
-    "Wins": 249.55,
-    "STAT": 0.96
-  },
-  {
     "Conf": "SAA",
-    "Rank": 15,
+    "Rank": 14,
     "Region": 6,
     "Win": 55,
     "Loss": 30,
     "Win%": "64.7%",
     "Wins": 253.71,
     "STAT": 0.95
+  },
+  {
+    "Conf": "CC",
+    "Rank": 15,
+    "Region": 5,
+    "Win": 67,
+    "Loss": 40,
+    "Win%": "62.6%",
+    "Wins": 249.55,
+    "STAT": 0.92
   },
   {
     "Conf": "LAND",
@@ -193,11 +193,11 @@
     "Conf": "C2C",
     "Rank": 20,
     "Region": 6,
-    "Win": 41,
+    "Win": 42,
     "Loss": 43,
-    "Win%": "48.8%",
-    "Wins": 234.61,
-    "STAT": 0.41
+    "Win%": "49.4%",
+    "Wins": 234.9,
+    "STAT": 0.44
   },
   {
     "Conf": "MACF",
@@ -357,7 +357,7 @@
     "Loss": 74,
     "Win%": "31.5%",
     "Wins": 315.71,
-    "STAT": "(2.77)"
+    "STAT": "(2.78)"
   },
   {
     "Conf": "AMCC",
