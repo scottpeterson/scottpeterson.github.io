@@ -1,0 +1,51 @@
+<section class="table-section">
+  <h2>{{SECTION_TITLE}}</h2>
+
+  <div class="distances-calculator">
+    <div class="distances-form">
+      <div class="form-group">
+        <label for="school-a">School 1</label>
+        <select id="school-a" class="form-select" disabled>
+          <option value="">Loading schools...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="school-b">School 2</label>
+        <select id="school-b" class="form-select" disabled>
+          <option value="">Loading schools...</option>
+        </select>
+      </div>
+
+      <button id="calculate-btn" class="form-submit" disabled>
+        Calculate Distance
+      </button>
+    </div>
+
+    <div id="distance-result" class="distance-result" style="display: none">
+      <div class="distance-miles">
+        <span id="distance-value">0</span>
+        <span class="distance-unit">miles</span>
+      </div>
+      <div class="distance-meta">
+        <span id="distance-schools"></span>
+        <span id="distance-source"></span>
+      </div>
+    </div>
+
+    <div id="distance-error" class="distance-error" style="display: none">
+      <p id="distance-error-msg"></p>
+      <button
+        id="request-distance-btn"
+        class="form-submit distance-request-btn"
+      >
+        Request This Distance
+      </button>
+      <p
+        id="request-status"
+        class="distance-request-status"
+        style="display: none"
+      ></p>
+    </div>
+  </div>
+</section>

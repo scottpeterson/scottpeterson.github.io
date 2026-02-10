@@ -1129,6 +1129,125 @@ footer {
   }
 }
 
+/* Distances Calculator Styles */
+.distances-calculator {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.distances-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Oversized click targets for the school dropdowns */
+.distances-form .form-group label {
+  font-size: 1rem;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.distances-form .form-select {
+  padding: 16px 44px 16px 18px;
+  font-size: 1.1rem;
+  min-height: 56px;
+  cursor: pointer;
+}
+
+.distances-form .form-select:hover {
+  border-color: #3498db;
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
+    0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.distance-result {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  border: 1px solid #e9ecef;
+}
+
+.distance-miles {
+  margin-bottom: 12px;
+}
+
+.distance-miles #distance-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.distance-miles .distance-unit {
+  font-size: 1.2rem;
+  color: #555;
+  margin-left: 6px;
+}
+
+.distance-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Color-coded result: green for ≤499 miles, red for ≥500 miles */
+.distance-result.distance-close {
+  background: linear-gradient(135deg, #eafaf1 0%, #d5f5e3 100%);
+  border-color: #27ae60;
+}
+
+.distance-result.distance-far {
+  background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
+  border-color: #e74c3c;
+}
+
+/* Light gray for no data found */
+.distance-error {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: #f2f3f4;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  color: #666;
+  text-align: center;
+}
+
+.distance-request-btn {
+  margin-top: 15px;
+  width: auto;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+}
+
+.distance-request-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.distance-request-success {
+  color: #27ae60;
+}
+
+.distance-request-fail {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .distance-miles #distance-value {
+    font-size: 2.4rem;
+  }
+
+  .distance-result {
+    padding: 20px;
+  }
+}
+
 /* Premium Page Styles */
 .premium-container {
   max-width: 1000px;

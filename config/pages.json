@@ -397,6 +397,15 @@
       "STAT": "Statistical performance indicator for the conference"
     }
   },
+  "distances": {
+    "title": "Distances",
+    "heading": "School Distance Calculator",
+    "description": "Calculate the driving distance between any two D3 Women's Basketball schools.",
+    "sectionTitle": "Distance Calculator",
+    "hasSearch": false,
+    "dataSource": null,
+    "isDistancesPage": true
+  },
   "contact": {
     "title": "Contact",
     "heading": "Get in Touch",

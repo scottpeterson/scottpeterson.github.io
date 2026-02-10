@@ -37,6 +37,52 @@ class TemplateEngine {
     return encoded.toString('base64');
   }
 
+  // Convert distances CSV to JSON for the data pipeline
+  // Reads data/calculated_distances.csv and produces data/distances.json with:
+  //   { teams: [...sorted unique names...], distances: { "SchoolA|SchoolB": { miles, source } } }
+  // Keys are alphabetically sorted so lookup is bidirectional without duplicates.
+  async convertDistancesCSV() {
+    const csvPath = 'data/calculated_distances.csv';
+    try {
+      await fs.access(csvPath);
+    } catch {
+      console.log('ℹ️  No distances CSV found, skipping conversion');
+      return;
+    }
+
+    const raw = await fs.readFile(csvPath, 'utf8');
+    const lines = raw.trim().split('\n');
+    // Skip header row
+    const teamSet = new Set();
+    const distances = {};
+
+    for (let i = 1; i < lines.length; i++) {
+      const cols = lines[i].split(',');
+      if (cols.length < 5) {
+        continue;
+      }
+
+      const schoolA = cols[0].trim();
+      const schoolB = cols[1].trim();
+      const miles = parseFloat(cols[2]);
+      const source = cols[4].trim();
+
+      teamSet.add(schoolA);
+      teamSet.add(schoolB);
+
+      // Alphabetically-sorted key ensures bidirectional lookup
+      const key = [schoolA, schoolB].sort().join('|');
+      distances[key] = { miles, source };
+    }
+
+    const teams = Array.from(teamSet).sort();
+    const json = JSON.stringify({ teams, distances });
+    await fs.writeFile('data/distances.json', json, 'utf8');
+    console.log(
+      `✓ Converted distances CSV to JSON (${teams.length} teams, ${Object.keys(distances).length} pairs)`
+    );
+  }
+
   // Encode all JSON files from /data/ to /data-encoded/
   async encodeDataFiles() {
     const dataDir = 'data';
@@ -101,6 +147,10 @@ class TemplateEngine {
       );
       this.templates.simplePage = await fs.readFile(
         'templates/simple-page.html',
+        'utf8'
+      );
+      this.templates.distancesPage = await fs.readFile(
+        'templates/distances-page.html',
         'utf8'
       );
       console.log('✓ Templates loaded');
@@ -172,6 +222,7 @@ class TemplateEngine {
         label: 'Composite Rankings',
         href: 'composite_rankings.html',
       },
+      { key: 'distances', label: 'Distances', href: 'distances.html' },
       {
         key: 'preseason_rankings',
         label: '25-26 Preseason Rankings',
@@ -545,6 +596,19 @@ ${cards}
       );
     }
 
+    // Handle IS_DISTANCES_PAGE conditional
+    if (data.isDistancesPage) {
+      result = result.replace(
+        /{{#IS_DISTANCES_PAGE}}([\s\S]*?){{\/IS_DISTANCES_PAGE}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#IS_DISTANCES_PAGE}}([\s\S]*?){{\/IS_DISTANCES_PAGE}}/g,
+        ''
+      );
+    }
+
     // Handle SHOW_BUY_BUTTON conditional
     if (data.showBuyButton) {
       result = result.replace(
@@ -653,6 +717,11 @@ ${cards}
       } else if (pageConfig.isSimplePage) {
         // Use simple page template for success/cancel pages
         tableContent = this.templates.simplePage;
+      } else if (pageConfig.isDistancesPage) {
+        // Use distances page template for the distance calculator
+        tableContent = this.renderTemplate(this.templates.distancesPage, {
+          sectionTitle: pageConfig.sectionTitle,
+        });
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {
@@ -692,6 +761,7 @@ ${cards}
         content: tableContent,
         legend: pageConfig.legend,
         isPremiumPage: pageConfig.isPremiumPage || false,
+        isDistancesPage: pageConfig.isDistancesPage || false,
         showBuyButton: showBuyButton,
         commandPaletteEnabled: commandPaletteEnabled,
         navItems: navItems,
@@ -739,6 +809,9 @@ ${cards}
       // Regenerate reports/index.html based on current reports directory
       // This ensures nav stays in sync when report files are added/removed
       await this.regenerateReportsIndex();
+
+      // Convert distances CSV to JSON before encoding
+      await this.convertDistancesCSV();
 
       // Encode data files for obfuscation
       await this.encodeDataFiles();

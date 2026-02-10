@@ -109,7 +109,10 @@
     {{#IS_PREMIUM_PAGE}}
     <!-- Premium page payment logic -->
     <script src="js/premium.js"></script>
-    {{/IS_PREMIUM_PAGE}} {{#COMMAND_PALETTE}}
+    {{/IS_PREMIUM_PAGE}} {{#IS_DISTANCES_PAGE}}
+    <!-- Distances page calculator logic -->
+    <script src="js/distances.js"></script>
+    {{/IS_DISTANCES_PAGE}} {{#COMMAND_PALETTE}}
     <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
     <script src="js/confetti.js"></script>
     <script src="js/team-summary.js"></script>
