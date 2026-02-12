@@ -4183,7 +4183,10 @@
     "Bethany (WV)|MSOE": { "miles": 559.2, "source": "osrm" },
     "Bethany (WV)|Mt. Union": { "miles": 71.3, "source": "osrm" },
     "Bethany (WV)|Nazareth": { "miles": 325, "source": "osrm" },
-    "Bethany (WV)|North Central (IL)": { "miles": 497.4, "source": "osrm" },
+    "Bethany (WV)|North Central (IL)": {
+      "miles": 502,
+      "source": "ncaa_verified"
+    },
     "Bethany (WV)|NYU": { "miles": 401.6, "source": "osrm" },
     "Bethany (WV)|Oglethorpe": { "miles": 668.6, "source": "osrm" },
     "Bethany (WV)|Ohio Wesleyan": { "miles": 155.6, "source": "osrm" },
@@ -8106,7 +8109,10 @@
       "miles": 1101,
       "source": "ncaa_verified"
     },
-    "Carnegie Mellon|Connecticut College": { "miles": 494.2, "source": "osrm" },
+    "Carnegie Mellon|Connecticut College": {
+      "miles": 497,
+      "source": "ncaa_verified"
+    },
     "Carnegie Mellon|Cortland": { "miles": 340, "source": "ncaa_verified" },
     "Carnegie Mellon|Denison": { "miles": 168, "source": "ncaa_verified" },
     "Carnegie Mellon|DePauw": { "miles": 411, "source": "ncaa_verified" },
@@ -9748,7 +9754,7 @@
     "Chatham|La Roche": { "miles": 15, "source": "ncaa_verified" },
     "Chatham|La Verne": { "miles": 2402, "source": "ncaa_verified" },
     "Chatham|LaGrange": { "miles": 758, "source": "ncaa_verified" },
-    "Chatham|Lake Forest": { "miles": 494.8, "source": "osrm" },
+    "Chatham|Lake Forest": { "miles": 498, "source": "ncaa_verified" },
     "Chatham|Lancaster Bib": { "miles": 234, "source": "ncaa_verified" },
     "Chatham|Lawrence": { "miles": 662, "source": "ncaa_verified" },
     "Chatham|Lebanon Val": { "miles": 220, "source": "ncaa_verified" },
@@ -13154,8 +13160,8 @@
     },
     "Connecticut College|Wartburg": { "miles": 1216.4, "source": "osrm" },
     "Connecticut College|Washington & Jefferson": {
-      "miles": 502.5,
-      "source": "osrm"
+      "miles": 504,
+      "source": "ncaa_verified"
     },
     "Connecticut College|Washington & Lee": {
       "miles": 534.4,
@@ -13210,7 +13216,7 @@
     "Cortland|Hamline": { "miles": 1114, "source": "ncaa_verified" },
     "Cortland|Hanover": { "miles": 689, "source": "ncaa_verified" },
     "Cortland|Hardin-Simmons": { "miles": 1706, "source": "ncaa_verified" },
-    "Cortland|Hollins": { "miles": 502.7, "source": "osrm" },
+    "Cortland|Hollins": { "miles": 511, "source": "ncaa_verified" },
     "Cortland|Hood": { "miles": 294.1, "source": "osrm" },
     "Cortland|Hope": { "miles": 586, "source": "ncaa_verified" },
     "Cortland|Houghton": { "miles": 149, "source": "ncaa_verified" },
@@ -15564,7 +15570,7 @@
     "Elmhurst|Mt. Union": { "miles": 414.5, "source": "osrm" },
     "Elmhurst|Nazareth": { "miles": 622.8, "source": "osrm" },
     "Elmhurst|NC Wesleyan": { "miles": 864.9, "source": "osrm" },
-    "Elmhurst|Nebraska Wesleyan": { "miles": 503.8, "source": "osrm" },
+    "Elmhurst|Nebraska Wesleyan": { "miles": 511, "source": "ncaa_verified" },
     "Elmhurst|NYU": { "miles": 807.2, "source": "osrm" },
     "Elmhurst|Ohio Northern": { "miles": 270.1, "source": "osrm" },
     "Elmhurst|Olivet": { "miles": 203.2, "source": "osrm" },
@@ -15572,7 +15578,7 @@
     "Elmhurst|Otterbein": { "miles": 331.8, "source": "osrm" },
     "Elmhurst|Penn State-Behrend": { "miles": 466, "source": "osrm" },
     "Elmhurst|Pfeiffer": { "miles": 768.9, "source": "osrm" },
-    "Elmhurst|Pitt-Greensburg": { "miles": 504.6, "source": "osrm" },
+    "Elmhurst|Pitt-Greensburg": { "miles": 511, "source": "ncaa_verified" },
     "Elmhurst|PSU-Harrisburg": { "miles": 683.1, "source": "osrm" },
     "Elmhurst|Randolph-Macon": { "miles": 770, "source": "osrm" },
     "Elmhurst|Redlands": { "miles": 1970.4, "source": "osrm" },
@@ -15606,7 +15612,10 @@
     "Elmhurst|UW-Whitewater": { "miles": 91.2, "source": "osrm" },
     "Elmhurst|Vassar": { "miles": 833.4, "source": "osrm" },
     "Elmhurst|Virginia Wesleyan": { "miles": 882, "source": "osrm" },
-    "Elmhurst|Washington & Jefferson": { "miles": 497.5, "source": "osrm" },
+    "Elmhurst|Washington & Jefferson": {
+      "miles": 503,
+      "source": "ncaa_verified"
+    },
     "Elmhurst|WashU": { "miles": 295.7, "source": "osrm" },
     "Elmhurst|Webster": { "miles": 299.4, "source": "osrm" },
     "Elmhurst|Wesleyan (CT)": { "miles": 902.3, "source": "osrm" },
@@ -19216,7 +19225,7 @@
     "Hollins|Johns Hopkins": { "miles": 263.9, "source": "osrm" },
     "Hollins|Johnson & Wales (RI)": { "miles": 631.1, "source": "osrm" },
     "Hollins|Keene St.": { "miles": 660.6, "source": "osrm" },
-    "Hollins|LaGrange": { "miles": 496.4, "source": "osrm" },
+    "Hollins|LaGrange": { "miles": 502, "source": "ncaa_verified" },
     "Hollins|Lawrence": { "miles": 843.8, "source": "osrm" },
     "Hollins|Lebanon Val": { "miles": 309.3, "source": "osrm" },
     "Hollins|Linfield": { "miles": 2760.5, "source": "osrm" },
@@ -30182,7 +30191,7 @@
     "Otterbein|Rose-Hulman": { "miles": 256.8, "source": "osrm" },
     "Otterbein|Rowan": { "miles": 499, "source": "ncaa_verified" },
     "Otterbein|Sage": { "miles": 606, "source": "osrm" },
-    "Otterbein|Salisbury": { "miles": 505.7, "source": "osrm" },
+    "Otterbein|Salisbury": { "miles": 510, "source": "ncaa_verified" },
     "Otterbein|Scranton": { "miles": 466.4, "source": "ncaa_verified" },
     "Otterbein|Shenandoah": { "miles": 331.8, "source": "ncaa_verified" },
     "Otterbein|Smith": { "miles": 699.8, "source": "ncaa_verified" },
@@ -37062,6 +37071,31 @@
     "Maryville|Wittenberg": { "miles": 347, "source": "osrm" },
     "Maryville|Worcester St.": { "miles": 892.3, "source": "osrm" },
     "Maryville|Yeshiva": { "miles": 725.7, "source": "osrm" },
-    "Maryville|York (PA)": { "miles": 547.4, "source": "osrm" }
+    "Maryville|York (PA)": { "miles": 547.4, "source": "osrm" },
+    "Albion|Maryville": { "miles": 544, "source": "ncaa_verified" },
+    "Baldwin Wallace|Maryville": { "miles": 504, "source": "ncaa_verified" },
+    "Belhaven|Maryville": { "miles": 501, "source": "ncaa_verified" },
+    "Bethany (WV)|Maryville": { "miles": 505, "source": "ncaa_verified" },
+    "Carnegie Mellon|Maryville": { "miles": 510, "source": "ncaa_verified" },
+    "Catholic|Maryville": { "miles": 515, "source": "ncaa_verified" },
+    "Chatham|Maryville": { "miles": 515, "source": "ncaa_verified" },
+    "Christopher Newport|Maryville": {
+      "miles": 520,
+      "source": "ncaa_verified"
+    },
+    "Franciscan|Maryville": { "miles": 523, "source": "ncaa_verified" },
+    "Gettysburg|Maryville": { "miles": 528, "source": "ncaa_verified" },
+    "Hood|Maryville": { "miles": 492, "source": "ncaa_verified" },
+    "La Roche|Maryville": { "miles": 520, "source": "ncaa_verified" },
+    "Lyon|Maryville": { "miles": 525, "source": "ncaa_verified" },
+    "Marymount|Maryville": { "miles": 501, "source": "ncaa_verified" },
+    "Maryville|McDaniel": { "miles": 524, "source": "ncaa_verified" },
+    "Maryville|Millsaps": { "miles": 497, "source": "ncaa_verified" },
+    "Maryville|Pitt-Greensburg": { "miles": 498, "source": "ncaa_verified" },
+    "Maryville|Principia": { "miles": 522, "source": "ncaa_verified" },
+    "Maryville|St. Mary's (MD)": { "miles": 521, "source": "ncaa_verified" },
+    "Maryville|St. Vincent": { "miles": 505, "source": "ncaa_verified" },
+    "Maryville|WashU": { "miles": 492, "source": "ncaa_verified" },
+    "Maryville|Webster": { "miles": 501, "source": "ncaa_verified" }
   }
 }
