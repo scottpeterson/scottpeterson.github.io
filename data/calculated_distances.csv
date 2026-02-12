@@ -3325,7 +3325,7 @@ Bethany (WV),Millsaps,926.8,False,osrm
 Bethany (WV),MSOE,559.2,False,osrm
 Bethany (WV),Mt. Union,71.3,False,osrm
 Bethany (WV),Nazareth,325.0,False,osrm
-Bethany (WV),North Central (IL),497.4,True,osrm
+Bethany (WV),North Central (IL),502.0,False,ncaa_verified
 Bethany (WV),NYU,401.6,False,osrm
 Bethany (WV),Oglethorpe,668.6,False,osrm
 Bethany (WV),Ohio Wesleyan,155.6,False,osrm
@@ -6099,7 +6099,7 @@ Carnegie Mellon,Coe,693.0,False,ncaa_verified
 Carnegie Mellon,Colby,746.3,False,osrm
 Carnegie Mellon,Colorado College,1429.0,False,ncaa_verified
 Carnegie Mellon,Concordia Moorhead,1101.0,False,ncaa_verified
-Carnegie Mellon,Connecticut College,494.2,True,osrm
+Carnegie Mellon,Connecticut College,497.0,False,ncaa_verified
 Carnegie Mellon,Cortland,340.0,False,ncaa_verified
 Carnegie Mellon,Denison,168.0,False,ncaa_verified
 Carnegie Mellon,DePauw,411.0,False,ncaa_verified
@@ -7447,7 +7447,7 @@ Chatham,Knox,620.0,False,ncaa_verified
 Chatham,La Roche,15.0,False,ncaa_verified
 Chatham,La Verne,2402.0,False,ncaa_verified
 Chatham,LaGrange,758.0,False,ncaa_verified
-Chatham,Lake Forest,494.8,True,osrm
+Chatham,Lake Forest,498.0,False,ncaa_verified
 Chatham,Lancaster Bib,234.0,False,ncaa_verified
 Chatham,Lawrence,662.0,False,ncaa_verified
 Chatham,Lebanon Val,220.0,False,ncaa_verified
@@ -9427,7 +9427,7 @@ Connecticut College,UW-Stout,1251.1,False,osrm
 Connecticut College,UW-Whitewater,1009.0,False,osrm
 Connecticut College,Virginia Wesleyan,479.6,False,osrm
 Connecticut College,Wartburg,1216.4,False,osrm
-Connecticut College,Washington & Jefferson,502.5,True,osrm
+Connecticut College,Washington & Jefferson,504.0,False,ncaa_verified
 Connecticut College,Washington & Lee,534.4,False,osrm
 Connecticut College,WashU,1103.8,False,osrm
 Connecticut College,Western New England,77.5,False,osrm
@@ -9469,7 +9469,7 @@ Cortland,Hamilton,61.0,False,ncaa_verified
 Cortland,Hamline,1114.0,False,ncaa_verified
 Cortland,Hanover,689.0,False,ncaa_verified
 Cortland,Hardin-Simmons,1706.0,False,ncaa_verified
-Cortland,Hollins,502.7,True,osrm
+Cortland,Hollins,511.0,False,ncaa_verified
 Cortland,Hood,294.1,False,osrm
 Cortland,Hope,586.0,False,ncaa_verified
 Cortland,Houghton,149.0,False,ncaa_verified
@@ -11163,7 +11163,7 @@ Elmhurst,Montclair St.,794.7,False,osrm
 Elmhurst,Mt. Union,414.5,False,osrm
 Elmhurst,Nazareth,622.8,False,osrm
 Elmhurst,NC Wesleyan,864.9,False,osrm
-Elmhurst,Nebraska Wesleyan,503.8,True,osrm
+Elmhurst,Nebraska Wesleyan,511.0,False,ncaa_verified
 Elmhurst,NYU,807.2,False,osrm
 Elmhurst,Ohio Northern,270.1,False,osrm
 Elmhurst,Olivet,203.2,False,osrm
@@ -11171,7 +11171,7 @@ Elmhurst,Oswego St.,689.1,False,osrm
 Elmhurst,Otterbein,331.8,False,osrm
 Elmhurst,Penn State-Behrend,466.0,False,osrm
 Elmhurst,Pfeiffer,768.9,False,osrm
-Elmhurst,Pitt-Greensburg,504.6,True,osrm
+Elmhurst,Pitt-Greensburg,511.0,False,ncaa_verified
 Elmhurst,PSU-Harrisburg,683.1,False,osrm
 Elmhurst,Randolph-Macon,770.0,False,osrm
 Elmhurst,Redlands,1970.4,False,osrm
@@ -11205,7 +11205,7 @@ Elmhurst,UW-Stevens Point,238.3,False,osrm
 Elmhurst,UW-Whitewater,91.2,False,osrm
 Elmhurst,Vassar,833.4,False,osrm
 Elmhurst,Virginia Wesleyan,882.0,False,osrm
-Elmhurst,Washington & Jefferson,497.5,True,osrm
+Elmhurst,Washington & Jefferson,503.0,False,ncaa_verified
 Elmhurst,WashU,295.7,False,osrm
 Elmhurst,Webster,299.4,False,osrm
 Elmhurst,Wesleyan (CT),902.3,False,osrm
@@ -14020,7 +14020,7 @@ Hollins,John Carroll,413.4,False,osrm
 Hollins,Johns Hopkins,263.9,False,osrm
 Hollins,Johnson & Wales (RI),631.1,False,osrm
 Hollins,Keene St.,660.6,False,osrm
-Hollins,LaGrange,496.4,True,osrm
+Hollins,LaGrange,502.0,False,ncaa_verified
 Hollins,Lawrence,843.8,False,osrm
 Hollins,Lebanon Val,309.3,False,osrm
 Hollins,Linfield,2760.5,False,osrm
@@ -21854,7 +21854,7 @@ Otterbein,Rochester Tech,384.5,False,ncaa_verified
 Otterbein,Rose-Hulman,256.8,False,osrm
 Otterbein,Rowan,499.0,False,ncaa_verified
 Otterbein,Sage,606.0,False,osrm
-Otterbein,Salisbury,505.7,True,osrm
+Otterbein,Salisbury,510.0,False,ncaa_verified
 Otterbein,Scranton,466.4,False,ncaa_verified
 Otterbein,Shenandoah,331.8,False,ncaa_verified
 Otterbein,Smith,699.8,False,ncaa_verified
@@ -26263,16 +26263,6 @@ Maryville,Wittenberg,347.0,False,osrm
 Maryville,Worcester St.,892.3,False,osrm
 Maryville,Yeshiva,725.7,False,osrm
 Maryville,York (PA),547.4,False,osrm
-Connecticut College,Washington & Jefferson,504.0,False,ncaa_verified
-Elmhurst,Washington & Jefferson,503.0,False,ncaa_verified
-Bethany (WV),North Central (IL),502.0,False,ncaa_verified
-Cortland,Hollins,511.0,False,ncaa_verified
-Hollins,LaGrange,502.0,False,ncaa_verified
-Elmhurst,Nebraska Wesleyan,511.0,False,ncaa_verified
-Elmhurst,Pitt-Greensburg,511.0,False,ncaa_verified
-Chatham,Lake Forest,498.0,False,ncaa_verified
-Otterbein,Salisbury,510.0,False,ncaa_verified
-Carnegie Mellon,Connecticut College,497.0,False,ncaa_verified
 Maryville,Albion,544.0,False,ncaa_verified
 Maryville,Baldwin Wallace,504.0,False,ncaa_verified
 Maryville,Belhaven,501.0,False,ncaa_verified
@@ -26295,3 +26285,134 @@ Maryville,St. Mary's (MD),521.0,False,ncaa_verified
 Maryville,St. Vincent,505.0,False,ncaa_verified
 Maryville,WashU,492.0,False,ncaa_verified
 Maryville,Webster,501.0,False,ncaa_verified
+North Central (MN),Trinity (CT),1298.4,False,osrm
+North Central (MN),Randolph-Macon,1160.9,False,osrm
+North Central (MN),Emory,1104.9,False,osrm
+North Central (MN),Chicago,415.2,False,osrm
+North Central (MN),Mary Washington,1122.0,False,osrm
+North Central (MN),Tufts,1399.5,False,osrm
+North Central (MN),Montclair St.,1185.5,False,osrm
+North Central (MN),Christopher Newport,1240.8,False,osrm
+North Central (MN),St. Thomas (TX),1180.0,False,osrm
+North Central (MN),Hood,1060.9,False,osrm
+North Central (MN),Gustavus Adolphus,69.5,False,osrm
+North Central (MN),Wesleyan (CT),1293.2,False,osrm
+North Central (MN),Endicott,1422.7,False,osrm
+North Central (MN),Mt. Union,805.4,False,osrm
+North Central (MN),Illinois Wesleyan,457.5,False,osrm
+North Central (MN),Redlands,1863.3,False,osrm
+North Central (MN),Claremont-Mudd-Scripps,1864.1,False,osrm
+North Central (MN),Amherst,1322.3,False,osrm
+North Central (MN),Catholic,1103.8,False,osrm
+North Central (MN),UW-Stevens Point,214.2,False,osrm
+North Central (MN),UW-La Crosse,159.1,False,osrm
+North Central (MN),NYU,1198.1,False,osrm
+North Central (MN),WPI,1363.3,False,osrm
+North Central (MN),Trinity (TX),1246.2,False,osrm
+North Central (MN),Franklin & Marshall,1100.4,False,osrm
+North Central (MN),Babson,1389.7,False,osrm
+North Central (MN),Lehman,1203.6,False,osrm
+North Central (MN),WashU,555.7,False,osrm
+North Central (MN),Whitworth,1390.2,False,osrm
+North Central (MN),Maryville,963.8,False,osrm
+North Central (MN),UW-Whitewater,306.7,False,osrm
+North Central (MN),Otterbein,722.7,False,osrm
+North Central (MN),Mary Hardin-Baylor,1112.4,False,osrm
+North Central (MN),UW-Oshkosh,283.2,False,osrm
+North Central (MN),Bates,1533.0,False,osrm
+North Central (MN),Marymount,1108.6,False,osrm
+North Central (MN),Cortland,1102.5,False,osrm
+North Central (MN),Maine-Farmington,1485.7,False,osrm
+North Central (MN),Brandeis,1391.1,False,osrm
+North Central (MN),Webster,554.7,False,osrm
+North Central (MN),Grinnell,276.0,False,osrm
+North Central (MN),Westfield St.,1298.2,False,osrm
+North Central (MN),Yeshiva,1200.5,False,osrm
+North Central (MN),Carthage,369.0,False,osrm
+North Central (MN),Pfeiffer,1163.7,False,osrm
+North Central (MN),Johns Hopkins,1107.9,False,osrm
+North Central (MN),John Carroll,758.8,False,osrm
+North Central (MN),St. Joseph (CT),1298.0,False,osrm
+North Central (MN),Scranton,1110.8,False,osrm
+North Central (MN),Arcadia,1166.3,False,osrm
+North Central (MN),Rhodes,832.5,False,osrm
+North Central (MN),UW-Platteville,271.0,False,osrm
+North Central (MN),Aurora,397.8,False,osrm
+North Central (MN),Lancaster Bib,1104.4,False,osrm
+North Central (MN),Pitt-Greensburg,895.5,False,osrm
+North Central (MN),Roanoke,1063.2,False,osrm
+North Central (MN),Western Connecticut,1243.4,False,osrm
+North Central (MN),Penn State-Behrend,856.8,False,osrm
+North Central (MN),Union (NY),1208.8,False,osrm
+North Central (MN),Washington & Jefferson,888.4,False,osrm
+North Central (MN),Bethany Luth,81.9,False,osrm
+North Central (MN),Transylvania,778.9,False,osrm
+North Central (MN),Nebraska Wesleyan,428.0,False,osrm
+North Central (MN),Gettysburg,1047.6,False,osrm
+North Central (MN),Drew,1173.6,False,osrm
+North Central (MN),Anderson,618.5,False,osrm
+North Central (MN),Farmingdale,1234.2,False,osrm
+North Central (MN),St. Norbert,280.4,False,osrm
+North Central (MN),Loras,251.6,False,osrm
+North Central (MN),Hardin-Simmons,1076.0,False,osrm
+North Central (MN),Concordia (TX),1162.9,False,osrm
+North Central (MN),Cairn,1177.3,False,osrm
+North Central (MN),Nazareth,1013.7,False,osrm
+North Central (MN),TCNJ,1191.0,False,osrm
+North Central (MN),Trine,592.4,False,osrm
+North Central (MN),Rensselaer,1229.5,False,osrm
+North Central (MN),Minn-Morris,159.7,False,osrm
+North Central (MN),St. Vincent,904.2,False,osrm
+North Central (MN),Calvin,595.8,False,osrm
+North Central (MN),Olivet,597.9,False,osrm
+North Central (MN),SUNYIT,1135.4,False,osrm
+North Central (MN),NC Wesleyan,1259.7,False,osrm
+North Central (MN),Colby,1574.9,False,osrm
+North Central (MN),York (PA),1084.7,False,osrm
+North Central (MN),Vassar,1224.3,False,osrm
+North Central (MN),Husson,1548.7,False,osrm
+North Central (MN),Albertus Magnus,1271.6,False,osrm
+North Central (MN),Oswego St.,1090.3,False,osrm
+North Central (MN),Stevens,1199.1,False,osrm
+North Central (MN),Franciscan,865.9,False,osrm
+North Central (MN),Virginia Wesleyan,1272.8,False,osrm
+North Central (MN),Mass-Boston,1403.2,False,osrm
+North Central (MN),Worcester St.,1363.5,False,osrm
+North Central (MN),Western New England,1306.9,False,osrm
+North Central (MN),Sage,1227.7,False,osrm
+North Central (MN),DePauw,613.6,False,osrm
+North Central (MN),St. Joseph's (ME),1517.1,False,osrm
+North Central (MN),Elmhurst,395.8,False,osrm
+North Central (MN),Lyon,755.8,False,osrm
+Hood,Coe,885.7,False,osrm
+Wesleyan (CT),Coe,1118.1,False,osrm
+Franklin & Marshall,Coe,925.8,False,osrm
+Lehman,Coe,1029.8,False,osrm
+Whitworth,Coe,1551.9,False,osrm
+Maine-Farmington,Coe,1306.9,False,osrm
+Grinnell,Coe,82.2,False,osrm
+Yeshiva,Coe,1026.7,False,osrm
+Rhodes,Coe,557.0,False,osrm
+Pitt-Greensburg,Coe,722.1,False,osrm
+Roanoke,Coe,862.9,False,osrm
+Western Connecticut,Coe,1068.4,False,osrm
+Nebraska Wesleyan,Coe,315.1,False,osrm
+Drew,Coe,999.0,False,osrm
+Anderson,Coe,419.6,False,osrm
+Farmingdale,Coe,1059.1,False,osrm
+Concordia (TX),Coe,1048.3,False,osrm
+Cairn,Coe,1002.6,False,osrm
+Olivet,Coe,418.6,False,osrm
+SUNYIT,Coe,961.5,False,osrm
+Franciscan,Coe,692.1,False,osrm
+Mass-Boston,Coe,1228.1,False,osrm
+Worcester St.,Coe,1188.1,False,osrm
+North Central (MN),Lake Forest,391.3,False,osrm
+North Central (MN),Coe,276.6,False,osrm
+North Central (MN),Dubuque,250.8,False,osrm
+North Central (MN),Gwynedd-Mercy,1161.3,False,osrm
+North Central (MN),Denison,753.2,False,osrm
+Elmhurst,Coe,234.3,False,osrm
+Lake Forest,Coe,264.1,False,osrm
+Coe,Dubuque,72.3,False,osrm
+Coe,Gwynedd-Mercy,987.7,False,osrm
