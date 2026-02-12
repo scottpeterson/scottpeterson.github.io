@@ -513,6 +513,27 @@ async function main() {
 
     console.log(`📄 Found ${htmlFiles.length} reports to process...\n`);
 
+    // Clean up stale reports in output dir that no longer have a source file.
+    // Without this, old files linger in reports/ and get picked up by build.js
+    // for the nav dropdown, creating broken links.
+    const sourceBasenames = new Set(htmlFiles.map(f => path.basename(f)));
+    try {
+      const existingOutputFiles = await fs.readdir(OUTPUT_DIR);
+      const staleFiles = existingOutputFiles.filter(
+        f =>
+          f.endsWith('.html') && f !== 'index.html' && !sourceBasenames.has(f)
+      );
+      for (const stale of staleFiles) {
+        await fs.unlink(path.join(OUTPUT_DIR, stale));
+        console.log(`  🗑  Removed stale report: ${stale}`);
+      }
+      if (staleFiles.length > 0) {
+        console.log('');
+      }
+    } catch (e) {
+      // Output dir may not exist yet — that's fine, nothing to clean
+    }
+
     // Process all reports
     const reports = [];
     for (const file of htmlFiles) {
