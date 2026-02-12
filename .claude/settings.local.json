@@ -37,7 +37,8 @@
       "Bash(npm run serve:*)",
       "Bash(python -m http.server:*)",
       "Bash(python3:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Skill(commit-push)"
     ],
     "deny": [],
     "ask": []
