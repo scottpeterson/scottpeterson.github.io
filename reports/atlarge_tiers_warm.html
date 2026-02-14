@@ -15,195 +15,206 @@
 
     <!-- Scoped report styles -->
     <style>
-      .report-atlarge_tiers * {
+      .report-atlarge_tiers_warm * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      .report-atlarge_tiers {
+      .report-atlarge_tiers_warm {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-          sans-serif;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+        background: linear-gradient(
+          180deg,
+          #f5d6c6 0%,
+          #fae8dc 15%,
+          #f9f6f2 40%,
+          #f9f6f2 100%
+        );
         min-height: 100vh;
         padding: 40px 20px;
-        color: #fff;
+        color: #2d2a26;
       }
-      .report-atlarge_tiers .container {
+      .report-atlarge_tiers_warm .container {
         max-width: 1400px;
         margin: 0 auto;
       }
-      .report-atlarge_tiers h1 {
+      .report-atlarge_tiers_warm h1 {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 10px;
-        background: linear-gradient(90deg, #10b981, #00d4ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #5c4033;
+        font-weight: 700;
       }
-      .report-atlarge_tiers .subtitle {
+      .report-atlarge_tiers_warm .subtitle {
         text-align: center;
-        color: #00d4ff;
+        color: #6b6560;
         margin-bottom: 10px;
         font-size: 1.1rem;
         font-weight: 600;
       }
-      .report-atlarge_tiers .explainer {
+      .report-atlarge_tiers_warm .explainer {
         text-align: center;
-        color: #6b7280;
+        color: #8a8580;
         margin-bottom: 30px;
         font-size: 0.85rem;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
       }
-      .report-atlarge_tiers .tiers-grid {
+      .report-atlarge_tiers_warm .tiers-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 16px;
       }
-      .report-atlarge_tiers .tier-card {
-        background: rgba(255, 255, 255, 0.03);
+      .report-atlarge_tiers_warm .tier-card {
+        background: #fefdfb;
         border-radius: 16px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
-      .report-atlarge_tiers .tier-header {
+      .report-atlarge_tiers_warm .tier-header {
         padding: 16px;
         border-bottom: 3px solid;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(0, 0, 0, 0.2);
+        background: #f9f6f2;
       }
-      .report-atlarge_tiers .tier-title-row {
+      .report-atlarge_tiers_warm .tier-title-row {
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      .report-atlarge_tiers .tier-icon {
+      .report-atlarge_tiers_warm .tier-icon {
         font-size: 1.2rem;
       }
-      .report-atlarge_tiers .tier-name {
+      .report-atlarge_tiers_warm .tier-name {
         font-size: 1.1rem;
         font-weight: 700;
       }
-      .report-atlarge_tiers .tier-count {
+      .report-atlarge_tiers_warm .tier-count {
         font-size: 0.75rem;
-        color: #8892b0;
-        background: rgba(255, 255, 255, 0.1);
+        color: #8a8580;
+        background: #f5ede6;
+        border: 1px solid #e5ddd5;
         padding: 4px 8px;
-        border-radius: 12px;
+        border-radius: 6px;
       }
-      .report-atlarge_tiers .tier-description {
+      .report-atlarge_tiers_warm .tier-description {
         padding: 8px 16px;
         font-size: 0.7rem;
-        color: #6b7280;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: #8a8580;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(92, 64, 51, 0.15);
       }
-      .report-atlarge_tiers .teams-list {
+      .report-atlarge_tiers_warm .teams-list {
         padding: 8px 12px;
       }
-      .report-atlarge_tiers .team-row {
+      .report-atlarge_tiers_warm .team-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 6px 4px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(92, 64, 51, 0.1);
       }
-      .report-atlarge_tiers .team-row:last-child {
+      .report-atlarge_tiers_warm .team-row:last-child {
         border-bottom: none;
       }
-      .report-atlarge_tiers .team-row:hover {
-        background: rgba(255, 255, 255, 0.05);
+      .report-atlarge_tiers_warm .team-row:hover {
+        background: rgba(245, 237, 230, 0.5);
         border-radius: 4px;
       }
-      .report-atlarge_tiers .team-info {
+      .report-atlarge_tiers_warm .team-info {
         display: flex;
         flex-direction: column;
         gap: 1px;
         min-width: 0;
         flex: 1;
       }
-      .report-atlarge_tiers .team-name {
+      .report-atlarge_tiers_warm .team-name {
         font-weight: 500;
-        color: #e0e0e0;
+        color: #2d2a26;
         font-size: 0.8rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      .report-atlarge_tiers .team-conf {
+      .report-atlarge_tiers_warm .team-conf {
         font-size: 0.65rem;
-        color: #6b7280;
+        color: #8a8580;
       }
-      .report-atlarge_tiers .team-stats {
+      .report-atlarge_tiers_warm .team-stats {
         display: flex;
         align-items: center;
         gap: 8px;
         flex-shrink: 0;
       }
-      .report-atlarge_tiers .alwyni-bar-container {
+      .report-atlarge_tiers_warm .alwyni-bar-container {
         width: 50px;
         height: 6px;
-        background: rgba(255, 255, 255, 0.1);
+        background: #e5e0db;
         border-radius: 3px;
         overflow: hidden;
       }
-      .report-atlarge_tiers .alwyni-bar {
+      .report-atlarge_tiers_warm .alwyni-bar {
         height: 100%;
-        background: linear-gradient(90deg, #10b981, #00d4ff);
+        background: linear-gradient(90deg, #d4a84b, #e8c547);
         border-radius: 3px;
       }
-      .report-atlarge_tiers .alwyni-value {
+      .report-atlarge_tiers_warm .alwyni-value {
         font-weight: 700;
         min-width: 36px;
         text-align: right;
         font-size: 0.75rem;
       }
-      .report-atlarge_tiers .alwyni-lock {
-        color: #10b981;
+      .report-atlarge_tiers_warm .alwyni-lock {
+        color: #4a7c9b;
       }
-      .report-atlarge_tiers .alwyni-likely {
-        color: #00d4ff;
+      .report-atlarge_tiers_warm .alwyni-likely {
+        color: #6cb8a0;
       }
-      .report-atlarge_tiers .alwyni-bubble {
-        color: #fbbf24;
+      .report-atlarge_tiers_warm .alwyni-bubble {
+        color: #d4a84b;
       }
-      .report-atlarge_tiers .alwyni-out {
-        color: #f97316;
+      .report-atlarge_tiers_warm .alwyni-out {
+        color: #e07a5f;
       }
-      .report-atlarge_tiers .alwyni-longshot {
-        color: #8892b0;
+      .report-atlarge_tiers_warm .alwyni-longshot {
+        color: #a89080;
       }
-      .report-atlarge_tiers .no-teams {
-        color: #6b7280;
+      .report-atlarge_tiers_warm .no-teams {
+        color: #8a8580;
         font-size: 0.8rem;
         text-align: center;
         padding: 20px;
       }
-      .report-atlarge_tiers .footer {
+      .report-atlarge_tiers_warm .footer {
         text-align: center;
-        color: #8892b0;
+        color: #6b6560;
         margin-top: 30px;
         font-size: 0.85rem;
       }
-      .report-atlarge_tiers .footer a {
-        color: #00d4ff;
+      .report-atlarge_tiers_warm .footer a {
+        color: #5c4033;
         text-decoration: underline;
+        font-weight: 500;
+      }
+      .report-atlarge_tiers_warm .footer a:hover {
+        color: #4a3328;
       }
       @media (max-width: 1200px) {
-        .report-atlarge_tiers .tiers-grid {
+        .report-atlarge_tiers_warm .tiers-grid {
           grid-template-columns: repeat(3, 1fr);
         }
       }
       @media (max-width: 768px) {
-        .report-atlarge_tiers .tiers-grid {
+        .report-atlarge_tiers_warm .tiers-grid {
           grid-template-columns: 1fr;
         }
-        .report-atlarge_tiers h1 {
+        .report-atlarge_tiers_warm h1 {
           font-size: 1.8rem;
         }
       }
@@ -269,12 +280,12 @@
                 >
               </li>
               <li>
-                <a href="atlarge_tiers.html" class="active"
+                <a href="atlarge_tiers.html"
                   >At-Large Tiers - D3 Women's Basketball</a
                 >
               </li>
               <li>
-                <a href="atlarge_tiers_warm.html"
+                <a href="atlarge_tiers_warm.html" class="active"
                   >At-Large Tiers - D3 Women's Basketball</a
                 >
               </li>
@@ -351,7 +362,7 @@
         <a href="/reports/">← Back to Reports</a>
       </div>
 
-      <div class="report-atlarge_tiers">
+      <div class="report-atlarge_tiers_warm">
         <div class="container">
           <h1>D3 WBB At-Large Tiers</h1>
           <p class="explainer">
@@ -362,14 +373,14 @@
 
           <div class="tiers-grid">
             <div class="tier-card">
-              <div class="tier-header" style="border-color: #10b981">
+              <div class="tier-header" style="border-color: #4a7c9b">
                 <div class="tier-title-row">
                   <span class="tier-icon">🔒</span>
-                  <span class="tier-name" style="color: #10b981">Locks</span>
+                  <span class="tier-name" style="color: #4a7c9b">Locks</span>
                 </div>
-                <span class="tier-count">20 teams</span>
+                <span class="tier-count">23 teams</span>
               </div>
-              <div class="tier-description">99.5%+ ALWYNI</div>
+              <div class="tier-description">97%+ ALWYNI</div>
               <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
@@ -611,18 +622,6 @@
                     <span class="alwyni-value alwyni-lock">100%</span>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="tier-card">
-              <div class="tier-header" style="border-color: #00d4ff">
-                <div class="tier-title-row">
-                  <span class="tier-icon">✓</span>
-                  <span class="tier-name" style="color: #00d4ff">Likely</span>
-                </div>
-                <span class="tier-count">7 teams</span>
-              </div>
-              <div class="tier-description">80-99% ALWYNI</div>
-              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">Bethel</span>
@@ -632,7 +631,7 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 99.3%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-likely">99%</span>
+                    <span class="alwyni-value alwyni-lock">99%</span>
                   </div>
                 </div>
                 <div class="team-row">
@@ -644,7 +643,7 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 98.6%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-likely">99%</span>
+                    <span class="alwyni-value alwyni-lock">99%</span>
                   </div>
                 </div>
                 <div class="team-row">
@@ -656,9 +655,21 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 97%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-likely">97%</span>
+                    <span class="alwyni-value alwyni-lock">97%</span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #6cb8a0">
+                <div class="tier-title-row">
+                  <span class="tier-icon">✓</span>
+                  <span class="tier-name" style="color: #6cb8a0">Likely</span>
+                </div>
+                <span class="tier-count">5 teams</span>
+              </div>
+              <div class="tier-description">75-97% ALWYNI</div>
+              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">SUNY New Paltz</span>
@@ -707,20 +718,6 @@
                     <span class="alwyni-value alwyni-likely">87%</span>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="tier-card">
-              <div class="tier-header" style="border-color: #fbbf24">
-                <div class="tier-title-row">
-                  <span class="tier-icon">⚖️</span>
-                  <span class="tier-name" style="color: #fbbf24"
-                    >Bubble In</span
-                  >
-                </div>
-                <span class="tier-count">12 teams</span>
-              </div>
-              <div class="tier-description">Above C-21 cutoff</div>
-              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">Shenandoah</span>
@@ -730,9 +727,23 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 79.9%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-bubble">80%</span>
+                    <span class="alwyni-value alwyni-likely">80%</span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #d4a84b">
+                <div class="tier-title-row">
+                  <span class="tier-icon">⚖️</span>
+                  <span class="tier-name" style="color: #d4a84b"
+                    >Bubble In</span
+                  >
+                </div>
+                <span class="tier-count">9 teams</span>
+              </div>
+              <div class="tier-description">Above C-21 cutoff</div>
+              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">St. Mary's (MN)</span>
@@ -841,6 +852,20 @@
                     <span class="alwyni-value alwyni-bubble">46%</span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-header" style="border-color: #e07a5f">
+                <div class="tier-title-row">
+                  <span class="tier-icon">⚠️</span>
+                  <span class="tier-name" style="color: #e07a5f"
+                    >Bubble Out</span
+                  >
+                </div>
+                <span class="tier-count">14 teams</span>
+              </div>
+              <div class="tier-description">Below C-21 cutoff</div>
+              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">Gettysburg</span>
@@ -850,7 +875,7 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 45.7%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-bubble">46%</span>
+                    <span class="alwyni-value alwyni-out">46%</span>
                   </div>
                 </div>
                 <div class="team-row">
@@ -862,23 +887,9 @@
                     <div class="alwyni-bar-container">
                       <div class="alwyni-bar" style="width: 39.2%"></div>
                     </div>
-                    <span class="alwyni-value alwyni-bubble">39%</span>
+                    <span class="alwyni-value alwyni-out">39%</span>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="tier-card">
-              <div class="tier-header" style="border-color: #f97316">
-                <div class="tier-title-row">
-                  <span class="tier-icon">⚠️</span>
-                  <span class="tier-name" style="color: #f97316"
-                    >Bubble Out</span
-                  >
-                </div>
-                <span class="tier-count">12 teams</span>
-              </div>
-              <div class="tier-description">Below C-21 cutoff</div>
-              <div class="teams-list">
                 <div class="team-row">
                   <div class="team-info">
                     <span class="team-name">Southern Maine</span>
@@ -1026,16 +1037,16 @@
               </div>
             </div>
             <div class="tier-card">
-              <div class="tier-header" style="border-color: #8892b0">
+              <div class="tier-header" style="border-color: #a89080">
                 <div class="tier-title-row">
                   <span class="tier-icon">🎲</span>
-                  <span class="tier-name" style="color: #8892b0"
+                  <span class="tier-name" style="color: #a89080"
                     >Long Shot</span
                   >
                 </div>
-                <span class="tier-count">Top 0 of 12</span>
+                <span class="tier-count">Top 0 of 14</span>
               </div>
-              <div class="tier-description">showing 20 teams</div>
+              <div class="tier-description">showing 23 teams</div>
               <div class="teams-list">
                 <div class="no-teams">No teams in this tier</div>
               </div>
@@ -1043,7 +1054,7 @@
           </div>
 
           <p class="footer">
-            Generated February 14, 2026 at 09:16 AM<br />
+            Generated February 14, 2026 at 09:23 AM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
