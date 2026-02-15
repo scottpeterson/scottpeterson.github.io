@@ -1,0 +1,1732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Tournament Field Proximity Report - TheD3StatLab - The D3 Stat Lab
+    </title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-tournament_field_proximity * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .report-tournament_field_proximity {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 30px 20px;
+        color: #fff;
+      }
+      .report-tournament_field_proximity .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .report-tournament_field_proximity h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 8px;
+        background: linear-gradient(90deg, #f59e0b, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .report-tournament_field_proximity .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+      .report-tournament_field_proximity .explanation {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        color: #ccc;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .report-tournament_field_proximity .explanation strong {
+        color: #f59e0b;
+      }
+      .report-tournament_field_proximity .cards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .report-tournament_field_proximity .team-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .report-tournament_field_proximity .team-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+      }
+      .report-tournament_field_proximity .header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .report-tournament_field_proximity .team-name {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .report-tournament_field_proximity .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      .report-tournament_field_proximity .seed-badge {
+        background: rgba(236, 72, 153, 0.3);
+        color: #ec4899;
+      }
+      .report-tournament_field_proximity .qseed-badge {
+        background: rgba(245, 158, 11, 0.3);
+        color: #f59e0b;
+      }
+      .report-tournament_field_proximity .conf-badge {
+        background: rgba(99, 102, 241, 0.3);
+        color: #a5b4fc;
+      }
+      .report-tournament_field_proximity .count-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 32px;
+        height: 28px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .report-tournament_field_proximity .team-body {
+        padding: 10px 16px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .report-tournament_field_proximity .nearby-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .report-tournament_field_proximity .nearby-team {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .report-tournament_field_proximity .nearby-team .dist {
+        opacity: 0.7;
+        font-weight: 400;
+      }
+      .report-tournament_field_proximity .nearby-team.host {
+        background: transparent !important;
+        color: #555 !important;
+        border: 1px dashed rgba(255, 255, 255, 0.15);
+        opacity: 0.5;
+      }
+      .report-tournament_field_proximity .nearby-team.host .dist {
+        opacity: 0.6;
+      }
+      .report-tournament_field_proximity .nearby-team.overflow {
+        background: rgba(255, 255, 255, 0.1);
+        color: #8892b0;
+        font-style: italic;
+      }
+      .report-tournament_field_proximity .missing-note {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.75rem;
+        color: #f87171;
+        font-style: italic;
+      }
+      .report-tournament_field_proximity .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 30px;
+        font-size: 0.8rem;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .report-tournament_field_proximity .footer a {
+        color: #00d4ff;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        .report-tournament_field_proximity h1 {
+          font-size: 1.5rem;
+        }
+        .report-tournament_field_proximity .team-header {
+          padding: 10px 12px;
+        }
+        .report-tournament_field_proximity .team-body {
+          padding: 8px 12px;
+        }
+        .report-tournament_field_proximity .badge {
+          font-size: 0.6rem;
+          padding: 1px 5px;
+        }
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="16th_win_countdown.html"
+                  >16th Win Countdown - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="alwyni_threshold_chart.html"
+                  >ALWYNI% Threshold Chart</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_powerhouse_conferences.html"
+                  >D3 Women's Basketball At-Large Picture</a
+                >
+              </li>
+              <li>
+                <a href="atlarge_tiers.html"
+                  >At-Large Tiers - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="best_games_this_week.html"
+                  >Best Upcoming Games - D3 Women's Basketball</a
+                >
+              </li>
+              <li>
+                <a href="bid_thieves_report.html"
+                  >Bid Thieves Report - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="bubble_watch.html">D3 WBB At-Large Bubble Watch</a>
+              </li>
+              <li>
+                <a href="conference_race_infographic.html"
+                  >D3 WBB Most Competitive Conference Races</a
+                >
+              </li>
+              <li>
+                <a href="high_npi_low_alwyni.html"
+                  >High NPI, Low ALWYNI Teams</a
+                >
+              </li>
+              <li>
+                <a href="host_projections.html">NCAA D3 WBB Host Projections</a>
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="resume_vulnerability.html"
+                  >Resume Vulnerability Report</a
+                >
+              </li>
+              <li>
+                <a href="team_comparison_2026-02-15.html"
+                  >Team Simulation Stats Comparison | Feb 15, 2026 vs Feb 14,
+                  2026</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_infographic.html"
+                  >NCAA D3 WBB Tournament Field - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_field_proximity.html" class="active"
+                  >Tournament Field Proximity Report - TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="tournament_risers.html"
+                  >Top Tournament % Risers - D3 WBB</a
+                >
+              </li>
+              <li>
+                <a href="undefeated_watch.html"
+                  >Undefeated Teams Watch - D3 WBB</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-tournament_field_proximity">
+        <div class="container">
+          <h1>Tournament Field Proximity Report</h1>
+          <p class="subtitle">
+            Top 16 seeds — nearby teams from all 64 projected tournament teams
+          </p>
+
+          <div class="explanation">
+            Shows the <strong>top 16 seeds</strong> from the early bracket, each
+            with quadrant seed (Q1-Q4), overall seed, and conference. Nearby
+            team pills reference all 64 projected tournament teams within
+            <strong>500 miles</strong>. Cards are sorted by count of nearby
+            tournament teams (descending). Teams with more nearby contenders are
+            better positioned to draw competitive fields as potential hosts.
+          </div>
+
+          <div class="cards-grid">
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #041c2c; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">John Carroll</span>
+                  <span class="badge qseed-badge">Q3</span>
+                  <span class="badge seed-badge">#9</span>
+                  <span class="badge conf-badge">NCAC</span>
+                </div>
+                <span class="count-badge">34</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(454mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(427mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(367mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(366mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(131mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(458mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(332mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(131mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(27mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(462mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(195mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(349mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(462mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(362mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(443mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(477mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(450mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(384mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(308mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(446mi, Q9)</span></span
+                  ><span class="nearby-team overflow">+14 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-header" style="background: #3d2d1f; color: #fff">
+                <div class="header-left">
+                  <span class="team-name">Baldwin Wallace</span>
+                  <span class="badge qseed-badge">Q4</span>
+                  <span class="badge seed-badge">#13</span>
+                  <span class="badge conf-badge">OAC</span>
+                </div>
+                <span class="count-badge">34</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(462mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(433mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(374mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(374mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(115mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(443mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(27mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(316mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(115mi, Q3)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(445mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(178mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(333mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(445mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(383mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(450mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(485mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(433mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(393mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(320mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(454mi, Q9)</span></span
+                  ><span class="nearby-team overflow">+14 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #47176b; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">Scranton</span>
+                  <span class="badge qseed-badge">Q2</span>
+                  <span class="badge seed-badge">#5</span>
+                  <span class="badge conf-badge">LAND</span>
+                </div>
+                <span class="count-badge">33</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(121mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(361mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(201mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(452mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Bowdoin <span class="dist">(418mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(366mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(459mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(374mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >Smith <span class="dist">(236mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #981328; color: #ffffff"
+                    >Bates <span class="dist">(422mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(99mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(107mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(114mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(312mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #192d5b; color: #ffffff"
+                    >Southern Maine <span class="dist">(396mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #005ca9; color: #fffefd"
+                    >Christopher Newport
+                    <span class="dist">(404mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(236mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(327mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(87mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(132mi, Q10)</span></span
+                  ><span class="nearby-team overflow">+13 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #ac1a2f; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">Ohio Wesleyan</span>
+                  <span class="badge qseed-badge">Q3</span>
+                  <span class="badge seed-badge">#12</span>
+                  <span class="badge conf-badge">NCAC</span>
+                </div>
+                <span class="count-badge">33</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Oshkosh <span class="dist">(493mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(370mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(425mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(459mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(44mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(419mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(131mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(319mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(499mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(115mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(436mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(422mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(188mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(310mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(356mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(489mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(489mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(410mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(374mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(350mi, Q9)</span></span
+                  ><span class="nearby-team overflow">+13 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #522e91; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">NYU</span>
+                  <span class="badge qseed-badge">Q1</span>
+                  <span class="badge seed-badge">#2</span>
+                  <span class="badge conf-badge">UAA</span>
+                </div>
+                <span class="count-badge">32</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(409mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(193mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(121mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Bowdoin <span class="dist">(345mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(454mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(462mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >Smith <span class="dist">(163mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #981328; color: #ffffff"
+                    >Bates <span class="dist">(349mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(228mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson <span class="dist">(24mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(88mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(360mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #192d5b; color: #ffffff"
+                    >Southern Maine <span class="dist">(321mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #005ca9; color: #fffefd"
+                    >Christopher Newport
+                    <span class="dist">(398mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(284mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(321mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(175mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(180mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c21a34; color: #ffffff"
+                    >Carnegie Mellon
+                    <span class="dist">(370mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5121b; color: #ffffff"
+                    >Washington & Jefferson
+                    <span class="dist">(377mi, Q12)</span></span
+                  ><span class="nearby-team overflow">+12 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #c8032b; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">Denison</span>
+                  <span class="badge qseed-badge">Q2</span>
+                  <span class="badge seed-badge">#6</span>
+                  <span class="badge conf-badge">NCAC</span>
+                </div>
+                <span class="count-badge">32</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(339mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(384mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(452mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(448mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(131mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(361mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(44mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(115mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(451mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(495mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(217mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(337mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(380mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(489mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(437mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(351mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(310mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(465mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(384mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(347mi, Q10)</span></span
+                  ><span class="nearby-team overflow">+12 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #00039a; color: white"
+              >
+                <div class="header-left">
+                  <span class="team-name">Washington & Lee</span>
+                  <span class="badge qseed-badge">Q1</span>
+                  <span class="badge seed-badge">#3</span>
+                  <span class="badge conf-badge">ODAC</span>
+                </div>
+                <span class="count-badge">30</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(409mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(228mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(361mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(339mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(427mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(370mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(433mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(460mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(409mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(466mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA) <span class="dist">(56mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #005ca9; color: #fffefd"
+                    >Christopher Newport
+                    <span class="dist">(208mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(127mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(143mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(296mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(232mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #d08b04; color: #012c5d"
+                    >Emory <span class="dist">(472mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c21a34; color: #ffffff"
+                    >Carnegie Mellon
+                    <span class="dist">(316mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #9d2235; color: #ffffff"
+                    >Transylvania <span class="dist">(357mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5121b; color: #ffffff"
+                    >Washington & Jefferson
+                    <span class="dist">(291mi, Q12)</span></span
+                  ><span class="nearby-team overflow">+10 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #68aee0; color: #000000"
+              >
+                <div class="header-left">
+                  <span class="team-name">Johns Hopkins</span>
+                  <span class="badge qseed-badge">Q1</span>
+                  <span class="badge seed-badge">#4</span>
+                  <span class="badge conf-badge">CC</span>
+                </div>
+                <span class="count-badge">30</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(193mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Washington & Lee
+                    <span class="dist">(228mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(201mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(384mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(367mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(425mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(374mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >Smith <span class="dist">(353mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(301mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(196mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(269mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #8e0020; color: #ffffff"
+                    >Bridgewater (VA)
+                    <span class="dist">(179mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #005ca9; color: #fffefd"
+                    >Christopher Newport
+                    <span class="dist">(212mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(100mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(132mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(136mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(83mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c21a34; color: #ffffff"
+                    >Carnegie Mellon
+                    <span class="dist">(248mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5121b; color: #ffffff"
+                    >Washington & Jefferson
+                    <span class="dist">(245mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002855; color: #ffffff"
+                    >DeSales <span class="dist">(146mi, Q12)</span></span
+                  ><span class="nearby-team overflow">+10 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #fbc64a; color: #002855"
+              >
+                <div class="header-left">
+                  <span class="team-name">Smith</span>
+                  <span class="badge qseed-badge">Q4</span>
+                  <span class="badge seed-badge">#15</span>
+                  <span class="badge conf-badge">NEWMAC</span>
+                </div>
+                <span class="count-badge">25</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(163mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Johns Hopkins <span class="dist">(353mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(236mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Bowdoin <span class="dist">(231mi, Q2)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #981328; color: #ffffff"
+                    >Bates <span class="dist">(235mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(249mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(169mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(145mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #192d5b; color: #ffffff"
+                    >Southern Maine <span class="dist">(207mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003e7e; color: #ffffff"
+                    >Shenandoah <span class="dist">(443mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Randolph-Macon <span class="dist">(479mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #651c32; color: #ffffff"
+                    >Susquehanna <span class="dist">(320mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b85; color: #ffffff"
+                    >Messiah <span class="dist">(340mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002855; color: #ffffff"
+                    >DeSales <span class="dist">(252mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #521010; color: #ffffff"
+                    >Brooklyn College
+                    <span class="dist">(168mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003479; color: #ffffff"
+                    >Immaculata <span class="dist">(376mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #00529c; color: #efb410"
+                    >Johnson & Wales (RI)
+                    <span class="dist">(98mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c75300; color: #ffffff"
+                    >Rochester Tech <span class="dist">(319mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #093a88; color: #ffffff"
+                    >Merchant Marine
+                    <span class="dist">(157mi, Q14)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #082057; color: #ffffff"
+                    >SUNY Geneseo <span class="dist">(335mi, Q14)</span></span
+                  ><span class="nearby-team overflow">+5 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #502d7f; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">UW-Whitewater</span>
+                  <span class="badge qseed-badge">Q2</span>
+                  <span class="badge seed-badge">#7</span>
+                  <span class="badge conf-badge">WIAC</span>
+                </div>
+                <span class="count-badge">24</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Oshkosh <span class="dist">(90mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(448mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(458mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(254mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(111mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(419mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(443mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(350mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(37mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(273mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(112mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(182mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(82mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(180mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002856; color: #ffffff"
+                    >Bethel <span class="dist">(308mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(49mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(204mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bd0e35; color: #ffffff"
+                    >UW-River Falls <span class="dist">(279mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Gustavus Adolphus
+                    <span class="dist">(338mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880011; color: #ffffff"
+                    >Coe <span class="dist">(208mi, Q11)</span></span
+                  ><span class="nearby-team overflow">+4 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #c45114; color: #04203d"
+              >
+                <div class="header-left">
+                  <span class="team-name">Hope</span>
+                  <span class="badge qseed-badge">Q3</span>
+                  <span class="badge seed-badge">#10</span>
+                  <span class="badge conf-badge">MIAA</span>
+                </div>
+                <span class="count-badge">24</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Oshkosh <span class="dist">(328mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(361mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(254mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >John Carroll <span class="dist">(332mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(336mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(319mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Baldwin Wallace <span class="dist">(316mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(420mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(257mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(152mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(146mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(257mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(326mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(433mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(247mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(458mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c21a34; color: #ffffff"
+                    >Carnegie Mellon
+                    <span class="dist">(438mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880011; color: #ffffff"
+                    >Coe <span class="dist">(382mi, Q11)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #9d2235; color: #ffffff"
+                    >Transylvania <span class="dist">(415mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5121b; color: #ffffff"
+                    >Washington & Jefferson
+                    <span class="dist">(461mi, Q12)</span></span
+                  ><span class="nearby-team overflow">+4 more</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #0067b1; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">UW-Platteville</span>
+                  <span class="badge qseed-badge">Q3</span>
+                  <span class="badge seed-badge">#11</span>
+                  <span class="badge conf-badge">WIAC</span>
+                </div>
+                <span class="count-badge">20</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Oshkosh <span class="dist">(162mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(111mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(336mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(499mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(363mi, Q4)</span></span
+                  ><span class="nearby-team host"
+                    >Concordia Moorhead
+                    <span class="dist">(497mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(137mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(371mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(194mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(227mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(149mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(106mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002856; color: #ffffff"
+                    >Bethel <span class="dist">(288mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(146mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(134mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bd0e35; color: #ffffff"
+                    >UW-River Falls <span class="dist">(223mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Gustavus Adolphus
+                    <span class="dist">(257mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880011; color: #ffffff"
+                    >Coe <span class="dist">(92mi, Q11)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #95111e; color: #ffffff"
+                    >Bethany Luth <span class="dist">(247mi, Q16)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #112c53; color: #ffffff"
+                    >Principia <span class="dist">(304mi, Q16)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #ffcc00; color: #000000"
+              >
+                <div class="header-left">
+                  <span class="team-name">UW-Oshkosh</span>
+                  <span class="badge qseed-badge">Q1</span>
+                  <span class="badge seed-badge">#1</span>
+                  <span class="badge conf-badge">WIAC</span>
+                </div>
+                <span class="count-badge">19</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(90mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(328mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(162mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(493mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >WashU <span class="dist">(438mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(93mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(345mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(184mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(277mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(21mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(151mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002856; color: #ffffff"
+                    >Bethel <span class="dist">(286mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(82mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(177mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bd0e35; color: #ffffff"
+                    >UW-River Falls <span class="dist">(255mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Gustavus Adolphus
+                    <span class="dist">(311mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880011; color: #ffffff"
+                    >Coe <span class="dist">(256mi, Q11)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #95111e; color: #ffffff"
+                    >Bethany Luth <span class="dist">(304mi, Q16)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #112c53; color: #ffffff"
+                    >Principia <span class="dist">(437mi, Q16)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #ba0c2f; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">WashU</span>
+                  <span class="badge qseed-badge">Q4</span>
+                  <span class="badge seed-badge">#14</span>
+                  <span class="badge conf-badge">UAA</span>
+                </div>
+                <span class="count-badge">18</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Oshkosh <span class="dist">(438mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Denison <span class="dist">(451mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Whitewater <span class="dist">(350mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Hope <span class="dist">(420mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(363mi, Q3)</span></span
+                  ><span class="nearby-team host"
+                    >Ohio Wesleyan <span class="dist">(436mi, Q3)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #f26722; color: #ffffff"
+                    >Carroll <span class="dist">(366mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #b5a66b; color: #003767"
+                    >Trine <span class="dist">(409mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880000; color: #ffffff"
+                    >Chicago <span class="dist">(307mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #006747; color: #ffffff"
+                    >Illinois Wesleyan
+                    <span class="dist">(163mi, Q5)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(438mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(463mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bdbec0; color: #006643"
+                    >Wisconsin Lutheran
+                    <span class="dist">(376mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(449mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #880011; color: #ffffff"
+                    >Coe <span class="dist">(285mi, Q11)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #9d2235; color: #ffffff"
+                    >Transylvania <span class="dist">(347mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #112c53; color: #ffffff"
+                    >Principia <span class="dist">(37mi, Q16)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #49176d; color: #ffffff"
+                    >Asbury <span class="dist">(347mi, Q16)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #000000; color: #b0b7bc"
+              >
+                <div class="header-left">
+                  <span class="team-name">Bowdoin</span>
+                  <span class="badge qseed-badge">Q2</span>
+                  <span class="badge seed-badge">#8</span>
+                  <span class="badge conf-badge">NESCAC</span>
+                </div>
+                <span class="count-badge">15</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >NYU <span class="dist">(345mi, Q1)</span></span
+                  ><span class="nearby-team host"
+                    >Scranton <span class="dist">(418mi, Q2)</span></span
+                  ><span class="nearby-team host"
+                    >Smith <span class="dist">(231mi, Q4)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #981328; color: #ffffff"
+                    >Bates <span class="dist">(22mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #970001; color: #eaeaea"
+                    >Cortland <span class="dist">(452mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #e56927; color: #ffffff"
+                    >William Paterson
+                    <span class="dist">(348mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #013e7d; color: #e64e1d"
+                    >SUNY New Paltz <span class="dist">(347mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #192d5b; color: #ffffff"
+                    >Southern Maine <span class="dist">(37mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002855; color: #ffffff"
+                    >DeSales <span class="dist">(434mi, Q12)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #521010; color: #ffffff"
+                    >Brooklyn College
+                    <span class="dist">(348mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #00529c; color: #efb410"
+                    >Johnson & Wales (RI)
+                    <span class="dist">(183mi, Q13)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #093a88; color: #ffffff"
+                    >Merchant Marine
+                    <span class="dist">(337mi, Q14)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #004b87; color: #f6be00"
+                    >Emmanuel <span class="dist">(135mi, Q14)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #0168b3; color: #fff"
+                    >Maine-Maritime <span class="dist">(116mi, Q15)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #003366; color: #ffffff"
+                    >Bridgewater St.
+                    <span class="dist">(165mi, Q16)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div
+                class="team-header"
+                style="background: #660833; color: #ffffff"
+              >
+                <div class="header-left">
+                  <span class="team-name">Concordia Moorhead</span>
+                  <span class="badge qseed-badge">Q4</span>
+                  <span class="badge seed-badge">#16</span>
+                  <span class="badge conf-badge">MIAC</span>
+                </div>
+                <span class="count-badge">8</span>
+              </div>
+              <div class="team-body">
+                <div class="nearby-list">
+                  <span class="nearby-team host"
+                    >UW-Platteville <span class="dist">(497mi, Q3)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #c41c36; color: #ffffff"
+                    >Ripon <span class="dist">(495mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #84001a; color: #ffffff"
+                    >UW-La Crosse <span class="dist">(392mi, Q6)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002856; color: #ffffff"
+                    >Bethel <span class="dist">(234mi, Q7)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #002146; color: #ffffff"
+                    >St. Mary's (MN) <span class="dist">(350mi, Q8)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #bd0e35; color: #ffffff"
+                    >UW-River Falls <span class="dist">(269mi, Q9)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #ffcf00; color: #000000"
+                    >Gustavus Adolphus
+                    <span class="dist">(292mi, Q10)</span></span
+                  ><span
+                    class="nearby-team"
+                    style="background: #95111e; color: #ffffff"
+                    >Bethany Luth <span class="dist">(304mi, Q16)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="footer">
+            Generated February 15, 2026 at 10:04 AM<br />
+            <a href="https://thed3statlab.com">TheD3StatLab</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>
