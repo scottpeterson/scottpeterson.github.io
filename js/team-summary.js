@@ -312,16 +312,16 @@
 
   /**
    * Gets the bid status tier for highlighting.
-   * Returns: 'green' for A or C-01 through C-21 (tournament bound)
-   *          'orange' for C-22 through C-36 (bubble)
+   * Returns: 'green' for AQ or AL-01 through AL-21 (tournament bound)
+   *          'orange' for AL-22 through AL-36 (bubble)
    *          'red' for all other values (outside looking in)
    */
   function getBidTier(value) {
-    if (value === 'A') {
+    if (value === 'AQ') {
       return 'green';
     }
 
-    const match = String(value).match(/^C-(\d{2})$/);
+    const match = String(value).match(/^AL-(\d{2})$/);
     if (match) {
       const num = parseInt(match[1], 10);
       if (num >= 1 && num <= 21) {

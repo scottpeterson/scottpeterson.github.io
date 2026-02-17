@@ -434,11 +434,11 @@ class TableController {
     // Get bid type from row data
     const bidType = row['Bid Type'] || row['bid type'] || row.bidType || '';
 
-    if (bidType === 'A') {
+    if (bidType === 'AQ') {
       // Green for automatic qualifier
       td.style.color = '#228B22'; // Forest green
       td.style.fontWeight = 'bold';
-    } else if (/^C-\d{2}$/.test(bidType)) {
+    } else if (/^AL-\d{2}$/.test(bidType)) {
       const bidNumber = parseInt(bidType.split('-')[1], 10);
       if (bidNumber >= 1 && bidNumber <= 21) {
         // Blue for Pool C bids (C-01 through C-21)
@@ -797,7 +797,7 @@ class TableController {
   }
 
   // Parse bid type value for sorting
-  // Returns a numeric value where: A = 0, C-01 = 1, C-02 = 2, etc.
+  // Returns a numeric value where: AQ = 0, AL-01 = 1, AL-02 = 2, etc.
   // Non-bid values get a high number to sort last
   parseBidTypeValue(value) {
     if (typeof value !== 'string') {
@@ -806,15 +806,15 @@ class TableController {
 
     const trimmed = value.trim();
 
-    // "A" (automatic qualifier) sorts first
-    if (trimmed === 'A') {
+    // "AQ" (automatic qualifier) sorts first
+    if (trimmed === 'AQ') {
       return 0;
     }
 
-    // C-XX values sort by their numeric portion
-    const cMatch = trimmed.match(/^C-(\d{2})$/);
-    if (cMatch) {
-      return parseInt(cMatch[1], 10);
+    // AL-XX values sort by their numeric portion
+    const alMatch = trimmed.match(/^AL-(\d{2})$/);
+    if (alMatch) {
+      return parseInt(alMatch[1], 10);
     }
 
     // Everything else sorts last
