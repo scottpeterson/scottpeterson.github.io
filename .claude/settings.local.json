@@ -39,7 +39,10 @@
       "Bash(python3:*)",
       "Bash(grep:*)",
       "Skill(commit-push)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(git -C /Users/scottpeterson/projects/scottpeterson.github.io status)",
+      "Bash(git -C /Users/scottpeterson/projects/scottpeterson.github.io diff --stat)",
+      "Bash(git -C:*)"
     ],
     "deny": [],
     "ask": []
