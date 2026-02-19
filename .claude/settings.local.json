@@ -42,7 +42,8 @@
       "Bash(node -e:*)",
       "Bash(git -C /Users/scottpeterson/projects/scottpeterson.github.io status)",
       "Bash(git -C /Users/scottpeterson/projects/scottpeterson.github.io diff --stat)",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "Bash(npx prettier:*)"
     ],
     "deny": [],
     "ask": []
