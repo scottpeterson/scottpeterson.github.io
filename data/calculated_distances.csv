@@ -110,7 +110,7 @@ Albertus Magnus,Luther,1162.0,False,ncaa_verified
 Albertus Magnus,Lyon,1285.0,False,osrm
 Albertus Magnus,Maine-Farmington,310.3,False,osrm
 Albertus Magnus,Maine-Maritime,376.0,False,ncaa_verified
-Albertus Magnus,Maine-Presque Isle,520.7,False,osrm
+Albertus Magnus,Maine-Presque Isle,524.0,False,ncaa_verified
 Albertus Magnus,Manhattanville,58.0,False,ncaa_verified
 Albertus Magnus,Marietta,578.0,False,ncaa_verified
 Albertus Magnus,Martin Luther,1328.0,False,ncaa_verified
@@ -892,7 +892,7 @@ Amherst,UW-Stout,1255.0,False,ncaa_verified
 Amherst,UW-Superior,1376.0,False,ncaa_verified
 Amherst,UW-Whitewater,1018.0,False,ncaa_verified
 Amherst,Vassar,139.0,False,ncaa_verified
-Amherst,Virginia Wesleyan,520.1,False,osrm
+Amherst,Virginia Wesleyan,516.0,True,ncaa_verified
 Amherst,Wabash,933.5,False,osrm
 Amherst,Wartburg,1221.0,False,ncaa_verified
 Amherst,Washington & Jefferson,543.0,False,ncaa_verified
@@ -934,7 +934,7 @@ Anderson,Bethel,639.6,False,osrm
 Anderson,Bowdoin,1035.5,False,osrm
 Anderson,Brandeis,896.7,False,osrm
 Anderson,Brevard,543.0,False,ncaa_verified
-Anderson,Bridgewater (VA),522.9,False,osrm
+Anderson,Bridgewater (VA),531.0,False,ncaa_verified
 Anderson,Bridgewater St.,922.3,False,osrm
 Anderson,Brockport St.,531.5,False,osrm
 Anderson,Brooklyn College,713.3,False,osrm
@@ -1025,7 +1025,7 @@ Anderson,Mass-Dartmouth,911.3,False,osrm
 Anderson,McDaniel,545.5,False,osrm
 Anderson,McMurry,1071.0,False,osrm
 Anderson,Merchant Marine,726.0,False,osrm
-Anderson,Messiah,523.4,False,osrm
+Anderson,Messiah,524.0,False,ncaa_verified
 Anderson,Middlebury,811.0,False,osrm
 Anderson,Millsaps,709.3,False,osrm
 Anderson,Minn-Morris,775.7,False,osrm
@@ -1078,13 +1078,13 @@ Anderson,Scranton,616.7,False,osrm
 Anderson,Shenandoah,489.0,True,ncaa_verified
 Anderson,Smith,841.6,False,osrm
 Anderson,Southern Maine,1008.2,False,osrm
-Anderson,Southern Virginia,523.0,False,osrm
+Anderson,Southern Virginia,486.0,True,ncaa_verified
 Anderson,Springfield,833.3,False,osrm
 Anderson,St. Benedict,697.8,False,osrm
 Anderson,St. Joseph (CT),804.3,False,osrm
 Anderson,St. Joseph's (ME),1024.9,False,osrm
 Anderson,St. Mary's (MD),630.5,False,osrm
-Anderson,St. Mary's (MN),520.2,False,osrm
+Anderson,St. Mary's (MN),520.0,True,ncaa_verified
 Anderson,St. Norbert,410.8,False,osrm
 Anderson,St. Scholastica,684.4,False,osrm
 Anderson,St. Thomas (TX),1058.8,False,osrm
@@ -1093,7 +1093,7 @@ Anderson,Stevens,707.0,False,osrm
 Anderson,Stockton,685.8,False,osrm
 Anderson,Suffolk,908.0,False,osrm
 Anderson,SUNY Canton,708.0,False,osrm
-Anderson,SUNY Geneseo,523.0,False,osrm
+Anderson,SUNY Geneseo,528.0,False,ncaa_verified
 Anderson,SUNY New Paltz,722.2,False,osrm
 Anderson,SUNY Oneonta,701.4,False,osrm
 Anderson,SUNYIT,665.4,False,osrm
@@ -3842,7 +3842,7 @@ Bethany (WV),St. Scholastica,940.8,False,osrm
 Bethany (WV),St. Thomas (TX),1299.7,False,osrm
 Bethany (WV),St. Vincent,77.2,False,osrm
 Bethany (WV),Stevens,400.1,False,osrm
-Bethany (WV),SUNY Canton,521.0,False,osrm
+Bethany (WV),SUNY Canton,528.0,False,ncaa_verified
 Bethany (WV),SUNY Geneseo,304.3,False,osrm
 Bethany (WV),SUNY New Paltz,437.8,False,osrm
 Bethany (WV),Susquehanna,258.5,False,osrm
@@ -3947,7 +3947,7 @@ Bethany Luth,Houghton,1004.0,False,ncaa_verified
 Bethany Luth,Hunter,1223.0,False,ncaa_verified
 Bethany Luth,Huntingdon,1086.2,False,osrm
 Bethany Luth,Husson,1648.0,False,ncaa_verified
-Bethany Luth,Illinois Col,478.6,False,osrm
+Bethany Luth,Illinois Col,477.0,False,ncaa_verified
 Bethany Luth,Illinois Wesleyan,463.0,False,ncaa_verified
 Bethany Luth,Immaculata,1006.0,False,ncaa_verified
 Bethany Luth,Ithaca,1107.0,False,ncaa_verified
@@ -5995,7 +5995,7 @@ Cairn,Hardin-Simmons,1676.6,False,osrm
 Cairn,Hood,167.8,False,osrm
 Cairn,Hope,731.9,False,osrm
 Cairn,Huntingdon,995.6,False,osrm
-Cairn,Husson,523.6,False,osrm
+Cairn,Husson,523.0,False,ncaa_verified
 Cairn,Illinois Col,894.2,False,osrm
 Cairn,Illinois Wesleyan,822.9,False,osrm
 Cairn,John Carroll,432.5,False,osrm
@@ -6036,7 +6036,7 @@ Cairn,Olivet,663.0,False,osrm
 Cairn,Oswego St.,295.8,False,osrm
 Cairn,Otterbein,488.0,True,ncaa_verified
 Cairn,Penn State-Behrend,428.7,False,osrm
-Cairn,Pfeiffer,522.4,False,osrm
+Cairn,Pfeiffer,570.0,False,ncaa_verified
 Cairn,Pitt-Greensburg,292.3,False,osrm
 Cairn,PSU-Harrisburg,113.0,False,osrm
 Cairn,Puget Sound,2832.8,False,osrm
@@ -6091,7 +6091,7 @@ Cairn,Westfield St.,227.0,False,osrm
 Cairn,Westminster (PA),367.8,False,osrm
 Cairn,Whitworth,2543.1,False,osrm
 Cairn,Willamette,2923.2,False,osrm
-Cairn,Wittenberg,523.8,False,osrm
+Cairn,Wittenberg,526.0,False,ncaa_verified
 Cairn,Worcester St.,255.1,False,osrm
 Cairn,WPI,258.6,False,osrm
 Cairn,Yeshiva,90.9,False,osrm
@@ -7220,7 +7220,7 @@ Carthage,Endicott,1076.0,False,ncaa_verified
 Carthage,Eureka,192.0,False,ncaa_verified
 Carthage,Farmingdale,890.8,False,osrm
 Carthage,Framingham St.,1031.0,False,ncaa_verified
-Carthage,Franciscan,522.5,False,osrm
+Carthage,Franciscan,527.0,False,ncaa_verified
 Carthage,Franklin,276.0,False,ncaa_verified
 Carthage,Franklin & Marshall,756.5,False,osrm
 Carthage,Gallaudet,773.0,False,ncaa_verified
@@ -7507,7 +7507,7 @@ Case Western,PSU-Harrisburg,342.0,False,ncaa_verified
 Case Western,Puget Sound,2383.0,False,ncaa_verified
 Case Western,Randolph-Macon,458.0,False,ncaa_verified
 Case Western,Redlands,2317.0,False,ncaa_verified
-Case Western,Rensselaer,476.6,False,osrm
+Case Western,Rensselaer,476.0,False,ncaa_verified
 Case Western,Rhode Island College,633.0,False,ncaa_verified
 Case Western,Ripon,522.0,False,ncaa_verified
 Case Western,Rochester,255.9,False,osrm
@@ -8591,7 +8591,7 @@ Chicago,St. Lawrence,757.0,False,ncaa_verified
 Chicago,St. Mary's (MD),767.0,False,ncaa_verified
 Chicago,St. Mary's (MN),312.7,False,ncaa_verified
 Chicago,St. Norbert,216.0,False,ncaa_verified
-Chicago,St. Scholastica,477.6,False,osrm
+Chicago,St. Scholastica,479.0,False,ncaa_verified
 Chicago,St. Thomas (TX),1081.0,False,osrm
 Chicago,St. Vincent,492.0,True,ncaa_verified
 Chicago,Stevens,782.0,False,ncaa_verified
@@ -10435,7 +10435,7 @@ Connecticut College,UW-River Falls,1290.7,False,osrm
 Connecticut College,UW-Stevens Point,1148.6,False,osrm
 Connecticut College,UW-Stout,1251.1,False,osrm
 Connecticut College,UW-Whitewater,1009.0,False,osrm
-Connecticut College,Virginia Wesleyan,479.6,False,osrm
+Connecticut College,Virginia Wesleyan,475.0,False,ncaa_verified
 Connecticut College,Wartburg,1216.4,False,osrm
 Connecticut College,Washington & Jefferson,504.0,False,ncaa_verified
 Connecticut College,Washington & Lee,534.4,False,osrm
@@ -10649,7 +10649,7 @@ Cortland,UW-Stout,1053.0,False,ncaa_verified
 Cortland,UW-Superior,1173.0,False,ncaa_verified
 Cortland,UW-Whitewater,814.0,False,ncaa_verified
 Cortland,Vassar,178.0,False,ncaa_verified
-Cortland,Virginia Wesleyan,478.6,False,osrm
+Cortland,Virginia Wesleyan,474.0,False,ncaa_verified
 Cortland,Wabash,703.7,False,osrm
 Cortland,Wartburg,1017.0,False,ncaa_verified
 Cortland,Washington & Jefferson,366.0,False,ncaa_verified
@@ -10881,7 +10881,7 @@ Denison,Minn-Morris,905.0,False,ncaa_verified
 Denison,Misericordia,430.0,False,ncaa_verified
 Denison,MIT,729.0,False,ncaa_verified
 Denison,Mitchell,647.0,False,ncaa_verified
-Denison,Monmouth,478.9,False,osrm
+Denison,Monmouth,486.0,True,ncaa_verified
 Denison,Montclair St.,510.0,True,ncaa_verified
 Denison,Moravian,437.0,False,ncaa_verified
 Denison,Morrisville St.,490.0,True,ncaa_verified
@@ -11049,7 +11049,7 @@ DePauw,Hamilton,736.0,False,ncaa_verified
 DePauw,Hamline,583.0,False,ncaa_verified
 DePauw,Hanover,145.0,False,ncaa_verified
 DePauw,Hardin-Simmons,997.0,False,ncaa_verified
-DePauw,Hollins,523.4,False,osrm
+DePauw,Hollins,541.0,False,ncaa_verified
 DePauw,Hood,576.6,False,osrm
 DePauw,Hope,263.0,False,ncaa_verified
 DePauw,Houghton,587.0,False,ncaa_verified
@@ -11153,7 +11153,7 @@ DePauw,Rhode Island College,940.0,False,ncaa_verified
 DePauw,Rhodes,437.3,False,osrm
 DePauw,Ripon,352.0,False,ncaa_verified
 DePauw,Rivier,997.0,False,ncaa_verified
-DePauw,Roanoke,523.5,False,osrm
+DePauw,Roanoke,531.0,False,ncaa_verified
 DePauw,Rochester,618.0,False,ncaa_verified
 DePauw,Rochester Tech,616.0,False,ncaa_verified
 DePauw,Roger Williams,955.0,False,ncaa_verified
@@ -12089,7 +12089,7 @@ Eastern Connecticut,Loras,1100.0,False,ncaa_verified
 Eastern Connecticut,Lyon,1358.5,False,osrm
 Eastern Connecticut,Maine-Farmington,267.6,False,osrm
 Eastern Connecticut,Maine-Maritime,331.0,False,ncaa_verified
-Eastern Connecticut,Maine-Presque Isle,478.0,False,osrm
+Eastern Connecticut,Maine-Presque Isle,479.0,False,ncaa_verified
 Eastern Connecticut,Manhattanville,113.0,False,ncaa_verified
 Eastern Connecticut,Marietta,639.0,False,ncaa_verified
 Eastern Connecticut,Mary Hardin-Baylor,1828.0,False,ncaa_verified
@@ -14526,7 +14526,7 @@ Grinnell,Neumann,1020.0,False,osrm
 Grinnell,North Central (MN),275.4,False,osrm
 Grinnell,Notre Dame (MD),974.9,False,osrm
 Grinnell,NYU,1066.4,False,osrm
-Grinnell,Ohio Northern,523.5,False,osrm
+Grinnell,Ohio Northern,516.0,True,ncaa_verified
 Grinnell,Olivet,457.5,False,osrm
 Grinnell,Oswego St.,943.4,False,osrm
 Grinnell,Otterbein,609.1,False,osrm
@@ -15690,7 +15690,7 @@ Hollins,Maine-Maritime,901.4,False,osrm
 Hollins,Marietta,256.8,False,osrm
 Hollins,McDaniel,250.6,False,osrm
 Hollins,McMurry,1282.7,False,osrm
-Hollins,Merchant Marine,477.0,False,osrm
+Hollins,Merchant Marine,488.0,True,ncaa_verified
 Hollins,Messiah,274.4,False,osrm
 Hollins,Middlebury,689.1,False,osrm
 Hollins,Millsaps,751.2,False,osrm
@@ -16544,7 +16544,7 @@ Husson,Suffolk,236.0,False,osrm
 Husson,SUNY Cobleskill,444.0,False,ncaa_verified
 Husson,SUNY Geneseo,644.0,False,ncaa_verified
 Husson,SUNY New Paltz,451.0,False,ncaa_verified
-Husson,SUNY Oneonta,476.5,False,osrm
+Husson,SUNY Oneonta,480.0,True,ncaa_verified
 Husson,SUNYIT,493,True,ncaa_verified
 Husson,TCNJ,503.0,True,ncaa_verified
 Husson,Texas Lutheran,2234.0,False,ncaa_verified
@@ -16815,7 +16815,7 @@ Illinois Wesleyan,St. Lawrence,868.0,False,ncaa_verified
 Illinois Wesleyan,St. Mary's (MD),819.0,False,ncaa_verified
 Illinois Wesleyan,St. Mary's (MN),355.0,False,ncaa_verified
 Illinois Wesleyan,St. Norbert,324.0,False,ncaa_verified
-Illinois Wesleyan,St. Scholastica,520.8,False,osrm
+Illinois Wesleyan,St. Scholastica,525.0,False,ncaa_verified
 Illinois Wesleyan,St. Thomas (TX),942.5,False,osrm
 Illinois Wesleyan,St. Vincent,558.0,False,ncaa_verified
 Illinois Wesleyan,Stevens,881.0,False,ncaa_verified
@@ -17181,7 +17181,7 @@ John Carroll,Martin Luther,816.0,False,ncaa_verified
 John Carroll,Mary Hardin-Baylor,1322.0,False,ncaa_verified
 John Carroll,Mary Washington,408.0,False,ncaa_verified
 John Carroll,Marymount,359.0,False,ncaa_verified
-John Carroll,Maryville,520,True,ncaa_verified
+John Carroll,Maryville,520.0,True,ncaa_verified
 John Carroll,Mass-Boston,637.0,False,osrm
 John Carroll,Mass-Dartmouth,604.0,False,ncaa_verified
 John Carroll,McDaniel,321.0,False,ncaa_verified
@@ -17278,7 +17278,7 @@ John Carroll,St. Scholastica,821.0,False,osrm
 John Carroll,St. Thomas (TX),1306.8,False,osrm
 John Carroll,St. Vincent,162.0,False,ncaa_verified
 John Carroll,Stevens,452.0,False,ncaa_verified
-John Carroll,Stockton,479.4,False,osrm
+John Carroll,Stockton,481.0,True,ncaa_verified
 John Carroll,Suffolk,634.0,False,ncaa_verified
 John Carroll,SUNY Canton,452.6,False,osrm
 John Carroll,SUNY Cobleskill,439.0,False,ncaa_verified
@@ -18407,7 +18407,7 @@ Lake Forest,Ohio Northern,283.4,False,osrm
 Lake Forest,Olivet,216.5,False,osrm
 Lake Forest,Oswego St.,712.7,False,osrm
 Lake Forest,Otterbein,345.1,False,osrm
-Lake Forest,Penn State-Behrend,479.2,False,osrm
+Lake Forest,Penn State-Behrend,479.0,False,ncaa_verified
 Lake Forest,Pfeiffer,784.2,False,osrm
 Lake Forest,Pitt-Greensburg,523.0,False,ncaa_verified
 Lake Forest,PSU-Harrisburg,696.3,False,osrm
@@ -18547,7 +18547,7 @@ Lancaster Bib,Springfield,303.0,False,ncaa_verified
 Lancaster Bib,St. Benedict,1172.0,False,ncaa_verified
 Lancaster Bib,St. John Fisher,299.0,False,ncaa_verified
 Lancaster Bib,St. Joseph (CT),267.3,False,osrm
-Lancaster Bib,St. Joseph's (ME),479.2,False,osrm
+Lancaster Bib,St. Joseph's (ME),492.0,True,ncaa_verified
 Lancaster Bib,St. Norbert,900.0,False,ncaa_verified
 Lancaster Bib,St. Thomas (TX),1506.8,False,osrm
 Lancaster Bib,St. Vincent,194.4,False,osrm
@@ -19655,7 +19655,7 @@ Lyon,UW-Stevens Point,726.8,False,osrm
 Lyon,UW-Whitewater,605.0,False,osrm
 Lyon,Vassar,1237.9,False,osrm
 Lyon,Virginia Wesleyan,1045.4,False,osrm
-Lyon,Wabash,477.5,False,osrm
+Lyon,Wabash,528.0,False,ncaa_verified
 Lyon,Washington & Jefferson,805.0,False,osrm
 Lyon,WashU,265.2,False,osrm
 Lyon,Webster,264.3,False,osrm
@@ -20464,7 +20464,7 @@ Mary Washington,Misericordia,271.5,False,osrm
 Mary Washington,Monmouth,865.2,False,osrm
 Mary Washington,Montclair St.,280.3,False,osrm
 Mary Washington,Morrisville St.,415.0,False,ncaa_verified
-Mary Washington,Mt. St. Joseph,522.7,False,osrm
+Mary Washington,Mt. St. Joseph,516.0,True,ncaa_verified
 Mary Washington,Mt. St. Mary,346.0,False,ncaa_verified
 Mary Washington,Mt. St. Vincent,297.0,False,ncaa_verified
 Mary Washington,Mt. Union,344.7,False,osrm
@@ -20835,7 +20835,7 @@ Maryville,NYU,718.8,False,osrm
 Maryville,Oglethorpe,174.1,False,osrm
 Maryville,Ohio Northern,405.6,False,osrm
 Maryville,Ohio Wesleyan,400.0,False,osrm
-Maryville,Olivet,521.7,False,osrm
+Maryville,Olivet,551.0,False,ncaa_verified
 Maryville,Oswego St.,839.4,False,osrm
 Maryville,Otterbein,384.8,False,osrm
 Maryville,Penn State-Abington,655.3,False,osrm
@@ -20910,7 +20910,7 @@ Maryville,Vassar,778.7,False,osrm
 Maryville,Virginia Wesleyan,548.3,False,osrm
 Maryville,Wabash,423.0,False,osrm
 Maryville,Wartburg,837.7,False,osrm
-Maryville,Washington & Jefferson,476.3,False,osrm
+Maryville,Washington & Jefferson,482.0,True,ncaa_verified
 Maryville,Washington & Lee,313.2,False,osrm
 Maryville,WashU,492.0,False,ncaa_verified
 Maryville,Webster,501.0,False,ncaa_verified
@@ -23208,7 +23208,7 @@ Mt. Union,Rochester,293.6,False,osrm
 Mt. Union,Rochester Tech,291.0,False,ncaa_verified
 Mt. Union,Rose-Hulman,389.5,False,osrm
 Mt. Union,Rowan,410.8,False,ncaa_verified
-Mt. Union,Sage,523.4,False,osrm
+Mt. Union,Sage,508.0,True,ncaa_verified
 Mt. Union,Salem St.,653.5,False,osrm
 Mt. Union,Salisbury,431.9,False,osrm
 Mt. Union,Salve Regina,608.8,False,osrm
@@ -23643,7 +23643,7 @@ NC Wesleyan,Washington & Lee,255.0,False,ncaa_verified
 NC Wesleyan,WashU,883.0,False,ncaa_verified
 NC Wesleyan,Webster,894.0,False,ncaa_verified
 NC Wesleyan,Wesleyan (CT),561.4,False,osrm
-NC Wesleyan,Western Connecticut,522.3,False,osrm
+NC Wesleyan,Western Connecticut,521.0,False,ncaa_verified
 NC Wesleyan,Western New England,596.0,False,ncaa_verified
 NC Wesleyan,Westfield St.,600.0,False,ncaa_verified
 NC Wesleyan,Westminster (MO),992.0,False,ncaa_verified
@@ -23907,7 +23907,7 @@ New Jersey City,WPI,184.0,False,ncaa_verified
 North Central (IL),Oglethorpe,707.2,False,osrm
 North Central (IL),Ohio Wesleyan,334.9,False,osrm
 North Central (IL),Otterbein,340.2,False,osrm
-North Central (IL),Penn State-Behrend,476.3,False,osrm
+North Central (IL),Penn State-Behrend,475.0,False,ncaa_verified
 North Central (IL),Pomona-Pitzer,1958.7,False,osrm
 North Central (IL),Principia,262.1,False,osrm
 North Central (IL),Puget Sound,2063.1,False,osrm
@@ -23931,7 +23931,7 @@ North Central (IL),St. Mary's (MN),305.4,False,osrm
 North Central (IL),St. Norbert,216.8,False,osrm
 North Central (IL),St. Scholastica,469.7,False,osrm
 North Central (IL),St. Thomas (TX),1053.5,False,osrm
-North Central (IL),St. Vincent,523.8,False,osrm
+North Central (IL),St. Vincent,527.0,False,ncaa_verified
 North Central (IL),Stevens,818.6,False,osrm
 North Central (IL),SUNY Canton,785.7,False,osrm
 North Central (IL),SUNY Geneseo,612.5,False,osrm
@@ -25708,7 +25708,7 @@ Principia,UW-Eau Claire,530.0,False,ncaa_verified
 Principia,UW-La Crosse,404.0,False,ncaa_verified
 Principia,UW-Oshkosh,437.0,False,ncaa_verified
 Principia,UW-Platteville,304.0,False,ncaa_verified
-Principia,UW-River Falls,523.4,False,osrm
+Principia,UW-River Falls,498.0,True,ncaa_verified
 Principia,UW-Stevens Point,475.0,False,ncaa_verified
 Principia,UW-Stout,556.0,False,ncaa_verified
 Principia,UW-Superior,675.0,False,ncaa_verified
@@ -26023,7 +26023,7 @@ Randolph-Macon,SUNY Cobleskill,481.0,True,ncaa_verified
 Randolph-Macon,SUNY Geneseo,433.0,False,ncaa_verified
 Randolph-Macon,SUNY New Paltz,397.0,False,ncaa_verified
 Randolph-Macon,SUNY Oneonta,439.0,False,osrm
-Randolph-Macon,SUNYIT,477.3,False,osrm
+Randolph-Macon,SUNYIT,485.0,True,ncaa_verified
 Randolph-Macon,Susquehanna,263.6,False,ncaa_verified
 Randolph-Macon,TCNJ,268.0,False,ncaa_verified
 Randolph-Macon,Texas Lutheran,1505.0,False,ncaa_verified
@@ -26539,7 +26539,7 @@ Roanoke,Stevens,458.3,False,osrm
 Roanoke,Stockton,414.7,False,osrm
 Roanoke,Suffolk,669.9,False,osrm
 Roanoke,SUNY Geneseo,517,True,ncaa_verified
-Roanoke,SUNY Oneonta,522.8,False,osrm
+Roanoke,SUNY Oneonta,530.0,False,ncaa_verified
 Roanoke,SUNYIT,561.0,False,osrm
 Roanoke,TCNJ,418.5,False,osrm
 Roanoke,Transylvania,345.6,False,osrm
@@ -26557,7 +26557,7 @@ Roanoke,UW-Stevens Point,904.7,False,osrm
 Roanoke,UW-Whitewater,759.1,False,osrm
 Roanoke,Vassar,521.0,False,ncaa_verified
 Roanoke,Virginia Wesleyan,289.2,False,osrm
-Roanoke,Wabash,521.6,False,osrm
+Roanoke,Wabash,533.0,False,ncaa_verified
 Roanoke,Washington & Jefferson,293.0,False,osrm
 Roanoke,WashU,683.7,False,osrm
 Roanoke,Webster,687.9,False,osrm
@@ -26796,7 +26796,7 @@ Rose-Hulman,Tufts,1010.8,False,osrm
 Rose-Hulman,Union (NY),842.3,False,osrm
 Rose-Hulman,Ursinus,703.5,False,osrm
 Rose-Hulman,Utica,767.7,False,osrm
-Rose-Hulman,UW-La Crosse,478.6,False,osrm
+Rose-Hulman,UW-La Crosse,480.0,True,ncaa_verified
 Rose-Hulman,UW-Oshkosh,354.3,False,osrm
 Rose-Hulman,UW-Platteville,372.1,False,osrm
 Rose-Hulman,UW-Stevens Point,446.6,False,osrm
@@ -28964,7 +28964,7 @@ Trinity (CT),Western Connecticut,55.5,False,osrm
 Trinity (CT),Western New England,30.4,False,ncaa_verified
 Trinity (CT),Westfield St.,36.0,False,ncaa_verified
 Trinity (CT),Westminster (MO),1181.0,False,ncaa_verified
-Trinity (CT),Westminster (PA),476.5,False,osrm
+Trinity (CT),Westminster (PA),477.0,False,ncaa_verified
 Trinity (CT),Wheaton (IL),916.0,False,ncaa_verified
 Trinity (CT),Whitman,2823.0,False,ncaa_verified
 Trinity (CT),Whittier,2887.0,False,ncaa_verified
@@ -29438,7 +29438,7 @@ UW-Whitewater,Western Connecticut,937.0,False,osrm
 UW-Whitewater,Western New England,1009.0,False,ncaa_verified
 UW-Whitewater,Westfield St.,997.0,False,ncaa_verified
 UW-Whitewater,Westminster (MO),416.0,False,ncaa_verified
-UW-Whitewater,Westminster (PA),523.5,False,osrm
+UW-Whitewater,Westminster (PA),525.0,False,ncaa_verified
 UW-Whitewater,Wheaton (IL),96.0,False,ncaa_verified
 UW-Whitewater,Whitman,1794.0,False,ncaa_verified
 UW-Whitewater,Whittier,2012.0,False,ncaa_verified
