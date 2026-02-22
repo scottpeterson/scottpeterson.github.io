@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Team Simulation Stats Comparison | Feb 21, 2026 vs Feb 20, 2026 - The D3
+      Team Simulation Stats Comparison | Feb 22, 2026 vs Feb 21, 2026 - The D3
       Stat Lab
     </title>
 
@@ -18,12 +18,12 @@
 
     <!-- Scoped report styles -->
     <style>
-      .report-team_comparison_2026-02-21 * {
+      .report-team_comparison_2026-02-22 * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-      .report-team_comparison_2026-02-21 {
+      .report-team_comparison_2026-02-22 {
         font-family:
           -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
           sans-serif;
@@ -32,62 +32,62 @@
         padding: 40px 20px;
         color: #fff;
       }
-      .report-team_comparison_2026-02-21 .container {
+      .report-team_comparison_2026-02-22 .container {
         max-width: 1200px;
         margin: 0 auto;
       }
-      .report-team_comparison_2026-02-21 h1 {
+      .report-team_comparison_2026-02-22 h1 {
         text-align: center;
         font-size: 2rem;
         margin-bottom: 10px;
         color: #fff;
       }
-      .report-team_comparison_2026-02-21 .subtitle {
+      .report-team_comparison_2026-02-22 .subtitle {
         text-align: center;
         color: #8892b0;
         margin-bottom: 20px;
         font-size: 1.1rem;
       }
-      .report-team_comparison_2026-02-21 .legend {
+      .report-team_comparison_2026-02-22 .legend {
         display: flex;
         justify-content: center;
         gap: 30px;
         margin-bottom: 30px;
       }
-      .report-team_comparison_2026-02-21 .legend-item {
+      .report-team_comparison_2026-02-22 .legend-item {
         display: flex;
         align-items: center;
         gap: 8px;
         font-size: 0.9rem;
         color: #ccd6f6;
       }
-      .report-team_comparison_2026-02-21 .legend-color {
+      .report-team_comparison_2026-02-22 .legend-color {
         width: 16px;
         height: 16px;
         border-radius: 4px;
       }
-      .report-team_comparison_2026-02-21 .legend-color.riser {
+      .report-team_comparison_2026-02-22 .legend-color.riser {
         background: #64ffda;
       }
-      .report-team_comparison_2026-02-21 .legend-color.faller {
+      .report-team_comparison_2026-02-22 .legend-color.faller {
         background: #ff6b6b;
       }
-      .report-team_comparison_2026-02-21 .cards-grid {
+      .report-team_comparison_2026-02-22 .cards-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
       }
       @media (max-width: 1100px) {
-        .report-team_comparison_2026-02-21 .cards-grid {
+        .report-team_comparison_2026-02-22 .cards-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
       @media (max-width: 600px) {
-        .report-team_comparison_2026-02-21 .cards-grid {
+        .report-team_comparison_2026-02-22 .cards-grid {
           grid-template-columns: 1fr;
         }
       }
-      .report-team_comparison_2026-02-21 .team-card {
+      .report-team_comparison_2026-02-22 .team-card {
         background: rgba(255, 255, 255, 0.05);
         border-radius: 16px;
         padding: 24px;
@@ -97,34 +97,34 @@
           transform 0.2s,
           box-shadow 0.2s;
       }
-      .report-team_comparison_2026-02-21 .team-card:hover {
+      .report-team_comparison_2026-02-22 .team-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
       }
-      .report-team_comparison_2026-02-21 .team-card.riser {
+      .report-team_comparison_2026-02-22 .team-card.riser {
         border-left: 4px solid #64ffda;
       }
-      .report-team_comparison_2026-02-21 .team-card.faller {
+      .report-team_comparison_2026-02-22 .team-card.faller {
         border-left: 4px solid #ff6b6b;
       }
-      .report-team_comparison_2026-02-21 .team-name {
+      .report-team_comparison_2026-02-22 .team-name {
         font-size: 1.4rem;
         font-weight: 700;
         margin-bottom: 6px;
         color: #fff;
       }
-      .report-team_comparison_2026-02-21 .team-conf {
+      .report-team_comparison_2026-02-22 .team-conf {
         font-size: 0.85rem;
         color: #8892b0;
         margin-bottom: 20px;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
-      .report-team_comparison_2026-02-21 .stats-table {
+      .report-team_comparison_2026-02-22 .stats-table {
         width: 100%;
         border-collapse: collapse;
       }
-      .report-team_comparison_2026-02-21 .stats-table th {
+      .report-team_comparison_2026-02-22 .stats-table th {
         text-align: left;
         padding: 8px 4px;
         font-size: 0.75rem;
@@ -133,42 +133,42 @@
         letter-spacing: 0.5px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
-      .report-team_comparison_2026-02-21 .stats-table td {
+      .report-team_comparison_2026-02-22 .stats-table td {
         padding: 10px 4px;
         font-size: 0.95rem;
       }
-      .report-team_comparison_2026-02-21 .stats-table tr:not(:last-child) td {
+      .report-team_comparison_2026-02-22 .stats-table tr:not(:last-child) td {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
-      .report-team_comparison_2026-02-21 .stat-label {
+      .report-team_comparison_2026-02-22 .stat-label {
         color: #ccd6f6;
         font-weight: 500;
       }
-      .report-team_comparison_2026-02-21 .stat-value {
+      .report-team_comparison_2026-02-22 .stat-value {
         text-align: right;
         font-family: 'SF Mono', Monaco, monospace;
       }
-      .report-team_comparison_2026-02-21 .stat-delta {
+      .report-team_comparison_2026-02-22 .stat-delta {
         text-align: right;
         font-family: 'SF Mono', Monaco, monospace;
         font-size: 0.85rem;
       }
-      .report-team_comparison_2026-02-21 .delta-positive {
+      .report-team_comparison_2026-02-22 .delta-positive {
         color: #64ffda;
       }
-      .report-team_comparison_2026-02-21 .delta-negative {
+      .report-team_comparison_2026-02-22 .delta-negative {
         color: #ff6b6b;
       }
-      .report-team_comparison_2026-02-21 .delta-neutral {
+      .report-team_comparison_2026-02-22 .delta-neutral {
         color: #8892b0;
       }
-      .report-team_comparison_2026-02-21 .footer {
+      .report-team_comparison_2026-02-22 .footer {
         text-align: center;
         margin-top: 40px;
         color: #8892b0;
         font-size: 0.85rem;
       }
-      .report-team_comparison_2026-02-21 .footer a {
+      .report-team_comparison_2026-02-22 .footer a {
         color: #64ffda;
         text-decoration: underline;
       }
@@ -280,14 +280,9 @@
                 >
               </li>
               <li>
-                <a href="team_comparison_2026-02-21.html" class="active"
-                  >Team Simulation Stats Comparison | Feb 21, 2026 vs Feb 20,
+                <a href="team_comparison_2026-02-22.html" class="active"
+                  >Team Simulation Stats Comparison | Feb 22, 2026 vs Feb 21,
                   2026</a
-                >
-              </li>
-              <li>
-                <a href="todays_losers_20260221.html"
-                  >Tournament Hopeful Losers - February 21, 2026</a
                 >
               </li>
               <li>
@@ -331,10 +326,10 @@
         <a href="/reports/">← Back to Reports</a>
       </div>
 
-      <div class="report-team_comparison_2026-02-21">
+      <div class="report-team_comparison_2026-02-22">
         <div class="container">
           <h1>Team Simulation Stats Comparison</h1>
-          <p class="subtitle">Feb 21, 2026 vs Feb 20, 2026</p>
+          <p class="subtitle">Feb 22, 2026 vs Feb 21, 2026</p>
 
           <div class="legend">
             <div class="legend-item">
@@ -348,132 +343,6 @@
           </div>
 
           <div class="cards-grid">
-            <!-- Emory -->
-            <div class="team-card riser">
-              <div class="team-name">Emory</div>
-              <div class="team-conf">UAA</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">53.3%</td>
-                    <td class="stat-value">67.4%</td>
-                    <td class="stat-delta delta-positive">+14.1%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">53.3%</td>
-                    <td class="stat-value">67.4%</td>
-                    <td class="stat-delta delta-positive">+14.1%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">53.3%</td>
-                    <td class="stat-value">67.4%</td>
-                    <td class="stat-delta delta-positive">+14.1%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Texas Lutheran -->
-            <div class="team-card riser">
-              <div class="team-name">Texas Lutheran</div>
-              <div class="team-conf">SCAC</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">23.7%</td>
-                    <td class="stat-value">27.3%</td>
-                    <td class="stat-delta delta-positive">+3.6%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">23.7%</td>
-                    <td class="stat-value">27.3%</td>
-                    <td class="stat-delta delta-positive">+3.6%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Union (NY) -->
-            <div class="team-card riser">
-              <div class="team-name">Union (NY)</div>
-              <div class="team-conf">LL</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">33.4%</td>
-                    <td class="stat-value">36.7%</td>
-                    <td class="stat-delta delta-positive">+3.3%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">33.4%</td>
-                    <td class="stat-value">36.7%</td>
-                    <td class="stat-delta delta-positive">+3.3%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
             <!-- UW-River Falls -->
             <div class="team-card riser">
               <div class="team-name">UW-River Falls</div>
@@ -482,287 +351,329 @@
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">58.8%</td>
                     <td class="stat-value">62.0%</td>
-                    <td class="stat-delta delta-positive">+3.2%</td>
+                    <td class="stat-value">100.0%</td>
+                    <td class="stat-delta delta-positive">+38.0%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
                     <td class="stat-value">0.2%</td>
-                    <td class="stat-value">0.2%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
+                    <td class="stat-value">0.4%</td>
+                    <td class="stat-delta delta-positive">+0.2%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">58.5%</td>
                     <td class="stat-value">61.8%</td>
-                    <td class="stat-delta delta-positive">+3.3%</td>
+                    <td class="stat-value">99.6%</td>
+                    <td class="stat-delta delta-positive">+37.8%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">58.7%</td>
                     <td class="stat-value">61.9%</td>
-                    <td class="stat-delta delta-positive">+3.2%</td>
+                    <td class="stat-value">100.0%</td>
+                    <td class="stat-delta delta-positive">+38.1%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <!-- SUNY New Paltz -->
+            <!-- Gustavus Adolphus -->
             <div class="team-card riser">
-              <div class="team-name">SUNY New Paltz</div>
-              <div class="team-conf">SUNYAC</div>
+              <div class="team-name">Gustavus Adolphus</div>
+              <div class="team-conf">MIAC</div>
               <table class="stats-table">
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">97.9%</td>
-                    <td class="stat-value">99.9%</td>
-                    <td class="stat-delta delta-positive">+2.0%</td>
+                    <td class="stat-value">74.1%</td>
+                    <td class="stat-value">97.4%</td>
+                    <td class="stat-delta delta-positive">+23.3%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
-                    <td class="stat-value">29.6%</td>
-                    <td class="stat-value">29.7%</td>
-                    <td class="stat-delta delta-positive">+0.1%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">68.2%</td>
-                    <td class="stat-value">70.1%</td>
+                    <td class="stat-value">17.2%</td>
+                    <td class="stat-value">19.1%</td>
                     <td class="stat-delta delta-positive">+1.9%</td>
                   </tr>
                   <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">56.9%</td>
+                    <td class="stat-value">78.2%</td>
+                    <td class="stat-delta delta-positive">+21.3%</td>
+                  </tr>
+                  <tr>
                     <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">97.0%</td>
-                    <td class="stat-value">99.8%</td>
-                    <td class="stat-delta delta-positive">+2.8%</td>
+                    <td class="stat-value">68.7%</td>
+                    <td class="stat-value">96.7%</td>
+                    <td class="stat-delta delta-positive">+28.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- SUNY Geneseo -->
+            <div class="team-card riser">
+              <div class="team-name">SUNY Geneseo</div>
+              <div class="team-conf">E8</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">38.7%</td>
+                    <td class="stat-value">54.2%</td>
+                    <td class="stat-delta delta-positive">+15.5%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">38.7%</td>
+                    <td class="stat-value">54.2%</td>
+                    <td class="stat-delta delta-positive">+15.5%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Randolph-Macon -->
+            <div class="team-card riser">
+              <div class="team-name">Randolph-Macon</div>
+              <div class="team-conf">ODAC</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">80.0%</td>
+                    <td class="stat-value">90.6%</td>
+                    <td class="stat-delta delta-positive">+10.6%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">3.8%</td>
+                    <td class="stat-value">4.2%</td>
+                    <td class="stat-delta delta-positive">+0.4%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">76.2%</td>
+                    <td class="stat-value">86.5%</td>
+                    <td class="stat-delta delta-positive">+10.3%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">79.2%</td>
+                    <td class="stat-value">90.2%</td>
+                    <td class="stat-delta delta-positive">+11.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Penn State-Abington -->
+            <div class="team-card riser">
+              <div class="team-name">Penn State-Abington</div>
+              <div class="team-conf">UEC</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">6.0%</td>
+                    <td class="stat-value">14.1%</td>
+                    <td class="stat-delta delta-positive">+8.1%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">6.0%</td>
+                    <td class="stat-value">14.1%</td>
+                    <td class="stat-delta delta-positive">+8.1%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Susquehanna -->
+            <div class="team-card riser">
+              <div class="team-name">Susquehanna</div>
+              <div class="team-conf">LAND</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">61.0%</td>
+                    <td class="stat-value">68.7%</td>
+                    <td class="stat-delta delta-positive">+7.7%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">0.9%</td>
+                    <td class="stat-value">0.7%</td>
+                    <td class="stat-delta delta-negative">-0.2%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">60.1%</td>
+                    <td class="stat-value">67.9%</td>
+                    <td class="stat-delta delta-positive">+7.8%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">60.6%</td>
+                    <td class="stat-value">68.4%</td>
+                    <td class="stat-delta delta-positive">+7.8%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <!-- Bridgewater (VA) -->
-            <div class="team-card riser">
+            <div class="team-card faller">
               <div class="team-name">Bridgewater (VA)</div>
               <div class="team-conf">ODAC</div>
               <table class="stats-table">
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">76.8%</td>
                     <td class="stat-value">78.5%</td>
-                    <td class="stat-delta delta-positive">+1.7%</td>
+                    <td class="stat-value">28.8%</td>
+                    <td class="stat-delta delta-negative">-49.7%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
-                    <td class="stat-value">4.3%</td>
                     <td class="stat-value">4.4%</td>
-                    <td class="stat-delta delta-positive">+0.1%</td>
+                    <td class="stat-value">3.9%</td>
+                    <td class="stat-delta delta-negative">-0.5%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">72.6%</td>
                     <td class="stat-value">74.1%</td>
-                    <td class="stat-delta delta-positive">+1.5%</td>
+                    <td class="stat-value">24.9%</td>
+                    <td class="stat-delta delta-negative">-49.2%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">75.8%</td>
                     <td class="stat-value">77.5%</td>
-                    <td class="stat-delta delta-positive">+1.7%</td>
+                    <td class="stat-value">25.9%</td>
+                    <td class="stat-delta delta-negative">-51.6%</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <!-- Carnegie Mellon -->
+            <!-- St. Mary's (MN) -->
             <div class="team-card faller">
-              <div class="team-name">Carnegie Mellon</div>
-              <div class="team-conf">UAA</div>
+              <div class="team-name">St. Mary's (MN)</div>
+              <div class="team-conf">MIAC</div>
               <table class="stats-table">
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">39.5%</td>
-                    <td class="stat-value">16.5%</td>
-                    <td class="stat-delta delta-negative">-23.0%</td>
+                    <td class="stat-value">59.1%</td>
+                    <td class="stat-value">33.8%</td>
+                    <td class="stat-delta delta-negative">-25.3%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
+                    <td class="stat-value">23.2%</td>
+                    <td class="stat-value">16.3%</td>
+                    <td class="stat-delta delta-negative">-6.9%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">39.5%</td>
-                    <td class="stat-value">16.5%</td>
-                    <td class="stat-delta delta-negative">-23.0%</td>
+                    <td class="stat-value">35.9%</td>
+                    <td class="stat-value">17.4%</td>
+                    <td class="stat-delta delta-negative">-18.5%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">39.5%</td>
-                    <td class="stat-value">16.5%</td>
-                    <td class="stat-delta delta-negative">-23.0%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Otterbein -->
-            <div class="team-card faller">
-              <div class="team-name">Otterbein</div>
-              <div class="team-conf">OAC</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">61.7%</td>
-                    <td class="stat-value">56.2%</td>
-                    <td class="stat-delta delta-negative">-5.5%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">32.7%</td>
-                    <td class="stat-value">31.8%</td>
-                    <td class="stat-delta delta-negative">-0.9%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">29.0%</td>
-                    <td class="stat-value">24.4%</td>
-                    <td class="stat-delta delta-negative">-4.6%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">43.2%</td>
-                    <td class="stat-value">35.7%</td>
-                    <td class="stat-delta delta-negative">-7.5%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- McMurry -->
-            <div class="team-card faller">
-              <div class="team-name">McMurry</div>
-              <div class="team-conf">SCAC</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">21.0%</td>
-                    <td class="stat-value">17.0%</td>
-                    <td class="stat-delta delta-negative">-4.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">21.0%</td>
-                    <td class="stat-value">17.0%</td>
-                    <td class="stat-delta delta-negative">-4.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Rochester Tech -->
-            <div class="team-card faller">
-              <div class="team-name">Rochester Tech</div>
-              <div class="team-conf">LL</div>
-              <table class="stats-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
-                    <th style="text-align: right">Feb 21</th>
-                    <th style="text-align: right">Delta</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">59.3%</td>
-                    <td class="stat-value">55.8%</td>
-                    <td class="stat-delta delta-negative">-3.5%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">AQ%</td>
-                    <td class="stat-value">59.3%</td>
-                    <td class="stat-value">55.8%</td>
-                    <td class="stat-delta delta-negative">-3.5%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">At-Large%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-label">ALWYNI%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-value">0.0%</td>
-                    <td class="stat-delta delta-neutral">+0.0%</td>
+                    <td class="stat-value">46.8%</td>
+                    <td class="stat-value">20.8%</td>
+                    <td class="stat-delta delta-negative">-26.0%</td>
                   </tr>
                 </tbody>
               </table>
@@ -776,23 +687,23 @@
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">37.2%</td>
                     <td class="stat-value">35.5%</td>
-                    <td class="stat-delta delta-negative">-1.7%</td>
+                    <td class="stat-value">21.2%</td>
+                    <td class="stat-delta delta-negative">-14.3%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
-                    <td class="stat-value">37.2%</td>
                     <td class="stat-value">35.5%</td>
-                    <td class="stat-delta delta-negative">-1.7%</td>
+                    <td class="stat-value">21.2%</td>
+                    <td class="stat-delta delta-negative">-14.3%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">At-Large%</td>
@@ -810,31 +721,115 @@
               </table>
             </div>
 
-            <!-- Puget Sound -->
+            <!-- St. Mary's (MD) -->
             <div class="team-card faller">
-              <div class="team-name">Puget Sound</div>
-              <div class="team-conf">NWC</div>
+              <div class="team-name">St. Mary's (MD)</div>
+              <div class="team-conf">UEC</div>
               <table class="stats-table">
                 <thead>
                   <tr>
                     <th>Metric</th>
-                    <th style="text-align: right">Feb 20</th>
                     <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
                     <th style="text-align: right">Delta</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="stat-label">Tourn%</td>
-                    <td class="stat-value">23.5%</td>
-                    <td class="stat-value">22.0%</td>
-                    <td class="stat-delta delta-negative">-1.5%</td>
+                    <td class="stat-value">91.4%</td>
+                    <td class="stat-value">83.2%</td>
+                    <td class="stat-delta delta-negative">-8.2%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">AQ%</td>
-                    <td class="stat-value">23.5%</td>
-                    <td class="stat-value">22.0%</td>
-                    <td class="stat-delta delta-negative">-1.5%</td>
+                    <td class="stat-value">91.4%</td>
+                    <td class="stat-value">83.2%</td>
+                    <td class="stat-delta delta-negative">-8.2%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Brockport St. -->
+            <div class="team-card faller">
+              <div class="team-name">Brockport St.</div>
+              <div class="team-conf">E8</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">8.1%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-negative">-8.1%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">8.1%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-negative">-8.1%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">At-Large%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">ALWYNI%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-value">0.0%</td>
+                    <td class="stat-delta delta-neutral">+0.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- DeSales -->
+            <div class="team-card faller">
+              <div class="team-name">DeSales</div>
+              <div class="team-conf">MACF</div>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th style="text-align: right">Feb 21</th>
+                    <th style="text-align: right">Feb 22</th>
+                    <th style="text-align: right">Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stat-label">Tourn%</td>
+                    <td class="stat-value">59.4%</td>
+                    <td class="stat-value">52.7%</td>
+                    <td class="stat-delta delta-negative">-6.7%</td>
+                  </tr>
+                  <tr>
+                    <td class="stat-label">AQ%</td>
+                    <td class="stat-value">59.4%</td>
+                    <td class="stat-value">52.7%</td>
+                    <td class="stat-delta delta-negative">-6.7%</td>
                   </tr>
                   <tr>
                     <td class="stat-label">At-Large%</td>
@@ -854,7 +849,7 @@
           </div>
 
           <p class="footer">
-            Generated February 21, 2026 at 10:36 AM<br />
+            Generated February 22, 2026 at 11:24 AM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
