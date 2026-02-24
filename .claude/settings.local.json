@@ -44,7 +44,9 @@
       "Bash(git -C /Users/scottpeterson/projects/scottpeterson.github.io diff --stat)",
       "Bash(git -C:*)",
       "Bash(npx prettier:*)",
-      "Bash(tail:*)"
+      "Bash(tail:*)",
+      "WebFetch(domain:thed3statlab.com)",
+      "Bash(npx serve:*)"
     ],
     "deny": [],
     "ask": []
