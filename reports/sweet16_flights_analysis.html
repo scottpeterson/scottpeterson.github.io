@@ -131,13 +131,13 @@
         font-weight: 600;
         white-space: nowrap;
       }
-      .report-sweet16_flights_analysis /* Arm visualization */
-        .arm-viz {
+      .report-sweet16_flights_analysis /* Pod visualization */
+        .pod-viz {
         display: flex;
         flex-direction: column;
         gap: 8px;
       }
-      .report-sweet16_flights_analysis .arm-row {
+      .report-sweet16_flights_analysis .pod-row {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -146,27 +146,29 @@
         border-radius: 6px;
         flex-wrap: wrap;
       }
-      .report-sweet16_flights_analysis .arm-label {
+      .report-sweet16_flights_analysis .pod-label {
         font-weight: 700;
         font-size: 0.8rem;
         color: #f59e0b;
         min-width: 50px;
       }
-      .report-sweet16_flights_analysis .arm-matchup {
+      .report-sweet16_flights_analysis .pod-matchup {
         display: inline-flex;
         align-items: center;
         gap: 4px;
         font-size: 0.8rem;
       }
-      .report-sweet16_flights_analysis .arm-team {
+      .report-sweet16_flights_analysis .pod-team {
         padding: 2px 6px;
         border-radius: 3px;
         font-size: 0.75rem;
         font-weight: 600;
       }
-      .report-sweet16_flights_analysis .arm-connector {
-        color: #8892b0;
-        font-size: 0.8rem;
+      .report-sweet16_flights_analysis .pod-divider {
+        width: 1px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        margin: 0 4px;
       }
       .report-sweet16_flights_analysis /* Probability table */
         .prob-table {
@@ -187,7 +189,7 @@
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       }
-      .report-sweet16_flights_analysis .prob-table .arm-cell {
+      .report-sweet16_flights_analysis .prob-table .pod-cell {
         font-weight: 700;
         color: #f59e0b;
       }
@@ -404,7 +406,7 @@
         .expected-flights-badge {
           margin-left: 0;
         }
-        .arm-row {
+        .pod-row {
           flex-direction: column;
           align-items: flex-start;
         }
@@ -756,130 +758,122 @@
             </div>
 
             <div class="section-block">
-              <h3>Bracket Paths</h3>
-              <div class="arm-viz">
-                <div class="arm-row">
-                  <span class="arm-label">Arm A</span
-                  ><span class="arm-matchup"
+              <h3>Bracket Pods</h3>
+              <div class="pod-viz">
+                <div class="pod-row">
+                  <span class="pod-label">Pod A</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #ffcc00; color: #000000"
                       >(1) UW-Oshkosh</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #112c53; color: #ffffff"
                       >(16) Principia</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #ffcf00; color: #000000"
                       >(8) Gustavus Adolphus</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #441166; color: #ffffff"
                       >(9) Linfield</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm B</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod B</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #ba0c2f; color: #ffffff"
                       >(4) WashU</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #49176d; color: #ffffff"
                       >(13) Asbury</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #f26722; color: #ffffff"
                       >(5) Carroll</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #f58025; color: #ffffff"
                       >(12) Wartburg</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm C</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod C</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #041c2c; color: #ffffff"
                       >(3) John Carroll</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #082057; color: #ffffff"
                       >(14) SUNY Geneseo</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #b5a66b; color: #003767"
                       >(6) Trine</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #9d2235; color: #ffffff"
                       >(11) Transylvania</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm D</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod D</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #0067b1; color: #ffffff"
                       >(2) UW-Platteville</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #580e0e; color: #ffffff"
                       >(15) Redlands</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #002856; color: #ffffff"
                       >(7) Bethel</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #581483; color: #ffffff"
                       >(10) Hardin-Simmons</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
               </div>
@@ -890,7 +884,7 @@
               <table class="prob-table">
                 <thead>
                   <tr>
-                    <th>Arm</th>
+                    <th>Pod</th>
                     <th>Seed</th>
                     <th>Team</th>
                     <th>Sweet 16 %</th>
@@ -899,7 +893,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="arm-cell">A</td>
+                    <td class="pod-cell">A</td>
                     <td class="seed-cell">(1)</td>
                     <td>
                       <span
@@ -968,7 +962,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">B</td>
+                    <td class="pod-cell">B</td>
                     <td class="seed-cell">(4)</td>
                     <td>
                       <span
@@ -1037,7 +1031,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">C</td>
+                    <td class="pod-cell">C</td>
                     <td class="seed-cell">(3)</td>
                     <td>
                       <span
@@ -1109,7 +1103,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">D</td>
+                    <td class="pod-cell">D</td>
                     <td class="seed-cell">(10)</td>
                     <td>
                       <span
@@ -9907,130 +9901,122 @@
             </div>
 
             <div class="section-block">
-              <h3>Bracket Paths</h3>
-              <div class="arm-viz">
-                <div class="arm-row">
-                  <span class="arm-label">Arm A</span
-                  ><span class="arm-matchup"
+              <h3>Bracket Pods</h3>
+              <div class="pod-viz">
+                <div class="pod-row">
+                  <span class="pod-label">Pod A</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #522e91; color: #ffffff"
                       >(1) NYU</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #0168b3; color: #fff"
                       >(16) Maine-Maritime</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #192d5b; color: #ffffff"
                       >(8) Southern Maine</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #651c32; color: #ffffff"
                       >(9) Susquehanna</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm B</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod B</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #fbc64a; color: #002855"
                       >(4) Smith</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #002855; color: #ffffff"
                       >(13) DeSales</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #981328; color: #ffffff"
                       >(5) Bates</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #521010; color: #ffffff"
                       >(12) Brooklyn</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm C</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod C</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #000000; color: #b0b7bc"
                       >(3) Bowdoin</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #004b87; color: #f6be00"
                       >(14) Emmanuel</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #970001; color: #eaeaea"
                       >(6) Cortland</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #00529c; color: #efb410"
                       >(11) Johnson & Wales (RI)</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm D</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod D</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #660833; color: #ffffff"
                       >(2) Concordia Moorhead</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #95111e; color: #ffffff"
                       >(15) Bethany Luth</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #bd0e35; color: #ffffff"
                       >(7) UW-River Falls</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #000000; color: #ffc82d"
                       >(10) Colorado College</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
               </div>
@@ -10041,7 +10027,7 @@
               <table class="prob-table">
                 <thead>
                   <tr>
-                    <th>Arm</th>
+                    <th>Pod</th>
                     <th>Seed</th>
                     <th>Team</th>
                     <th>Sweet 16 %</th>
@@ -10050,7 +10036,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="arm-cell">A</td>
+                    <td class="pod-cell">A</td>
                     <td class="seed-cell">(1)</td>
                     <td>
                       <span
@@ -10119,7 +10105,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">B</td>
+                    <td class="pod-cell">B</td>
                     <td class="seed-cell">(4)</td>
                     <td>
                       <span
@@ -10191,7 +10177,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">C</td>
+                    <td class="pod-cell">C</td>
                     <td class="seed-cell">(3)</td>
                     <td>
                       <span
@@ -10263,7 +10249,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">D</td>
+                    <td class="pod-cell">D</td>
                     <td class="seed-cell">(2)</td>
                     <td>
                       <span
@@ -18963,130 +18949,122 @@
             </div>
 
             <div class="section-block">
-              <h3>Bracket Paths</h3>
-              <div class="arm-viz">
-                <div class="arm-row">
-                  <span class="arm-label">Arm A</span
-                  ><span class="arm-matchup"
+              <h3>Bracket Pods</h3>
+              <div class="pod-viz">
+                <div class="pod-row">
+                  <span class="pod-label">Pod A</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #00039a; color: white"
                       >(1) Washington & Lee</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #003c78; color: #ffffff"
                       >(16) Brevard</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #005ca9; color: #fffefd"
                       >(8) Christopher Newport</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #d08b04; color: #012c5d"
                       >(9) Emory</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm B</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod B</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #3d2d1f; color: #fff"
                       >(4) Baldwin Wallace</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #093a88; color: #ffffff"
                       >(13) Merchant Marine</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #880000; color: #ffffff"
                       >(5) Chicago</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #b5121b; color: #ffffff"
                       >(12) Washington & Jefferson</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm C</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod C</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #c8032b; color: #ffffff"
                       >(3) Denison</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #c75300; color: #ffffff"
                       >(14) Rochester Tech</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #bdbec0; color: #006643"
                       >(6) Wisconsin Lutheran</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #ffcf00; color: #000000"
                       >(11) Randolph-Macon</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm D</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod D</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #502d7f; color: #ffffff"
                       >(2) UW-Whitewater</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #6a2e2b; color: #ffffff"
                       >(15) Trinity (TX)</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #c41c36; color: #ffffff"
                       >(7) Ripon</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #990000; color: #d5c296"
                       >(10) Otterbein</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
               </div>
@@ -19097,7 +19075,7 @@
               <table class="prob-table">
                 <thead>
                   <tr>
-                    <th>Arm</th>
+                    <th>Pod</th>
                     <th>Seed</th>
                     <th>Team</th>
                     <th>Sweet 16 %</th>
@@ -19106,7 +19084,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="arm-cell">A</td>
+                    <td class="pod-cell">A</td>
                     <td class="seed-cell">(1)</td>
                     <td>
                       <span
@@ -19175,7 +19153,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">B</td>
+                    <td class="pod-cell">B</td>
                     <td class="seed-cell">(5)</td>
                     <td>
                       <span
@@ -19247,7 +19225,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">C</td>
+                    <td class="pod-cell">C</td>
                     <td class="seed-cell">(3)</td>
                     <td>
                       <span
@@ -19319,7 +19297,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">D</td>
+                    <td class="pod-cell">D</td>
                     <td class="seed-cell">(2)</td>
                     <td>
                       <span
@@ -28149,130 +28127,122 @@
             </div>
 
             <div class="section-block">
-              <h3>Bracket Paths</h3>
-              <div class="arm-viz">
-                <div class="arm-row">
-                  <span class="arm-label">Arm A</span
-                  ><span class="arm-matchup"
+              <h3>Bracket Pods</h3>
+              <div class="pod-viz">
+                <div class="pod-row">
+                  <span class="pod-label">Pod A</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #68aee0; color: #000000"
                       >(1) Johns Hopkins</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #003366; color: #ffffff"
                       >(16) Bridgewater St.</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #013e7d; color: #e64e1d"
                       >(8) SUNY New Paltz</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #004b85; color: #ffffff"
                       >(9) Messiah</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm B</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod B</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #ac1a2f; color: #ffffff"
                       >(4) Ohio Wesleyan</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #003479; color: #ffffff"
                       >(13) Immaculata</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #006747; color: #ffffff"
                       >(5) Illinois Wesleyan</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #1a2d5d; color: #e87313"
                       >(12) Gettysburg</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm C</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod C</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #47176b; color: #ffffff"
                       >(3) Scranton</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #00205c; color: #ffffff"
                       >(14) St. Mary's (MD)</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #e56927; color: #ffffff"
                       >(6) William Paterson</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #003e7e; color: #ffffff"
                       >(11) Shenandoah</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
-                <div class="arm-row">
-                  <span class="arm-label">Arm D</span
-                  ><span class="arm-matchup"
+                <div class="pod-row">
+                  <span class="pod-label">Pod D</span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #c45114; color: #04203d"
                       >(2) Hope</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #1e407c; color: #ffffff"
                       >(15) Penn State-Behrend</span
                     ></span
-                  ><span class="arm-connector">&rarr;</span
-                  ><span class="arm-matchup"
+                  ><span class="pod-divider"></span
+                  ><span class="pod-matchup"
                     ><span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #84001a; color: #ffffff"
                       >(7) UW-La Crosse</span
                     >
                     vs
                     <span
-                      class="arm-team"
+                      class="pod-team"
                       style="background: #c21a34; color: #ffffff"
                       >(10) Carnegie Mellon</span
                     ></span
-                  ><span class="arm-connector"
-                    >&rarr; <strong>S16</strong></span
                   >
                 </div>
               </div>
@@ -28283,7 +28253,7 @@
               <table class="prob-table">
                 <thead>
                   <tr>
-                    <th>Arm</th>
+                    <th>Pod</th>
                     <th>Seed</th>
                     <th>Team</th>
                     <th>Sweet 16 %</th>
@@ -28292,7 +28262,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="arm-cell">A</td>
+                    <td class="pod-cell">A</td>
                     <td class="seed-cell">(1)</td>
                     <td>
                       <span
@@ -28361,7 +28331,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">B</td>
+                    <td class="pod-cell">B</td>
                     <td class="seed-cell">(12)</td>
                     <td>
                       <span
@@ -28433,7 +28403,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">C</td>
+                    <td class="pod-cell">C</td>
                     <td class="seed-cell">(3)</td>
                     <td>
                       <span
@@ -28499,7 +28469,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="arm-cell">D</td>
+                    <td class="pod-cell">D</td>
                     <td class="seed-cell">(2)</td>
                     <td>
                       <span
@@ -37192,7 +37162,7 @@
           </div>
 
           <p class="footer">
-            Generated February 24, 2026 at 12:33 PM<br />
+            Generated February 24, 2026 at 12:56 PM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
