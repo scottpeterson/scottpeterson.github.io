@@ -138,7 +138,51 @@
         "distance_miles": 437
       }
     ],
-    "nonconference_tournament_opponents": ["Carroll", "Chicago", "Linfield"]
+    "nonconference_tournament_opponents": ["Carroll", "Chicago", "Linfield"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2025,
+        "round": "Semifinal",
+        "result": "L",
+        "score": "49-47"
+      },
+      {
+        "opponent": "Baldwin Wallace",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "60-53"
+      },
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "63-43"
+      },
+      {
+        "opponent": "Bethel",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "59-49"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "61-59"
+      },
+      {
+        "opponent": "Trine",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "74-48"
+      }
+    ]
   },
   "NYU": {
     "overall_seed": 2,
@@ -374,6 +418,57 @@
       "Brooklyn College",
       "Merchant Marine",
       "SUNY New Paltz"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2025,
+        "round": "Championship",
+        "result": "W",
+        "score": "77-49"
+      },
+      {
+        "opponent": "Gettysburg",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "76-51"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Championship",
+        "result": "W",
+        "score": "51-41"
+      },
+      {
+        "opponent": "Transylvania",
+        "year": 2024,
+        "round": "Semifinal",
+        "result": "W",
+        "score": "57-42"
+      },
+      {
+        "opponent": "Scranton",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "68-46"
+      },
+      {
+        "opponent": "Hardin-Simmons",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "73-55"
+      },
+      {
+        "opponent": "DeSales",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "93-59"
+      }
     ]
   },
   "Washington & Lee": {
@@ -599,7 +694,30 @@
         "distance_miles": 383
       }
     ],
-    "nonconference_tournament_opponents": ["Carroll", "Emory"]
+    "nonconference_tournament_opponents": ["Carroll", "Emory"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Baldwin Wallace",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "75-71"
+      },
+      {
+        "opponent": "Merchant Marine",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "65-53"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "68-58"
+      }
+    ]
   },
   "Johns Hopkins": {
     "overall_seed": 4,
@@ -828,6 +946,36 @@
       "Christopher Newport",
       "Wartburg",
       "William Paterson"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Scranton",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "52-46"
+      },
+      {
+        "opponent": "Carnegie Mellon",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "68-58"
+      },
+      {
+        "opponent": "Scranton",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "65-53"
+      },
+      {
+        "opponent": "Christopher Newport",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "77-75"
+      }
     ]
   },
   "Scranton": {
@@ -1074,7 +1222,37 @@
         "distance_miles": 308
       }
     ],
-    "nonconference_tournament_opponents": ["Cortland", "DeSales"]
+    "nonconference_tournament_opponents": ["Cortland", "DeSales"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Johns Hopkins",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "52-46"
+      },
+      {
+        "opponent": "Bates",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "70-49"
+      },
+      {
+        "opponent": "NYU",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "68-46"
+      },
+      {
+        "opponent": "Johns Hopkins",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "65-53"
+      }
+    ]
   },
   "Denison": {
     "overall_seed": 6,
@@ -1313,7 +1491,8 @@
         "distance_miles": 246
       }
     ],
-    "nonconference_tournament_opponents": ["Otterbein", "Transylvania"]
+    "nonconference_tournament_opponents": ["Otterbein", "Transylvania"],
+    "recent_ncaa_tournament_matchups": []
   },
   "John Carroll": {
     "overall_seed": 7,
@@ -1566,7 +1745,11 @@
         "distance_miles": 354
       }
     ],
-    "nonconference_tournament_opponents": ["Baldwin Wallace", "Carnegie Mellon"]
+    "nonconference_tournament_opponents": [
+      "Baldwin Wallace",
+      "Carnegie Mellon"
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Bowdoin": {
     "overall_seed": 8,
@@ -1679,7 +1862,44 @@
         "distance_miles": 165
       }
     ],
-    "nonconference_tournament_opponents": ["Maine-Maritime"]
+    "nonconference_tournament_opponents": ["Maine-Maritime"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "53-47"
+      },
+      {
+        "opponent": "Cortland",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "67-54"
+      },
+      {
+        "opponent": "Brooklyn College",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "66-42"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "52-47"
+      },
+      {
+        "opponent": "Baldwin Wallace",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "78-48"
+      }
+    ]
   },
   "Hope": {
     "overall_seed": 9,
@@ -1862,6 +2082,22 @@
       "Ohio Wesleyan",
       "UW-La Crosse",
       "UW-River Falls"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Whitewater",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "72-61"
+      },
+      {
+        "opponent": "Ripon",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "65-54"
+      }
     ]
   },
   "UW-Whitewater": {
@@ -2044,6 +2280,36 @@
       "Illinois Wesleyan",
       "Principia",
       "WashU"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-La Crosse",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "50-49"
+      },
+      {
+        "opponent": "Principia",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "75-53"
+      },
+      {
+        "opponent": "Transylvania",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "62-48"
+      },
+      {
+        "opponent": "Hope",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "72-61"
+      }
     ]
   },
   "Concordia Moorhead": {
@@ -2108,7 +2374,16 @@
         "distance_miles": 304
       }
     ],
-    "nonconference_tournament_opponents": ["Hardin-Simmons", "UW-River Falls"]
+    "nonconference_tournament_opponents": ["Hardin-Simmons", "UW-River Falls"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "75-62"
+      }
+    ]
   },
   "Ohio Wesleyan": {
     "overall_seed": 12,
@@ -2358,6 +2633,43 @@
       "Hope",
       "Otterbein",
       "Washington & Jefferson"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Baldwin Wallace",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "68-65"
+      },
+      {
+        "opponent": "Washington & Jefferson",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "78-65"
+      },
+      {
+        "opponent": "Immaculata",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "87-42"
+      },
+      {
+        "opponent": "Transylvania",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "70-55"
+      },
+      {
+        "opponent": "Emory",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "64-54"
+      }
     ]
   },
   "Baldwin Wallace": {
@@ -2615,6 +2927,43 @@
       "John Carroll",
       "Penn State-Behrend",
       "Trine"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "60-53"
+      },
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "68-65"
+      },
+      {
+        "opponent": "Washington & Lee",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "75-71"
+      },
+      {
+        "opponent": "Bowdoin",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "78-48"
+      },
+      {
+        "opponent": "SUNY New Paltz",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "65-42"
+      }
     ]
   },
   "WashU": {
@@ -2753,7 +3102,8 @@
       "Christopher Newport",
       "Illinois Wesleyan",
       "UW-Whitewater"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Smith": {
     "overall_seed": 15,
@@ -2946,6 +3296,78 @@
     "nonconference_tournament_opponents": [
       "Bridgewater St.",
       "Johnson & Wales (RI)"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "NYU",
+        "year": 2025,
+        "round": "Championship",
+        "result": "L",
+        "score": "77-49"
+      },
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Semifinal",
+        "result": "W",
+        "score": "49-47"
+      },
+      {
+        "opponent": "Gustavus Adolphus",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "61-50"
+      },
+      {
+        "opponent": "Bowdoin",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "53-47"
+      },
+      {
+        "opponent": "NYU",
+        "year": 2024,
+        "round": "Championship",
+        "result": "L",
+        "score": "51-41"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2024,
+        "round": "Semifinal",
+        "result": "W",
+        "score": "61-54"
+      },
+      {
+        "opponent": "Bowdoin",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "52-47"
+      },
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "61-59"
+      },
+      {
+        "opponent": "Messiah",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "69-61"
+      },
+      {
+        "opponent": "Maine-Maritime",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "61-46"
+      }
     ]
   },
   "Carroll": {
@@ -3129,7 +3551,8 @@
       "UW-Whitewater",
       "Wartburg",
       "Washington & Lee"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "UW-Platteville": {
     "overall_seed": 17,
@@ -3274,7 +3697,8 @@
       "Ripon",
       "Trine",
       "Wisconsin Lutheran"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Chicago": {
     "overall_seed": 18,
@@ -3475,7 +3899,8 @@
       "Carroll",
       "Illinois Wesleyan",
       "UW-Oshkosh"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Illinois Wesleyan": {
     "overall_seed": 19,
@@ -3660,6 +4085,36 @@
       "UW-Whitewater",
       "WashU",
       "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "63-43"
+      },
+      {
+        "opponent": "Trine",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "82-50"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "62-59"
+      },
+      {
+        "opponent": "Concordia Moorhead",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "75-62"
+      }
     ]
   },
   "Bates": {
@@ -3773,7 +4228,30 @@
         "distance_miles": 169
       }
     ],
-    "nonconference_tournament_opponents": ["Emmanuel", "Southern Maine"]
+    "nonconference_tournament_opponents": ["Emmanuel", "Southern Maine"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Scranton",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "70-49"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "54-53"
+      },
+      {
+        "opponent": "Brooklyn College",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "66-51"
+      }
+    ]
   },
   "Ripon": {
     "overall_seed": 21,
@@ -3921,7 +4399,16 @@
         "distance_miles": 428
       }
     ],
-    "nonconference_tournament_opponents": ["Carroll", "UW-Platteville"]
+    "nonconference_tournament_opponents": ["Carroll", "UW-Platteville"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Hope",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "65-54"
+      }
+    ]
   },
   "UW-La Crosse": {
     "overall_seed": 22,
@@ -4060,6 +4547,22 @@
       "Bethel",
       "Hope",
       "Illinois Wesleyan"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Whitewater",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "50-49"
+      },
+      {
+        "opponent": "Colorado College",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "79-52"
+      }
     ]
   },
   "Cortland": {
@@ -4303,6 +4806,15 @@
       "Carnegie Mellon",
       "Scranton",
       "Washington & Jefferson"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Bowdoin",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "67-54"
+      }
     ]
   },
   "Trine": {
@@ -4518,6 +5030,36 @@
       "Baldwin Wallace",
       "UW-Platteville",
       "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "82-50"
+      },
+      {
+        "opponent": "Transylvania",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "81-74"
+      },
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "74-48"
+      },
+      {
+        "opponent": "Gustavus Adolphus",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "61-58"
+      }
     ]
   },
   "William Paterson": {
@@ -4750,7 +5292,8 @@
         "distance_miles": 228
       }
     ],
-    "nonconference_tournament_opponents": ["Johns Hopkins"]
+    "nonconference_tournament_opponents": ["Johns Hopkins"],
+    "recent_ncaa_tournament_matchups": []
   },
   "UW-River Falls": {
     "overall_seed": 26,
@@ -4868,7 +5411,8 @@
       "Concordia Moorhead",
       "Gustavus Adolphus",
       "Hope"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Bethel": {
     "overall_seed": 27,
@@ -4979,6 +5523,15 @@
       "Messiah",
       "UW-La Crosse",
       "UW-River Falls"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "59-49"
+      }
     ]
   },
   "SUNY New Paltz": {
@@ -5211,7 +5764,16 @@
         "distance_miles": 235
       }
     ],
-    "nonconference_tournament_opponents": ["NYU"]
+    "nonconference_tournament_opponents": ["NYU"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Baldwin Wallace",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "65-42"
+      }
+    ]
   },
   "Wisconsin Lutheran": {
     "overall_seed": 29,
@@ -5394,6 +5956,22 @@
       "Trine",
       "UW-Platteville",
       "Wartburg"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Gustavus Adolphus",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "61-49"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "72-65"
+      }
     ]
   },
   "Southern Maine": {
@@ -5525,7 +6103,8 @@
       "Bates",
       "Emmanuel",
       "Maine-Maritime"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Gustavus Adolphus": {
     "overall_seed": 31,
@@ -5636,6 +6215,36 @@
       "UW-River Falls",
       "UW-Whitewater",
       "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "61-50"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "56-50"
+      },
+      {
+        "opponent": "Wisconsin Lutheran",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "61-49"
+      },
+      {
+        "opponent": "Trine",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "61-58"
+      }
     ]
   },
   "Christopher Newport": {
@@ -5781,6 +6390,15 @@
       "Johns Hopkins",
       "Shenandoah",
       "WashU"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Johns Hopkins",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "77-75"
+      }
     ]
   },
   "Linfield": {
@@ -5788,7 +6406,8 @@
     "quadrant_seed": 9,
     "conference": "NWC",
     "nearby_teams": [],
-    "nonconference_tournament_opponents": ["UW-Oshkosh"]
+    "nonconference_tournament_opponents": ["UW-Oshkosh"],
+    "recent_ncaa_tournament_matchups": []
   },
   "Susquehanna": {
     "overall_seed": 34,
@@ -6027,7 +6646,8 @@
         "distance_miles": 391
       }
     ],
-    "nonconference_tournament_opponents": ["Gettysburg"]
+    "nonconference_tournament_opponents": ["Gettysburg"],
+    "recent_ncaa_tournament_matchups": []
   },
   "Messiah": {
     "overall_seed": 35,
@@ -6271,6 +6891,29 @@
       "DeSales",
       "Gettysburg",
       "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Washington & Jefferson",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "76-72"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "69-61"
+      },
+      {
+        "opponent": "Shenandoah",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "58-57"
+      }
     ]
   },
   "Colorado College": {
@@ -6278,7 +6921,20 @@
     "quadrant_seed": 9,
     "conference": "SCAC",
     "nearby_teams": [],
-    "nonconference_tournament_opponents": ["Hardin-Simmons", "Hope", "Wartburg"]
+    "nonconference_tournament_opponents": [
+      "Hardin-Simmons",
+      "Hope",
+      "Wartburg"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-La Crosse",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "79-52"
+      }
+    ]
   },
   "Shenandoah": {
     "overall_seed": 37,
@@ -6521,6 +7177,15 @@
       "Christopher Newport",
       "DeSales",
       "Gettysburg"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Messiah",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "58-57"
+      }
     ]
   },
   "Gettysburg": {
@@ -6759,6 +7424,22 @@
       "Randolph-Macon",
       "Shenandoah",
       "Susquehanna"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "NYU",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "76-51"
+      },
+      {
+        "opponent": "Randolph-Macon",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "56-49"
+      }
     ]
   },
   "Randolph-Macon": {
@@ -6977,7 +7658,16 @@
         "distance_miles": 444
       }
     ],
-    "nonconference_tournament_opponents": ["Emory", "Gettysburg", "Principia"]
+    "nonconference_tournament_opponents": ["Emory", "Gettysburg", "Principia"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Gettysburg",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "56-49"
+      }
+    ]
   },
   "Otterbein": {
     "overall_seed": 40,
@@ -7235,7 +7925,8 @@
       "Denison",
       "Ohio Wesleyan",
       "Washington & Jefferson"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Hardin-Simmons": {
     "overall_seed": 41,
@@ -7256,6 +7947,22 @@
       "Hope",
       "Trinity (TX)",
       "Wartburg"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "NYU",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "73-55"
+      },
+      {
+        "opponent": "Trinity (TX)",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "84-62"
+      }
     ]
   },
   "Emory": {
@@ -7296,6 +8003,15 @@
       "Randolph-Macon",
       "Trinity (TX)",
       "Washington & Lee"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "64-54"
+      }
     ]
   },
   "Carnegie Mellon": {
@@ -7533,6 +8249,22 @@
       "John Carroll",
       "Otterbein",
       "Washington & Jefferson"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Johns Hopkins",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "68-58"
+      },
+      {
+        "opponent": "Bridgewater St.",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "69-58"
+      }
     ]
   },
   "Transylvania": {
@@ -7702,7 +8434,37 @@
         "distance_miles": 18
       }
     ],
-    "nonconference_tournament_opponents": ["Asbury", "Denison"]
+    "nonconference_tournament_opponents": ["Asbury", "Denison"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Trine",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "81-74"
+      },
+      {
+        "opponent": "NYU",
+        "year": 2024,
+        "round": "Semifinal",
+        "result": "L",
+        "score": "57-42"
+      },
+      {
+        "opponent": "UW-Whitewater",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "62-48"
+      },
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "70-55"
+      }
+    ]
   },
   "Washington & Jefferson": {
     "overall_seed": 45,
@@ -7947,6 +8709,22 @@
       "Ohio Wesleyan",
       "Otterbein",
       "Penn State-Behrend"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "78-65"
+      },
+      {
+        "opponent": "Messiah",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "76-72"
+      }
     ]
   },
   "Johnson & Wales (RI)": {
@@ -8130,7 +8908,8 @@
         "distance_miles": 37
       }
     ],
-    "nonconference_tournament_opponents": ["Smith"]
+    "nonconference_tournament_opponents": ["Smith"],
+    "recent_ncaa_tournament_matchups": []
   },
   "Wartburg": {
     "overall_seed": 47,
@@ -8270,6 +9049,50 @@
       "Hardin-Simmons",
       "Johns Hopkins",
       "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Gustavus Adolphus",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "56-50"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Semifinal",
+        "result": "L",
+        "score": "61-54"
+      },
+      {
+        "opponent": "Washington & Lee",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "68-58"
+      },
+      {
+        "opponent": "Bates",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "54-53"
+      },
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "62-59"
+      },
+      {
+        "opponent": "Wisconsin Lutheran",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "72-65"
+      }
     ]
   },
   "Brooklyn College": {
@@ -8502,7 +9325,23 @@
         "distance_miles": 225
       }
     ],
-    "nonconference_tournament_opponents": ["NYU"]
+    "nonconference_tournament_opponents": ["NYU"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Bowdoin",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "66-42"
+      },
+      {
+        "opponent": "Bates",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "66-51"
+      }
+    ]
   },
   "DeSales": {
     "overall_seed": 49,
@@ -8753,6 +9592,15 @@
       "Messiah",
       "Scranton",
       "Shenandoah"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "NYU",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "93-59"
+      }
     ]
   },
   "Immaculata": {
@@ -8978,7 +9826,16 @@
         "distance_miles": 447
       }
     ],
-    "nonconference_tournament_opponents": []
+    "nonconference_tournament_opponents": [],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "87-42"
+      }
+    ]
   },
   "Rochester Tech": {
     "overall_seed": 51,
@@ -9203,14 +10060,16 @@
         "distance_miles": 410
       }
     ],
-    "nonconference_tournament_opponents": ["Emmanuel"]
+    "nonconference_tournament_opponents": ["Emmanuel"],
+    "recent_ncaa_tournament_matchups": []
   },
   "Redlands": {
     "overall_seed": 52,
     "quadrant_seed": 13,
     "conference": "SCIAC",
     "nearby_teams": [],
-    "nonconference_tournament_opponents": ["Bridgewater St."]
+    "nonconference_tournament_opponents": ["Bridgewater St."],
+    "recent_ncaa_tournament_matchups": []
   },
   "Merchant Marine": {
     "overall_seed": 53,
@@ -9442,7 +10301,16 @@
         "distance_miles": 214
       }
     ],
-    "nonconference_tournament_opponents": ["NYU"]
+    "nonconference_tournament_opponents": ["NYU"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Washington & Lee",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "65-53"
+      }
+    ]
   },
   "Penn State-Behrend": {
     "overall_seed": 54,
@@ -9677,7 +10545,8 @@
     "nonconference_tournament_opponents": [
       "Baldwin Wallace",
       "Washington & Jefferson"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Emmanuel": {
     "overall_seed": 55,
@@ -9857,7 +10726,8 @@
       "Bates",
       "Rochester Tech",
       "Southern Maine"
-    ]
+    ],
+    "recent_ncaa_tournament_matchups": []
   },
   "Brevard": {
     "overall_seed": 56,
@@ -9935,7 +10805,8 @@
         "distance_miles": 318
       }
     ],
-    "nonconference_tournament_opponents": []
+    "nonconference_tournament_opponents": [],
+    "recent_ncaa_tournament_matchups": []
   },
   "St. Mary's (MD)": {
     "overall_seed": 57,
@@ -10160,7 +11031,8 @@
         "distance_miles": 496
       }
     ],
-    "nonconference_tournament_opponents": []
+    "nonconference_tournament_opponents": [],
+    "recent_ncaa_tournament_matchups": []
   },
   "Trinity (TX)": {
     "overall_seed": 58,
@@ -10179,6 +11051,15 @@
       "Emory",
       "Hardin-Simmons",
       "Illinois Wesleyan"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Hardin-Simmons",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "84-62"
+      }
     ]
   },
   "Houghton": {
@@ -10411,7 +11292,8 @@
         "distance_miles": 475
       }
     ],
-    "nonconference_tournament_opponents": []
+    "nonconference_tournament_opponents": [],
+    "recent_ncaa_tournament_matchups": []
   },
   "Bethany Luth": {
     "overall_seed": 60,
@@ -10517,7 +11399,8 @@
         "distance_miles": 171
       }
     ],
-    "nonconference_tournament_opponents": ["Gustavus Adolphus", "UW-La Crosse"]
+    "nonconference_tournament_opponents": ["Gustavus Adolphus", "UW-La Crosse"],
+    "recent_ncaa_tournament_matchups": []
   },
   "Maine-Maritime": {
     "overall_seed": 61,
@@ -10609,7 +11492,16 @@
         "distance_miles": 277
       }
     ],
-    "nonconference_tournament_opponents": ["Bowdoin", "Southern Maine"]
+    "nonconference_tournament_opponents": ["Bowdoin", "Southern Maine"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "61-46"
+      }
+    ]
   },
   "Principia": {
     "overall_seed": 62,
@@ -10750,7 +11642,16 @@
         "distance_miles": 375
       }
     ],
-    "nonconference_tournament_opponents": ["Randolph-Macon", "UW-Whitewater"]
+    "nonconference_tournament_opponents": ["Randolph-Macon", "UW-Whitewater"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Whitewater",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "75-53"
+      }
+    ]
   },
   "Bridgewater St.": {
     "overall_seed": 63,
@@ -10919,7 +11820,16 @@
         "distance_miles": 277
       }
     ],
-    "nonconference_tournament_opponents": ["Redlands", "Smith"]
+    "nonconference_tournament_opponents": ["Redlands", "Smith"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Carnegie Mellon",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "69-58"
+      }
+    ]
   },
   "Asbury": {
     "overall_seed": 64,
@@ -11074,6 +11984,7 @@
         "distance_miles": 375
       }
     ],
-    "nonconference_tournament_opponents": ["Transylvania"]
+    "nonconference_tournament_opponents": ["Transylvania"],
+    "recent_ncaa_tournament_matchups": []
   }
 }

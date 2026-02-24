@@ -18,6 +18,9 @@
   const nonconfDiv = document.getElementById('ryan-nonconf');
   const nonconfBody = document.getElementById('ryan-nonconf-body');
 
+  const ncaaMatchupsDiv = document.getElementById('ryan-ncaa-matchups');
+  const ncaaMatchupsBody = document.getElementById('ryan-ncaa-matchups-body');
+
   let proximityData = null;
 
   // Populate dropdown with all 64 teams in alphabetical order
@@ -73,6 +76,35 @@
     nonconfDiv.style.display = '';
   }
 
+  // Render NCAA tournament matchup rows sorted by year descending, then round order
+  function renderNcaaMatchupRows(matchups) {
+    return matchups
+      .map(
+        m =>
+          `<tr>
+            <td>${m.year}</td>
+            <td>${m.round}</td>
+            <td>${m.opponent}</td>
+            <td>${m.result}</td>
+            <td>${m.score}</td>
+          </tr>`
+      )
+      .join('');
+  }
+
+  // Show past NCAA tournament matchups
+  function showNcaaMatchups(team) {
+    const matchups = team.recent_ncaa_tournament_matchups || [];
+
+    if (matchups.length === 0) {
+      ncaaMatchupsDiv.style.display = 'none';
+      return;
+    }
+
+    ncaaMatchupsBody.innerHTML = renderNcaaMatchupRows(matchups);
+    ncaaMatchupsDiv.style.display = '';
+  }
+
   // Show nearby teams split across two side-by-side tables
   function showNearbyTeams(teamName) {
     const team = proximityData[teamName];
@@ -117,6 +149,9 @@
 
     // Always show nonconference opponents below the distances
     showNonconfOpponents(team);
+
+    // Show past NCAA tournament matchups below nonconference opponents
+    showNcaaMatchups(team);
   }
 
   // Handle dropdown change
