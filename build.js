@@ -153,6 +153,10 @@ class TemplateEngine {
         'templates/distances-page.html',
         'utf8'
       );
+      this.templates.ryanPage = await fs.readFile(
+        'templates/ryan-page.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -609,6 +613,19 @@ ${cards}
       );
     }
 
+    // Handle IS_RYAN_PAGE conditional
+    if (data.isRyanPage) {
+      result = result.replace(
+        /{{#IS_RYAN_PAGE}}([\s\S]*?){{\/IS_RYAN_PAGE}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#IS_RYAN_PAGE}}([\s\S]*?){{\/IS_RYAN_PAGE}}/g,
+        ''
+      );
+    }
+
     // Handle SHOW_BUY_BUTTON conditional
     if (data.showBuyButton) {
       result = result.replace(
@@ -722,6 +739,11 @@ ${cards}
         tableContent = this.renderTemplate(this.templates.distancesPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
+      } else if (pageConfig.isRyanPage) {
+        // Use ryan page template
+        tableContent = this.renderTemplate(this.templates.ryanPage, {
+          sectionTitle: pageConfig.sectionTitle,
+        });
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {
@@ -762,6 +784,7 @@ ${cards}
         legend: pageConfig.legend,
         isPremiumPage: pageConfig.isPremiumPage || false,
         isDistancesPage: pageConfig.isDistancesPage || false,
+        isRyanPage: pageConfig.isRyanPage || false,
         showBuyButton: showBuyButton,
         commandPaletteEnabled: commandPaletteEnabled,
         navItems: navItems,

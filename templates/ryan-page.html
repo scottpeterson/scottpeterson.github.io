@@ -1,0 +1,49 @@
+<section class="table-section">
+  <h2>{{SECTION_TITLE}}</h2>
+
+  <div class="ryan-calculator">
+    <div class="ryan-form">
+      <div class="form-group">
+        <label for="ryan-team-select">Select a Team</label>
+        <select id="ryan-team-select" class="form-select" disabled>
+          <option value="">Loading teams...</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="ryan-results" class="ryan-results" style="display: none">
+      <h3 id="ryan-results-heading" class="ryan-results-heading"></h3>
+      <div class="ryan-columns">
+        <div class="ryan-table-wrap">
+          <table id="ryan-table-left" class="stats-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Seed</th>
+                <th>Conf</th>
+                <th>Dist (mi)</th>
+              </tr>
+            </thead>
+            <tbody id="ryan-table-body-left"></tbody>
+          </table>
+        </div>
+        <div class="ryan-table-wrap">
+          <table id="ryan-table-right" class="stats-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Seed</th>
+                <th>Conf</th>
+                <th>Dist (mi)</th>
+              </tr>
+            </thead>
+            <tbody id="ryan-table-body-right"></tbody>
+          </table>
+        </div>
+      </div>
+      <p id="ryan-no-results" class="no-results" style="display: none">
+        No nearby tournament teams within 499 miles.
+      </p>
+    </div>
+  </div>
+</section>

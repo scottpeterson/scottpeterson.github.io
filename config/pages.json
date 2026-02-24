@@ -442,5 +442,15 @@
     "featureFlag": "premium",
     "showInNav": false,
     "isSimplePage": true
+  },
+  "ryan": {
+    "title": "Ryan",
+    "heading": "Division III Women's Basketball NCAA Tournament Bracketing Helper",
+    "description": "",
+    "sectionTitle": "Select a Tournament Team",
+    "hasSearch": false,
+    "dataSource": null,
+    "showInNav": false,
+    "isRyanPage": true
   }
 }

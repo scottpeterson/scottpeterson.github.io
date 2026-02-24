@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Composite Rankings</title>
+    <title>Basketball Statistics - Ryan</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -133,151 +133,61 @@
 
     <main>
       <header>
-        <h1>Composite Rankings</h1>
-        <p>
-          Team Rankings based off median of NPI, Massey, Efficiency, and Current
-          Season Results.
-        </p>
-
-        <p class="last-updated">
-          <em>Last updated: February 24, 2026 at 08:37 AM EST</em>
-        </p>
+        <h1>
+          Division III Women's Basketball NCAA Tournament Bracketing Helper
+        </h1>
+        <p></p>
       </header>
 
       <section class="table-section">
-        <h2>Composite Rankings</h2>
+        <h2>Select a Tournament Team</h2>
 
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
+        <div class="ryan-calculator">
+          <div class="ryan-form">
+            <div class="form-group">
+              <label for="ryan-team-select">Select a Team</label>
+              <select id="ryan-team-select" class="form-select" disabled>
+                <option value="">Loading teams...</option>
+              </select>
+            </div>
           </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Region</th>
-                <th>Massey Rank</th>
-                <th>Eff Rank</th>
-                <th>NPI Rank</th>
-                <th>Curr Season Results Rank</th>
-                <th>Strength of Record</th>
-                <th>Wins Above Bubble</th>
-                <th>Preseason Rank</th>
-                <th>MEDIAN</th>
-                <th>OVR_RANK</th>
-                <th>Stdev</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
+          <div id="ryan-results" class="ryan-results" style="display: none">
+            <h3 id="ryan-results-heading" class="ryan-results-heading"></h3>
+            <div class="ryan-columns">
+              <div class="ryan-table-wrap">
+                <table id="ryan-table-left" class="stats-table">
+                  <thead>
+                    <tr>
+                      <th>Team</th>
+                      <th>Seed</th>
+                      <th>Conf</th>
+                      <th>Dist (mi)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ryan-table-body-left"></tbody>
+                </table>
+              </div>
+              <div class="ryan-table-wrap">
+                <table id="ryan-table-right" class="stats-table">
+                  <thead>
+                    <tr>
+                      <th>Team</th>
+                      <th>Seed</th>
+                      <th>Conf</th>
+                      <th>Dist (mi)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ryan-table-body-right"></tbody>
+                </table>
+              </div>
+            </div>
+            <p id="ryan-no-results" class="no-results" style="display: none">
+              No nearby tournament teams within 499 miles.
+            </p>
+          </div>
         </div>
       </section>
-      <div class="table-section">
-        <section class="legend-section">
-          <h2>Column Legend</h2>
-          <div class="legend-grid">
-            <div class="legend-item">
-              <span class="legend-column">Team</span>
-              <span class="legend-description"
-                >Name of the college or university basketball team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Conf</span>
-              <span class="legend-description"
-                >Conference affiliation of the team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Region</span>
-              <span class="legend-description"
-                >NCAA tournament region the team belongs to</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Massey Rank</span>
-              <span class="legend-description"
-                >Team ranking according to Massey rating system</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Eff Rank</span>
-              <span class="legend-description"
-                >Team ranking based on efficiency metrics</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">NPI Rank</span>
-              <span class="legend-description"
-                >Team ranking based on NCAA Power Index</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Curr Season Results Rank</span>
-              <span class="legend-description"
-                >Ranking based on current season performance</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Strength of Record</span>
-              <span class="legend-description"
-                >Measures how difficult a team's win-loss record is to achieve
-                based on its schedule</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Wins Above Bubble</span>
-              <span class="legend-description"
-                >Measures how many more (or fewer) wins a team has compared to
-                what an average bubble team would be expected to achieve against
-                the same schedule</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Preseason Rank</span>
-              <span class="legend-description"
-                >Team's preseason ranking prediction</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">MEDIAN</span>
-              <span class="legend-description"
-                >Median value across all ranking systems (not including
-                preseason)</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">OVR_RANK</span>
-              <span class="legend-description"
-                >Overall composite ranking position</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Stdev</span>
-              <span class="legend-description"
-                >Standard deviation across different ranking systems</span
-              >
-            </div>
-          </div>
-        </section>
-      </div>
     </main>
 
     <!-- Premium Buy Button (Feature Flagged) -->
@@ -309,6 +219,9 @@
     <script src="js/table-controls.js"></script>
     <script src="js/data-loader.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Ryan page logic -->
+    <script src="js/ryan.js"></script>
 
     <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
     <script src="js/confetti.js"></script>
