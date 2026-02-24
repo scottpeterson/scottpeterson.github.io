@@ -66,8 +66,12 @@
     const key = makeKey(a, b);
     const entry = distanceData.distances[key];
 
-    // Clear previous color classes
-    resultEl.classList.remove('distance-close', 'distance-far');
+    // Clear previous color and verified classes
+    resultEl.classList.remove(
+      'distance-close',
+      'distance-far',
+      'distance-verified'
+    );
 
     if (entry) {
       distanceValue.textContent = entry.miles.toLocaleString();
@@ -76,6 +80,9 @@
       resultEl.classList.add(
         entry.miles <= 499 ? 'distance-close' : 'distance-far'
       );
+      if (entry.source === 'ncaa_verified') {
+        resultEl.classList.add('distance-verified');
+      }
       resultEl.style.display = 'block';
     } else {
       errorMsg.textContent = `No distance data found for ${a} and ${b}.`;

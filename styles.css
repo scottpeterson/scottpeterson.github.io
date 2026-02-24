@@ -1207,6 +1207,13 @@ footer {
   border-color: #e74c3c;
 }
 
+/* NCAA Verified: gold border accent */
+.distance-result.distance-verified {
+  border-color: #d4a017;
+  border-width: 2px;
+  box-shadow: 0 4px 20px rgb(212 160 23 / 25%);
+}
+
 /* Light gray for no data found */
 .distance-error {
   margin-top: 20px;
