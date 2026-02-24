@@ -137,7 +137,8 @@
         "conference": "SLIAC",
         "distance_miles": 437
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Carroll", "Chicago", "Linfield"]
   },
   "NYU": {
     "overall_seed": 2,
@@ -368,6 +369,11 @@
         "conference": "MASCAC",
         "distance_miles": 218
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Brooklyn College",
+      "Merchant Marine",
+      "SUNY New Paltz"
     ]
   },
   "Washington & Lee": {
@@ -592,7 +598,8 @@
         "conference": "CCS",
         "distance_miles": 383
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Carroll", "Emory"]
   },
   "Johns Hopkins": {
     "overall_seed": 4,
@@ -816,6 +823,11 @@
         "conference": "MASCAC",
         "distance_miles": 409
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Christopher Newport",
+      "Wartburg",
+      "William Paterson"
     ]
   },
   "Scranton": {
@@ -1061,7 +1073,8 @@
         "conference": "MASCAC",
         "distance_miles": 308
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Cortland", "DeSales"]
   },
   "Denison": {
     "overall_seed": 6,
@@ -1299,7 +1312,8 @@
         "conference": "CCS",
         "distance_miles": 246
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Otterbein", "Transylvania"]
   },
   "John Carroll": {
     "overall_seed": 7,
@@ -1551,7 +1565,8 @@
         "conference": "CCS",
         "distance_miles": 354
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Baldwin Wallace", "Carnegie Mellon"]
   },
   "Bowdoin": {
     "overall_seed": 8,
@@ -1663,7 +1678,8 @@
         "conference": "MASCAC",
         "distance_miles": 165
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Maine-Maritime"]
   },
   "Hope": {
     "overall_seed": 9,
@@ -1838,6 +1854,14 @@
         "conference": "CCS",
         "distance_miles": 437
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Colorado College",
+      "Hardin-Simmons",
+      "Illinois Wesleyan",
+      "Ohio Wesleyan",
+      "UW-La Crosse",
+      "UW-River Falls"
     ]
   },
   "UW-Whitewater": {
@@ -2013,6 +2037,13 @@
         "conference": "CCS",
         "distance_miles": 484
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carroll",
+      "Gustavus Adolphus",
+      "Illinois Wesleyan",
+      "Principia",
+      "WashU"
     ]
   },
   "Concordia Moorhead": {
@@ -2076,7 +2107,8 @@
         "conference": "UMAC",
         "distance_miles": 304
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Hardin-Simmons", "UW-River Falls"]
   },
   "Ohio Wesleyan": {
     "overall_seed": 12,
@@ -2321,6 +2353,11 @@
         "conference": "CCS",
         "distance_miles": 235
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Hope",
+      "Otterbein",
+      "Washington & Jefferson"
     ]
   },
   "Baldwin Wallace": {
@@ -2573,6 +2610,11 @@
         "conference": "CCS",
         "distance_miles": 341
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "John Carroll",
+      "Penn State-Behrend",
+      "Trine"
     ]
   },
   "WashU": {
@@ -2706,6 +2748,11 @@
         "conference": "CCS",
         "distance_miles": 347
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Christopher Newport",
+      "Illinois Wesleyan",
+      "UW-Whitewater"
     ]
   },
   "Smith": {
@@ -2895,6 +2942,10 @@
         "conference": "MASCAC",
         "distance_miles": 119
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bridgewater St.",
+      "Johnson & Wales (RI)"
     ]
   },
   "Carroll": {
@@ -3070,6 +3121,14 @@
         "conference": "CCS",
         "distance_miles": 478
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Chicago",
+      "Ripon",
+      "UW-Oshkosh",
+      "UW-Whitewater",
+      "Wartburg",
+      "Washington & Lee"
     ]
   },
   "UW-Platteville": {
@@ -3210,6 +3269,11 @@
         "conference": "SLIAC",
         "distance_miles": 304
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Ripon",
+      "Trine",
+      "Wisconsin Lutheran"
     ]
   },
   "Chicago": {
@@ -3406,6 +3470,11 @@
         "conference": "CCS",
         "distance_miles": 369
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carroll",
+      "Illinois Wesleyan",
+      "UW-Oshkosh"
     ]
   },
   "Illinois Wesleyan": {
@@ -3581,6 +3650,16 @@
         "conference": "CCS",
         "distance_miles": 363
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bethel",
+      "Chicago",
+      "Hope",
+      "Trinity (TX)",
+      "UW-La Crosse",
+      "UW-Whitewater",
+      "WashU",
+      "Wisconsin Lutheran"
     ]
   },
   "Bates": {
@@ -3693,7 +3772,8 @@
         "conference": "MASCAC",
         "distance_miles": 169
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Emmanuel", "Southern Maine"]
   },
   "Ripon": {
     "overall_seed": 21,
@@ -3840,7 +3920,8 @@
         "conference": "SLIAC",
         "distance_miles": 428
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Carroll", "UW-Platteville"]
   },
   "UW-La Crosse": {
     "overall_seed": 22,
@@ -3973,6 +4054,12 @@
         "conference": "SLIAC",
         "distance_miles": 404
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bethany Luth",
+      "Bethel",
+      "Hope",
+      "Illinois Wesleyan"
     ]
   },
   "Cortland": {
@@ -4211,6 +4298,11 @@
         "conference": "MASCAC",
         "distance_miles": 339
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carnegie Mellon",
+      "Scranton",
+      "Washington & Jefferson"
     ]
   },
   "Trine": {
@@ -4421,6 +4513,11 @@
         "conference": "CCS",
         "distance_miles": 327
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Baldwin Wallace",
+      "UW-Platteville",
+      "Wisconsin Lutheran"
     ]
   },
   "William Paterson": {
@@ -4652,7 +4749,8 @@
         "conference": "MASCAC",
         "distance_miles": 228
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Johns Hopkins"]
   },
   "UW-River Falls": {
     "overall_seed": 26,
@@ -4764,6 +4862,12 @@
         "conference": "SLIAC",
         "distance_miles": 498
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bethel",
+      "Concordia Moorhead",
+      "Gustavus Adolphus",
+      "Hope"
     ]
   },
   "Bethel": {
@@ -4869,6 +4973,12 @@
         "conference": "UMAC",
         "distance_miles": 91
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Illinois Wesleyan",
+      "Messiah",
+      "UW-La Crosse",
+      "UW-River Falls"
     ]
   },
   "SUNY New Paltz": {
@@ -5100,7 +5210,8 @@
         "conference": "MASCAC",
         "distance_miles": 235
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["NYU"]
   },
   "Wisconsin Lutheran": {
     "overall_seed": 29,
@@ -5275,6 +5386,14 @@
         "conference": "CCS",
         "distance_miles": 469
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Gustavus Adolphus",
+      "Illinois Wesleyan",
+      "Messiah",
+      "Trine",
+      "UW-Platteville",
+      "Wartburg"
     ]
   },
   "Southern Maine": {
@@ -5401,6 +5520,11 @@
         "conference": "MASCAC",
         "distance_miles": 143
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bates",
+      "Emmanuel",
+      "Maine-Maritime"
     ]
   },
   "Gustavus Adolphus": {
@@ -5506,6 +5630,12 @@
         "conference": "UMAC",
         "distance_miles": 13
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bethany Luth",
+      "UW-River Falls",
+      "UW-Whitewater",
+      "Wisconsin Lutheran"
     ]
   },
   "Christopher Newport": {
@@ -5646,13 +5776,19 @@
         "conference": "UEC",
         "distance_miles": 179
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Johns Hopkins",
+      "Shenandoah",
+      "WashU"
     ]
   },
   "Linfield": {
     "overall_seed": 33,
     "quadrant_seed": 9,
     "conference": "NWC",
-    "nearby_teams": []
+    "nearby_teams": [],
+    "nonconference_tournament_opponents": ["UW-Oshkosh"]
   },
   "Susquehanna": {
     "overall_seed": 34,
@@ -5890,7 +6026,8 @@
         "conference": "MASCAC",
         "distance_miles": 391
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Gettysburg"]
   },
   "Messiah": {
     "overall_seed": 35,
@@ -6128,13 +6265,20 @@
         "conference": "MASCAC",
         "distance_miles": 398
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bethel",
+      "DeSales",
+      "Gettysburg",
+      "Wisconsin Lutheran"
     ]
   },
   "Colorado College": {
     "overall_seed": 36,
     "quadrant_seed": 9,
     "conference": "SCAC",
-    "nearby_teams": []
+    "nearby_teams": [],
+    "nonconference_tournament_opponents": ["Hardin-Simmons", "Hope", "Wartburg"]
   },
   "Shenandoah": {
     "overall_seed": 37,
@@ -6372,6 +6516,11 @@
         "conference": "E8",
         "distance_miles": 309
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Christopher Newport",
+      "DeSales",
+      "Gettysburg"
     ]
   },
   "Gettysburg": {
@@ -6603,6 +6752,13 @@
         "conference": "MASCAC",
         "distance_miles": 428
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "DeSales",
+      "Messiah",
+      "Randolph-Macon",
+      "Shenandoah",
+      "Susquehanna"
     ]
   },
   "Randolph-Macon": {
@@ -6820,7 +6976,8 @@
         "conference": "E8",
         "distance_miles": 444
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Emory", "Gettysburg", "Principia"]
   },
   "Otterbein": {
     "overall_seed": 40,
@@ -7072,6 +7229,12 @@
         "conference": "CCS",
         "distance_miles": 216
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carnegie Mellon",
+      "Denison",
+      "Ohio Wesleyan",
+      "Washington & Jefferson"
     ]
   },
   "Hardin-Simmons": {
@@ -7086,6 +7249,13 @@
         "conference": "SAA",
         "distance_miles": 245
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Colorado College",
+      "Concordia Moorhead",
+      "Hope",
+      "Trinity (TX)",
+      "Wartburg"
     ]
   },
   "Emory": {
@@ -7121,6 +7291,11 @@
         "conference": "CCS",
         "distance_miles": 391
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Randolph-Macon",
+      "Trinity (TX)",
+      "Washington & Lee"
     ]
   },
   "Carnegie Mellon": {
@@ -7352,6 +7527,12 @@
         "conference": "CCS",
         "distance_miles": 391
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Cortland",
+      "John Carroll",
+      "Otterbein",
+      "Washington & Jefferson"
     ]
   },
   "Transylvania": {
@@ -7520,7 +7701,8 @@
         "conference": "CCS",
         "distance_miles": 18
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Asbury", "Denison"]
   },
   "Washington & Jefferson": {
     "overall_seed": 45,
@@ -7758,6 +7940,13 @@
         "conference": "CCS",
         "distance_miles": 363
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carnegie Mellon",
+      "Cortland",
+      "Ohio Wesleyan",
+      "Otterbein",
+      "Penn State-Behrend"
     ]
   },
   "Johnson & Wales (RI)": {
@@ -7940,7 +8129,8 @@
         "conference": "MASCAC",
         "distance_miles": 37
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Smith"]
   },
   "Wartburg": {
     "overall_seed": 47,
@@ -8073,6 +8263,13 @@
         "conference": "SLIAC",
         "distance_miles": 333
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carroll",
+      "Colorado College",
+      "Hardin-Simmons",
+      "Johns Hopkins",
+      "Wisconsin Lutheran"
     ]
   },
   "Brooklyn College": {
@@ -8304,7 +8501,8 @@
         "conference": "MASCAC",
         "distance_miles": 225
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["NYU"]
   },
   "DeSales": {
     "overall_seed": 49,
@@ -8549,6 +8747,12 @@
         "conference": "MASCAC",
         "distance_miles": 308
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Gettysburg",
+      "Messiah",
+      "Scranton",
+      "Shenandoah"
     ]
   },
   "Immaculata": {
@@ -8773,7 +8977,8 @@
         "conference": "MASCAC",
         "distance_miles": 447
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": []
   },
   "Rochester Tech": {
     "overall_seed": 51,
@@ -8997,13 +9202,15 @@
         "conference": "MASCAC",
         "distance_miles": 410
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Emmanuel"]
   },
   "Redlands": {
     "overall_seed": 52,
     "quadrant_seed": 13,
     "conference": "SCIAC",
-    "nearby_teams": []
+    "nearby_teams": [],
+    "nonconference_tournament_opponents": ["Bridgewater St."]
   },
   "Merchant Marine": {
     "overall_seed": 53,
@@ -9234,7 +9441,8 @@
         "conference": "MASCAC",
         "distance_miles": 214
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["NYU"]
   },
   "Penn State-Behrend": {
     "overall_seed": 54,
@@ -9465,6 +9673,10 @@
         "conference": "CCS",
         "distance_miles": 449
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Baldwin Wallace",
+      "Washington & Jefferson"
     ]
   },
   "Emmanuel": {
@@ -9640,6 +9852,11 @@
         "conference": "MASCAC",
         "distance_miles": 33
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Bates",
+      "Rochester Tech",
+      "Southern Maine"
     ]
   },
   "Brevard": {
@@ -9717,7 +9934,8 @@
         "conference": "CCS",
         "distance_miles": 318
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": []
   },
   "St. Mary's (MD)": {
     "overall_seed": 57,
@@ -9941,7 +10159,8 @@
         "conference": "MASCAC",
         "distance_miles": 496
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": []
   },
   "Trinity (TX)": {
     "overall_seed": 58,
@@ -9955,6 +10174,11 @@
         "conference": "ASC",
         "distance_miles": 245
       }
+    ],
+    "nonconference_tournament_opponents": [
+      "Emory",
+      "Hardin-Simmons",
+      "Illinois Wesleyan"
     ]
   },
   "Houghton": {
@@ -10186,7 +10410,8 @@
         "conference": "MASCAC",
         "distance_miles": 475
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": []
   },
   "Bethany Luth": {
     "overall_seed": 60,
@@ -10291,7 +10516,8 @@
         "conference": "ARC",
         "distance_miles": 171
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Gustavus Adolphus", "UW-La Crosse"]
   },
   "Maine-Maritime": {
     "overall_seed": 61,
@@ -10382,7 +10608,8 @@
         "conference": "MASCAC",
         "distance_miles": 277
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Bowdoin", "Southern Maine"]
   },
   "Principia": {
     "overall_seed": 62,
@@ -10522,7 +10749,8 @@
         "conference": "CCS",
         "distance_miles": 375
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Randolph-Macon", "UW-Whitewater"]
   },
   "Bridgewater St.": {
     "overall_seed": 63,
@@ -10690,7 +10918,8 @@
         "conference": "NAC",
         "distance_miles": 277
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Redlands", "Smith"]
   },
   "Asbury": {
     "overall_seed": 64,
@@ -10844,6 +11073,7 @@
         "conference": "SLIAC",
         "distance_miles": 375
       }
-    ]
+    ],
+    "nonconference_tournament_opponents": ["Transylvania"]
   }
 }
