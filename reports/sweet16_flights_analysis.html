@@ -336,18 +336,22 @@
         color: #8892b0;
         margin: 16px 0 8px;
       }
-      .report-sweet16_flights_analysis .summary-grid {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
+      .report-sweet16_flights_analysis .summary-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .report-sweet16_flights_analysis .summary-col-left,
+      .report-sweet16_flights_analysis .summary-col-right {
+        min-width: 0;
       }
       .report-sweet16_flights_analysis .summary-card {
         background: rgba(0, 0, 0, 0.3);
-        padding: 20px 28px;
+        padding: 16px 24px;
         border-radius: 10px;
         text-align: center;
         border: 1px solid rgba(245, 158, 11, 0.2);
+        margin-bottom: 12px;
       }
       .report-sweet16_flights_analysis .summary-number {
         font-size: 2.2rem;
@@ -405,6 +409,9 @@
         }
         .expected-flights-badge {
           margin-left: 0;
+        }
+        .summary-columns {
+          grid-template-columns: 1fr;
         }
         .pod-row {
           flex-direction: column;
@@ -571,178 +578,191 @@
           <div id="overall">
             <div class="overall-summary">
               <h2>Overall Summary</h2>
-              <div class="summary-grid">
-                <div class="summary-card">
-                  <div class="summary-number">4.07</div>
-                  <div class="summary-label">
-                    Expected Total Flights (across 4 sectionals)
+              <div class="summary-columns">
+                <div class="summary-col-left">
+                  <div class="summary-card">
+                    <div class="summary-number">4.07</div>
+                    <div class="summary-label">
+                      Expected Total Flights (across 4 sectionals)
+                    </div>
                   </div>
+                  <h3>Expected Flights by Quadrant</h3>
+                  <table class="summary-table">
+                    <thead>
+                      <tr>
+                        <th>Quadrant</th>
+                        <th>Exp. Flights</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #ffcc00; color: #000000"
+                            >Top Left (UW-Oshkosh)</span
+                          >
+                        </td>
+                        <td class="pct-cell">1.22</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #522e91; color: #ffffff"
+                            >Top Right (NYU)</span
+                          >
+                        </td>
+                        <td class="pct-cell">1.00</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #00039a; color: white"
+                            >Bottom Right (Washington & Lee)</span
+                          >
+                        </td>
+                        <td class="pct-cell">0.85</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #68aee0; color: #000000"
+                            >Bottom Left (Johns Hopkins)</span
+                          >
+                        </td>
+                        <td class="pct-cell">0.99</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="summary-col-right">
+                  <h3>Top Hosting Probabilities</h3>
+                  <table class="summary-table">
+                    <thead>
+                      <tr>
+                        <th>Team</th>
+                        <th>Host Prob</th>
+                        <th>Host if in S16</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #522e91; color: #ffffff"
+                            >NYU</span
+                          >
+                        </td>
+                        <td class="pct-cell">95.7%</td>
+                        <td class="pct-cell">100%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #68aee0; color: #000000"
+                            >Johns Hopkins</span
+                          >
+                        </td>
+                        <td class="pct-cell">80.3%</td>
+                        <td class="pct-cell">86%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #ffcc00; color: #000000"
+                            >UW-Oshkosh</span
+                          >
+                        </td>
+                        <td class="pct-cell">76.2%</td>
+                        <td class="pct-cell">85%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #00039a; color: white"
+                            >Washington & Lee</span
+                          >
+                        </td>
+                        <td class="pct-cell">35.6%</td>
+                        <td class="pct-cell">49%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #c8032b; color: #ffffff"
+                            >Denison</span
+                          >
+                        </td>
+                        <td class="pct-cell">27.6%</td>
+                        <td class="pct-cell">52%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #ac1a2f; color: #ffffff"
+                            >Ohio Wesleyan</span
+                          >
+                        </td>
+                        <td class="pct-cell">13.7%</td>
+                        <td class="pct-cell">69%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #502d7f; color: #ffffff"
+                            >UW-Whitewater</span
+                          >
+                        </td>
+                        <td class="pct-cell">11.1%</td>
+                        <td class="pct-cell">28%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #3d2d1f; color: #fff"
+                            >Baldwin Wallace</span
+                          >
+                        </td>
+                        <td class="pct-cell">9.9%</td>
+                        <td class="pct-cell">32%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #f26722; color: #ffffff"
+                            >Carroll</span
+                          >
+                        </td>
+                        <td class="pct-cell">8.9%</td>
+                        <td class="pct-cell">59%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="team-pill"
+                            style="background: #ba0c2f; color: #ffffff"
+                            >WashU</span
+                          >
+                        </td>
+                        <td class="pct-cell">8.8%</td>
+                        <td class="pct-cell">12%</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
-              <h3>Expected Flights by Quadrant</h3>
-              <table class="summary-table">
-                <thead>
-                  <tr>
-                    <th>Quadrant</th>
-                    <th>Expected Flights</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #ffcc00; color: #000000"
-                        >Top Left (UW-Oshkosh)</span
-                      >
-                    </td>
-                    <td class="pct-cell">1.22</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #522e91; color: #ffffff"
-                        >Top Right (NYU)</span
-                      >
-                    </td>
-                    <td class="pct-cell">1.00</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #00039a; color: white"
-                        >Bottom Right (Washington & Lee)</span
-                      >
-                    </td>
-                    <td class="pct-cell">0.85</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #68aee0; color: #000000"
-                        >Bottom Left (Johns Hopkins)</span
-                      >
-                    </td>
-                    <td class="pct-cell">0.99</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h3>Top Hosting Probabilities (across all quadrants)</h3>
-              <table class="summary-table">
-                <thead>
-                  <tr>
-                    <th>Team</th>
-                    <th>Hosting Prob</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #522e91; color: #ffffff"
-                        >NYU</span
-                      >
-                    </td>
-                    <td class="pct-cell">95.7%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #68aee0; color: #000000"
-                        >Johns Hopkins</span
-                      >
-                    </td>
-                    <td class="pct-cell">80.3%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #ffcc00; color: #000000"
-                        >UW-Oshkosh</span
-                      >
-                    </td>
-                    <td class="pct-cell">76.2%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #00039a; color: white"
-                        >Washington & Lee</span
-                      >
-                    </td>
-                    <td class="pct-cell">35.6%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #c8032b; color: #ffffff"
-                        >Denison</span
-                      >
-                    </td>
-                    <td class="pct-cell">27.6%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #ac1a2f; color: #ffffff"
-                        >Ohio Wesleyan</span
-                      >
-                    </td>
-                    <td class="pct-cell">13.7%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #502d7f; color: #ffffff"
-                        >UW-Whitewater</span
-                      >
-                    </td>
-                    <td class="pct-cell">11.1%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #3d2d1f; color: #fff"
-                        >Baldwin Wallace</span
-                      >
-                    </td>
-                    <td class="pct-cell">9.9%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #f26722; color: #ffffff"
-                        >Carroll</span
-                      >
-                    </td>
-                    <td class="pct-cell">8.9%</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        class="team-pill"
-                        style="background: #ba0c2f; color: #ffffff"
-                        >WashU</span
-                      >
-                    </td>
-                    <td class="pct-cell">8.8%</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
 
@@ -1185,7 +1205,7 @@
                   <tr>
                     <th>Team</th>
                     <th>Host Prob</th>
-                    <th># Combos</th>
+                    <th>Host if in S16</th>
                     <th>Bar</th>
                   </tr>
                 </thead>
@@ -1199,11 +1219,11 @@
                       >
                     </td>
                     <td class="pct-cell">76.2%</td>
-                    <td class="count-cell">46</td>
+                    <td class="pct-cell">85%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 76.24018503223921%"
+                        style="width: 84.88508519725102%"
                       ></div>
                     </td>
                   </tr>
@@ -1216,11 +1236,11 @@
                       >
                     </td>
                     <td class="pct-cell">8.9%</td>
-                    <td class="count-cell">48</td>
+                    <td class="pct-cell">59%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 8.891742700570388%"
+                        style="width: 59.4095657555771%"
                       ></div>
                     </td>
                   </tr>
@@ -1233,11 +1253,11 @@
                       >
                     </td>
                     <td class="pct-cell">8.8%</td>
-                    <td class="count-cell">34</td>
+                    <td class="pct-cell">12%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 8.824973974189794%"
+                        style="width: 11.721955442637052%"
                       ></div>
                     </td>
                   </tr>
@@ -1250,11 +1270,11 @@
                       >
                     </td>
                     <td class="pct-cell">3.0%</td>
-                    <td class="count-cell">18</td>
+                    <td class="pct-cell">6%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 3.029943629070042%"
+                        style="width: 6.3191854897185635%"
                       ></div>
                     </td>
                   </tr>
@@ -1267,11 +1287,11 @@
                       >
                     </td>
                     <td class="pct-cell">2.1%</td>
-                    <td class="count-cell">32</td>
+                    <td class="pct-cell">9%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 2.0542977065282018%"
+                        style="width: 8.916663848374995%"
                       ></div>
                     </td>
                   </tr>
@@ -1284,9 +1304,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.4%</td>
-                    <td class="count-cell">11</td>
+                    <td class="pct-cell">3%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 2.7089417200210524%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -1298,9 +1321,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.2%</td>
-                    <td class="count-cell">8</td>
+                    <td class="pct-cell">4%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 3.937935673695768%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -1312,7 +1338,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.2%</td>
-                    <td class="count-cell">18</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -1326,9 +1352,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.2%</td>
-                    <td class="count-cell">12</td>
+                    <td class="pct-cell">2%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 1.6212352723705696%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -1340,9 +1369,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.1%</td>
-                    <td class="count-cell">6</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 1.0313218611321675%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -1354,7 +1386,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">11</td>
+                    <td class="pct-cell">0%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -10331,7 +10363,7 @@
                   <tr>
                     <th>Team</th>
                     <th>Host Prob</th>
-                    <th># Combos</th>
+                    <th>Host if in S16</th>
                     <th>Bar</th>
                   </tr>
                 </thead>
@@ -10345,12 +10377,9 @@
                       >
                     </td>
                     <td class="pct-cell">95.7%</td>
-                    <td class="count-cell">64</td>
+                    <td class="pct-cell">100%</td>
                     <td class="bar-cell">
-                      <div
-                        class="host-bar"
-                        style="width: 95.65192375523736%"
-                      ></div>
+                      <div class="host-bar" style="width: 100%"></div>
                     </td>
                   </tr>
                   <tr>
@@ -10362,11 +10391,11 @@
                       >
                     </td>
                     <td class="pct-cell">2.8%</td>
-                    <td class="count-cell">36</td>
+                    <td class="pct-cell">4%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 2.7670104422223885%"
+                        style="width: 3.578036011270706%"
                       ></div>
                     </td>
                   </tr>
@@ -10379,11 +10408,11 @@
                       >
                     </td>
                     <td class="pct-cell">1.2%</td>
-                    <td class="count-cell">40</td>
+                    <td class="pct-cell">2%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 1.1942058053151456%"
+                        style="width: 1.8138193367477375%"
                       ></div>
                     </td>
                   </tr>
@@ -10396,7 +10425,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.2%</td>
-                    <td class="count-cell">24</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -10410,7 +10439,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.1%</td>
-                    <td class="count-cell">24</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -10424,7 +10453,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">4</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -10438,7 +10467,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">12</td>
+                    <td class="pct-cell">0%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -10452,7 +10481,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">16</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -19379,7 +19408,7 @@
                   <tr>
                     <th>Team</th>
                     <th>Host Prob</th>
-                    <th># Combos</th>
+                    <th>Host if in S16</th>
                     <th>Bar</th>
                   </tr>
                 </thead>
@@ -19393,11 +19422,11 @@
                       >
                     </td>
                     <td class="pct-cell">35.6%</td>
-                    <td class="count-cell">45</td>
+                    <td class="pct-cell">49%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 35.591644877115385%"
+                        style="width: 49.18139215938545%"
                       ></div>
                     </td>
                   </tr>
@@ -19410,11 +19439,11 @@
                       >
                     </td>
                     <td class="pct-cell">27.6%</td>
-                    <td class="count-cell">41</td>
+                    <td class="pct-cell">52%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 27.622532750481827%"
+                        style="width: 52.28001977882016%"
                       ></div>
                     </td>
                   </tr>
@@ -19427,11 +19456,11 @@
                       >
                     </td>
                     <td class="pct-cell">11.1%</td>
-                    <td class="count-cell">25</td>
+                    <td class="pct-cell">28%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 11.101769587975621%"
+                        style="width: 27.76445681815484%"
                       ></div>
                     </td>
                   </tr>
@@ -19444,11 +19473,11 @@
                       >
                     </td>
                     <td class="pct-cell">9.9%</td>
-                    <td class="count-cell">28</td>
+                    <td class="pct-cell">32%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 9.923681389445894%"
+                        style="width: 31.745053647110836%"
                       ></div>
                     </td>
                   </tr>
@@ -19461,11 +19490,11 @@
                       >
                     </td>
                     <td class="pct-cell">6.0%</td>
-                    <td class="count-cell">22</td>
+                    <td class="pct-cell">17%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 6.0335018679048185%"
+                        style="width: 17.258069146359418%"
                       ></div>
                     </td>
                   </tr>
@@ -19478,11 +19507,11 @@
                       >
                     </td>
                     <td class="pct-cell">4.6%</td>
-                    <td class="count-cell">23</td>
+                    <td class="pct-cell">19%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 4.636335116234816%"
+                        style="width: 18.589310525612987%"
                       ></div>
                     </td>
                   </tr>
@@ -19495,11 +19524,11 @@
                       >
                     </td>
                     <td class="pct-cell">1.8%</td>
-                    <td class="count-cell">14</td>
+                    <td class="pct-cell">7%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 1.8366564026350218%"
+                        style="width: 7.107417122020615%"
                       ></div>
                     </td>
                   </tr>
@@ -19512,9 +19541,12 @@
                       >
                     </td>
                     <td class="pct-cell">1.0%</td>
-                    <td class="count-cell">22</td>
+                    <td class="pct-cell">8%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 8.05425298491626%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -19526,9 +19558,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.9%</td>
-                    <td class="count-cell">14</td>
+                    <td class="pct-cell">6%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 6.205663703997783%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -19540,9 +19575,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.9%</td>
-                    <td class="count-cell">11</td>
+                    <td class="pct-cell">7%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 7.005406315967663%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -19554,9 +19592,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.4%</td>
-                    <td class="count-cell">10</td>
+                    <td class="pct-cell">2%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 2.216541127893826%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -19568,7 +19609,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.1%</td>
-                    <td class="count-cell">1</td>
+                    <td class="pct-cell">1%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -28548,7 +28589,7 @@
                   <tr>
                     <th>Team</th>
                     <th>Host Prob</th>
-                    <th># Combos</th>
+                    <th>Host if in S16</th>
                     <th>Bar</th>
                   </tr>
                 </thead>
@@ -28562,11 +28603,11 @@
                       >
                     </td>
                     <td class="pct-cell">80.3%</td>
-                    <td class="count-cell">61</td>
+                    <td class="pct-cell">86%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 80.26983210199585%"
+                        style="width: 85.83130028770508%"
                       ></div>
                     </td>
                   </tr>
@@ -28579,11 +28620,11 @@
                       >
                     </td>
                     <td class="pct-cell">13.7%</td>
-                    <td class="count-cell">20</td>
+                    <td class="pct-cell">69%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 13.68032209075635%"
+                        style="width: 69.28342327783564%"
                       ></div>
                     </td>
                   </tr>
@@ -28596,11 +28637,11 @@
                       >
                     </td>
                     <td class="pct-cell">4.6%</td>
-                    <td class="count-cell">44</td>
+                    <td class="pct-cell">5%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 4.569519078155794%"
+                        style="width: 4.646767400919407%"
                       ></div>
                     </td>
                   </tr>
@@ -28613,11 +28654,11 @@
                       >
                     </td>
                     <td class="pct-cell">1.4%</td>
-                    <td class="count-cell">14</td>
+                    <td class="pct-cell">2%</td>
                     <td class="bar-cell">
                       <div
                         class="host-bar"
-                        style="width: 1.4123313089752092%"
+                        style="width: 1.9460107021551099%"
                       ></div>
                     </td>
                   </tr>
@@ -28630,9 +28671,12 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">34</td>
+                    <td class="pct-cell">4%</td>
                     <td class="bar-cell">
-                      <div class="host-bar" style="width: 1%"></div>
+                      <div
+                        class="host-bar"
+                        style="width: 3.669751440758604%"
+                      ></div>
                     </td>
                   </tr>
                   <tr>
@@ -28644,7 +28688,7 @@
                       >
                     </td>
                     <td class="pct-cell">0.0%</td>
-                    <td class="count-cell">23</td>
+                    <td class="pct-cell">0%</td>
                     <td class="bar-cell">
                       <div class="host-bar" style="width: 1%"></div>
                     </td>
@@ -37162,7 +37206,7 @@
           </div>
 
           <p class="footer">
-            Generated February 24, 2026 at 12:56 PM<br />
+            Generated February 24, 2026 at 01:11 PM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
