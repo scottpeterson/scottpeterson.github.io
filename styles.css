@@ -1329,14 +1329,35 @@ footer {
   border: 1px solid #e1e5e8;
   border-radius: 8px;
   overflow: hidden;
+  /* Prevent table from blowing out the grid column */
+  min-width: 0;
 }
 
 .ryan-table-wrap .stats-table {
   margin: 0;
+  width: 100%;
 }
 
-/* Team column left-aligned, everything else centered (inherits from stats-table) */
-.ryan-table-wrap .stats-table td:first-child {
+/* Give Team column more room; let other columns share the rest */
+.ryan-table-wrap .stats-table th:nth-child(1),
+.ryan-table-wrap .stats-table td:nth-child(1) {
+  width: 45%;
+}
+
+.ryan-table-wrap .stats-table th:nth-child(2),
+.ryan-table-wrap .stats-table td:nth-child(2),
+.ryan-table-wrap .stats-table th:nth-child(3),
+.ryan-table-wrap .stats-table td:nth-child(3),
+.ryan-table-wrap .stats-table th:nth-child(4),
+.ryan-table-wrap .stats-table td:nth-child(4) {
+  width: 18%;
+}
+
+/* Disable sticky first-column behavior inherited from stats-table —
+   it forces left:0 positioning that breaks the two-column grid layout */
+.ryan-table-wrap .stats-table td:first-child,
+.ryan-table-wrap .stats-table th:first-child {
+  position: static;
   text-align: left;
 }
 
