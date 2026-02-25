@@ -147,26 +147,6 @@
         transform: translateX(2px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       }
-      .report-tournament_field_infographic .team-row.projected-host {
-        position: relative;
-      }
-      .report-tournament_field_infographic .team-row.projected-host::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 4px,
-          rgba(255, 255, 255, 0.12) 4px,
-          rgba(255, 255, 255, 0.12) 8px
-        );
-        pointer-events: none;
-        border-radius: 5px;
-      }
       .report-tournament_field_infographic .seed-badge {
         display: inline-flex;
         align-items: center;
@@ -519,22 +499,6 @@
               <span>At-Large Bid (21)</span>
             </div>
             <div class="legend-item">
-              <span
-                class="legend-badge"
-                style="
-                  background: #666;
-                  background-image: repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 3px,
-                    rgba(255, 255, 255, 0.2) 3px,
-                    rgba(255, 255, 255, 0.2) 6px
-                  );
-                "
-              ></span>
-              <span>Projected Host (17)</span>
-            </div>
-            <div class="legend-item">
               <span style="font-size: 1.2rem; line-height: 1"
                 >&#x1F3DF;&#xFE0F;</span
               >
@@ -553,7 +517,7 @@
               </div>
               <div class="column-teams">
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #ffcc00; color: #000000"
                 >
                   <span class="seed-badge auto-bid">1</span>
@@ -566,7 +530,7 @@
                   <span class="quadrant-badge">1</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #522e91; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">2</span>
@@ -579,7 +543,7 @@
                   <span class="quadrant-badge">1</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #68aee0; color: #000000"
                 >
                   <span class="seed-badge auto-bid">3</span>
@@ -591,10 +555,7 @@
                   <span class="alwyni-badge">100%</span>
                   <span class="quadrant-badge">1</span>
                 </div>
-                <div
-                  class="team-row projected-host"
-                  style="background: #00039a; color: white"
-                >
+                <div class="team-row" style="background: #00039a; color: white">
                   <span class="seed-badge auto-bid">4</span>
                   <div class="team-info">
                     <span class="team-name">Washington & Lee</span>
@@ -605,7 +566,7 @@
                   <span class="quadrant-badge">1</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #47176b; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">5</span>
@@ -618,7 +579,7 @@
                   <span class="quadrant-badge">2</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #c8032b; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">6</span>
@@ -633,7 +594,7 @@
                   <span class="quadrant-badge">2</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #000000; color: #b0b7bc"
                 >
                   <span class="seed-badge auto-bid">7</span>
@@ -646,7 +607,7 @@
                   <span class="quadrant-badge">2</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #c45114; color: #04203d"
                 >
                   <span class="seed-badge auto-bid">8</span>
@@ -672,7 +633,7 @@
                   <span class="quadrant-badge">3</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #502d7f; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">10</span>
@@ -687,7 +648,7 @@
                   <span class="quadrant-badge">3</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #660833; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">11</span>
@@ -715,7 +676,7 @@
                   <span class="quadrant-badge">3</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #ba0c2f; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">13</span>
@@ -730,7 +691,7 @@
                   <span class="quadrant-badge">4</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #fbc64a; color: #002855"
                 >
                   <span class="seed-badge auto-bid">14</span>
@@ -753,7 +714,7 @@
                   <span class="quadrant-badge">4</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #f26722; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">16</span>
@@ -809,7 +770,7 @@
                   <span class="quadrant-badge">5</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #006747; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">19</span>
@@ -822,7 +783,7 @@
                   <span class="quadrant-badge">5</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #981328; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">20</span>
@@ -1016,7 +977,7 @@
               </div>
               <div class="column-teams">
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #441166; color: #ffffff"
                 >
                   <span class="seed-badge auto-bid">33</span>
@@ -1029,7 +990,7 @@
                   <span class="quadrant-badge">9</span>
                 </div>
                 <div
-                  class="team-row projected-host"
+                  class="team-row"
                   style="background: #651c32; color: #ffffff"
                 >
                   <span class="seed-badge at-large-bid">34</span>
@@ -1500,7 +1461,7 @@
           </div>
 
           <p class="footer">
-            Generated February 25, 2026 at 09:22 AM<br />
+            Generated February 25, 2026 at 09:35 AM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>
