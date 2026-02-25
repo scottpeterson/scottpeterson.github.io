@@ -1,0 +1,282 @@
+<!doctype html>
+<!-- Generator: uv run python create_undefeated_watch.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undefeated Teams Watch - D3 WBB</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      .stats-row {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 20px 30px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fbbf24;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #8892b0;
+        margin-top: 5px;
+      }
+
+      .table-container {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: rgba(251, 191, 36, 0.2);
+        padding: 16px 12px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #fbbf24;
+      }
+
+      td {
+        padding: 14px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .team-name {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .conf-name {
+        color: #8892b0;
+        font-size: 0.85rem;
+      }
+
+      .record {
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      .opponent {
+        color: #e0e0e0;
+      }
+
+      .game-date {
+        color: #8892b0;
+      }
+
+      .game-date.today {
+        color: #fbbf24;
+        font-weight: 600;
+      }
+
+      .location {
+        font-size: 0.85rem;
+      }
+
+      .location.home {
+        color: #10b981;
+      }
+
+      .location.away {
+        color: #ef4444;
+      }
+
+      .location.neutral {
+        color: #8892b0;
+      }
+
+      .win-prob {
+        font-weight: 700;
+        font-family: 'SF Mono', Monaco, monospace;
+      }
+
+      .prob-high {
+        color: #10b981;
+      }
+
+      .prob-med {
+        color: #f59e0b;
+      }
+
+      .prob-low {
+        color: #ef4444;
+      }
+
+      .tourn-pct {
+        color: #8892b0;
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 30px;
+        font-size: 0.85rem;
+      }
+      .footer a {
+        color: #64ffda;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+        table {
+          font-size: 0.85rem;
+        }
+        th,
+        td {
+          padding: 10px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Undefeated Teams Watch</h1>
+      <p class="subtitle">
+        D3 Women's Basketball 2025-26 | Updated February 25, 2026
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-value">4</div>
+          <div class="stat-label">Undefeated Teams</div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Record</th>
+              <th>Tourn%</th>
+              <th>Next Opponent</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Win Prob</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="team-name">Washington & Lee</div>
+                <div class="conf-name">ODAC</div>
+              </td>
+              <td class="record">25-0</td>
+              <td class="tourn-pct">100.0%</td>
+              <td class="opponent">Roanoke</td>
+              <td class="game-date today">02/25/2026</td>
+              <td class="location home">Home</td>
+              <td class="win-prob prob-high">100%</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="team-name">Johns Hopkins</div>
+                <div class="conf-name">CC</div>
+              </td>
+              <td class="record">24-0</td>
+              <td class="tourn-pct">100.0%</td>
+              <td class="opponent">McDaniel</td>
+              <td class="game-date">02/27/2026</td>
+              <td class="location home">Home</td>
+              <td class="win-prob prob-high">85%</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="team-name">NYU</div>
+                <div class="conf-name">UAA</div>
+              </td>
+              <td class="record">24-0</td>
+              <td class="tourn-pct">100.0%</td>
+              <td class="opponent">Brandeis</td>
+              <td class="game-date">02/28/2026</td>
+              <td class="location home">Home</td>
+              <td class="win-prob prob-high">100%</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="team-name">Scranton</div>
+                <div class="conf-name">LAND</div>
+              </td>
+              <td class="record">25-0</td>
+              <td class="tourn-pct">100.0%</td>
+              <td colspan="4" style="color: #8892b0">No upcoming games</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="footer">
+        Win probability calculated from efficiency margins<br />
+        <span style="color: #fbbf24">Gold date</span> = Game is today<br /><br />
+        Generated February 25, 2026 at 09:22 AM<br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+  </body>
+</html>
