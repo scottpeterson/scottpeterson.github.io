@@ -173,6 +173,7 @@
     "North Central (MN)",
     "North Park",
     "Northwestern (MN)",
+    "Norwich",
     "Notre Dame (MD)",
     "Oberlin",
     "Occidental",
@@ -1533,6 +1534,7 @@
     "Amherst|North Central (MN)": { "miles": 1322.6, "source": "osrm" },
     "Amherst|North Park": { "miles": 924, "source": "osrm" },
     "Amherst|Northwestern (MN)": { "miles": 1322, "source": "ncaa_verified" },
+    "Amherst|Norwich": { "miles": 148.3, "source": "osrm" },
     "Amherst|Notre Dame (MD)": { "miles": 355, "source": "ncaa_verified" },
     "Amherst|NYU": { "miles": 169, "source": "ncaa_verified" },
     "Amherst|Oberlin": { "miles": 605, "source": "ncaa_verified" },
@@ -1812,6 +1814,7 @@
     "Anderson|Neumann": { "miles": 617, "source": "osrm" },
     "Anderson|North Central (MN)": { "miles": 619.2, "source": "osrm" },
     "Anderson|North Park": { "miles": 217.8, "source": "osrm" },
+    "Anderson|Norwich": { "miles": 882.2, "source": "osrm" },
     "Anderson|Notre Dame (MD)": { "miles": 561.2, "source": "osrm" },
     "Anderson|NYU": { "miles": 709.1, "source": "osrm" },
     "Anderson|Occidental": { "miles": 2111.5, "source": "osrm" },
@@ -1914,6 +1917,7 @@
     "Anderson|Western Connecticut": { "miles": 749.7, "source": "osrm" },
     "Anderson|Western New England": { "miles": 835.9, "source": "osrm" },
     "Anderson|Westfield St.": { "miles": 827.3, "source": "osrm" },
+    "Anderson|Westminster (MO)": { "miles": 383.7, "source": "osrm" },
     "Anderson|Westminster (PA)": { "miles": 337.7, "source": "osrm" },
     "Anderson|Whitman": { "miles": 2118.8, "source": "osrm" },
     "Anderson|Whitworth": { "miles": 1984.3, "source": "osrm" },
@@ -2346,6 +2350,7 @@
     "Asbury|Neumann": { "miles": 642, "source": "ncaa_verified" },
     "Asbury|North Central (MN)": { "miles": 787.5, "source": "osrm" },
     "Asbury|Northwestern (MN)": { "miles": 784, "source": "ncaa_verified" },
+    "Asbury|Norwich": { "miles": 944.5, "source": "osrm" },
     "Asbury|NYU": { "miles": 744, "source": "ncaa_verified" },
     "Asbury|Oberlin": { "miles": 324, "source": "ncaa_verified" },
     "Asbury|Occidental": { "miles": 2246, "source": "ncaa_verified" },
@@ -2886,6 +2891,7 @@
     "Aurora|North Central (MN)": { "miles": 398.6, "source": "osrm" },
     "Aurora|North Park": { "miles": 43.8, "source": "osrm" },
     "Aurora|Northwestern (MN)": { "miles": 399, "source": "ncaa_verified" },
+    "Aurora|Norwich": { "miles": 1000.2, "source": "osrm" },
     "Aurora|Notre Dame (MD)": { "miles": 741.2, "source": "osrm" },
     "Aurora|NYU": { "miles": 831, "source": "ncaa_verified" },
     "Aurora|Oberlin": { "miles": 361, "source": "ncaa_verified" },
@@ -3175,6 +3181,7 @@
     "Babson|North Central (MN)": { "miles": 1390, "source": "osrm" },
     "Babson|North Park": { "miles": 991.4, "source": "osrm" },
     "Babson|Northwestern (MN)": { "miles": 1379, "source": "ncaa_verified" },
+    "Babson|Norwich": { "miles": 180.7, "source": "osrm" },
     "Babson|Notre Dame (MD)": { "miles": 392, "source": "ncaa_verified" },
     "Babson|NYU": { "miles": 206, "source": "ncaa_verified" },
     "Babson|Oberlin": { "miles": 663, "source": "ncaa_verified" },
@@ -3536,6 +3543,7 @@
       "miles": 746,
       "source": "ncaa_verified"
     },
+    "Baldwin Wallace|Norwich": { "miles": 615.8, "source": "osrm" },
     "Baldwin Wallace|Notre Dame (MD)": {
       "miles": 379,
       "source": "ncaa_verified"
@@ -4159,6 +4167,7 @@
     "Bates|North Central (MN)": { "miles": 1530.3, "source": "osrm" },
     "Bates|North Park": { "miles": 1131.7, "source": "osrm" },
     "Bates|Northwestern (MN)": { "miles": 1521, "source": "ncaa_verified" },
+    "Bates|Norwich": { "miles": 169.5, "source": "osrm" },
     "Bates|Notre Dame (MD)": { "miles": 533, "source": "ncaa_verified" },
     "Bates|NYU": { "miles": 349, "source": "ncaa_verified" },
     "Bates|Oberlin": { "miles": 806, "source": "ncaa_verified" },
@@ -4324,6 +4333,7 @@
       "miles": 1813.1,
       "source": "ncaa_verified"
     },
+    "Belhaven|Clark": { "miles": 1372.1, "source": "osrm" },
     "Belhaven|Coast Guard": { "miles": 1333, "source": "ncaa_verified" },
     "Belhaven|Coe": { "miles": 763, "source": "ncaa_verified" },
     "Belhaven|Colby": { "miles": 1585.2, "source": "ncaa_verified" },
@@ -4440,6 +4450,7 @@
     "Belhaven|North Central (MN)": { "miles": 1032.6, "source": "osrm" },
     "Belhaven|North Park": { "miles": 745.9, "source": "osrm" },
     "Belhaven|Northwestern (MN)": { "miles": 1015, "source": "ncaa_verified" },
+    "Belhaven|Norwich": { "miles": 1483.4, "source": "osrm" },
     "Belhaven|Notre Dame (MD)": { "miles": 1014.2, "source": "osrm" },
     "Belhaven|NYU": { "miles": 1220, "source": "ncaa_verified" },
     "Belhaven|Oberlin": { "miles": 901, "source": "ncaa_verified" },
@@ -5060,6 +5071,7 @@
     "Berry|North Central (IL)": { "miles": 660.9, "source": "osrm" },
     "Berry|North Central (MN)": { "miles": 1054.9, "source": "osrm" },
     "Berry|Northwestern (MN)": { "miles": 1079, "source": "ncaa_verified" },
+    "Berry|Norwich": { "miles": 1147.8, "source": "osrm" },
     "Berry|Notre Dame (MD)": { "miles": 697, "source": "ncaa_verified" },
     "Berry|NYU": { "miles": 877, "source": "ncaa_verified" },
     "Berry|Oberlin": { "miles": 638, "source": "ncaa_verified" },
@@ -5277,6 +5289,7 @@
       "source": "ncaa_verified"
     },
     "Bethany (WV)|North Central (MN)": { "miles": 879, "source": "osrm" },
+    "Bethany (WV)|Norwich": { "miles": 663.5, "source": "osrm" },
     "Bethany (WV)|NYU": { "miles": 401.6, "source": "osrm" },
     "Bethany (WV)|Oglethorpe": { "miles": 668.6, "source": "osrm" },
     "Bethany (WV)|Ohio Wesleyan": { "miles": 155.6, "source": "osrm" },
@@ -5356,6 +5369,7 @@
     "Bethany (WV)|Webster": { "miles": 570.6, "source": "osrm" },
     "Bethany (WV)|Western New England": { "miles": 542, "source": "osrm" },
     "Bethany (WV)|Westfield St.": { "miles": 558.4, "source": "osrm" },
+    "Bethany (WV)|Westminster (MO)": { "miles": 661.1, "source": "osrm" },
     "Bethany (WV)|Whitman": { "miles": 2404.1, "source": "osrm" },
     "Bethany (WV)|Widener": { "miles": 326.2, "source": "osrm" },
     "Bethany (WV)|William Paterson": { "miles": 400.6, "source": "osrm" },
@@ -5854,6 +5868,7 @@
     "Bethel|North Central (IL)": { "miles": 413.6, "source": "osrm" },
     "Bethel|North Central (MN)": { "miles": 24.5, "source": "osrm" },
     "Bethel|Northwestern (MN)": { "miles": 3, "source": "ncaa_verified" },
+    "Bethel|Norwich": { "miles": 1388, "source": "osrm" },
     "Bethel|NYU": { "miles": 1200, "source": "ncaa_verified" },
     "Bethel|Oberlin": { "miles": 728, "source": "ncaa_verified" },
     "Bethel|Occidental": { "miles": 1934, "source": "ncaa_verified" },
@@ -6089,6 +6104,7 @@
     "Bowdoin|North Central (IL)": { "miles": 1143.2, "source": "osrm" },
     "Bowdoin|North Central (MN)": { "miles": 1524.9, "source": "osrm" },
     "Bowdoin|Northwestern (MN)": { "miles": 1516, "source": "ncaa_verified" },
+    "Bowdoin|Norwich": { "miles": 239.6, "source": "osrm" },
     "Bowdoin|Notre Dame (MD)": { "miles": 528, "source": "ncaa_verified" },
     "Bowdoin|NYU": { "miles": 345, "source": "ncaa_verified" },
     "Bowdoin|Oberlin": { "miles": 802, "source": "ncaa_verified" },
@@ -6531,6 +6547,7 @@
     "Brevard|North Central (IL)": { "miles": 678.9, "source": "osrm" },
     "Brevard|North Central (MN)": { "miles": 1069.4, "source": "osrm" },
     "Brevard|Northwestern (MN)": { "miles": 1101, "source": "ncaa_verified" },
+    "Brevard|Norwich": { "miles": 1006.1, "source": "osrm" },
     "Brevard|NYU": { "miles": 740, "source": "ncaa_verified" },
     "Brevard|Occidental": { "miles": 2428, "source": "ncaa_verified" },
     "Brevard|Oglethorpe": { "miles": 161, "source": "ncaa_verified" },
@@ -6876,6 +6893,7 @@
       "miles": 1130,
       "source": "ncaa_verified"
     },
+    "Bridgewater (VA)|Norwich": { "miles": 644.7, "source": "osrm" },
     "Bridgewater (VA)|Notre Dame (MD)": {
       "miles": 181,
       "source": "ncaa_verified"
@@ -7331,6 +7349,7 @@
       "miles": 1405,
       "source": "ncaa_verified"
     },
+    "Bridgewater St.|Norwich": { "miles": 202.5, "source": "osrm" },
     "Bridgewater St.|Notre Dame (MD)": {
       "miles": 405,
       "source": "ncaa_verified"
@@ -8175,6 +8194,7 @@
       "miles": 1206,
       "source": "ncaa_verified"
     },
+    "Brooklyn College|Norwich": { "miles": 311.3, "source": "osrm" },
     "Brooklyn College|Notre Dame (MD)": {
       "miles": 192,
       "source": "ncaa_verified"
@@ -8952,6 +8972,7 @@
       "miles": 1976,
       "source": "ncaa_verified"
     },
+    "Cal Lutheran|Norwich": { "miles": 3014.4, "source": "osrm" },
     "Cal Lutheran|Notre Dame (MD)": {
       "miles": 2689,
       "source": "ncaa_verified"
@@ -9265,6 +9286,7 @@
     "Calvin|North Central (MN)": { "miles": 588.9, "source": "osrm" },
     "Calvin|North Park": { "miles": 190.3, "source": "osrm" },
     "Calvin|Northwestern (MN)": { "miles": 593, "source": "ncaa_verified" },
+    "Calvin|Norwich": { "miles": 797.9, "source": "osrm" },
     "Calvin|Notre Dame (MD)": { "miles": 657, "source": "ncaa_verified" },
     "Calvin|NYU": { "miles": 739, "source": "ncaa_verified" },
     "Calvin|Oberlin": { "miles": 268, "source": "ncaa_verified" },
@@ -9786,6 +9808,7 @@
       "miles": 870,
       "source": "ncaa_verified"
     },
+    "Carnegie Mellon|Norwich": { "miles": 599.2, "source": "osrm" },
     "Carnegie Mellon|Notre Dame (MD)": {
       "miles": 253,
       "source": "ncaa_verified"
@@ -10133,6 +10156,7 @@
     "Carroll|North Central (IL)": { "miles": 108.9, "source": "osrm" },
     "Carroll|North Central (MN)": { "miles": 320.3, "source": "osrm" },
     "Carroll|Northwestern (MN)": { "miles": 325, "source": "ncaa_verified" },
+    "Carroll|Norwich": { "miles": 1064.9, "source": "osrm" },
     "Carroll|Notre Dame (MD)": { "miles": 814, "source": "ncaa_verified" },
     "Carroll|NYU": { "miles": 896, "source": "ncaa_verified" },
     "Carroll|Oberlin": { "miles": 425, "source": "ncaa_verified" },
@@ -10401,6 +10425,7 @@
     "Carthage|North Central (MN)": { "miles": 369, "source": "osrm" },
     "Carthage|North Park": { "miles": 55.8, "source": "osrm" },
     "Carthage|Northwestern (MN)": { "miles": 370, "source": "ncaa_verified" },
+    "Carthage|Norwich": { "miles": 1027.1, "source": "osrm" },
     "Carthage|Notre Dame (MD)": { "miles": 766.8, "source": "osrm" },
     "Carthage|NYU": { "miles": 859, "source": "ncaa_verified" },
     "Carthage|Oberlin": { "miles": 385, "source": "ncaa_verified" },
@@ -11123,6 +11148,7 @@
     "Centre|North Central (IL)": { "miles": 398.2, "source": "osrm" },
     "Centre|North Central (MN)": { "miles": 788.8, "source": "osrm" },
     "Centre|Northwestern (MN)": { "miles": 786, "source": "ncaa_verified" },
+    "Centre|Norwich": { "miles": 962.3, "source": "osrm" },
     "Centre|Notre Dame (MD)": { "miles": 579, "source": "ncaa_verified" },
     "Centre|NYU": { "miles": 740, "source": "ncaa_verified" },
     "Centre|Oberlin": { "miles": 341, "source": "ncaa_verified" },
@@ -11605,6 +11631,7 @@
     "Chatham|North Central (MN)": { "miles": 873.1, "source": "osrm" },
     "Chatham|North Park": { "miles": 474, "source": "ncaa_verified" },
     "Chatham|Northwestern (MN)": { "miles": 873, "source": "ncaa_verified" },
+    "Chatham|Norwich": { "miles": 597.4, "source": "osrm" },
     "Chatham|Notre Dame (MD)": { "miles": 250, "source": "ncaa_verified" },
     "Chatham|NYU": { "miles": 366, "source": "ncaa_verified" },
     "Chatham|Oberlin": { "miles": 160, "source": "ncaa_verified" },
@@ -11874,6 +11901,7 @@
     "Chicago|North Central (MN)": { "miles": 415.9, "source": "osrm" },
     "Chicago|North Park": { "miles": 17.2, "source": "osrm" },
     "Chicago|Northwestern (MN)": { "miles": 417, "source": "ncaa_verified" },
+    "Chicago|Norwich": { "miles": 956.2, "source": "osrm" },
     "Chicago|Notre Dame (MD)": { "miles": 701, "source": "ncaa_verified" },
     "Chicago|NYU": { "miles": 786, "source": "ncaa_verified" },
     "Chicago|Oberlin": { "miles": 312, "source": "ncaa_verified" },
@@ -12307,6 +12335,7 @@
       "miles": 1269,
       "source": "ncaa_verified"
     },
+    "Christopher Newport|Norwich": { "miles": 700.9, "source": "osrm" },
     "Christopher Newport|Notre Dame (MD)": {
       "miles": 217,
       "source": "ncaa_verified"
@@ -13115,6 +13144,7 @@
       "source": "osrm"
     },
     "Claremont-Mudd-Scripps|North Park": { "miles": 1988, "source": "osrm" },
+    "Claremont-Mudd-Scripps|Norwich": { "miles": 2932, "source": "osrm" },
     "Claremont-Mudd-Scripps|Notre Dame (MD)": {
       "miles": 2617.9,
       "source": "osrm"
@@ -13424,6 +13454,10 @@
       "miles": 2860.9,
       "source": "osrm"
     },
+    "Claremont-Mudd-Scripps|Westminster (MO)": {
+      "miles": 1735.4,
+      "source": "osrm"
+    },
     "Claremont-Mudd-Scripps|Westminster (PA)": {
       "miles": 2392.6,
       "source": "osrm"
@@ -13471,32 +13505,43 @@
     "Clark|Emmanuel": { "miles": 44, "source": "osrm" },
     "Clark|Emory": { "miles": 1033.7, "source": "osrm" },
     "Clark|Endicott": { "miles": 67.7, "source": "osrm" },
+    "Clark|Framingham St.": { "miles": 24.3, "source": "osrm" },
     "Clark|Franklin": { "miles": 917.1, "source": "osrm" },
     "Clark|Franklin & Marshall": { "miles": 337, "source": "osrm" },
+    "Clark|George Fox": { "miles": 3084.8, "source": "osrm" },
     "Clark|Gettysburg": { "miles": 397.9, "source": "osrm" },
     "Clark|Guilford": { "miles": 718.8, "source": "osrm" },
     "Clark|Gustavus Adolphus": { "miles": 1396.4, "source": "osrm" },
     "Clark|Hamilton": { "miles": 232.9, "source": "osrm" },
     "Clark|Hamline": { "miles": 1358.2, "source": "osrm" },
     "Clark|Hardin-Simmons": { "miles": 1905.9, "source": "osrm" },
+    "Clark|Hartford": { "miles": 65.5, "source": "osrm" },
     "Clark|Hollins": { "miles": 626.8, "source": "osrm" },
     "Clark|Hope": { "miles": 821.5, "source": "osrm" },
     "Clark|Houghton": { "miles": 409.3, "source": "osrm" },
+    "Clark|Hunter": { "miles": 170.8, "source": "osrm" },
     "Clark|Illinois Wesleyan": { "miles": 1060.9, "source": "osrm" },
     "Clark|Immaculata": { "miles": 289.8, "source": "osrm" },
     "Clark|John Carroll": { "miles": 595.8, "source": "osrm" },
     "Clark|Johns Hopkins": { "miles": 363, "source": "osrm" },
     "Clark|Johnson & Wales (RI)": { "miles": 40, "source": "osrm" },
     "Clark|Keene St.": { "miles": 60.1, "source": "osrm" },
+    "Clark|Knox": { "miles": 1124.2, "source": "osrm" },
+    "Clark|La Roche": { "miles": 543.1, "source": "osrm" },
     "Clark|LaGrange": { "miles": 1104.9, "source": "osrm" },
     "Clark|Lawrence": { "miles": 1145.3, "source": "osrm" },
     "Clark|Lebanon Val": { "miles": 328.9, "source": "osrm" },
     "Clark|Linfield": { "miles": 3100.7, "source": "osrm" },
     "Clark|Lynchburg": { "miles": 582.3, "source": "osrm" },
+    "Clark|Maine-Farmington": { "miles": 213.2, "source": "osrm" },
     "Clark|Maine-Maritime": { "miles": 275.4, "source": "osrm" },
     "Clark|Manhattanville": { "miles": 146.7, "source": "osrm" },
     "Clark|Marietta": { "miles": 668.7, "source": "osrm" },
+    "Clark|Mary Hardin-Baylor": { "miles": 1859.3, "source": "osrm" },
+    "Clark|Mary Washington": { "miles": 453, "source": "osrm" },
+    "Clark|Marymount": { "miles": 404.7, "source": "osrm" },
     "Clark|Maryville": { "miles": 893.4, "source": "osrm" },
+    "Clark|Marywood": { "miles": 252.1, "source": "osrm" },
     "Clark|McDaniel": { "miles": 389.4, "source": "osrm" },
     "Clark|McMurry": { "miles": 1906.1, "source": "osrm" },
     "Clark|Merchant Marine": { "miles": 172.9, "source": "osrm" },
@@ -13505,17 +13550,25 @@
     "Clark|Millsaps": { "miles": 1374.6, "source": "osrm" },
     "Clark|MIT": { "miles": 42.8, "source": "osrm" },
     "Clark|MSOE": { "miles": 1042.2, "source": "osrm" },
+    "Clark|Mt. St. Joseph": { "miles": 838.6, "source": "osrm" },
+    "Clark|Mt. St. Mary": { "miles": 158.4, "source": "osrm" },
     "Clark|Mt. Union": { "miles": 598.7, "source": "osrm" },
     "Clark|Nazareth": { "miles": 347.4, "source": "osrm" },
+    "Clark|NC Wesleyan": { "miles": 633.2, "source": "osrm" },
     "Clark|North Central (IL)": { "miles": 980.3, "source": "osrm" },
+    "Clark|North Central (MN)": { "miles": 1361.9, "source": "osrm" },
+    "Clark|Norwich": { "miles": 167.4, "source": "osrm" },
     "Clark|NYU": { "miles": 174.2, "source": "osrm" },
     "Clark|Oglethorpe": { "miles": 1031.2, "source": "osrm" },
     "Clark|Ohio Wesleyan": { "miles": 709.7, "source": "osrm" },
     "Clark|Otterbein": { "miles": 718, "source": "osrm" },
+    "Clark|Peace": { "miles": 661.5, "source": "osrm" },
     "Clark|Penn State-Abington": { "miles": 265.1, "source": "osrm" },
     "Clark|Penn State-Behrend": { "miles": 499, "source": "ncaa_verified" },
+    "Clark|Piedmont": { "miles": 978.1, "source": "osrm" },
     "Clark|Pomona-Pitzer": { "miles": 2924.4, "source": "osrm" },
     "Clark|Principia": { "miles": 1145.3, "source": "osrm" },
+    "Clark|PSU-Altoona": { "miles": 439.7, "source": "osrm" },
     "Clark|Puget Sound": { "miles": 3017.2, "source": "osrm" },
     "Clark|Randolph-Macon": { "miles": 496, "source": "ncaa_verified" },
     "Clark|Redlands": { "miles": 2923.1, "source": "osrm" },
@@ -13525,14 +13578,19 @@
     "Clark|Rochester": { "miles": 354.9, "source": "osrm" },
     "Clark|Rochester Tech": { "miles": 355.9, "source": "osrm" },
     "Clark|Rowan": { "miles": 276.2, "source": "osrm" },
+    "Clark|Salem St.": { "miles": 61.5, "source": "osrm" },
     "Clark|Salisbury": { "miles": 395.8, "source": "osrm" },
     "Clark|Scranton": { "miles": 253.5, "source": "osrm" },
     "Clark|Shenandoah": { "miles": 459.4, "source": "osrm" },
+    "Clark|Skidmore": { "miles": 162.3, "source": "osrm" },
     "Clark|Smith": { "miles": 61.7, "source": "osrm" },
     "Clark|Southern Maine": { "miles": 136.8, "source": "osrm" },
     "Clark|Southern Virginia": { "miles": 582.9, "source": "osrm" },
+    "Clark|Southwestern": { "miles": 1891.1, "source": "osrm" },
+    "Clark|Spalding": { "miles": 931.1, "source": "osrm" },
     "Clark|Springfield": { "miles": 51.2, "source": "osrm" },
     "Clark|St. Benedict": { "miles": 1437.2, "source": "osrm" },
+    "Clark|St. Joseph's (ME)": { "miles": 153.5, "source": "osrm" },
     "Clark|St. Lawrence": { "miles": 340.8, "source": "osrm" },
     "Clark|St. Mary's (MD)": { "miles": 454, "source": "osrm" },
     "Clark|St. Mary's (MN)": { "miles": 1259.5, "source": "osrm" },
@@ -13541,6 +13599,7 @@
     "Clark|St. Thomas (TX)": { "miles": 1807.3, "source": "osrm" },
     "Clark|St. Vincent": { "miles": 511, "source": "ncaa_verified" },
     "Clark|Stevens": { "miles": 177.4, "source": "osrm" },
+    "Clark|Stockton": { "miles": 285.8, "source": "osrm" },
     "Clark|SUNY Canton": { "miles": 339.8, "source": "osrm" },
     "Clark|SUNY Geneseo": { "miles": 372.6, "source": "osrm" },
     "Clark|SUNY New Paltz": { "miles": 153.8, "source": "osrm" },
@@ -13552,6 +13611,7 @@
     "Clark|Trinity (CT)": { "miles": 63.9, "source": "osrm" },
     "Clark|Trinity (TX)": { "miles": 1993.1, "source": "osrm" },
     "Clark|Tufts": { "miles": 44.5, "source": "osrm" },
+    "Clark|UC Santa Cruz": { "miles": 3134.8, "source": "osrm" },
     "Clark|Union (NY)": { "miles": 146.5, "source": "osrm" },
     "Clark|Ursinus": { "miles": 282.3, "source": "osrm" },
     "Clark|UW-Eau Claire": { "miles": 1272.2, "source": "osrm" },
@@ -13561,13 +13621,16 @@
     "Clark|UW-River Falls": { "miles": 1334.8, "source": "osrm" },
     "Clark|UW-Stevens Point": { "miles": 1192.7, "source": "osrm" },
     "Clark|UW-Stout": { "miles": 1295.1, "source": "osrm" },
+    "Clark|UW-Superior": { "miles": 1323.1, "source": "osrm" },
     "Clark|UW-Whitewater": { "miles": 1053.1, "source": "osrm" },
     "Clark|Virginia Wesleyan": { "miles": 526, "source": "ncaa_verified" },
     "Clark|Wartburg": { "miles": 1260.5, "source": "osrm" },
     "Clark|Washington & Jefferson": { "miles": 552.3, "source": "osrm" },
     "Clark|Washington & Lee": { "miles": 584.1, "source": "osrm" },
     "Clark|WashU": { "miles": 1147.9, "source": "osrm" },
+    "Clark|Webster": { "miles": 1151.6, "source": "osrm" },
     "Clark|Western New England": { "miles": 50.9, "source": "osrm" },
+    "Clark|Westminster (MO)": { "miles": 1242.1, "source": "osrm" },
     "Clark|Whitman": { "miles": 2886.2, "source": "osrm" },
     "Clark|Widener": { "miles": 285.2, "source": "osrm" },
     "Clark|William Paterson": { "miles": 185.4, "source": "osrm" },
@@ -13922,6 +13985,7 @@
     "Coe|North Central (MN)": { "miles": 275.2, "source": "osrm" },
     "Coe|North Park": { "miles": 251.7, "source": "osrm" },
     "Coe|Northwestern (MN)": { "miles": 257, "source": "ncaa_verified" },
+    "Coe|Norwich": { "miles": 1195.7, "source": "osrm" },
     "Coe|Notre Dame (MD)": { "miles": 939, "source": "ncaa_verified" },
     "Coe|NYU": { "miles": 1021, "source": "ncaa_verified" },
     "Coe|Oberlin": { "miles": 550, "source": "ncaa_verified" },
@@ -14441,6 +14505,7 @@
       "miles": 993,
       "source": "ncaa_verified"
     },
+    "Colorado College|Norwich": { "miles": 2020.8, "source": "osrm" },
     "Colorado College|Notre Dame (MD)": {
       "miles": 1650,
       "source": "ncaa_verified"
@@ -15245,6 +15310,7 @@
       "miles": 236,
       "source": "ncaa_verified"
     },
+    "Concordia Moorhead|Norwich": { "miles": 1603.5, "source": "osrm" },
     "Concordia Moorhead|Notre Dame (MD)": {
       "miles": 1348,
       "source": "ncaa_verified"
@@ -15868,6 +15934,7 @@
     "Cortland|North Central (MN)": { "miles": 1099.1, "source": "osrm" },
     "Cortland|North Park": { "miles": 700.5, "source": "osrm" },
     "Cortland|Northwestern (MN)": { "miles": 1119, "source": "ncaa_verified" },
+    "Cortland|Norwich": { "miles": 304.3, "source": "osrm" },
     "Cortland|Notre Dame (MD)": { "miles": 295, "source": "ncaa_verified" },
     "Cortland|NYU": { "miles": 228, "source": "ncaa_verified" },
     "Cortland|Oberlin": { "miles": 402, "source": "ncaa_verified" },
@@ -16258,6 +16325,7 @@
     "Denison|North Central (MN)": { "miles": 745.1, "source": "osrm" },
     "Denison|North Park": { "miles": 346.5, "source": "osrm" },
     "Denison|Northwestern (MN)": { "miles": 750, "source": "ncaa_verified" },
+    "Denison|Norwich": { "miles": 722.3, "source": "osrm" },
     "Denison|Notre Dame (MD)": { "miles": 390, "source": "ncaa_verified" },
     "Denison|NYU": { "miles": 517, "source": "ncaa_verified" },
     "Denison|Oberlin": { "miles": 99, "source": "ncaa_verified" },
@@ -16507,6 +16575,7 @@
     "DePauw|North Central (MN)": { "miles": 615.5, "source": "osrm" },
     "DePauw|North Park": { "miles": 186.7, "source": "osrm" },
     "DePauw|Northwestern (MN)": { "miles": 586, "source": "ncaa_verified" },
+    "DePauw|Norwich": { "miles": 960.8, "source": "osrm" },
     "DePauw|Notre Dame (MD)": { "miles": 630, "source": "ncaa_verified" },
     "DePauw|NYU": { "miles": 757, "source": "ncaa_verified" },
     "DePauw|Oberlin": { "miles": 336, "source": "ncaa_verified" },
@@ -16754,6 +16823,7 @@
     "DeSales|North Central (MN)": { "miles": 1133.6, "source": "osrm" },
     "DeSales|North Park": { "miles": 734.9, "source": "osrm" },
     "DeSales|Northwestern (MN)": { "miles": 1146, "source": "ncaa_verified" },
+    "DeSales|Norwich": { "miles": 374.1, "source": "osrm" },
     "DeSales|Notre Dame (MD)": { "miles": 143, "source": "ncaa_verified" },
     "DeSales|NYU": { "miles": 91, "source": "ncaa_verified" },
     "DeSales|Oberlin": { "miles": 432, "source": "ncaa_verified" },
@@ -17553,6 +17623,7 @@
       "miles": 982,
       "source": "ncaa_verified"
     },
+    "East Texas Baptist|Norwich": { "miles": 1676.3, "source": "osrm" },
     "East Texas Baptist|Notre Dame (MD)": {
       "miles": 1267,
       "source": "ncaa_verified"
@@ -18742,6 +18813,7 @@
     "Emmanuel|North Central (IL)": { "miles": 1017.5, "source": "osrm" },
     "Emmanuel|North Central (MN)": { "miles": 1399.1, "source": "osrm" },
     "Emmanuel|Northwestern (MN)": { "miles": 1388, "source": "ncaa_verified" },
+    "Emmanuel|Norwich": { "miles": 175.3, "source": "osrm" },
     "Emmanuel|Notre Dame (MD)": { "miles": 402, "source": "ncaa_verified" },
     "Emmanuel|NYU": { "miles": 215, "source": "ncaa_verified" },
     "Emmanuel|Oberlin": { "miles": 672, "source": "ncaa_verified" },
@@ -19176,6 +19248,7 @@
     "Endicott|North Central (MN)": { "miles": 1422.2, "source": "osrm" },
     "Endicott|North Park": { "miles": 1023.6, "source": "osrm" },
     "Endicott|Northwestern (MN)": { "miles": 1415, "source": "ncaa_verified" },
+    "Endicott|Norwich": { "miles": 176.6, "source": "osrm" },
     "Endicott|Notre Dame (MD)": { "miles": 421.6, "source": "osrm" },
     "Endicott|NYU": { "miles": 241, "source": "ncaa_verified" },
     "Endicott|Oberlin": { "miles": 698, "source": "ncaa_verified" },
@@ -19692,6 +19765,7 @@
       "miles": 1371,
       "source": "ncaa_verified"
     },
+    "Framingham St.|Norwich": { "miles": 181.4, "source": "osrm" },
     "Framingham St.|Notre Dame (MD)": {
       "miles": 383,
       "source": "ncaa_verified"
@@ -20136,6 +20210,7 @@
     "Franklin|North Central (MN)": { "miles": 620.4, "source": "osrm" },
     "Franklin|North Park": { "miles": 215.6, "source": "osrm" },
     "Franklin|Northwestern (MN)": { "miles": 615, "source": "ncaa_verified" },
+    "Franklin|Norwich": { "miles": 930, "source": "osrm" },
     "Franklin|Notre Dame (MD)": { "miles": 595.2, "source": "osrm" },
     "Franklin|NYU": { "miles": 748, "source": "ncaa_verified" },
     "Franklin|Oberlin": { "miles": 307, "source": "ncaa_verified" },
@@ -20702,6 +20777,7 @@
     "George Fox|Nazareth": { "miles": 2738.6, "source": "osrm" },
     "George Fox|NC Wesleyan": { "miles": 2921.4, "source": "osrm" },
     "George Fox|North Central (MN)": { "miles": 1757.5, "source": "osrm" },
+    "George Fox|Norwich": { "miles": 3094.3, "source": "osrm" },
     "George Fox|NYU": { "miles": 2923, "source": "osrm" },
     "George Fox|Oglethorpe": { "miles": 2625.4, "source": "osrm" },
     "George Fox|Ohio Wesleyan": { "miles": 2440.3, "source": "osrm" },
@@ -20770,6 +20846,7 @@
     "George Fox|Webster": { "miles": 2069.5, "source": "osrm" },
     "George Fox|Western New England": { "miles": 3031.8, "source": "osrm" },
     "George Fox|Westfield St.": { "miles": 3023.2, "source": "osrm" },
+    "George Fox|Westminster (MO)": { "miles": 1977.3, "source": "osrm" },
     "George Fox|Whitman": { "miles": 260.3, "source": "osrm" },
     "George Fox|Widener": { "miles": 2883.9, "source": "osrm" },
     "George Fox|William Paterson": { "miles": 2912.9, "source": "osrm" },
@@ -21762,6 +21839,7 @@
       "miles": 78,
       "source": "ncaa_verified"
     },
+    "Gustavus Adolphus|Norwich": { "miles": 1405, "source": "osrm" },
     "Gustavus Adolphus|Notre Dame (MD)": {
       "miles": 1151,
       "source": "ncaa_verified"
@@ -22787,6 +22865,7 @@
       "miles": 1083,
       "source": "ncaa_verified"
     },
+    "Hardin-Simmons|Norwich": { "miles": 1941.5, "source": "osrm" },
     "Hardin-Simmons|Notre Dame (MD)": {
       "miles": 1550,
       "source": "ncaa_verified"
@@ -23066,6 +23145,7 @@
     "Hartford|Nazareth": { "miles": 331.3, "source": "osrm" },
     "Hartford|NC Wesleyan": { "miles": 576.9, "source": "osrm" },
     "Hartford|North Central (MN)": { "miles": 1300.7, "source": "osrm" },
+    "Hartford|Norwich": { "miles": 194.7, "source": "osrm" },
     "Hartford|NYU": { "miles": 118, "source": "osrm" },
     "Hartford|Oglethorpe": { "miles": 975, "source": "osrm" },
     "Hartford|Ohio Wesleyan": { "miles": 648.4, "source": "osrm" },
@@ -23134,6 +23214,7 @@
     "Hartford|Webster": { "miles": 1090.3, "source": "osrm" },
     "Hartford|Western New England": { "miles": 31.1, "source": "osrm" },
     "Hartford|Westfield St.": { "miles": 26, "source": "osrm" },
+    "Hartford|Westminster (MO)": { "miles": 1180.8, "source": "osrm" },
     "Hartford|Whitman": { "miles": 2824.9, "source": "osrm" },
     "Hartford|Widener": { "miles": 228.9, "source": "osrm" },
     "Hartford|William Paterson": { "miles": 129.4, "source": "osrm" },
@@ -23533,6 +23614,7 @@
     "Hope|North Central (MN)": { "miles": 557.6, "source": "osrm" },
     "Hope|North Park": { "miles": 159, "source": "osrm" },
     "Hope|Northwestern (MN)": { "miles": 560, "source": "ncaa_verified" },
+    "Hope|Norwich": { "miles": 826.7, "source": "osrm" },
     "Hope|Notre Dame (MD)": { "miles": 685, "source": "ncaa_verified" },
     "Hope|NYU": { "miles": 767, "source": "ncaa_verified" },
     "Hope|Oberlin": { "miles": 296, "source": "ncaa_verified" },
@@ -23721,6 +23803,7 @@
     "Houghton|North Central (IL)": { "miles": 592, "source": "osrm" },
     "Houghton|North Central (MN)": { "miles": 973.6, "source": "osrm" },
     "Houghton|Northwestern (MN)": { "miles": 980, "source": "ncaa_verified" },
+    "Houghton|Norwich": { "miles": 409.9, "source": "osrm" },
     "Houghton|NYU": { "miles": 331, "source": "ncaa_verified" },
     "Houghton|Oberlin": { "miles": 263, "source": "ncaa_verified" },
     "Houghton|Occidental": { "miles": 2570, "source": "ncaa_verified" },
@@ -23876,6 +23959,7 @@
     "Hunter|Neumann": { "miles": 125, "source": "ncaa_verified" },
     "Hunter|North Central (MN)": { "miles": 1201.6, "source": "osrm" },
     "Hunter|Northwestern (MN)": { "miles": 1198, "source": "ncaa_verified" },
+    "Hunter|Norwich": { "miles": 301.3, "source": "osrm" },
     "Hunter|NYU": { "miles": 4, "source": "ncaa_verified" },
     "Hunter|Oberlin": { "miles": 485, "source": "ncaa_verified" },
     "Hunter|Occidental": { "miles": 2842, "source": "ncaa_verified" },
@@ -24539,6 +24623,7 @@
       "miles": 460,
       "source": "ncaa_verified"
     },
+    "Illinois Wesleyan|Norwich": { "miles": 1068.1, "source": "osrm" },
     "Illinois Wesleyan|Notre Dame (MD)": {
       "miles": 753,
       "source": "ncaa_verified"
@@ -24903,6 +24988,7 @@
     "Immaculata|North Central (IL)": { "miles": 761.1, "source": "osrm" },
     "Immaculata|North Central (MN)": { "miles": 1142.7, "source": "osrm" },
     "Immaculata|Northwestern (MN)": { "miles": 982, "source": "ncaa_verified" },
+    "Immaculata|Norwich": { "miles": 419.4, "source": "osrm" },
     "Immaculata|NYU": { "miles": 231, "source": "ncaa_verified" },
     "Immaculata|Oberlin": { "miles": 268, "source": "ncaa_verified" },
     "Immaculata|Occidental": { "miles": 2572, "source": "ncaa_verified" },
@@ -25248,6 +25334,7 @@
       "miles": 762,
       "source": "ncaa_verified"
     },
+    "John Carroll|Norwich": { "miles": 595.1, "source": "osrm" },
     "John Carroll|Notre Dame (MD)": { "miles": 371, "source": "ncaa_verified" },
     "John Carroll|NYU": { "miles": 454, "source": "ncaa_verified" },
     "John Carroll|Oberlin": { "miles": 46, "source": "ncaa_verified" },
@@ -26001,6 +26088,7 @@
       "miles": 1372,
       "source": "ncaa_verified"
     },
+    "Johnson & Wales (RI)|Norwich": { "miles": 204.9, "source": "osrm" },
     "Johnson & Wales (RI)|NYU": { "miles": 182, "source": "ncaa_verified" },
     "Johnson & Wales (RI)|Oberlin": { "miles": 659, "source": "ncaa_verified" },
     "Johnson & Wales (RI)|Occidental": {
@@ -26638,6 +26726,7 @@
     "Knox|New Jersey City": { "miles": 958, "source": "ncaa_verified" },
     "Knox|North Central (MN)": { "miles": 410.2, "source": "osrm" },
     "Knox|Northwestern (MN)": { "miles": 389, "source": "ncaa_verified" },
+    "Knox|Norwich": { "miles": 1132.1, "source": "osrm" },
     "Knox|Notre Dame (MD)": { "miles": 837, "source": "ncaa_verified" },
     "Knox|NYU": { "miles": 960, "source": "ncaa_verified" },
     "Knox|Oberlin": { "miles": 488, "source": "ncaa_verified" },
@@ -26805,6 +26894,7 @@
     "La Roche|North Central (MN)": { "miles": 860.7, "source": "osrm" },
     "La Roche|North Park": { "miles": 462, "source": "osrm" },
     "La Roche|Northwestern (MN)": { "miles": 859, "source": "ncaa_verified" },
+    "La Roche|Norwich": { "miles": 617.4, "source": "osrm" },
     "La Roche|Notre Dame (MD)": { "miles": 262, "source": "ncaa_verified" },
     "La Roche|NYU": { "miles": 379, "source": "ncaa_verified" },
     "La Roche|Oberlin": { "miles": 146, "source": "ncaa_verified" },
@@ -27076,6 +27166,7 @@
     "LaGrange|North Central (IL)": { "miles": 771, "source": "osrm" },
     "LaGrange|North Central (MN)": { "miles": 1169.1, "source": "osrm" },
     "LaGrange|Northwestern (MN)": { "miles": 1191, "source": "ncaa_verified" },
+    "LaGrange|Norwich": { "miles": 1226.9, "source": "osrm" },
     "LaGrange|Notre Dame (MD)": { "miles": 752, "source": "ncaa_verified" },
     "LaGrange|NYU": { "miles": 935, "source": "ncaa_verified" },
     "LaGrange|Oberlin": { "miles": 745, "source": "ncaa_verified" },
@@ -27695,6 +27786,7 @@
     "Lawrence|North Central (IL)": { "miles": 205.1, "source": "osrm" },
     "Lawrence|North Central (MN)": { "miles": 282.9, "source": "osrm" },
     "Lawrence|Northwestern (MN)": { "miles": 286, "source": "ncaa_verified" },
+    "Lawrence|Norwich": { "miles": 1154.4, "source": "osrm" },
     "Lawrence|NYU": { "miles": 995, "source": "ncaa_verified" },
     "Lawrence|Occidental": { "miles": 2085, "source": "ncaa_verified" },
     "Lawrence|Oglethorpe": { "miles": 874.6, "source": "osrm" },
@@ -28382,6 +28474,7 @@
     "Linfield|North Central (IL)": { "miles": 2136.1, "source": "osrm" },
     "Linfield|North Central (MN)": { "miles": 1772.9, "source": "osrm" },
     "Linfield|Northwestern (MN)": { "miles": 1724, "source": "ncaa_verified" },
+    "Linfield|Norwich": { "miles": 3109.6, "source": "osrm" },
     "Linfield|NYU": { "miles": 2952, "source": "ncaa_verified" },
     "Linfield|Oglethorpe": { "miles": 2635, "source": "ncaa_verified" },
     "Linfield|Ohio Northern": { "miles": 2390, "source": "ncaa_verified" },
@@ -28974,6 +29067,7 @@
       "source": "osrm"
     },
     "Maine-Farmington|North Park": { "miles": 1084.2, "source": "osrm" },
+    "Maine-Farmington|Norwich": { "miles": 178.7, "source": "osrm" },
     "Maine-Farmington|Notre Dame (MD)": { "miles": 573.5, "source": "osrm" },
     "Maine-Farmington|NYU": { "miles": 387.9, "source": "osrm" },
     "Maine-Farmington|Occidental": { "miles": 3073.2, "source": "osrm" },
@@ -29085,6 +29179,7 @@
     },
     "Maine-Farmington|Western New England": { "miles": 263, "source": "osrm" },
     "Maine-Farmington|Westfield St.": { "miles": 270.5, "source": "osrm" },
+    "Maine-Farmington|Westminster (MO)": { "miles": 1454.3, "source": "osrm" },
     "Maine-Farmington|Westminster (PA)": { "miles": 751.8, "source": "osrm" },
     "Maine-Farmington|Whitman": { "miles": 3006.1, "source": "osrm" },
     "Maine-Farmington|Whitworth": { "miles": 2851.5, "source": "osrm" },
@@ -29169,6 +29264,7 @@
       "miles": 1628,
       "source": "ncaa_verified"
     },
+    "Maine-Maritime|Norwich": { "miles": 268.4, "source": "osrm" },
     "Maine-Maritime|Notre Dame (MD)": {
       "miles": 642,
       "source": "ncaa_verified"
@@ -29582,6 +29678,7 @@
       "miles": 1221,
       "source": "ncaa_verified"
     },
+    "Manhattanville|Norwich": { "miles": 278.3, "source": "osrm" },
     "Manhattanville|Notre Dame (MD)": {
       "miles": 220,
       "source": "ncaa_verified"
@@ -30266,6 +30363,7 @@
       "miles": 1087,
       "source": "ncaa_verified"
     },
+    "Mary Hardin-Baylor|Norwich": { "miles": 1914.1, "source": "osrm" },
     "Mary Hardin-Baylor|Notre Dame (MD)": {
       "miles": 1505,
       "source": "ncaa_verified"
@@ -30638,6 +30736,7 @@
       "miles": 1153,
       "source": "ncaa_verified"
     },
+    "Mary Washington|Norwich": { "miles": 581.8, "source": "osrm" },
     "Mary Washington|Notre Dame (MD)": {
       "miles": 101,
       "source": "ncaa_verified"
@@ -30859,6 +30958,7 @@
     "Marymount|North Central (MN)": { "miles": 1108.4, "source": "osrm" },
     "Marymount|North Park": { "miles": 709.7, "source": "osrm" },
     "Marymount|Northwestern (MN)": { "miles": 1104, "source": "ncaa_verified" },
+    "Marymount|Norwich": { "miles": 533.8, "source": "osrm" },
     "Marymount|Notre Dame (MD)": { "miles": 60, "source": "ncaa_verified" },
     "Marymount|NYU": { "miles": 238, "source": "ncaa_verified" },
     "Marymount|Oberlin": { "miles": 390, "source": "ncaa_verified" },
@@ -31150,6 +31250,7 @@
     "Marywood|Nazareth": { "miles": 189.3, "source": "osrm" },
     "Marywood|NC Wesleyan": { "miles": 463, "source": "ncaa_verified" },
     "Marywood|North Central (MN)": { "miles": 1113, "source": "osrm" },
+    "Marywood|Norwich": { "miles": 334.3, "source": "osrm" },
     "Marywood|NYU": { "miles": 118.9, "source": "osrm" },
     "Marywood|Oglethorpe": { "miles": 823.9, "source": "osrm" },
     "Marywood|Ohio Wesleyan": { "miles": 460.7, "source": "osrm" },
@@ -31215,6 +31316,7 @@
     "Marywood|Webster": { "miles": 902.6, "source": "osrm" },
     "Marywood|Western New England": { "miles": 218.3, "source": "osrm" },
     "Marywood|Westfield St.": { "miles": 225.1, "source": "osrm" },
+    "Marywood|Westminster (MO)": { "miles": 993.1, "source": "osrm" },
     "Marywood|Whitman": { "miles": 2637.2, "source": "osrm" },
     "Marywood|Widener": { "miles": 128.4, "source": "osrm" },
     "Marywood|William Paterson": { "miles": 108.8, "source": "osrm" },
@@ -31708,6 +31810,7 @@
     "McMurry|North Central (IL)": { "miles": 1061.5, "source": "osrm" },
     "McMurry|North Central (MN)": { "miles": 1078.2, "source": "osrm" },
     "McMurry|Northwestern (MN)": { "miles": 1089, "source": "ncaa_verified" },
+    "McMurry|Norwich": { "miles": 1942.4, "source": "osrm" },
     "McMurry|NYU": { "miles": 1739, "source": "ncaa_verified" },
     "McMurry|Oberlin": { "miles": 1321, "source": "ncaa_verified" },
     "McMurry|Occidental": { "miles": 1258, "source": "ncaa_verified" },
@@ -31855,6 +31958,7 @@
       "miles": 1219,
       "source": "ncaa_verified"
     },
+    "Merchant Marine|Norwich": { "miles": 303.3, "source": "osrm" },
     "Merchant Marine|Notre Dame (MD)": {
       "miles": 216,
       "source": "ncaa_verified"
@@ -32111,6 +32215,7 @@
     "Messiah|North Central (IL)": { "miles": 680.9, "source": "osrm" },
     "Messiah|North Central (MN)": { "miles": 1062.6, "source": "osrm" },
     "Messiah|Northwestern (MN)": { "miles": 1063, "source": "ncaa_verified" },
+    "Messiah|Norwich": { "miles": 467.1, "source": "osrm" },
     "Messiah|Notre Dame (MD)": { "miles": 77, "source": "ncaa_verified" },
     "Messiah|NYU": { "miles": 180, "source": "ncaa_verified" },
     "Messiah|Oberlin": { "miles": 349, "source": "ncaa_verified" },
@@ -32563,6 +32668,7 @@
     "Millsaps|North Central (IL)": { "miles": 735.4, "source": "osrm" },
     "Millsaps|North Central (MN)": { "miles": 1032.8, "source": "osrm" },
     "Millsaps|Northwestern (MN)": { "miles": 1014, "source": "ncaa_verified" },
+    "Millsaps|Norwich": { "miles": 1483.7, "source": "osrm" },
     "Millsaps|Notre Dame (MD)": { "miles": 1023, "source": "ncaa_verified" },
     "Millsaps|NYU": { "miles": 1201, "source": "ncaa_verified" },
     "Millsaps|Oberlin": { "miles": 904, "source": "ncaa_verified" },
@@ -33708,6 +33814,7 @@
     "MSOE|North Central (MN)": { "miles": 336.2, "source": "osrm" },
     "MSOE|North Park": { "miles": 80.5, "source": "osrm" },
     "MSOE|Northwestern (MN)": { "miles": 338, "source": "ncaa_verified" },
+    "MSOE|Norwich": { "miles": 1051.8, "source": "osrm" },
     "MSOE|Notre Dame (MD)": { "miles": 791.5, "source": "osrm" },
     "MSOE|NYU": { "miles": 881, "source": "ncaa_verified" },
     "MSOE|Occidental": { "miles": 2054.6, "source": "osrm" },
@@ -33958,6 +34065,7 @@
       "miles": 701,
       "source": "ncaa_verified"
     },
+    "Mt. St. Joseph|Norwich": { "miles": 853.3, "source": "osrm" },
     "Mt. St. Joseph|Notre Dame (MD)": {
       "miles": 519,
       "source": "ncaa_verified"
@@ -34168,6 +34276,7 @@
       "miles": 1206,
       "source": "ncaa_verified"
     },
+    "Mt. St. Mary|Norwich": { "miles": 253.4, "source": "osrm" },
     "Mt. St. Mary|Notre Dame (MD)": { "miles": 252, "source": "ncaa_verified" },
     "Mt. St. Mary|NYU": { "miles": 222, "source": "ncaa_verified" },
     "Mt. St. Mary|Oberlin": { "miles": 492, "source": "ncaa_verified" },
@@ -34512,6 +34621,7 @@
     "Mt. Union|North Central (IL)": { "miles": 424.4, "source": "osrm" },
     "Mt. Union|North Central (MN)": { "miles": 806, "source": "osrm" },
     "Mt. Union|North Park": { "miles": 407.4, "source": "osrm" },
+    "Mt. Union|Norwich": { "miles": 637, "source": "osrm" },
     "Mt. Union|Notre Dame (MD)": { "miles": 333.5, "source": "osrm" },
     "Mt. Union|NYU": { "miles": 435.3, "source": "ncaa_verified" },
     "Mt. Union|Occidental": { "miles": 2397.3, "source": "osrm" },
@@ -34635,6 +34745,7 @@
       "source": "ncaa_verified"
     },
     "Mt. Union|Westfield St.": { "miles": 571.9, "source": "osrm" },
+    "Mt. Union|Westminster (MO)": { "miles": 659.5, "source": "osrm" },
     "Mt. Union|Westminster (PA)": { "miles": 66.9, "source": "osrm" },
     "Mt. Union|Whitman": { "miles": 2330.3, "source": "ncaa_verified" },
     "Mt. Union|Whitworth": { "miles": 2172.6, "source": "osrm" },
@@ -34977,6 +35088,7 @@
       "miles": 1277,
       "source": "ncaa_verified"
     },
+    "NC Wesleyan|Norwich": { "miles": 764.2, "source": "osrm" },
     "NC Wesleyan|Notre Dame (MD)": { "miles": 280.7, "source": "osrm" },
     "NC Wesleyan|NYU": { "miles": 457, "source": "ncaa_verified" },
     "NC Wesleyan|Occidental": { "miles": 2602.6, "source": "osrm" },
@@ -35578,6 +35690,7 @@
     "North Central (IL)|Wittenberg": { "miles": 334.5, "source": "osrm" },
     "North Central (IL)|WPI": { "miles": 982.8, "source": "osrm" },
     "North Central (MN)|North Park": { "miles": 400, "source": "osrm" },
+    "North Central (MN)|Norwich": { "miles": 1370.6, "source": "osrm" },
     "North Central (MN)|Notre Dame (MD)": { "miles": 1110.3, "source": "osrm" },
     "North Central (MN)|Occidental": { "miles": 1893.4, "source": "osrm" },
     "North Central (MN)|Oglethorpe": { "miles": 1100.9, "source": "osrm" },
@@ -36042,6 +36155,69 @@
     "Northwestern (MN)|Wittenberg": { "miles": 719, "source": "ncaa_verified" },
     "Northwestern (MN)|WPI": { "miles": 1354, "source": "ncaa_verified" },
     "Northwestern (MN)|York (PA)": { "miles": 1084, "source": "ncaa_verified" },
+    "Norwich|Oglethorpe": { "miles": 1155, "source": "osrm" },
+    "Norwich|Ohio Wesleyan": { "miles": 691.4, "source": "osrm" },
+    "Norwich|Otterbein": { "miles": 699.7, "source": "osrm" },
+    "Norwich|Peace": { "miles": 792.4, "source": "osrm" },
+    "Norwich|Penn State-Abington": { "miles": 396, "source": "osrm" },
+    "Norwich|Penn State-Behrend": { "miles": 467.6, "source": "osrm" },
+    "Norwich|Piedmont": { "miles": 1085.5, "source": "osrm" },
+    "Norwich|Pomona-Pitzer": { "miles": 2932.9, "source": "osrm" },
+    "Norwich|Principia": { "miles": 1127, "source": "osrm" },
+    "Norwich|PSU-Altoona": { "miles": 521.7, "source": "osrm" },
+    "Norwich|Puget Sound": { "miles": 3026.6, "source": "osrm" },
+    "Norwich|Randolph-Macon": { "miles": 623.2, "source": "osrm" },
+    "Norwich|Redlands": { "miles": 2931.6, "source": "osrm" },
+    "Norwich|Rhode Island College": { "miles": 204.5, "source": "osrm" },
+    "Norwich|Ripon": { "miles": 1134.1, "source": "osrm" },
+    "Norwich|Rochester Tech": { "miles": 324.3, "source": "osrm" },
+    "Norwich|Salem St.": { "miles": 173, "source": "osrm" },
+    "Norwich|Salisbury": { "miles": 526.7, "source": "osrm" },
+    "Norwich|Scranton": { "miles": 335.6, "source": "osrm" },
+    "Norwich|Shenandoah": { "miles": 568.2, "source": "osrm" },
+    "Norwich|Skidmore": { "miles": 131.8, "source": "osrm" },
+    "Norwich|Smith": { "miles": 147.5, "source": "osrm" },
+    "Norwich|Southern Maine": { "miles": 212.7, "source": "osrm" },
+    "Norwich|Southern Virginia": { "miles": 713.8, "source": "osrm" },
+    "Norwich|Southwestern": { "miles": 1913.9, "source": "osrm" },
+    "Norwich|Spalding": { "miles": 912.8, "source": "osrm" },
+    "Norwich|Springfield": { "miles": 166.6, "source": "osrm" },
+    "Norwich|St. Joseph's (ME)": { "miles": 169.6, "source": "osrm" },
+    "Norwich|St. Lawrence": { "miles": 205.9, "source": "osrm" },
+    "Norwich|St. Mary's (MD)": { "miles": 584.9, "source": "osrm" },
+    "Norwich|St. Mary's (MN)": { "miles": 1268.9, "source": "osrm" },
+    "Norwich|St. Norbert": { "miles": 1047.8, "source": "osrm" },
+    "Norwich|St. Thomas (TX)": { "miles": 1866, "source": "osrm" },
+    "Norwich|St. Vincent": { "miles": 590.3, "source": "osrm" },
+    "Norwich|Stevens": { "miles": 308.3, "source": "osrm" },
+    "Norwich|Stockton": { "miles": 416.7, "source": "osrm" },
+    "Norwich|SUNY Geneseo": { "miles": 341.1, "source": "osrm" },
+    "Norwich|SUNY New Paltz": { "miles": 235.3, "source": "osrm" },
+    "Norwich|Susquehanna": { "miles": 421.2, "source": "osrm" },
+    "Norwich|TCNJ": { "miles": 365.7, "source": "osrm" },
+    "Norwich|Texas Lutheran": { "miles": 2001.9, "source": "osrm" },
+    "Norwich|Transylvania": { "miles": 894.6, "source": "osrm" },
+    "Norwich|Trine": { "miles": 764.8, "source": "osrm" },
+    "Norwich|Trinity (TX)": { "miles": 2015.9, "source": "osrm" },
+    "Norwich|UC Santa Cruz": { "miles": 3143.3, "source": "osrm" },
+    "Norwich|Union (NY)": { "miles": 153.8, "source": "osrm" },
+    "Norwich|UW-La Crosse": { "miles": 1244.6, "source": "osrm" },
+    "Norwich|UW-Oshkosh": { "miles": 1134.5, "source": "osrm" },
+    "Norwich|UW-Platteville": { "miles": 1149.8, "source": "osrm" },
+    "Norwich|UW-River Falls": { "miles": 1344.2, "source": "osrm" },
+    "Norwich|UW-Superior": { "miles": 1171.7, "source": "osrm" },
+    "Norwich|UW-Whitewater": { "miles": 1062.4, "source": "osrm" },
+    "Norwich|Wartburg": { "miles": 1268.9, "source": "osrm" },
+    "Norwich|Washington & Jefferson": { "miles": 644.4, "source": "osrm" },
+    "Norwich|Washington & Lee": { "miles": 692.9, "source": "osrm" },
+    "Norwich|WashU": { "miles": 1129.5, "source": "osrm" },
+    "Norwich|Webster": { "miles": 1133.2, "source": "osrm" },
+    "Norwich|Western New England": { "miles": 164.9, "source": "osrm" },
+    "Norwich|Westminster (MO)": { "miles": 1223.8, "source": "osrm" },
+    "Norwich|Whitman": { "miles": 2894.7, "source": "osrm" },
+    "Norwich|Widener": { "miles": 416.1, "source": "osrm" },
+    "Norwich|William Paterson": { "miles": 292.8, "source": "osrm" },
+    "Norwich|Wisconsin Lutheran": { "miles": 1054.9, "source": "osrm" },
     "Notre Dame (MD)|Oberlin": { "miles": 402, "source": "ncaa_verified" },
     "Notre Dame (MD)|Ohio Northern": {
       "miles": 496,
@@ -36212,6 +36388,7 @@
     "NYU|North Central (MN)": { "miles": 1198.1, "source": "osrm" },
     "NYU|North Park": { "miles": 804.1, "source": "osrm" },
     "NYU|Northwestern (MN)": { "miles": 1199, "source": "ncaa_verified" },
+    "NYU|Norwich": { "miles": 305.1, "source": "osrm" },
     "NYU|Notre Dame (MD)": { "miles": 190, "source": "ncaa_verified" },
     "NYU|Oberlin": { "miles": 485, "source": "ncaa_verified" },
     "NYU|Occidental": { "miles": 2772, "source": "ncaa_verified" },
@@ -37300,6 +37477,7 @@
       "source": "ncaa_verified"
     },
     "Otterbein|Westfield St.": { "miles": 676.6, "source": "osrm" },
+    "Otterbein|Westminster (MO)": { "miles": 526.8, "source": "osrm" },
     "Otterbein|Westminster (PA)": { "miles": 186.1, "source": "osrm" },
     "Otterbein|Whitman": { "miles": 2247.5, "source": "ncaa_verified" },
     "Otterbein|Whitworth": { "miles": 2088.5, "source": "osrm" },
@@ -37432,6 +37610,7 @@
     "Peace|Webster": { "miles": 803.1, "source": "osrm" },
     "Peace|Western New England": { "miles": 626.9, "source": "osrm" },
     "Peace|Westfield St.": { "miles": 629.4, "source": "osrm" },
+    "Peace|Westminster (MO)": { "miles": 900, "source": "osrm" },
     "Peace|Whitman": { "miles": 2662.9, "source": "osrm" },
     "Peace|Widener": { "miles": 383.6, "source": "osrm" },
     "Peace|William Paterson": { "miles": 499, "source": "ncaa_verified" },
@@ -37682,6 +37861,10 @@
       "source": "ncaa_verified"
     },
     "Penn State-Abington|Westfield St.": { "miles": 233.6, "source": "osrm" },
+    "Penn State-Abington|Westminster (MO)": {
+      "miles": 985.7,
+      "source": "osrm"
+    },
     "Penn State-Abington|Whitman": {
       "miles": 2689.8,
       "source": "ncaa_verified"
@@ -38665,6 +38848,7 @@
     "PSU-Altoona|Webster": { "miles": 710.8, "source": "osrm" },
     "PSU-Altoona|Western New England": { "miles": 406.1, "source": "osrm" },
     "PSU-Altoona|Westfield St.": { "miles": 412.9, "source": "osrm" },
+    "PSU-Altoona|Westminster (MO)": { "miles": 801.3, "source": "osrm" },
     "PSU-Altoona|Whitman": { "miles": 2484.3, "source": "osrm" },
     "PSU-Altoona|Widener": { "miles": 227.9, "source": "osrm" },
     "PSU-Altoona|William Paterson": { "miles": 266.1, "source": "osrm" },
@@ -40733,6 +40917,7 @@
     "Salisbury|Webster": { "miles": 930.5, "source": "osrm" },
     "Salisbury|Western New England": { "miles": 361.7, "source": "osrm" },
     "Salisbury|Westfield St.": { "miles": 364.2, "source": "osrm" },
+    "Salisbury|Westminster (MO)": { "miles": 1021.1, "source": "osrm" },
     "Salisbury|Whitman": { "miles": 2734.9, "source": "osrm" },
     "Salisbury|Widener": { "miles": 121.4, "source": "osrm" },
     "Salisbury|William Paterson": { "miles": 229.4, "source": "osrm" },
@@ -41552,6 +41737,7 @@
     "Southwestern|Webster": { "miles": 787.9, "source": "osrm" },
     "Southwestern|Western New England": { "miles": 1857, "source": "osrm" },
     "Southwestern|Westfield St.": { "miles": 1859.4, "source": "osrm" },
+    "Southwestern|Westminster (MO)": { "miles": 741.7, "source": "osrm" },
     "Southwestern|Whitman": { "miles": 1855.8, "source": "osrm" },
     "Southwestern|Widener": { "miles": 1618.1, "source": "osrm" },
     "Southwestern|William Paterson": { "miles": 1715.6, "source": "osrm" },
@@ -41607,6 +41793,7 @@
       "source": "ncaa_verified"
     },
     "Spalding|Westfield St.": { "miles": 892.1, "source": "osrm" },
+    "Spalding|Westminster (MO)": { "miles": 368.8, "source": "osrm" },
     "Spalding|Westminster (PA)": { "miles": 401.6, "source": "osrm" },
     "Spalding|Whitman": { "miles": 2136, "source": "ncaa_verified" },
     "Spalding|Whitworth": { "miles": 2076.5, "source": "osrm" },
@@ -42579,6 +42766,7 @@
       "source": "ncaa_verified"
     },
     "St. Mary's (MN)|Westfield St.": { "miles": 1195.7, "source": "osrm" },
+    "St. Mary's (MN)|Westminster (MO)": { "miles": 412.4, "source": "osrm" },
     "St. Mary's (MN)|Whitman": { "miles": 1651.2, "source": "ncaa_verified" },
     "St. Mary's (MN)|Widener": { "miles": 1059.8, "source": "ncaa_verified" },
     "St. Mary's (MN)|William Paterson": {
@@ -42752,6 +42940,7 @@
       "source": "osrm"
     },
     "St. Thomas (TX)|Westfield St.": { "miles": 1776.4, "source": "osrm" },
+    "St. Thomas (TX)|Westminster (MO)": { "miles": 815, "source": "osrm" },
     "St. Thomas (TX)|Westminster (PA)": { "miles": 1354.1, "source": "osrm" },
     "St. Thomas (TX)|Whitman": { "miles": 2084.5, "source": "osrm" },
     "St. Thomas (TX)|Whitworth": { "miles": 2116.2, "source": "osrm" },
@@ -42924,6 +43113,7 @@
     "Stockton|Western Connecticut": { "miles": 173.7, "source": "osrm" },
     "Stockton|Western New England": { "miles": 251.4, "source": "osrm" },
     "Stockton|Westfield St.": { "miles": 253.8, "source": "osrm" },
+    "Stockton|Westminster (MO)": { "miles": 1044.8, "source": "osrm" },
     "Stockton|Westminster (PA)": { "miles": 416.7, "source": "osrm" },
     "Stockton|Whitman": { "miles": 2748.9, "source": "osrm" },
     "Stockton|Whitworth": { "miles": 2591.3, "source": "osrm" },
@@ -43594,6 +43784,7 @@
       "source": "ncaa_verified"
     },
     "Susquehanna|Westfield St.": { "miles": 312.1, "source": "osrm" },
+    "Susquehanna|Westminster (MO)": { "miles": 917.4, "source": "osrm" },
     "Susquehanna|Westminster (PA)": { "miles": 215, "source": "osrm" },
     "Susquehanna|Whitman": { "miles": 2561.5, "source": "ncaa_verified" },
     "Susquehanna|Whitworth": { "miles": 2403.8, "source": "osrm" },
@@ -44479,6 +44670,7 @@
       "source": "ncaa_verified"
     },
     "UW-Platteville|Westfield St.": { "miles": 1072.5, "source": "osrm" },
+    "UW-Platteville|Westminster (MO)": { "miles": 336.3, "source": "osrm" },
     "UW-Platteville|Westminster (PA)": { "miles": 604.2, "source": "osrm" },
     "UW-Platteville|Whitman": { "miles": 1736.6, "source": "ncaa_verified" },
     "UW-Platteville|Whitworth": { "miles": 1563.1, "source": "osrm" },
