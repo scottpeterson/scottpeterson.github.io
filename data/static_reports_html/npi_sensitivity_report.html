@@ -1,0 +1,5096 @@
+<!doctype html>
+<!-- Generator: uv run python run_npi_sensitivity.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPI Formula Sensitivity Analysis</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f0f1a 0%,
+          #1a1a2e 50%,
+          #0f0f1a 100%
+        );
+        min-height: 100vh;
+        padding: 30px 15px;
+        color: #e0e0e0;
+      }
+
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+        background: linear-gradient(90deg, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 10px 24px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px 8px 0 0;
+        color: #8892b0;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .tab-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #e0e0e0;
+      }
+
+      .tab-btn.active {
+        background: rgba(96, 165, 250, 0.15);
+        border-color: rgba(96, 165, 250, 0.3);
+        color: #60a5fa;
+        font-weight: 600;
+      }
+
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+
+      .table-container {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-x: auto;
+        margin-bottom: 25px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+      }
+
+      th {
+        background: #2d1f5e;
+        padding: 12px 10px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 600;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #e0e0e0;
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      th:hover {
+        background: #3d2f6e;
+      }
+
+      th .sort-arrow {
+        font-size: 0.7rem;
+        margin-left: 3px;
+        opacity: 0.4;
+      }
+
+      td {
+        padding: 8px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        vertical-align: middle;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      tr:hover {
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .team-cell {
+        text-align: left;
+        font-weight: 500;
+        color: #f0f0f0;
+      }
+
+      .high-range {
+        color: #f59e0b;
+        font-weight: 700;
+      }
+
+      /* Baseline row */
+      .baseline-row {
+        background: rgba(96, 165, 250, 0.08);
+      }
+      .baseline-row td {
+        border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+      }
+
+      /* Divergent row */
+      .diverged-row {
+        background: rgba(239, 68, 68, 0.08);
+      }
+      .diverged-row td {
+        color: #ef4444;
+        opacity: 0.7;
+      }
+      .diverged-row td:first-child,
+      .diverged-row td:nth-child(2),
+      .diverged-row td:nth-child(3),
+      .diverged-row td:nth-child(4),
+      .diverged-row td:nth-child(5) {
+        color: #e0e0e0;
+        opacity: 1;
+      }
+
+      .diverged-badge {
+        display: inline-block;
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Diverging sensitivity bar */
+      .sens-diverging {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        min-width: 160px;
+      }
+
+      .sens-upside-label {
+        font-size: 0.75rem;
+        color: #10b981;
+        min-width: 28px;
+        text-align: right;
+        padding-right: 4px;
+      }
+
+      .sens-upside-bar {
+        height: 16px;
+        background: linear-gradient(270deg, #10b981, rgba(16, 185, 129, 0.3));
+        border-radius: 3px 0 0 3px;
+      }
+
+      .sens-center {
+        width: 2px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        flex-shrink: 0;
+      }
+
+      .sens-downside-bar {
+        height: 16px;
+        background: linear-gradient(90deg, #ef4444, rgba(239, 68, 68, 0.3));
+        border-radius: 0 3px 3px 0;
+      }
+
+      .sens-downside-label {
+        font-size: 0.75rem;
+        color: #ef4444;
+        min-width: 28px;
+        text-align: left;
+        padding-left: 4px;
+      }
+
+      .most-sensitive {
+        color: #f59e0b;
+        font-weight: 600;
+      }
+
+      /* Filter controls */
+      .filter-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .filter-row label {
+        color: #8892b0;
+        font-size: 0.85rem;
+      }
+
+      .filter-row select {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+
+      .filter-row select:focus {
+        outline: none;
+        border-color: #60a5fa;
+      }
+
+      .section-note {
+        color: #6b7280;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      /* Convergence map */
+      .conv-grid {
+        display: grid;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .conv-cell {
+        padding: 16px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .conv-ok {
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+      }
+
+      .conv-partial {
+        background: rgba(245, 158, 11, 0.12);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+      }
+
+      .conv-bad {
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+
+      .conv-label {
+        font-size: 0.85rem;
+        color: #8892b0;
+        margin-bottom: 4px;
+      }
+
+      .conv-status {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .conv-status-ok {
+        color: #10b981;
+      }
+      .conv-status-partial {
+        color: #f59e0b;
+      }
+      .conv-status-bad {
+        color: #ef4444;
+      }
+
+      .conv-detail {
+        font-size: 0.8rem;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+
+      .explanation-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .explanation-box h3 {
+        color: #a78bfa;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .explanation-box p {
+        color: #9ca3af;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .explanation-box code {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        color: #e0e0e0;
+      }
+
+      .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+      .footer a {
+        color: #64ffda;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>NPI Formula Sensitivity Analysis</h1>
+      <p class="subtitle">
+        81 permutations across 4 parameters | 74 converged, 7 diverged | 15
+        bubble teams | February 27, 2026 at 12:56 PM
+      </p>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('convergence')">
+          Convergence Map
+        </button>
+        <button class="tab-btn" onclick="switchTab('summary')">
+          Summary Dashboard
+        </button>
+        <button class="tab-btn" onclick="switchTab('sensitivity')">
+          Sensitivity Analysis
+        </button>
+        <button class="tab-btn" onclick="switchTab('full')">
+          Full Results (81 rows)
+        </button>
+      </div>
+
+      <div id="tab-convergence" class="tab-content active">
+        <div class="explanation-box">
+          <h3>Why do some parameter combinations diverge?</h3>
+          <p>
+            The NPI formula calculates each team's NPI iteratively (until the
+            system converges). Each game's NPI depends on the
+            <em>opponent's</em> NPI from the previous iteration. For a quality
+            win, the effective coefficient on opponent NPI is:
+          </p>
+          <p>
+            <code
+              >game_npi = 100*RW + opp_npi * SOS_WEIGHT + (opp_npi - threshold)
+              * QBM</code
+            >
+          </p>
+          <p>
+            A team's final NPI averages across all games. Losses contribute only
+            <code>opp_npi * SOS_WEIGHT</code> (coefficient &lt; 1), which
+            dampens. But quality wins contribute
+            <code>opp_npi * (SOS_WEIGHT + QBM)</code>. When enough of a team's
+            games are quality wins and <code>SOS_WEIGHT + QBM</code> is large,
+            the dampening from losses is insufficient and NPIs grow without
+            bound across iterations.
+          </p>
+          <p>
+            The current formula (SOS=0.80, QBM=0.667) converges because the
+            average across wins and losses keeps the effective multiplier below
+            1. Higher QBM with lower thresholds (more games qualify as quality
+            wins) tips the balance toward divergence.
+          </p>
+        </div>
+
+        <p class="section-note">
+          Each cell represents 9 permutations (all Top Wins Limit x QWB
+          Threshold combinations for that weight/multiplier pair). Max NPI shown
+          is the highest #1-ranked team NPI observed across those 9 runs.
+        </p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Win%/SOS Weight</th>
+                <th>QWB Multiplier</th>
+                <th>Converged</th>
+                <th>Diverged</th>
+                <th>Max NPI Observed</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.15/0.85</td>
+                <td>0.5000</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>63.71</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr>
+                <td>0.15/0.85</td>
+                <td>0.6667</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>66.07</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr>
+                <td>0.15/0.85</td>
+                <td>0.9000</td>
+                <td>8/9</td>
+                <td>1/9</td>
+                <td>84.57</td>
+                <td>
+                  <span class="conv-status-partial">Partially Unstable</span>
+                </td>
+              </tr>
+              <tr>
+                <td>0.20/0.80</td>
+                <td>0.5000</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>68.54</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr class="baseline-row">
+                <td>0.20/0.80</td>
+                <td>0.6667</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>71.41</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr>
+                <td>0.20/0.80</td>
+                <td>0.9000</td>
+                <td>7/9</td>
+                <td>2/9</td>
+                <td>91.98</td>
+                <td>
+                  <span class="conv-status-partial">Partially Unstable</span>
+                </td>
+              </tr>
+              <tr>
+                <td>0.25/0.75</td>
+                <td>0.5000</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>72.66</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr>
+                <td>0.25/0.75</td>
+                <td>0.6667</td>
+                <td>9/9</td>
+                <td>0/9</td>
+                <td>75.37</td>
+                <td><span class="conv-status-ok">Stable</span></td>
+              </tr>
+              <tr>
+                <td>0.25/0.75</td>
+                <td>0.9000</td>
+                <td>5/9</td>
+                <td>4/9</td>
+                <td>91.15</td>
+                <td>
+                  <span class="conv-status-partial">Partially Unstable</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="tab-summary" class="tab-content">
+        <p class="section-note">
+          How each bubble team's rank and NPI vary across 74 converged
+          permutations. 7 divergent permutations excluded (see Convergence Map).
+          Range &gt; 5 highlighted.
+        </p>
+        <div class="table-container">
+          <table id="summaryTable">
+            <thead>
+              <tr>
+                <th onclick="sortTable('summaryTable',0)">
+                  Team <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',1)">
+                  Current Rank <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',2)">
+                  Best Rank <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',3)">
+                  Worst Rank <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',4)">
+                  Range <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',5)">
+                  Current NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',6)">
+                  Best NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',7)">
+                  Worst NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('summaryTable',8)">
+                  Most Sensitive To <span class="sort-arrow">&#9650;</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="team-cell">Randolph-Macon</td>
+                <td>31</td>
+                <td>30</td>
+                <td>40</td>
+                <td class="high-range">10</td>
+                <td>59.7020</td>
+                <td>62.2540</td>
+                <td>56.0004</td>
+                <td class="most-sensitive">QWB Multiplier</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Gustavus Adolphus</td>
+                <td>33</td>
+                <td>20</td>
+                <td>55</td>
+                <td class="high-range">35</td>
+                <td>59.6344</td>
+                <td>62.7814</td>
+                <td>55.0471</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Gettysburg</td>
+                <td>34</td>
+                <td>29</td>
+                <td>44</td>
+                <td class="high-range">15</td>
+                <td>59.5825</td>
+                <td>62.0871</td>
+                <td>56.1410</td>
+                <td class="most-sensitive">QWB Multiplier</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Otterbein</td>
+                <td>37</td>
+                <td>28</td>
+                <td>41</td>
+                <td class="high-range">13</td>
+                <td>59.5051</td>
+                <td>61.9661</td>
+                <td>56.1898</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Carnegie Mellon</td>
+                <td>38</td>
+                <td>27</td>
+                <td>46</td>
+                <td class="high-range">19</td>
+                <td>59.4972</td>
+                <td>62.0090</td>
+                <td>55.5055</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">DePauw</td>
+                <td>39</td>
+                <td>27</td>
+                <td>43</td>
+                <td class="high-range">16</td>
+                <td>59.4889</td>
+                <td>62.1619</td>
+                <td>55.6220</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">St. Mary's (MN)</td>
+                <td>43</td>
+                <td>25</td>
+                <td>58</td>
+                <td class="high-range">33</td>
+                <td>58.8673</td>
+                <td>61.7779</td>
+                <td>54.7807</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Susquehanna</td>
+                <td>44</td>
+                <td>37</td>
+                <td>51</td>
+                <td class="high-range">14</td>
+                <td>58.8416</td>
+                <td>61.2846</td>
+                <td>55.4143</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Bridgewater (VA)</td>
+                <td>46</td>
+                <td>39</td>
+                <td>50</td>
+                <td class="high-range">11</td>
+                <td>58.6971</td>
+                <td>61.0033</td>
+                <td>55.4033</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Hamline</td>
+                <td>47</td>
+                <td>33</td>
+                <td>67</td>
+                <td class="high-range">34</td>
+                <td>57.8947</td>
+                <td>60.3299</td>
+                <td>54.3184</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">McDaniel</td>
+                <td>49</td>
+                <td>45</td>
+                <td>57</td>
+                <td class="high-range">12</td>
+                <td>57.8079</td>
+                <td>59.8978</td>
+                <td>55.0973</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Stevens</td>
+                <td>52</td>
+                <td>48</td>
+                <td>62</td>
+                <td class="high-range">14</td>
+                <td>57.7401</td>
+                <td>59.9335</td>
+                <td>54.8447</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">UW-Eau Claire</td>
+                <td>53</td>
+                <td>24</td>
+                <td>89</td>
+                <td class="high-range">65</td>
+                <td>57.6808</td>
+                <td>61.0761</td>
+                <td>53.5971</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Emory</td>
+                <td>55</td>
+                <td>51</td>
+                <td>70</td>
+                <td class="high-range">19</td>
+                <td>57.5316</td>
+                <td>59.4350</td>
+                <td>54.4186</td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">UW-Stout</td>
+                <td>60</td>
+                <td>27</td>
+                <td>108</td>
+                <td class="high-range">81</td>
+                <td>57.2108</td>
+                <td>60.7899</td>
+                <td>52.9753</td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="tab-sensitivity" class="tab-content">
+        <p class="section-note">
+          How each parameter shifts rank from baseline.
+          <span style="color: #10b981">Green (left) = rank improves</span>,
+          <span style="color: #ef4444">Red (right) = rank worsens</span>.
+          Numbers show mean positions moved. Based on 74 converged permutations.
+        </p>
+        <div class="table-container">
+          <table id="sensitivityTable">
+            <thead>
+              <tr>
+                <th onclick="sortTable('sensitivityTable',0)">
+                  Team <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('sensitivityTable',1)">
+                  Win%/SOS Weight <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('sensitivityTable',2)">
+                  Top Wins Limit <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('sensitivityTable',3)">
+                  QWB Threshold <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('sensitivityTable',4)">
+                  QWB Multiplier <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('sensitivityTable',5)">
+                  Most Sensitive To <span class="sort-arrow">&#9650;</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="team-cell">Randolph-Macon</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label"></span>
+                    <div class="sens-upside-bar" style="width: 0px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label">2.8</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label"></span>
+                    <div class="sens-upside-bar" style="width: 0px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 6px"></div>
+                    <span class="sens-downside-label">3.0</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label"></span>
+                    <div class="sens-upside-bar" style="width: 0px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 6px"></div>
+                    <span class="sens-downside-label">3.1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive"></span>
+                    <div class="sens-upside-bar" style="width: 0px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 6px"></div>
+                    <span class="sens-downside-label most-sensitive">3.2</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Multiplier</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Gustavus Adolphus</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.2</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 23px"></div>
+                    <span class="sens-downside-label">11.8</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.6</span>
+                    <div class="sens-upside-bar" style="width: 3px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 22px"></div>
+                    <span class="sens-downside-label">11.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">2.3</span>
+                    <div class="sens-upside-bar" style="width: 5px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 28px"></div>
+                    <span class="sens-downside-label most-sensitive">14.1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.2</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 27px"></div>
+                    <span class="sens-downside-label">13.7</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Gettysburg</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.2</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 3px"></div>
+                    <span class="sens-downside-label">1.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.9</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 3px"></div>
+                    <span class="sens-downside-label">1.6</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.4</span>
+                    <div class="sens-upside-bar" style="width: 5px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label">2.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">2.8</span>
+                    <div class="sens-upside-bar" style="width: 5px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label most-sensitive">2.5</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Multiplier</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Otterbein</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">7.8</span>
+                    <div class="sens-upside-bar" style="width: 15px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label most-sensitive"></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">5.4</span>
+                    <div class="sens-upside-bar" style="width: 11px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label"></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">6.7</span>
+                    <div class="sens-upside-bar" style="width: 13px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label"></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">6.0</span>
+                    <div class="sens-upside-bar" style="width: 12px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label"></span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Carnegie Mellon</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">1.6</span>
+                    <div class="sens-upside-bar" style="width: 3px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 7px"></div>
+                    <span class="sens-downside-label most-sensitive">3.8</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.1</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 4px"></div>
+                    <span class="sens-downside-label">2.3</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.8</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 6px"></div>
+                    <span class="sens-downside-label">3.2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.6</span>
+                    <div class="sens-upside-bar" style="width: 3px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 6px"></div>
+                    <span class="sens-downside-label">3.1</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">DePauw</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">5.8</span>
+                    <div class="sens-upside-bar" style="width: 11px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 3px"></div>
+                    <span class="sens-downside-label most-sensitive">1.7</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.0</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label">0.7</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.7</span>
+                    <div class="sens-upside-bar" style="width: 9px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 2px"></div>
+                    <span class="sens-downside-label">0.8</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">5.4</span>
+                    <div class="sens-upside-bar" style="width: 11px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 2px"></div>
+                    <span class="sens-downside-label">1.2</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">St. Mary's (MN)</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.1</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 15px"></div>
+                    <span class="sens-downside-label">7.9</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.1</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 13px"></div>
+                    <span class="sens-downside-label">6.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">3.7</span>
+                    <div class="sens-upside-bar" style="width: 7px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 20px"></div>
+                    <span class="sens-downside-label most-sensitive">10.0</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">3.5</span>
+                    <div class="sens-upside-bar" style="width: 7px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 18px"></div>
+                    <span class="sens-downside-label">9.3</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Susquehanna</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">4.6</span>
+                    <div class="sens-upside-bar" style="width: 9px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label most-sensitive">0.6</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">3.4</span>
+                    <div class="sens-upside-bar" style="width: 7px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label">0.6</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.4</span>
+                    <div class="sens-upside-bar" style="width: 9px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 2px"></div>
+                    <span class="sens-downside-label">1.1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.0</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 2px"></div>
+                    <span class="sens-downside-label">1.1</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Bridgewater (VA)</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">3.9</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label"></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.2</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label"></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">4.2</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label most-sensitive">0.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.0</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 1px"></div>
+                    <span class="sens-downside-label">0.5</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Hamline</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label"></span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 25px"></div>
+                    <span class="sens-downside-label">12.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">0.7</span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 22px"></div>
+                    <span class="sens-downside-label">11.3</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">1.0</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 29px"></div>
+                    <span class="sens-downside-label most-sensitive">14.6</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.0</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 27px"></div>
+                    <span class="sens-downside-label">14.0</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">McDaniel</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.0</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 2px"></div>
+                    <span class="sens-downside-label">1.2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.8</span>
+                    <div class="sens-upside-bar" style="width: 3px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 3px"></div>
+                    <span class="sens-downside-label">1.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">2.3</span>
+                    <div class="sens-upside-bar" style="width: 5px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 4px"></div>
+                    <span class="sens-downside-label most-sensitive">2.2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.2</span>
+                    <div class="sens-upside-bar" style="width: 4px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 4px"></div>
+                    <span class="sens-downside-label">2.1</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Stevens</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">1.6</span>
+                    <div class="sens-upside-bar" style="width: 3px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label most-sensitive">2.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.1</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 4px"></div>
+                    <span class="sens-downside-label">2.1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.3</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label">2.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">1.3</span>
+                    <div class="sens-upside-bar" style="width: 2px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 5px"></div>
+                    <span class="sens-downside-label">2.6</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">UW-Eau Claire</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">2.7</span>
+                    <div class="sens-upside-bar" style="width: 5px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 42px"></div>
+                    <span class="sens-downside-label">21.6</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">3.2</span>
+                    <div class="sens-upside-bar" style="width: 6px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 36px"></div>
+                    <span class="sens-downside-label">18.2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">5.2</span>
+                    <div class="sens-upside-bar" style="width: 10px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 48px"></div>
+                    <span class="sens-downside-label most-sensitive">24.3</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.9</span>
+                    <div class="sens-upside-bar" style="width: 10px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 47px"></div>
+                    <span class="sens-downside-label">23.7</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+              <tr>
+                <td class="team-cell">Emory</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">0.6</span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 17px"></div>
+                    <span class="sens-downside-label most-sensitive">8.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label"></span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 10px"></div>
+                    <span class="sens-downside-label">5.1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">0.6</span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 13px"></div>
+                    <span class="sens-downside-label">6.7</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">0.5</span>
+                    <div class="sens-upside-bar" style="width: 1px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 13px"></div>
+                    <span class="sens-downside-label">6.6</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">Win%/SOS Weight</td>
+              </tr>
+              <tr>
+                <td class="team-cell">UW-Stout</td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">3.2</span>
+                    <div class="sens-upside-bar" style="width: 6px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 51px"></div>
+                    <span class="sens-downside-label">25.8</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">4.1</span>
+                    <div class="sens-upside-bar" style="width: 8px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 44px"></div>
+                    <span class="sens-downside-label">22.4</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label most-sensitive">6.4</span>
+                    <div class="sens-upside-bar" style="width: 13px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 60px"></div>
+                    <span class="sens-downside-label most-sensitive">30.5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="sens-diverging">
+                    <span class="sens-upside-label">6.2</span>
+                    <div class="sens-upside-bar" style="width: 12px"></div>
+                    <div class="sens-center"></div>
+                    <div class="sens-downside-bar" style="width: 57px"></div>
+                    <span class="sens-downside-label">29.3</span>
+                  </div>
+                </td>
+                <td class="most-sensitive">QWB Threshold</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="tab-full" class="tab-content">
+        <p class="section-note">
+          All 81 permutations. Baseline row highlighted blue. Divergent rows
+          highlighted red with max NPI shown. Use filters to isolate parameter
+          values.
+        </p>
+        <div class="filter-row">
+          <label>Win%/SOS:</label>
+          <select id="filterWeight" onchange="filterFullTable()">
+            <option value="all">All</option>
+            <option value="0.15">0.15/0.85</option>
+            <option value="0.20">0.20/0.80</option>
+            <option value="0.25">0.25/0.75</option>
+          </select>
+          <label>Top Wins:</label>
+          <select id="filterTopWins" onchange="filterFullTable()">
+            <option value="all">All</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+          </select>
+          <label>QWB Thresh:</label>
+          <select id="filterThresh" onchange="filterFullTable()">
+            <option value="all">All</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+          </select>
+          <label>QWB Mult:</label>
+          <select id="filterMult" onchange="filterFullTable()">
+            <option value="all">All</option>
+            <option value="0.5000">0.5000</option>
+            <option value="0.6667">0.6667</option>
+            <option value="0.9000">0.9000</option>
+          </select>
+          <label>Convergence:</label>
+          <select id="filterConv" onchange="filterFullTable()">
+            <option value="all">All</option>
+            <option value="converged">Converged only</option>
+            <option value="diverged">Diverged only</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table id="fullTable">
+            <thead>
+              <tr>
+                <th onclick="sortTable('fullTable',0)">
+                  Weight <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',1)">
+                  Top Wins <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',2)">
+                  QWB Thresh <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',3)">
+                  QWB Mult <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',4)">
+                  Max NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',5)">
+                  Gust. Ad. Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',6)">
+                  Gust. Ad. NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',7)">
+                  R-Macon Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',8)">
+                  R-Macon NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',9)">
+                  DePauw Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',10)">
+                  DePauw NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',11)">
+                  Gettysburg Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',12)">
+                  Gettysburg NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',13)">
+                  CMU Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',14)">
+                  CMU NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',15)">
+                  Otterbein Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',16)">
+                  Otterbein NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',17)">
+                  Brdgwtr Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',18)">
+                  Brdgwtr NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',19)">
+                  St. Mary's Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',20)">
+                  St. Mary's NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',21)">
+                  Susquehanna Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',22)">
+                  Susquehanna NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',23)">
+                  Hamline Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',24)">
+                  Hamline NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',25)">
+                  Emory Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',26)">
+                  Emory NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',27)">
+                  McDaniel Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',28)">
+                  McDaniel NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',29)">
+                  UW-EC Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',30)">
+                  UW-EC NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',31)">
+                  Stevens Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',32)">
+                  Stevens NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',33)">
+                  UW-St Rk <span class="sort-arrow">&#9650;</span>
+                </th>
+                <th onclick="sortTable('fullTable',34)">
+                  UW-St NPI <span class="sort-arrow">&#9650;</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>63.71</td>
+                <td>39</td>
+                <td>56.5095</td>
+                <td>33</td>
+                <td>56.8088</td>
+                <td>35</td>
+                <td>56.7848</td>
+                <td>34</td>
+                <td>56.8076</td>
+                <td>37</td>
+                <td>56.6101</td>
+                <td>29</td>
+                <td>56.9918</td>
+                <td>45</td>
+                <td>56.1353</td>
+                <td>46</td>
+                <td>55.9563</td>
+                <td>43</td>
+                <td>56.2913</td>
+                <td>54</td>
+                <td>55.3303</td>
+                <td>55</td>
+                <td>55.3051</td>
+                <td>47</td>
+                <td>55.5920</td>
+                <td>59</td>
+                <td>55.0285</td>
+                <td>53</td>
+                <td>55.3471</td>
+                <td>74</td>
+                <td>54.5655</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>66.07</td>
+                <td>27</td>
+                <td>57.9685</td>
+                <td>37</td>
+                <td>57.1806</td>
+                <td>30</td>
+                <td>57.6308</td>
+                <td>38</td>
+                <td>57.0909</td>
+                <td>34</td>
+                <td>57.2432</td>
+                <td>32</td>
+                <td>57.3717</td>
+                <td>47</td>
+                <td>56.4570</td>
+                <td>35</td>
+                <td>57.2398</td>
+                <td>46</td>
+                <td>56.5748</td>
+                <td>48</td>
+                <td>56.4144</td>
+                <td>53</td>
+                <td>55.7943</td>
+                <td>54</td>
+                <td>55.7812</td>
+                <td>44</td>
+                <td>56.6202</td>
+                <td>59</td>
+                <td>55.5330</td>
+                <td>50</td>
+                <td>56.2671</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 84.57</td>
+                <td>10</td>
+                <td>67.0233</td>
+                <td>45</td>
+                <td>58.3086</td>
+                <td>29</td>
+                <td>61.5306</td>
+                <td>49</td>
+                <td>58.0281</td>
+                <td>34</td>
+                <td>60.1190</td>
+                <td>39</td>
+                <td>59.0350</td>
+                <td>54</td>
+                <td>57.3926</td>
+                <td>14</td>
+                <td>64.9535</td>
+                <td>55</td>
+                <td>57.3733</td>
+                <td>26</td>
+                <td>62.9216</td>
+                <td>50</td>
+                <td>57.9687</td>
+                <td>62</td>
+                <td>56.4373</td>
+                <td>11</td>
+                <td>65.9520</td>
+                <td>64</td>
+                <td>56.2399</td>
+                <td>12</td>
+                <td>65.8806</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>62.90</td>
+                <td>45</td>
+                <td>55.7719</td>
+                <td>33</td>
+                <td>56.4354</td>
+                <td>35</td>
+                <td>56.2847</td>
+                <td>32</td>
+                <td>56.4946</td>
+                <td>39</td>
+                <td>56.1071</td>
+                <td>29</td>
+                <td>56.6935</td>
+                <td>44</td>
+                <td>55.8085</td>
+                <td>48</td>
+                <td>55.3192</td>
+                <td>43</td>
+                <td>55.9522</td>
+                <td>59</td>
+                <td>54.7990</td>
+                <td>57</td>
+                <td>54.9349</td>
+                <td>46</td>
+                <td>55.4083</td>
+                <td>71</td>
+                <td>54.3082</td>
+                <td>54</td>
+                <td>55.1424</td>
+                <td>83</td>
+                <td>53.7436</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>63.33</td>
+                <td>42</td>
+                <td>56.0958</td>
+                <td>34</td>
+                <td>56.5452</td>
+                <td>32</td>
+                <td>56.6202</td>
+                <td>33</td>
+                <td>56.5636</td>
+                <td>37</td>
+                <td>56.3521</td>
+                <td>28</td>
+                <td>56.8480</td>
+                <td>45</td>
+                <td>55.9126</td>
+                <td>46</td>
+                <td>55.5961</td>
+                <td>44</td>
+                <td>56.0278</td>
+                <td>57</td>
+                <td>55.0274</td>
+                <td>56</td>
+                <td>55.1153</td>
+                <td>48</td>
+                <td>55.4594</td>
+                <td>62</td>
+                <td>54.6851</td>
+                <td>55</td>
+                <td>55.1804</td>
+                <td>75</td>
+                <td>54.1516</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>65.72</td>
+                <td>30</td>
+                <td>57.4793</td>
+                <td>38</td>
+                <td>56.7696</td>
+                <td>29</td>
+                <td>57.5083</td>
+                <td>39</td>
+                <td>56.7175</td>
+                <td>33</td>
+                <td>56.9532</td>
+                <td>32</td>
+                <td>57.2142</td>
+                <td>47</td>
+                <td>56.1207</td>
+                <td>36</td>
+                <td>56.8200</td>
+                <td>46</td>
+                <td>56.1814</td>
+                <td>49</td>
+                <td>55.9877</td>
+                <td>55</td>
+                <td>55.5637</td>
+                <td>54</td>
+                <td>55.5726</td>
+                <td>45</td>
+                <td>56.3138</td>
+                <td>60</td>
+                <td>55.2659</td>
+                <td>50</td>
+                <td>55.9640</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>62.43</td>
+                <td>45</td>
+                <td>55.4277</td>
+                <td>33</td>
+                <td>56.2548</td>
+                <td>38</td>
+                <td>55.9673</td>
+                <td>32</td>
+                <td>56.3839</td>
+                <td>40</td>
+                <td>55.8414</td>
+                <td>28</td>
+                <td>56.5141</td>
+                <td>43</td>
+                <td>55.6448</td>
+                <td>54</td>
+                <td>55.0321</td>
+                <td>41</td>
+                <td>55.8263</td>
+                <td>60</td>
+                <td>54.5575</td>
+                <td>58</td>
+                <td>54.7208</td>
+                <td>46</td>
+                <td>55.3297</td>
+                <td>74</td>
+                <td>53.9492</td>
+                <td>53</td>
+                <td>55.0875</td>
+                <td>90</td>
+                <td>53.3238</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>62.60</td>
+                <td>45</td>
+                <td>55.5054</td>
+                <td>33</td>
+                <td>56.2809</td>
+                <td>34</td>
+                <td>56.1150</td>
+                <td>32</td>
+                <td>56.3986</td>
+                <td>40</td>
+                <td>55.9347</td>
+                <td>29</td>
+                <td>56.5661</td>
+                <td>44</td>
+                <td>55.6707</td>
+                <td>52</td>
+                <td>55.1080</td>
+                <td>42</td>
+                <td>55.8408</td>
+                <td>60</td>
+                <td>54.6142</td>
+                <td>58</td>
+                <td>54.7847</td>
+                <td>46</td>
+                <td>55.3426</td>
+                <td>73</td>
+                <td>54.0767</td>
+                <td>54</td>
+                <td>55.0975</td>
+                <td>87</td>
+                <td>53.4420</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>62.88</td>
+                <td>45</td>
+                <td>55.6567</td>
+                <td>34</td>
+                <td>56.3242</td>
+                <td>33</td>
+                <td>56.3818</td>
+                <td>32</td>
+                <td>56.4234</td>
+                <td>38</td>
+                <td>56.0971</td>
+                <td>29</td>
+                <td>56.6655</td>
+                <td>44</td>
+                <td>55.7135</td>
+                <td>50</td>
+                <td>55.2448</td>
+                <td>43</td>
+                <td>55.8644</td>
+                <td>59</td>
+                <td>54.7206</td>
+                <td>57</td>
+                <td>54.8970</td>
+                <td>46</td>
+                <td>55.3644</td>
+                <td>72</td>
+                <td>54.3113</td>
+                <td>54</td>
+                <td>55.1142</td>
+                <td>84</td>
+                <td>53.6716</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>63.16</td>
+                <td>40</td>
+                <td>56.1169</td>
+                <td>33</td>
+                <td>56.6230</td>
+                <td>34</td>
+                <td>56.4927</td>
+                <td>32</td>
+                <td>56.6256</td>
+                <td>36</td>
+                <td>56.3701</td>
+                <td>28</td>
+                <td>56.7700</td>
+                <td>45</td>
+                <td>55.9466</td>
+                <td>46</td>
+                <td>55.6475</td>
+                <td>44</td>
+                <td>55.9977</td>
+                <td>56</td>
+                <td>55.0647</td>
+                <td>55</td>
+                <td>55.0966</td>
+                <td>47</td>
+                <td>55.4501</td>
+                <td>65</td>
+                <td>54.5725</td>
+                <td>53</td>
+                <td>55.1652</td>
+                <td>75</td>
+                <td>54.0997</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>64.21</td>
+                <td>32</td>
+                <td>56.9508</td>
+                <td>34</td>
+                <td>56.9020</td>
+                <td>29</td>
+                <td>57.1001</td>
+                <td>37</td>
+                <td>56.8212</td>
+                <td>36</td>
+                <td>56.8550</td>
+                <td>30</td>
+                <td>57.0564</td>
+                <td>46</td>
+                <td>56.1884</td>
+                <td>40</td>
+                <td>56.3886</td>
+                <td>45</td>
+                <td>56.2052</td>
+                <td>48</td>
+                <td>55.6704</td>
+                <td>52</td>
+                <td>55.4593</td>
+                <td>50</td>
+                <td>55.5776</td>
+                <td>51</td>
+                <td>55.5393</td>
+                <td>56</td>
+                <td>55.2964</td>
+                <td>58</td>
+                <td>55.1530</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td>72.65</td>
+                <td>20</td>
+                <td>60.8226</td>
+                <td>40</td>
+                <td>57.6181</td>
+                <td>29</td>
+                <td>59.0668</td>
+                <td>44</td>
+                <td>57.3676</td>
+                <td>34</td>
+                <td>58.3519</td>
+                <td>37</td>
+                <td>57.8563</td>
+                <td>50</td>
+                <td>56.7688</td>
+                <td>25</td>
+                <td>59.7132</td>
+                <td>51</td>
+                <td>56.6936</td>
+                <td>33</td>
+                <td>58.4899</td>
+                <td>54</td>
+                <td>56.6074</td>
+                <td>57</td>
+                <td>55.9558</td>
+                <td>24</td>
+                <td>59.8313</td>
+                <td>62</td>
+                <td>55.6769</td>
+                <td>27</td>
+                <td>59.6276</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>62.48</td>
+                <td>45</td>
+                <td>55.5487</td>
+                <td>33</td>
+                <td>56.3057</td>
+                <td>34</td>
+                <td>56.0783</td>
+                <td>32</td>
+                <td>56.3631</td>
+                <td>38</td>
+                <td>55.9330</td>
+                <td>29</td>
+                <td>56.5161</td>
+                <td>44</td>
+                <td>55.6779</td>
+                <td>49</td>
+                <td>55.1546</td>
+                <td>43</td>
+                <td>55.7197</td>
+                <td>59</td>
+                <td>54.6503</td>
+                <td>58</td>
+                <td>54.7798</td>
+                <td>46</td>
+                <td>55.2950</td>
+                <td>72</td>
+                <td>54.0649</td>
+                <td>53</td>
+                <td>55.0120</td>
+                <td>83</td>
+                <td>53.4943</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>62.82</td>
+                <td>43</td>
+                <td>55.7894</td>
+                <td>33</td>
+                <td>56.3968</td>
+                <td>34</td>
+                <td>56.3533</td>
+                <td>32</td>
+                <td>56.4149</td>
+                <td>37</td>
+                <td>56.1285</td>
+                <td>28</td>
+                <td>56.6376</td>
+                <td>45</td>
+                <td>55.7618</td>
+                <td>46</td>
+                <td>55.3677</td>
+                <td>44</td>
+                <td>55.7717</td>
+                <td>59</td>
+                <td>54.8243</td>
+                <td>56</td>
+                <td>54.9267</td>
+                <td>48</td>
+                <td>55.3342</td>
+                <td>68</td>
+                <td>54.3597</td>
+                <td>53</td>
+                <td>55.0395</td>
+                <td>81</td>
+                <td>53.8094</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>63.49</td>
+                <td>38</td>
+                <td>56.3653</td>
+                <td>35</td>
+                <td>56.5555</td>
+                <td>29</td>
+                <td>56.8844</td>
+                <td>37</td>
+                <td>56.5089</td>
+                <td>36</td>
+                <td>56.5152</td>
+                <td>30</td>
+                <td>56.8718</td>
+                <td>44</td>
+                <td>55.9065</td>
+                <td>45</td>
+                <td>55.8785</td>
+                <td>46</td>
+                <td>55.8673</td>
+                <td>52</td>
+                <td>55.2339</td>
+                <td>53</td>
+                <td>55.2095</td>
+                <td>49</td>
+                <td>55.4051</td>
+                <td>58</td>
+                <td>54.9978</td>
+                <td>55</td>
+                <td>55.0909</td>
+                <td>67</td>
+                <td>54.5192</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>62.06</td>
+                <td>45</td>
+                <td>55.2731</td>
+                <td>33</td>
+                <td>56.1406</td>
+                <td>37</td>
+                <td>55.8019</td>
+                <td>31</td>
+                <td>56.2724</td>
+                <td>41</td>
+                <td>55.6930</td>
+                <td>28</td>
+                <td>56.3685</td>
+                <td>43</td>
+                <td>55.5312</td>
+                <td>54</td>
+                <td>54.9153</td>
+                <td>42</td>
+                <td>55.6222</td>
+                <td>60</td>
+                <td>54.4514</td>
+                <td>58</td>
+                <td>54.5843</td>
+                <td>46</td>
+                <td>55.2278</td>
+                <td>75</td>
+                <td>53.7621</td>
+                <td>53</td>
+                <td>54.9683</td>
+                <td>90</td>
+                <td>53.1349</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>62.20</td>
+                <td>45</td>
+                <td>55.3282</td>
+                <td>33</td>
+                <td>56.1606</td>
+                <td>36</td>
+                <td>55.9198</td>
+                <td>32</td>
+                <td>56.2835</td>
+                <td>39</td>
+                <td>55.7702</td>
+                <td>28</td>
+                <td>56.4081</td>
+                <td>43</td>
+                <td>55.5510</td>
+                <td>54</td>
+                <td>54.9746</td>
+                <td>42</td>
+                <td>55.6325</td>
+                <td>59</td>
+                <td>54.4939</td>
+                <td>58</td>
+                <td>54.6368</td>
+                <td>46</td>
+                <td>55.2376</td>
+                <td>73</td>
+                <td>53.8638</td>
+                <td>53</td>
+                <td>54.9759</td>
+                <td>89</td>
+                <td>53.2234</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>62.41</td>
+                <td>45</td>
+                <td>55.4309</td>
+                <td>33</td>
+                <td>56.1921</td>
+                <td>34</td>
+                <td>56.1235</td>
+                <td>32</td>
+                <td>56.3009</td>
+                <td>38</td>
+                <td>55.8972</td>
+                <td>29</td>
+                <td>56.4762</td>
+                <td>44</td>
+                <td>55.5820</td>
+                <td>50</td>
+                <td>55.0763</td>
+                <td>43</td>
+                <td>55.6486</td>
+                <td>59</td>
+                <td>54.5699</td>
+                <td>58</td>
+                <td>54.7231</td>
+                <td>46</td>
+                <td>55.2531</td>
+                <td>72</td>
+                <td>54.0402</td>
+                <td>54</td>
+                <td>54.9881</td>
+                <td>85</td>
+                <td>53.3870</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>62.62</td>
+                <td>43</td>
+                <td>55.7215</td>
+                <td>33</td>
+                <td>56.4124</td>
+                <td>34</td>
+                <td>56.2189</td>
+                <td>32</td>
+                <td>56.4290</td>
+                <td>36</td>
+                <td>56.0954</td>
+                <td>29</td>
+                <td>56.5179</td>
+                <td>41</td>
+                <td>55.7524</td>
+                <td>46</td>
+                <td>55.3813</td>
+                <td>44</td>
+                <td>55.7114</td>
+                <td>57</td>
+                <td>54.8078</td>
+                <td>55</td>
+                <td>54.8648</td>
+                <td>48</td>
+                <td>55.2790</td>
+                <td>68</td>
+                <td>54.2590</td>
+                <td>53</td>
+                <td>54.9922</td>
+                <td>78</td>
+                <td>53.7741</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>63.23</td>
+                <td>39</td>
+                <td>56.2545</td>
+                <td>33</td>
+                <td>56.6302</td>
+                <td>31</td>
+                <td>56.6713</td>
+                <td>34</td>
+                <td>56.5732</td>
+                <td>36</td>
+                <td>56.4721</td>
+                <td>30</td>
+                <td>56.7273</td>
+                <td>42</td>
+                <td>55.9365</td>
+                <td>45</td>
+                <td>55.8593</td>
+                <td>44</td>
+                <td>55.8629</td>
+                <td>51</td>
+                <td>55.1871</td>
+                <td>53</td>
+                <td>55.1417</td>
+                <td>48</td>
+                <td>55.3713</td>
+                <td>57</td>
+                <td>54.8804</td>
+                <td>56</td>
+                <td>55.0752</td>
+                <td>64</td>
+                <td>54.4668</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td>67.73</td>
+                <td>25</td>
+                <td>58.2883</td>
+                <td>37</td>
+                <td>57.0808</td>
+                <td>27</td>
+                <td>57.8613</td>
+                <td>40</td>
+                <td>56.8844</td>
+                <td>33</td>
+                <td>57.3361</td>
+                <td>35</td>
+                <td>57.2089</td>
+                <td>47</td>
+                <td>56.3127</td>
+                <td>29</td>
+                <td>57.6120</td>
+                <td>50</td>
+                <td>56.1715</td>
+                <td>42</td>
+                <td>56.6554</td>
+                <td>53</td>
+                <td>55.7957</td>
+                <td>55</td>
+                <td>55.5761</td>
+                <td>34</td>
+                <td>57.3040</td>
+                <td>59</td>
+                <td>55.2833</td>
+                <td>38</td>
+                <td>57.0447</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>62.04</td>
+                <td>45</td>
+                <td>55.2567</td>
+                <td>33</td>
+                <td>56.1498</td>
+                <td>36</td>
+                <td>55.8596</td>
+                <td>32</td>
+                <td>56.2109</td>
+                <td>38</td>
+                <td>55.7153</td>
+                <td>29</td>
+                <td>56.3047</td>
+                <td>41</td>
+                <td>55.5381</td>
+                <td>49</td>
+                <td>54.9704</td>
+                <td>44</td>
+                <td>55.4898</td>
+                <td>59</td>
+                <td>54.4708</td>
+                <td>58</td>
+                <td>54.5909</td>
+                <td>46</td>
+                <td>55.1515</td>
+                <td>72</td>
+                <td>53.8456</td>
+                <td>53</td>
+                <td>54.8802</td>
+                <td>85</td>
+                <td>53.2765</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>62.31</td>
+                <td>45</td>
+                <td>55.4270</td>
+                <td>33</td>
+                <td>56.2251</td>
+                <td>34</td>
+                <td>56.0793</td>
+                <td>32</td>
+                <td>56.2489</td>
+                <td>37</td>
+                <td>55.8734</td>
+                <td>29</td>
+                <td>56.3936</td>
+                <td>42</td>
+                <td>55.6061</td>
+                <td>48</td>
+                <td>55.1276</td>
+                <td>44</td>
+                <td>55.5275</td>
+                <td>59</td>
+                <td>54.5930</td>
+                <td>56</td>
+                <td>54.7111</td>
+                <td>47</td>
+                <td>55.1809</td>
+                <td>70</td>
+                <td>54.0718</td>
+                <td>53</td>
+                <td>54.9009</td>
+                <td>82</td>
+                <td>53.5139</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>62.79</td>
+                <td>40</td>
+                <td>55.7907</td>
+                <td>33</td>
+                <td>56.3493</td>
+                <td>29</td>
+                <td>56.4877</td>
+                <td>34</td>
+                <td>56.3146</td>
+                <td>36</td>
+                <td>56.1482</td>
+                <td>28</td>
+                <td>56.5590</td>
+                <td>43</td>
+                <td>55.7171</td>
+                <td>46</td>
+                <td>55.4516</td>
+                <td>45</td>
+                <td>55.5896</td>
+                <td>55</td>
+                <td>54.8535</td>
+                <td>54</td>
+                <td>54.9183</td>
+                <td>48</td>
+                <td>55.2311</td>
+                <td>60</td>
+                <td>54.5229</td>
+                <td>53</td>
+                <td>54.9356</td>
+                <td>74</td>
+                <td>54.0039</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>61.68</td>
+                <td>47</td>
+                <td>55.0471</td>
+                <td>32</td>
+                <td>56.0004</td>
+                <td>36</td>
+                <td>55.6220</td>
+                <td>31</td>
+                <td>56.1410</td>
+                <td>40</td>
+                <td>55.5055</td>
+                <td>28</td>
+                <td>56.1898</td>
+                <td>43</td>
+                <td>55.4033</td>
+                <td>53</td>
+                <td>54.7807</td>
+                <td>42</td>
+                <td>55.4143</td>
+                <td>60</td>
+                <td>54.3184</td>
+                <td>58</td>
+                <td>54.4186</td>
+                <td>45</td>
+                <td>55.0973</td>
+                <td>75</td>
+                <td>53.5971</td>
+                <td>51</td>
+                <td>54.8447</td>
+                <td>91</td>
+                <td>52.9753</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>61.78</td>
+                <td>46</td>
+                <td>55.0857</td>
+                <td>33</td>
+                <td>56.0132</td>
+                <td>36</td>
+                <td>55.7179</td>
+                <td>31</td>
+                <td>56.1483</td>
+                <td>38</td>
+                <td>55.5648</td>
+                <td>29</td>
+                <td>56.2197</td>
+                <td>43</td>
+                <td>55.4159</td>
+                <td>53</td>
+                <td>54.8256</td>
+                <td>42</td>
+                <td>55.4206</td>
+                <td>60</td>
+                <td>54.3482</td>
+                <td>58</td>
+                <td>54.4579</td>
+                <td>45</td>
+                <td>55.1038</td>
+                <td>75</td>
+                <td>53.6758</td>
+                <td>51</td>
+                <td>54.8498</td>
+                <td>88</td>
+                <td>53.0357</td>
+              </tr>
+              <tr
+                data-weight="0.15"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.15/0.85</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>61.94</td>
+                <td>45</td>
+                <td>55.1532</td>
+                <td>33</td>
+                <td>56.0339</td>
+                <td>34</td>
+                <td>55.8737</td>
+                <td>32</td>
+                <td>56.1599</td>
+                <td>37</td>
+                <td>55.6585</td>
+                <td>28</td>
+                <td>56.2668</td>
+                <td>42</td>
+                <td>55.4364</td>
+                <td>50</td>
+                <td>54.9004</td>
+                <td>43</td>
+                <td>55.4305</td>
+                <td>59</td>
+                <td>54.4002</td>
+                <td>58</td>
+                <td>54.5206</td>
+                <td>46</td>
+                <td>55.1139</td>
+                <td>72</td>
+                <td>53.8102</td>
+                <td>53</td>
+                <td>54.8578</td>
+                <td>88</td>
+                <td>53.1502</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>68.54</td>
+                <td>43</td>
+                <td>58.5092</td>
+                <td>31</td>
+                <td>59.2434</td>
+                <td>39</td>
+                <td>58.7454</td>
+                <td>32</td>
+                <td>59.2367</td>
+                <td>40</td>
+                <td>58.7127</td>
+                <td>34</td>
+                <td>59.1517</td>
+                <td>45</td>
+                <td>58.3495</td>
+                <td>46</td>
+                <td>57.8500</td>
+                <td>41</td>
+                <td>58.6426</td>
+                <td>57</td>
+                <td>57.0327</td>
+                <td>59</td>
+                <td>56.9670</td>
+                <td>48</td>
+                <td>57.6096</td>
+                <td>67</td>
+                <td>56.4463</td>
+                <td>50</td>
+                <td>57.4846</td>
+                <td>76</td>
+                <td>55.8863</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>71.41</td>
+                <td>29</td>
+                <td>60.4733</td>
+                <td>34</td>
+                <td>59.9595</td>
+                <td>32</td>
+                <td>59.9950</td>
+                <td>37</td>
+                <td>59.8234</td>
+                <td>33</td>
+                <td>59.9626</td>
+                <td>36</td>
+                <td>59.8785</td>
+                <td>46</td>
+                <td>58.9544</td>
+                <td>41</td>
+                <td>59.5331</td>
+                <td>43</td>
+                <td>59.1993</td>
+                <td>48</td>
+                <td>58.4643</td>
+                <td>56</td>
+                <td>57.9425</td>
+                <td>54</td>
+                <td>57.9845</td>
+                <td>47</td>
+                <td>58.5971</td>
+                <td>55</td>
+                <td>57.9612</td>
+                <td>50</td>
+                <td>58.1289</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 91.98</td>
+                <td>14</td>
+                <td>70.5699</td>
+                <td>44</td>
+                <td>62.1639</td>
+                <td>30</td>
+                <td>65.3980</td>
+                <td>47</td>
+                <td>61.6824</td>
+                <td>32</td>
+                <td>64.8653</td>
+                <td>36</td>
+                <td>63.0848</td>
+                <td>52</td>
+                <td>60.7700</td>
+                <td>23</td>
+                <td>68.0553</td>
+                <td>53</td>
+                <td>60.6619</td>
+                <td>29</td>
+                <td>65.7722</td>
+                <td>46</td>
+                <td>61.8634</td>
+                <td>61</td>
+                <td>59.2621</td>
+                <td>19</td>
+                <td>68.8147</td>
+                <td>60</td>
+                <td>59.4029</td>
+                <td>20</td>
+                <td>68.6374</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>67.40</td>
+                <td>45</td>
+                <td>57.5900</td>
+                <td>33</td>
+                <td>58.7526</td>
+                <td>39</td>
+                <td>58.1611</td>
+                <td>31</td>
+                <td>58.7795</td>
+                <td>41</td>
+                <td>58.0069</td>
+                <td>32</td>
+                <td>58.7664</td>
+                <td>42</td>
+                <td>57.9550</td>
+                <td>53</td>
+                <td>57.1102</td>
+                <td>37</td>
+                <td>58.2381</td>
+                <td>62</td>
+                <td>56.3642</td>
+                <td>60</td>
+                <td>56.4208</td>
+                <td>47</td>
+                <td>57.3166</td>
+                <td>77</td>
+                <td>55.4870</td>
+                <td>54</td>
+                <td>57.0987</td>
+                <td>86</td>
+                <td>54.8963</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>68.44</td>
+                <td>42</td>
+                <td>58.4117</td>
+                <td>32</td>
+                <td>59.1357</td>
+                <td>37</td>
+                <td>58.8512</td>
+                <td>34</td>
+                <td>59.0580</td>
+                <td>39</td>
+                <td>58.5845</td>
+                <td>33</td>
+                <td>59.0782</td>
+                <td>44</td>
+                <td>58.2787</td>
+                <td>46</td>
+                <td>57.7980</td>
+                <td>40</td>
+                <td>58.5471</td>
+                <td>57</td>
+                <td>56.9109</td>
+                <td>59</td>
+                <td>56.8479</td>
+                <td>48</td>
+                <td>57.4866</td>
+                <td>65</td>
+                <td>56.4321</td>
+                <td>54</td>
+                <td>57.2859</td>
+                <td>75</td>
+                <td>55.9337</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>76.60</td>
+                <td>23</td>
+                <td>62.5294</td>
+                <td>38</td>
+                <td>59.9994</td>
+                <td>31</td>
+                <td>61.0060</td>
+                <td>44</td>
+                <td>59.7382</td>
+                <td>36</td>
+                <td>60.2358</td>
+                <td>41</td>
+                <td>59.9170</td>
+                <td>50</td>
+                <td>58.9985</td>
+                <td>27</td>
+                <td>61.3141</td>
+                <td>48</td>
+                <td>59.2073</td>
+                <td>43</td>
+                <td>59.8542</td>
+                <td>55</td>
+                <td>58.0937</td>
+                <td>56</td>
+                <td>57.9199</td>
+                <td>30</td>
+                <td>61.0427</td>
+                <td>57</td>
+                <td>57.7826</td>
+                <td>32</td>
+                <td>60.7899</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>66.63</td>
+                <td>50</td>
+                <td>57.0463</td>
+                <td>33</td>
+                <td>58.3782</td>
+                <td>40</td>
+                <td>57.7660</td>
+                <td>30</td>
+                <td>58.4886</td>
+                <td>43</td>
+                <td>57.5685</td>
+                <td>28</td>
+                <td>58.5330</td>
+                <td>42</td>
+                <td>57.6476</td>
+                <td>57</td>
+                <td>56.6531</td>
+                <td>38</td>
+                <td>57.9053</td>
+                <td>66</td>
+                <td>55.9957</td>
+                <td>61</td>
+                <td>56.1045</td>
+                <td>46</td>
+                <td>57.1590</td>
+                <td>82</td>
+                <td>55.0239</td>
+                <td>52</td>
+                <td>56.8765</td>
+                <td>93</td>
+                <td>54.3412</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>67.21</td>
+                <td>45</td>
+                <td>57.3917</td>
+                <td>33</td>
+                <td>58.5571</td>
+                <td>37</td>
+                <td>58.1530</td>
+                <td>32</td>
+                <td>58.5995</td>
+                <td>41</td>
+                <td>57.8844</td>
+                <td>30</td>
+                <td>58.7057</td>
+                <td>42</td>
+                <td>57.8052</td>
+                <td>52</td>
+                <td>56.9524</td>
+                <td>38</td>
+                <td>58.0424</td>
+                <td>62</td>
+                <td>56.2222</td>
+                <td>61</td>
+                <td>56.3312</td>
+                <td>47</td>
+                <td>57.2320</td>
+                <td>76</td>
+                <td>55.4046</td>
+                <td>53</td>
+                <td>56.9381</td>
+                <td>88</td>
+                <td>54.7562</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>68.31</td>
+                <td>41</td>
+                <td>58.2093</td>
+                <td>34</td>
+                <td>58.8961</td>
+                <td>33</td>
+                <td>58.9125</td>
+                <td>35</td>
+                <td>58.8116</td>
+                <td>38</td>
+                <td>58.4862</td>
+                <td>31</td>
+                <td>59.0342</td>
+                <td>44</td>
+                <td>58.0977</td>
+                <td>46</td>
+                <td>57.6429</td>
+                <td>40</td>
+                <td>58.3025</td>
+                <td>59</td>
+                <td>56.7458</td>
+                <td>58</td>
+                <td>56.7635</td>
+                <td>48</td>
+                <td>57.3663</td>
+                <td>65</td>
+                <td>56.2770</td>
+                <td>55</td>
+                <td>57.0609</td>
+                <td>77</td>
+                <td>55.7452</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>67.85</td>
+                <td>45</td>
+                <td>58.1720</td>
+                <td>32</td>
+                <td>59.0810</td>
+                <td>37</td>
+                <td>58.4937</td>
+                <td>31</td>
+                <td>59.0854</td>
+                <td>39</td>
+                <td>58.4650</td>
+                <td>33</td>
+                <td>58.9717</td>
+                <td>44</td>
+                <td>58.1864</td>
+                <td>46</td>
+                <td>57.6153</td>
+                <td>42</td>
+                <td>58.3768</td>
+                <td>57</td>
+                <td>56.8232</td>
+                <td>60</td>
+                <td>56.7476</td>
+                <td>48</td>
+                <td>57.4896</td>
+                <td>71</td>
+                <td>56.0619</td>
+                <td>50</td>
+                <td>57.3400</td>
+                <td>81</td>
+                <td>55.5141</td>
+              </tr>
+              <tr
+                class="baseline-row"
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>69.76</td>
+                <td>33</td>
+                <td>59.6344</td>
+                <td>31</td>
+                <td>59.7020</td>
+                <td>39</td>
+                <td>59.4889</td>
+                <td>34</td>
+                <td>59.5825</td>
+                <td>38</td>
+                <td>59.4972</td>
+                <td>37</td>
+                <td>59.5051</td>
+                <td>46</td>
+                <td>58.6971</td>
+                <td>43</td>
+                <td>58.8673</td>
+                <td>44</td>
+                <td>58.8416</td>
+                <td>47</td>
+                <td>57.8947</td>
+                <td>55</td>
+                <td>57.5316</td>
+                <td>49</td>
+                <td>57.8079</td>
+                <td>53</td>
+                <td>57.6808</td>
+                <td>52</td>
+                <td>57.7401</td>
+                <td>60</td>
+                <td>57.2108</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 81.77</td>
+                <td>21</td>
+                <td>65.2104</td>
+                <td>40</td>
+                <td>61.2448</td>
+                <td>30</td>
+                <td>62.6042</td>
+                <td>43</td>
+                <td>60.8210</td>
+                <td>29</td>
+                <td>62.6829</td>
+                <td>38</td>
+                <td>61.3002</td>
+                <td>51</td>
+                <td>59.9228</td>
+                <td>26</td>
+                <td>63.5639</td>
+                <td>52</td>
+                <td>59.8653</td>
+                <td>34</td>
+                <td>61.9460</td>
+                <td>48</td>
+                <td>60.1492</td>
+                <td>59</td>
+                <td>58.6541</td>
+                <td>25</td>
+                <td>63.7129</td>
+                <td>58</td>
+                <td>58.7376</td>
+                <td>27</td>
+                <td>63.4124</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>66.86</td>
+                <td>45</td>
+                <td>57.3863</td>
+                <td>33</td>
+                <td>58.6271</td>
+                <td>39</td>
+                <td>57.9714</td>
+                <td>31</td>
+                <td>58.6649</td>
+                <td>41</td>
+                <td>57.8382</td>
+                <td>32</td>
+                <td>58.6351</td>
+                <td>42</td>
+                <td>57.8331</td>
+                <td>53</td>
+                <td>56.9638</td>
+                <td>38</td>
+                <td>58.0175</td>
+                <td>62</td>
+                <td>56.2414</td>
+                <td>61</td>
+                <td>56.2735</td>
+                <td>47</td>
+                <td>57.2267</td>
+                <td>79</td>
+                <td>55.2440</td>
+                <td>52</td>
+                <td>56.9915</td>
+                <td>90</td>
+                <td>54.6474</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>67.75</td>
+                <td>44</td>
+                <td>58.0189</td>
+                <td>31</td>
+                <td>58.9620</td>
+                <td>36</td>
+                <td>58.5518</td>
+                <td>33</td>
+                <td>58.8993</td>
+                <td>38</td>
+                <td>58.3440</td>
+                <td>32</td>
+                <td>58.9041</td>
+                <td>43</td>
+                <td>58.1140</td>
+                <td>46</td>
+                <td>57.5148</td>
+                <td>39</td>
+                <td>58.2759</td>
+                <td>58</td>
+                <td>56.6697</td>
+                <td>60</td>
+                <td>56.6426</td>
+                <td>48</td>
+                <td>57.3637</td>
+                <td>71</td>
+                <td>55.9529</td>
+                <td>53</td>
+                <td>57.1541</td>
+                <td>79</td>
+                <td>55.4419</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>72.14</td>
+                <td>28</td>
+                <td>60.4467</td>
+                <td>33</td>
+                <td>59.6538</td>
+                <td>31</td>
+                <td>60.0313</td>
+                <td>40</td>
+                <td>59.4209</td>
+                <td>39</td>
+                <td>59.4922</td>
+                <td>38</td>
+                <td>59.4955</td>
+                <td>45</td>
+                <td>58.6804</td>
+                <td>35</td>
+                <td>59.5917</td>
+                <td>43</td>
+                <td>58.7818</td>
+                <td>49</td>
+                <td>58.4054</td>
+                <td>56</td>
+                <td>57.5012</td>
+                <td>54</td>
+                <td>57.6932</td>
+                <td>44</td>
+                <td>58.7380</td>
+                <td>57</td>
+                <td>57.5004</td>
+                <td>48</td>
+                <td>58.4338</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>66.16</td>
+                <td>50</td>
+                <td>56.9115</td>
+                <td>31</td>
+                <td>58.2806</td>
+                <td>40</td>
+                <td>57.6157</td>
+                <td>30</td>
+                <td>58.3947</td>
+                <td>43</td>
+                <td>57.4257</td>
+                <td>29</td>
+                <td>58.4190</td>
+                <td>42</td>
+                <td>57.5497</td>
+                <td>56</td>
+                <td>56.5536</td>
+                <td>38</td>
+                <td>57.7235</td>
+                <td>65</td>
+                <td>55.9103</td>
+                <td>63</td>
+                <td>55.9806</td>
+                <td>45</td>
+                <td>57.0816</td>
+                <td>81</td>
+                <td>54.8596</td>
+                <td>52</td>
+                <td>56.7870</td>
+                <td>94</td>
+                <td>54.1732</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>66.66</td>
+                <td>46</td>
+                <td>57.1951</td>
+                <td>33</td>
+                <td>58.4269</td>
+                <td>37</td>
+                <td>57.9577</td>
+                <td>32</td>
+                <td>58.4896</td>
+                <td>41</td>
+                <td>57.7048</td>
+                <td>30</td>
+                <td>58.5690</td>
+                <td>43</td>
+                <td>57.6785</td>
+                <td>54</td>
+                <td>56.8061</td>
+                <td>39</td>
+                <td>57.8324</td>
+                <td>62</td>
+                <td>56.1032</td>
+                <td>61</td>
+                <td>56.1804</td>
+                <td>47</td>
+                <td>57.1437</td>
+                <td>80</td>
+                <td>55.1919</td>
+                <td>52</td>
+                <td>56.8373</td>
+                <td>90</td>
+                <td>54.5311</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>67.57</td>
+                <td>45</td>
+                <td>57.8178</td>
+                <td>32</td>
+                <td>58.7077</td>
+                <td>35</td>
+                <td>58.5885</td>
+                <td>34</td>
+                <td>58.6581</td>
+                <td>37</td>
+                <td>58.2209</td>
+                <td>30</td>
+                <td>58.8439</td>
+                <td>43</td>
+                <td>57.9229</td>
+                <td>47</td>
+                <td>57.3516</td>
+                <td>41</td>
+                <td>58.0305</td>
+                <td>61</td>
+                <td>56.5148</td>
+                <td>58</td>
+                <td>56.5484</td>
+                <td>48</td>
+                <td>57.2528</td>
+                <td>73</td>
+                <td>55.8587</td>
+                <td>55</td>
+                <td>56.9297</td>
+                <td>82</td>
+                <td>55.2793</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>67.16</td>
+                <td>45</td>
+                <td>57.7710</td>
+                <td>32</td>
+                <td>58.8902</td>
+                <td>37</td>
+                <td>58.2383</td>
+                <td>31</td>
+                <td>58.9097</td>
+                <td>38</td>
+                <td>58.1716</td>
+                <td>34</td>
+                <td>58.7521</td>
+                <td>42</td>
+                <td>58.0153</td>
+                <td>47</td>
+                <td>57.3701</td>
+                <td>40</td>
+                <td>58.1180</td>
+                <td>59</td>
+                <td>56.5970</td>
+                <td>60</td>
+                <td>56.4996</td>
+                <td>48</td>
+                <td>57.3603</td>
+                <td>72</td>
+                <td>55.7417</td>
+                <td>51</td>
+                <td>57.1909</td>
+                <td>82</td>
+                <td>55.2092</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>68.58</td>
+                <td>39</td>
+                <td>58.8932</td>
+                <td>30</td>
+                <td>59.4307</td>
+                <td>37</td>
+                <td>59.0678</td>
+                <td>33</td>
+                <td>59.3324</td>
+                <td>38</td>
+                <td>59.0462</td>
+                <td>35</td>
+                <td>59.1835</td>
+                <td>43</td>
+                <td>58.4485</td>
+                <td>46</td>
+                <td>58.3390</td>
+                <td>41</td>
+                <td>58.5074</td>
+                <td>53</td>
+                <td>57.4146</td>
+                <td>56</td>
+                <td>57.1472</td>
+                <td>48</td>
+                <td>57.6315</td>
+                <td>59</td>
+                <td>57.0162</td>
+                <td>49</td>
+                <td>57.5288</td>
+                <td>64</td>
+                <td>56.5562</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td>76.58</td>
+                <td>25</td>
+                <td>62.2891</td>
+                <td>36</td>
+                <td>60.5518</td>
+                <td>29</td>
+                <td>61.1859</td>
+                <td>41</td>
+                <td>60.2229</td>
+                <td>27</td>
+                <td>61.2979</td>
+                <td>39</td>
+                <td>60.3299</td>
+                <td>49</td>
+                <td>59.3338</td>
+                <td>28</td>
+                <td>61.2027</td>
+                <td>50</td>
+                <td>59.2760</td>
+                <td>44</td>
+                <td>59.8513</td>
+                <td>51</td>
+                <td>58.9335</td>
+                <td>57</td>
+                <td>58.2254</td>
+                <td>30</td>
+                <td>61.0761</td>
+                <td>56</td>
+                <td>58.2724</td>
+                <td>33</td>
+                <td>60.7612</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>66.32</td>
+                <td>47</td>
+                <td>57.1155</td>
+                <td>32</td>
+                <td>58.4711</td>
+                <td>38</td>
+                <td>57.7792</td>
+                <td>30</td>
+                <td>58.5367</td>
+                <td>41</td>
+                <td>57.6308</td>
+                <td>31</td>
+                <td>58.4751</td>
+                <td>40</td>
+                <td>57.6932</td>
+                <td>53</td>
+                <td>56.8081</td>
+                <td>37</td>
+                <td>57.7991</td>
+                <td>60</td>
+                <td>56.1034</td>
+                <td>61</td>
+                <td>56.0986</td>
+                <td>46</td>
+                <td>57.1279</td>
+                <td>78</td>
+                <td>55.0561</td>
+                <td>51</td>
+                <td>56.8723</td>
+                <td>91</td>
+                <td>54.4548</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>67.06</td>
+                <td>45</td>
+                <td>57.6128</td>
+                <td>31</td>
+                <td>58.7636</td>
+                <td>36</td>
+                <td>58.2652</td>
+                <td>32</td>
+                <td>58.7343</td>
+                <td>38</td>
+                <td>58.0650</td>
+                <td>33</td>
+                <td>58.6996</td>
+                <td>40</td>
+                <td>57.9381</td>
+                <td>47</td>
+                <td>57.2567</td>
+                <td>39</td>
+                <td>58.0148</td>
+                <td>59</td>
+                <td>56.4505</td>
+                <td>60</td>
+                <td>56.4123</td>
+                <td>48</td>
+                <td>57.2443</td>
+                <td>72</td>
+                <td>55.6001</td>
+                <td>51</td>
+                <td>57.0110</td>
+                <td>83</td>
+                <td>55.0776</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>69.60</td>
+                <td>38</td>
+                <td>59.0974</td>
+                <td>32</td>
+                <td>59.3302</td>
+                <td>30</td>
+                <td>59.3640</td>
+                <td>37</td>
+                <td>59.1315</td>
+                <td>39</td>
+                <td>58.9506</td>
+                <td>36</td>
+                <td>59.1572</td>
+                <td>43</td>
+                <td>58.3974</td>
+                <td>40</td>
+                <td>58.5445</td>
+                <td>41</td>
+                <td>58.4113</td>
+                <td>49</td>
+                <td>57.4887</td>
+                <td>57</td>
+                <td>57.0647</td>
+                <td>48</td>
+                <td>57.4934</td>
+                <td>52</td>
+                <td>57.4107</td>
+                <td>55</td>
+                <td>57.2829</td>
+                <td>58</td>
+                <td>57.0537</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>65.71</td>
+                <td>51</td>
+                <td>56.6977</td>
+                <td>31</td>
+                <td>58.1616</td>
+                <td>40</td>
+                <td>57.4560</td>
+                <td>29</td>
+                <td>58.2890</td>
+                <td>43</td>
+                <td>57.2569</td>
+                <td>30</td>
+                <td>58.2820</td>
+                <td>41</td>
+                <td>57.4433</td>
+                <td>57</td>
+                <td>56.4394</td>
+                <td>38</td>
+                <td>57.5407</td>
+                <td>64</td>
+                <td>55.8053</td>
+                <td>63</td>
+                <td>55.8357</td>
+                <td>45</td>
+                <td>56.9960</td>
+                <td>80</td>
+                <td>54.7157</td>
+                <td>52</td>
+                <td>56.6876</td>
+                <td>93</td>
+                <td>54.0329</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>66.10</td>
+                <td>49</td>
+                <td>56.9215</td>
+                <td>33</td>
+                <td>58.2932</td>
+                <td>37</td>
+                <td>57.7544</td>
+                <td>31</td>
+                <td>58.3713</td>
+                <td>42</td>
+                <td>57.4839</td>
+                <td>30</td>
+                <td>58.4055</td>
+                <td>40</td>
+                <td>57.5593</td>
+                <td>54</td>
+                <td>56.6437</td>
+                <td>39</td>
+                <td>57.6305</td>
+                <td>63</td>
+                <td>55.9633</td>
+                <td>61</td>
+                <td>56.0031</td>
+                <td>46</td>
+                <td>57.0496</td>
+                <td>78</td>
+                <td>54.9988</td>
+                <td>52</td>
+                <td>56.7271</td>
+                <td>91</td>
+                <td>54.3334</td>
+              </tr>
+              <tr
+                data-weight="0.20"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.20/0.80</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>66.84</td>
+                <td>45</td>
+                <td>57.4057</td>
+                <td>32</td>
+                <td>58.5109</td>
+                <td>36</td>
+                <td>58.2887</td>
+                <td>33</td>
+                <td>58.5072</td>
+                <td>38</td>
+                <td>57.9132</td>
+                <td>31</td>
+                <td>58.6294</td>
+                <td>42</td>
+                <td>57.7494</td>
+                <td>49</td>
+                <td>57.0798</td>
+                <td>40</td>
+                <td>57.7782</td>
+                <td>60</td>
+                <td>56.2930</td>
+                <td>59</td>
+                <td>56.3079</td>
+                <td>47</td>
+                <td>57.1382</td>
+                <td>72</td>
+                <td>55.5486</td>
+                <td>54</td>
+                <td>56.7960</td>
+                <td>83</td>
+                <td>54.9446</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>72.66</td>
+                <td>45</td>
+                <td>59.9028</td>
+                <td>34</td>
+                <td>61.2134</td>
+                <td>42</td>
+                <td>60.2203</td>
+                <td>33</td>
+                <td>61.2506</td>
+                <td>41</td>
+                <td>60.2657</td>
+                <td>35</td>
+                <td>61.0904</td>
+                <td>44</td>
+                <td>60.1794</td>
+                <td>50</td>
+                <td>59.2834</td>
+                <td>39</td>
+                <td>60.5549</td>
+                <td>61</td>
+                <td>58.3360</td>
+                <td>62</td>
+                <td>58.1997</td>
+                <td>48</td>
+                <td>59.3564</td>
+                <td>79</td>
+                <td>57.2110</td>
+                <td>49</td>
+                <td>59.2870</td>
+                <td>86</td>
+                <td>56.5380</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>75.37</td>
+                <td>39</td>
+                <td>61.8008</td>
+                <td>33</td>
+                <td>62.1839</td>
+                <td>40</td>
+                <td>61.6102</td>
+                <td>35</td>
+                <td>62.0871</td>
+                <td>38</td>
+                <td>61.8288</td>
+                <td>37</td>
+                <td>61.9661</td>
+                <td>45</td>
+                <td>60.9858</td>
+                <td>46</td>
+                <td>60.8523</td>
+                <td>43</td>
+                <td>61.2846</td>
+                <td>54</td>
+                <td>59.6614</td>
+                <td>57</td>
+                <td>59.4350</td>
+                <td>49</td>
+                <td>59.8978</td>
+                <td>60</td>
+                <td>59.2813</td>
+                <td>48</td>
+                <td>59.9335</td>
+                <td>67</td>
+                <td>58.6835</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 91.15</td>
+                <td>21</td>
+                <td>69.6803</td>
+                <td>40</td>
+                <td>64.8004</td>
+                <td>32</td>
+                <td>66.3478</td>
+                <td>42</td>
+                <td>64.2997</td>
+                <td>31</td>
+                <td>66.6654</td>
+                <td>38</td>
+                <td>64.9731</td>
+                <td>51</td>
+                <td>63.1972</td>
+                <td>26</td>
+                <td>67.4390</td>
+                <td>52</td>
+                <td>63.0176</td>
+                <td>34</td>
+                <td>65.3535</td>
+                <td>49</td>
+                <td>63.3591</td>
+                <td>60</td>
+                <td>61.4013</td>
+                <td>27</td>
+                <td>67.4086</td>
+                <td>54</td>
+                <td>61.7054</td>
+                <td>29</td>
+                <td>67.0944</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>71.39</td>
+                <td>47</td>
+                <td>59.0591</td>
+                <td>34</td>
+                <td>60.7340</td>
+                <td>42</td>
+                <td>59.6568</td>
+                <td>33</td>
+                <td>60.7843</td>
+                <td>43</td>
+                <td>59.4736</td>
+                <td>35</td>
+                <td>60.6058</td>
+                <td>40</td>
+                <td>59.7901</td>
+                <td>57</td>
+                <td>58.6256</td>
+                <td>39</td>
+                <td>60.1798</td>
+                <td>63</td>
+                <td>57.7265</td>
+                <td>68</td>
+                <td>57.5530</td>
+                <td>49</td>
+                <td>59.0263</td>
+                <td>84</td>
+                <td>56.3452</td>
+                <td>52</td>
+                <td>58.9069</td>
+                <td>93</td>
+                <td>55.6984</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>73.01</td>
+                <td>45</td>
+                <td>60.2189</td>
+                <td>33</td>
+                <td>61.3227</td>
+                <td>40</td>
+                <td>60.5605</td>
+                <td>34</td>
+                <td>61.2359</td>
+                <td>42</td>
+                <td>60.3693</td>
+                <td>35</td>
+                <td>61.0615</td>
+                <td>43</td>
+                <td>60.2700</td>
+                <td>47</td>
+                <td>59.5744</td>
+                <td>39</td>
+                <td>60.6550</td>
+                <td>59</td>
+                <td>58.5073</td>
+                <td>62</td>
+                <td>58.2075</td>
+                <td>49</td>
+                <td>59.3037</td>
+                <td>73</td>
+                <td>57.5861</td>
+                <td>51</td>
+                <td>59.2492</td>
+                <td>80</td>
+                <td>57.0075</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 80.53</td>
+                <td>26</td>
+                <td>64.2030</td>
+                <td>37</td>
+                <td>62.5537</td>
+                <td>31</td>
+                <td>62.9227</td>
+                <td>41</td>
+                <td>62.2022</td>
+                <td>34</td>
+                <td>62.6458</td>
+                <td>40</td>
+                <td>62.2234</td>
+                <td>49</td>
+                <td>61.2947</td>
+                <td>32</td>
+                <td>62.9167</td>
+                <td>46</td>
+                <td>61.5948</td>
+                <td>50</td>
+                <td>61.2640</td>
+                <td>56</td>
+                <td>59.9459</td>
+                <td>57</td>
+                <td>59.9029</td>
+                <td>42</td>
+                <td>62.0747</td>
+                <td>55</td>
+                <td>60.0496</td>
+                <td>44</td>
+                <td>61.7114</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>70.57</td>
+                <td>53</td>
+                <td>58.4686</td>
+                <td>32</td>
+                <td>60.3348</td>
+                <td>42</td>
+                <td>59.2188</td>
+                <td>30</td>
+                <td>60.4408</td>
+                <td>45</td>
+                <td>58.9944</td>
+                <td>31</td>
+                <td>60.3445</td>
+                <td>40</td>
+                <td>59.4704</td>
+                <td>58</td>
+                <td>58.1658</td>
+                <td>38</td>
+                <td>59.8515</td>
+                <td>67</td>
+                <td>57.3195</td>
+                <td>70</td>
+                <td>57.1898</td>
+                <td>47</td>
+                <td>58.8094</td>
+                <td>89</td>
+                <td>55.7516</td>
+                <td>50</td>
+                <td>58.6268</td>
+                <td>108</td>
+                <td>55.0465</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>71.55</td>
+                <td>47</td>
+                <td>59.0451</td>
+                <td>33</td>
+                <td>60.6929</td>
+                <td>40</td>
+                <td>59.8166</td>
+                <td>34</td>
+                <td>60.6817</td>
+                <td>43</td>
+                <td>59.5106</td>
+                <td>35</td>
+                <td>60.6087</td>
+                <td>41</td>
+                <td>59.7701</td>
+                <td>55</td>
+                <td>58.6414</td>
+                <td>37</td>
+                <td>60.1505</td>
+                <td>63</td>
+                <td>57.6921</td>
+                <td>68</td>
+                <td>57.5554</td>
+                <td>49</td>
+                <td>58.9436</td>
+                <td>84</td>
+                <td>56.3501</td>
+                <td>52</td>
+                <td>58.7983</td>
+                <td>92</td>
+                <td>55.7182</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="14"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>14</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>73.47</td>
+                <td>41</td>
+                <td>60.6802</td>
+                <td>34</td>
+                <td>61.3633</td>
+                <td>37</td>
+                <td>61.1059</td>
+                <td>35</td>
+                <td>61.1446</td>
+                <td>42</td>
+                <td>60.5289</td>
+                <td>36</td>
+                <td>61.1293</td>
+                <td>44</td>
+                <td>60.3153</td>
+                <td>46</td>
+                <td>59.9814</td>
+                <td>40</td>
+                <td>60.6916</td>
+                <td>58</td>
+                <td>58.7417</td>
+                <td>60</td>
+                <td>58.2959</td>
+                <td>50</td>
+                <td>59.2171</td>
+                <td>63</td>
+                <td>58.2475</td>
+                <td>53</td>
+                <td>59.1202</td>
+                <td>72</td>
+                <td>57.8033</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>71.94</td>
+                <td>45</td>
+                <td>59.6766</td>
+                <td>33</td>
+                <td>61.0930</td>
+                <td>43</td>
+                <td>60.0178</td>
+                <td>32</td>
+                <td>61.1268</td>
+                <td>41</td>
+                <td>60.0661</td>
+                <td>35</td>
+                <td>60.9372</td>
+                <td>42</td>
+                <td>60.0615</td>
+                <td>52</td>
+                <td>59.1309</td>
+                <td>39</td>
+                <td>60.3403</td>
+                <td>61</td>
+                <td>58.2053</td>
+                <td>63</td>
+                <td>58.0267</td>
+                <td>48</td>
+                <td>59.2569</td>
+                <td>78</td>
+                <td>56.9530</td>
+                <td>49</td>
+                <td>59.1852</td>
+                <td>88</td>
+                <td>56.2899</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>74.27</td>
+                <td>39</td>
+                <td>61.2548</td>
+                <td>33</td>
+                <td>61.9569</td>
+                <td>40</td>
+                <td>61.2281</td>
+                <td>35</td>
+                <td>61.8731</td>
+                <td>38</td>
+                <td>61.4425</td>
+                <td>36</td>
+                <td>61.6949</td>
+                <td>45</td>
+                <td>60.7563</td>
+                <td>46</td>
+                <td>60.4491</td>
+                <td>43</td>
+                <td>60.9699</td>
+                <td>57</td>
+                <td>59.3267</td>
+                <td>58</td>
+                <td>59.0966</td>
+                <td>49</td>
+                <td>59.7387</td>
+                <td>63</td>
+                <td>58.6877</td>
+                <td>48</td>
+                <td>59.7504</td>
+                <td>72</td>
+                <td>58.0922</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 84.77</td>
+                <td>26</td>
+                <td>66.3572</td>
+                <td>35</td>
+                <td>64.1266</td>
+                <td>31</td>
+                <td>64.5292</td>
+                <td>41</td>
+                <td>63.6458</td>
+                <td>27</td>
+                <td>65.1791</td>
+                <td>38</td>
+                <td>63.7835</td>
+                <td>49</td>
+                <td>62.5262</td>
+                <td>29</td>
+                <td>64.7069</td>
+                <td>50</td>
+                <td>62.3368</td>
+                <td>44</td>
+                <td>63.0274</td>
+                <td>51</td>
+                <td>62.1291</td>
+                <td>56</td>
+                <td>60.9485</td>
+                <td>33</td>
+                <td>64.2928</td>
+                <td>53</td>
+                <td>61.1458</td>
+                <td>36</td>
+                <td>63.9075</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>70.79</td>
+                <td>49</td>
+                <td>58.8962</td>
+                <td>31</td>
+                <td>60.6305</td>
+                <td>42</td>
+                <td>59.4928</td>
+                <td>30</td>
+                <td>60.6894</td>
+                <td>43</td>
+                <td>59.3152</td>
+                <td>35</td>
+                <td>60.4925</td>
+                <td>40</td>
+                <td>59.6879</td>
+                <td>57</td>
+                <td>58.5091</td>
+                <td>39</td>
+                <td>59.9989</td>
+                <td>62</td>
+                <td>57.6260</td>
+                <td>68</td>
+                <td>57.4158</td>
+                <td>47</td>
+                <td>58.9491</td>
+                <td>84</td>
+                <td>56.1298</td>
+                <td>51</td>
+                <td>58.8275</td>
+                <td>98</td>
+                <td>55.4928</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>72.18</td>
+                <td>45</td>
+                <td>59.8953</td>
+                <td>33</td>
+                <td>61.1786</td>
+                <td>40</td>
+                <td>60.3070</td>
+                <td>34</td>
+                <td>61.1054</td>
+                <td>43</td>
+                <td>60.1227</td>
+                <td>35</td>
+                <td>60.8970</td>
+                <td>42</td>
+                <td>60.1320</td>
+                <td>47</td>
+                <td>59.3497</td>
+                <td>39</td>
+                <td>60.4185</td>
+                <td>59</td>
+                <td>58.3183</td>
+                <td>63</td>
+                <td>58.0007</td>
+                <td>49</td>
+                <td>59.2023</td>
+                <td>76</td>
+                <td>57.2108</td>
+                <td>50</td>
+                <td>59.1371</td>
+                <td>84</td>
+                <td>56.6420</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>77.42</td>
+                <td>30</td>
+                <td>62.7814</td>
+                <td>33</td>
+                <td>62.2540</td>
+                <td>36</td>
+                <td>62.1619</td>
+                <td>38</td>
+                <td>61.9441</td>
+                <td>37</td>
+                <td>62.0090</td>
+                <td>40</td>
+                <td>61.8017</td>
+                <td>46</td>
+                <td>61.0033</td>
+                <td>41</td>
+                <td>61.7779</td>
+                <td>43</td>
+                <td>61.2116</td>
+                <td>48</td>
+                <td>60.3299</td>
+                <td>59</td>
+                <td>59.4073</td>
+                <td>54</td>
+                <td>59.7187</td>
+                <td>47</td>
+                <td>60.5052</td>
+                <td>52</td>
+                <td>59.8243</td>
+                <td>49</td>
+                <td>60.1010</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>70.04</td>
+                <td>54</td>
+                <td>58.3808</td>
+                <td>32</td>
+                <td>60.2500</td>
+                <td>42</td>
+                <td>59.0901</td>
+                <td>30</td>
+                <td>60.3638</td>
+                <td>46</td>
+                <td>58.8707</td>
+                <td>31</td>
+                <td>60.2580</td>
+                <td>40</td>
+                <td>59.3850</td>
+                <td>58</td>
+                <td>58.0969</td>
+                <td>38</td>
+                <td>59.6989</td>
+                <td>66</td>
+                <td>57.2609</td>
+                <td>70</td>
+                <td>57.0818</td>
+                <td>47</td>
+                <td>58.7479</td>
+                <td>87</td>
+                <td>55.6307</td>
+                <td>49</td>
+                <td>58.5580</td>
+                <td>108</td>
+                <td>54.9210</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>70.92</td>
+                <td>47</td>
+                <td>58.8731</td>
+                <td>31</td>
+                <td>60.5857</td>
+                <td>41</td>
+                <td>59.6288</td>
+                <td>30</td>
+                <td>60.5888</td>
+                <td>43</td>
+                <td>59.3503</td>
+                <td>34</td>
+                <td>60.4994</td>
+                <td>40</td>
+                <td>59.6652</td>
+                <td>56</td>
+                <td>58.5144</td>
+                <td>38</td>
+                <td>59.9643</td>
+                <td>62</td>
+                <td>57.5899</td>
+                <td>68</td>
+                <td>57.4200</td>
+                <td>48</td>
+                <td>58.8716</td>
+                <td>83</td>
+                <td>56.1276</td>
+                <td>51</td>
+                <td>58.7163</td>
+                <td>97</td>
+                <td>55.4851</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="15"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>15</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>72.55</td>
+                <td>44</td>
+                <td>60.0969</td>
+                <td>33</td>
+                <td>61.1890</td>
+                <td>36</td>
+                <td>60.7152</td>
+                <td>34</td>
+                <td>60.9916</td>
+                <td>42</td>
+                <td>60.2477</td>
+                <td>35</td>
+                <td>60.9490</td>
+                <td>43</td>
+                <td>60.1589</td>
+                <td>47</td>
+                <td>59.5575</td>
+                <td>38</td>
+                <td>60.4283</td>
+                <td>59</td>
+                <td>58.3891</td>
+                <td>62</td>
+                <td>58.0643</td>
+                <td>50</td>
+                <td>59.1014</td>
+                <td>70</td>
+                <td>57.5349</td>
+                <td>52</td>
+                <td>59.0028</td>
+                <td>77</td>
+                <td>57.0700</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.5000</td>
+                <td>71.23</td>
+                <td>46</td>
+                <td>59.3703</td>
+                <td>33</td>
+                <td>60.9421</td>
+                <td>43</td>
+                <td>59.8085</td>
+                <td>32</td>
+                <td>60.9902</td>
+                <td>42</td>
+                <td>59.8229</td>
+                <td>35</td>
+                <td>60.7684</td>
+                <td>41</td>
+                <td>59.9255</td>
+                <td>52</td>
+                <td>58.9664</td>
+                <td>39</td>
+                <td>60.1299</td>
+                <td>62</td>
+                <td>58.0559</td>
+                <td>64</td>
+                <td>57.8193</td>
+                <td>48</td>
+                <td>59.1470</td>
+                <td>79</td>
+                <td>56.7325</td>
+                <td>49</td>
+                <td>59.0734</td>
+                <td>88</td>
+                <td>56.0819</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.6667</td>
+                <td>73.19</td>
+                <td>41</td>
+                <td>60.6905</td>
+                <td>32</td>
+                <td>61.7154</td>
+                <td>40</td>
+                <td>60.8636</td>
+                <td>34</td>
+                <td>61.6406</td>
+                <td>37</td>
+                <td>61.0183</td>
+                <td>36</td>
+                <td>61.3920</td>
+                <td>45</td>
+                <td>60.5409</td>
+                <td>46</td>
+                <td>60.0941</td>
+                <td>43</td>
+                <td>60.6758</td>
+                <td>57</td>
+                <td>59.0175</td>
+                <td>59</td>
+                <td>58.7296</td>
+                <td>49</td>
+                <td>59.5732</td>
+                <td>66</td>
+                <td>58.2202</td>
+                <td>48</td>
+                <td>59.5770</td>
+                <td>77</td>
+                <td>57.6338</td>
+              </tr>
+              <tr
+                class="diverged-row"
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="54"
+                data-mult="0.9000"
+                data-conv="diverged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>54</td>
+                <td>0.9000</td>
+                <td><span class="diverged-badge">Diverged</span> 81.18</td>
+                <td>26</td>
+                <td>64.2819</td>
+                <td>32</td>
+                <td>63.4959</td>
+                <td>33</td>
+                <td>63.3790</td>
+                <td>37</td>
+                <td>63.0912</td>
+                <td>27</td>
+                <td>64.0411</td>
+                <td>39</td>
+                <td>62.9625</td>
+                <td>46</td>
+                <td>61.9730</td>
+                <td>36</td>
+                <td>63.1014</td>
+                <td>48</td>
+                <td>61.7845</td>
+                <td>49</td>
+                <td>61.6093</td>
+                <td>51</td>
+                <td>61.1723</td>
+                <td>53</td>
+                <td>60.5788</td>
+                <td>42</td>
+                <td>62.4601</td>
+                <td>52</td>
+                <td>60.7080</td>
+                <td>45</td>
+                <td>62.0287</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.5000</td>
+                <td>70.21</td>
+                <td>51</td>
+                <td>58.6668</td>
+                <td>31</td>
+                <td>60.4968</td>
+                <td>42</td>
+                <td>59.3288</td>
+                <td>30</td>
+                <td>60.5806</td>
+                <td>44</td>
+                <td>59.1332</td>
+                <td>32</td>
+                <td>60.3690</td>
+                <td>40</td>
+                <td>59.5667</td>
+                <td>56</td>
+                <td>58.3947</td>
+                <td>38</td>
+                <td>59.8186</td>
+                <td>63</td>
+                <td>57.5198</td>
+                <td>68</td>
+                <td>57.2581</td>
+                <td>46</td>
+                <td>58.8619</td>
+                <td>86</td>
+                <td>55.9659</td>
+                <td>49</td>
+                <td>58.7381</td>
+                <td>100</td>
+                <td>55.3381</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.6667</td>
+                <td>71.37</td>
+                <td>45</td>
+                <td>59.5045</td>
+                <td>32</td>
+                <td>61.0034</td>
+                <td>40</td>
+                <td>60.0527</td>
+                <td>33</td>
+                <td>60.9634</td>
+                <td>44</td>
+                <td>59.8297</td>
+                <td>35</td>
+                <td>60.7207</td>
+                <td>41</td>
+                <td>59.9750</td>
+                <td>48</td>
+                <td>59.1196</td>
+                <td>37</td>
+                <td>60.1907</td>
+                <td>60</td>
+                <td>58.1165</td>
+                <td>65</td>
+                <td>57.7582</td>
+                <td>49</td>
+                <td>59.0917</td>
+                <td>76</td>
+                <td>56.8945</td>
+                <td>51</td>
+                <td>59.0142</td>
+                <td>84</td>
+                <td>56.3373</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="55"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>55</td>
+                <td>0.9000</td>
+                <td>75.35</td>
+                <td>35</td>
+                <td>61.6948</td>
+                <td>33</td>
+                <td>61.9549</td>
+                <td>37</td>
+                <td>61.5884</td>
+                <td>36</td>
+                <td>61.6830</td>
+                <td>39</td>
+                <td>61.4107</td>
+                <td>38</td>
+                <td>61.4586</td>
+                <td>45</td>
+                <td>60.7309</td>
+                <td>41</td>
+                <td>60.9825</td>
+                <td>43</td>
+                <td>60.8650</td>
+                <td>48</td>
+                <td>59.6590</td>
+                <td>61</td>
+                <td>58.9172</td>
+                <td>51</td>
+                <td>59.5402</td>
+                <td>53</td>
+                <td>59.4627</td>
+                <td>50</td>
+                <td>59.6118</td>
+                <td>58</td>
+                <td>59.0449</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.5000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.5000</td>
+                <td>69.53</td>
+                <td>55</td>
+                <td>58.2150</td>
+                <td>32</td>
+                <td>60.1388</td>
+                <td>43</td>
+                <td>58.9615</td>
+                <td>30</td>
+                <td>60.2732</td>
+                <td>46</td>
+                <td>58.7207</td>
+                <td>31</td>
+                <td>60.1629</td>
+                <td>41</td>
+                <td>59.2808</td>
+                <td>58</td>
+                <td>58.0209</td>
+                <td>38</td>
+                <td>59.5433</td>
+                <td>65</td>
+                <td>57.1928</td>
+                <td>70</td>
+                <td>56.9562</td>
+                <td>47</td>
+                <td>58.6766</td>
+                <td>88</td>
+                <td>55.5329</td>
+                <td>50</td>
+                <td>58.4792</td>
+                <td>106</td>
+                <td>54.8248</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.6667"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.6667</td>
+                <td>70.29</td>
+                <td>49</td>
+                <td>58.6403</td>
+                <td>31</td>
+                <td>60.4444</td>
+                <td>42</td>
+                <td>59.4432</td>
+                <td>30</td>
+                <td>60.4817</td>
+                <td>44</td>
+                <td>59.1557</td>
+                <td>32</td>
+                <td>60.3797</td>
+                <td>39</td>
+                <td>59.5379</td>
+                <td>56</td>
+                <td>58.3942</td>
+                <td>37</td>
+                <td>59.7789</td>
+                <td>63</td>
+                <td>57.4858</td>
+                <td>67</td>
+                <td>57.2612</td>
+                <td>47</td>
+                <td>58.7897</td>
+                <td>84</td>
+                <td>55.9711</td>
+                <td>50</td>
+                <td>58.6234</td>
+                <td>100</td>
+                <td>55.3199</td>
+              </tr>
+              <tr
+                data-weight="0.25"
+                data-topwins="16"
+                data-thresh="56"
+                data-mult="0.9000"
+                data-conv="converged"
+              >
+                <td>0.25/0.75</td>
+                <td>16</td>
+                <td>56</td>
+                <td>0.9000</td>
+                <td>71.68</td>
+                <td>45</td>
+                <td>59.6018</td>
+                <td>32</td>
+                <td>60.9851</td>
+                <td>36</td>
+                <td>60.3758</td>
+                <td>34</td>
+                <td>60.8311</td>
+                <td>42</td>
+                <td>59.9395</td>
+                <td>35</td>
+                <td>60.7708</td>
+                <td>41</td>
+                <td>59.9833</td>
+                <td>47</td>
+                <td>59.2411</td>
+                <td>37</td>
+                <td>60.1810</td>
+                <td>59</td>
+                <td>58.1281</td>
+                <td>63</td>
+                <td>57.8166</td>
+                <td>49</td>
+                <td>58.9804</td>
+                <td>76</td>
+                <td>57.0712</td>
+                <td>52</td>
+                <td>58.8793</td>
+                <td>83</td>
+                <td>56.5795</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <script>
+        function switchTab(tabName) {
+          document
+            .querySelectorAll('.tab-content')
+            .forEach(el => el.classList.remove('active'));
+          document
+            .querySelectorAll('.tab-btn')
+            .forEach(el => el.classList.remove('active'));
+          document.getElementById('tab-' + tabName).classList.add('active');
+          const buttons = document.querySelectorAll('.tab-btn');
+          const tabMap = {
+            convergence: 0,
+            summary: 1,
+            sensitivity: 2,
+            full: 3,
+          };
+          if (tabMap[tabName] !== undefined)
+            buttons[tabMap[tabName]].classList.add('active');
+        }
+
+        function sortTable(tableId, colIdx) {
+          const table = document.getElementById(tableId);
+          const tbody = table.querySelector('tbody');
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          const dirKey = 'data-sort-dir-' + colIdx;
+          const currentDir = table.getAttribute(dirKey) || 'asc';
+          const newDir = currentDir === 'asc' ? 'desc' : 'asc';
+          table.setAttribute(dirKey, newDir);
+
+          rows.sort((a, b) => {
+            let aVal = a.cells[colIdx].textContent.trim();
+            let bVal = b.cells[colIdx].textContent.trim();
+            const aNum = parseFloat(aVal.replace(/[^0-9.-]/g, ''));
+            const bNum = parseFloat(bVal.replace(/[^0-9.-]/g, ''));
+            if (!isNaN(aNum) && !isNaN(bNum)) {
+              return newDir === 'asc' ? aNum - bNum : bNum - aNum;
+            }
+            if (aVal < bVal) return newDir === 'asc' ? -1 : 1;
+            if (aVal > bVal) return newDir === 'asc' ? 1 : -1;
+            return 0;
+          });
+          rows.forEach(r => tbody.appendChild(r));
+        }
+
+        function filterFullTable() {
+          const weight = document.getElementById('filterWeight').value;
+          const topWins = document.getElementById('filterTopWins').value;
+          const thresh = document.getElementById('filterThresh').value;
+          const mult = document.getElementById('filterMult').value;
+          const conv = document.getElementById('filterConv').value;
+
+          const rows = document.querySelectorAll('#fullTable tbody tr');
+          rows.forEach(row => {
+            let show = true;
+            if (weight !== 'all' && row.dataset.weight !== weight) show = false;
+            if (topWins !== 'all' && row.dataset.topwins !== topWins)
+              show = false;
+            if (thresh !== 'all' && row.dataset.thresh !== thresh) show = false;
+            if (mult !== 'all' && row.dataset.mult !== mult) show = false;
+            if (conv !== 'all' && row.dataset.conv !== conv) show = false;
+            row.style.display = show ? '' : 'none';
+          });
+        }
+      </script>
+
+      <p class="footer">
+        Generated February 27, 2026 at 12:56 PM<br />
+        <a href="https://thed3statlab.com">TheD3StatLab</a>
+      </p>
+    </div>
+  </body>
+</html>
