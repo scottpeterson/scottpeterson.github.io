@@ -13,7 +13,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 90
@@ -27,7 +27,7 @@
       },
       {
         "team": "WashU",
-        "overall_seed": 14,
+        "overall_seed": 15,
         "quadrant_seed": 4,
         "conference": "UAA",
         "distance_miles": 438
@@ -54,32 +54,32 @@
         "distance_miles": 151
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 184
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 277
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 21
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 184
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 286
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 21
       },
       {
         "team": "Trine",
@@ -104,10 +104,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 311
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 354
       },
       {
         "team": "Otterbein",
@@ -117,15 +124,8 @@
         "distance_miles": 486
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 177
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 294
@@ -237,22 +237,22 @@
         "distance_miles": 345
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 163
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 462
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 163
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 349
@@ -301,42 +301,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 180
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 175
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 370
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 284
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 210
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 360
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 377
@@ -406,7 +406,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 281
@@ -538,18 +538,18 @@
         "distance_miles": 425
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 353
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 374
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 353
       },
       {
         "team": "Cortland",
@@ -588,35 +588,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 83
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 136
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 248
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 100
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 61
@@ -629,8 +622,15 @@
         "distance_miles": 404
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 179
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 245
@@ -700,7 +700,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 98
@@ -798,7 +798,7 @@
       },
       {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 433
@@ -840,35 +840,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 232
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 296
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 316
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 127
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 214
@@ -881,6 +874,13 @@
         "distance_miles": 350
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 56
+      },
+      {
         "team": "Transylvania",
         "overall_seed": 44,
         "quadrant_seed": 11,
@@ -889,7 +889,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 291
@@ -944,18 +944,18 @@
         "distance_miles": 439
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 206
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 317
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 206
       },
       {
         "team": "Asbury",
@@ -1045,22 +1045,22 @@
         "distance_miles": 459
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 236
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 374
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 236
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 422
@@ -1109,35 +1109,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 132
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 87
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 283
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 236
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 162
@@ -1150,8 +1143,15 @@
         "distance_miles": 466
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 312
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 312
@@ -1221,7 +1221,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 299
@@ -1312,7 +1312,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 448
@@ -1325,18 +1325,18 @@
         "distance_miles": 44
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 451
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 115
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 451
       },
       {
         "team": "Carroll",
@@ -1346,18 +1346,18 @@
         "distance_miles": 495
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 337
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 380
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 337
       },
       {
         "team": "Cortland",
@@ -1389,38 +1389,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 347
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 384
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 168
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 310
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 333
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 257
       },
       {
         "team": "Otterbein",
@@ -1428,6 +1428,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 27
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 351
       },
       {
         "team": "Transylvania",
@@ -1438,7 +1445,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 140
@@ -1479,18 +1486,18 @@
         "distance_miles": 191
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 455
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 454
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 455
       },
       {
         "team": "Principia",
@@ -1559,7 +1566,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 458
@@ -1573,7 +1580,7 @@
       },
       {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 27
@@ -1586,18 +1593,18 @@
         "distance_miles": 462
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 349
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 462
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 349
       },
       {
         "team": "Cortland",
@@ -1643,38 +1650,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 318
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 290
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 124
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 308
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 303
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 369
       },
       {
         "team": "Otterbein",
@@ -1682,6 +1689,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 138
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 384
       },
       {
         "team": "Transylvania",
@@ -1692,7 +1706,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 148
@@ -1748,7 +1762,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 437
@@ -1788,14 +1802,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 231
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 22
@@ -1945,7 +1959,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 254
@@ -1958,18 +1972,18 @@
         "distance_miles": 319
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 420
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 316
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 420
       },
       {
         "team": "Carroll",
@@ -1993,22 +2007,22 @@
         "distance_miles": 433
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 146
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 257
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 146
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 326
@@ -2029,10 +2043,17 @@
       },
       {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 438
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 263
       },
       {
         "team": "Otterbein",
@@ -2042,13 +2063,6 @@
         "distance_miles": 311
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 458
-      },
-      {
         "team": "Transylvania",
         "overall_seed": 44,
         "quadrant_seed": 11,
@@ -2056,18 +2070,18 @@
         "distance_miles": 415
       },
       {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 461
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 458
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 461
       },
       {
         "team": "SUNY Geneseo",
@@ -2115,6 +2129,13 @@
         "score": "72-61"
       },
       {
+        "opponent": "DePauw",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "70-55"
+      },
+      {
         "opponent": "Ripon",
         "year": 2024,
         "round": "First Round",
@@ -2123,8 +2144,81 @@
       }
     ]
   },
-  "UW-Whitewater": {
+  "Concordia Moorhead": {
     "overall_seed": 10,
+    "quadrant_seed": 3,
+    "conference": "MIAC",
+    "nearby_teams": [
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 497
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 392
+      },
+      {
+        "team": "Bethel",
+        "overall_seed": 21,
+        "quadrant_seed": 6,
+        "conference": "MIAC",
+        "distance_miles": 234
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 495
+      },
+      {
+        "team": "UW-River Falls",
+        "overall_seed": 27,
+        "quadrant_seed": 7,
+        "conference": "WIAC",
+        "distance_miles": 269
+      },
+      {
+        "team": "Gustavus Adolphus",
+        "overall_seed": 37,
+        "quadrant_seed": 10,
+        "conference": "MIAC",
+        "distance_miles": 292
+      },
+      {
+        "team": "Wartburg",
+        "overall_seed": 45,
+        "quadrant_seed": 12,
+        "conference": "ARC",
+        "distance_miles": 434
+      },
+      {
+        "team": "UW-Superior",
+        "overall_seed": 64,
+        "quadrant_seed": 16,
+        "conference": "UMAC",
+        "distance_miles": 253
+      }
+    ],
+    "nonconference_tournament_opponents": ["Hardin-Simmons", "UW-River Falls"],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "75-62"
+      }
+    ]
+  },
+  "UW-Whitewater": {
+    "overall_seed": 11,
     "quadrant_seed": 3,
     "conference": "WIAC",
     "nearby_teams": [
@@ -2164,18 +2258,18 @@
         "distance_miles": 419
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 350
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 443
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 350
       },
       {
         "team": "Carroll",
@@ -2199,32 +2293,32 @@
         "distance_miles": 180
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 112
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 182
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 82
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 112
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 308
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 82
       },
       {
         "team": "Trine",
@@ -2249,10 +2343,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 338
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 284
       },
       {
         "team": "Otterbein",
@@ -2260,13 +2361,6 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 416
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 204
       },
       {
         "team": "Transylvania",
@@ -2277,7 +2371,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 245
@@ -2342,86 +2436,6 @@
       }
     ]
   },
-  "Concordia Moorhead": {
-    "overall_seed": 11,
-    "quadrant_seed": 3,
-    "conference": "MIAC",
-    "nearby_teams": [
-      {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 497
-      },
-      {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 392
-      },
-      {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 495
-      },
-      {
-        "team": "Bethel",
-        "overall_seed": 23,
-        "quadrant_seed": 6,
-        "conference": "MIAC",
-        "distance_miles": 234
-      },
-      {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 269
-      },
-      {
-        "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
-        "conference": "MIAC",
-        "distance_miles": 292
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 350
-      },
-      {
-        "team": "Wartburg",
-        "overall_seed": 46,
-        "quadrant_seed": 12,
-        "conference": "ARC",
-        "distance_miles": 434
-      },
-      {
-        "team": "UW-Superior",
-        "overall_seed": 64,
-        "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 253
-      }
-    ],
-    "nonconference_tournament_opponents": ["Hardin-Simmons", "UW-River Falls"],
-    "recent_ncaa_tournament_matchups": [
-      {
-        "opponent": "Illinois Wesleyan",
-        "year": 2024,
-        "round": "First Round",
-        "result": "L",
-        "score": "75-62"
-      }
-    ]
-  },
   "Ohio Wesleyan": {
     "overall_seed": 12,
     "quadrant_seed": 3,
@@ -2478,24 +2492,24 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 419
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 436
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 115
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 436
       },
       {
         "team": "Carroll",
@@ -2512,22 +2526,22 @@
         "distance_miles": 499
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 310
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 356
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 310
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 489
@@ -2555,38 +2569,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 387
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 383
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 210
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 350
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 375
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 233
       },
       {
         "team": "Otterbein",
@@ -2594,6 +2608,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 24
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 374
       },
       {
         "team": "Transylvania",
@@ -2604,7 +2625,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 182
@@ -2646,7 +2667,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 498
@@ -2702,8 +2723,309 @@
       }
     ]
   },
-  "Smith": {
+  "Baldwin Wallace": {
     "overall_seed": 13,
+    "quadrant_seed": 4,
+    "conference": "OAC",
+    "nearby_teams": [
+      {
+        "team": "NYU",
+        "overall_seed": 2,
+        "quadrant_seed": 1,
+        "conference": "UAA",
+        "distance_miles": 462
+      },
+      {
+        "team": "Johns Hopkins",
+        "overall_seed": 3,
+        "quadrant_seed": 1,
+        "conference": "CC",
+        "distance_miles": 374
+      },
+      {
+        "team": "Washington & Lee",
+        "overall_seed": 4,
+        "quadrant_seed": 1,
+        "conference": "ODAC",
+        "distance_miles": 433
+      },
+      {
+        "team": "Scranton",
+        "overall_seed": 5,
+        "quadrant_seed": 2,
+        "conference": "LAND",
+        "distance_miles": 374
+      },
+      {
+        "team": "Denison",
+        "overall_seed": 6,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 115
+      },
+      {
+        "team": "John Carroll",
+        "overall_seed": 7,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 27
+      },
+      {
+        "team": "Hope",
+        "overall_seed": 9,
+        "quadrant_seed": 3,
+        "conference": "MIAA",
+        "distance_miles": 316
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 443
+      },
+      {
+        "team": "Ohio Wesleyan",
+        "overall_seed": 12,
+        "quadrant_seed": 3,
+        "conference": "NCAC",
+        "distance_miles": 115
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 445
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 445
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 333
+      },
+      {
+        "team": "Cortland",
+        "overall_seed": 24,
+        "quadrant_seed": 6,
+        "conference": "SUNYAC",
+        "distance_miles": 383
+      },
+      {
+        "team": "Trine",
+        "overall_seed": 25,
+        "quadrant_seed": 7,
+        "conference": "MIAA",
+        "distance_miles": 178
+      },
+      {
+        "team": "William Paterson",
+        "overall_seed": 26,
+        "quadrant_seed": 7,
+        "conference": "NJAC",
+        "distance_miles": 450
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 433
+      },
+      {
+        "team": "SUNY New Paltz",
+        "overall_seed": 29,
+        "quadrant_seed": 8,
+        "conference": "SUNYAC",
+        "distance_miles": 485
+      },
+      {
+        "team": "Randolph-Macon",
+        "overall_seed": 32,
+        "quadrant_seed": 8,
+        "conference": "ODAC",
+        "distance_miles": 454
+      },
+      {
+        "team": "Messiah",
+        "overall_seed": 33,
+        "quadrant_seed": 9,
+        "conference": "MACC",
+        "distance_miles": 326
+      },
+      {
+        "team": "Carnegie Mellon",
+        "overall_seed": 35,
+        "quadrant_seed": 9,
+        "conference": "UAA",
+        "distance_miles": 133
+      },
+      {
+        "team": "Shenandoah",
+        "overall_seed": 36,
+        "quadrant_seed": 9,
+        "conference": "ODAC",
+        "distance_miles": 320
+      },
+      {
+        "team": "Gettysburg",
+        "overall_seed": 38,
+        "quadrant_seed": 10,
+        "conference": "CC",
+        "distance_miles": 312
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 353
+      },
+      {
+        "team": "Otterbein",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "OAC",
+        "distance_miles": 123
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 393
+      },
+      {
+        "team": "Transylvania",
+        "overall_seed": 44,
+        "quadrant_seed": 11,
+        "conference": "HCAC",
+        "distance_miles": 318
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 155
+      },
+      {
+        "team": "Brooklyn College",
+        "overall_seed": 48,
+        "quadrant_seed": 12,
+        "conference": "CUNYAC",
+        "distance_miles": 470
+      },
+      {
+        "team": "DeSales",
+        "overall_seed": 49,
+        "quadrant_seed": 13,
+        "conference": "MACF",
+        "distance_miles": 409
+      },
+      {
+        "team": "Immaculata",
+        "overall_seed": 50,
+        "quadrant_seed": 13,
+        "conference": "AEC",
+        "distance_miles": 245
+      },
+      {
+        "team": "Rochester Tech",
+        "overall_seed": 52,
+        "quadrant_seed": 13,
+        "conference": "LL",
+        "distance_miles": 273
+      },
+      {
+        "team": "Merchant Marine",
+        "overall_seed": 53,
+        "quadrant_seed": 14,
+        "conference": "SKY",
+        "distance_miles": 482
+      },
+      {
+        "team": "SUNY Geneseo",
+        "overall_seed": 54,
+        "quadrant_seed": 14,
+        "conference": "E8",
+        "distance_miles": 257
+      },
+      {
+        "team": "Penn State-Behrend",
+        "overall_seed": 55,
+        "quadrant_seed": 14,
+        "conference": "AMCC",
+        "distance_miles": 119
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 445
+      },
+      {
+        "team": "Asbury",
+        "overall_seed": 63,
+        "quadrant_seed": 16,
+        "conference": "CCS",
+        "distance_miles": 341
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "John Carroll",
+      "Penn State-Behrend",
+      "Trine"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "60-53"
+      },
+      {
+        "opponent": "Ohio Wesleyan",
+        "year": 2025,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "68-65"
+      },
+      {
+        "opponent": "Washington & Lee",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "75-71"
+      },
+      {
+        "opponent": "Bowdoin",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "L",
+        "score": "78-48"
+      },
+      {
+        "opponent": "SUNY New Paltz",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "65-42"
+      }
+    ]
+  },
+  "Smith": {
+    "overall_seed": 14,
     "quadrant_seed": 4,
     "conference": "NEWMAC",
     "nearby_teams": [
@@ -2737,7 +3059,7 @@
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 235
@@ -2779,28 +3101,21 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 340
       },
       {
-        "team": "Susquehanna",
+        "team": "Shenandoah",
         "overall_seed": 36,
         "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 320
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
         "conference": "ODAC",
         "distance_miles": 443
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 369
@@ -2870,7 +3185,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 439
@@ -2968,7 +3283,7 @@
     ]
   },
   "WashU": {
-    "overall_seed": 14,
+    "overall_seed": 15,
     "quadrant_seed": 4,
     "conference": "UAA",
     "nearby_teams": [
@@ -2995,7 +3310,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 350
@@ -3029,22 +3344,22 @@
         "distance_miles": 463
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 307
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 163
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 307
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 438
@@ -3064,18 +3379,18 @@
         "distance_miles": 376
       },
       {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 212
+      },
+      {
         "team": "Otterbein",
         "overall_seed": 41,
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 433
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 449
       },
       {
         "team": "Transylvania",
@@ -3086,7 +3401,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 360
@@ -3108,304 +3423,11 @@
     ],
     "nonconference_tournament_opponents": [
       "Christopher Newport",
+      "DePauw",
       "Illinois Wesleyan",
       "UW-Whitewater"
     ],
     "recent_ncaa_tournament_matchups": []
-  },
-  "Baldwin Wallace": {
-    "overall_seed": 15,
-    "quadrant_seed": 4,
-    "conference": "OAC",
-    "nearby_teams": [
-      {
-        "team": "NYU",
-        "overall_seed": 2,
-        "quadrant_seed": 1,
-        "conference": "UAA",
-        "distance_miles": 462
-      },
-      {
-        "team": "Johns Hopkins",
-        "overall_seed": 3,
-        "quadrant_seed": 1,
-        "conference": "CC",
-        "distance_miles": 374
-      },
-      {
-        "team": "Washington & Lee",
-        "overall_seed": 4,
-        "quadrant_seed": 1,
-        "conference": "ODAC",
-        "distance_miles": 433
-      },
-      {
-        "team": "Scranton",
-        "overall_seed": 5,
-        "quadrant_seed": 2,
-        "conference": "LAND",
-        "distance_miles": 374
-      },
-      {
-        "team": "Denison",
-        "overall_seed": 6,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 115
-      },
-      {
-        "team": "John Carroll",
-        "overall_seed": 7,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 27
-      },
-      {
-        "team": "Hope",
-        "overall_seed": 9,
-        "quadrant_seed": 3,
-        "conference": "MIAA",
-        "distance_miles": 316
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 443
-      },
-      {
-        "team": "Ohio Wesleyan",
-        "overall_seed": 12,
-        "quadrant_seed": 3,
-        "conference": "NCAC",
-        "distance_miles": 115
-      },
-      {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 445
-      },
-      {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 333
-      },
-      {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 445
-      },
-      {
-        "team": "Cortland",
-        "overall_seed": 24,
-        "quadrant_seed": 6,
-        "conference": "SUNYAC",
-        "distance_miles": 383
-      },
-      {
-        "team": "Trine",
-        "overall_seed": 25,
-        "quadrant_seed": 7,
-        "conference": "MIAA",
-        "distance_miles": 178
-      },
-      {
-        "team": "William Paterson",
-        "overall_seed": 26,
-        "quadrant_seed": 7,
-        "conference": "NJAC",
-        "distance_miles": 450
-      },
-      {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 433
-      },
-      {
-        "team": "SUNY New Paltz",
-        "overall_seed": 29,
-        "quadrant_seed": 8,
-        "conference": "SUNYAC",
-        "distance_miles": 485
-      },
-      {
-        "team": "Randolph-Macon",
-        "overall_seed": 32,
-        "quadrant_seed": 8,
-        "conference": "ODAC",
-        "distance_miles": 454
-      },
-      {
-        "team": "Messiah",
-        "overall_seed": 35,
-        "quadrant_seed": 9,
-        "conference": "MACC",
-        "distance_miles": 326
-      },
-      {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 298
-      },
-      {
-        "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
-        "conference": "UAA",
-        "distance_miles": 133
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
-        "conference": "ODAC",
-        "distance_miles": 320
-      },
-      {
-        "team": "Gettysburg",
-        "overall_seed": 39,
-        "quadrant_seed": 10,
-        "conference": "CC",
-        "distance_miles": 312
-      },
-      {
-        "team": "Otterbein",
-        "overall_seed": 41,
-        "quadrant_seed": 11,
-        "conference": "OAC",
-        "distance_miles": 123
-      },
-      {
-        "team": "Transylvania",
-        "overall_seed": 44,
-        "quadrant_seed": 11,
-        "conference": "HCAC",
-        "distance_miles": 318
-      },
-      {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 155
-      },
-      {
-        "team": "Brooklyn College",
-        "overall_seed": 48,
-        "quadrant_seed": 12,
-        "conference": "CUNYAC",
-        "distance_miles": 470
-      },
-      {
-        "team": "DeSales",
-        "overall_seed": 49,
-        "quadrant_seed": 13,
-        "conference": "MACF",
-        "distance_miles": 409
-      },
-      {
-        "team": "Immaculata",
-        "overall_seed": 50,
-        "quadrant_seed": 13,
-        "conference": "AEC",
-        "distance_miles": 245
-      },
-      {
-        "team": "Rochester Tech",
-        "overall_seed": 52,
-        "quadrant_seed": 13,
-        "conference": "LL",
-        "distance_miles": 273
-      },
-      {
-        "team": "Merchant Marine",
-        "overall_seed": 53,
-        "quadrant_seed": 14,
-        "conference": "SKY",
-        "distance_miles": 482
-      },
-      {
-        "team": "SUNY Geneseo",
-        "overall_seed": 54,
-        "quadrant_seed": 14,
-        "conference": "E8",
-        "distance_miles": 257
-      },
-      {
-        "team": "Penn State-Behrend",
-        "overall_seed": 55,
-        "quadrant_seed": 14,
-        "conference": "AMCC",
-        "distance_miles": 119
-      },
-      {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 445
-      },
-      {
-        "team": "Asbury",
-        "overall_seed": 63,
-        "quadrant_seed": 16,
-        "conference": "CCS",
-        "distance_miles": 341
-      }
-    ],
-    "nonconference_tournament_opponents": [
-      "John Carroll",
-      "Penn State-Behrend",
-      "Trine"
-    ],
-    "recent_ncaa_tournament_matchups": [
-      {
-        "opponent": "UW-Oshkosh",
-        "year": 2025,
-        "round": "Sectional Final",
-        "result": "L",
-        "score": "60-53"
-      },
-      {
-        "opponent": "Ohio Wesleyan",
-        "year": 2025,
-        "round": "Sectional Semifinal",
-        "result": "W",
-        "score": "68-65"
-      },
-      {
-        "opponent": "Washington & Lee",
-        "year": 2025,
-        "round": "Second Round",
-        "result": "W",
-        "score": "75-71"
-      },
-      {
-        "opponent": "Bowdoin",
-        "year": 2024,
-        "round": "Sectional Semifinal",
-        "result": "L",
-        "score": "78-48"
-      },
-      {
-        "opponent": "SUNY New Paltz",
-        "year": 2024,
-        "round": "Second Round",
-        "result": "W",
-        "score": "65-42"
-      }
-    ]
   },
   "Carroll": {
     "overall_seed": 16,
@@ -3442,7 +3464,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 37
@@ -3455,18 +3477,18 @@
         "distance_miles": 422
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 366
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 445
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 366
       },
       {
         "team": "UW-Platteville",
@@ -3483,32 +3505,32 @@
         "distance_miles": 198
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 115
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 204
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 93
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 115
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 325
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 93
       },
       {
         "team": "Trine",
@@ -3533,10 +3555,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 356
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 283
       },
       {
         "team": "Otterbein",
@@ -3544,13 +3573,6 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 417
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 217
       },
       {
         "team": "Transylvania",
@@ -3561,7 +3583,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 270
@@ -3618,18 +3640,18 @@
         "distance_miles": 336
       },
       {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 111
-      },
-      {
         "team": "Concordia Moorhead",
-        "overall_seed": 11,
+        "overall_seed": 10,
         "quadrant_seed": 3,
         "conference": "MIAC",
         "distance_miles": 497
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 111
       },
       {
         "team": "Ohio Wesleyan",
@@ -3640,7 +3662,7 @@
       },
       {
         "team": "WashU",
-        "overall_seed": 14,
+        "overall_seed": 15,
         "quadrant_seed": 4,
         "conference": "UAA",
         "distance_miles": 363
@@ -3660,32 +3682,32 @@
         "distance_miles": 106
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 194
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 227
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 149
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 194
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 288
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 149
       },
       {
         "team": "Trine",
@@ -3710,21 +3732,21 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 257
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 134
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 380
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 132
@@ -3771,22 +3793,22 @@
         "distance_miles": 433
       },
       {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 180
-      },
-      {
         "team": "Concordia Moorhead",
-        "overall_seed": 11,
+        "overall_seed": 10,
         "quadrant_seed": 3,
         "conference": "MIAC",
         "distance_miles": 392
       },
       {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 180
+      },
+      {
         "team": "WashU",
-        "overall_seed": 14,
+        "overall_seed": 15,
         "quadrant_seed": 4,
         "conference": "UAA",
         "distance_miles": 463
@@ -3806,32 +3828,32 @@
         "distance_miles": 106
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 290
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 333
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 136
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 290
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 161
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 136
       },
       {
         "team": "Trine",
@@ -3856,21 +3878,21 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 169
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 30
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 459
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 131
@@ -3892,9 +3914,9 @@
     ],
     "nonconference_tournament_opponents": [
       "Bethel",
+      "DePauw",
       "Hope",
-      "Illinois Wesleyan",
-      "St. Mary's (MN)"
+      "Illinois Wesleyan"
     ],
     "recent_ncaa_tournament_matchups": [
       {
@@ -3913,217 +3935,8 @@
       }
     ]
   },
-  "Chicago": {
-    "overall_seed": 19,
-    "quadrant_seed": 5,
-    "conference": "UAA",
-    "nearby_teams": [
-      {
-        "team": "UW-Oshkosh",
-        "overall_seed": 1,
-        "quadrant_seed": 1,
-        "conference": "WIAC",
-        "distance_miles": 184
-      },
-      {
-        "team": "Denison",
-        "overall_seed": 6,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 337
-      },
-      {
-        "team": "John Carroll",
-        "overall_seed": 7,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 349
-      },
-      {
-        "team": "Hope",
-        "overall_seed": 9,
-        "quadrant_seed": 3,
-        "conference": "MIAA",
-        "distance_miles": 146
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 112
-      },
-      {
-        "team": "Ohio Wesleyan",
-        "overall_seed": 12,
-        "quadrant_seed": 3,
-        "conference": "NCAC",
-        "distance_miles": 310
-      },
-      {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 307
-      },
-      {
-        "team": "Baldwin Wallace",
-        "overall_seed": 15,
-        "quadrant_seed": 4,
-        "conference": "OAC",
-        "distance_miles": 333
-      },
-      {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 115
-      },
-      {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 194
-      },
-      {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 290
-      },
-      {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 133
-      },
-      {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 183
-      },
-      {
-        "team": "Bethel",
-        "overall_seed": 23,
-        "quadrant_seed": 6,
-        "conference": "MIAC",
-        "distance_miles": 417
-      },
-      {
-        "team": "Trine",
-        "overall_seed": 25,
-        "quadrant_seed": 7,
-        "conference": "MIAA",
-        "distance_miles": 165
-      },
-      {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 388
-      },
-      {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 104
-      },
-      {
-        "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
-        "conference": "MIAC",
-        "distance_miles": 451
-      },
-      {
-        "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
-        "conference": "UAA",
-        "distance_miles": 455
-      },
-      {
-        "team": "Otterbein",
-        "overall_seed": 41,
-        "quadrant_seed": 11,
-        "conference": "OAC",
-        "distance_miles": 308
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 312
-      },
-      {
-        "team": "Transylvania",
-        "overall_seed": 44,
-        "quadrant_seed": 11,
-        "conference": "HCAC",
-        "distance_miles": 366
-      },
-      {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 478
-      },
-      {
-        "team": "Wartburg",
-        "overall_seed": 46,
-        "quadrant_seed": 12,
-        "conference": "ARC",
-        "distance_miles": 297
-      },
-      {
-        "team": "Penn State-Behrend",
-        "overall_seed": 55,
-        "quadrant_seed": 14,
-        "conference": "AMCC",
-        "distance_miles": 440
-      },
-      {
-        "team": "Principia",
-        "overall_seed": 62,
-        "quadrant_seed": 16,
-        "conference": "SLIAC",
-        "distance_miles": 297
-      },
-      {
-        "team": "Asbury",
-        "overall_seed": 63,
-        "quadrant_seed": 16,
-        "conference": "CCS",
-        "distance_miles": 369
-      },
-      {
-        "team": "UW-Superior",
-        "overall_seed": 64,
-        "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 471
-      }
-    ],
-    "nonconference_tournament_opponents": [
-      "Carroll",
-      "Illinois Wesleyan",
-      "UW-Oshkosh"
-    ],
-    "recent_ncaa_tournament_matchups": []
-  },
   "Illinois Wesleyan": {
-    "overall_seed": 20,
+    "overall_seed": 19,
     "quadrant_seed": 5,
     "conference": "CCIW",
     "nearby_teams": [
@@ -4157,7 +3970,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 182
@@ -4170,18 +3983,18 @@
         "distance_miles": 356
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 163
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 445
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 163
       },
       {
         "team": "Carroll",
@@ -4206,24 +4019,24 @@
       },
       {
         "team": "Chicago",
-        "overall_seed": 19,
+        "overall_seed": 20,
         "quadrant_seed": 5,
         "conference": "UAA",
         "distance_miles": 133
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 270
-      },
-      {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 462
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 270
       },
       {
         "team": "Trine",
@@ -4248,10 +4061,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 472
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 156
       },
       {
         "team": "Otterbein",
@@ -4259,13 +4079,6 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 351
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 355
       },
       {
         "team": "Transylvania",
@@ -4276,7 +4089,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 293
@@ -4337,8 +4150,344 @@
       }
     ]
   },
-  "Bates": {
+  "Chicago": {
+    "overall_seed": 20,
+    "quadrant_seed": 5,
+    "conference": "UAA",
+    "nearby_teams": [
+      {
+        "team": "UW-Oshkosh",
+        "overall_seed": 1,
+        "quadrant_seed": 1,
+        "conference": "WIAC",
+        "distance_miles": 184
+      },
+      {
+        "team": "Denison",
+        "overall_seed": 6,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 337
+      },
+      {
+        "team": "John Carroll",
+        "overall_seed": 7,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 349
+      },
+      {
+        "team": "Hope",
+        "overall_seed": 9,
+        "quadrant_seed": 3,
+        "conference": "MIAA",
+        "distance_miles": 146
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 112
+      },
+      {
+        "team": "Ohio Wesleyan",
+        "overall_seed": 12,
+        "quadrant_seed": 3,
+        "conference": "NCAC",
+        "distance_miles": 310
+      },
+      {
+        "team": "Baldwin Wallace",
+        "overall_seed": 13,
+        "quadrant_seed": 4,
+        "conference": "OAC",
+        "distance_miles": 333
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 307
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 115
+      },
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 194
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 290
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 133
+      },
+      {
+        "team": "Bethel",
+        "overall_seed": 21,
+        "quadrant_seed": 6,
+        "conference": "MIAC",
+        "distance_miles": 417
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 183
+      },
+      {
+        "team": "Trine",
+        "overall_seed": 25,
+        "quadrant_seed": 7,
+        "conference": "MIAA",
+        "distance_miles": 165
+      },
+      {
+        "team": "UW-River Falls",
+        "overall_seed": 27,
+        "quadrant_seed": 7,
+        "conference": "WIAC",
+        "distance_miles": 388
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 104
+      },
+      {
+        "team": "Carnegie Mellon",
+        "overall_seed": 35,
+        "quadrant_seed": 9,
+        "conference": "UAA",
+        "distance_miles": 455
+      },
+      {
+        "team": "Gustavus Adolphus",
+        "overall_seed": 37,
+        "quadrant_seed": 10,
+        "conference": "MIAC",
+        "distance_miles": 451
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 173
+      },
+      {
+        "team": "Otterbein",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "OAC",
+        "distance_miles": 308
+      },
+      {
+        "team": "Transylvania",
+        "overall_seed": 44,
+        "quadrant_seed": 11,
+        "conference": "HCAC",
+        "distance_miles": 366
+      },
+      {
+        "team": "Wartburg",
+        "overall_seed": 45,
+        "quadrant_seed": 12,
+        "conference": "ARC",
+        "distance_miles": 297
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 478
+      },
+      {
+        "team": "Penn State-Behrend",
+        "overall_seed": 55,
+        "quadrant_seed": 14,
+        "conference": "AMCC",
+        "distance_miles": 440
+      },
+      {
+        "team": "Principia",
+        "overall_seed": 62,
+        "quadrant_seed": 16,
+        "conference": "SLIAC",
+        "distance_miles": 297
+      },
+      {
+        "team": "Asbury",
+        "overall_seed": 63,
+        "quadrant_seed": 16,
+        "conference": "CCS",
+        "distance_miles": 369
+      },
+      {
+        "team": "UW-Superior",
+        "overall_seed": 64,
+        "quadrant_seed": 16,
+        "conference": "UMAC",
+        "distance_miles": 471
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carroll",
+      "Illinois Wesleyan",
+      "UW-Oshkosh"
+    ],
+    "recent_ncaa_tournament_matchups": []
+  },
+  "Bethel": {
     "overall_seed": 21,
+    "quadrant_seed": 6,
+    "conference": "MIAC",
+    "nearby_teams": [
+      {
+        "team": "UW-Oshkosh",
+        "overall_seed": 1,
+        "quadrant_seed": 1,
+        "conference": "WIAC",
+        "distance_miles": 286
+      },
+      {
+        "team": "Concordia Moorhead",
+        "overall_seed": 10,
+        "quadrant_seed": 3,
+        "conference": "MIAC",
+        "distance_miles": 234
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 308
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 325
+      },
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 288
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 161
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 462
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 417
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 263
+      },
+      {
+        "team": "UW-River Falls",
+        "overall_seed": 27,
+        "quadrant_seed": 7,
+        "conference": "WIAC",
+        "distance_miles": 54
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 333
+      },
+      {
+        "team": "Gustavus Adolphus",
+        "overall_seed": 37,
+        "quadrant_seed": 10,
+        "conference": "MIAC",
+        "distance_miles": 79
+      },
+      {
+        "team": "Wartburg",
+        "overall_seed": 45,
+        "quadrant_seed": 12,
+        "conference": "ARC",
+        "distance_miles": 212
+      },
+      {
+        "team": "UW-Superior",
+        "overall_seed": 64,
+        "quadrant_seed": 16,
+        "conference": "UMAC",
+        "distance_miles": 147
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "Illinois Wesleyan",
+      "Messiah",
+      "UW-La Crosse",
+      "UW-River Falls"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "UW-Oshkosh",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "59-49"
+      },
+      {
+        "opponent": "DePauw",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "71-65"
+      }
+    ]
+  },
+  "Bates": {
+    "overall_seed": 22,
     "quadrant_seed": 6,
     "conference": "NESCAC",
     "nearby_teams": [
@@ -4365,7 +4514,7 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 235
@@ -4474,7 +4623,7 @@
     ]
   },
   "Ripon": {
-    "overall_seed": 22,
+    "overall_seed": 23,
     "quadrant_seed": 6,
     "conference": "MWC",
     "nearby_teams": [
@@ -4493,18 +4642,18 @@
         "distance_miles": 326
       },
       {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 82
-      },
-      {
         "team": "Concordia Moorhead",
-        "overall_seed": 11,
+        "overall_seed": 10,
         "quadrant_seed": 3,
         "conference": "MIAC",
         "distance_miles": 495
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 82
       },
       {
         "team": "Ohio Wesleyan",
@@ -4515,7 +4664,7 @@
       },
       {
         "team": "WashU",
-        "overall_seed": 14,
+        "overall_seed": 15,
         "quadrant_seed": 4,
         "conference": "UAA",
         "distance_miles": 438
@@ -4542,22 +4691,22 @@
         "distance_miles": 136
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 183
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 270
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 183
+      },
+      {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 263
@@ -4585,10 +4734,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 298
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 352
       },
       {
         "team": "Otterbein",
@@ -4598,15 +4754,8 @@
         "distance_miles": 486
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 158
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 286
@@ -4638,133 +4787,6 @@
         "round": "First Round",
         "result": "L",
         "score": "65-54"
-      }
-    ]
-  },
-  "Bethel": {
-    "overall_seed": 23,
-    "quadrant_seed": 6,
-    "conference": "MIAC",
-    "nearby_teams": [
-      {
-        "team": "UW-Oshkosh",
-        "overall_seed": 1,
-        "quadrant_seed": 1,
-        "conference": "WIAC",
-        "distance_miles": 286
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 308
-      },
-      {
-        "team": "Concordia Moorhead",
-        "overall_seed": 11,
-        "quadrant_seed": 3,
-        "conference": "MIAC",
-        "distance_miles": 234
-      },
-      {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 325
-      },
-      {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 288
-      },
-      {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 161
-      },
-      {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 417
-      },
-      {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 462
-      },
-      {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 263
-      },
-      {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 54
-      },
-      {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 333
-      },
-      {
-        "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
-        "conference": "MIAC",
-        "distance_miles": 79
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 135
-      },
-      {
-        "team": "Wartburg",
-        "overall_seed": 46,
-        "quadrant_seed": 12,
-        "conference": "ARC",
-        "distance_miles": 212
-      },
-      {
-        "team": "UW-Superior",
-        "overall_seed": 64,
-        "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 147
-      }
-    ],
-    "nonconference_tournament_opponents": [
-      "Illinois Wesleyan",
-      "Messiah",
-      "UW-La Crosse",
-      "UW-River Falls"
-    ],
-    "recent_ncaa_tournament_matchups": [
-      {
-        "opponent": "UW-Oshkosh",
-        "year": 2025,
-        "round": "Second Round",
-        "result": "L",
-        "score": "59-49"
       }
     ]
   },
@@ -4830,22 +4852,22 @@
         "distance_miles": 489
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 249
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 383
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 249
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 456
@@ -4880,35 +4902,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 232
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 155
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 340
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 335
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 262
@@ -4921,8 +4936,15 @@
         "distance_miles": 477
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 411
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 366
@@ -4992,7 +5014,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 399
@@ -5055,7 +5077,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 273
@@ -5068,18 +5090,18 @@
         "distance_miles": 188
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 409
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 178
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 409
       },
       {
         "team": "Carroll",
@@ -5103,22 +5125,22 @@
         "distance_miles": 449
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 165
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 277
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 165
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 344
@@ -5132,38 +5154,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 493
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 479
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 301
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 488
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 480
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 215
       },
       {
         "team": "Otterbein",
@@ -5173,13 +5195,6 @@
         "distance_miles": 180
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 474
-      },
-      {
         "team": "Transylvania",
         "overall_seed": 44,
         "quadrant_seed": 11,
@@ -5187,18 +5202,18 @@
         "distance_miles": 308
       },
       {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 323
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 476
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 323
       },
       {
         "team": "Rochester Tech",
@@ -5238,6 +5253,7 @@
     ],
     "nonconference_tournament_opponents": [
       "Baldwin Wallace",
+      "DePauw",
       "UW-Platteville",
       "Wisconsin Lutheran"
     ],
@@ -5320,22 +5336,22 @@
         "distance_miles": 348
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 169
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 450
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 169
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 353
@@ -5377,42 +5393,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 182
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 165
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 370
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 283
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 210
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 360
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 376
@@ -5482,7 +5498,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 290
@@ -5518,18 +5534,18 @@
         "distance_miles": 255
       },
       {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 279
-      },
-      {
         "team": "Concordia Moorhead",
-        "overall_seed": 11,
+        "overall_seed": 10,
         "quadrant_seed": 3,
         "conference": "MIAC",
         "distance_miles": 269
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 279
       },
       {
         "team": "Carroll",
@@ -5553,32 +5569,32 @@
         "distance_miles": 118
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 388
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 431
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 233
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 388
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 54
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 233
       },
       {
         "team": "Wisconsin Lutheran",
@@ -5589,21 +5605,14 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 101
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 89
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 177
@@ -5666,7 +5675,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 49
@@ -5679,18 +5688,18 @@
         "distance_miles": 410
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 376
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 433
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 376
       },
       {
         "team": "Carroll",
@@ -5714,32 +5723,32 @@
         "distance_miles": 205
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 104
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 213
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 81
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 104
       },
       {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 333
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 81
       },
       {
         "team": "Trine",
@@ -5757,10 +5766,17 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 367
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 273
       },
       {
         "team": "Otterbein",
@@ -5768,13 +5784,6 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 406
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 226
       },
       {
         "team": "Transylvania",
@@ -5785,7 +5794,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 279
@@ -5885,22 +5894,22 @@
         "distance_miles": 347
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 145
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 485
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 145
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 352
@@ -5942,42 +5951,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 238
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 191
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 394
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 342
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 268
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 418
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 435
@@ -6047,7 +6056,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 358
@@ -6106,14 +6115,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 207
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 41
@@ -6141,17 +6150,10 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 498
-      },
-      {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 475
       },
       {
         "team": "Johnson & Wales (RI)",
@@ -6266,42 +6268,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 276
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 343
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 406
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 209
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 250
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 193
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 403
@@ -6335,21 +6337,22 @@
         "distance_miles": 421
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 179
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 469
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 179
       }
     ],
     "nonconference_tournament_opponents": [
+      "Bridgewater (VA)",
       "Johns Hopkins",
       "Shenandoah",
       "WashU"
@@ -6412,18 +6415,18 @@
         "distance_miles": 446
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 479
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 454
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 479
       },
       {
         "team": "Cortland",
@@ -6455,35 +6458,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 198
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 263
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 329
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 132
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 170
@@ -6496,6 +6492,13 @@
         "distance_miles": 489
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 131
+      },
+      {
         "team": "Transylvania",
         "overall_seed": 44,
         "quadrant_seed": 11,
@@ -6504,7 +6507,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 325
@@ -6566,18 +6569,18 @@
         "distance_miles": 452
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 98
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 434
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 98
       }
     ],
     "nonconference_tournament_opponents": ["Gettysburg", "Principia"],
@@ -6591,163 +6594,8 @@
       }
     ]
   },
-  "Linfield": {
-    "overall_seed": 33,
-    "quadrant_seed": 9,
-    "conference": "NWC",
-    "nearby_teams": [],
-    "nonconference_tournament_opponents": ["UW-Oshkosh"],
-    "recent_ncaa_tournament_matchups": []
-  },
-  "Gustavus Adolphus": {
-    "overall_seed": 34,
-    "quadrant_seed": 9,
-    "conference": "MIAC",
-    "nearby_teams": [
-      {
-        "team": "UW-Oshkosh",
-        "overall_seed": 1,
-        "quadrant_seed": 1,
-        "conference": "WIAC",
-        "distance_miles": 311
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 338
-      },
-      {
-        "team": "Concordia Moorhead",
-        "overall_seed": 11,
-        "quadrant_seed": 3,
-        "conference": "MIAC",
-        "distance_miles": 292
-      },
-      {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 356
-      },
-      {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 257
-      },
-      {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 169
-      },
-      {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 451
-      },
-      {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 472
-      },
-      {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 298
-      },
-      {
-        "team": "Bethel",
-        "overall_seed": 23,
-        "quadrant_seed": 6,
-        "conference": "MIAC",
-        "distance_miles": 79
-      },
-      {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 101
-      },
-      {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 367
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 145
-      },
-      {
-        "team": "Wartburg",
-        "overall_seed": 46,
-        "quadrant_seed": 12,
-        "conference": "ARC",
-        "distance_miles": 178
-      },
-      {
-        "team": "UW-Superior",
-        "overall_seed": 64,
-        "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 223
-      }
-    ],
-    "nonconference_tournament_opponents": [
-      "UW-River Falls",
-      "UW-Whitewater",
-      "Wisconsin Lutheran"
-    ],
-    "recent_ncaa_tournament_matchups": [
-      {
-        "opponent": "Smith",
-        "year": 2025,
-        "round": "Sectional Final",
-        "result": "L",
-        "score": "61-50"
-      },
-      {
-        "opponent": "Wartburg",
-        "year": 2025,
-        "round": "Second Round",
-        "result": "W",
-        "score": "56-50"
-      },
-      {
-        "opponent": "Wisconsin Lutheran",
-        "year": 2025,
-        "round": "First Round",
-        "result": "W",
-        "score": "61-49"
-      },
-      {
-        "opponent": "Trine",
-        "year": 2024,
-        "round": "First Round",
-        "result": "L",
-        "score": "61-58"
-      }
-    ]
-  },
   "Messiah": {
-    "overall_seed": 35,
+    "overall_seed": 33,
     "quadrant_seed": 9,
     "conference": "MACC",
     "nearby_teams": [
@@ -6801,18 +6649,18 @@
         "distance_miles": 387
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 340
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 326
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 340
       },
       {
         "team": "Cortland",
@@ -6864,29 +6712,22 @@
         "distance_miles": 198
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 71
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 199
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 111
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 33
@@ -6899,8 +6740,15 @@
         "distance_miles": 369
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 188
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 207
@@ -6970,7 +6818,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 183
@@ -7013,249 +6861,17 @@
       }
     ]
   },
-  "Susquehanna": {
-    "overall_seed": 36,
+  "Linfield": {
+    "overall_seed": 34,
     "quadrant_seed": 9,
-    "conference": "LAND",
-    "nearby_teams": [
-      {
-        "team": "NYU",
-        "overall_seed": 2,
-        "quadrant_seed": 1,
-        "conference": "UAA",
-        "distance_miles": 175
-      },
-      {
-        "team": "Johns Hopkins",
-        "overall_seed": 3,
-        "quadrant_seed": 1,
-        "conference": "CC",
-        "distance_miles": 136
-      },
-      {
-        "team": "Washington & Lee",
-        "overall_seed": 4,
-        "quadrant_seed": 1,
-        "conference": "ODAC",
-        "distance_miles": 296
-      },
-      {
-        "team": "Scranton",
-        "overall_seed": 5,
-        "quadrant_seed": 2,
-        "conference": "LAND",
-        "distance_miles": 87
-      },
-      {
-        "team": "Denison",
-        "overall_seed": 6,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 384
-      },
-      {
-        "team": "John Carroll",
-        "overall_seed": 7,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 290
-      },
-      {
-        "team": "Ohio Wesleyan",
-        "overall_seed": 12,
-        "quadrant_seed": 3,
-        "conference": "NCAC",
-        "distance_miles": 383
-      },
-      {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 320
-      },
-      {
-        "team": "Baldwin Wallace",
-        "overall_seed": 15,
-        "quadrant_seed": 4,
-        "conference": "OAC",
-        "distance_miles": 298
-      },
-      {
-        "team": "Cortland",
-        "overall_seed": 24,
-        "quadrant_seed": 6,
-        "conference": "SUNYAC",
-        "distance_miles": 155
-      },
-      {
-        "team": "Trine",
-        "overall_seed": 25,
-        "quadrant_seed": 7,
-        "conference": "MIAA",
-        "distance_miles": 479
-      },
-      {
-        "team": "William Paterson",
-        "overall_seed": 26,
-        "quadrant_seed": 7,
-        "conference": "NJAC",
-        "distance_miles": 165
-      },
-      {
-        "team": "SUNY New Paltz",
-        "overall_seed": 29,
-        "quadrant_seed": 8,
-        "conference": "SUNYAC",
-        "distance_miles": 191
-      },
-      {
-        "team": "Southern Maine",
-        "overall_seed": 30,
-        "quadrant_seed": 8,
-        "conference": "LEC",
-        "distance_miles": 475
-      },
-      {
-        "team": "Christopher Newport",
-        "overall_seed": 31,
-        "quadrant_seed": 8,
-        "conference": "C2C",
-        "distance_miles": 343
-      },
-      {
-        "team": "Randolph-Macon",
-        "overall_seed": 32,
-        "quadrant_seed": 8,
-        "conference": "ODAC",
-        "distance_miles": 263
-      },
-      {
-        "team": "Messiah",
-        "overall_seed": 35,
-        "quadrant_seed": 9,
-        "conference": "MACC",
-        "distance_miles": 71
-      },
-      {
-        "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
-        "conference": "UAA",
-        "distance_miles": 206
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
-        "conference": "ODAC",
-        "distance_miles": 171
-      },
-      {
-        "team": "Gettysburg",
-        "overall_seed": 39,
-        "quadrant_seed": 10,
-        "conference": "CC",
-        "distance_miles": 99
-      },
-      {
-        "team": "Otterbein",
-        "overall_seed": 41,
-        "quadrant_seed": 11,
-        "conference": "OAC",
-        "distance_miles": 393
-      },
-      {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 237
-      },
-      {
-        "team": "Johnson & Wales (RI)",
-        "overall_seed": 47,
-        "quadrant_seed": 12,
-        "conference": "CNE",
-        "distance_miles": 352
-      },
-      {
-        "team": "Brooklyn College",
-        "overall_seed": 48,
-        "quadrant_seed": 12,
-        "conference": "CUNYAC",
-        "distance_miles": 187
-      },
-      {
-        "team": "DeSales",
-        "overall_seed": 49,
-        "quadrant_seed": 13,
-        "conference": "MACF",
-        "distance_miles": 101
-      },
-      {
-        "team": "Immaculata",
-        "overall_seed": 50,
-        "quadrant_seed": 13,
-        "conference": "AEC",
-        "distance_miles": 122
-      },
-      {
-        "team": "Rochester Tech",
-        "overall_seed": 52,
-        "quadrant_seed": 13,
-        "conference": "LL",
-        "distance_miles": 195
-      },
-      {
-        "team": "Merchant Marine",
-        "overall_seed": 53,
-        "quadrant_seed": 14,
-        "conference": "SKY",
-        "distance_miles": 195
-      },
-      {
-        "team": "SUNY Geneseo",
-        "overall_seed": 54,
-        "quadrant_seed": 14,
-        "conference": "E8",
-        "distance_miles": 168
-      },
-      {
-        "team": "Penn State-Behrend",
-        "overall_seed": 55,
-        "quadrant_seed": 14,
-        "conference": "AMCC",
-        "distance_miles": 273
-      },
-      {
-        "team": "Emmanuel",
-        "overall_seed": 56,
-        "quadrant_seed": 14,
-        "conference": "GNAC",
-        "distance_miles": 376
-      },
-      {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 235
-      },
-      {
-        "team": "Bridgewater St.",
-        "overall_seed": 61,
-        "quadrant_seed": 16,
-        "conference": "MASCAC",
-        "distance_miles": 391
-      }
-    ],
-    "nonconference_tournament_opponents": ["Gettysburg"],
+    "conference": "NWC",
+    "nearby_teams": [],
+    "nonconference_tournament_opponents": ["UW-Oshkosh"],
     "recent_ncaa_tournament_matchups": []
   },
   "Carnegie Mellon": {
-    "overall_seed": 37,
-    "quadrant_seed": 10,
+    "overall_seed": 35,
+    "quadrant_seed": 9,
     "conference": "UAA",
     "nearby_teams": [
       {
@@ -7316,14 +6932,14 @@
       },
       {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 133
       },
       {
         "team": "Chicago",
-        "overall_seed": 19,
+        "overall_seed": 20,
         "quadrant_seed": 5,
         "conference": "UAA",
         "distance_miles": 455
@@ -7372,31 +6988,31 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 199
       },
       {
-        "team": "Susquehanna",
+        "team": "Shenandoah",
         "overall_seed": 36,
         "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 206
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
         "conference": "ODAC",
         "distance_miles": 191
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 186
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 411
       },
       {
         "team": "Otterbein",
@@ -7404,6 +7020,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 192
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 267
       },
       {
         "team": "Transylvania",
@@ -7414,7 +7037,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 229
@@ -7470,7 +7093,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 319
@@ -7507,8 +7130,8 @@
     ]
   },
   "Shenandoah": {
-    "overall_seed": 38,
-    "quadrant_seed": 10,
+    "overall_seed": 36,
+    "quadrant_seed": 9,
     "conference": "ODAC",
     "nearby_teams": [
       {
@@ -7561,18 +7184,18 @@
         "distance_miles": 350
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 443
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 320
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 443
       },
       {
         "team": "Cortland",
@@ -7618,28 +7241,21 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 111
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 171
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 191
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 89
@@ -7652,6 +7268,13 @@
         "distance_miles": 331
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 78
+      },
+      {
         "team": "Transylvania",
         "overall_seed": 44,
         "quadrant_seed": 11,
@@ -7660,7 +7283,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 170
@@ -7729,18 +7352,18 @@
         "distance_miles": 498
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 148
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 452
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 148
       }
     ],
     "nonconference_tournament_opponents": [
@@ -7758,8 +7381,149 @@
       }
     ]
   },
+  "Gustavus Adolphus": {
+    "overall_seed": 37,
+    "quadrant_seed": 10,
+    "conference": "MIAC",
+    "nearby_teams": [
+      {
+        "team": "UW-Oshkosh",
+        "overall_seed": 1,
+        "quadrant_seed": 1,
+        "conference": "WIAC",
+        "distance_miles": 311
+      },
+      {
+        "team": "Concordia Moorhead",
+        "overall_seed": 10,
+        "quadrant_seed": 3,
+        "conference": "MIAC",
+        "distance_miles": 292
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 338
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 356
+      },
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 257
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 169
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 472
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 451
+      },
+      {
+        "team": "Bethel",
+        "overall_seed": 21,
+        "quadrant_seed": 6,
+        "conference": "MIAC",
+        "distance_miles": 79
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 298
+      },
+      {
+        "team": "UW-River Falls",
+        "overall_seed": 27,
+        "quadrant_seed": 7,
+        "conference": "WIAC",
+        "distance_miles": 101
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 367
+      },
+      {
+        "team": "Wartburg",
+        "overall_seed": 45,
+        "quadrant_seed": 12,
+        "conference": "ARC",
+        "distance_miles": 178
+      },
+      {
+        "team": "UW-Superior",
+        "overall_seed": 64,
+        "quadrant_seed": 16,
+        "conference": "UMAC",
+        "distance_miles": 223
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "DePauw",
+      "UW-River Falls",
+      "UW-Whitewater",
+      "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Smith",
+        "year": 2025,
+        "round": "Sectional Final",
+        "result": "L",
+        "score": "61-50"
+      },
+      {
+        "opponent": "Wartburg",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "W",
+        "score": "56-50"
+      },
+      {
+        "opponent": "Wisconsin Lutheran",
+        "year": 2025,
+        "round": "First Round",
+        "result": "W",
+        "score": "61-49"
+      },
+      {
+        "opponent": "Trine",
+        "year": 2024,
+        "round": "First Round",
+        "result": "L",
+        "score": "61-58"
+      }
+    ]
+  },
   "Gettysburg": {
-    "overall_seed": 39,
+    "overall_seed": 38,
     "quadrant_seed": 10,
     "conference": "CC",
     "nearby_teams": [
@@ -7813,18 +7577,18 @@
         "distance_miles": 375
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 369
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 312
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 369
       },
       {
         "team": "Cortland",
@@ -7870,29 +7634,22 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 33
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 99
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 186
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 89
       },
@@ -7904,8 +7661,15 @@
         "distance_miles": 355
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 165
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 193
@@ -7975,7 +7739,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 160
@@ -7992,8 +7756,7 @@
       "DeSales",
       "Messiah",
       "Randolph-Macon",
-      "Shenandoah",
-      "Susquehanna"
+      "Shenandoah"
     ],
     "recent_ncaa_tournament_matchups": [
       {
@@ -8013,7 +7776,7 @@
     ]
   },
   "Colorado College": {
-    "overall_seed": 40,
+    "overall_seed": 39,
     "quadrant_seed": 10,
     "conference": "SCAC",
     "nearby_teams": [],
@@ -8029,6 +7792,205 @@
         "round": "First Round",
         "result": "L",
         "score": "79-52"
+      }
+    ]
+  },
+  "DePauw": {
+    "overall_seed": 40,
+    "quadrant_seed": 10,
+    "conference": "NCAC",
+    "nearby_teams": [
+      {
+        "team": "UW-Oshkosh",
+        "overall_seed": 1,
+        "quadrant_seed": 1,
+        "conference": "WIAC",
+        "distance_miles": 354
+      },
+      {
+        "team": "Denison",
+        "overall_seed": 6,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 257
+      },
+      {
+        "team": "John Carroll",
+        "overall_seed": 7,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 369
+      },
+      {
+        "team": "Hope",
+        "overall_seed": 9,
+        "quadrant_seed": 3,
+        "conference": "MIAA",
+        "distance_miles": 263
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 284
+      },
+      {
+        "team": "Ohio Wesleyan",
+        "overall_seed": 12,
+        "quadrant_seed": 3,
+        "conference": "NCAC",
+        "distance_miles": 233
+      },
+      {
+        "team": "Baldwin Wallace",
+        "overall_seed": 13,
+        "quadrant_seed": 4,
+        "conference": "OAC",
+        "distance_miles": 353
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 212
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 283
+      },
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 380
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 459
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 156
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 173
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 352
+      },
+      {
+        "team": "Trine",
+        "overall_seed": 25,
+        "quadrant_seed": 7,
+        "conference": "MIAA",
+        "distance_miles": 215
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 273
+      },
+      {
+        "team": "Carnegie Mellon",
+        "overall_seed": 35,
+        "quadrant_seed": 9,
+        "conference": "UAA",
+        "distance_miles": 411
+      },
+      {
+        "team": "Otterbein",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "OAC",
+        "distance_miles": 232
+      },
+      {
+        "team": "Transylvania",
+        "overall_seed": 44,
+        "quadrant_seed": 11,
+        "conference": "HCAC",
+        "distance_miles": 233
+      },
+      {
+        "team": "Wartburg",
+        "overall_seed": 45,
+        "quadrant_seed": 12,
+        "conference": "ARC",
+        "distance_miles": 445
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 381
+      },
+      {
+        "team": "Penn State-Behrend",
+        "overall_seed": 55,
+        "quadrant_seed": 14,
+        "conference": "AMCC",
+        "distance_miles": 463
+      },
+      {
+        "team": "Principia",
+        "overall_seed": 62,
+        "quadrant_seed": 16,
+        "conference": "SLIAC",
+        "distance_miles": 227
+      },
+      {
+        "team": "Asbury",
+        "overall_seed": 63,
+        "quadrant_seed": 16,
+        "conference": "CCS",
+        "distance_miles": 235
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "Gustavus Adolphus",
+      "Transylvania",
+      "Trine",
+      "UW-La Crosse",
+      "Wartburg",
+      "WashU"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Bethel",
+        "year": 2025,
+        "round": "First Round",
+        "result": "L",
+        "score": "71-65"
+      },
+      {
+        "opponent": "Hope",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "L",
+        "score": "70-55"
       }
     ]
   },
@@ -8088,7 +8050,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 416
@@ -8101,18 +8063,18 @@
         "distance_miles": 24
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 433
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 123
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 433
       },
       {
         "team": "Carroll",
@@ -8122,22 +8084,22 @@
         "distance_miles": 417
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 308
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 351
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 308
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 486
@@ -8172,38 +8134,45 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 369
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 393
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 192
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 331
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 355
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 232
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 347
       },
       {
         "team": "Transylvania",
@@ -8214,7 +8183,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 163
@@ -8255,18 +8224,18 @@
         "distance_miles": 235
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 476
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 435
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 476
       },
       {
         "team": "Principia",
@@ -8328,139 +8297,223 @@
       }
     ]
   },
-  "St. Mary's (MN)": {
+  "Bridgewater (VA)": {
     "overall_seed": 43,
     "quadrant_seed": 11,
-    "conference": "MIAC",
+    "conference": "ODAC",
     "nearby_teams": [
       {
-        "team": "UW-Oshkosh",
-        "overall_seed": 1,
+        "team": "NYU",
+        "overall_seed": 2,
         "quadrant_seed": 1,
-        "conference": "WIAC",
-        "distance_miles": 177
-      },
-      {
-        "team": "Hope",
-        "overall_seed": 9,
-        "quadrant_seed": 3,
-        "conference": "MIAA",
-        "distance_miles": 458
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 204
-      },
-      {
-        "team": "Concordia Moorhead",
-        "overall_seed": 11,
-        "quadrant_seed": 3,
-        "conference": "MIAC",
-        "distance_miles": 350
-      },
-      {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
         "conference": "UAA",
-        "distance_miles": 449
+        "distance_miles": 360
       },
       {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 217
+        "team": "Johns Hopkins",
+        "overall_seed": 3,
+        "quadrant_seed": 1,
+        "conference": "CC",
+        "distance_miles": 179
       },
       {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 134
+        "team": "Washington & Lee",
+        "overall_seed": 4,
+        "quadrant_seed": 1,
+        "conference": "ODAC",
+        "distance_miles": 56
       },
       {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 30
-      },
-      {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
+        "team": "Scranton",
+        "overall_seed": 5,
+        "quadrant_seed": 2,
+        "conference": "LAND",
         "distance_miles": 312
       },
       {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 355
+        "team": "Denison",
+        "overall_seed": 6,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 351
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
+        "team": "John Carroll",
+        "overall_seed": 7,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 384
+      },
+      {
+        "team": "Ohio Wesleyan",
+        "overall_seed": 12,
+        "quadrant_seed": 3,
+        "conference": "NCAC",
+        "distance_miles": 374
+      },
+      {
+        "team": "Baldwin Wallace",
+        "overall_seed": 13,
+        "quadrant_seed": 4,
+        "conference": "OAC",
+        "distance_miles": 393
+      },
+      {
+        "team": "Cortland",
+        "overall_seed": 24,
         "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 158
+        "conference": "SUNYAC",
+        "distance_miles": 411
       },
       {
-        "team": "Bethel",
-        "overall_seed": 23,
-        "quadrant_seed": 6,
-        "conference": "MIAC",
-        "distance_miles": 135
-      },
-      {
-        "team": "Trine",
-        "overall_seed": 25,
+        "team": "William Paterson",
+        "overall_seed": 26,
         "quadrant_seed": 7,
-        "conference": "MIAA",
-        "distance_miles": 474
+        "conference": "NJAC",
+        "distance_miles": 360
       },
       {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 89
+        "team": "SUNY New Paltz",
+        "overall_seed": 29,
+        "quadrant_seed": 8,
+        "conference": "SUNYAC",
+        "distance_miles": 418
       },
       {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 226
+        "team": "Christopher Newport",
+        "overall_seed": 31,
+        "quadrant_seed": 8,
+        "conference": "C2C",
+        "distance_miles": 193
       },
       {
-        "team": "Gustavus Adolphus",
-        "overall_seed": 34,
+        "team": "Randolph-Macon",
+        "overall_seed": 32,
+        "quadrant_seed": 8,
+        "conference": "ODAC",
+        "distance_miles": 131
+      },
+      {
+        "team": "Messiah",
+        "overall_seed": 33,
         "quadrant_seed": 9,
-        "conference": "MIAC",
-        "distance_miles": 145
+        "conference": "MACC",
+        "distance_miles": 188
       },
       {
-        "team": "Wartburg",
+        "team": "Carnegie Mellon",
+        "overall_seed": 35,
+        "quadrant_seed": 9,
+        "conference": "UAA",
+        "distance_miles": 267
+      },
+      {
+        "team": "Shenandoah",
+        "overall_seed": 36,
+        "quadrant_seed": 9,
+        "conference": "ODAC",
+        "distance_miles": 78
+      },
+      {
+        "team": "Gettysburg",
+        "overall_seed": 38,
+        "quadrant_seed": 10,
+        "conference": "CC",
+        "distance_miles": 165
+      },
+      {
+        "team": "Otterbein",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "OAC",
+        "distance_miles": 347
+      },
+      {
+        "team": "Transylvania",
+        "overall_seed": 44,
+        "quadrant_seed": 11,
+        "conference": "HCAC",
+        "distance_miles": 409
+      },
+      {
+        "team": "Washington & Jefferson",
         "overall_seed": 46,
         "quadrant_seed": 12,
-        "conference": "ARC",
-        "distance_miles": 133
+        "conference": "PAC",
+        "distance_miles": 239
       },
       {
-        "team": "UW-Superior",
-        "overall_seed": 64,
+        "team": "Brooklyn College",
+        "overall_seed": 48,
+        "quadrant_seed": 12,
+        "conference": "CUNYAC",
+        "distance_miles": 368
+      },
+      {
+        "team": "DeSales",
+        "overall_seed": 49,
+        "quadrant_seed": 13,
+        "conference": "MACF",
+        "distance_miles": 279
+      },
+      {
+        "team": "Immaculata",
+        "overall_seed": 50,
+        "quadrant_seed": 13,
+        "conference": "AEC",
+        "distance_miles": 242
+      },
+      {
+        "team": "Rochester Tech",
+        "overall_seed": 52,
+        "quadrant_seed": 13,
+        "conference": "LL",
+        "distance_miles": 446
+      },
+      {
+        "team": "Merchant Marine",
+        "overall_seed": 53,
+        "quadrant_seed": 14,
+        "conference": "SKY",
+        "distance_miles": 388
+      },
+      {
+        "team": "SUNY Geneseo",
+        "overall_seed": 54,
+        "quadrant_seed": 14,
+        "conference": "E8",
+        "distance_miles": 418
+      },
+      {
+        "team": "Penn State-Behrend",
+        "overall_seed": 55,
+        "quadrant_seed": 14,
+        "conference": "AMCC",
+        "distance_miles": 390
+      },
+      {
+        "team": "Brevard",
+        "overall_seed": 57,
+        "quadrant_seed": 15,
+        "conference": "USAC",
+        "distance_miles": 380
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 210
+      },
+      {
+        "team": "Asbury",
+        "overall_seed": 63,
         "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 215
+        "conference": "CCS",
+        "distance_miles": 434
       }
     ],
-    "nonconference_tournament_opponents": ["UW-La Crosse"],
+    "nonconference_tournament_opponents": ["Christopher Newport"],
     "recent_ncaa_tournament_matchups": []
   },
   "Transylvania": {
@@ -8498,7 +8551,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 478
@@ -8511,18 +8564,18 @@
         "distance_miles": 214
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 347
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 318
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 347
       },
       {
         "team": "Carroll",
@@ -8532,18 +8585,18 @@
         "distance_miles": 476
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 366
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 363
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 366
       },
       {
         "team": "Trine",
@@ -8568,17 +8621,24 @@
       },
       {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 372
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 480
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 233
       },
       {
         "team": "Otterbein",
@@ -8588,8 +8648,15 @@
         "distance_miles": 199
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 409
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 343
@@ -8603,7 +8670,7 @@
       },
       {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 317
@@ -8623,7 +8690,7 @@
         "distance_miles": 18
       }
     ],
-    "nonconference_tournament_opponents": ["Asbury", "Denison"],
+    "nonconference_tournament_opponents": ["Asbury", "DePauw", "Denison"],
     "recent_ncaa_tournament_matchups": [
       {
         "opponent": "Trine",
@@ -8655,8 +8722,200 @@
       }
     ]
   },
-  "Washington & Jefferson": {
+  "Wartburg": {
     "overall_seed": 45,
+    "quadrant_seed": 12,
+    "conference": "ARC",
+    "nearby_teams": [
+      {
+        "team": "UW-Oshkosh",
+        "overall_seed": 1,
+        "quadrant_seed": 1,
+        "conference": "WIAC",
+        "distance_miles": 294
+      },
+      {
+        "team": "Hope",
+        "overall_seed": 9,
+        "quadrant_seed": 3,
+        "conference": "MIAA",
+        "distance_miles": 458
+      },
+      {
+        "team": "Concordia Moorhead",
+        "overall_seed": 10,
+        "quadrant_seed": 3,
+        "conference": "MIAC",
+        "distance_miles": 434
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 245
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 360
+      },
+      {
+        "team": "Carroll",
+        "overall_seed": 16,
+        "quadrant_seed": 4,
+        "conference": "CCIW",
+        "distance_miles": 270
+      },
+      {
+        "team": "UW-Platteville",
+        "overall_seed": 17,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 132
+      },
+      {
+        "team": "UW-La Crosse",
+        "overall_seed": 18,
+        "quadrant_seed": 5,
+        "conference": "WIAC",
+        "distance_miles": 131
+      },
+      {
+        "team": "Illinois Wesleyan",
+        "overall_seed": 19,
+        "quadrant_seed": 5,
+        "conference": "CCIW",
+        "distance_miles": 293
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 297
+      },
+      {
+        "team": "Bethel",
+        "overall_seed": 21,
+        "quadrant_seed": 6,
+        "conference": "MIAC",
+        "distance_miles": 212
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 286
+      },
+      {
+        "team": "Trine",
+        "overall_seed": 25,
+        "quadrant_seed": 7,
+        "conference": "MIAA",
+        "distance_miles": 476
+      },
+      {
+        "team": "UW-River Falls",
+        "overall_seed": 27,
+        "quadrant_seed": 7,
+        "conference": "WIAC",
+        "distance_miles": 177
+      },
+      {
+        "team": "Wisconsin Lutheran",
+        "overall_seed": 28,
+        "quadrant_seed": 7,
+        "conference": "NACC",
+        "distance_miles": 279
+      },
+      {
+        "team": "Gustavus Adolphus",
+        "overall_seed": 37,
+        "quadrant_seed": 10,
+        "conference": "MIAC",
+        "distance_miles": 178
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 445
+      },
+      {
+        "team": "Principia",
+        "overall_seed": 62,
+        "quadrant_seed": 16,
+        "conference": "SLIAC",
+        "distance_miles": 333
+      },
+      {
+        "team": "UW-Superior",
+        "overall_seed": 64,
+        "quadrant_seed": 16,
+        "conference": "UMAC",
+        "distance_miles": 352
+      }
+    ],
+    "nonconference_tournament_opponents": [
+      "Carroll",
+      "Colorado College",
+      "DePauw",
+      "Hardin-Simmons",
+      "Johns Hopkins",
+      "Wisconsin Lutheran"
+    ],
+    "recent_ncaa_tournament_matchups": [
+      {
+        "opponent": "Gustavus Adolphus",
+        "year": 2025,
+        "round": "Second Round",
+        "result": "L",
+        "score": "56-50"
+      },
+      {
+        "opponent": "Smith",
+        "year": 2024,
+        "round": "Semifinal",
+        "result": "L",
+        "score": "61-54"
+      },
+      {
+        "opponent": "Washington & Lee",
+        "year": 2024,
+        "round": "Sectional Final",
+        "result": "W",
+        "score": "68-58"
+      },
+      {
+        "opponent": "Bates",
+        "year": 2024,
+        "round": "Sectional Semifinal",
+        "result": "W",
+        "score": "54-53"
+      },
+      {
+        "opponent": "Illinois Wesleyan",
+        "year": 2024,
+        "round": "Second Round",
+        "result": "W",
+        "score": "62-59"
+      },
+      {
+        "opponent": "Wisconsin Lutheran",
+        "year": 2024,
+        "round": "First Round",
+        "result": "W",
+        "score": "72-65"
+      }
+    ]
+  },
+  "Washington & Jefferson": {
+    "overall_seed": 46,
     "quadrant_seed": 12,
     "conference": "PAC",
     "nearby_teams": [
@@ -8718,14 +8977,14 @@
       },
       {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 155
       },
       {
         "team": "Chicago",
-        "overall_seed": 19,
+        "overall_seed": 20,
         "quadrant_seed": 5,
         "conference": "UAA",
         "distance_miles": 478
@@ -8774,38 +9033,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 207
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 237
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 229
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 170
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 193
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 381
       },
       {
         "team": "Otterbein",
@@ -8813,6 +9072,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 163
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 239
       },
       {
         "team": "Transylvania",
@@ -8871,18 +9137,18 @@
         "distance_miles": 152
       },
       {
-        "team": "St. Mary's (MD)",
-        "overall_seed": 57,
-        "quadrant_seed": 15,
-        "conference": "UEC",
-        "distance_miles": 315
-      },
-      {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 491
+      },
+      {
+        "team": "St. Mary's (MD)",
+        "overall_seed": 58,
+        "quadrant_seed": 15,
+        "conference": "UEC",
+        "distance_miles": 315
       },
       {
         "team": "Asbury",
@@ -8913,197 +9179,6 @@
         "round": "First Round",
         "result": "W",
         "score": "76-72"
-      }
-    ]
-  },
-  "Wartburg": {
-    "overall_seed": 46,
-    "quadrant_seed": 12,
-    "conference": "ARC",
-    "nearby_teams": [
-      {
-        "team": "UW-Oshkosh",
-        "overall_seed": 1,
-        "quadrant_seed": 1,
-        "conference": "WIAC",
-        "distance_miles": 294
-      },
-      {
-        "team": "Hope",
-        "overall_seed": 9,
-        "quadrant_seed": 3,
-        "conference": "MIAA",
-        "distance_miles": 458
-      },
-      {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 245
-      },
-      {
-        "team": "Concordia Moorhead",
-        "overall_seed": 11,
-        "quadrant_seed": 3,
-        "conference": "MIAC",
-        "distance_miles": 434
-      },
-      {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 360
-      },
-      {
-        "team": "Carroll",
-        "overall_seed": 16,
-        "quadrant_seed": 4,
-        "conference": "CCIW",
-        "distance_miles": 270
-      },
-      {
-        "team": "UW-Platteville",
-        "overall_seed": 17,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 132
-      },
-      {
-        "team": "UW-La Crosse",
-        "overall_seed": 18,
-        "quadrant_seed": 5,
-        "conference": "WIAC",
-        "distance_miles": 131
-      },
-      {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 297
-      },
-      {
-        "team": "Illinois Wesleyan",
-        "overall_seed": 20,
-        "quadrant_seed": 5,
-        "conference": "CCIW",
-        "distance_miles": 293
-      },
-      {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 286
-      },
-      {
-        "team": "Bethel",
-        "overall_seed": 23,
-        "quadrant_seed": 6,
-        "conference": "MIAC",
-        "distance_miles": 212
-      },
-      {
-        "team": "Trine",
-        "overall_seed": 25,
-        "quadrant_seed": 7,
-        "conference": "MIAA",
-        "distance_miles": 476
-      },
-      {
-        "team": "UW-River Falls",
-        "overall_seed": 27,
-        "quadrant_seed": 7,
-        "conference": "WIAC",
-        "distance_miles": 177
-      },
-      {
-        "team": "Wisconsin Lutheran",
-        "overall_seed": 28,
-        "quadrant_seed": 7,
-        "conference": "NACC",
-        "distance_miles": 279
-      },
-      {
-        "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
-        "conference": "MIAC",
-        "distance_miles": 178
-      },
-      {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 133
-      },
-      {
-        "team": "Principia",
-        "overall_seed": 62,
-        "quadrant_seed": 16,
-        "conference": "SLIAC",
-        "distance_miles": 333
-      },
-      {
-        "team": "UW-Superior",
-        "overall_seed": 64,
-        "quadrant_seed": 16,
-        "conference": "UMAC",
-        "distance_miles": 352
-      }
-    ],
-    "nonconference_tournament_opponents": [
-      "Carroll",
-      "Colorado College",
-      "Hardin-Simmons",
-      "Johns Hopkins",
-      "Wisconsin Lutheran"
-    ],
-    "recent_ncaa_tournament_matchups": [
-      {
-        "opponent": "Gustavus Adolphus",
-        "year": 2025,
-        "round": "Second Round",
-        "result": "L",
-        "score": "56-50"
-      },
-      {
-        "opponent": "Smith",
-        "year": 2024,
-        "round": "Semifinal",
-        "result": "L",
-        "score": "61-54"
-      },
-      {
-        "opponent": "Washington & Lee",
-        "year": 2024,
-        "round": "Sectional Final",
-        "result": "W",
-        "score": "68-58"
-      },
-      {
-        "opponent": "Bates",
-        "year": 2024,
-        "round": "Sectional Semifinal",
-        "result": "W",
-        "score": "54-53"
-      },
-      {
-        "opponent": "Illinois Wesleyan",
-        "year": 2024,
-        "round": "Second Round",
-        "result": "W",
-        "score": "62-59"
-      },
-      {
-        "opponent": "Wisconsin Lutheran",
-        "year": 2024,
-        "round": "First Round",
-        "result": "W",
-        "score": "72-65"
       }
     ]
   },
@@ -9142,14 +9217,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 98
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 187
@@ -9191,28 +9266,21 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 361
       },
       {
-        "team": "Susquehanna",
+        "team": "Shenandoah",
         "overall_seed": 36,
         "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 352
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
         "conference": "ODAC",
         "distance_miles": 465
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 391
@@ -9268,7 +9336,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 460
@@ -9339,22 +9407,22 @@
         "distance_miles": 348
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 168
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 470
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 168
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 353
@@ -9403,42 +9471,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 188
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 187
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 379
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 292
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 218
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 368
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 386
@@ -9501,7 +9569,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 284
@@ -9601,22 +9669,22 @@
         "distance_miles": 476
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 252
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 409
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 252
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 439
@@ -9665,35 +9733,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 100
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 101
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 289
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 203
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 129
@@ -9706,8 +9767,15 @@
         "distance_miles": 458
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 279
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 296
@@ -9770,7 +9838,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 234
@@ -9854,18 +9922,18 @@
         "distance_miles": 330
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 376
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 245
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 376
       },
       {
         "team": "Cortland",
@@ -9904,35 +9972,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 112
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 122
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 141
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 166
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 138
@@ -9945,8 +10006,15 @@
         "distance_miles": 449
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 242
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 171
@@ -10009,7 +10077,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 275
@@ -10096,18 +10164,18 @@
         "distance_miles": 379
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 319
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 273
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 319
       },
       {
         "team": "Cortland",
@@ -10146,35 +10214,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 268
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 195
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 284
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 370
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 295
@@ -10187,8 +10248,15 @@
         "distance_miles": 384
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 446
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 307
@@ -10251,7 +10319,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 433
@@ -10315,22 +10383,22 @@
         "distance_miles": 337
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 157
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 482
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 157
+      },
+      {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 341
@@ -10379,42 +10447,42 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 208
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 195
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 398
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 312
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 237
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 388
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 406
@@ -10477,7 +10545,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 307
@@ -10570,18 +10638,18 @@
         "distance_miles": 364
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 335
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 257
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 335
       },
       {
         "team": "Cortland",
@@ -10620,35 +10688,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 240
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 168
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 268
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 341
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 267
@@ -10661,8 +10722,15 @@
         "distance_miles": 371
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 418
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 291
@@ -10725,7 +10793,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 405
@@ -10811,22 +10879,22 @@
         "distance_miles": 225
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 467
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 119
       },
       {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 467
+      },
+      {
         "team": "Chicago",
-        "overall_seed": 19,
+        "overall_seed": 20,
         "quadrant_seed": 5,
         "conference": "UAA",
         "distance_miles": 440
@@ -10868,38 +10936,38 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 323
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 273
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 129
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 313
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 309
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 463
       },
       {
         "team": "Otterbein",
@@ -10907,6 +10975,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 235
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 390
       },
       {
         "team": "Transylvania",
@@ -10917,7 +10992,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 152
@@ -10966,7 +11041,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 441
@@ -11020,14 +11095,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 101
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 140
@@ -11062,28 +11137,21 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 395
       },
       {
-        "team": "Susquehanna",
+        "team": "Shenandoah",
         "overall_seed": 36,
         "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 376
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
         "conference": "ODAC",
         "distance_miles": 498
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 424
@@ -11139,7 +11207,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 493
@@ -11166,8 +11234,87 @@
     ],
     "recent_ncaa_tournament_matchups": []
   },
-  "St. Mary's (MD)": {
+  "Brevard": {
     "overall_seed": 57,
+    "quadrant_seed": 15,
+    "conference": "USAC",
+    "nearby_teams": [
+      {
+        "team": "Washington & Lee",
+        "overall_seed": 4,
+        "quadrant_seed": 1,
+        "conference": "ODAC",
+        "distance_miles": 317
+      },
+      {
+        "team": "Denison",
+        "overall_seed": 6,
+        "quadrant_seed": 2,
+        "conference": "NCAC",
+        "distance_miles": 454
+      },
+      {
+        "team": "Christopher Newport",
+        "overall_seed": 31,
+        "quadrant_seed": 8,
+        "conference": "C2C",
+        "distance_miles": 469
+      },
+      {
+        "team": "Randolph-Macon",
+        "overall_seed": 32,
+        "quadrant_seed": 8,
+        "conference": "ODAC",
+        "distance_miles": 434
+      },
+      {
+        "team": "Shenandoah",
+        "overall_seed": 36,
+        "quadrant_seed": 9,
+        "conference": "ODAC",
+        "distance_miles": 452
+      },
+      {
+        "team": "Otterbein",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "OAC",
+        "distance_miles": 435
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 380
+      },
+      {
+        "team": "Transylvania",
+        "overall_seed": 44,
+        "quadrant_seed": 11,
+        "conference": "HCAC",
+        "distance_miles": 317
+      },
+      {
+        "team": "Washington & Jefferson",
+        "overall_seed": 46,
+        "quadrant_seed": 12,
+        "conference": "PAC",
+        "distance_miles": 491
+      },
+      {
+        "team": "Asbury",
+        "overall_seed": 63,
+        "quadrant_seed": 16,
+        "conference": "CCS",
+        "distance_miles": 318
+      }
+    ],
+    "nonconference_tournament_opponents": [],
+    "recent_ncaa_tournament_matchups": []
+  },
+  "St. Mary's (MD)": {
+    "overall_seed": 58,
     "quadrant_seed": 15,
     "conference": "UEC",
     "nearby_teams": [
@@ -11221,18 +11368,18 @@
         "distance_miles": 498
       },
       {
-        "team": "Smith",
-        "overall_seed": 13,
-        "quadrant_seed": 4,
-        "conference": "NEWMAC",
-        "distance_miles": 439
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 445
+      },
+      {
+        "team": "Smith",
+        "overall_seed": 14,
+        "quadrant_seed": 4,
+        "conference": "NEWMAC",
+        "distance_miles": 439
       },
       {
         "team": "Cortland",
@@ -11271,35 +11418,28 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 183
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 235
-      },
-      {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 319
       },
       {
         "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
+        "overall_seed": 36,
+        "quadrant_seed": 9,
         "conference": "ODAC",
         "distance_miles": 148
       },
       {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 160
@@ -11312,8 +11452,15 @@
         "distance_miles": 476
       },
       {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 210
+      },
+      {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 315
@@ -11392,78 +11539,6 @@
     "nonconference_tournament_opponents": [],
     "recent_ncaa_tournament_matchups": []
   },
-  "Brevard": {
-    "overall_seed": 58,
-    "quadrant_seed": 15,
-    "conference": "USAC",
-    "nearby_teams": [
-      {
-        "team": "Washington & Lee",
-        "overall_seed": 4,
-        "quadrant_seed": 1,
-        "conference": "ODAC",
-        "distance_miles": 317
-      },
-      {
-        "team": "Denison",
-        "overall_seed": 6,
-        "quadrant_seed": 2,
-        "conference": "NCAC",
-        "distance_miles": 454
-      },
-      {
-        "team": "Christopher Newport",
-        "overall_seed": 31,
-        "quadrant_seed": 8,
-        "conference": "C2C",
-        "distance_miles": 469
-      },
-      {
-        "team": "Randolph-Macon",
-        "overall_seed": 32,
-        "quadrant_seed": 8,
-        "conference": "ODAC",
-        "distance_miles": 434
-      },
-      {
-        "team": "Shenandoah",
-        "overall_seed": 38,
-        "quadrant_seed": 10,
-        "conference": "ODAC",
-        "distance_miles": 452
-      },
-      {
-        "team": "Otterbein",
-        "overall_seed": 41,
-        "quadrant_seed": 11,
-        "conference": "OAC",
-        "distance_miles": 435
-      },
-      {
-        "team": "Transylvania",
-        "overall_seed": 44,
-        "quadrant_seed": 11,
-        "conference": "HCAC",
-        "distance_miles": 317
-      },
-      {
-        "team": "Washington & Jefferson",
-        "overall_seed": 45,
-        "quadrant_seed": 12,
-        "conference": "PAC",
-        "distance_miles": 491
-      },
-      {
-        "team": "Asbury",
-        "overall_seed": 63,
-        "quadrant_seed": 16,
-        "conference": "CCS",
-        "distance_miles": 318
-      }
-    ],
-    "nonconference_tournament_opponents": [],
-    "recent_ncaa_tournament_matchups": []
-  },
   "Trinity (TX)": {
     "overall_seed": 59,
     "quadrant_seed": 15,
@@ -11512,14 +11587,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 342
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 116
@@ -11627,14 +11702,14 @@
       },
       {
         "team": "Smith",
-        "overall_seed": 13,
+        "overall_seed": 14,
         "quadrant_seed": 4,
         "conference": "NEWMAC",
         "distance_miles": 119
       },
       {
         "team": "Bates",
-        "overall_seed": 21,
+        "overall_seed": 22,
         "quadrant_seed": 6,
         "conference": "NESCAC",
         "distance_miles": 169
@@ -11669,21 +11744,14 @@
       },
       {
         "team": "Messiah",
-        "overall_seed": 35,
+        "overall_seed": 33,
         "quadrant_seed": 9,
         "conference": "MACC",
         "distance_miles": 398
       },
       {
-        "team": "Susquehanna",
-        "overall_seed": 36,
-        "quadrant_seed": 9,
-        "conference": "LAND",
-        "distance_miles": 391
-      },
-      {
         "team": "Gettysburg",
-        "overall_seed": 39,
+        "overall_seed": 38,
         "quadrant_seed": 10,
         "conference": "CC",
         "distance_miles": 428
@@ -11746,7 +11814,7 @@
       },
       {
         "team": "St. Mary's (MD)",
-        "overall_seed": 57,
+        "overall_seed": 58,
         "quadrant_seed": 15,
         "conference": "UEC",
         "distance_miles": 496
@@ -11798,7 +11866,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 340
@@ -11812,7 +11880,7 @@
       },
       {
         "team": "WashU",
-        "overall_seed": 14,
+        "overall_seed": 15,
         "quadrant_seed": 4,
         "conference": "UAA",
         "distance_miles": 37
@@ -11839,22 +11907,22 @@
         "distance_miles": 404
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 297
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 162
       },
       {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 297
+      },
+      {
         "team": "Ripon",
-        "overall_seed": 22,
+        "overall_seed": 23,
         "quadrant_seed": 6,
         "conference": "MWC",
         "distance_miles": 428
@@ -11881,6 +11949,13 @@
         "distance_miles": 375
       },
       {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 227
+      },
+      {
         "team": "Otterbein",
         "overall_seed": 41,
         "quadrant_seed": 11,
@@ -11896,7 +11971,7 @@
       },
       {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 333
@@ -11955,7 +12030,7 @@
       },
       {
         "team": "UW-Whitewater",
-        "overall_seed": 10,
+        "overall_seed": 11,
         "quadrant_seed": 3,
         "conference": "WIAC",
         "distance_miles": 484
@@ -11968,18 +12043,18 @@
         "distance_miles": 235
       },
       {
-        "team": "WashU",
-        "overall_seed": 14,
-        "quadrant_seed": 4,
-        "conference": "UAA",
-        "distance_miles": 347
-      },
-      {
         "team": "Baldwin Wallace",
-        "overall_seed": 15,
+        "overall_seed": 13,
         "quadrant_seed": 4,
         "conference": "OAC",
         "distance_miles": 341
+      },
+      {
+        "team": "WashU",
+        "overall_seed": 15,
+        "quadrant_seed": 4,
+        "conference": "UAA",
+        "distance_miles": 347
       },
       {
         "team": "Carroll",
@@ -11989,18 +12064,18 @@
         "distance_miles": 478
       },
       {
-        "team": "Chicago",
-        "overall_seed": 19,
-        "quadrant_seed": 5,
-        "conference": "UAA",
-        "distance_miles": 369
-      },
-      {
         "team": "Illinois Wesleyan",
-        "overall_seed": 20,
+        "overall_seed": 19,
         "quadrant_seed": 5,
         "conference": "CCIW",
         "distance_miles": 363
+      },
+      {
+        "team": "Chicago",
+        "overall_seed": 20,
+        "quadrant_seed": 5,
+        "conference": "UAA",
+        "distance_miles": 369
       },
       {
         "team": "Trine",
@@ -12018,10 +12093,17 @@
       },
       {
         "team": "Carnegie Mellon",
-        "overall_seed": 37,
-        "quadrant_seed": 10,
+        "overall_seed": 35,
+        "quadrant_seed": 9,
         "conference": "UAA",
         "distance_miles": 391
+      },
+      {
+        "team": "DePauw",
+        "overall_seed": 40,
+        "quadrant_seed": 10,
+        "conference": "NCAC",
+        "distance_miles": 235
       },
       {
         "team": "Otterbein",
@@ -12029,6 +12111,13 @@
         "quadrant_seed": 11,
         "conference": "OAC",
         "distance_miles": 216
+      },
+      {
+        "team": "Bridgewater (VA)",
+        "overall_seed": 43,
+        "quadrant_seed": 11,
+        "conference": "ODAC",
+        "distance_miles": 434
       },
       {
         "team": "Transylvania",
@@ -12039,7 +12128,7 @@
       },
       {
         "team": "Washington & Jefferson",
-        "overall_seed": 45,
+        "overall_seed": 46,
         "quadrant_seed": 12,
         "conference": "PAC",
         "distance_miles": 363
@@ -12053,7 +12142,7 @@
       },
       {
         "team": "Brevard",
-        "overall_seed": 58,
+        "overall_seed": 57,
         "quadrant_seed": 15,
         "conference": "USAC",
         "distance_miles": 318
@@ -12082,18 +12171,18 @@
         "distance_miles": 331
       },
       {
-        "team": "UW-Whitewater",
-        "overall_seed": 10,
-        "quadrant_seed": 3,
-        "conference": "WIAC",
-        "distance_miles": 361
-      },
-      {
         "team": "Concordia Moorhead",
-        "overall_seed": 11,
+        "overall_seed": 10,
         "quadrant_seed": 3,
         "conference": "MIAC",
         "distance_miles": 253
+      },
+      {
+        "team": "UW-Whitewater",
+        "overall_seed": 11,
+        "quadrant_seed": 3,
+        "conference": "WIAC",
+        "distance_miles": 361
       },
       {
         "team": "Carroll",
@@ -12118,24 +12207,24 @@
       },
       {
         "team": "Chicago",
-        "overall_seed": 19,
+        "overall_seed": 20,
         "quadrant_seed": 5,
         "conference": "UAA",
         "distance_miles": 471
       },
       {
-        "team": "Ripon",
-        "overall_seed": 22,
-        "quadrant_seed": 6,
-        "conference": "MWC",
-        "distance_miles": 317
-      },
-      {
         "team": "Bethel",
-        "overall_seed": 23,
+        "overall_seed": 21,
         "quadrant_seed": 6,
         "conference": "MIAC",
         "distance_miles": 147
+      },
+      {
+        "team": "Ripon",
+        "overall_seed": 23,
+        "quadrant_seed": 6,
+        "conference": "MWC",
+        "distance_miles": 317
       },
       {
         "team": "UW-River Falls",
@@ -12153,21 +12242,14 @@
       },
       {
         "team": "Gustavus Adolphus",
-        "overall_seed": 34,
-        "quadrant_seed": 9,
+        "overall_seed": 37,
+        "quadrant_seed": 10,
         "conference": "MIAC",
         "distance_miles": 223
       },
       {
-        "team": "St. Mary's (MN)",
-        "overall_seed": 43,
-        "quadrant_seed": 11,
-        "conference": "MIAC",
-        "distance_miles": 215
-      },
-      {
         "team": "Wartburg",
-        "overall_seed": 46,
+        "overall_seed": 45,
         "quadrant_seed": 12,
         "conference": "ARC",
         "distance_miles": 352
