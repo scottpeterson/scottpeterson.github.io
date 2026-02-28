@@ -143,14 +143,14 @@
         font-weight: 700;
       }
       .report-npi_sensitivity_report /* Baseline row */
-        .baseline-row {
+      .baseline-row {
         background: rgba(96, 165, 250, 0.08);
       }
       .report-npi_sensitivity_report .baseline-row td {
         border-bottom: 1px solid rgba(96, 165, 250, 0.2);
       }
       .report-npi_sensitivity_report /* Divergent row */
-        .diverged-row {
+      .diverged-row {
         background: rgba(239, 68, 68, 0.08);
       }
       .report-npi_sensitivity_report .diverged-row td {
@@ -177,7 +177,7 @@
         letter-spacing: 0.5px;
       }
       .report-npi_sensitivity_report /* Diverging sensitivity bar */
-        .sens-diverging {
+      .sens-diverging {
         display: flex;
         align-items: center;
         gap: 0;
@@ -218,7 +218,7 @@
         font-weight: 600;
       }
       .report-npi_sensitivity_report /* Filter controls */
-        .filter-row {
+      .filter-row {
         display: flex;
         gap: 12px;
         margin-bottom: 15px;
@@ -249,7 +249,7 @@
         font-style: italic;
       }
       .report-npi_sensitivity_report /* Convergence map */
-        .conv-grid {
+      .conv-grid {
         display: grid;
         gap: 20px;
         margin-bottom: 25px;
@@ -524,8 +524,9 @@
               </p>
               <p>
                 A team's final NPI averages across all games. Losses contribute
-                only <code>opp_npi * SOS_WEIGHT</code> (coefficient &lt; 1),
-                which dampens. But quality wins contribute
+                only
+                <code>opp_npi * SOS_WEIGHT</code> (coefficient &lt; 1), which
+                dampens. But quality wins contribute
                 <code>opp_npi * (SOS_WEIGHT + QBM)</code>. When enough of a
                 team's games are quality wins and
                 <code>SOS_WEIGHT + QBM</code> is large, the dampening from
@@ -5290,7 +5291,12 @@
           .forEach(el => el.classList.remove('active'));
         document.getElementById('tab-' + tabName).classList.add('active');
         const buttons = document.querySelectorAll('.tab-btn');
-        const tabMap = { convergence: 0, summary: 1, sensitivity: 2, full: 3 };
+        const tabMap = {
+          convergence: 0,
+          summary: 1,
+          sensitivity: 2,
+          full: 3,
+        };
         if (tabMap[tabName] !== undefined)
           buttons[tabMap[tabName]].classList.add('active');
       }
