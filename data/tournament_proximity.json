@@ -8278,7 +8278,15 @@
     "overall_seed": 41,
     "quadrant_seed": 11,
     "conference": "ASC",
-    "nearby_teams": [],
+    "nearby_teams": [
+      {
+        "team": "Austin College",
+        "overall_seed": 62,
+        "quadrant_seed": 16,
+        "conference": "SCAC",
+        "distance_miles": 241
+      }
+    ],
     "nonconference_tournament_opponents": [
       "Austin College",
       "Claremont-Mudd-Scripps",
@@ -10327,6 +10335,13 @@
         "distance_miles": 347
       },
       {
+        "team": "Austin College",
+        "overall_seed": 62,
+        "quadrant_seed": 16,
+        "conference": "SCAC",
+        "distance_miles": 433
+      },
+      {
         "team": "Webster",
         "overall_seed": 63,
         "quadrant_seed": 16,
@@ -11736,7 +11751,22 @@
     "overall_seed": 62,
     "quadrant_seed": 16,
     "conference": "SCAC",
-    "nearby_teams": [],
+    "nearby_teams": [
+      {
+        "team": "Hardin-Simmons",
+        "overall_seed": 41,
+        "quadrant_seed": 11,
+        "conference": "ASC",
+        "distance_miles": 241
+      },
+      {
+        "team": "Millsaps",
+        "overall_seed": 53,
+        "quadrant_seed": 14,
+        "conference": "SAA",
+        "distance_miles": 433
+      }
+    ],
     "nonconference_tournament_opponents": ["Hardin-Simmons", "Millsaps"],
     "recent_ncaa_tournament_matchups": []
   },
