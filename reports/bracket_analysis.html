@@ -87,7 +87,7 @@
         border-color: rgba(245, 158, 11, 0.3);
       }
       .report-bracket_analysis /* Quadrant sections */
-      .quadrant-section {
+        .quadrant-section {
         margin-bottom: 50px;
       }
       .report-bracket_analysis .quadrant-header {
@@ -102,6 +102,8 @@
       }
       .report-bracket_analysis .quadrant-header h2 {
         font-size: 1.4rem;
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
       }
       .report-bracket_analysis .expected-flights-badge {
         margin-left: auto;
@@ -123,7 +125,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .report-bracket_analysis /* Team pill */
-      .team-pill {
+        .team-pill {
         display: inline-flex;
         align-items: center;
         padding: 3px 8px;
@@ -133,7 +135,7 @@
         white-space: nowrap;
       }
       .report-bracket_analysis /* Pod visualization */
-      .pod-viz {
+        .pod-viz {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -172,7 +174,7 @@
         margin: 0 4px;
       }
       .report-bracket_analysis /* Rematch badge */
-      .rematch-badge {
+        .rematch-badge {
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -193,7 +195,7 @@
         font-size: 0.6rem;
       }
       .report-bracket_analysis /* Probability table */
-      .prob-table {
+        .prob-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 0.8rem;
@@ -207,6 +209,11 @@
         font-size: 0.75rem;
         text-transform: uppercase;
       }
+      .report-bracket_analysis .prob-table th:nth-child(1),
+      .report-bracket_analysis .prob-table th:nth-child(2),
+      .report-bracket_analysis .prob-table th:nth-child(4) {
+        text-align: center;
+      }
       .report-bracket_analysis .prob-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -217,14 +224,19 @@
       .report-bracket_analysis .prob-table .pod-cell {
         font-weight: 700;
         color: #f59e0b;
+        text-align: center;
       }
       .report-bracket_analysis .prob-table .seed-cell {
         color: #8892b0;
         font-size: 0.75rem;
+        text-align: center;
       }
       .report-bracket_analysis .pct-cell {
         font-family: 'SF Mono', 'Fira Code', monospace;
         font-weight: 600;
+      }
+      .report-bracket_analysis .prob-table .pct-cell {
+        text-align: center;
       }
       .report-bracket_analysis .bar-cell {
         width: 30%;
@@ -236,7 +248,7 @@
         min-width: 2px;
       }
       .report-bracket_analysis /* Host table */
-      .host-table {
+        .host-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 0.8rem;
@@ -250,9 +262,16 @@
         font-size: 0.75rem;
         text-transform: uppercase;
       }
+      .report-bracket_analysis .host-table th:nth-child(2),
+      .report-bracket_analysis .host-table th:nth-child(3) {
+        text-align: center;
+      }
       .report-bracket_analysis .host-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .report-bracket_analysis .host-table td.pct-cell {
+        text-align: center;
       }
       .report-bracket_analysis .host-bar {
         height: 12px;
@@ -264,7 +283,7 @@
         color: #8892b0;
       }
       .report-bracket_analysis /* Combos table */
-      .combos-wrapper {
+        .combos-wrapper {
         max-height: 600px;
         overflow-y: auto;
         border-radius: 8px;
@@ -341,7 +360,7 @@
         gap: 2px;
       }
       .report-bracket_analysis /* Overall summary */
-      .overall-summary {
+        .overall-summary {
         margin-bottom: 40px;
         padding: 24px;
         background: rgba(255, 255, 255, 0.03);
@@ -410,8 +429,14 @@
         padding: 6px 14px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       }
+      .report-bracket_analysis .summary-table td.pct-cell {
+        text-align: center;
+      }
+      .report-bracket_analysis .summary-table th + th {
+        text-align: center;
+      }
       .report-bracket_analysis /* Path analysis section */
-      .path-section {
+        .path-section {
         margin-bottom: 40px;
         padding: 24px;
         background: rgba(255, 255, 255, 0.03);
@@ -463,9 +488,19 @@
         font-size: 0.72rem;
         text-transform: uppercase;
       }
+      .report-bracket_analysis .path-table th:nth-child(1),
+      .report-bracket_analysis .path-table th:nth-child(2),
+      .report-bracket_analysis .path-table th:nth-child(n + 5) {
+        text-align: center;
+      }
       .report-bracket_analysis .path-table td {
         padding: 5px 8px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .report-bracket_analysis .path-table .rank-cell,
+      .report-bracket_analysis .path-table .seed-cell,
+      .report-bracket_analysis .path-table .pct-cell {
+        text-align: center;
       }
       .report-bracket_analysis .path-table .q-cell {
         color: #8892b0;
@@ -489,9 +524,19 @@
         font-size: 0.75rem;
         text-transform: uppercase;
       }
+      .report-bracket_analysis .difficulty-table th:nth-child(1),
+      .report-bracket_analysis .difficulty-table th:nth-child(3),
+      .report-bracket_analysis .difficulty-table th:nth-child(4) {
+        text-align: center;
+      }
       .report-bracket_analysis .difficulty-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .report-bracket_analysis .difficulty-table .rank-cell,
+      .report-bracket_analysis .difficulty-table .pod-cell,
+      .report-bracket_analysis .difficulty-table .pct-cell {
+        text-align: center;
       }
       .report-bracket_analysis .difficulty-table .teams-cell {
         display: flex;
@@ -535,7 +580,7 @@
         font-size: 0.8rem;
       }
       .report-bracket_analysis /* Tournament progress banner */
-      .tournament-progress {
+        .tournament-progress {
         display: flex;
         align-items: center;
         gap: 12px;
@@ -587,7 +632,7 @@
         color: #6ee7b7;
       }
       .report-bracket_analysis /* Decided game badges */
-      .decided-badge {
+        .decided-badge {
         display: inline-flex;
         align-items: center;
         gap: 4px;
@@ -602,7 +647,7 @@
         white-space: nowrap;
       }
       .report-bracket_analysis /* Winner/eliminated team styling in pod viz */
-      .pod-team.winner-team {
+        .pod-team.winner-team {
         box-shadow: 0 0 0 2px #10b981;
       }
       .report-bracket_analysis .pod-team.eliminated {
@@ -610,7 +655,7 @@
         text-decoration: line-through;
       }
       .report-bracket_analysis /* Eliminated/clinched rows in tables */
-      .eliminated-row {
+        .eliminated-row {
         opacity: 0.35;
       }
       .report-bracket_analysis .eliminated-row td {
@@ -635,7 +680,7 @@
         color: #10b981;
       }
       .report-bracket_analysis /* Footer */
-      .footer {
+        .footer {
         text-align: center;
         color: #8892b0;
         margin-top: 30px;
@@ -648,7 +693,7 @@
         text-decoration: underline;
       }
       .report-bracket_analysis /* Responsive */
-      @media (max-width: 768px) {
+        @media (max-width: 768px) {
         h1 {
           font-size: 1.5rem;
         }
@@ -769,10 +814,9 @@
           <div class="explanation">
             The NCAA D3 tournament places 64 teams into 4 quadrants of 16. After
             two rounds, each quadrant produces 4 Sweet 16 teams that play at a
-            single
-            <strong>sectional host site</strong>. The NCAA prefers the highest
-            seed to host, but the <strong>500-mile rule</strong> means teams
-            500+ miles away require a flight (paid by NCAA). To minimize
+            single <strong>sectional host site</strong>. The NCAA prefers the
+            highest seed to host, but the <strong>500-mile rule</strong> means
+            teams 500+ miles away require a flight (paid by NCAA). To minimize
             flights, a lower seed may host if it keeps more teams within driving
             distance. This report enumerates all
             <strong>256 possible 4-team sectionals</strong>
@@ -4153,7 +4197,7 @@
                   <tbody>
                     <tr>
                       <td class="rank-cell">1</td>
-                      <td>Bottom Right</td>
+                      <td style="white-space: nowrap">Bottom Right</td>
                       <td class="pod-cell">Pod A</td>
                       <td
                         class="pct-cell"
@@ -4183,7 +4227,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">2</td>
-                      <td>Bottom Left</td>
+                      <td style="white-space: nowrap">Bottom Left</td>
                       <td class="pod-cell">Pod B</td>
                       <td
                         class="pct-cell"
@@ -4213,7 +4257,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">3</td>
-                      <td>Bottom Left</td>
+                      <td style="white-space: nowrap">Bottom Left</td>
                       <td class="pod-cell">Pod A</td>
                       <td
                         class="pct-cell"
@@ -4243,7 +4287,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">4</td>
-                      <td>Top Left</td>
+                      <td style="white-space: nowrap">Top Left</td>
                       <td class="pod-cell">Pod D</td>
                       <td
                         class="pct-cell"
@@ -4273,7 +4317,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">5</td>
-                      <td>Top Right</td>
+                      <td style="white-space: nowrap">Top Right</td>
                       <td class="pod-cell">Pod B</td>
                       <td
                         class="pct-cell"
@@ -4303,7 +4347,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">6</td>
-                      <td>Top Left</td>
+                      <td style="white-space: nowrap">Top Left</td>
                       <td class="pod-cell">Pod A</td>
                       <td
                         class="pct-cell"
@@ -4333,7 +4377,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">7</td>
-                      <td>Bottom Left</td>
+                      <td style="white-space: nowrap">Bottom Left</td>
                       <td class="pod-cell">Pod D</td>
                       <td
                         class="pct-cell"
@@ -4363,7 +4407,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">8</td>
-                      <td>Top Right</td>
+                      <td style="white-space: nowrap">Top Right</td>
                       <td class="pod-cell">Pod D</td>
                       <td
                         class="pct-cell"
@@ -4393,7 +4437,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">9</td>
-                      <td>Top Right</td>
+                      <td style="white-space: nowrap">Top Right</td>
                       <td class="pod-cell">Pod C</td>
                       <td
                         class="pct-cell"
@@ -4423,7 +4467,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">10</td>
-                      <td>Bottom Right</td>
+                      <td style="white-space: nowrap">Bottom Right</td>
                       <td class="pod-cell">Pod D</td>
                       <td
                         class="pct-cell"
@@ -4453,7 +4497,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">11</td>
-                      <td>Bottom Right</td>
+                      <td style="white-space: nowrap">Bottom Right</td>
                       <td class="pod-cell">Pod C</td>
                       <td
                         class="pct-cell"
@@ -4483,7 +4527,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">12</td>
-                      <td>Top Right</td>
+                      <td style="white-space: nowrap">Top Right</td>
                       <td class="pod-cell">Pod A</td>
                       <td
                         class="pct-cell"
@@ -4513,7 +4557,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">13</td>
-                      <td>Top Left</td>
+                      <td style="white-space: nowrap">Top Left</td>
                       <td class="pod-cell">Pod C</td>
                       <td
                         class="pct-cell"
@@ -4543,7 +4587,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">14</td>
-                      <td>Bottom Right</td>
+                      <td style="white-space: nowrap">Bottom Right</td>
                       <td class="pod-cell">Pod B</td>
                       <td
                         class="pct-cell"
@@ -4573,7 +4617,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">15</td>
-                      <td>Bottom Left</td>
+                      <td style="white-space: nowrap">Bottom Left</td>
                       <td class="pod-cell">Pod C</td>
                       <td
                         class="pct-cell"
@@ -4603,7 +4647,7 @@
                     </tr>
                     <tr>
                       <td class="rank-cell">16</td>
-                      <td>Top Left</td>
+                      <td style="white-space: nowrap">Top Left</td>
                       <td class="pod-cell">Pod B</td>
                       <td
                         class="pct-cell"
@@ -44979,7 +45023,7 @@
           </div>
 
           <p class="footer">
-            Generated March 02, 2026 at 05:09 PM<br />
+            Generated March 02, 2026 at 05:18 PM<br />
             <a href="https://thed3statlab.com">TheD3StatLab</a>
           </p>
         </div>

@@ -102,6 +102,8 @@
 
       .quadrant-header h2 {
         font-size: 1.4rem;
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
       }
 
       .expected-flights-badge {
@@ -222,6 +224,12 @@
         text-transform: uppercase;
       }
 
+      .prob-table th:nth-child(1),
+      .prob-table th:nth-child(2),
+      .prob-table th:nth-child(4) {
+        text-align: center;
+      }
+
       .prob-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -234,16 +242,22 @@
       .prob-table .pod-cell {
         font-weight: 700;
         color: #f59e0b;
+        text-align: center;
       }
 
       .prob-table .seed-cell {
         color: #8892b0;
         font-size: 0.75rem;
+        text-align: center;
       }
 
       .pct-cell {
         font-family: 'SF Mono', 'Fira Code', monospace;
         font-weight: 600;
+      }
+
+      .prob-table .pct-cell {
+        text-align: center;
       }
 
       .bar-cell {
@@ -274,9 +288,18 @@
         text-transform: uppercase;
       }
 
+      .host-table th:nth-child(2),
+      .host-table th:nth-child(3) {
+        text-align: center;
+      }
+
       .host-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .host-table td.pct-cell {
+        text-align: center;
       }
 
       .host-bar {
@@ -461,6 +484,14 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       }
 
+      .summary-table td.pct-cell {
+        text-align: center;
+      }
+
+      .summary-table th + th {
+        text-align: center;
+      }
+
       /* Path analysis section */
       .path-section {
         margin-bottom: 40px;
@@ -522,9 +553,21 @@
         text-transform: uppercase;
       }
 
+      .path-table th:nth-child(1),
+      .path-table th:nth-child(2),
+      .path-table th:nth-child(n + 5) {
+        text-align: center;
+      }
+
       .path-table td {
         padding: 5px 8px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      .path-table .rank-cell,
+      .path-table .seed-cell,
+      .path-table .pct-cell {
+        text-align: center;
       }
 
       .path-table .q-cell {
@@ -553,9 +596,21 @@
         text-transform: uppercase;
       }
 
+      .difficulty-table th:nth-child(1),
+      .difficulty-table th:nth-child(3),
+      .difficulty-table th:nth-child(4) {
+        text-align: center;
+      }
+
       .difficulty-table td {
         padding: 6px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .difficulty-table .rank-cell,
+      .difficulty-table .pod-cell,
+      .difficulty-table .pct-cell {
+        text-align: center;
       }
 
       .difficulty-table .teams-cell {
@@ -4162,7 +4217,7 @@
               <tbody>
                 <tr>
                   <td class="rank-cell">1</td>
-                  <td>Bottom Right</td>
+                  <td style="white-space: nowrap">Bottom Right</td>
                   <td class="pod-cell">Pod A</td>
                   <td
                     class="pct-cell"
@@ -4192,7 +4247,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">2</td>
-                  <td>Bottom Left</td>
+                  <td style="white-space: nowrap">Bottom Left</td>
                   <td class="pod-cell">Pod B</td>
                   <td
                     class="pct-cell"
@@ -4222,7 +4277,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">3</td>
-                  <td>Bottom Left</td>
+                  <td style="white-space: nowrap">Bottom Left</td>
                   <td class="pod-cell">Pod A</td>
                   <td
                     class="pct-cell"
@@ -4252,7 +4307,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">4</td>
-                  <td>Top Left</td>
+                  <td style="white-space: nowrap">Top Left</td>
                   <td class="pod-cell">Pod D</td>
                   <td
                     class="pct-cell"
@@ -4282,7 +4337,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">5</td>
-                  <td>Top Right</td>
+                  <td style="white-space: nowrap">Top Right</td>
                   <td class="pod-cell">Pod B</td>
                   <td
                     class="pct-cell"
@@ -4312,7 +4367,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">6</td>
-                  <td>Top Left</td>
+                  <td style="white-space: nowrap">Top Left</td>
                   <td class="pod-cell">Pod A</td>
                   <td
                     class="pct-cell"
@@ -4342,7 +4397,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">7</td>
-                  <td>Bottom Left</td>
+                  <td style="white-space: nowrap">Bottom Left</td>
                   <td class="pod-cell">Pod D</td>
                   <td
                     class="pct-cell"
@@ -4372,7 +4427,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">8</td>
-                  <td>Top Right</td>
+                  <td style="white-space: nowrap">Top Right</td>
                   <td class="pod-cell">Pod D</td>
                   <td
                     class="pct-cell"
@@ -4402,7 +4457,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">9</td>
-                  <td>Top Right</td>
+                  <td style="white-space: nowrap">Top Right</td>
                   <td class="pod-cell">Pod C</td>
                   <td
                     class="pct-cell"
@@ -4432,7 +4487,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">10</td>
-                  <td>Bottom Right</td>
+                  <td style="white-space: nowrap">Bottom Right</td>
                   <td class="pod-cell">Pod D</td>
                   <td
                     class="pct-cell"
@@ -4462,7 +4517,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">11</td>
-                  <td>Bottom Right</td>
+                  <td style="white-space: nowrap">Bottom Right</td>
                   <td class="pod-cell">Pod C</td>
                   <td
                     class="pct-cell"
@@ -4492,7 +4547,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">12</td>
-                  <td>Top Right</td>
+                  <td style="white-space: nowrap">Top Right</td>
                   <td class="pod-cell">Pod A</td>
                   <td
                     class="pct-cell"
@@ -4522,7 +4577,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">13</td>
-                  <td>Top Left</td>
+                  <td style="white-space: nowrap">Top Left</td>
                   <td class="pod-cell">Pod C</td>
                   <td
                     class="pct-cell"
@@ -4552,7 +4607,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">14</td>
-                  <td>Bottom Right</td>
+                  <td style="white-space: nowrap">Bottom Right</td>
                   <td class="pod-cell">Pod B</td>
                   <td
                     class="pct-cell"
@@ -4582,7 +4637,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">15</td>
-                  <td>Bottom Left</td>
+                  <td style="white-space: nowrap">Bottom Left</td>
                   <td class="pod-cell">Pod C</td>
                   <td
                     class="pct-cell"
@@ -4612,7 +4667,7 @@
                 </tr>
                 <tr>
                   <td class="rank-cell">16</td>
-                  <td>Top Left</td>
+                  <td style="white-space: nowrap">Top Left</td>
                   <td class="pod-cell">Pod B</td>
                   <td
                     class="pct-cell"
@@ -45044,7 +45099,7 @@
       </div>
 
       <p class="footer">
-        Generated March 02, 2026 at 05:09 PM<br />
+        Generated March 02, 2026 at 05:18 PM<br />
         <a href="https://thed3statlab.com">TheD3StatLab</a>
       </p>
     </div>
