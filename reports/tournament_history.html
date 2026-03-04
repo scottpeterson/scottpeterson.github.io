@@ -1,0 +1,3350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      2026 NCAA D3 WBB Tournament — Historical Performance - The D3 Stat Lab
+    </title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-tournament_history * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .report-tournament_history {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        line-height: 1.5;
+        padding: 20px;
+      }
+      .report-tournament_history h1 {
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 4px;
+        color: #0f172a;
+      }
+      .report-tournament_history .subtitle {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95em;
+        margin-bottom: 24px;
+      }
+      .report-tournament_history table.summary {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.82em;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .report-tournament_history table.summary th {
+        background: #1e3a5f;
+        color: #fff;
+        padding: 8px 6px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.85em;
+        position: sticky;
+        top: 0;
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+      }
+      .report-tournament_history table.summary th:hover {
+        background: #2a4f7a;
+      }
+      .report-tournament_history table.summary th .sort-arrow {
+        font-size: 0.7em;
+        margin-left: 3px;
+        opacity: 0.5;
+      }
+      .report-tournament_history table.summary th.sort-active .sort-arrow {
+        opacity: 1;
+      }
+      .report-tournament_history table.summary th:first-child,
+      .report-tournament_history table.summary th:nth-child(2),
+      .report-tournament_history table.summary th:nth-child(6) {
+        text-align: left;
+      }
+      .report-tournament_history table.summary td {
+        padding: 6px 6px;
+        border-bottom: 1px solid #e2e8f0;
+        text-align: center;
+      }
+      .report-tournament_history table.summary td:first-child,
+      .report-tournament_history table.summary td:nth-child(2),
+      .report-tournament_history table.summary td:nth-child(6) {
+        text-align: left;
+      }
+      .report-tournament_history table.summary tr:hover {
+        background: #f1f5f9;
+      }
+      .report-tournament_history table.summary tr:nth-child(even) {
+        background: #f8fafc;
+      }
+      .report-tournament_history table.summary tr:nth-child(even):hover {
+        background: #e8edf3;
+      }
+      .report-tournament_history .champ {
+        color: #b45309;
+        font-weight: 700;
+      }
+      .report-tournament_history .ff {
+        color: #7c3aed;
+        font-weight: 600;
+      }
+      .report-tournament_history .seed-cell {
+        font-weight: 700;
+        color: #1e40af;
+      }
+      .report-tournament_history .no-history {
+        color: #94a3b8;
+        font-style: italic;
+      }
+      .report-tournament_history .pct-bar {
+        display: inline-block;
+        height: 14px;
+        background: #3b82f6;
+        border-radius: 3px;
+        vertical-align: middle;
+        min-width: 2px;
+      }
+      .report-tournament_history .streak-current {
+        color: #16a34a;
+        font-weight: 600;
+      }
+      .report-tournament_history .summary-section {
+        max-width: 1400px;
+        margin: 0 auto 40px;
+      }
+      .report-tournament_history .summary-section h2 {
+        font-size: 1.3em;
+        margin-bottom: 12px;
+        color: #1e40af;
+        border-bottom: 2px solid #dbeafe;
+        padding-bottom: 4px;
+      }
+      .report-tournament_history .cards {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        gap: 20px;
+      }
+      .report-tournament_history .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        padding: 18px;
+        border-left: 4px solid #3b82f6;
+      }
+      .report-tournament_history .card h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+        color: #0f172a;
+      }
+      .report-tournament_history .card h3 .seed {
+        color: #64748b;
+        font-weight: 400;
+        font-size: 0.85em;
+      }
+      .report-tournament_history .card .stat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 16px;
+        font-size: 0.88em;
+        margin-bottom: 10px;
+      }
+      .report-tournament_history .card .stat-grid .label {
+        color: #64748b;
+      }
+      .report-tournament_history .card .stat-grid .value {
+        font-weight: 600;
+        text-align: right;
+      }
+      .report-tournament_history .card .opponents {
+        font-size: 0.82em;
+        color: #475569;
+      }
+      .report-tournament_history .card .opponents strong {
+        color: #1e293b;
+      }
+      .report-tournament_history .card-champ {
+        border-left-color: #f59e0b;
+      }
+      .report-tournament_history .card-ff {
+        border-left-color: #8b5cf6;
+      }
+      .report-tournament_history .card-none {
+        border-left-color: #cbd5e1;
+      }
+      .report-tournament_history .note {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.8em;
+        margin-top: 30px;
+      }
+      .report-tournament_history .leaderboards {
+        max-width: 1400px;
+        margin: 0 auto 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+      }
+      .report-tournament_history .lb {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        padding: 16px;
+      }
+      .report-tournament_history .lb h3 {
+        font-size: 1em;
+        color: #1e40af;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 4px;
+      }
+      .report-tournament_history .lb ol {
+        padding-left: 24px;
+        font-size: 0.88em;
+      }
+      .report-tournament_history .lb li {
+        margin-bottom: 3px;
+      }
+      .report-tournament_history .lb .val {
+        color: #64748b;
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="/distances.html">Distances</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="bracket_analysis.html"
+                  >2026 D3 WBB NCAA Tournament Bracket Analysis -
+                  TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_history.html" class="active"
+                  >2026 NCAA D3 WBB Tournament — Historical Performance</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-tournament_history">
+        <h1>2026 NCAA D3 Women&rsquo;s Basketball Tournament</h1>
+        <p class="subtitle">
+          Historical NCAA Tournament Performance for All 64 Teams &bull; Data:
+          1982&ndash;2025
+        </p>
+
+        <div class="leaderboards">
+          <div class="lb">
+            <h3>Most Tournament Appearances</h3>
+            <ol>
+              <li><strong>Scranton</strong> <span class="val">37</span></li>
+              <li><strong>WashU</strong> <span class="val">33</span></li>
+              <li>
+                <strong>Christopher Newport</strong> <span class="val">26</span>
+              </li>
+              <li>
+                <strong>Southern Maine</strong> <span class="val">26</span>
+              </li>
+              <li><strong>Hope</strong> <span class="val">24</span></li>
+              <li><strong>NYU</strong> <span class="val">24</span></li>
+              <li><strong>DePauw</strong> <span class="val">24</span></li>
+              <li><strong>Messiah</strong> <span class="val">24</span></li>
+              <li>
+                <strong>UW-Whitewater</strong> <span class="val">23</span>
+              </li>
+              <li><strong>Bowdoin</strong> <span class="val">22</span></li>
+              <li><strong>Emmanuel</strong> <span class="val">21</span></li>
+              <li><strong>UW-Oshkosh</strong> <span class="val">20</span></li>
+              <li>
+                <strong>Concordia Moorhead</strong> <span class="val">20</span>
+              </li>
+              <li>
+                <strong>Baldwin Wallace</strong> <span class="val">19</span>
+              </li>
+              <li>
+                <strong>Illinois Wesleyan</strong> <span class="val">16</span>
+              </li>
+            </ol>
+          </div>
+          <div class="lb">
+            <h3>Most Tournament Wins</h3>
+            <ol>
+              <li><strong>WashU</strong> <span class="val">75</span></li>
+              <li><strong>Scranton</strong> <span class="val">68</span></li>
+              <li><strong>Hope</strong> <span class="val">49</span></li>
+              <li><strong>NYU</strong> <span class="val">49</span></li>
+              <li><strong>Bowdoin</strong> <span class="val">48</span></li>
+              <li>
+                <strong>Southern Maine</strong> <span class="val">42</span>
+              </li>
+              <li><strong>UW-Oshkosh</strong> <span class="val">41</span></li>
+              <li>
+                <strong>Christopher Newport</strong> <span class="val">36</span>
+              </li>
+              <li>
+                <strong>UW-Whitewater</strong> <span class="val">34</span>
+              </li>
+              <li><strong>DePauw</strong> <span class="val">34</span></li>
+              <li><strong>Messiah</strong> <span class="val">32</span></li>
+              <li>
+                <strong>Baldwin Wallace</strong> <span class="val">23</span>
+              </li>
+              <li>
+                <strong>Illinois Wesleyan</strong> <span class="val">23</span>
+              </li>
+              <li><strong>Smith</strong> <span class="val">20</span></li>
+              <li>
+                <strong>Concordia Moorhead</strong> <span class="val">20</span>
+              </li>
+            </ol>
+          </div>
+          <div class="lb">
+            <h3>Best Win % (min 5 games)</h3>
+            <ol>
+              <li>
+                <strong>Smith</strong> <span class="val">76.9% (20-6)</span>
+              </li>
+              <li>
+                <strong>WashU</strong> <span class="val">72.8% (75-28)</span>
+              </li>
+              <li>
+                <strong>Hope</strong> <span class="val">71.0% (49-20)</span>
+              </li>
+              <li>
+                <strong>NYU</strong> <span class="val">70.0% (49-21)</span>
+              </li>
+              <li>
+                <strong>Whitman</strong> <span class="val">69.6% (16-7)</span>
+              </li>
+              <li>
+                <strong>Bowdoin</strong> <span class="val">69.6% (48-21)</span>
+              </li>
+              <li>
+                <strong>UW-Oshkosh</strong>
+                <span class="val">69.5% (41-18)</span>
+              </li>
+              <li>
+                <strong>Trine</strong> <span class="val">66.7% (14-7)</span>
+              </li>
+              <li>
+                <strong>Transylvania</strong>
+                <span class="val">65.4% (17-9)</span>
+              </li>
+              <li>
+                <strong>Scranton</strong> <span class="val">64.8% (68-37)</span>
+              </li>
+              <li>
+                <strong>Southern Maine</strong>
+                <span class="val">61.8% (42-26)</span>
+              </li>
+              <li>
+                <strong>DePauw</strong> <span class="val">60.7% (34-22)</span>
+              </li>
+              <li>
+                <strong>Illinois Wesleyan</strong>
+                <span class="val">60.5% (23-15)</span>
+              </li>
+              <li>
+                <strong>Hardin-Simmons</strong>
+                <span class="val">60.0% (15-10)</span>
+              </li>
+              <li><strong>Coe</strong> <span class="val">60.0% (3-2)</span></li>
+            </ol>
+          </div>
+          <div class="lb">
+            <h3>National Champions in Field</h3>
+            <ol>
+              <li>
+                <strong>WashU</strong>
+                <span class="val">5x &mdash; 1998, 1999, 2000, 2001, 2010</span>
+              </li>
+              <li>
+                <strong>Hope</strong>
+                <span class="val">3x &mdash; 1990, 2006, 2022</span>
+              </li>
+              <li>
+                <strong>NYU</strong>
+                <span class="val">3x &mdash; 1997, 2024, 2025</span>
+              </li>
+              <li>
+                <strong>DePauw</strong>
+                <span class="val">2x &mdash; 2007, 2013</span>
+              </li>
+              <li>
+                <strong>Transylvania</strong>
+                <span class="val">1x &mdash; 2023</span>
+              </li>
+              <li>
+                <strong>UW-Oshkosh</strong>
+                <span class="val">1x &mdash; 1996</span>
+              </li>
+              <li>
+                <strong>Scranton</strong>
+                <span class="val">1x &mdash; 1985</span>
+              </li>
+              <li>
+                <strong>Concordia Moorhead</strong>
+                <span class="val">1x &mdash; 1988</span>
+              </li>
+              <li>
+                <strong>Illinois Wesleyan</strong>
+                <span class="val">1x &mdash; 2012</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="summary-section">
+          <h2>All 64 Teams — Tournament History Summary</h2>
+          <table class="summary" id="summaryTable">
+            <thead>
+              <tr>
+                <th data-sort="num">
+                  Seed <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="str">
+                  Team <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Apps <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  W <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  L <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Win% <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Champs <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Final Fours <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Elite 8s <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Furthest Round <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="num">
+                  Longest Streak <span class="sort-arrow">&#x25B2;</span>
+                </th>
+                <th data-sort="str">
+                  Top Opponent <span class="sort-arrow">&#x25B2;</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-sort-values="1|NYU|24|49|21|70.0|3|5|9|7|7|Scranton">
+                <td class="seed-cell">1</td>
+                <td>NYU</td>
+                <td>24</td>
+                <td>49</td>
+                <td>21</td>
+                <td><span class="pct-bar" style="width: 56px"></span> 70%</td>
+                <td class="champ">3</td>
+                <td>5</td>
+                <td>9</td>
+                <td>National Champion</td>
+                <td>7yr (1993-1999)</td>
+                <td>Scranton (6x)</td>
+              </tr>
+              <tr
+                data-sort-values="2|UW-Oshkosh|20|41|18|69.5|1|3|7|7|7|UW-Eau Claire"
+              >
+                <td class="seed-cell">2</td>
+                <td>UW-Oshkosh</td>
+                <td>20</td>
+                <td>41</td>
+                <td>18</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 55.59322033898306px"
+                  ></span>
+                  69%
+                </td>
+                <td class="champ">1</td>
+                <td>3</td>
+                <td>7</td>
+                <td>National Champion</td>
+                <td>7yr (1994-2000)</td>
+                <td>UW-Eau Claire (8x)</td>
+              </tr>
+              <tr
+                data-sort-values="3|Washington & Lee|4|4|4|50.0|0|0|1|4|4|NYU"
+              >
+                <td class="seed-cell">3</td>
+                <td>Washington &amp; Lee</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td><span class="pct-bar" style="width: 40px"></span> 50%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>1</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td class="streak-current">4yr (2022-2025) &#x25cf;</td>
+                <td>NYU (1x)</td>
+              </tr>
+              <tr data-sort-values="4|Scranton|37|68|37|64.8|1|9|16|7|9|NYU">
+                <td class="seed-cell">4</td>
+                <td>Scranton</td>
+                <td>37</td>
+                <td>68</td>
+                <td>37</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 51.80952380952381px"
+                  ></span>
+                  65%
+                </td>
+                <td class="champ">1</td>
+                <td>9</td>
+                <td>16</td>
+                <td>National Champion</td>
+                <td>9yr (1992-2000)</td>
+                <td>NYU (6x)</td>
+              </tr>
+              <tr
+                data-sort-values="5|Johns Hopkins|15|18|15|54.5|0|0|2|4|6|Scranton"
+              >
+                <td class="seed-cell">5</td>
+                <td>Johns Hopkins</td>
+                <td>15</td>
+                <td>18</td>
+                <td>15</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 43.63636363636363px"
+                  ></span>
+                  55%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>2</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>6yr (1995-2000)</td>
+                <td>Scranton (5x)</td>
+              </tr>
+              <tr data-sort-values="6|Denison|8|2|8|20.0|0|0|0|2|4|Hope">
+                <td class="seed-cell">6</td>
+                <td>Denison</td>
+                <td>8</td>
+                <td>2</td>
+                <td>8</td>
+                <td><span class="pct-bar" style="width: 16px"></span> 20%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>4yr (2005-2008)</td>
+                <td>Hope (3x)</td>
+              </tr>
+              <tr data-sort-values="7|Hope|24|49|20|71.0|3|4|8|7|8|Thomas More">
+                <td class="seed-cell">7</td>
+                <td>Hope</td>
+                <td>24</td>
+                <td>49</td>
+                <td>20</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 56.811594202898554px"
+                  ></span>
+                  71%
+                </td>
+                <td class="champ">3</td>
+                <td>4</td>
+                <td>8</td>
+                <td>National Champion</td>
+                <td>8yr (2013-2020)</td>
+                <td>Thomas More (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="8|Bowdoin|22|48|21|69.6|0|3|9|6|12|Southern Maine"
+              >
+                <td class="seed-cell">8</td>
+                <td>Bowdoin</td>
+                <td>22</td>
+                <td>48</td>
+                <td>21</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 55.65217391304348px"
+                  ></span>
+                  70%
+                </td>
+                <td>—</td>
+                <td class="ff">3</td>
+                <td>9</td>
+                <td>Championship Game</td>
+                <td>12yr (2001-2012)</td>
+                <td>Southern Maine (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="9|John Carroll|4|2|4|33.3|0|0|0|2|2|Texas Lutheran"
+              >
+                <td class="seed-cell">9</td>
+                <td>John Carroll</td>
+                <td>4</td>
+                <td>2</td>
+                <td>4</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 26.666666666666664px"
+                  ></span>
+                  33%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>2yr (2014-2015)</td>
+                <td>Texas Lutheran (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="10|UW-Whitewater|23|34|23|59.6|0|4|6|6|7|Simpson (IA)"
+              >
+                <td class="seed-cell">10</td>
+                <td>UW-Whitewater</td>
+                <td>23</td>
+                <td>34</td>
+                <td>23</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 47.719298245614034px"
+                  ></span>
+                  60%
+                </td>
+                <td>—</td>
+                <td class="ff">4</td>
+                <td>6</td>
+                <td>Championship Game</td>
+                <td>7yr (2008-2014)</td>
+                <td>Simpson (IA) (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="11|UW-La Crosse|7|7|7|50.0|0|0|2|4|3|St. Norbert"
+              >
+                <td class="seed-cell">11</td>
+                <td>UW-La Crosse</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td><span class="pct-bar" style="width: 40px"></span> 50%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>2</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>3yr (1983-1985)</td>
+                <td>St. Norbert (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="12|Concordia Moorhead|20|20|19|51.3|1|2|5|7|14|St. Benedict"
+              >
+                <td class="seed-cell">12</td>
+                <td>Concordia Moorhead</td>
+                <td>20</td>
+                <td>20</td>
+                <td>19</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 41.02564102564102px"
+                  ></span>
+                  51%
+                </td>
+                <td class="champ">1</td>
+                <td>2</td>
+                <td>5</td>
+                <td>National Champion</td>
+                <td>14yr (1983-1996)</td>
+                <td>St. Benedict (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="13|Bethel|7|5|7|41.7|0|0|1|4|4|Concordia Moorhead"
+              >
+                <td class="seed-cell">13</td>
+                <td>Bethel</td>
+                <td>7</td>
+                <td>5</td>
+                <td>7</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 33.333333333333336px"
+                  ></span>
+                  42%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>1</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>4yr (1994-1997)</td>
+                <td>Concordia Moorhead (3x)</td>
+              </tr>
+              <tr
+                data-sort-values="14|Ohio Wesleyan|9|9|9|50.0|0|1|1|5|3|Baldwin Wallace"
+              >
+                <td class="seed-cell">14</td>
+                <td>Ohio Wesleyan</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td><span class="pct-bar" style="width: 40px"></span> 50%</td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>1</td>
+                <td>Final Four</td>
+                <td class="streak-current">3yr (2023-2025) &#x25cf;</td>
+                <td>Baldwin Wallace (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="15|WashU|33|75|28|72.8|5|10|14|7|30|UW-Oshkosh"
+              >
+                <td class="seed-cell">15</td>
+                <td>WashU</td>
+                <td>33</td>
+                <td>75</td>
+                <td>28</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 58.25242718446603px"
+                  ></span>
+                  73%
+                </td>
+                <td class="champ">5</td>
+                <td>10</td>
+                <td>14</td>
+                <td>National Champion</td>
+                <td>30yr (1990-2019)</td>
+                <td>UW-Oshkosh (6x)</td>
+              </tr>
+              <tr
+                data-sort-values="16|Bates|9|6|9|40.0|0|0|0|3|4|Western Connecticut"
+              >
+                <td class="seed-cell">16</td>
+                <td>Bates</td>
+                <td>9</td>
+                <td>6</td>
+                <td>9</td>
+                <td><span class="pct-bar" style="width: 32px"></span> 40%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>4yr (1997-2000)</td>
+                <td>Western Connecticut (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="17|Illinois Wesleyan|16|23|15|60.5|1|2|3|7|6|WashU"
+              >
+                <td class="seed-cell">17</td>
+                <td>Illinois Wesleyan</td>
+                <td>16</td>
+                <td>23</td>
+                <td>15</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 48.42105263157895px"
+                  ></span>
+                  61%
+                </td>
+                <td class="champ">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>National Champion</td>
+                <td>6yr (2007-2012)</td>
+                <td>WashU (5x)</td>
+              </tr>
+              <tr data-sort-values="18|Smith|7|20|6|76.9|0|3|3|6|4|Bowdoin">
+                <td class="seed-cell">18</td>
+                <td>Smith</td>
+                <td>7</td>
+                <td>20</td>
+                <td>6</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 61.53846153846155px"
+                  ></span>
+                  77%
+                </td>
+                <td>—</td>
+                <td class="ff">3</td>
+                <td>3</td>
+                <td>Championship Game</td>
+                <td class="streak-current">4yr (2022-2025) &#x25cf;</td>
+                <td>Bowdoin (3x)</td>
+              </tr>
+              <tr data-sort-values="19|UW-Platteville|0|0|0|0|0|0|0|0|0|">
+                <td class="seed-cell">19</td>
+                <td>UW-Platteville</td>
+                <td colspan="10" class="no-history">
+                  No prior NCAA Tournament appearances
+                </td>
+              </tr>
+              <tr
+                data-sort-values="20|Carroll|5|2|5|28.6|0|0|0|2|2|UW-La Crosse"
+              >
+                <td class="seed-cell">20</td>
+                <td>Carroll</td>
+                <td>5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 22.857142857142858px"
+                  ></span>
+                  29%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>2yr (2006-2007)</td>
+                <td>UW-La Crosse (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="21|Chicago|10|12|10|54.5|0|0|1|4|4|St. Thomas (MN)"
+              >
+                <td class="seed-cell">21</td>
+                <td>Chicago</td>
+                <td>10</td>
+                <td>12</td>
+                <td>10</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 43.63636363636363px"
+                  ></span>
+                  55%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>1</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>4yr (2017-2020)</td>
+                <td>St. Thomas (MN) (3x)</td>
+              </tr>
+              <tr
+                data-sort-values="22|SUNY New Paltz|8|7|8|46.7|0|0|0|3|3|Babson"
+              >
+                <td class="seed-cell">22</td>
+                <td>SUNY New Paltz</td>
+                <td>8</td>
+                <td>7</td>
+                <td>8</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 37.333333333333336px"
+                  ></span>
+                  47%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>3yr (2022-2024)</td>
+                <td>Babson (3x)</td>
+              </tr>
+              <tr data-sort-values="23|Ripon|8|2|8|20.0|0|0|0|2|2|UW-Stout">
+                <td class="seed-cell">23</td>
+                <td>Ripon</td>
+                <td>8</td>
+                <td>2</td>
+                <td>8</td>
+                <td><span class="pct-bar" style="width: 16px"></span> 20%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>2yr (2004-2005)</td>
+                <td>UW-Stout (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="24|Baldwin Wallace|19|23|18|56.1|0|0|4|4|6|Calvin"
+              >
+                <td class="seed-cell">24</td>
+                <td>Baldwin Wallace</td>
+                <td>19</td>
+                <td>23</td>
+                <td>18</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 44.87804878048781px"
+                  ></span>
+                  56%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>4</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>6yr (1996-2001)</td>
+                <td>Calvin (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="25|Trine|8|14|7|66.7|0|1|1|5|4|Illinois Wesleyan"
+              >
+                <td class="seed-cell">25</td>
+                <td>Trine</td>
+                <td>8</td>
+                <td>14</td>
+                <td>7</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 53.33333333333333px"
+                  ></span>
+                  67%
+                </td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>1</td>
+                <td>Final Four</td>
+                <td>4yr (2017-2020)</td>
+                <td>Illinois Wesleyan (3x)</td>
+              </tr>
+              <tr
+                data-sort-values="26|UW-River Falls|5|2|5|28.6|0|0|0|3|2|St. Norbert"
+              >
+                <td class="seed-cell">26</td>
+                <td>UW-River Falls</td>
+                <td>5</td>
+                <td>2</td>
+                <td>5</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 22.857142857142858px"
+                  ></span>
+                  29%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>2yr (1988-1989)</td>
+                <td>St. Norbert (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="27|Gettysburg|11|9|11|45.0|0|0|1|4|4|William Paterson"
+              >
+                <td class="seed-cell">27</td>
+                <td>Gettysburg</td>
+                <td>11</td>
+                <td>9</td>
+                <td>11</td>
+                <td><span class="pct-bar" style="width: 36px"></span> 45%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>1</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td class="streak-current">4yr (2022-2025) &#x25cf;</td>
+                <td>William Paterson (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="28|Wisconsin Lutheran|13|3|13|18.8|0|0|0|2|6|UW-Oshkosh"
+              >
+                <td class="seed-cell">28</td>
+                <td>Wisconsin Lutheran</td>
+                <td>13</td>
+                <td>3</td>
+                <td>13</td>
+                <td><span class="pct-bar" style="width: 15px"></span> 19%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>6yr (2011-2016)</td>
+                <td>UW-Oshkosh (2x)</td>
+              </tr>
+              <tr data-sort-values="29|DePauw|24|34|22|60.7|2|3|6|7|17|Hope">
+                <td class="seed-cell">29</td>
+                <td>DePauw</td>
+                <td>24</td>
+                <td>34</td>
+                <td>22</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 48.57142857142857px"
+                  ></span>
+                  61%
+                </td>
+                <td class="champ">2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>National Champion</td>
+                <td>17yr (2004-2020)</td>
+                <td>Hope (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="30|Otterbein|1|0|1|0.0|0|0|0|1|1|Maryville (TN)"
+              >
+                <td class="seed-cell">30</td>
+                <td>Otterbein</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>1yr (2013)</td>
+                <td>Maryville (TN) (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="31|Southern Maine|26|42|26|61.8|0|5|10|6|16|Salem St."
+              >
+                <td class="seed-cell">31</td>
+                <td>Southern Maine</td>
+                <td>26</td>
+                <td>42</td>
+                <td>26</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 49.411764705882355px"
+                  ></span>
+                  62%
+                </td>
+                <td>—</td>
+                <td class="ff">5</td>
+                <td>10</td>
+                <td>Championship Game</td>
+                <td>16yr (1995-2010)</td>
+                <td>Salem St. (7x)</td>
+              </tr>
+              <tr
+                data-sort-values="32|Messiah|24|32|23|58.2|0|2|3|6|15|Scranton"
+              >
+                <td class="seed-cell">32</td>
+                <td>Messiah</td>
+                <td>24</td>
+                <td>32</td>
+                <td>23</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 46.54545454545455px"
+                  ></span>
+                  58%
+                </td>
+                <td>—</td>
+                <td class="ff">2</td>
+                <td>3</td>
+                <td>Championship Game</td>
+                <td>15yr (2000-2014)</td>
+                <td>Scranton (3x)</td>
+              </tr>
+              <tr
+                data-sort-values="33|Cortland|14|9|14|39.1|0|0|0|3|3|Rochester"
+              >
+                <td class="seed-cell">33</td>
+                <td>Cortland</td>
+                <td>14</td>
+                <td>9</td>
+                <td>14</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 31.304347826086957px"
+                  ></span>
+                  39%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>3yr (1999-2001)</td>
+                <td>Rochester (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="34|Randolph-Macon|13|17|13|56.7|0|1|2|6|3|Austin College"
+              >
+                <td class="seed-cell">34</td>
+                <td>Randolph-Macon</td>
+                <td>13</td>
+                <td>17</td>
+                <td>13</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 45.333333333333336px"
+                  ></span>
+                  57%
+                </td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>2</td>
+                <td>Championship Game</td>
+                <td>3yr (2005-2007)</td>
+                <td>Austin College (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="35|Christopher Newport|26|36|25|59.0|0|3|4|6|5|Marymount"
+              >
+                <td class="seed-cell">35</td>
+                <td>Christopher Newport</td>
+                <td>26</td>
+                <td>36</td>
+                <td>25</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 47.21311475409836px"
+                  ></span>
+                  59%
+                </td>
+                <td>—</td>
+                <td class="ff">3</td>
+                <td>4</td>
+                <td>Championship Game</td>
+                <td>5yr (2016-2020)</td>
+                <td>Marymount (5x)</td>
+              </tr>
+              <tr
+                data-sort-values="36|Gustavus Adolphus|11|7|11|38.9|0|0|1|4|4|Simpson (IA)"
+              >
+                <td class="seed-cell">36</td>
+                <td>Gustavus Adolphus</td>
+                <td>11</td>
+                <td>7</td>
+                <td>11</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 31.111111111111114px"
+                  ></span>
+                  39%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>1</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td class="streak-current">4yr (2022-2025) &#x25cf;</td>
+                <td>Simpson (IA) (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="37|Shenandoah|5|0|5|0.0|0|0|0|1|1|Randolph-Macon"
+              >
+                <td class="seed-cell">37</td>
+                <td>Shenandoah</td>
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>1yr (1996)</td>
+                <td>Randolph-Macon (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="38|William Paterson|11|12|11|52.2|0|0|2|4|4|Rowan"
+              >
+                <td class="seed-cell">38</td>
+                <td>William Paterson</td>
+                <td>11</td>
+                <td>12</td>
+                <td>11</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 41.73913043478261px"
+                  ></span>
+                  52%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>2</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>4yr (2010-2013)</td>
+                <td>Rowan (3x)</td>
+              </tr>
+              <tr
+                data-sort-values="39|St. Mary's (MN)|2|0|2|0.0|0|0|0|1|1|Concordia Moorhead"
+              >
+                <td class="seed-cell">39</td>
+                <td>St. Mary&#x27;s (MN)</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>1yr (1986)</td>
+                <td>Concordia Moorhead (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="40|Hardin-Simmons|10|15|10|60.0|0|1|3|5|6|Trinity (TX)"
+              >
+                <td class="seed-cell">40</td>
+                <td>Hardin-Simmons</td>
+                <td>10</td>
+                <td>15</td>
+                <td>10</td>
+                <td><span class="pct-bar" style="width: 48px"></span> 60%</td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>3</td>
+                <td>Final Four</td>
+                <td>6yr (1999-2004)</td>
+                <td>Trinity (TX) (4x)</td>
+              </tr>
+              <tr
+                data-sort-values="41|Transylvania|10|17|9|65.4|1|2|3|7|4|DePauw"
+              >
+                <td class="seed-cell">41</td>
+                <td>Transylvania</td>
+                <td>10</td>
+                <td>17</td>
+                <td>9</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 52.307692307692314px"
+                  ></span>
+                  65%
+                </td>
+                <td class="champ">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>National Champion</td>
+                <td class="streak-current">4yr (2022-2025) &#x25cf;</td>
+                <td>DePauw (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="42|Union (NY)|1|1|1|50.0|0|0|0|2|1|Mt. St. Mary"
+              >
+                <td class="seed-cell">42</td>
+                <td>Union (NY)</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td><span class="pct-bar" style="width: 40px"></span> 50%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>1yr (2004)</td>
+                <td>Mt. St. Mary (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="43|Washington & Jefferson|9|1|10|9.1|0|0|0|2|2|Hope"
+              >
+                <td class="seed-cell">43</td>
+                <td>Washington &amp; Jefferson</td>
+                <td>9</td>
+                <td>1</td>
+                <td>10</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 7.272727272727273px"
+                  ></span>
+                  9%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>2yr (2005-2006)</td>
+                <td>Hope (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="44|Johnson & Wales (RI)|2|0|2|0.0|0|0|0|1|2|FDU Florham"
+              >
+                <td class="seed-cell">44</td>
+                <td>Johnson &amp; Wales (RI)</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>2yr (2015-2016)</td>
+                <td>FDU Florham (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="45|DeSales|13|10|13|43.5|0|0|0|3|4|Franklin & Marshall"
+              >
+                <td class="seed-cell">45</td>
+                <td>DeSales</td>
+                <td>13</td>
+                <td>10</td>
+                <td>13</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 34.78260869565218px"
+                  ></span>
+                  43%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>4yr (2008-2011)</td>
+                <td>Franklin &amp; Marshall (2x)</td>
+              </tr>
+              <tr
+                data-sort-values="46|Claremont-Mudd-Scripps|8|4|8|33.3|0|0|0|2|4|St. Thomas (MN)"
+              >
+                <td class="seed-cell">46</td>
+                <td>Claremont-Mudd-Scripps</td>
+                <td>8</td>
+                <td>4</td>
+                <td>8</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 26.666666666666664px"
+                  ></span>
+                  33%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>4yr (2014-2017)</td>
+                <td>St. Thomas (MN) (2x)</td>
+              </tr>
+              <tr data-sort-values="47|Coe|2|3|2|60.0|0|0|0|3|2|Minn-Morris">
+                <td class="seed-cell">47</td>
+                <td>Coe</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 48px"></span> 60%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>2yr (2011-2012)</td>
+                <td>Minn-Morris (1x)</td>
+              </tr>
+              <tr data-sort-values="48|Immaculata|2|0|2|0.0|0|0|0|1|1|Trine">
+                <td class="seed-cell">48</td>
+                <td>Immaculata</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>1yr (2022)</td>
+                <td>Trine (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="49|Merchant Marine|4|0|4|0.0|0|0|0|1|2|Smith"
+              >
+                <td class="seed-cell">49</td>
+                <td>Merchant Marine</td>
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>2yr (2019-2020)</td>
+                <td>Smith (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="50|Whitman|8|16|7|69.6|0|1|3|6|2|Trinity (TX)"
+              >
+                <td class="seed-cell">50</td>
+                <td>Whitman</td>
+                <td>8</td>
+                <td>16</td>
+                <td>7</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 55.65217391304348px"
+                  ></span>
+                  70%
+                </td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>3</td>
+                <td>Championship Game</td>
+                <td>2yr (2013-2014)</td>
+                <td>Trinity (TX) (2x)</td>
+              </tr>
+              <tr data-sort-values="51|Millsaps|3|1|3|25.0|0|0|0|2|2|Emory">
+                <td class="seed-cell">51</td>
+                <td>Millsaps</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td><span class="pct-bar" style="width: 20px"></span> 25%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>2yr (1995-1996)</td>
+                <td>Emory (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="52|SUNY Geneseo|12|16|12|57.1|0|0|2|4|5|William Smith"
+              >
+                <td class="seed-cell">52</td>
+                <td>SUNY Geneseo</td>
+                <td>12</td>
+                <td>16</td>
+                <td>12</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 45.714285714285715px"
+                  ></span>
+                  57%
+                </td>
+                <td>—</td>
+                <td>—</td>
+                <td>2</td>
+                <td>Elite 8 / Sectional Final</td>
+                <td>5yr (1993-1997)</td>
+                <td>William Smith (4x)</td>
+              </tr>
+              <tr data-sort-values="53|LaGrange|0|0|0|0|0|0|0|0|0|">
+                <td class="seed-cell">53</td>
+                <td>LaGrange</td>
+                <td colspan="10" class="no-history">
+                  No prior NCAA Tournament appearances
+                </td>
+              </tr>
+              <tr
+                data-sort-values="54|Southern Virginia|3|1|3|25.0|0|0|0|2|2|Shenandoah"
+              >
+                <td class="seed-cell">54</td>
+                <td>Southern Virginia</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td><span class="pct-bar" style="width: 20px"></span> 25%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td class="streak-current">2yr (2024-2025) &#x25cf;</td>
+                <td>Shenandoah (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="55|Penn State-Behrend|4|1|4|20.0|0|0|0|2|1|Denison"
+              >
+                <td class="seed-cell">55</td>
+                <td>Penn State-Behrend</td>
+                <td>4</td>
+                <td>1</td>
+                <td>4</td>
+                <td><span class="pct-bar" style="width: 16px"></span> 20%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Second Round</td>
+                <td>1yr (1994)</td>
+                <td>Denison (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="56|Emmanuel|21|16|21|43.2|0|1|2|5|7|Southern Maine"
+              >
+                <td class="seed-cell">56</td>
+                <td>Emmanuel</td>
+                <td>21</td>
+                <td>16</td>
+                <td>21</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 34.5945945945946px"
+                  ></span>
+                  43%
+                </td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>2</td>
+                <td>Final Four</td>
+                <td>7yr (2007-2013)</td>
+                <td>Southern Maine (5x)</td>
+              </tr>
+              <tr
+                data-sort-values="57|St. Mary's (MD)|2|0|2|0.0|0|0|0|1|2|Mary Washington"
+              >
+                <td class="seed-cell">57</td>
+                <td>St. Mary&#x27;s (MD)</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>2yr (1998-1999)</td>
+                <td>Mary Washington (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="58|TCNJ|14|17|13|56.7|0|1|3|5|4|Elizabethtown"
+              >
+                <td class="seed-cell">58</td>
+                <td>TCNJ</td>
+                <td>14</td>
+                <td>17</td>
+                <td>13</td>
+                <td>
+                  <span
+                    class="pct-bar"
+                    style="width: 45.333333333333336px"
+                  ></span>
+                  57%
+                </td>
+                <td>—</td>
+                <td class="ff">1</td>
+                <td>3</td>
+                <td>Final Four</td>
+                <td>4yr (1982-1985)</td>
+                <td>Elizabethtown (4x)</td>
+              </tr>
+              <tr data-sort-values="59|Hunter|5|0|5|0.0|0|0|0|1|3|Colby-Sawyer">
+                <td class="seed-cell">59</td>
+                <td>Hunter</td>
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>3yr (2002-2004)</td>
+                <td>Colby-Sawyer (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="60|Maine-Farmington|2|0|2|0.0|0|0|0|1|2|Norwich"
+              >
+                <td class="seed-cell">60</td>
+                <td>Maine-Farmington</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>2yr (2006-2007)</td>
+                <td>Norwich (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="61|Austin College|3|3|3|50.0|0|0|0|3|2|Randolph-Macon"
+              >
+                <td class="seed-cell">61</td>
+                <td>Austin College</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td><span class="pct-bar" style="width: 40px"></span> 50%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>2yr (1998-1999)</td>
+                <td>Randolph-Macon (2x)</td>
+              </tr>
+              <tr data-sort-values="62|Webster|8|2|8|20.0|0|0|0|3|3|Aurora">
+                <td class="seed-cell">62</td>
+                <td>Webster</td>
+                <td>8</td>
+                <td>2</td>
+                <td>8</td>
+                <td><span class="pct-bar" style="width: 16px"></span> 20%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Sweet 16 / Sectional Semifinal</td>
+                <td>3yr (2022-2024)</td>
+                <td>Aurora (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="63|Framingham St.|3|0|3|0.0|0|0|0|1|1|Amherst"
+              >
+                <td class="seed-cell">63</td>
+                <td>Framingham St.</td>
+                <td>3</td>
+                <td>0</td>
+                <td>3</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>1yr (2020)</td>
+                <td>Amherst (1x)</td>
+              </tr>
+              <tr
+                data-sort-values="64|UW-Superior|4|0|4|0.0|0|0|0|1|3|UW-Oshkosh"
+              >
+                <td class="seed-cell">64</td>
+                <td>UW-Superior</td>
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td><span class="pct-bar" style="width: 0px"></span> 0%</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First Round</td>
+                <td>3yr (2016-2018)</td>
+                <td>UW-Oshkosh (1x)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="summary-section"><h2>Team-by-Team Profiles</h2></div>
+        <div class="cards">
+          <div class="card card-champ">
+            <h3>NYU <span class="seed">#1 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">24 (1986&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">49-21 (70.0%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">3x (1997, 2024, 2025)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">5 (1996, 1997, 2007, 2024, 2025)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">9</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">7yr (1993-1999)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+42 vs Mt. St. Mary (89-47, 2001)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-28 vs Scranton (54-82, 1993)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Scranton (6x), St. John
+              Fisher (5x), Bowdoin (3x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>UW-Oshkosh <span class="seed">#2 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">20 (1990&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">41-18 (69.5%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">1x (1996)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">3 (1995, 1996, 2025)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">7</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">7yr (1994-2000)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+37 vs Blackburn (89-52, 1997)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs St. Thomas (MN) (63-87, 1991)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-Eau Claire (8x), WashU
+              (6x), Calvin (4x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Washington &amp; Lee
+              <span class="seed">#3 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">4 (2022&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">4-4 (50.0%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >4yr (2022-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+12 vs Merchant Marine (65-53, 2025)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-10 vs NYU (61-71, 2022)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> NYU (1x), UW-Oshkosh (1x),
+              Vassar (1x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>Scranton <span class="seed">#4 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">37 (1982&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">68-37 (64.8%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">1x (1985)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff"
+                >9 (1985, 1987, 1993, 1997, 1999, 2000, 2005, 2006, 2019)</span
+              >
+              <span class="label">Elite Eights</span
+              ><span class="value">16</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">9yr (1992-2000)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+58 vs Mt. St. Mary (93-35, 2025)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-34 vs WashU (30-64, 2000)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> NYU (6x), Johns Hopkins
+              (5x), Elizabethtown (4x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Johns Hopkins <span class="seed">#5 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">15 (1995&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">18-15 (54.5%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">6yr (1995-2000)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+25 vs Hunter (75-50, 2003)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-26 vs Messiah (60-86, 2003)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Scranton (5x), Alvernia
+              (2x), Cabrini (2x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Denison <span class="seed">#6 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (1994&ndash;2016)</span>
+              <span class="label">Record</span
+              ><span class="value">2-8 (20.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2005-2008)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+16 vs Hope (82-66, 2007)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-28 vs Hope (40-68, 2010)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Hope (3x), DePauw (2x),
+              Penn State-Behrend (1x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>Hope <span class="seed">#7 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">24 (1990&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">49-20 (71.0%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">3x (1990, 2006, 2022)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">4 (1990, 2006, 2010, 2022)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">8</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">8yr (2013-2020)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+51 vs Grove City (69-18, 2020)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-30 vs Wartburg (49-79, 2019)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Thomas More (4x), WashU
+              (4x), DePauw (4x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Bowdoin <span class="seed">#8 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">22 (1999&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">48-21 (69.6%)</span>
+              <span class="label">Runner-Up</span><span class="value">3x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">3 (2004, 2018, 2019)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">9</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">12yr (2001-2012)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+62 vs Husson (94-32, 2018)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs Williams (48-72, 1999)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Southern Maine (4x), NYU
+              (3x), Scranton (3x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              John Carroll <span class="seed">#9 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">4 (2014&ndash;2022)</span>
+              <span class="label">Record</span
+              ><span class="value">2-4 (33.3%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2014-2015)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+44 vs Elizabethtown (100-56, 2022)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-34 vs Thomas More (86-120, 2014)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Texas Lutheran (1x),
+              Thomas More (1x), Maryville College (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              UW-Whitewater <span class="seed">#10 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">23 (1983&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">34-23 (59.6%)</span>
+              <span class="label">Runner-Up</span><span class="value">2x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">4 (2008, 2013, 2014, 2022)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">6</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">7yr (2008-2014)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+39 vs Minn-Morris (86-47, 2024)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-19 vs Alma (48-67, 1987)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Simpson (IA) (4x), Hope
+              (4x), DePauw (3x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>UW-La Crosse <span class="seed">#11 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">7 (1983&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">7-7 (50.0%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (1983-1985)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+27 vs Colorado College (79-52, 2025)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-70 vs Knoxville (0-70, 1983)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> St. Norbert (2x),
+              UW-Whitewater (2x), Knoxville (1x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>
+              Concordia Moorhead
+              <span class="seed">#12 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">20 (1983&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">20-19 (51.3%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">1x (1988)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">2 (1987, 1988)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">5</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">14yr (1983-1996)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+37 vs Greensboro (103-66, 1988)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-27 vs St. Benedict (57-84, 1993)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> St. Benedict (4x),
+              Pomona-Pitzer (3x), St. Thomas (MN) (3x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Bethel <span class="seed">#13 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">7 (1994&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">5-7 (41.7%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (1994-1997)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+19 vs Randolph-Macon (96-77, 1996)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-12 vs UW-Oshkosh (58-70, 1994)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Concordia Moorhead (3x),
+              UW-Oshkosh (2x), Claremont-Mudd-Scripps (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              Ohio Wesleyan <span class="seed">#14 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">9 (1992&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">9-9 (50.0%)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2001)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Final Four</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >3yr (2023-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+45 vs Immaculata (87-42, 2025)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-29 vs Illinois Wesleyan (51-80, 2009)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Baldwin Wallace (2x),
+              Muskingum (1x), Mt. Union (1x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>WashU <span class="seed">#15 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">33 (1988&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">75-28 (72.8%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ"
+                >5x (1998, 1999, 2000, 2001, 2010)</span
+              >
+              <span class="label">Runner-Up</span><span class="value">4x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff"
+                >10 (1991, 1994, 1998, 1999, 2000, 2001, 2007, 2009, 2010,
+                2011)</span
+              >
+              <span class="label">Elite Eights</span
+              ><span class="value">14</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">30yr (1990-2019)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+46 vs Bridgewater (VA) (82-36, 1998)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-25 vs Muskingum (60-85, 1991)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-Oshkosh (6x), Millikin
+              (5x), Illinois Wesleyan (5x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Bates <span class="seed">#16 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">9 (1997&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">6-9 (40.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (1997-2000)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+19 vs Emmanuel (83-64, 2005)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value"
+                >-21 vs Western Connecticut (65-86, 1997)</span
+              >
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Western Connecticut (1x),
+              Salem St. (1x), Johns Hopkins (1x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>
+              Illinois Wesleyan <span class="seed">#17 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">16 (1995&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">23-15 (60.5%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">1x (2012)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">2 (2011, 2012)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">6yr (2007-2012)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+42 vs Maryville (TN) (84-42, 2012)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-27 vs Carroll (59-86, 2007)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> WashU (5x), Trine (3x),
+              UW-Whitewater (2x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Smith <span class="seed">#18 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">7 (2013&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">20-6 (76.9%)</span>
+              <span class="label">Runner-Up</span><span class="value">2x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">3 (2023, 2024, 2025)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >4yr (2022-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+50 vs Morrisville St. (100-50, 2023)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-28 vs NYU (49-77, 2025)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Bowdoin (3x), UW-Oshkosh
+              (2x), NYU (2x)
+            </div>
+          </div>
+          <div class="card card-none">
+            <h3>
+              UW-Platteville <span class="seed">#19 seed (Bottom Right)</span>
+            </h3>
+            <p class="no-history">
+              No prior NCAA Tournament appearances on record.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Carroll <span class="seed">#20 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">5 (1984&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">2-5 (28.6%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2006-2007)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+27 vs Illinois Wesleyan (86-59, 2007)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs Luther (50-74, 2007)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-La Crosse (1x), William
+              Penn (1x), Calvin (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Chicago <span class="seed">#21 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">10 (1995&ndash;2023)</span>
+              <span class="label">Record</span
+              ><span class="value">12-10 (54.5%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2017-2020)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+26 vs Greensboro (87-61, 2011)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-18 vs Calvin (50-68, 2012)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> St. Thomas (MN) (3x),
+              Calvin (2x), Millikin (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              SUNY New Paltz <span class="seed">#22 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (2013&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">7-8 (46.7%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (2022-2024)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+31 vs Emmanuel (80-49, 2019)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-31 vs Bowdoin (50-81, 2019)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Babson (3x), Bowdoin (2x),
+              Rowan (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Ripon <span class="seed">#23 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (1996&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">2-8 (20.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2004-2005)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+18 vs Wheaton (IL) (69-51, 2004)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-30 vs St. Thomas (MN) (58-88, 2019)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-Stout (2x), Calvin
+              (1x), Wheaton (IL) (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Baldwin Wallace <span class="seed">#24 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">19 (1996&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">23-18 (56.1%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">4</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">6yr (1996-2001)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+30 vs D&#x27;Youville (83-53, 2008)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-30 vs Bowdoin (48-78, 2024)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Calvin (4x), Hope (3x),
+              Defiance (2x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Trine <span class="seed">#25 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (2017&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">14-7 (66.7%)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2022)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Final Four</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2017-2020)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+28 vs Benedictine (65-37, 2020)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-32 vs Illinois Wesleyan (50-82, 2025)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Illinois Wesleyan (3x),
+              Transylvania (2x), Ohio Northern (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              UW-River Falls <span class="seed">#26 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">5 (1988&ndash;2016)</span>
+              <span class="label">Record</span
+              ><span class="value">2-5 (28.6%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (1988-1989)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+25 vs Wheaton (IL) (81-56, 2016)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-21 vs St. Thomas (MN) (46-67, 2016)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> St. Norbert (2x), UW-Eau
+              Claire (1x), UW-Whitewater (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Gettysburg <span class="seed">#27 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">11 (1984&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">9-11 (45.0%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >4yr (2022-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+33 vs Morrisville St. (77-44, 2022)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-25 vs William Paterson (55-80, 1995)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> William Paterson (2x),
+              Millikin (1x), North Central (IL) (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Wisconsin Lutheran <span class="seed">#28 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">13 (2000&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">3-13 (18.8%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">6yr (2011-2016)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+14 vs UW-La Crosse (73-59, 2011)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-25 vs Hope (47-72, 2015)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-Oshkosh (2x), Illinois
+              Wesleyan (2x), Hope (2x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>DePauw <span class="seed">#29 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">24 (1996&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">34-22 (60.7%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">2x (2007, 2013)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">3 (2002, 2007, 2013)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">6</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">17yr (2004-2020)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+44 vs Aurora (88-44, 2004)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-32 vs UW-Oshkosh (45-77, 1996)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Hope (4x), UW-Oshkosh
+              (3x), Maryville (TN) (3x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Otterbein <span class="seed">#30 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">1 (2013&ndash;2013)</span>
+              <span class="label">Record</span
+              ><span class="value">0-1 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (2013)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-7 vs Maryville (TN) (61-68, 2013)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Maryville (TN) (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              Southern Maine <span class="seed">#31 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">26 (1986&ndash;2013)</span>
+              <span class="label">Record</span
+              ><span class="value">42-26 (61.8%)</span>
+              <span class="label">Runner-Up</span><span class="value">3x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">5 (1988, 1998, 2000, 2005, 2006)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">10</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">16yr (1995-2010)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+40 vs Maine-Maritime (81-41, 2006)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-46 vs WashU (33-79, 2000)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Salem St. (7x), Emmanuel
+              (5x), Clark (4x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Messiah <span class="seed">#32 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">24 (1996&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">32-23 (58.2%)</span>
+              <span class="label">Runner-Up</span><span class="value">2x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">2 (2001, 2008)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">15yr (2000-2014)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+38 vs Hood (84-46, 2003)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-31 vs Tufts (39-70, 2018)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Scranton (3x), Tufts (3x),
+              Bethany (WV) (2x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Cortland <span class="seed">#33 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">14 (1988&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">9-14 (39.1%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (1999-2001)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+16 vs St. Lawrence (71-55, 2009)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-26 vs Tufts (53-79, 2020)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Rochester (4x), St. John
+              Fisher (3x), St. Lawrence (2x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              Randolph-Macon <span class="seed">#34 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">13 (1996&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">17-13 (56.7%)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2005)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (2005-2007)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+33 vs Millsaps (99-66, 1996)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-29 vs Messiah (62-91, 2014)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Austin College (2x),
+              Hardin-Simmons (2x), Piedmont (2x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              Christopher Newport
+              <span class="seed">#35 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">26 (1982&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">36-25 (59.0%)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">3 (2011, 2017, 2023)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">4</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">5yr (2016-2020)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+55 vs Mt. St. Mary (107-52, 2022)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-36 vs Scranton (46-82, 2016)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Marymount (5x),
+              Elizabethtown (2x), Bridgewater (VA) (2x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Gustavus Adolphus <span class="seed">#36 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">11 (1991&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">7-11 (38.9%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">1</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >4yr (2022-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+16 vs Ohio Wesleyan (84-68, 2023)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-14 vs George Fox (47-61, 2007)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Simpson (IA) (2x),
+              UW-Whitewater (2x), Concordia Moorhead (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Shenandoah <span class="seed">#37 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">5 (1996&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">0-5 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (1996)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-28 vs DeSales (49-77, 2019)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Randolph-Macon (1x),
+              Roanoke (1x), DeSales (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              William Paterson <span class="seed">#38 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">11 (1993&ndash;2013)</span>
+              <span class="label">Record</span
+              ><span class="value">12-11 (52.2%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2010-2013)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+41 vs Cabrini (82-41, 1995)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-31 vs Mary Washington (53-84, 2010)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Rowan (3x), Gettysburg
+              (2x), Scranton (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              St. Mary&#x27;s (MN)
+              <span class="seed">#39 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (1986&ndash;2014)</span>
+              <span class="label">Record</span
+              ><span class="value">0-2 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (1986)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-10 vs UW-Oshkosh (61-71, 2014)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Concordia Moorhead (1x),
+              UW-Oshkosh (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>
+              Hardin-Simmons <span class="seed">#40 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">10 (1999&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">15-10 (60.0%)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2006)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Final Four</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">6yr (1999-2004)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+29 vs Guilford (106-77, 2001)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs DePauw (60-84, 2002)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Trinity (TX) (4x), Pac
+              Lutheran (2x), McMurry (2x)
+            </div>
+          </div>
+          <div class="card card-champ">
+            <h3>Transylvania <span class="seed">#41 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">10 (2007&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">17-9 (65.4%)</span>
+              <span class="label">Championships</span
+              ><span class="value champ">1x (2023)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">2 (2023, 2024)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">National Champion</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >4yr (2022-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+24 vs Ohio Northern (67-43, 2023)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-19 vs DePauw (54-73, 2007)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> DePauw (2x), Ohio Northern
+              (2x), Trine (2x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Union (NY) <span class="seed">#42 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">1 (2004&ndash;2004)</span>
+              <span class="label">Record</span
+              ><span class="value">1-1 (50.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (2004)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+31 vs Mt. St. Mary (78-47, 2004)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-19 vs NYU (50-69, 2004)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Mt. St. Mary (1x), NYU
+              (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Washington &amp; Jefferson
+              <span class="seed">#43 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">9 (1995&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">1-10 (9.1%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2005-2006)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+4 vs Messiah (76-72, 2025)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs Capital (50-74, 1995)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Hope (2x), Capital (1x),
+              Alvernia (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Johnson &amp; Wales (RI)
+              <span class="seed">#44 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (2015&ndash;2016)</span>
+              <span class="label">Record</span
+              ><span class="value">0-2 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2015-2016)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-44 vs FDU Florham (40-84, 2015)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> FDU Florham (1x),
+              Rochester (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>DeSales <span class="seed">#45 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">13 (1989&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">10-13 (43.5%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2008-2011)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+28 vs Shenandoah (77-49, 2019)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-34 vs NYU (59-93, 2024)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Franklin &amp; Marshall
+              (2x), Ithaca (2x), Elizabethtown (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Claremont-Mudd-Scripps
+              <span class="seed">#46 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (1995&ndash;2017)</span>
+              <span class="label">Record</span
+              ><span class="value">4-8 (33.3%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (2014-2017)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+16 vs Texas-Dallas (79-63, 2017)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-30 vs St. Thomas (MN) (52-82, 1995)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> St. Thomas (MN) (2x),
+              Trinity (TX) (2x), Cal Lutheran (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Coe <span class="seed">#47 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (2011&ndash;2012)</span>
+              <span class="label">Record</span
+              ><span class="value">3-2 (60.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2011-2012)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+25 vs Minn-Morris (78-53, 2011)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-6 vs St. Thomas (MN) (45-51, 2012)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Minn-Morris (1x), Howard
+              Payne (1x), Illinois Wesleyan (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Immaculata <span class="seed">#48 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (2022&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">0-2 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (2022)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-45 vs Ohio Wesleyan (42-87, 2025)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Trine (1x), Ohio Wesleyan
+              (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Merchant Marine <span class="seed">#49 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">4 (2019&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">0-4 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2019-2020)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-20 vs Smith (54-74, 2019)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Smith (1x), Rowan (1x),
+              Tufts (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Whitman <span class="seed">#50 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (2013&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">16-7 (69.6%)</span>
+              <span class="label">Runner-Up</span><span class="value">1x</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2014)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Championship Game</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2013-2014)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+55 vs Chapman (106-51, 2014)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-17 vs St. Thomas (MN) (48-65, 2017)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Trinity (TX) (2x), Cal
+              Lutheran (1x), Lewis &amp; Clark (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Millsaps <span class="seed">#51 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">3 (1995&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">1-3 (25.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (1995-1996)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+8 vs Hendrix (65-57, 1996)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-33 vs Randolph-Macon (66-99, 1996)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Emory (1x), Hendrix (1x),
+              Randolph-Macon (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>SUNY Geneseo <span class="seed">#52 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">12 (1993&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">16-12 (57.1%)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Elite 8 / Sectional Final</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">5yr (1993-1997)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+44 vs Castleton State (84-40, 2015)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-22 vs William Smith (62-84, 1997)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> William Smith (4x),
+              Muhlenberg (2x), FDU Florham (2x)
+            </div>
+          </div>
+          <div class="card card-none">
+            <h3>LaGrange <span class="seed">#53 seed (Top Left)</span></h3>
+            <p class="no-history">
+              No prior NCAA Tournament appearances on record.
+            </p>
+          </div>
+          <div class="card">
+            <h3>
+              Southern Virginia
+              <span class="seed">#54 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">3 (2022&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">1-3 (25.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value streak-current"
+                >2yr (2024-2025) &#x25cf;</span
+              >
+              <span class="label">Biggest Win</span
+              ><span class="value">+19 vs Shenandoah (68-49, 2022)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-22 vs Transylvania (55-77, 2022)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Shenandoah (1x),
+              Transylvania (1x), DeSales (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Penn State-Behrend <span class="seed">#55 seed (Top Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">4 (1994&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">1-4 (20.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Second Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (1994)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+19 vs Denison (92-73, 1994)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-32 vs Wittenberg (49-81, 2004)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Denison (1x), Capital
+              (1x), Defiance (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>Emmanuel <span class="seed">#56 seed (Top Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">21 (1986&ndash;2022)</span>
+              <span class="label">Record</span
+              ><span class="value">16-21 (43.2%)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2001)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">2</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Final Four</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">7yr (2007-2013)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+23 vs Springfield (79-56, 2001)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-39 vs Amherst (37-76, 2009)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Southern Maine (5x), Salem
+              St. (3x), Salve Regina (3x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              St. Mary&#x27;s (MD)
+              <span class="seed">#57 seed (Bottom Right)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (1998&ndash;1999)</span>
+              <span class="label">Record</span
+              ><span class="value">0-2 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (1998-1999)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-13 vs Mary Washington (43-56, 1998)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Mary Washington (1x),
+              Gallaudet (1x)
+            </div>
+          </div>
+          <div class="card card-ff">
+            <h3>TCNJ <span class="seed">#58 seed (Bottom Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">14 (1982&ndash;2018)</span>
+              <span class="label">Record</span
+              ><span class="value">17-13 (56.7%)</span>
+              <span class="label">Final Fours</span
+              ><span class="value ff">1 (2009)</span>
+              <span class="label">Elite Eights</span
+              ><span class="value">3</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Final Four</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">4yr (1982-1985)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+28 vs Colby-Sawyer (63-35, 1998)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-38 vs Mary Washington (41-79, 2006)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Elizabethtown (4x),
+              Rochester (2x), Scranton (2x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Hunter <span class="seed">#59 seed (Bottom Left)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">5 (1999&ndash;2019)</span>
+              <span class="label">Record</span
+              ><span class="value">0-5 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (2002-2004)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-25 vs Johns Hopkins (50-75, 2003)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Colby-Sawyer (1x),
+              Alvernia (1x), Johns Hopkins (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Maine-Farmington <span class="seed">#60 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">2 (2006&ndash;2007)</span>
+              <span class="label">Record</span
+              ><span class="value">0-2 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (2006-2007)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs Brandeis (66-90, 2007)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Norwich (1x), Brandeis
+              (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Austin College <span class="seed">#61 seed (Top Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">3 (1998&ndash;2020)</span>
+              <span class="label">Record</span
+              ><span class="value">3-3 (50.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">2yr (1998-1999)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+28 vs Randolph-Macon (77-49, 1999)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value"
+                >-15 vs Mary Hardin-Baylor (63-78, 2020)</span
+              >
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Randolph-Macon (2x),
+              Southwestern (1x), UW-Oshkosh (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>Webster <span class="seed">#62 seed (Top Right)</span></h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">8 (2002&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">2-8 (20.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">Sweet 16 / Sectional Semifinal</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (2022-2024)</span>
+              <span class="label">Biggest Win</span
+              ><span class="value">+21 vs Aurora (81-60, 2002)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-41 vs Wartburg (45-86, 2018)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Aurora (1x), Lakeland
+              (1x), UW-Stevens Point (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              Framingham St. <span class="seed">#63 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">3 (2020&ndash;2024)</span>
+              <span class="label">Record</span
+              ><span class="value">0-3 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">1yr (2020)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-24 vs Amherst (46-70, 2020)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> Amherst (1x), Smith (1x),
+              Scranton (1x)
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              UW-Superior <span class="seed">#64 seed (Bottom Left)</span>
+            </h3>
+            <div class="stat-grid">
+              <span class="label">Appearances</span
+              ><span class="value">4 (2016&ndash;2025)</span>
+              <span class="label">Record</span
+              ><span class="value">0-4 (0.0%)</span>
+              <span class="label">Furthest Round</span
+              ><span class="value">First Round</span>
+              <span class="label">Longest Streak</span
+              ><span class="value">3yr (2016-2018)</span>
+              <span class="label">Worst Loss</span
+              ><span class="value">-42 vs St. Thomas (MN) (56-98, 2017)</span>
+            </div>
+            <div class="opponents">
+              <strong>Most common opponents:</strong> UW-Oshkosh (1x), St.
+              Thomas (MN) (1x), UW-Whitewater (1x)
+            </div>
+          </div>
+        </div>
+        <div class="summary-section" style="margin-top: 30px">
+          <h2>Field-Wide Summary</h2>
+          <div class="lb">
+            <h3>By the Numbers</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em">
+              <li>
+                <strong>62</strong> of 64 teams have prior tournament experience
+              </li>
+              <li><strong>2</strong> teams making first-ever appearance</li>
+              <li><strong>686</strong> combined tournament appearances</li>
+              <li><strong>867</strong> combined tournament wins</li>
+              <li><strong>18</strong> combined national championships</li>
+              <li><strong>22</strong> teams with Final Four experience</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">
+          Source: ncaa_d3_womens_basketball_tournament.csv (1982&ndash;2025).
+          Only games with counts_for_stats=True included.<br />Green streak
+          &#x25cf; = current (includes 2025). Click any column header to sort.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+
+    <script>
+      (function () {
+        const table = document.getElementById('summaryTable');
+        if (!table) return;
+        const headers = table.querySelectorAll('th');
+        const tbody = table.querySelector('tbody');
+        let currentCol = 0;
+        let ascending = true;
+
+        headers.forEach(function (th, colIdx) {
+          th.addEventListener('click', function () {
+            const sortType = th.getAttribute('data-sort');
+            if (currentCol === colIdx) {
+              ascending = !ascending;
+            } else {
+              currentCol = colIdx;
+              ascending = sortType === 'str' ? true : false; // default desc for numbers, asc for strings
+            }
+
+            // Update arrows
+            headers.forEach(function (h) {
+              h.classList.remove('sort-active');
+              h.querySelector('.sort-arrow').innerHTML = '&#x25B2;';
+            });
+            th.classList.add('sort-active');
+            th.querySelector('.sort-arrow').innerHTML = ascending
+              ? '&#x25B2;'
+              : '&#x25BC;';
+
+            // Sort rows using data-sort-values
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            rows.sort(function (a, b) {
+              const aVals = a.getAttribute('data-sort-values').split('|');
+              const bVals = b.getAttribute('data-sort-values').split('|');
+              let aVal = aVals[colIdx] || '';
+              let bVal = bVals[colIdx] || '';
+
+              if (sortType === 'num') {
+                aVal = parseFloat(aVal) || 0;
+                bVal = parseFloat(bVal) || 0;
+                return ascending ? aVal - bVal : bVal - aVal;
+              } else {
+                aVal = aVal.toLowerCase();
+                bVal = bVal.toLowerCase();
+                if (aVal < bVal) return ascending ? -1 : 1;
+                if (aVal > bVal) return ascending ? 1 : -1;
+                return 0;
+              }
+            });
+
+            // Re-append sorted rows
+            rows.forEach(function (row) {
+              tbody.appendChild(row);
+            });
+
+            // Re-stripe
+            rows.forEach(function (row, i) {
+              row.style.background = '';
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

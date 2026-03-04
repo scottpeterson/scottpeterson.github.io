@@ -46,7 +46,8 @@
       "Bash(npx prettier:*)",
       "Bash(tail:*)",
       "WebFetch(domain:thed3statlab.com)",
-      "Bash(npx serve:*)"
+      "Bash(npx serve:*)",
+      "WebFetch(domain:docs.stripe.com)"
     ],
     "deny": [],
     "ask": []
