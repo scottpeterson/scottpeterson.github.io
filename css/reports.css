@@ -94,6 +94,12 @@
   transform: translateX(-2px);
 }
 
+/* Prevent sticky elements inside reports from overlapping the site nav bar.
+   The nav (.main-nav) uses z-index: 100, so report sticky elements must be lower. */
+[class^='report-'] .selector-bar {
+  z-index: 50 !important;
+}
+
 /* Report content container - starts with .report- prefix */
 [class^='report-']:not(.report-wrapper):not(.report-back-link):not(
 .report-card
