@@ -229,7 +229,7 @@ class TemplateEngine {
       { key: 'distances', label: 'Distances', href: 'distances.html' },
       {
         key: 'preseason_rankings',
-        label: '25-26 Preseason Rankings',
+        label: '26-27 Preseason Rankings',
         href: 'preseason_rankings.html',
       },
       {
@@ -438,7 +438,7 @@ ${dropdownItems}
           <li><a href="/current_season_rankings.html">Current Season Rankings</a></li>
           <li><a href="/conference_rankings.html">Conference Rankings</a></li>
           <li><a href="/composite_rankings.html">Composite Rankings</a></li>
-          <li><a href="/preseason_rankings.html">25-26 Preseason Rankings</a></li>
+          <li><a href="/preseason_rankings.html">26-27 Preseason Rankings</a></li>
           <li><a href="/returners.html">Returning and Non-Returning</a></li>
           <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
           <li class="nav-dropdown">
