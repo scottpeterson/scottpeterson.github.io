@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      2026 D3 WBB NCAA Tournament - Region 7-9 Crossover Results (Through Sweet
+      16) - The D3 Stat Lab
+    </title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-region_7_9_crossover_results * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .report-region_7_9_crossover_results {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 30px 20px;
+        color: #fff;
+      }
+      .report-region_7_9_crossover_results .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .report-region_7_9_crossover_results h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 8px;
+        background: linear-gradient(90deg, #f59e0b, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .report-region_7_9_crossover_results .subtitle {
+        text-align: center;
+        color: #8892b0;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+      .report-region_7_9_crossover_results .explanation {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        color: #ccc;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .report-region_7_9_crossover_results .explanation strong {
+        color: #f59e0b;
+      }
+      .report-region_7_9_crossover_results h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #e2e8f0;
+      }
+      .report-region_7_9_crossover_results .round-heading {
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+        color: #f59e0b;
+      }
+      .report-region_7_9_crossover_results .round-heading:first-of-type {
+        margin-top: 0;
+      }
+      .report-region_7_9_crossover_results .section {
+        margin-bottom: 35px;
+      }
+      .report-region_7_9_crossover_results table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .report-region_7_9_crossover_results thead th {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 12px 14px;
+        text-align: left;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #8892b0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .report-region_7_9_crossover_results thead th.center {
+        text-align: center;
+      }
+      .report-region_7_9_crossover_results tbody td {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.95rem;
+      }
+      .report-region_7_9_crossover_results tbody td.center {
+        text-align: center;
+      }
+      .report-region_7_9_crossover_results tbody tr:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .report-region_7_9_crossover_results .winner {
+        font-weight: 700;
+        color: #10b981;
+      }
+      .report-region_7_9_crossover_results .loser {
+        color: #8892b0;
+      }
+      .report-region_7_9_crossover_results .region-pill {
+        display: inline-block;
+        min-width: 32px;
+        text-align: center;
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .report-region_7_9_crossover_results .region-7-9 {
+        background: rgba(245, 158, 11, 0.2);
+        color: #f59e0b;
+        border: 1px solid rgba(245, 158, 11, 0.35);
+      }
+      .report-region_7_9_crossover_results .region-other {
+        background: rgba(99, 102, 241, 0.15);
+        color: #818cf8;
+        border: 1px solid rgba(99, 102, 241, 0.3);
+      }
+      .report-region_7_9_crossover_results .score {
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+      .report-region_7_9_crossover_results .score-winner {
+        color: #10b981;
+      }
+      .report-region_7_9_crossover_results .score-loser {
+        color: #8892b0;
+      }
+      .report-region_7_9_crossover_results .margin {
+        font-size: 0.85rem;
+        color: #8892b0;
+      }
+      .report-region_7_9_crossover_results .margin-negative {
+        font-size: 0.85rem;
+        color: #ef4444;
+      }
+      .report-region_7_9_crossover_results .seed {
+        display: inline-block;
+        min-width: 28px;
+        text-align: center;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.08);
+        color: #a0aec0;
+      }
+      .report-region_7_9_crossover_results .quadrant-pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        background: rgba(255, 255, 255, 0.08);
+        color: #a0aec0;
+      }
+      .report-region_7_9_crossover_results .summary {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+      .report-region_7_9_crossover_results .summary-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px 25px;
+        text-align: center;
+      }
+      .report-region_7_9_crossover_results .summary-card .label {
+        font-size: 0.8rem;
+        color: #8892b0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+      .report-region_7_9_crossover_results .summary-card .value {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #f59e0b;
+      }
+      .report-region_7_9_crossover_results .summary-card .value.green {
+        color: #10b981;
+      }
+      .report-region_7_9_crossover_results .summary-card .value.red {
+        color: #ef4444;
+      }
+      .report-region_7_9_crossover_results .non-qualifying {
+        margin-top: 35px;
+      }
+      .report-region_7_9_crossover_results .non-qualifying h2 {
+        color: #8892b0;
+        font-size: 1.1rem;
+      }
+      .report-region_7_9_crossover_results .non-qualifying table {
+        opacity: 0.7;
+      }
+      .report-region_7_9_crossover_results .tag {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      .report-region_7_9_crossover_results .tag-intra {
+        background: rgba(245, 158, 11, 0.12);
+        color: #d97706;
+        border: 1px solid rgba(245, 158, 11, 0.25);
+      }
+      .report-region_7_9_crossover_results .tag-outside {
+        background: rgba(99, 102, 241, 0.1);
+        color: #6366f1;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+      }
+      .report-region_7_9_crossover_results .combined-summary {
+        margin-top: 45px;
+        padding-top: 25px;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+      }
+      .report-region_7_9_crossover_results .combined-summary h2 {
+        text-align: center;
+        color: #f59e0b;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+      .report-region_7_9_crossover_results .footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #4a5568;
+        font-size: 0.8rem;
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="/distances.html">Distances</a></li>
+          <li>
+            <a href="/preseason_rankings.html">25-26 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="bracket_analysis.html"
+                  >2026 D3 WBB NCAA Tournament Bracket Analysis -
+                  TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="e8_head_coaches.html"
+                  >Elite 8 Head Coaches — D3 Women's Basketball 2026</a
+                >
+              </li>
+              <li><a href="mbb_npi.html">D1 MBB 2025-26 NPI Rankings</a></li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="region_7_9_crossover_results.html" class="active"
+                  >2026 D3 WBB NCAA Tournament - Region 7-9 Crossover Results
+                  (Through Sweet 16)</a
+                >
+              </li>
+              <li>
+                <a href="team_roster_report.html">D3 WBB Team Roster Report</a>
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_history.html"
+                  >2026 NCAA D3 WBB Tournament — Historical Performance</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-region_7_9_crossover_results">
+        <div class="container">
+          <h1>Region 7&ndash;9 vs. The Field</h1>
+          <p class="subtitle">
+            2026 D3 WBB NCAA Tournament &mdash; Through Sweet 16
+          </p>
+          <div class="explanation">
+            How did teams from <strong>Regions 7&ndash;9</strong> (Great Lakes,
+            Midwest, Upper Midwest) fare against opponents from
+            <strong>other regions</strong> (1&ndash;6, 10) throughout the
+            tournament? In the first round (R64), Regions 7&ndash;9
+            <strong>swept all 9 crossover matchups</strong> by an average of
+            +23.9. In the second round (R32), the field fought back &mdash;
+            R7&ndash;9 went <strong>1&ndash;2</strong> in crossover games. In
+            the Sweet 16, R7&ndash;9 went <strong>2&ndash;1</strong> in
+            crossover games.
+          </div>
+
+          <!-- ==================== TOP-LEVEL SUMMARY ==================== -->
+          <div class="section" style="margin-bottom: 35px">
+            <h2
+              style="
+                text-align: center;
+                color: #e2e8f0;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+              "
+            >
+              Crossover Record by Round
+            </h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th class="center">R7&ndash;9 Record</th>
+                  <th class="center">Avg Margin</th>
+                  <th class="center">Total Scoring</th>
+                  <th class="center">Crossover Games</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Round of 64</td>
+                  <td class="center">
+                    <span style="color: #10b981; font-weight: 700"
+                      >9&ndash;0</span
+                    >
+                  </td>
+                  <td class="center" style="font-weight: 700">+23.9</td>
+                  <td class="center">683&ndash;468</td>
+                  <td class="center">9 of 32</td>
+                </tr>
+                <tr>
+                  <td>Round of 32</td>
+                  <td class="center">
+                    <span style="color: #ef4444; font-weight: 700"
+                      >1&ndash;2</span
+                    >
+                  </td>
+                  <td class="center" style="font-weight: 700">&minus;10.7</td>
+                  <td class="center">163&ndash;195</td>
+                  <td class="center">3 of 16</td>
+                </tr>
+                <tr>
+                  <td>Sweet 16</td>
+                  <td class="center">
+                    <span style="color: #10b981; font-weight: 700"
+                      >2&ndash;1</span
+                    >
+                  </td>
+                  <td class="center" style="font-weight: 700">+6.0</td>
+                  <td class="center">197&ndash;179</td>
+                  <td class="center">3 of 8</td>
+                </tr>
+                <tr
+                  style="
+                    border-top: 2px solid rgba(245, 158, 11, 0.3);
+                    font-weight: 700;
+                  "
+                >
+                  <td style="color: #f59e0b">Combined</td>
+                  <td class="center">
+                    <span style="color: #10b981; font-weight: 700"
+                      >12&ndash;3</span
+                    >
+                  </td>
+                  <td class="center" style="color: #f59e0b">+13.4</td>
+                  <td class="center" style="color: #f59e0b">1043&ndash;842</td>
+                  <td class="center">15 of 56</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ==================== ROUND OF 64 ==================== -->
+          <h2 class="round-heading">Round of 64 &mdash; March 6</h2>
+
+          <div class="section">
+            <h2>Crossover Games: Region 7&ndash;9 vs. Regions 1&ndash;6, 10</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>R7&ndash;9 Team</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th>Opponent</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th class="center">Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="winner">Trine</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">7</span></td>
+                  <td class="center score score-winner">90</td>
+                  <td class="loser">Shenandoah</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">10</span></td>
+                  <td class="center score score-loser">45</td>
+                  <td class="center margin">+45</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="winner">John Carroll</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">3</span></td>
+                  <td class="center score score-winner">84</td>
+                  <td class="loser">TCNJ</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center"><span class="seed">14</span></td>
+                  <td class="center score score-loser">49</td>
+                  <td class="center margin">+35</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="winner">Denison</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">2</span></td>
+                  <td class="center score score-winner">82</td>
+                  <td class="loser">Southern Virginia</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">15</span></td>
+                  <td class="center score score-loser">47</td>
+                  <td class="center margin">+35</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td class="winner">UW-La Crosse</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center"><span class="seed">3</span></td>
+                  <td class="center score score-winner">78</td>
+                  <td class="loser">LaGrange</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">14</span></td>
+                  <td class="center score score-loser">52</td>
+                  <td class="center margin">+26</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td class="winner">Baldwin Wallace</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">7</span></td>
+                  <td class="center score score-winner">75</td>
+                  <td class="loser">William Paterson</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center"><span class="seed">10</span></td>
+                  <td class="center score score-loser">51</td>
+                  <td class="center margin">+24</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td class="winner">Ohio Wesleyan</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">5</span></td>
+                  <td class="center score score-winner">68</td>
+                  <td class="loser">DeSales</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center"><span class="seed">12</span></td>
+                  <td class="center score score-loser">53</td>
+                  <td class="center margin">+15</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td class="winner">Otterbein</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">8</span></td>
+                  <td class="center score score-winner">60</td>
+                  <td class="loser">Randolph-Macon</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">9</span></td>
+                  <td class="center score score-loser">45</td>
+                  <td class="center margin">+15</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td class="winner">WashU</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center"><span class="seed">4</span></td>
+                  <td class="center score score-winner">65</td>
+                  <td class="loser">SUNY Geneseo</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center"><span class="seed">13</span></td>
+                  <td class="center score score-loser">53</td>
+                  <td class="center margin">+12</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="winner">Bethel</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center"><span class="seed">4</span></td>
+                  <td class="center score score-winner">81</td>
+                  <td class="loser">Millsaps</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">13</span></td>
+                  <td class="center score score-loser">73</td>
+                  <td class="center margin">+8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="summary">
+            <div class="summary-card">
+              <div class="label">R7&ndash;9 Record</div>
+              <div class="value green">9&ndash;0</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Avg Margin</div>
+              <div class="value">+23.9</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Total Scoring</div>
+              <div class="value">683&ndash;468</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Crossover Games</div>
+              <div class="value">9 of 32</div>
+            </div>
+          </div>
+          <div class="non-qualifying">
+            <h2>Other First Round Games (Not Crossover)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>Winner</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th>Loser</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th class="center">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Wisconsin Lutheran</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">65</td>
+                  <td>St. Mary&rsquo;s (MN)</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">47</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Chicago</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">60</td>
+                  <td>Gustavus Adolphus</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">44</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Illinois Wesleyan</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">61</td>
+                  <td>Washington &amp; Jefferson</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">53</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>UW-Oshkosh</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">53</td>
+                  <td>Webster</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">37</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Hope</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">103</td>
+                  <td>Penn State-Behrend</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">65</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>UW-Whitewater</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">70</td>
+                  <td>Transylvania</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">65</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Coe</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">69</td>
+                  <td>UW-Platteville</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">51</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Ripon</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">84</td>
+                  <td>UW-River Falls</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">81</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Carroll</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">74</td>
+                  <td>DePauw</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">67</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Concordia Moorhead</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">51</td>
+                  <td>UW-Superior</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">50</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>NYU</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center score">108</td>
+                  <td>Maine-Farmington</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">44</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Scranton</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">104</td>
+                  <td>Framingham St.</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">39</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Johns Hopkins</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">100</td>
+                  <td>Hunter</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center score">59</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Christopher Newport</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center score">74</td>
+                  <td>Gettysburg</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">62</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Washington &amp; Lee</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center score">73</td>
+                  <td>St. Mary&rsquo;s (MD)</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center score">44</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Whitman</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">70</td>
+                  <td>Claremont-Mudd-Scripps</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">54</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Bates</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">71</td>
+                  <td>Merchant Marine</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center score">57</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Smith</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center score">73</td>
+                  <td>Union (NY)</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center score">55</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Bowdoin</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">51</td>
+                  <td>Emmanuel</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">45</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Messiah</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">64</td>
+                  <td>Cortland</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center score">58</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>SUNY New Paltz</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center score">67</td>
+                  <td>Immaculata</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">51</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Southern Maine</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center score">62</td>
+                  <td>Johnson &amp; Wales (RI)</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center score">46</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Hardin-Simmons</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">73</td>
+                  <td>Austin College</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">51</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ==================== ROUND OF 32 ==================== -->
+          <h2 class="round-heading">Round of 32 &mdash; March 7</h2>
+
+          <div class="section">
+            <h2>Crossover Games: Region 7&ndash;9 vs. Regions 1&ndash;6, 10</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>R7&ndash;9 Team</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th>Opponent</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th class="center">Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="winner">John Carroll</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">3</span></td>
+                  <td class="center score score-winner">74</td>
+                  <td class="loser">SUNY New Paltz</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R3</span>
+                  </td>
+                  <td class="center"><span class="seed">6</span></td>
+                  <td class="center score score-loser">54</td>
+                  <td class="center margin">+20</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td class="loser">Baldwin Wallace</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">7</span></td>
+                  <td class="center score score-loser">46</td>
+                  <td class="winner">Johns Hopkins</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center"><span class="seed">2</span></td>
+                  <td class="center score score-winner">59</td>
+                  <td class="center margin-negative">&minus;13</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td class="loser">Otterbein</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center"><span class="seed">8</span></td>
+                  <td class="center score score-loser">43</td>
+                  <td class="winner">Scranton</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center"><span class="seed">1</span></td>
+                  <td class="center score score-winner">82</td>
+                  <td class="center margin-negative">&minus;39</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="summary">
+            <div class="summary-card">
+              <div class="label">R7&ndash;9 Record</div>
+              <div class="value red">1&ndash;2</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Avg Margin</div>
+              <div class="value">&minus;10.7</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Total Scoring</div>
+              <div class="value">163&ndash;195</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Crossover Games</div>
+              <div class="value">3 of 16</div>
+            </div>
+          </div>
+          <div class="non-qualifying">
+            <h2>Other Second Round Games (Not Crossover)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>Winner</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th>Loser</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th class="center">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>WashU</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">73</td>
+                  <td>Ohio Wesleyan</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">68</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>UW-Oshkosh</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">65</td>
+                  <td>Wisconsin Lutheran</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">56</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Chicago</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">62</td>
+                  <td>UW-Whitewater</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">46</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Hope</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">90</td>
+                  <td>Illinois Wesleyan</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">85</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Denison</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">63</td>
+                  <td>Trine</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">54</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>UW-La Crosse</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">80</td>
+                  <td>Carroll</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">60</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Bethel</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">57</td>
+                  <td>Coe</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">48</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Concordia Moorhead</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">68</td>
+                  <td>Ripon</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">65</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>NYU</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center score">70</td>
+                  <td>Messiah</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">47</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Southern Maine</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center score">67</td>
+                  <td>Bowdoin</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">59</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Bates</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">74</td>
+                  <td>Smith</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center score">70</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Washington &amp; Lee</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center score">61</td>
+                  <td>Christopher Newport</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center score">55</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>Hardin-Simmons</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">56</td>
+                  <td>Whitman</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">35</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ==================== SWEET 16 ==================== -->
+          <h2 class="round-heading">Sweet 16 &mdash; March 13</h2>
+
+          <div class="section">
+            <h2>Crossover Games: Region 7&ndash;9 vs. Regions 1&ndash;6, 10</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>R7&ndash;9 Team</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th>Opponent</th>
+                  <th class="center">Region</th>
+                  <th class="center">Seed</th>
+                  <th class="center">Score</th>
+                  <th class="center">Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td class="winner">UW-La Crosse</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center"><span class="seed">3</span></td>
+                  <td class="center score score-winner">66</td>
+                  <td class="loser">Southern Maine</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R2</span>
+                  </td>
+                  <td class="center"><span class="seed">2</span></td>
+                  <td class="center score score-loser">45</td>
+                  <td class="center margin">+21</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td class="winner">Concordia Moorhead</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center"><span class="seed">6</span></td>
+                  <td class="center score score-winner">64</td>
+                  <td class="loser">Johns Hopkins</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center"><span class="seed">2</span></td>
+                  <td class="center score score-loser">59</td>
+                  <td class="center margin">+5</td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td class="loser">Bethel</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center"><span class="seed">4</span></td>
+                  <td class="center score score-loser">67</td>
+                  <td class="winner">Washington &amp; Lee</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R6</span>
+                  </td>
+                  <td class="center"><span class="seed">1</span></td>
+                  <td class="center score score-winner">75</td>
+                  <td class="center margin-negative">&minus;8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="summary">
+            <div class="summary-card">
+              <div class="label">R7&ndash;9 Record</div>
+              <div class="value green">2&ndash;1</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Avg Margin</div>
+              <div class="value">+6.0</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Total Scoring</div>
+              <div class="value">197&ndash;179</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Crossover Games</div>
+              <div class="value">3 of 8</div>
+            </div>
+          </div>
+          <div class="non-qualifying">
+            <h2>Other Sweet 16 Games (Not Crossover)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Quadrant</th>
+                  <th>Winner</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th>Loser</th>
+                  <th class="center">Region</th>
+                  <th class="center">Score</th>
+                  <th class="center">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>UW-Oshkosh</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R9</span>
+                  </td>
+                  <td class="center score">64</td>
+                  <td>WashU</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">43</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Right</span></td>
+                  <td>Chicago</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R8</span>
+                  </td>
+                  <td class="center score">55</td>
+                  <td>Hope</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">52</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Right</span></td>
+                  <td>Denison</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">86</td>
+                  <td>John Carroll</td>
+                  <td class="center">
+                    <span class="region-pill region-7-9">R7</span>
+                  </td>
+                  <td class="center score">67</td>
+                  <td class="center">
+                    <span class="tag tag-intra">R7&ndash;9 Intra</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Top Left</span></td>
+                  <td>NYU</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R4</span>
+                  </td>
+                  <td class="center score">103</td>
+                  <td>Hardin-Simmons</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R10</span>
+                  </td>
+                  <td class="center score">61</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="quadrant-pill">Bottom Left</span></td>
+                  <td>Scranton</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R5</span>
+                  </td>
+                  <td class="center score">76</td>
+                  <td>Bates</td>
+                  <td class="center">
+                    <span class="region-pill region-other">R1</span>
+                  </td>
+                  <td class="center score">59</td>
+                  <td class="center">
+                    <span class="tag tag-outside">Outside</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ==================== COMBINED SUMMARY ==================== -->
+          <div class="combined-summary">
+            <h2>Combined: All Rounds</h2>
+            <div class="summary">
+              <div class="summary-card">
+                <div class="label">R7&ndash;9 Record</div>
+                <div class="value green">12&ndash;3</div>
+              </div>
+              <div class="summary-card">
+                <div class="label">Avg Margin</div>
+                <div class="value">+13.4</div>
+              </div>
+              <div class="summary-card">
+                <div class="label">Total Scoring</div>
+                <div class="value">1043&ndash;842</div>
+              </div>
+              <div class="summary-card">
+                <div class="label">Crossover Games</div>
+                <div class="value">15 of 56</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="footer">TheD3StatLab &mdash; Generated March 14, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+  </body>
+</html>
