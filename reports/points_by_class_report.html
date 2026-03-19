@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3 WBB Points by Class - The D3 Stat Lab</title>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/css/reports.css" />
+
+    <!-- Scoped report styles -->
+    <style>
+      .report-points_by_class_report * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .report-points_by_class_report {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+        line-height: 1.5;
+        padding: 20px;
+      }
+      .report-points_by_class_report .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .report-points_by_class_report h1 {
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 4px;
+        color: #0f172a;
+      }
+      .report-points_by_class_report .subtitle {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95em;
+        margin-bottom: 20px;
+      }
+      .report-points_by_class_report .filter-bar {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .report-points_by_class_report .filter-bar select {
+        padding: 10px 36px 10px 12px;
+        font-size: 0.95em;
+        border: 2px solid #cbd5e1;
+        border-radius: 8px;
+        background: #fff;
+        color: #1e293b;
+        cursor: pointer;
+        min-width: 200px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%2364748b'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+      }
+      .report-points_by_class_report .filter-bar select:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+      .report-points_by_class_report table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      .report-points_by_class_report thead th {
+        background: #2c3e50;
+        color: #fff;
+        padding: 10px 12px;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-align: center;
+      }
+      .report-points_by_class_report thead th:first-child {
+        text-align: left;
+      }
+      .report-points_by_class_report tbody td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #e2e8f0;
+        text-align: center;
+      }
+      .report-points_by_class_report tbody td:first-child {
+        text-align: left;
+        font-weight: 600;
+      }
+      .report-points_by_class_report tbody tr:nth-child(even) {
+        background: #f8fafc;
+      }
+      .report-points_by_class_report tbody tr:hover {
+        background: #eef2ff;
+      }
+      .report-points_by_class_report tfoot td {
+        padding: 10px 12px;
+        font-weight: 700;
+        border-top: 2px solid #2c3e50;
+        text-align: center;
+        background: #f1f5f9;
+      }
+      .report-points_by_class_report tfoot td:first-child {
+        text-align: left;
+      }
+      .report-points_by_class_report .chart-wrap {
+        max-width: 600px;
+        margin: 0 auto 24px auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        padding: 18px;
+      }
+      .report-points_by_class_report .hidden {
+        display: none;
+      }
+      .report-points_by_class_report .footer {
+        text-align: center;
+        color: #8892b0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+      .report-points_by_class_report .footer a {
+        color: #2980b9;
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/npi.html">NPI</a></li>
+          <li><a href="/season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="/current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="/distances.html">Distances</a></li>
+          <li>
+            <a href="/preseason_rankings.html">26-27 Preseason Rankings</a>
+          </li>
+          <li><a href="/returners.html">Returning and Non-Returning</a></li>
+          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="/reports/" class="dropdown-trigger active"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="/reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="bracket_analysis.html"
+                  >2026 D3 WBB NCAA Tournament Bracket Analysis -
+                  TheD3StatLab</a
+                >
+              </li>
+              <li>
+                <a href="nyu_vs_scranton_20260319.html"
+                  >NYU vs Scranton — National Semifinal | March 19, 2026</a
+                >
+              </li>
+              <li>
+                <a href="player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="points_by_class_report.html" class="active"
+                  >D3 WBB Points by Class</a
+                >
+              </li>
+              <li>
+                <a href="region_7_9_crossover_results.html"
+                  >2026 D3 WBB NCAA Tournament - Region 7-9 Crossover Results
+                  (Through Sweet 16)</a
+                >
+              </li>
+              <li>
+                <a href="team_roster_report.html">D3 WBB Team Roster Report</a>
+              </li>
+              <li>
+                <a href="top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="tournament_history.html"
+                  >2026 NCAA D3 WBB Tournament — Historical Performance</a
+                >
+              </li>
+              <li>
+                <a href="uw_oshkosh_vs_denison_20260319.html"
+                  >UW-Oshkosh vs Denison — National Semifinal | March 19,
+                  2026</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/premium.html">Premium</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <div class="report-wrapper">
+      <div class="report-back-link">
+        <a href="/reports/">← Back to Reports</a>
+      </div>
+
+      <div class="report-points_by_class_report">
+        <div class="container">
+          <h1>D3 WBB Points by Class</h1>
+          <p class="subtitle">
+            2025-26 Season &mdash; Scoring Totals by Class Year
+          </p>
+
+          <div class="filter-bar">
+            <select id="regionSelect">
+              <option value="all">All Regions</option>
+              <option value="1">Region 1</option>
+              <option value="2">Region 2</option>
+              <option value="3">Region 3</option>
+              <option value="4">Region 4</option>
+              <option value="5">Region 5</option>
+              <option value="6">Region 6</option>
+              <option value="7">Region 7</option>
+              <option value="8">Region 8</option>
+              <option value="9">Region 9</option>
+              <option value="10">Region 10</option>
+            </select>
+            <select id="confSelect" class="hidden">
+              <option value="all">All Conferences</option>
+            </select>
+          </div>
+
+          <div class="chart-wrap"><canvas id="classChart"></canvas></div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Total Points</th>
+                <th>Player Count</th>
+                <th>Avg Points/Player</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+            <tfoot id="tableFoot"></tfoot>
+          </table>
+
+          <p class="footer">
+            Generated March 19, 2026 at 1:28 PM<br />
+            <a href="https://thed3statlab.com">TheD3StatLab</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for navigation -->
+    <script src="/js/navigation.js"></script>
+    <script src="/js/reports-nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script>
+      const byRegion = {
+        1: {
+          FR: { pts: 12757, count: 188 },
+          SO: { pts: 16936, count: 155 },
+          JR: { pts: 17313, count: 148 },
+          SR: { pts: 18450, count: 130 },
+          GR: { pts: 324, count: 4 },
+        },
+        2: {
+          FR: { pts: 7931, count: 140 },
+          SO: { pts: 13067, count: 125 },
+          JR: { pts: 16231, count: 127 },
+          SR: { pts: 14102, count: 87 },
+          GR: { pts: 1866, count: 9 },
+        },
+        3: {
+          FR: { pts: 11498, count: 191 },
+          SO: { pts: 14271, count: 164 },
+          JR: { pts: 21829, count: 167 },
+          SR: { pts: 19476, count: 126 },
+          GR: { pts: 2251, count: 13 },
+        },
+        4: {
+          FR: { pts: 11901, count: 203 },
+          SO: { pts: 15304, count: 138 },
+          JR: { pts: 15871, count: 134 },
+          SR: { pts: 19927, count: 115 },
+          GR: { pts: 1576, count: 6 },
+        },
+        5: {
+          FR: { pts: 10738, count: 197 },
+          SO: { pts: 12751, count: 147 },
+          JR: { pts: 14441, count: 122 },
+          SR: { pts: 19008, count: 120 },
+          GR: { pts: 2144, count: 11 },
+        },
+        6: {
+          FR: { pts: 16179, count: 250 },
+          SO: { pts: 14920, count: 148 },
+          JR: { pts: 20273, count: 141 },
+          SR: { pts: 20130, count: 130 },
+          GR: { pts: 807, count: 4 },
+        },
+        7: {
+          FR: { pts: 14193, count: 290 },
+          SO: { pts: 21712, count: 220 },
+          JR: { pts: 21378, count: 178 },
+          SR: { pts: 23983, count: 169 },
+          GR: { pts: 1334, count: 6 },
+        },
+        8: {
+          FR: { pts: 12539, count: 260 },
+          SO: { pts: 13896, count: 162 },
+          JR: { pts: 19974, count: 172 },
+          SR: { pts: 25994, count: 146 },
+          GR: { pts: 477, count: 6 },
+        },
+        9: {
+          FR: { pts: 11269, count: 255 },
+          SO: { pts: 22045, count: 235 },
+          JR: { pts: 21821, count: 165 },
+          SR: { pts: 19489, count: 152 },
+          GR: { pts: 671, count: 7 },
+        },
+        10: {
+          FR: { pts: 9394, count: 169 },
+          SO: { pts: 13468, count: 141 },
+          JR: { pts: 16589, count: 134 },
+          SR: { pts: 16046, count: 111 },
+          GR: { pts: 934, count: 5 },
+        },
+      };
+      const byConference = {
+        AEC: {
+          FR: { pts: 2247, count: 34 },
+          SO: { pts: 2454, count: 30 },
+          JR: { pts: 3102, count: 26 },
+          SR: { pts: 3313, count: 22 },
+          GR: { pts: 1412, count: 7 },
+        },
+        AMCC: {
+          FR: { pts: 2668, count: 37 },
+          SO: { pts: 4308, count: 33 },
+          JR: { pts: 1962, count: 19 },
+          SR: { pts: 3897, count: 25 },
+          GR: { pts: 0, count: 0 },
+        },
+        ARC: {
+          FR: { pts: 2432, count: 67 },
+          SO: { pts: 5026, count: 59 },
+          JR: { pts: 3585, count: 27 },
+          SR: { pts: 4028, count: 36 },
+          GR: { pts: 13, count: 1 },
+        },
+        ASC: {
+          FR: { pts: 1516, count: 20 },
+          SO: { pts: 2046, count: 17 },
+          JR: { pts: 791, count: 8 },
+          SR: { pts: 2125, count: 12 },
+          GR: { pts: 389, count: 3 },
+        },
+        C2C: {
+          FR: { pts: 1762, count: 25 },
+          SO: { pts: 2497, count: 20 },
+          JR: { pts: 3097, count: 16 },
+          SR: { pts: 1092, count: 10 },
+          GR: { pts: 321, count: 1 },
+        },
+        CC: {
+          FR: { pts: 3803, count: 55 },
+          SO: { pts: 3011, count: 35 },
+          JR: { pts: 4249, count: 36 },
+          SR: { pts: 6041, count: 34 },
+          GR: { pts: 101, count: 3 },
+        },
+        CCIW: {
+          FR: { pts: 1840, count: 49 },
+          SO: { pts: 2701, count: 33 },
+          JR: { pts: 4944, count: 36 },
+          SR: { pts: 6023, count: 31 },
+          GR: { pts: 0, count: 0 },
+        },
+        CCS: {
+          FR: { pts: 3216, count: 53 },
+          SO: { pts: 1773, count: 29 },
+          JR: { pts: 4240, count: 34 },
+          SR: { pts: 5260, count: 35 },
+          GR: { pts: 131, count: 1 },
+        },
+        CNE: {
+          FR: { pts: 2741, count: 48 },
+          SO: { pts: 4520, count: 48 },
+          JR: { pts: 5512, count: 43 },
+          SR: { pts: 3868, count: 28 },
+          GR: { pts: 169, count: 2 },
+        },
+        CUNYAC: {
+          FR: { pts: 2336, count: 38 },
+          SO: { pts: 1752, count: 20 },
+          JR: { pts: 3299, count: 25 },
+          SR: { pts: 4892, count: 27 },
+          GR: { pts: 477, count: 1 },
+        },
+        E8: {
+          FR: { pts: 3132, count: 55 },
+          SO: { pts: 3159, count: 42 },
+          JR: { pts: 6544, count: 45 },
+          SR: { pts: 6293, count: 36 },
+          GR: { pts: 408, count: 2 },
+        },
+        GNAC: {
+          FR: { pts: 4559, count: 63 },
+          SO: { pts: 5724, count: 51 },
+          JR: { pts: 5272, count: 47 },
+          SR: { pts: 5237, count: 36 },
+          GR: { pts: 275, count: 2 },
+        },
+        HCAC: {
+          FR: { pts: 2892, count: 59 },
+          SO: { pts: 3220, count: 34 },
+          JR: { pts: 4328, count: 33 },
+          SR: { pts: 6979, count: 36 },
+          GR: { pts: 0, count: 0 },
+        },
+        IND: {
+          FR: { pts: 422, count: 15 },
+          SO: { pts: 340, count: 9 },
+          JR: { pts: 0, count: 1 },
+          SR: { pts: 101, count: 9 },
+          GR: { pts: 329, count: 3 },
+        },
+        LAND: {
+          FR: { pts: 1923, count: 50 },
+          SO: { pts: 4414, count: 48 },
+          JR: { pts: 3950, count: 31 },
+          SR: { pts: 6332, count: 33 },
+          GR: { pts: 0, count: 0 },
+        },
+        LEC: {
+          FR: { pts: 2599, count: 49 },
+          SO: { pts: 3449, count: 30 },
+          JR: { pts: 4034, count: 30 },
+          SR: { pts: 4705, count: 23 },
+          GR: { pts: 855, count: 3 },
+        },
+        LL: {
+          FR: { pts: 2077, count: 38 },
+          SO: { pts: 2572, count: 35 },
+          JR: { pts: 5679, count: 44 },
+          SR: { pts: 4278, count: 29 },
+          GR: { pts: 588, count: 3 },
+        },
+        MACC: {
+          FR: { pts: 2200, count: 44 },
+          SO: { pts: 2671, count: 29 },
+          JR: { pts: 2127, count: 26 },
+          SR: { pts: 4089, count: 29 },
+          GR: { pts: 853, count: 2 },
+        },
+        MACF: {
+          FR: { pts: 2045, count: 42 },
+          SO: { pts: 2855, count: 33 },
+          JR: { pts: 2221, count: 30 },
+          SR: { pts: 4975, count: 26 },
+          GR: { pts: 370, count: 1 },
+        },
+        MASCAC: {
+          FR: { pts: 2199, count: 41 },
+          SO: { pts: 3493, count: 38 },
+          JR: { pts: 3409, count: 28 },
+          SR: { pts: 3554, count: 25 },
+          GR: { pts: 2, count: 1 },
+        },
+        MIAA: {
+          FR: { pts: 3025, count: 60 },
+          SO: { pts: 3753, count: 47 },
+          JR: { pts: 4813, count: 37 },
+          SR: { pts: 3776, count: 30 },
+          GR: { pts: 0, count: 0 },
+        },
+        MIAC: {
+          FR: { pts: 2403, count: 55 },
+          SO: { pts: 7696, count: 64 },
+          JR: { pts: 6046, count: 43 },
+          SR: { pts: 3365, count: 30 },
+          GR: { pts: 306, count: 2 },
+        },
+        MWC: {
+          FR: { pts: 2457, count: 48 },
+          SO: { pts: 3684, count: 42 },
+          JR: { pts: 4213, count: 37 },
+          SR: { pts: 4166, count: 32 },
+          GR: { pts: 0, count: 0 },
+        },
+        NAC: {
+          FR: { pts: 3107, count: 46 },
+          SO: { pts: 3974, count: 29 },
+          JR: { pts: 3465, count: 31 },
+          SR: { pts: 4127, count: 26 },
+          GR: { pts: 47, count: 1 },
+        },
+        NACC: {
+          FR: { pts: 4396, count: 79 },
+          SO: { pts: 5004, count: 55 },
+          JR: { pts: 5228, count: 50 },
+          SR: { pts: 5533, count: 39 },
+          GR: { pts: 148, count: 3 },
+        },
+        NCAC: {
+          FR: { pts: 1839, count: 45 },
+          SO: { pts: 2428, count: 29 },
+          JR: { pts: 4771, count: 35 },
+          SR: { pts: 5148, count: 35 },
+          GR: { pts: 0, count: 0 },
+        },
+        NESCAC: {
+          FR: { pts: 2892, count: 38 },
+          SO: { pts: 3745, count: 37 },
+          JR: { pts: 5167, count: 42 },
+          SR: { pts: 5532, count: 43 },
+          GR: { pts: 0, count: 0 },
+        },
+        NEWMAC: {
+          FR: { pts: 2591, count: 43 },
+          SO: { pts: 4776, count: 43 },
+          JR: { pts: 6350, count: 51 },
+          SR: { pts: 4727, count: 31 },
+          GR: { pts: 764, count: 3 },
+        },
+        NJAC: {
+          FR: { pts: 3160, count: 49 },
+          SO: { pts: 4307, count: 37 },
+          JR: { pts: 3633, count: 26 },
+          SR: { pts: 4801, count: 32 },
+          GR: { pts: 193, count: 2 },
+        },
+        NWC: {
+          FR: { pts: 2821, count: 50 },
+          SO: { pts: 3657, count: 24 },
+          JR: { pts: 4423, count: 38 },
+          SR: { pts: 3347, count: 24 },
+          GR: { pts: 0, count: 0 },
+        },
+        OAC: {
+          FR: { pts: 2828, count: 54 },
+          SO: { pts: 4609, count: 46 },
+          JR: { pts: 4553, count: 37 },
+          SR: { pts: 3197, count: 29 },
+          GR: { pts: 0, count: 0 },
+        },
+        ODAC: {
+          FR: { pts: 3584, count: 67 },
+          SO: { pts: 4571, count: 43 },
+          JR: { pts: 5841, count: 38 },
+          SR: { pts: 6088, count: 40 },
+          GR: { pts: 0, count: 0 },
+        },
+        PAC: {
+          FR: { pts: 2821, count: 77 },
+          SO: { pts: 5799, count: 56 },
+          JR: { pts: 4182, count: 43 },
+          SR: { pts: 6599, count: 38 },
+          GR: { pts: 1334, count: 6 },
+        },
+        SAA: {
+          FR: { pts: 2691, count: 45 },
+          SO: { pts: 2422, count: 29 },
+          JR: { pts: 4409, count: 25 },
+          SR: { pts: 4407, count: 25 },
+          GR: { pts: 141, count: 1 },
+        },
+        SCAC: {
+          FR: { pts: 2769, count: 64 },
+          SO: { pts: 3742, count: 57 },
+          JR: { pts: 5939, count: 44 },
+          SR: { pts: 6705, count: 47 },
+          GR: { pts: 0, count: 0 },
+        },
+        SCIAC: {
+          FR: { pts: 2034, count: 29 },
+          SO: { pts: 3334, count: 39 },
+          JR: { pts: 4874, count: 41 },
+          SR: { pts: 3825, count: 27 },
+          GR: { pts: 545, count: 2 },
+        },
+        SKY: {
+          FR: { pts: 3403, count: 53 },
+          SO: { pts: 4759, count: 42 },
+          JR: { pts: 4014, count: 39 },
+          SR: { pts: 4928, count: 31 },
+          GR: { pts: 159, count: 1 },
+        },
+        SLIAC: {
+          FR: { pts: 3169, count: 62 },
+          SO: { pts: 1898, count: 28 },
+          JR: { pts: 3498, count: 42 },
+          SR: { pts: 6589, count: 31 },
+          GR: { pts: 0, count: 0 },
+        },
+        SUNYAC: {
+          FR: { pts: 2735, count: 41 },
+          SO: { pts: 3026, count: 39 },
+          JR: { pts: 5405, count: 35 },
+          SR: { pts: 3665, count: 28 },
+          GR: { pts: 931, count: 6 },
+        },
+        UAA: {
+          FR: { pts: 2302, count: 34 },
+          SO: { pts: 2739, count: 30 },
+          JR: { pts: 5174, count: 35 },
+          SR: { pts: 3822, count: 26 },
+          GR: { pts: 243, count: 2 },
+        },
+        UEC: {
+          FR: { pts: 3579, count: 66 },
+          SO: { pts: 5898, count: 40 },
+          JR: { pts: 5696, count: 44 },
+          SR: { pts: 3682, count: 22 },
+          GR: { pts: 314, count: 1 },
+        },
+        UMAC: {
+          FR: { pts: 1894, count: 39 },
+          SO: { pts: 2806, count: 35 },
+          JR: { pts: 4130, count: 21 },
+          SR: { pts: 2795, count: 21 },
+          GR: { pts: 153, count: 2 },
+        },
+        USAC: {
+          FR: { pts: 4712, count: 65 },
+          SO: { pts: 4536, count: 33 },
+          JR: { pts: 3658, count: 31 },
+          SR: { pts: 3348, count: 20 },
+          GR: { pts: 214, count: 1 },
+        },
+        WIAC: {
+          FR: { pts: 2083, count: 46 },
+          SO: { pts: 2833, count: 35 },
+          JR: { pts: 3847, count: 37 },
+          SR: { pts: 5135, count: 33 },
+          GR: { pts: 199, count: 2 },
+        },
+      };
+      const confsByRegion = {
+        1: ['GNAC', 'MASCAC', 'NAC', 'NESCAC'],
+        2: ['CNE', 'LEC', 'NEWMAC', 'UAA'],
+        3: ['E8', 'LL', 'SKY', 'SUNYAC', 'UAA'],
+        4: ['AEC', 'CUNYAC', 'MACF', 'NJAC', 'UAA', 'UEC'],
+        5: ['AEC', 'C2C', 'CC', 'IND', 'LAND', 'MACC'],
+        6: ['C2C', 'CCS', 'ODAC', 'SAA', 'UAA', 'USAC'],
+        7: ['AMCC', 'MIAA', 'NCAC', 'OAC', 'PAC', 'UAA'],
+        8: ['CCIW', 'HCAC', 'IND', 'NACC', 'SLIAC', 'UAA'],
+        9: ['ARC', 'MIAC', 'MWC', 'UMAC', 'WIAC'],
+        10: ['ASC', 'C2C', 'NWC', 'SCAC', 'SCIAC'],
+      };
+      const CLASS_ORDER = ['FR', 'SO', 'JR', 'SR', 'GR'];
+
+      const CLASS_COLORS = {
+        FR: '#3b82f6',
+        SO: '#10b981',
+        JR: '#f59e0b',
+        SR: '#ef4444',
+        GR: '#8b5cf6',
+      };
+      const regionSel = document.getElementById('regionSelect');
+      const confSel = document.getElementById('confSelect');
+      const tbody = document.getElementById('tableBody');
+      const tfoot = document.getElementById('tableFoot');
+      let chart = null;
+
+      function computeAllRegions() {
+        const totals = {};
+        CLASS_ORDER.forEach(c => {
+          totals[c] = { pts: 0, count: 0 };
+        });
+        for (const bucket of Object.keys(byRegion)) {
+          for (const c of CLASS_ORDER) {
+            totals[c].pts += byRegion[bucket][c].pts;
+            totals[c].count += byRegion[bucket][c].count;
+          }
+        }
+        return totals;
+      }
+
+      function renderChart(data) {
+        if (chart) chart.destroy();
+        const ctx = document.getElementById('classChart').getContext('2d');
+        chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: CLASS_ORDER,
+            datasets: [
+              {
+                label: 'Total Points',
+                data: CLASS_ORDER.map(c => (data[c] || { pts: 0 }).pts),
+                backgroundColor: CLASS_ORDER.map(c => CLASS_COLORS[c]),
+                borderRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: 'Total Points' },
+              },
+              x: { title: { display: true, text: 'Class' } },
+            },
+          },
+        });
+      }
+
+      function renderTable(data) {
+        tbody.innerHTML = '';
+        tfoot.innerHTML = '';
+        let totalPts = 0,
+          totalCount = 0;
+        CLASS_ORDER.forEach(c => {
+          const d = data[c] || { pts: 0, count: 0 };
+          const avg = d.count > 0 ? (d.pts / d.count).toFixed(1) : '0.0';
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${c}</td><td>${d.pts.toLocaleString()}</td><td>${d.count.toLocaleString()}</td><td>${avg}</td>`;
+          tbody.appendChild(tr);
+          totalPts += d.pts;
+          totalCount += d.count;
+        });
+        const totalAvg =
+          totalCount > 0 ? (totalPts / totalCount).toFixed(1) : '0.0';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>Total</td><td>${totalPts.toLocaleString()}</td><td>${totalCount.toLocaleString()}</td><td>${totalAvg}</td>`;
+        tfoot.appendChild(tr);
+      }
+
+      function updateConfDropdown(bucket) {
+        confSel.innerHTML = '<option value="all">All Conferences</option>';
+        const confs = confsByRegion[bucket] || [];
+        confs.forEach(c => {
+          const o = document.createElement('option');
+          o.value = c;
+          o.textContent = c;
+          confSel.appendChild(o);
+        });
+      }
+
+      function update() {
+        const region = regionSel.value;
+        const conf = confSel.value;
+
+        let data;
+        if (region === 'all') {
+          confSel.classList.add('hidden');
+          confSel.value = 'all';
+          data = computeAllRegions();
+        } else {
+          confSel.classList.remove('hidden');
+          if (conf !== 'all' && byConference[conf]) {
+            data = byConference[conf];
+          } else {
+            data = byRegion[region] || {};
+          }
+        }
+        renderChart(data);
+        renderTable(data);
+      }
+
+      regionSel.addEventListener('change', function () {
+        const region = this.value;
+        if (region === 'all') {
+          confSel.classList.add('hidden');
+          confSel.value = 'all';
+        } else {
+          updateConfDropdown(region);
+          confSel.classList.remove('hidden');
+          confSel.value = 'all';
+        }
+        update();
+      });
+
+      confSel.addEventListener('change', update);
+
+      // Initial render
+      update();
+    </script>
+  </body>
+</html>
