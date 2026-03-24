@@ -446,7 +446,7 @@
         "pricingClarification": "One-time purchase for the 2026 offseason. Not a subscription\u2014no recurring charges.",
         "pricingFeatures": [
           "12-page offseason outlook for your team",
-          "Delivered immediately",
+          "Delivered via email within 24 hours",
           "One-time report"
         ],
         "urgencyNote": null,
@@ -529,7 +529,7 @@
   "success": {
     "title": "Success",
     "heading": "Payment Successful! 🎉",
-    "description": "Your report is confirmed! Check your inbox (and spam folder) for delivery details.",
+    "description": "Your report is confirmed! You'll receive it via email within 24 hours. Be sure to check your spam folder if you don't see it.",
     "template": "simple-page",
     "featureFlag": "premium",
     "showInNav": false,
