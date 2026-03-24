@@ -1815,6 +1815,93 @@ footer {
   margin-bottom: 0;
 }
 
+/* Multi-Product Premium Layout */
+.product-section {
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
+
+.product-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.product-header h2 {
+  display: inline;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.product-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.product-badge--active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.product-badge--upcoming {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.product-tagline {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.product-countdown {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.countdown-label {
+  margin-right: 4px;
+}
+
+.countdown-days {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Subtle de-emphasis for inactive/upcoming products */
+.product-section--inactive {
+  opacity: 0.85;
+}
+
+.product-section--inactive .pricing-card {
+  border: 2px dashed #ccc;
+}
+
+.product-divider {
+  border: none;
+  border-top: 4px solid #3498db;
+  margin: 30px 0 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sales-disabled-message {
+  color: #888;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
 /* Premium Form Styles */
 .premium-form {
   margin-top: 30px;
@@ -2124,5 +2211,21 @@ footer {
   .cta-button {
     font-size: 1rem;
     padding: 12px 24px;
+  }
+
+  /* Multi-product mobile adjustments */
+  .product-header h2 {
+    display: block;
+    font-size: 1.6rem;
+  }
+
+  .product-badge {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .product-tagline {
+    font-size: 1rem;
   }
 }

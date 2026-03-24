@@ -2,6 +2,7 @@
   "_featureFlags": {
     "premium": true,
     "premiumSalesEnabled": true,
+    "multiProductPremium": true,
     "commandPalette": false
   },
   "index": {
@@ -423,12 +424,112 @@
     "template": "premium-page",
     "featureFlag": "premium",
     "showInNav": true,
-    "isPremiumPage": true
+    "isPremiumPage": true,
+    "multiProductHeading": "Premium Reports",
+    "multiProductDescription": "In-depth analytics for your team, delivered to your inbox.",
+    "products": [
+      {
+        "id": "offseason-report",
+        "name": "Offseason Outlook Report",
+        "tagline": "Know exactly where your team stands heading into next season. Returning production, conference outlook, regional rankings, and roster analysis\u2014all in one report.",
+        "season": "offseason",
+        "active": true,
+        "salesEnabled": true,
+        "samplePdf": "data/FDU_Florham_OffseasonOutlook_2026.pdf",
+        "sampleHeading": "See Exactly What You'll Get",
+        "sampleDescription": "A 12-page offseason deep dive: returning production, graduation vulnerability, conference and regional outlook, coaching changes, top returners, and full roster analysis.",
+        "sampleButtonText": "View Full Sample Report (12 pages)",
+        "price": "$22",
+        "priceOriginal": null,
+        "pricePeriod": "one-time payment",
+        "pricingHeading": "Offseason Access",
+        "pricingClarification": "One-time purchase for the 2026 offseason. Not a subscription\u2014no recurring charges.",
+        "pricingFeatures": [
+          "12-page offseason outlook for your team",
+          "Delivered immediately",
+          "One-time report"
+        ],
+        "urgencyNote": null,
+        "buttonText": "Get Offseason Access",
+        "stripePaymentLink": "https://buy.stripe.com/aFa6oI9P313c8mrbln9sk02",
+        "features": [
+          {
+            "icon": "\ud83d\udcca",
+            "title": "Season Summary & Returning Production",
+            "description": "Your team's record, NPI, NCAA Tournament result, returning scoring percentage, and scoring distribution by class with a conference-wide heat map"
+          },
+          {
+            "icon": "\ud83d\udea8",
+            "title": "Graduation Vulnerability & Coaching Changes",
+            "description": "Which conference teams lose the most from their top 5 scorers, key departures by name, and head coaching changes in your conference and region"
+          },
+          {
+            "icon": "\ud83c\udfc6",
+            "title": "Conference & Regional Outlook",
+            "description": "Full conference standings with returning %, NCAA Tournament drought history, Region Top 25 projected preseason rankings, and returning All-Americans"
+          },
+          {
+            "icon": "\ud83d\udccb",
+            "title": "Roster Outlook & Top Returners",
+            "description": "Your full roster split into potential returners and graduates with per-30 stats, Impact scores, and minutes share\u2014plus the top returning players across your conference"
+          }
+        ]
+      },
+      {
+        "id": "single-team-report",
+        "name": "Single Team Report",
+        "tagline": "Know exactly where your team stands—and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
+        "season": "in-season",
+        "active": true,
+        "badgeText": "Buy Now \u2014 Delivers November",
+        "countdownDate": "2026-11-02",
+        "countdownLabel": "First report delivers in",
+        "salesEnabled": true,
+        "samplePdf": "data/WashU_2026-01-12_c8ab75.pdf",
+        "sampleHeading": "See Exactly What You'll Get",
+        "sampleDescription": "A 21-page deep dive: tournament odds, player impact rankings, and exactly why each upcoming game matters.",
+        "sampleButtonText": "View Full Sample Report (21 pages)",
+        "price": "$39",
+        "priceOriginal": "$49",
+        "pricePeriod": "one-time payment",
+        "pricingHeading": "Premium Access",
+        "pricingClarification": "One-time purchase for the 2025-26 season. Not a subscription—no recurring charges.",
+        "pricingFeatures": [
+          "Weekly PDF report delivered every Monday",
+          "Full coverage from November through March"
+        ],
+        "urgencyNote": "Purchase now and your first report delivers November 2, 2026. Weekly reports every Monday through March.",
+        "buttonText": "Get Premium Access",
+        "stripePaymentLink": "https://buy.stripe.com/8x2bJ24uJ13cgSX89b9sk01",
+        "features": [
+          {
+            "icon": "📊",
+            "title": "Complete Team Analytics",
+            "description": "NPI, efficiency ratings, tempo, height rankings, returning production, roster breakdown, radar charts, and composite rankings across multiple rating systems"
+          },
+          {
+            "icon": "🔮",
+            "title": "Tournament Projections",
+            "description": "NCAA Tournament odds from 10,000+ simulations, auto-bid vs. at-large percentages, Top-4/8/16 probabilities, at-large bid scenarios, and conference tournament outlook"
+          },
+          {
+            "icon": "📈",
+            "title": "Weekly Game Previews",
+            "description": "Upcoming matchups with win probabilities, playoff leverage scores, opponent key players, past week results, and NPI change attribution"
+          },
+          {
+            "icon": "👥",
+            "title": "Player Impact Analysis",
+            "description": "Full roster with Pts/30, Reb/30, Ast/30, impact scores, plus/minus stats, playing time percentages, and week-over-week performance tracking"
+          }
+        ]
+      }
+    ]
   },
   "success": {
     "title": "Success",
     "heading": "Payment Successful! 🎉",
-    "description": "Your weekly team report is confirmed! Your first report will arrive in your inbox on the next Monday.",
+    "description": "Your report is confirmed! Check your inbox (and spam folder) for delivery details.",
     "template": "simple-page",
     "featureFlag": "premium",
     "showInNav": false,

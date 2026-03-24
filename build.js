@@ -145,6 +145,10 @@ class TemplateEngine {
         'templates/premium-page.html',
         'utf8'
       );
+      this.templates.premiumMultiPage = await fs.readFile(
+        'templates/premium-multi-page.html',
+        'utf8'
+      );
       this.templates.simplePage = await fs.readFile(
         'templates/simple-page.html',
         'utf8'
@@ -710,6 +714,186 @@ ${cards}
     }
   }
 
+  // Render product sections for multi-product premium page
+  // Each product gets its own self-contained block with sample, features, pricing, and form.
+  // Products are sorted so active products render first.
+  // The globalSalesEnabled flag acts as a master kill switch — a product's form only
+  // shows when both globalSalesEnabled AND the product's own salesEnabled are true.
+  renderProductSections(products, globalSalesEnabled) {
+    // Sort: active products first
+    const sorted = [...products].sort((a, b) => {
+      if (a.active === b.active) {
+        return 0;
+      }
+      return a.active ? -1 : 1;
+    });
+
+    return sorted
+      .map((product, index) => {
+        const isActive = product.active;
+        const sectionClass = isActive
+          ? 'product-section product-section--active'
+          : 'product-section product-section--inactive';
+        const badgeClass = isActive
+          ? 'product-badge product-badge--active'
+          : 'product-badge product-badge--upcoming';
+        // Allow per-product badge text override, fall back to defaults
+        const badgeText =
+          product.badgeText ||
+          (isActive ? 'Available Now' : 'Returns Next Season');
+        const canPurchase = globalSalesEnabled && product.salesEnabled;
+
+        // Build sample section
+        let sampleHtml = '';
+        // eslint-disable-next-line quotes
+        const defaultSampleHeading = "See Exactly What You'll Get";
+        if (product.samplePdf) {
+          sampleHtml = `
+      <section class="premium-sample">
+        <h3>${product.sampleHeading || defaultSampleHeading}</h3>
+        <p class="sample-description">${product.sampleDescription || ''}</p>
+        <a href="${product.samplePdf}" target="_blank" rel="noopener noreferrer" class="sample-button">
+          ${product.sampleButtonText || 'View Sample'}
+        </a>
+      </section>`;
+        } else if (product.sampleHeading) {
+          sampleHtml = `
+      <section class="premium-sample">
+        <h3>${product.sampleHeading}</h3>
+        <p class="sample-description">${product.sampleDescription || ''}</p>
+      </section>`;
+        }
+
+        // Build features grid
+        let featuresHtml = '';
+        if (product.features && product.features.length > 0) {
+          const featureCards = product.features
+            .map(
+              f => `
+            <div class="feature-card">
+              <div class="feature-icon">${f.icon}</div>
+              <h3>${f.title}</h3>
+              <p>${f.description}</p>
+            </div>`
+            )
+            .join('');
+
+          featuresHtml = `
+      <section class="premium-features">
+        <h3>What You'll Get</h3>
+        <div class="features-grid">
+          ${featureCards}
+        </div>
+      </section>`;
+        }
+
+        // Build pricing features list
+        const pricingFeaturesHtml = (product.pricingFeatures || [])
+          .map(f => `              <li>✓ ${f}</li>`)
+          .join('\n');
+
+        // Build price display
+        const priceOriginalHtml = product.priceOriginal
+          ? `<span class="price-original">${product.priceOriginal}</span>`
+          : '';
+
+        // Build urgency note
+        const urgencyHtml = product.urgencyNote
+          ? `<p class="urgency-note">${product.urgencyNote}</p>`
+          : '';
+
+        // Build form/CTA based on sales status
+        let formHtml = '';
+        if (canPurchase) {
+          formHtml = `
+          <form class="premium-form" data-stripe-link="${product.stripePaymentLink}">
+            <div class="form-group">
+              <label for="email-${product.id}">Email Address</label>
+              <input
+                type="email"
+                id="email-${product.id}"
+                name="email"
+                required
+                placeholder="your@email.com"
+                class="form-input product-email"
+              />
+              <span class="form-hint">We'll send your report to this email (check spam if needed). You'll select your team during checkout.</span>
+            </div>
+
+            <div class="form-group form-checkbox-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="honor-${product.id}"
+                  name="honor-agreement"
+                  required
+                  class="form-checkbox product-honor"
+                />
+                <span class="checkbox-text">I understand this report is for my personal use</span>
+              </label>
+            </div>
+
+            ${urgencyHtml}
+
+            <button type="submit" class="premium-button product-checkout-button" disabled>
+              ${product.buttonText || 'Get Access'}
+            </button>
+            <p class="trust-signal">🔒 Secure payment via Stripe</p>
+          </form>`;
+        } else {
+          formHtml = `
+          <p class="sales-disabled-message">
+            This report is not currently available for purchase.
+          </p>`;
+        }
+
+        // Build pricing section
+        const pricingHtml = `
+      <section class="premium-pricing">
+        <h3>${product.pricingHeading || 'Access'}</h3>
+        <div class="pricing-card">
+          <div class="price">
+            ${priceOriginalHtml}
+            <span class="price-amount">${product.price}</span>
+            <span class="price-period">${product.pricePeriod || ''}</span>
+          </div>
+          <p class="pricing-clarification">${product.pricingClarification || ''}</p>
+          <ul class="pricing-features">
+${pricingFeaturesHtml}
+          </ul>
+          ${formHtml}
+        </div>
+      </section>`;
+
+        // Countdown element: rendered as a placeholder, JS fills in the number
+        const countdownHtml = product.countdownDate
+          ? `<p class="product-countdown" data-countdown-date="${product.countdownDate}">
+              <span class="countdown-label">${product.countdownLabel || 'Returns in'}</span>
+              <span class="countdown-days"></span>
+            </p>`
+          : '';
+
+        // Divider between products (not after the last one)
+        const divider =
+          index < sorted.length - 1 ? '<hr class="product-divider" />' : '';
+
+        return `
+    <section class="${sectionClass}" id="product-${product.id}">
+      <div class="product-header">
+        <h2>${product.name}</h2>
+        <span class="${badgeClass}">${badgeText}</span>
+        ${countdownHtml}
+        <p class="product-tagline">${product.tagline}</p>
+      </div>
+      ${sampleHtml}
+      ${featuresHtml}
+      ${pricingHtml}
+    </section>
+    ${divider}`;
+      })
+      .join('\n');
+  }
+
   // Generate a single page
   async generatePage(pageKey, pageConfig) {
     try {
@@ -724,13 +908,43 @@ ${cards}
           sectionTitle: pageConfig.sectionTitle,
         });
       } else if (pageConfig.isPremiumPage) {
-        // Use premium page template
         const premiumSalesEnabled = this.isFeatureEnabled(
           'premiumSalesEnabled'
         );
-        tableContent = this.renderTemplate(this.templates.premiumPage, {
-          salesEnabled: premiumSalesEnabled,
-        });
+        const multiProductEnabled = this.isFeatureEnabled(
+          'multiProductPremium'
+        );
+
+        if (
+          multiProductEnabled &&
+          pageConfig.products &&
+          pageConfig.products.length > 0
+        ) {
+          // Multi-product mode: generate product sections from config data
+          // and inject into the multi-product template
+          const productSectionsHtml = this.renderProductSections(
+            pageConfig.products,
+            premiumSalesEnabled
+          );
+          tableContent = this.templates.premiumMultiPage.replace(
+            '{{PRODUCT_SECTIONS}}',
+            productSectionsHtml
+          );
+          // Override heading/description with umbrella branding when multi-product
+          if (pageConfig.multiProductHeading) {
+            pageConfig = {
+              ...pageConfig,
+              heading: pageConfig.multiProductHeading,
+              description:
+                pageConfig.multiProductDescription || pageConfig.description,
+            };
+          }
+        } else {
+          // Single-product fallback: existing premium template (unchanged)
+          tableContent = this.renderTemplate(this.templates.premiumPage, {
+            salesEnabled: premiumSalesEnabled,
+          });
+        }
       } else if (pageConfig.isSimplePage) {
         // Use simple page template for success/cancel pages
         tableContent = this.templates.simplePage;

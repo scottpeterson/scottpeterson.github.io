@@ -1,71 +1,132 @@
 // premium.js - Stripe Checkout Integration for Premium Access
-// This file handles the Stripe payment flow for premium subscriptions
+// Supports both single-form (legacy) and multi-form (multi-product) layouts.
+//
+// Single-form mode: Uses element IDs (id="premium-form", id="email", etc.)
+//   and the global STRIPE_CONFIG.paymentLink.
+//
+// Multi-form mode: Finds all forms with class "premium-form" and reads each
+//   form's Stripe Payment Link from its data-stripe-link attribute. Form fields
+//   are found via class selectors (.product-email, .product-honor, .product-checkout-button)
+//   scoped within each form. Adding a new product requires zero JS changes.
 
 /**
- * Stripe Configuration
- * NOTE: These are TEST keys for development. Replace with production keys before going live.
- *
- * To get your Stripe keys:
- * 1. Sign up at https://stripe.com
- * 2. Go to Developers > API keys
- * 3. Copy your publishable key (starts with pk_test_ or pk_live_)
- * 4. Create a product and price in Stripe Dashboard > Products
- * 5. Copy the price ID (starts with price_)
+ * Stripe Configuration (used only for single-form legacy mode)
  */
 const STRIPE_CONFIG = {
-  // Stripe Payment Link - Replace with your actual payment link URL
-  // Create one at: https://dashboard.stripe.com/test/payment-links
   paymentLink: 'https://buy.stripe.com/8x2bJ24uJ13cgSX89b9sk01',
 };
 
 /**
- * Validate form and enable/disable checkout button
+ * Initialize a single premium form with validation and Stripe redirect.
+ * Works for both legacy (ID-based) and multi-product (class-based) forms.
  */
-function validateForm() {
-  const emailInput = document.getElementById('email');
-  const honorCheckbox = document.getElementById('honor-agreement');
-  const checkoutButton = document.getElementById('checkout-button');
-
-  const isEmailValid = emailInput.validity.valid && emailInput.value.trim();
-  const isHonorChecked = honorCheckbox.checked;
-
-  // Enable button only if email and honor agreement are both valid
-  checkoutButton.disabled = !(isEmailValid && isHonorChecked);
-}
-
-/**
- * Initialize premium form and payment link redirect
- */
-document.addEventListener('DOMContentLoaded', async () => {
-  const premiumForm = document.getElementById('premium-form');
-  const emailInput = document.getElementById('email');
-  const honorCheckbox = document.getElementById('honor-agreement');
-
-  if (!premiumForm) {
-    console.warn(
-      'Premium form not found. Premium.js loaded on non-premium page?'
-    );
-    return;
+function initPremiumForm(
+  form,
+  stripeLink,
+  emailInput,
+  honorCheckbox,
+  checkoutButton
+) {
+  function validateForm() {
+    const isEmailValid = emailInput.validity.valid && emailInput.value.trim();
+    const isHonorChecked = honorCheckbox.checked;
+    checkoutButton.disabled = !(isEmailValid && isHonorChecked);
   }
 
-  // Add validation listeners
   emailInput.addEventListener('input', validateForm);
   honorCheckbox.addEventListener('change', validateForm);
 
-  // Handle form submission
-  premiumForm.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const email = emailInput.value;
-
-    // Build URL with prefilled email
-    const url = new URL(STRIPE_CONFIG.paymentLink);
-    url.searchParams.append('prefilled_email', email);
+    const url = new URL(stripeLink);
+    url.searchParams.append('prefilled_email', emailInput.value);
 
     // Redirect to Stripe Payment Link with user email
     // Team will be collected via Stripe's custom field
     window.location.href = url.toString();
   });
+}
 
-  console.log('Premium payment form initialized');
+/**
+ * Initialize all premium forms on the page
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Try multi-form mode first: find forms with data-stripe-link attributes
+  const multiForms = document.querySelectorAll(
+    'form.premium-form[data-stripe-link]'
+  );
+
+  if (multiForms.length > 0) {
+    multiForms.forEach(form => {
+      const stripeLink = form.dataset.stripeLink;
+      const emailInput = form.querySelector('.product-email');
+      const honorCheckbox = form.querySelector('.product-honor');
+      const checkoutButton = form.querySelector('.product-checkout-button');
+
+      if (!emailInput || !honorCheckbox || !checkoutButton) {
+        return;
+      }
+
+      initPremiumForm(
+        form,
+        stripeLink,
+        emailInput,
+        honorCheckbox,
+        checkoutButton
+      );
+    });
+    console.log(
+      `Premium payment forms initialized (${multiForms.length} products)`
+    );
+  } else {
+    // Fallback: single-form legacy mode (ID-based)
+    const premiumForm = document.getElementById('premium-form');
+    const emailInput = document.getElementById('email');
+    const honorCheckbox = document.getElementById('honor-agreement');
+    const checkoutButton = document.getElementById('checkout-button');
+
+    if (premiumForm) {
+      initPremiumForm(
+        premiumForm,
+        STRIPE_CONFIG.paymentLink,
+        emailInput,
+        honorCheckbox,
+        checkoutButton
+      );
+      console.log('Premium payment form initialized');
+    }
+  }
+
+  // Always initialize countdowns (works in both modes)
+  initCountdowns();
 });
+
+/**
+ * Calculate and display day countdowns for product sections.
+ * Finds elements with data-countdown-date attribute and fills in the days remaining.
+ */
+function initCountdowns() {
+  const countdowns = document.querySelectorAll(
+    '.product-countdown[data-countdown-date]'
+  );
+
+  countdowns.forEach(el => {
+    const targetDate = new Date(el.dataset.countdownDate + 'T00:00:00');
+    const now = new Date();
+    const diffMs = targetDate - now;
+    const daysRemaining = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    const daysEl = el.querySelector('.countdown-days');
+    if (!daysEl) {
+      return;
+    }
+
+    if (daysRemaining > 0) {
+      daysEl.textContent = `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
+    } else {
+      // Target date has passed — hide the countdown
+      el.style.display = 'none';
+    }
+  });
+}
