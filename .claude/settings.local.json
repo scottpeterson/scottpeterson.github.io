@@ -48,7 +48,8 @@
       "WebFetch(domain:thed3statlab.com)",
       "Bash(npx serve:*)",
       "WebFetch(domain:docs.stripe.com)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(npx eslint:*)"
     ],
     "deny": [],
     "ask": []
