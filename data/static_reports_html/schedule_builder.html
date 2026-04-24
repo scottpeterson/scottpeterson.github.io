@@ -1,0 +1,1699 @@
+<!doctype html>
+<!-- Generator: uv run python create_schedule_builder.py -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D3 WBB Schedule Builder — 2026-27</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #1a1a2e;
+        color: #eee;
+        padding: 16px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #fff;
+        margin-bottom: 4px;
+        font-size: 24px;
+      }
+      .subtitle {
+        color: #888;
+        margin-bottom: 16px;
+        font-size: 12px;
+      }
+      h2 {
+        color: #fff;
+        margin: 0 0 10px 0;
+        font-size: 16px;
+      }
+      .panel {
+        background: #16213e;
+        border-radius: 10px;
+        padding: 14px 16px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      .controls-row {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+      }
+      .control {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        color: #aaa;
+      }
+      .control select {
+        margin-top: 4px;
+        background: #0f3460;
+        color: #fff;
+        border: 1px solid #234;
+        border-radius: 5px;
+        padding: 7px 9px;
+        font-size: 13px;
+        min-width: 240px;
+      }
+      .summary-bar {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        gap: 12px;
+      }
+      .summary-cell {
+        background: #0f3460;
+        border-radius: 6px;
+        padding: 10px 12px;
+        text-align: center;
+      }
+      .summary-cell .label {
+        font-size: 11px;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .summary-cell .value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 2px;
+      }
+      .summary-cell.hit {
+        border: 2px solid #3d7a37;
+      }
+      .summary-cell.hit .value {
+        color: #8fff8f;
+      }
+      .summary-cell.miss {
+        border: 2px solid #a33040;
+      }
+      .summary-cell.miss .value {
+        color: #ff9999;
+      }
+      .summary-cell .sub {
+        font-size: 10px;
+        color: #888;
+        margin-top: 2px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        font-size: 12px;
+      }
+      th {
+        background: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
+        color: #fff;
+        padding: 8px 4px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 2px solid #e94560;
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        white-space: nowrap;
+      }
+      td {
+        padding: 3px 4px;
+        text-align: center;
+        border-bottom: 1px solid #1f2a4a;
+        color: #eee;
+      }
+      tr.loss-row {
+        background: rgba(139, 38, 53, 0.18);
+      }
+      tr.win-row.counting {
+        background: rgba(45, 90, 39, 0.14);
+      }
+      tr.win-row.not-counting {
+        background: rgba(45, 90, 39, 0.04);
+        color: #888;
+      }
+      tr.loss-row.not-counting {
+        background: rgba(139, 38, 53, 0.05);
+        color: #888;
+      }
+      td.opp-name {
+        text-align: left;
+        padding-left: 8px;
+      }
+      td select.opp-select {
+        width: 100%;
+        background: #0f3460;
+        color: #fff;
+        border: 1px solid #234;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-size: 12px;
+        max-width: 260px;
+      }
+      td select.wl-select {
+        background: #0f3460;
+        color: #fff;
+        border: 1px solid #234;
+        border-radius: 3px;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      td select.wl-select.W {
+        color: #8fff8f;
+        border-color: #3d7a37;
+      }
+      td select.wl-select.L {
+        color: #ff9999;
+        border-color: #a33040;
+      }
+      td.count-true {
+        color: #8fff8f;
+        font-weight: 600;
+      }
+      td.count-false {
+        color: #666;
+      }
+      td.numeric {
+        font-variant-numeric: tabular-nums;
+      }
+      td.game-npi {
+        font-weight: 700;
+        color: #fff;
+      }
+      .slot-tag {
+        font-size: 10px;
+        color: #888;
+        margin-right: 6px;
+        padding: 1px 5px;
+        background: #234;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+      .slot-tag.conf {
+        background: #2d4a5a;
+        color: #aaf;
+      }
+      .slot-tag.tourney {
+        background: #5a3a5a;
+        color: #faf;
+      }
+      .slot-tag.nonconf {
+        background: #3a3a3a;
+        color: #ccc;
+      }
+      .why {
+        font-size: 12px;
+        line-height: 1.5;
+        color: #ccc;
+        background: #0f3460;
+        padding: 10px 14px;
+        border-radius: 6px;
+        border-left: 3px solid #e94560;
+        margin-top: 10px;
+      }
+      .reset-btn {
+        margin-top: 10px;
+        background: #0f3460;
+        color: #eee;
+        border: 1px solid #234;
+        border-radius: 5px;
+        padding: 6px 14px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+      .reset-btn:hover {
+        background: #1a4580;
+      }
+      .legend {
+        font-size: 11px;
+        color: #888;
+        margin-top: 8px;
+      }
+      .legend span {
+        margin-right: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>D-III Women's Basketball Schedule Builder</h1>
+    <div class="subtitle">
+      2026-27 preseason planning — build a schedule and see whether it reaches
+      your goal
+    </div>
+
+    <div class="panel">
+      <div class="controls-row">
+        <div class="control">
+          Main team
+          <select id="team-select"></select>
+        </div>
+        <div class="control">
+          Goal
+          <select id="goal-select">
+            <option value="top4">Top 4 seed (≈ 65.9)</option>
+            <option value="top8">Top 8 seed (≈ 64.1)</option>
+            <option value="top16">Top 16 seed (≈ 62.1)</option>
+            <option value="poolC" selected>Pool C bid (≈ 58.4)</option>
+          </select>
+        </div>
+        <button class="reset-btn" id="reset-btn">Reset schedule</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="summary-bar">
+        <div class="summary-cell">
+          <div class="label">Projected NPI</div>
+          <div class="value" id="team-npi">—</div>
+          <div class="sub" id="team-record">— record</div>
+        </div>
+        <div class="summary-cell" id="th-top4">
+          <div class="label">Top 4</div>
+          <div class="value" id="th-top4-v">—</div>
+          <div class="sub">≥ 65.9</div>
+        </div>
+        <div class="summary-cell" id="th-top8">
+          <div class="label">Top 8</div>
+          <div class="value" id="th-top8-v">—</div>
+          <div class="sub">≥ 64.1</div>
+        </div>
+        <div class="summary-cell" id="th-top16">
+          <div class="label">Top 16</div>
+          <div class="value" id="th-top16-v">—</div>
+          <div class="sub">≥ 62.1</div>
+        </div>
+        <div class="summary-cell" id="th-poolc">
+          <div class="label">Pool C</div>
+          <div class="value" id="th-poolc-v">—</div>
+          <div class="sub">≥ 58.4</div>
+        </div>
+      </div>
+      <div class="why" id="why-text">Pick a team to see guidance.</div>
+    </div>
+
+    <div class="panel">
+      <h2>Schedule (rows sorted by opponent NPI, hardest first)</h2>
+      <table id="schedule-table">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding-left: 8px">Opponent</th>
+            <th>Pre&nbsp;Rank</th>
+            <th>Opp&nbsp;NPI</th>
+            <th>W / L</th>
+            <th>WP</th>
+            <th>SOS</th>
+            <th>QWB</th>
+            <th>Game&nbsp;NPI</th>
+            <th>Win&nbsp;Rank</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body"></tbody>
+      </table>
+      <div class="legend">
+        <span
+          ><span class="slot-tag conf">CONF</span> conference regular-season
+          game (auto-populated, editable)</span
+        >
+        <span
+          ><span class="slot-tag tourney">TOURN</span> conference tournament
+          game</span
+        >
+        <span
+          ><span class="slot-tag nonconf">NON-CONF</span> non-conference
+          slot</span
+        >
+      </div>
+    </div>
+
+    <script>
+      const DATA = {
+        thresholds: {
+          top4: 65.873,
+          top8: 64.086,
+          top16: 62.062,
+          poolC: 58.402,
+        },
+        rank_to_npi: {
+          1: 68.8402,
+          2: 68.1536,
+          3: 66.8529,
+          4: 65.8729,
+          5: 65.6193,
+          6: 65.0685,
+          7: 64.7939,
+          8: 64.0857,
+          9: 63.9139,
+          10: 63.4891,
+          11: 63.1837,
+          12: 62.742,
+          13: 62.637,
+          14: 62.3383,
+          15: 62.1412,
+          16: 62.0619,
+          17: 61.967,
+          18: 61.8656,
+          19: 61.7304,
+          20: 61.4402,
+          21: 61.4205,
+          22: 61.1006,
+          23: 61.0189,
+          24: 60.9908,
+          25: 60.6325,
+          26: 60.4675,
+          27: 60.378,
+          28: 60.254,
+          29: 60.1374,
+          30: 60.0028,
+          31: 59.8603,
+          32: 59.7376,
+          33: 59.6817,
+          34: 59.6391,
+          35: 59.3426,
+          36: 59.2269,
+          37: 59.1117,
+          38: 58.92,
+          39: 58.6916,
+          40: 58.6083,
+          41: 58.5582,
+          42: 58.4475,
+          43: 58.2546,
+          44: 58.1932,
+          45: 58.0372,
+          46: 58.2313,
+          47: 58.2036,
+          48: 58.1625,
+          49: 58.0671,
+          50: 58.046,
+          51: 57.9255,
+          52: 57.8932,
+          53: 57.8573,
+          54: 57.7212,
+          55: 57.681,
+          56: 57.492,
+          57: 57.4888,
+          58: 57.2955,
+          59: 57.2471,
+          60: 57.2057,
+          61: 57.1926,
+          62: 57.173,
+          63: 57.122,
+          64: 57.0939,
+          65: 57.0374,
+          66: 56.957,
+          67: 56.8782,
+          68: 56.8247,
+          69: 56.7137,
+          70: 56.6265,
+          71: 56.4885,
+          72: 56.4802,
+          73: 56.4784,
+          74: 56.3088,
+          75: 56.2792,
+          76: 56.2396,
+          77: 56.14,
+          78: 56.1291,
+          79: 56.0272,
+          80: 55.8999,
+          81: 55.8755,
+          82: 55.8589,
+          83: 55.8446,
+          84: 55.7398,
+          85: 55.6215,
+          86: 55.519,
+          87: 55.4829,
+          88: 55.4637,
+          89: 55.3932,
+          90: 55.3679,
+          91: 55.3061,
+          92: 55.2491,
+          93: 55.2461,
+          94: 55.2302,
+          95: 55.0304,
+          96: 55.0296,
+          97: 55.0175,
+          98: 54.9496,
+          99: 54.927,
+          100: 54.9153,
+          101: 54.9065,
+          102: 54.8732,
+          103: 54.8102,
+          104: 54.6772,
+          105: 54.6608,
+          106: 54.6139,
+          107: 54.6066,
+          108: 54.5655,
+          109: 54.4782,
+          110: 54.3598,
+          111: 54.2971,
+          112: 54.2836,
+          113: 54.152,
+          114: 54.1412,
+          115: 54.0407,
+          116: 54.0026,
+          117: 54.0007,
+          118: 53.8984,
+          119: 53.8429,
+          120: 53.8305,
+          121: 53.8222,
+          122: 53.7826,
+          123: 53.7749,
+          124: 53.7674,
+          125: 53.7485,
+          126: 53.7239,
+          127: 53.6774,
+          128: 53.5793,
+          129: 53.4249,
+          130: 53.406,
+          131: 53.4018,
+          132: 53.3169,
+          133: 53.2909,
+          134: 53.2573,
+          135: 53.2555,
+          136: 53.2322,
+          137: 53.074,
+          138: 53.0552,
+          139: 53.0441,
+          140: 52.9424,
+          141: 52.9162,
+          142: 52.7481,
+          143: 52.7201,
+          144: 52.7163,
+          145: 52.7143,
+          146: 52.7095,
+          147: 52.7015,
+          148: 52.6829,
+          149: 52.6088,
+          150: 52.5776,
+          151: 52.5372,
+          152: 52.5345,
+          153: 52.4211,
+          154: 52.3982,
+          155: 52.3842,
+          156: 52.3764,
+          157: 52.1336,
+          158: 52.1034,
+          159: 52.0878,
+          160: 52.0579,
+          161: 51.9869,
+          162: 51.9628,
+          163: 51.9148,
+          164: 51.7812,
+          165: 51.7659,
+          166: 51.6984,
+          167: 51.664,
+          168: 51.6388,
+          169: 51.5895,
+          170: 51.5861,
+          171: 51.5016,
+          172: 51.3664,
+          173: 51.3542,
+          174: 51.2987,
+          175: 51.2559,
+          176: 51.2515,
+          177: 51.1826,
+          178: 51.1334,
+          179: 51.1261,
+          180: 51.1219,
+          181: 51.0977,
+          182: 51.0772,
+          183: 51.05,
+          184: 50.977,
+          185: 50.8648,
+          186: 50.8445,
+          187: 50.7849,
+          188: 50.7555,
+          189: 50.7223,
+          190: 50.7081,
+          191: 50.7017,
+          192: 50.6804,
+          193: 50.6521,
+          194: 50.6301,
+          195: 50.6059,
+          196: 50.4647,
+          197: 50.4525,
+          198: 50.4349,
+          199: 50.3868,
+          200: 50.316,
+          201: 50.2997,
+          202: 50.2955,
+          203: 50.2903,
+          204: 50.2543,
+          205: 50.0847,
+          206: 50.0685,
+          207: 50.052,
+          208: 50.0159,
+          209: 49.9893,
+          210: 49.9793,
+          211: 49.9598,
+          212: 49.8415,
+          213: 49.8028,
+          214: 49.7922,
+          215: 49.7637,
+          216: 49.7498,
+          217: 49.6635,
+          218: 49.6074,
+          219: 49.6032,
+          220: 49.5915,
+          221: 49.5705,
+          222: 49.5591,
+          223: 49.5332,
+          224: 49.4954,
+          225: 49.492,
+          226: 49.4879,
+          227: 49.3501,
+          228: 49.3278,
+          229: 49.3141,
+          230: 49.2904,
+          231: 49.2736,
+          232: 49.2176,
+          233: 49.1886,
+          234: 49.1801,
+          235: 49.1373,
+          236: 49.1116,
+          237: 49.04,
+          238: 48.9265,
+          239: 48.9223,
+          240: 48.9014,
+          241: 48.8724,
+          242: 48.8627,
+          243: 48.7456,
+          244: 48.6859,
+          245: 48.6164,
+          246: 48.6057,
+          247: 48.5951,
+          248: 48.591,
+          249: 48.5696,
+          250: 48.5516,
+          251: 48.5048,
+          252: 48.471,
+          253: 48.4616,
+          254: 48.3502,
+          255: 48.32,
+          256: 48.3053,
+          257: 48.2664,
+          258: 48.2278,
+          259: 48.1349,
+          260: 48.106,
+          261: 48.047,
+          262: 48.0246,
+          263: 48.0135,
+          264: 48.0076,
+          265: 47.9397,
+          266: 47.9179,
+          267: 47.9173,
+          268: 47.8899,
+          269: 47.8768,
+          270: 47.8701,
+          271: 47.8063,
+          272: 47.7402,
+          273: 47.7383,
+          274: 47.7167,
+          275: 47.6481,
+          276: 47.6197,
+          277: 47.5405,
+          278: 47.5276,
+          279: 47.5033,
+          280: 47.4858,
+          281: 47.3744,
+          282: 47.2734,
+          283: 47.2204,
+          284: 47.1617,
+          285: 47.1377,
+          286: 47.036,
+          287: 47.0157,
+          288: 46.9682,
+          289: 46.9514,
+          290: 46.9412,
+          291: 46.794,
+          292: 46.7918,
+          293: 46.5949,
+          294: 46.5177,
+          295: 46.4755,
+          296: 46.4543,
+          297: 46.4509,
+          298: 46.414,
+          299: 46.365,
+          300: 46.3354,
+          301: 46.1337,
+          302: 45.9989,
+          303: 45.8762,
+          304: 45.7868,
+          305: 45.6739,
+          306: 45.6736,
+          307: 45.5574,
+          308: 45.5323,
+          309: 45.5316,
+          310: 45.5184,
+          311: 45.4824,
+          312: 45.3966,
+          313: 45.3163,
+          314: 45.2842,
+          315: 45.2061,
+          316: 45.1743,
+          317: 45.1333,
+          318: 45.1307,
+          319: 45.1259,
+          320: 44.9792,
+          321: 44.9572,
+          322: 44.9434,
+          323: 44.8377,
+          324: 44.7638,
+          325: 44.7477,
+          326: 44.7198,
+          327: 44.6921,
+          328: 44.5365,
+          329: 44.4285,
+          330: 44.3904,
+          331: 44.389,
+          332: 44.284,
+          333: 44.2076,
+          334: 44.2022,
+          335: 44.167,
+          336: 44.144,
+          337: 44.084,
+          338: 43.7978,
+          339: 43.7644,
+          340: 43.6625,
+          341: 43.6471,
+          342: 43.6365,
+          343: 43.6225,
+          344: 43.5253,
+          345: 43.3012,
+          346: 43.2898,
+          347: 43.2676,
+          348: 43.1352,
+          349: 43.1226,
+          350: 43.1166,
+          351: 42.8575,
+          352: 42.8538,
+          353: 42.6854,
+          354: 42.6473,
+          355: 42.6102,
+          356: 42.5768,
+          357: 42.3889,
+          358: 42.1533,
+          359: 42.1129,
+          360: 41.9321,
+          361: 41.9161,
+          362: 41.8551,
+          363: 41.8215,
+          364: 41.7711,
+          365: 41.6732,
+          366: 41.5967,
+          367: 41.376,
+          368: 41.3534,
+          369: 41.1874,
+          370: 40.8807,
+          371: 40.4104,
+          372: 40.3512,
+          373: 40.2795,
+          374: 40.1912,
+          375: 40.1676,
+          376: 39.995,
+          377: 39.8928,
+          378: 39.8757,
+          379: 39.8511,
+          380: 39.7836,
+          381: 39.7659,
+          382: 39.3932,
+          383: 39.3796,
+          384: 39.3579,
+          385: 39.3269,
+          386: 39.1329,
+          387: 38.986,
+          388: 38.953,
+          389: 38.9439,
+          390: 38.8903,
+          391: 38.7232,
+          392: 38.4045,
+          393: 38.3507,
+          394: 38.337,
+          395: 38.3232,
+          396: 38.2288,
+          397: 37.6848,
+          398: 37.5824,
+          399: 37.2269,
+          400: 36.6725,
+          401: 36.4253,
+          402: 36.0058,
+          403: 35.8842,
+          404: 35.2172,
+          405: 34.3874,
+          406: 34.0754,
+          407: 32.844,
+          408: 31.9005,
+          409: 31.1122,
+          410: 28.8046,
+          412: 28.1738,
+          413: 26.2752,
+          411: 28.4892,
+        },
+        conferences: {
+          MIAA: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          CCS: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          GNAC: { games_per_team: 14, pattern: 'SINGLE_RR' },
+          MACC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          E8: { games_per_team: 16, pattern: 'HYBRID' },
+          AMCC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          PAC: { games_per_team: 20, pattern: 'DOUBLE_RR' },
+          NACC: { games_per_team: 16, pattern: 'HYBRID' },
+          NESCAC: { games_per_team: 11, pattern: 'HYBRID' },
+          HCAC: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          MACF: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          MIAC: { games_per_team: 18, pattern: 'HYBRID' },
+          CCIW: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          SCAC: { games_per_team: 16, pattern: 'HYBRID' },
+          ODAC: { games_per_team: 16, pattern: 'HYBRID' },
+          NEWMAC: { games_per_team: 12, pattern: 'HYBRID' },
+          OAC: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          LL: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          CUNYAC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          MWC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          SAA: { games_per_team: 12, pattern: 'DOUBLE_RR' },
+          UMAC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          SLIAC: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          UAA: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          USAC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          MASCAC: { games_per_team: 9, pattern: 'HYBRID' },
+          UEC: { games_per_team: 15, pattern: 'SINGLE_RR' },
+          CC: { games_per_team: 15, pattern: 'HYBRID' },
+          ARC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          SUNYAC: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          SCIAC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          LEC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          LAND: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          AEC: { games_per_team: 9, pattern: 'HYBRID' },
+          C2C: { games_per_team: 2, pattern: 'HYBRID' },
+          NJAC: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          CNE: { games_per_team: 18, pattern: 'DOUBLE_RR' },
+          NCAC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+          ASC: { games_per_team: 8, pattern: 'DOUBLE_RR' },
+          SKY: { games_per_team: 20, pattern: 'DOUBLE_RR' },
+          NWC: { games_per_team: 16, pattern: 'DOUBLE_RR' },
+          NAC: { games_per_team: 13, pattern: 'HYBRID' },
+          IND: { games_per_team: 0, pattern: 'HYBRID' },
+          WIAC: { games_per_team: 14, pattern: 'DOUBLE_RR' },
+        },
+        teams: [
+          { name: 'NYU', conf: 'UAA', region: 4, rank: 1 },
+          { name: 'Denison', conf: 'NCAC', region: 7, rank: 2 },
+          { name: 'Smith', conf: 'NEWMAC', region: 2, rank: 3 },
+          { name: 'Hope', conf: 'MIAA', region: 7, rank: 4 },
+          { name: 'Rhode Island College', conf: 'LEC', region: 2, rank: 5 },
+          { name: 'Otterbein', conf: 'OAC', region: 7, rank: 6 },
+          { name: 'Gettysburg', conf: 'CC', region: 5, rank: 7 },
+          { name: 'WashU', conf: 'UAA', region: 8, rank: 8 },
+          { name: 'Gustavus Adolphus', conf: 'MIAC', region: 9, rank: 9 },
+          { name: 'Christopher Newport', conf: 'C2C', region: 6, rank: 10 },
+          { name: 'Wisconsin Lutheran', conf: 'NACC', region: 8, rank: 11 },
+          { name: 'Scranton', conf: 'LAND', region: 5, rank: 12 },
+          { name: 'Whitman', conf: 'NWC', region: 10, rank: 13 },
+          { name: 'Puget Sound', conf: 'NWC', region: 10, rank: 14 },
+          { name: 'Centre', conf: 'SAA', region: 6, rank: 15 },
+          { name: 'UW-Whitewater', conf: 'WIAC', region: 9, rank: 16 },
+          { name: 'Trine', conf: 'MIAA', region: 7, rank: 17 },
+          { name: 'Wartburg', conf: 'ARC', region: 9, rank: 18 },
+          { name: 'Washington & Lee', conf: 'ODAC', region: 6, rank: 19 },
+          { name: 'Bates', conf: 'NESCAC', region: 1, rank: 20 },
+          { name: 'Cal Lutheran', conf: 'SCIAC', region: 10, rank: 21 },
+          { name: 'Chicago', conf: 'UAA', region: 8, rank: 22 },
+          { name: 'Bowdoin', conf: 'NESCAC', region: 1, rank: 23 },
+          { name: "St. Mary's (MN)", conf: 'MIAC', region: 9, rank: 24 },
+          { name: 'UW-La Crosse', conf: 'WIAC', region: 9, rank: 25 },
+          { name: 'UW-Oshkosh', conf: 'WIAC', region: 9, rank: 26 },
+          { name: 'SUNY New Paltz', conf: 'SUNYAC', region: 3, rank: 27 },
+          { name: 'Johnson & Wales (RI)', conf: 'CNE', region: 2, rank: 28 },
+          { name: 'Concordia Moorhead', conf: 'MIAC', region: 9, rank: 29 },
+          { name: 'Emmanuel', conf: 'GNAC', region: 1, rank: 30 },
+          { name: 'Johns Hopkins', conf: 'CC', region: 5, rank: 31 },
+          { name: 'Randolph-Macon', conf: 'ODAC', region: 6, rank: 32 },
+          { name: 'Cortland', conf: 'SUNYAC', region: 3, rank: 33 },
+          { name: 'Shenandoah', conf: 'ODAC', region: 6, rank: 34 },
+          { name: 'St. Scholastica', conf: 'MIAC', region: 9, rank: 35 },
+          { name: 'Virginia Wesleyan', conf: 'ODAC', region: 6, rank: 36 },
+          { name: 'Hardin-Simmons', conf: 'ASC', region: 10, rank: 37 },
+          { name: 'Clark', conf: 'NEWMAC', region: 2, rank: 38 },
+          { name: 'Merchant Marine', conf: 'SKY', region: 3, rank: 39 },
+          { name: 'McDaniel', conf: 'CC', region: 5, rank: 40 },
+          { name: 'Ripon', conf: 'MWC', region: 9, rank: 41 },
+          { name: 'UW-Stout', conf: 'WIAC', region: 9, rank: 42 },
+          { name: 'Emory', conf: 'UAA', region: 6, rank: 43 },
+          { name: 'MSOE', conf: 'NACC', region: 8, rank: 44 },
+          { name: 'Baldwin Wallace', conf: 'OAC', region: 7, rank: 45 },
+          { name: 'Ohio Wesleyan', conf: 'NCAC', region: 7, rank: 46 },
+          { name: 'Misericordia', conf: 'MACF', region: 4, rank: 47 },
+          { name: 'Brockport St.', conf: 'E8', region: 3, rank: 48 },
+          { name: 'Washington & Jefferson', conf: 'PAC', region: 7, rank: 49 },
+          { name: 'Mt. Union', conf: 'OAC', region: 7, rank: 50 },
+          { name: 'Carnegie Mellon', conf: 'UAA', region: 7, rank: 51 },
+          { name: 'Houghton', conf: 'E8', region: 3, rank: 52 },
+          { name: 'Catholic', conf: 'LAND', region: 5, rank: 53 },
+          { name: 'Southern Maine', conf: 'LEC', region: 2, rank: 54 },
+          { name: 'Williams', conf: 'NESCAC', region: 1, rank: 55 },
+          { name: 'Tufts', conf: 'NESCAC', region: 1, rank: 56 },
+          { name: 'Calvin', conf: 'MIAA', region: 7, rank: 57 },
+          { name: 'Immaculata', conf: 'AEC', region: 5, rank: 58 },
+          { name: 'Susquehanna', conf: 'LAND', region: 5, rank: 59 },
+          { name: 'DePauw', conf: 'NCAC', region: 7, rank: 60 },
+          { name: 'WPI', conf: 'NEWMAC', region: 2, rank: 61 },
+          { name: 'UW-River Falls', conf: 'WIAC', region: 9, rank: 62 },
+          { name: 'Colorado College', conf: 'SCAC', region: 10, rank: 63 },
+          { name: 'Bridgewater (VA)', conf: 'ODAC', region: 6, rank: 64 },
+          { name: 'Illinois Wesleyan', conf: 'CCIW', region: 8, rank: 65 },
+          { name: 'Messiah', conf: 'MACC', region: 5, rank: 66 },
+          { name: 'Bethel', conf: 'MIAC', region: 9, rank: 67 },
+          { name: 'UW-Eau Claire', conf: 'WIAC', region: 9, rank: 68 },
+          { name: 'St. Vincent', conf: 'PAC', region: 7, rank: 69 },
+          { name: 'Pomona-Pitzer', conf: 'SCIAC', region: 10, rank: 70 },
+          { name: 'Carroll', conf: 'CCIW', region: 8, rank: 71 },
+          { name: 'Hartford', conf: 'CNE', region: 2, rank: 72 },
+          { name: "St. Mary's (MD)", conf: 'UEC', region: 4, rank: 73 },
+          { name: 'Rochester Tech', conf: 'LL', region: 3, rank: 74 },
+          { name: 'Cornell', conf: 'MWC', region: 9, rank: 75 },
+          { name: 'Hollins', conf: 'ODAC', region: 6, rank: 76 },
+          { name: 'Mt. St. Mary', conf: 'SKY', region: 3, rank: 77 },
+          { name: 'Salisbury', conf: 'C2C', region: 5, rank: 78 },
+          { name: 'Franklin', conf: 'HCAC', region: 8, rank: 79 },
+          { name: 'Marietta', conf: 'OAC', region: 7, rank: 80 },
+          { name: 'Transylvania', conf: 'HCAC', region: 8, rank: 81 },
+          { name: 'Millsaps', conf: 'SAA', region: 6, rank: 82 },
+          { name: 'Dickinson', conf: 'CC', region: 5, rank: 83 },
+          { name: 'SUNY Oneonta', conf: 'SUNYAC', region: 3, rank: 84 },
+          { name: 'Maine-Farmington', conf: 'NAC', region: 1, rank: 85 },
+          { name: 'UW-Stevens Point', conf: 'WIAC', region: 9, rank: 86 },
+          { name: 'Connecticut College', conf: 'NESCAC', region: 1, rank: 87 },
+          { name: 'John Carroll', conf: 'NCAC', region: 7, rank: 88 },
+          { name: 'Southwestern', conf: 'SAA', region: 6, rank: 89 },
+          { name: 'Capital', conf: 'OAC', region: 7, rank: 90 },
+          { name: 'Peace', conf: 'USAC', region: 6, rank: 91 },
+          { name: 'Roanoke', conf: 'ODAC', region: 6, rank: 92 },
+          { name: 'Amherst', conf: 'NESCAC', region: 1, rank: 93 },
+          { name: 'Mary Washington', conf: 'C2C', region: 6, rank: 94 },
+          { name: 'Hamline', conf: 'MIAC', region: 9, rank: 95 },
+          { name: 'Fredonia', conf: 'SUNYAC', region: 3, rank: 96 },
+          { name: 'Lawrence', conf: 'MWC', region: 9, rank: 97 },
+          { name: 'Coe', conf: 'ARC', region: 9, rank: 98 },
+          { name: 'William Paterson', conf: 'NJAC', region: 4, rank: 99 },
+          { name: 'Colby', conf: 'NESCAC', region: 1, rank: 100 },
+          { name: 'Hamilton', conf: 'NESCAC', region: 1, rank: 101 },
+          { name: 'Rochester', conf: 'UAA', region: 3, rank: 102 },
+          { name: 'Ohio Northern', conf: 'OAC', region: 7, rank: 103 },
+          { name: 'St. Catherine', conf: 'MIAC', region: 9, rank: 104 },
+          { name: 'Asbury', conf: 'CCS', region: 6, rank: 105 },
+          { name: 'North Central (IL)', conf: 'CCIW', region: 8, rank: 106 },
+          { name: 'Cedar Crest', conf: 'UEC', region: 4, rank: 107 },
+          { name: 'SUNY Canton', conf: 'SUNYAC', region: 3, rank: 108 },
+          { name: 'St. Benedict', conf: 'MIAC', region: 9, rank: 109 },
+          { name: 'Keene St.', conf: 'LEC', region: 2, rank: 110 },
+          { name: 'Trinity (CT)', conf: 'NESCAC', region: 1, rank: 111 },
+          { name: 'UW-Platteville', conf: 'WIAC', region: 9, rank: 112 },
+          { name: 'East Texas Baptist', conf: 'ASC', region: 10, rank: 113 },
+          { name: 'MIT', conf: 'NEWMAC', region: 2, rank: 114 },
+          { name: 'Redlands', conf: 'SCIAC', region: 10, rank: 115 },
+          { name: 'Bethany (WV)', conf: 'PAC', region: 7, rank: 116 },
+          { name: 'Rutgers-Camden', conf: 'NJAC', region: 4, rank: 117 },
+          { name: 'Case Western', conf: 'UAA', region: 7, rank: 118 },
+          { name: 'Emerson', conf: 'NEWMAC', region: 2, rank: 119 },
+          { name: 'Eastern Connecticut', conf: 'LEC', region: 2, rank: 120 },
+          { name: 'Maryville', conf: 'CCS', region: 6, rank: 121 },
+          { name: 'Berry', conf: 'SAA', region: 6, rank: 122 },
+          { name: 'SUNY Geneseo', conf: 'E8', region: 3, rank: 123 },
+          { name: 'Nazareth', conf: 'E8', region: 3, rank: 124 },
+          { name: 'Penn State-Behrend', conf: 'AMCC', region: 7, rank: 125 },
+          { name: 'Hendrix', conf: 'SCAC', region: 10, rank: 126 },
+          { name: 'Notre Dame (MD)', conf: 'UEC', region: 4, rank: 127 },
+          { name: 'TCNJ', conf: 'NJAC', region: 4, rank: 128 },
+          { name: 'Wellesley', conf: 'NEWMAC', region: 2, rank: 129 },
+          { name: 'UC Santa Cruz', conf: 'C2C', region: 10, rank: 130 },
+          { name: 'Elizabethtown', conf: 'LAND', region: 5, rank: 131 },
+          { name: 'Suffolk', conf: 'CNE', region: 2, rank: 132 },
+          { name: 'DeSales', conf: 'MACF', region: 4, rank: 133 },
+          { name: 'Buena Vista', conf: 'ARC', region: 9, rank: 134 },
+          { name: 'Guilford', conf: 'ODAC', region: 6, rank: 135 },
+          { name: 'Franklin & Marshall', conf: 'CC', region: 5, rank: 136 },
+          { name: 'Linfield', conf: 'NWC', region: 10, rank: 137 },
+          { name: 'Brooklyn College', conf: 'CUNYAC', region: 4, rank: 138 },
+          { name: 'Springfield', conf: 'NEWMAC', region: 2, rank: 139 },
+          { name: 'Babson', conf: 'NEWMAC', region: 2, rank: 140 },
+          { name: 'Albion', conf: 'MIAA', region: 7, rank: 141 },
+          { name: 'NC Wesleyan', conf: 'USAC', region: 6, rank: 142 },
+          { name: 'Luther', conf: 'ARC', region: 9, rank: 143 },
+          { name: 'Chapman', conf: 'SCIAC', region: 10, rank: 144 },
+          { name: 'Pfeiffer', conf: 'USAC', region: 6, rank: 145 },
+          { name: 'Husson', conf: 'NAC', region: 1, rank: 146 },
+          { name: 'Wittenberg', conf: 'NCAC', region: 7, rank: 147 },
+          { name: 'Arcadia', conf: 'MACF', region: 4, rank: 148 },
+          { name: "St. Joseph's (LI)", conf: 'SKY', region: 3, rank: 149 },
+          { name: 'Widener', conf: 'MACC', region: 5, rank: 150 },
+          { name: 'Swarthmore', conf: 'CC', region: 5, rank: 151 },
+          { name: 'Oglethorpe', conf: 'SAA', region: 6, rank: 152 },
+          { name: 'Bridgewater St.', conf: 'MASCAC', region: 1, rank: 153 },
+          {
+            name: 'Claremont-Mudd-Scripps',
+            conf: 'SCIAC',
+            region: 10,
+            rank: 154,
+          },
+          { name: 'Benedictine', conf: 'NACC', region: 8, rank: 155 },
+          { name: 'Austin College', conf: 'SCAC', region: 10, rank: 156 },
+          { name: 'Moravian', conf: 'LAND', region: 5, rank: 157 },
+          { name: 'Wheaton (IL)', conf: 'CCIW', region: 8, rank: 158 },
+          { name: 'Rowan', conf: 'NJAC', region: 4, rank: 159 },
+          { name: 'Skidmore', conf: 'LL', region: 3, rank: 160 },
+          { name: 'Concordia (WI)', conf: 'NACC', region: 8, rank: 161 },
+          { name: 'Elmhurst', conf: 'CCIW', region: 8, rank: 162 },
+          { name: 'Endicott', conf: 'CNE', region: 2, rank: 163 },
+          { name: 'Marymount', conf: 'AEC', region: 5, rank: 164 },
+          { name: 'Union (NY)', conf: 'LL', region: 3, rank: 165 },
+          { name: 'St. Thomas (TX)', conf: 'SCAC', region: 10, rank: 166 },
+          { name: 'Bethany Luth', conf: 'UMAC', region: 9, rank: 167 },
+          { name: 'George Fox', conf: 'NWC', region: 10, rank: 168 },
+          { name: 'Maine-Maritime', conf: 'NAC', region: 1, rank: 169 },
+          { name: 'LaGrange', conf: 'CCS', region: 6, rank: 170 },
+          { name: 'Knox', conf: 'MWC', region: 9, rank: 171 },
+          { name: 'St. Olaf', conf: 'MIAC', region: 9, rank: 172 },
+          { name: 'Carlow', conf: 'AMCC', region: 7, rank: 173 },
+          { name: 'Middlebury', conf: 'NESCAC', region: 1, rank: 174 },
+          { name: 'Aurora', conf: 'NACC', region: 8, rank: 175 },
+          { name: 'Penn State-Abington', conf: 'UEC', region: 4, rank: 176 },
+          { name: 'Penn College', conf: 'UEC', region: 4, rank: 177 },
+          { name: 'Minn-Morris', conf: 'UMAC', region: 9, rank: 178 },
+          { name: 'Lynchburg', conf: 'ODAC', region: 6, rank: 179 },
+          { name: 'Howard Payne', conf: 'ASC', region: 10, rank: 180 },
+          { name: 'Ursinus', conf: 'CC', region: 5, rank: 181 },
+          { name: 'Trinity (TX)', conf: 'SAA', region: 6, rank: 182 },
+          { name: 'Wesleyan (CT)', conf: 'NESCAC', region: 1, rank: 183 },
+          { name: 'Albertus Magnus', conf: 'GNAC', region: 1, rank: 184 },
+          { name: 'Southern Virginia', conf: 'USAC', region: 6, rank: 185 },
+          { name: 'Rose-Hulman', conf: 'HCAC', region: 8, rank: 186 },
+          { name: 'Rensselaer', conf: 'LL', region: 3, rank: 187 },
+          { name: 'Alma', conf: 'MIAA', region: 7, rank: 188 },
+          { name: 'Wooster', conf: 'NCAC', region: 7, rank: 189 },
+          { name: 'Carleton', conf: 'MIAC', region: 9, rank: 190 },
+          { name: 'Concordia-Chicago', conf: 'NACC', region: 8, rank: 191 },
+          { name: 'York (PA)', conf: 'MACC', region: 5, rank: 192 },
+          { name: 'Montclair St.', conf: 'NJAC', region: 4, rank: 193 },
+          { name: 'Brandeis', conf: 'UAA', region: 2, rank: 194 },
+          { name: 'Plattsburgh St.', conf: 'SUNYAC', region: 3, rank: 195 },
+          { name: 'Lasell', conf: 'GNAC', region: 1, rank: 196 },
+          { name: 'Whitworth', conf: 'NWC', region: 10, rank: 197 },
+          { name: 'Thomas (ME)', conf: 'NAC', region: 1, rank: 198 },
+          { name: 'Illinois Col', conf: 'MWC', region: 9, rank: 199 },
+          { name: 'Westminster (PA)', conf: 'PAC', region: 7, rank: 200 },
+          { name: 'Mt. St. Joseph', conf: 'HCAC', region: 8, rank: 201 },
+          { name: 'Ramapo', conf: 'NJAC', region: 4, rank: 202 },
+          { name: 'Sewanee', conf: 'SAA', region: 6, rank: 203 },
+          { name: 'Lebanon Val', conf: 'MACF', region: 4, rank: 204 },
+          { name: 'Roger Williams', conf: 'CNE', region: 2, rank: 205 },
+          { name: 'St. Norbert', conf: 'NACC', region: 8, rank: 206 },
+          { name: 'La Verne', conf: 'SCIAC', region: 10, rank: 207 },
+          { name: 'Stevens', conf: 'MACF', region: 4, rank: 208 },
+          {
+            name: 'University of New England',
+            conf: 'CNE',
+            region: 2,
+            rank: 209,
+          },
+          { name: 'Brevard', conf: 'USAC', region: 6, rank: 210 },
+          { name: 'Clarkson', conf: 'LL', region: 3, rank: 211 },
+          { name: 'Vassar', conf: 'LL', region: 3, rank: 212 },
+          { name: 'Farmingdale', conf: 'SKY', region: 3, rank: 213 },
+          { name: 'New Jersey City', conf: 'NJAC', region: 4, rank: 214 },
+          { name: 'Ithaca', conf: 'LL', region: 3, rank: 215 },
+          { name: 'Grove City', conf: 'PAC', region: 7, rank: 216 },
+          { name: 'Augustana', conf: 'CCIW', region: 8, rank: 217 },
+          { name: 'Webster', conf: 'SLIAC', region: 8, rank: 218 },
+          { name: 'Simpson (IA)', conf: 'ARC', region: 9, rank: 219 },
+          { name: 'St. Lawrence', conf: 'LL', region: 3, rank: 220 },
+          { name: 'Texas Lutheran', conf: 'SCAC', region: 10, rank: 221 },
+          { name: 'Whittier', conf: 'SCIAC', region: 10, rank: 222 },
+          { name: 'Randolph Col', conf: 'ODAC', region: 6, rank: 223 },
+          { name: 'FDU Florham', conf: 'MACF', region: 4, rank: 224 },
+          { name: 'Western New England', conf: 'CNE', region: 2, rank: 225 },
+          { name: 'Dominican', conf: 'NACC', region: 8, rank: 226 },
+          { name: 'Grinnell', conf: 'MWC', region: 9, rank: 227 },
+          { name: 'Mt. Aloysius', conf: 'AMCC', region: 7, rank: 228 },
+          { name: 'Alfred', conf: 'E8', region: 3, rank: 229 },
+          { name: 'La Roche', conf: 'AMCC', region: 7, rank: 230 },
+          { name: 'Salve Regina', conf: 'NEWMAC', region: 2, rank: 231 },
+          { name: 'Central (IA)', conf: 'ARC', region: 9, rank: 232 },
+          { name: 'Dallas Univ', conf: 'SCAC', region: 10, rank: 233 },
+          { name: 'PSU-Harrisburg', conf: 'UEC', region: 4, rank: 234 },
+          { name: 'Drew', conf: 'LAND', region: 5, rank: 235 },
+          { name: 'St. Joseph (CT)', conf: 'GNAC', region: 1, rank: 236 },
+          { name: 'SUNY Cobleskill', conf: 'NAC', region: 1, rank: 237 },
+          { name: 'Muhlenberg', conf: 'CC', region: 5, rank: 238 },
+          { name: 'Stockton', conf: 'NJAC', region: 4, rank: 239 },
+          { name: 'Keuka', conf: 'E8', region: 3, rank: 240 },
+          { name: 'Mass-Boston', conf: 'LEC', region: 2, rank: 241 },
+          { name: 'SUNY Purchase', conf: 'SKY', region: 3, rank: 242 },
+          { name: 'Allegheny', conf: 'PAC', region: 7, rank: 243 },
+          { name: 'Caltech', conf: 'SCIAC', region: 10, rank: 244 },
+          { name: 'Alvernia', conf: 'MACC', region: 5, rank: 245 },
+          { name: 'Methodist', conf: 'USAC', region: 6, rank: 246 },
+          { name: 'Piedmont', conf: 'CCS', region: 6, rank: 247 },
+          { name: 'Stevenson', conf: 'MACC', region: 5, rank: 248 },
+          { name: 'Westfield St.', conf: 'MASCAC', region: 1, rank: 249 },
+          { name: "St. Joseph's (ME)", conf: 'GNAC', region: 1, rank: 250 },
+          { name: 'Washington College', conf: 'CC', region: 5, rank: 251 },
+          { name: 'Carthage', conf: 'CCIW', region: 8, rank: 252 },
+          { name: 'Gallaudet', conf: 'UEC', region: 4, rank: 253 },
+          { name: 'Averett', conf: 'ODAC', region: 6, rank: 254 },
+          { name: 'Hunter', conf: 'CUNYAC', region: 4, rank: 255 },
+          { name: 'Millikin', conf: 'CCIW', region: 8, rank: 256 },
+          { name: 'Haverford', conf: 'CC', region: 5, rank: 257 },
+          { name: 'Macalester', conf: 'MIAC', region: 9, rank: 258 },
+          { name: 'Mary Hardin-Baylor', conf: 'ASC', region: 10, rank: 259 },
+          { name: 'Coast Guard', conf: 'NEWMAC', region: 2, rank: 260 },
+          { name: 'McMurry', conf: 'SCAC', region: 10, rank: 261 },
+          { name: 'Concordia (TX)', conf: 'SCAC', region: 10, rank: 262 },
+          { name: 'Berea', conf: 'HCAC', region: 8, rank: 263 },
+          { name: 'Heidelberg', conf: 'OAC', region: 7, rank: 264 },
+          { name: 'Olivet', conf: 'MIAA', region: 7, rank: 265 },
+          { name: 'Anna Maria', conf: 'MASCAC', region: 1, rank: 266 },
+          { name: 'Worcester St.', conf: 'MASCAC', region: 1, rank: 267 },
+          { name: 'Willamette', conf: 'NWC', region: 10, rank: 268 },
+          { name: 'Framingham St.', conf: 'MASCAC', region: 1, rank: 269 },
+          { name: 'Oberlin', conf: 'NCAC', region: 7, rank: 270 },
+          { name: 'Edgewood', conf: 'NACC', region: 8, rank: 271 },
+          { name: 'Kalamazoo', conf: 'MIAA', region: 7, rank: 272 },
+          { name: 'SUNYIT', conf: 'E8', region: 3, rank: 273 },
+          { name: 'Delaware Val', conf: 'MACF', region: 4, rank: 274 },
+          { name: "St. Mary's (IN)", conf: 'MIAA', region: 7, rank: 275 },
+          { name: 'Lewis & Clark', conf: 'NWC', region: 10, rank: 276 },
+          { name: 'Gwynedd-Mercy', conf: 'AEC', region: 5, rank: 277 },
+          { name: 'Kean', conf: 'NJAC', region: 4, rank: 278 },
+          { name: 'John Jay', conf: 'CUNYAC', region: 4, rank: 279 },
+          { name: 'Goucher', conf: 'LAND', region: 5, rank: 280 },
+          { name: 'Univ Ozarks', conf: 'SCAC', region: 10, rank: 281 },
+          { name: 'Augsburg', conf: 'MIAC', region: 9, rank: 282 },
+          { name: 'Bluffton', conf: 'HCAC', region: 8, rank: 283 },
+          { name: 'Plymouth St.', conf: 'LEC', region: 2, rank: 284 },
+          { name: 'Lancaster Bib', conf: 'UEC', region: 4, rank: 285 },
+          { name: 'Eastern Mennonite', conf: 'ODAC', region: 6, rank: 286 },
+          { name: 'Northwestern (MN)', conf: 'UMAC', region: 9, rank: 287 },
+          { name: "St. Joseph's (NY)", conf: 'SKY', region: 3, rank: 288 },
+          { name: 'Albright', conf: 'MACC', region: 5, rank: 289 },
+          { name: 'Pacific', conf: 'NWC', region: 10, rank: 290 },
+          { name: 'Utica', conf: 'E8', region: 3, rank: 291 },
+          { name: 'Anderson', conf: 'HCAC', region: 8, rank: 292 },
+          { name: 'Colby-Sawyer', conf: 'GNAC', region: 1, rank: 293 },
+          { name: 'Lyon', conf: 'SLIAC', region: 8, rank: 294 },
+          { name: 'Oswego St.', conf: 'SUNYAC', region: 3, rank: 295 },
+          { name: 'Loras', conf: 'ARC', region: 9, rank: 296 },
+          { name: 'Martin Luther', conf: 'UMAC', region: 9, rank: 297 },
+          { name: 'Kenyon', conf: 'NCAC', region: 7, rank: 298 },
+          { name: 'Hanover', conf: 'HCAC', region: 8, rank: 299 },
+          { name: 'Adrian', conf: 'MIAA', region: 7, rank: 300 },
+          { name: 'Greensboro', conf: 'USAC', region: 6, rank: 301 },
+          { name: 'Geneva', conf: 'PAC', region: 7, rank: 302 },
+          { name: 'Lehman', conf: 'CUNYAC', region: 4, rank: 303 },
+          { name: 'Elmira', conf: 'E8', region: 3, rank: 304 },
+          { name: 'Wheaton (MA)', conf: 'NEWMAC', region: 2, rank: 305 },
+          { name: 'Hartwick', conf: 'E8', region: 3, rank: 306 },
+          { name: 'Norwich', conf: 'GNAC', region: 1, rank: 307 },
+          { name: 'Pac Lutheran', conf: 'NWC', region: 10, rank: 308 },
+          { name: 'Manhattanville', conf: 'SKY', region: 3, rank: 309 },
+          { name: 'Dubuque', conf: 'ARC', region: 9, rank: 310 },
+          { name: 'Curry', conf: 'CNE', region: 2, rank: 311 },
+          { name: 'Western Connecticut', conf: 'LEC', region: 2, rank: 312 },
+          { name: "King's", conf: 'MACF', region: 4, rank: 313 },
+          { name: 'Greenville', conf: 'SLIAC', region: 8, rank: 314 },
+          { name: 'Muskingum', conf: 'OAC', region: 7, rank: 315 },
+          { name: 'Manchester', conf: 'HCAC', region: 8, rank: 316 },
+          { name: 'Covenant', conf: 'CCS', region: 6, rank: 317 },
+          { name: 'Old Westbury', conf: 'SKY', region: 3, rank: 318 },
+          { name: 'Agnes Scott', conf: 'CCS', region: 6, rank: 319 },
+          { name: 'Meredith', conf: 'USAC', region: 6, rank: 320 },
+          { name: 'Franciscan', conf: 'PAC', region: 7, rank: 321 },
+          { name: 'Morrisville St.', conf: 'SUNYAC', region: 3, rank: 322 },
+          { name: 'Lakeland', conf: 'NACC', region: 8, rank: 323 },
+          { name: 'Waynesburg', conf: 'PAC', region: 7, rank: 324 },
+          { name: 'UW-Superior', conf: 'UMAC', region: 9, rank: 325 },
+          { name: 'Earlham', conf: 'HCAC', region: 8, rank: 326 },
+          { name: 'St. John Fisher', conf: 'E8', region: 3, rank: 327 },
+          { name: 'Rhodes', conf: 'SAA', region: 6, rank: 328 },
+          { name: 'SUNY Potsdam', conf: 'SUNYAC', region: 3, rank: 329 },
+          { name: 'Rivier', conf: 'GNAC', region: 1, rank: 330 },
+          { name: 'Sarah Lawrence', conf: 'SKY', region: 3, rank: 331 },
+          { name: 'Thiel', conf: 'PAC', region: 7, rank: 332 },
+          { name: 'Mass-Dartmouth', conf: 'LEC', region: 2, rank: 333 },
+          { name: 'Wilmington', conf: 'OAC', region: 7, rank: 334 },
+          { name: 'Mt. St. Vincent', conf: 'SKY', region: 3, rank: 335 },
+          { name: 'PSU-Altoona', conf: 'AMCC', region: 7, rank: 336 },
+          { name: 'North Park', conf: 'CCIW', region: 8, rank: 337 },
+          { name: 'Wilkes', conf: 'LAND', region: 5, rank: 338 },
+          { name: 'Pratt Inst', conf: 'AEC', region: 5, rank: 339 },
+          { name: 'Hood', conf: 'MACC', region: 5, rank: 340 },
+          { name: 'Lycoming', conf: 'LAND', region: 5, rank: 341 },
+          { name: 'Mary Baldwin', conf: 'USAC', region: 6, rank: 342 },
+          { name: 'William Smith', conf: 'LL', region: 3, rank: 343 },
+          { name: 'Beloit', conf: 'MWC', region: 9, rank: 344 },
+          { name: 'Eureka', conf: 'SLIAC', region: 8, rank: 345 },
+          { name: 'Centenary (NJ)', conf: 'AEC', region: 5, rank: 346 },
+          { name: 'Trinity (DC)', conf: 'IND', region: 5, rank: 347 },
+          { name: 'New England College', conf: 'GNAC', region: 1, rank: 348 },
+          { name: 'Juniata', conf: 'LAND', region: 5, rank: 349 },
+          { name: 'Bryn Mawr', conf: 'CC', region: 5, rank: 350 },
+          { name: 'Marywood', conf: 'AEC', region: 5, rank: 351 },
+          { name: 'Schreiner', conf: 'SCAC', region: 10, rank: 352 },
+          { name: 'Pitt-Bradford', conf: 'AMCC', region: 7, rank: 353 },
+          { name: 'Hiram', conf: 'PAC', region: 7, rank: 354 },
+          { name: 'Rockford', conf: 'NACC', region: 8, rank: 355 },
+          { name: 'City College (NY)', conf: 'CUNYAC', region: 4, rank: 356 },
+          { name: 'Neumann', conf: 'AEC', region: 5, rank: 357 },
+          { name: 'Wesleyan (GA)', conf: 'CCS', region: 6, rank: 358 },
+          { name: 'Alfred St.', conf: 'AMCC', region: 7, rank: 359 },
+          { name: 'Huntingdon', conf: 'CCS', region: 6, rank: 360 },
+          { name: 'Mitchell', conf: 'GNAC', region: 1, rank: 361 },
+          { name: 'Pitt-Greensburg', conf: 'AMCC', region: 7, rank: 362 },
+          { name: 'Marian', conf: 'NACC', region: 8, rank: 363 },
+          { name: 'York (NY)', conf: 'CUNYAC', region: 4, rank: 364 },
+          { name: 'Warren Wilson', conf: 'C2C', region: 6, rank: 365 },
+          { name: 'MUW', conf: 'SLIAC', region: 8, rank: 366 },
+          { name: 'Nebraska Wesleyan', conf: 'ARC', region: 9, rank: 367 },
+          { name: 'Occidental', conf: 'SCIAC', region: 10, rank: 368 },
+          { name: 'Sage', conf: 'E8', region: 3, rank: 369 },
+          { name: 'Wentworth Tech', conf: 'CNE', region: 2, rank: 370 },
+          { name: 'Salem St.', conf: 'MASCAC', region: 1, rank: 371 },
+          { name: 'Lake Forest', conf: 'MWC', region: 9, rank: 372 },
+          { name: 'Eastern Univ', conf: 'MACC', region: 5, rank: 373 },
+          { name: 'Crown', conf: 'UMAC', region: 9, rank: 374 },
+          { name: 'LeTourneau', conf: 'SCAC', region: 10, rank: 375 },
+          { name: 'Buffalo St.', conf: 'SUNYAC', region: 3, rank: 376 },
+          { name: 'Gordon', conf: 'CNE', region: 2, rank: 377 },
+          { name: 'Chatham', conf: 'PAC', region: 7, rank: 378 },
+          { name: 'SUNY Delhi', conf: 'NAC', region: 1, rank: 379 },
+          { name: 'Westminster (MO)', conf: 'SLIAC', region: 8, rank: 380 },
+          { name: 'Maine-Presque Isle', conf: 'NAC', region: 1, rank: 381 },
+          { name: 'Hilbert', conf: 'AMCC', region: 7, rank: 382 },
+          { name: 'Yeshiva', conf: 'SKY', region: 3, rank: 383 },
+          { name: 'Baruch', conf: 'CUNYAC', region: 4, rank: 384 },
+          { name: 'Spalding', conf: 'SLIAC', region: 8, rank: 385 },
+          { name: 'Medgar Evers', conf: 'CUNYAC', region: 4, rank: 386 },
+          { name: 'Mt. Holyoke', conf: 'NEWMAC', region: 2, rank: 387 },
+          { name: 'Dean', conf: 'GNAC', region: 1, rank: 388 },
+          { name: 'Centenary (LA)', conf: 'SCAC', region: 10, rank: 389 },
+          { name: 'Blackburn', conf: 'SLIAC', region: 8, rank: 390 },
+          { name: 'Bard', conf: 'LL', region: 3, rank: 391 },
+          { name: 'Salem (NC)', conf: 'USAC', region: 6, rank: 392 },
+          { name: 'Wilson', conf: 'UEC', region: 4, rank: 393 },
+          { name: 'Valley Forge', conf: 'UEC', region: 4, rank: 394 },
+          { name: 'PSU-Berks', conf: 'UEC', region: 4, rank: 395 },
+          { name: 'Rutgers-Newark', conf: 'NJAC', region: 4, rank: 396 },
+          { name: 'North Central (MN)', conf: 'UMAC', region: 9, rank: 397 },
+          { name: 'Elms', conf: 'GNAC', region: 1, rank: 398 },
+          { name: 'Regis', conf: 'GNAC', region: 1, rank: 399 },
+          { name: 'Fitchburg St.', conf: 'MASCAC', region: 1, rank: 400 },
+          { name: 'Nichols', conf: 'CNE', region: 2, rank: 401 },
+          { name: 'Monmouth', conf: 'MWC', region: 9, rank: 402 },
+          { name: 'Illinois Tech', conf: 'NACC', region: 8, rank: 403 },
+          { name: 'Keystone', conf: 'UEC', region: 4, rank: 404 },
+          { name: 'MA Col Lib Arts', conf: 'MASCAC', region: 1, rank: 405 },
+          { name: 'Cairn', conf: 'UEC', region: 4, rank: 406 },
+          { name: 'Lesley', conf: 'NAC', region: 1, rank: 407 },
+          { name: 'Maranatha Bap', conf: 'IND', region: 8, rank: 408 },
+          { name: 'St. Elizabeth', conf: 'AEC', region: 4, rank: 409 },
+          { name: 'Belhaven', conf: 'CCS', region: 6, rank: 410 },
+          { name: 'Principia', conf: 'SLIAC', region: 8, rank: 411 },
+          { name: 'Castleton', conf: 'LEC', region: 2, rank: 412 },
+          { name: 'NVU-Johnson', conf: 'NAC', region: 1, rank: 413 },
+          { name: 'NVU-Lyndon', conf: 'NAC', region: 1, rank: 414 },
+        ],
+      };
+      const NPI_WIN_COMPONENT = 100;
+      const NPI_RESULT_WEIGHT = 0.2;
+      const NPI_SOS_WEIGHT = 0.8;
+      const BASELINE_QUALITY = 54.0;
+      const QWB_MULT = 2 / 3;
+      const TOP_WINS_LIMIT = 15;
+      const TOTAL_REG_GAMES = 25;
+      const CONF_TOURNEY_GAMES = 2;
+
+      const teams = DATA.teams;
+      const confs = DATA.conferences;
+      const thresholds = DATA.thresholds;
+      const rankToNpi = DATA.rank_to_npi;
+
+      // ---------- Data helpers ----------
+      function teamByName(name) {
+        return teams.find(t => t.name === name);
+      }
+
+      const MAX_RANK_IN_TABLE = Math.max(...Object.keys(rankToNpi).map(Number));
+      function npiAtRank(r) {
+        if (r == null) return null;
+        const key = String(
+          Math.max(1, Math.min(MAX_RANK_IN_TABLE, Math.round(r)))
+        );
+        return rankToNpi[key];
+      }
+
+      function gameNpi(won, oppNpi) {
+        const wp = won ? NPI_WIN_COMPONENT * NPI_RESULT_WEIGHT : 0;
+        const sos = oppNpi * NPI_SOS_WEIGHT;
+        const qwb = won
+          ? Math.max(0, (oppNpi - BASELINE_QUALITY) * QWB_MULT)
+          : 0;
+        return { wp, sos, qwb, total: wp + sos + qwb };
+      }
+
+      // ---------- Schedule assembly ----------
+      function buildInitialSchedule(mainTeam) {
+        // Returns an array of row objects { slot, oppName|null, source: 'CONF'|'TOURN'|'NON-CONF' }
+        const rows = [];
+
+        // Conference regular-season opponents
+        const others = teams.filter(
+          t => t.conf === mainTeam.conf && t.name !== mainTeam.name
+        );
+        const info = confs[mainTeam.conf];
+        if (info && others.length) {
+          const n = others.length + 1;
+          const target = Math.min(info.games_per_team, 2 * (n - 1));
+          if (target >= n - 1) {
+            for (const o of others)
+              rows.push({ oppName: o.name, source: 'CONF' });
+            const doubles = target - (n - 1);
+            const byRank = [...others].sort((a, b) => a.rank - b.rank);
+            // Double up the highest-ranked peers (closest-to-rival proxy — conferences
+            // typically protect their top matchups; user can edit anything).
+            for (let i = 0; i < doubles && i < byRank.length; i++)
+              rows.push({ oppName: byRank[i].name, source: 'CONF' });
+          } else {
+            // Partial conf schedule — pick rank-proximate opponents
+            const byProximity = [...others].sort(
+              (a, b) =>
+                Math.abs(a.rank - mainTeam.rank) -
+                Math.abs(b.rank - mainTeam.rank)
+            );
+            for (let i = 0; i < target && i < byProximity.length; i++)
+              rows.push({ oppName: byProximity[i].name, source: 'CONF' });
+          }
+        }
+
+        // Conf tournament slots — 2 synthetic rows, 0 for UAA
+        const tourneyCount = mainTeam.conf === 'UAA' ? 0 : CONF_TOURNEY_GAMES;
+        // Synthetic opponent: median conference peer (by rank)
+        let tourneyOpp = null;
+        if (tourneyCount > 0 && others.length) {
+          const sorted = [...others].sort((a, b) => a.rank - b.rank);
+          tourneyOpp = sorted[Math.floor(sorted.length / 2)].name;
+        }
+        for (let i = 0; i < tourneyCount; i++)
+          rows.push({ oppName: tourneyOpp, source: 'TOURN' });
+
+        // Fill remaining to 25 regular + tourney = total. Default: open non-conf slots with no opponent.
+        const totalTarget = TOTAL_REG_GAMES + tourneyCount;
+        while (rows.length < totalTarget) {
+          rows.push({ oppName: null, source: 'NON-CONF' });
+        }
+        // In rare over-full conf cases, trim from the non-conf end
+        while (rows.length > totalTarget) rows.pop();
+        return rows;
+      }
+
+      // Initial W/L: lose to opponents with higher est. NPI than main team.
+      function initialResult(oppNpi, mainTeamNpi) {
+        if (oppNpi == null) return 'W';
+        return oppNpi > mainTeamNpi ? 'L' : 'W';
+      }
+
+      // ---------- NPI calc with counting-games logic ----------
+      function runNpiCalc(rows) {
+        // rows: [{ oppNpi, won }], only those with oppNpi set count.
+        const active = rows.filter(r => r.oppNpi != null);
+        const wins = [],
+          losses = [];
+        for (const r of active) {
+          const gn = gameNpi(r.won, r.oppNpi).total;
+          if (r.won) wins.push(gn);
+          else losses.push(gn);
+        }
+        wins.sort((a, b) => b - a);
+        losses.sort((a, b) => a - b);
+        let teamNpi = 50;
+        let contribSet = null;
+        for (let iter = 0; iter < 40; iter++) {
+          const contrib = [];
+          const counted = new Set();
+          for (let i = 0; i < wins.length; i++) {
+            if (i < TOP_WINS_LIMIT || wins[i] >= teamNpi) {
+              contrib.push(wins[i]);
+              counted.add('w' + i);
+            }
+          }
+          if (losses.length > 0) {
+            contrib.push(losses[0]);
+            counted.add('l0');
+            for (let i = 1; i < losses.length; i++) {
+              if (losses[i] < teamNpi) {
+                contrib.push(losses[i]);
+                counted.add('l' + i);
+              }
+            }
+          }
+          if (!contrib.length) {
+            teamNpi = 50;
+            break;
+          }
+          const next = contrib.reduce((a, b) => a + b, 0) / contrib.length;
+          contribSet = counted;
+          if (Math.abs(next - teamNpi) < 0.001) {
+            teamNpi = next;
+            break;
+          }
+          teamNpi = next;
+        }
+        return { teamNpi, wins, losses, contribSet };
+      }
+
+      // ---------- Recommendation text (adaptive) ----------
+      function makeGuidance(mainTeam, state, goal, threshold) {
+        const { teamNpi, winGameNpis, record } = state;
+        const margin = teamNpi - threshold;
+        const goalName = {
+          top4: 'Top 4',
+          top8: 'Top 8',
+          top16: 'Top 16',
+          poolC: 'Pool C',
+        }[goal];
+
+        // Floor = 15th-best counting win's game NPI → opponent-NPI equivalent
+        let floorText = '';
+        if (winGameNpis.length >= TOP_WINS_LIMIT) {
+          const floorGn = winGameNpis[TOP_WINS_LIMIT - 1];
+          // Invert game_npi → opp_npi (winning side)
+          let floorOpp = (floorGn - 20) / 0.8;
+          if (floorOpp > BASELINE_QUALITY)
+            floorOpp = ((floorGn + 16) * 15) / 22;
+          floorText = ` Your 15th-best counting win is currently worth about an opponent with NPI ${floorOpp.toFixed(1)}; to push that floor up, target non-conf opponents above that number.`;
+        } else {
+          floorText = ` You don't yet have 15 counting wins, so every additional win helps raise your average.`;
+        }
+
+        let regime;
+        if (margin >= 2.5) regime = 'comfortable';
+        else if (margin >= 0) regime = 'thin';
+        else regime = 'below';
+
+        if (regime === 'comfortable') {
+          return (
+            `With ${record.w}–${record.l}, you're ${margin.toFixed(1)} above the ${goalName} threshold.` +
+            floorText +
+            ` You can take one or two strategic risks against higher-NPI opponents — the quality-win bonus upside is worth it when you think you can win.`
+          );
+        }
+        if (regime === 'thin') {
+          return (
+            `You're only ${margin.toFixed(1)} above the ${goalName} threshold — thin margin.` +
+            floorText +
+            ` One more loss likely drops you under the cutoff. Favor opponents you can beat whose NPI is still high enough to improve your counting-win floor. Avoid scheduling likely losses just for QWB upside.`
+          );
+        }
+        // below
+        return (
+          `You're ${Math.abs(margin).toFixed(1)} below the ${goalName} threshold.` +
+          floorText +
+          ` Consider stepping the goal down, or upgrade your non-conf schedule so that your counting wins average higher. Flipping even one current loss into a win is usually the fastest way to climb.`
+        );
+      }
+
+      // ---------- UI state ----------
+      let mainTeamName = null;
+      let goal = 'poolC';
+      let rows = []; // [{ oppName, source, result }]
+
+      function teamNpiFor(name) {
+        const t = teamByName(name);
+        return t ? npiAtRank(t.rank) : null;
+      }
+      function rankFor(name) {
+        const t = teamByName(name);
+        return t ? t.rank : null;
+      }
+
+      function rebuildSchedule() {
+        const mainTeam = teamByName(mainTeamName);
+        if (!mainTeam) return;
+        const mainNpi = npiAtRank(mainTeam.rank);
+        const init = buildInitialSchedule(mainTeam);
+        rows = init.map(r => ({
+          oppName: r.oppName,
+          source: r.source,
+          result: r.oppName
+            ? initialResult(npiAtRank(rankFor(r.oppName)), mainNpi)
+            : 'W',
+        }));
+        render();
+      }
+
+      function render() {
+        const mainTeam = teamByName(mainTeamName);
+        if (!mainTeam) return;
+
+        // Compute per-row game NPI and the team NPI
+        const calcRows = rows.map(r => {
+          const rank = r.oppName ? rankFor(r.oppName) : null;
+          const oppNpi = r.oppName ? npiAtRank(rank) : null;
+          return { ...r, rank, oppNpi, won: r.result === 'W' };
+        });
+        const { teamNpi, wins, losses, contribSet } = runNpiCalc(calcRows);
+
+        // Assign win-ranks (within wins, by game NPI descending) for display
+        const winsWithGn = [];
+        calcRows.forEach((r, idx) => {
+          if (r.oppNpi != null && r.won) {
+            winsWithGn.push({ idx, gn: gameNpi(true, r.oppNpi).total });
+          }
+        });
+        winsWithGn.sort((a, b) => b.gn - a.gn);
+        const winRankByIdx = {};
+        winsWithGn.forEach((w, i) => {
+          winRankByIdx[w.idx] = i + 1;
+        });
+
+        // Assign loss-ranks for counting determination (we already re-run logic here for display)
+        const lossesWithGn = [];
+        calcRows.forEach((r, idx) => {
+          if (r.oppNpi != null && !r.won) {
+            lossesWithGn.push({ idx, gn: gameNpi(false, r.oppNpi).total });
+          }
+        });
+        lossesWithGn.sort((a, b) => a.gn - b.gn);
+        // Count which per-row indices are "counting"
+        const countingIdx = new Set();
+        winsWithGn.forEach((w, i) => {
+          if (i < TOP_WINS_LIMIT || w.gn >= teamNpi) countingIdx.add(w.idx);
+        });
+        if (lossesWithGn.length) {
+          countingIdx.add(lossesWithGn[0].idx);
+          for (let i = 1; i < lossesWithGn.length; i++) {
+            if (lossesWithGn[i].gn < teamNpi)
+              countingIdx.add(lossesWithGn[i].idx);
+          }
+        }
+
+        // Sort rows for display: opp NPI desc, empty slots at bottom
+        const displayOrder = calcRows
+          .map((r, idx) => ({ ...r, idx }))
+          .sort((a, b) => {
+            if (a.oppNpi == null && b.oppNpi == null) return 0;
+            if (a.oppNpi == null) return 1;
+            if (b.oppNpi == null) return -1;
+            return b.oppNpi - a.oppNpi;
+          });
+
+        // Build table
+        const tbody = document.getElementById('schedule-body');
+        tbody.innerHTML = '';
+        let wins_ct = 0,
+          losses_ct = 0;
+        for (const r of displayOrder) {
+          const isCounting = countingIdx.has(r.idx);
+          const tr = document.createElement('tr');
+          if (r.oppName) {
+            if (r.won) {
+              tr.className = isCounting
+                ? 'win-row counting'
+                : 'win-row not-counting';
+              wins_ct++;
+            } else {
+              tr.className = isCounting ? 'loss-row' : 'loss-row not-counting';
+              losses_ct++;
+            }
+          }
+          // Opponent cell with dropdown + slot tag
+          const tdOpp = document.createElement('td');
+          tdOpp.className = 'opp-name';
+          const tag = document.createElement('span');
+          tag.className = 'slot-tag ' + r.source.toLowerCase().replace('-', '');
+          tag.textContent = r.source === 'NON-CONF' ? 'NON-CONF' : r.source;
+          tdOpp.appendChild(tag);
+          const select = document.createElement('select');
+          select.className = 'opp-select';
+          select.dataset.idx = r.idx;
+          const emptyOpt = document.createElement('option');
+          emptyOpt.value = '';
+          emptyOpt.textContent = '— empty —';
+          select.appendChild(emptyOpt);
+          const sorted = [...teams].sort((a, b) => a.rank - b.rank);
+          for (const t of sorted) {
+            const opt = document.createElement('option');
+            opt.value = t.name;
+            opt.textContent = `#${t.rank} ${t.name} (${t.conf})`;
+            if (t.name === r.oppName) opt.selected = true;
+            select.appendChild(opt);
+          }
+          select.addEventListener('change', e => {
+            const idx = +e.target.dataset.idx;
+            rows[idx].oppName = e.target.value || null;
+            // Keep existing result; if empty, default W
+            if (!rows[idx].oppName) rows[idx].result = 'W';
+            render();
+          });
+          tdOpp.appendChild(select);
+          tr.appendChild(tdOpp);
+
+          // Pre rank
+          const tdRank = document.createElement('td');
+          tdRank.className = 'numeric';
+          tdRank.textContent = r.rank != null ? r.rank : '—';
+          tr.appendChild(tdRank);
+
+          // Opp NPI
+          const tdOppNpi = document.createElement('td');
+          tdOppNpi.className = 'numeric';
+          tdOppNpi.textContent = r.oppNpi != null ? r.oppNpi.toFixed(2) : '—';
+          tr.appendChild(tdOppNpi);
+
+          // W/L toggle
+          const tdWl = document.createElement('td');
+          const wlSel = document.createElement('select');
+          wlSel.className = 'wl-select ' + r.result;
+          wlSel.dataset.idx = r.idx;
+          for (const opt of ['W', 'L']) {
+            const o = document.createElement('option');
+            o.value = opt;
+            o.textContent = opt;
+            if (opt === r.result) o.selected = true;
+            wlSel.appendChild(o);
+          }
+          wlSel.disabled = r.oppName == null;
+          wlSel.addEventListener('change', e => {
+            rows[+e.target.dataset.idx].result = e.target.value;
+            render();
+          });
+          tdWl.appendChild(wlSel);
+          tr.appendChild(tdWl);
+
+          // WP / SOS / QWB / Game NPI
+          if (r.oppNpi != null) {
+            const g = gameNpi(r.won, r.oppNpi);
+            const mk = (v, cls = 'numeric') => {
+              const td = document.createElement('td');
+              td.className = cls;
+              td.textContent = v;
+              return td;
+            };
+            tr.appendChild(mk(g.wp.toFixed(0)));
+            tr.appendChild(mk(g.sos.toFixed(2)));
+            tr.appendChild(mk(g.qwb.toFixed(2)));
+            tr.appendChild(mk(g.total.toFixed(2), 'numeric game-npi'));
+          } else {
+            for (let i = 0; i < 4; i++) {
+              const td = document.createElement('td');
+              td.textContent = '—';
+              tr.appendChild(td);
+            }
+          }
+
+          // Win rank
+          const tdWr = document.createElement('td');
+          tdWr.className = 'numeric';
+          tdWr.textContent =
+            r.won && r.oppName ? winRankByIdx[r.idx] || '' : '—';
+          tr.appendChild(tdWr);
+
+          // Count
+          const tdC = document.createElement('td');
+          tdC.className =
+            isCounting && r.oppName ? 'count-true' : 'count-false';
+          tdC.textContent = r.oppName ? (isCounting ? 'TRUE' : 'FALSE') : '—';
+          tr.appendChild(tdC);
+
+          tbody.appendChild(tr);
+        }
+
+        // Summary bar
+        document.getElementById('team-npi').textContent = teamNpi.toFixed(2);
+        document.getElementById('team-record').textContent =
+          `${wins_ct}–${losses_ct} record`;
+        const bands = [
+          ['top4', thresholds.top4, 'th-top4', 'th-top4-v'],
+          ['top8', thresholds.top8, 'th-top8', 'th-top8-v'],
+          ['top16', thresholds.top16, 'th-top16', 'th-top16-v'],
+          ['poolC', thresholds.poolC, 'th-poolc', 'th-poolc-v'],
+        ];
+        for (const [key, thr, cellId, valId] of bands) {
+          const hit = teamNpi >= thr;
+          const cell = document.getElementById(cellId);
+          cell.className = 'summary-cell ' + (hit ? 'hit' : 'miss');
+          document.getElementById(valId).textContent =
+            (teamNpi - thr >= 0 ? '+' : '') + (teamNpi - thr).toFixed(2);
+        }
+
+        // Why text
+        const state = {
+          teamNpi,
+          winGameNpis: wins,
+          record: { w: wins_ct, l: losses_ct },
+        };
+        document.getElementById('why-text').textContent = makeGuidance(
+          mainTeam,
+          state,
+          goal,
+          thresholds[goal]
+        );
+      }
+
+      // ---------- Init ----------
+      (function init() {
+        const teamSel = document.getElementById('team-select');
+        const sorted = [...teams].sort((a, b) => a.name.localeCompare(b.name));
+        for (const t of sorted) {
+          const opt = document.createElement('option');
+          opt.value = t.name;
+          opt.textContent = `${t.name} (${t.conf}, #${t.rank})`;
+          teamSel.appendChild(opt);
+        }
+        mainTeamName = sorted[0].name;
+        teamSel.value = mainTeamName;
+
+        teamSel.addEventListener('change', () => {
+          mainTeamName = teamSel.value;
+          rebuildSchedule();
+        });
+        document.getElementById('goal-select').addEventListener('change', e => {
+          goal = e.target.value;
+          render();
+        });
+        document.getElementById('reset-btn').addEventListener('click', () => {
+          rebuildSchedule();
+        });
+
+        rebuildSchedule();
+      })();
+    </script>
+  </body>
+</html>
