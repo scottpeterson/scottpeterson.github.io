@@ -1,5 +1,7 @@
 school_a,school_b,distance_miles,is_edge_case,source
+Albertus Magnus,Albion,740.7,False,osrm
 Albertus Magnus,Albright,204.0,False,ncaa_verified
+Albertus Magnus,Alfred St.,337.1,False,osrm
 Albertus Magnus,Alvernia,206.0,False,osrm
 Albertus Magnus,Amherst,89.0,False,ncaa_verified
 Albertus Magnus,Anderson,779.2,False,osrm
@@ -8,6 +10,7 @@ Albertus Magnus,Asbury,814.0,False,ncaa_verified
 Albertus Magnus,Augsburg,1272.6,False,osrm
 Albertus Magnus,Augustana,1015.0,False,ncaa_verified
 Albertus Magnus,Aurora,909.0,False,ncaa_verified
+Albertus Magnus,Averett,551.6,False,osrm
 Albertus Magnus,Babson,126.0,False,ncaa_verified
 Albertus Magnus,Baldwin Wallace,538.0,False,ncaa_verified
 Albertus Magnus,Baruch,80.0,False,ncaa_verified
@@ -16,6 +19,7 @@ Albertus Magnus,Belhaven,1290.0,False,ncaa_verified
 Albertus Magnus,Benedictine,892.0,False,ncaa_verified
 Albertus Magnus,Berea,803.0,False,ncaa_verified
 Albertus Magnus,Berry,959.0,False,ncaa_verified
+Albertus Magnus,Bethany (WV),479.8,False,osrm
 Albertus Magnus,Bethany Luth,1299.0,False,ncaa_verified
 Albertus Magnus,Bethel,1276.0,False,ncaa_verified
 Albertus Magnus,Bowdoin,262.0,False,ncaa_verified
@@ -35,6 +39,7 @@ Albertus Magnus,Carroll,973.0,False,ncaa_verified
 Albertus Magnus,Carthage,935.0,False,ncaa_verified
 Albertus Magnus,Case Western,541.0,False,ncaa_verified
 Albertus Magnus,Catholic,306.0,False,ncaa_verified
+Albertus Magnus,Centenary (NJ),127.2,False,osrm
 Albertus Magnus,Centre,823.0,False,ncaa_verified
 Albertus Magnus,Chapman,2863.0,False,ncaa_verified
 Albertus Magnus,Chatham,449.0,False,ncaa_verified
@@ -50,6 +55,8 @@ Albertus Magnus,Colorado College,1862.0,False,ncaa_verified
 Albertus Magnus,Concordia (TX),1815.0,False,osrm
 Albertus Magnus,Concordia (WI),967.8,False,osrm
 Albertus Magnus,Concordia Moorhead,1507.0,False,ncaa_verified
+Albertus Magnus,Connecticut College,49.6,False,osrm
+Albertus Magnus,Cornell,1084.0,False,osrm
 Albertus Magnus,Cortland,252.0,False,ncaa_verified
 Albertus Magnus,Crown,1304.1,False,osrm
 Albertus Magnus,Denison,601.0,False,ncaa_verified
@@ -60,6 +67,7 @@ Albertus Magnus,Drew,107.5,False,osrm
 Albertus Magnus,Dubuque,1043.5,False,osrm
 Albertus Magnus,East Texas Baptist,1535.0,False,ncaa_verified
 Albertus Magnus,Eastern Connecticut,65.0,False,ncaa_verified
+Albertus Magnus,Eastern Mennonite,430.5,False,osrm
 Albertus Magnus,Elizabethtown,261.0,False,ncaa_verified
 Albertus Magnus,Elmhurst,882.4,False,osrm
 Albertus Magnus,Emmanuel,135.0,False,ncaa_verified
@@ -71,7 +79,9 @@ Albertus Magnus,Framingham St.,116.0,False,ncaa_verified
 Albertus Magnus,Franciscan,491.0,True,ncaa_verified
 Albertus Magnus,Franklin,812.0,False,ncaa_verified
 Albertus Magnus,Franklin & Marshall,242.2,False,osrm
+Albertus Magnus,Fredonia,474.5,False,osrm
 Albertus Magnus,Gallaudet,305.0,False,ncaa_verified
+Albertus Magnus,George Fox,2995.7,False,osrm
 Albertus Magnus,Gettysburg,293.0,False,ncaa_verified
 Albertus Magnus,Greensboro,620.0,False,ncaa_verified
 Albertus Magnus,Greenville,986.0,False,ncaa_verified
@@ -84,7 +94,9 @@ Albertus Magnus,Hamline,1270.0,False,ncaa_verified
 Albertus Magnus,Hampden-Sydney,482,False,ncaa_verified
 Albertus Magnus,Hanover,799.0,False,ncaa_verified
 Albertus Magnus,Hardin-Simmons,1813.0,False,ncaa_verified
+Albertus Magnus,Hartford,39.8,False,osrm
 Albertus Magnus,Heidelberg,612.4,False,osrm
+Albertus Magnus,Hendrix,1336.9,False,osrm
 Albertus Magnus,Hilbert,443.0,False,osrm
 Albertus Magnus,Hood,319.8,False,osrm
 Albertus Magnus,Hope,844.0,False,ncaa_verified
@@ -284,15 +296,24 @@ Albertus Magnus,Worcester St.,97.0,False,osrm
 Albertus Magnus,WPI,101.0,False,ncaa_verified
 Albertus Magnus,Yeshiva,71.7,False,osrm
 Albertus Magnus,York (PA),268.0,False,ncaa_verified
+Albion,Albright,589.9,False,osrm
+Albion,Alfred St.,456.6,False,osrm
+Albion,Alvernia,592.2,False,osrm
 Albion,Amherst,734.8,False,osrm
 Albion,Anderson,174.1,False,osrm
 Albion,Arcadia,633.5,False,osrm
 Albion,Asbury,351.8,False,osrm
+Albion,Augsburg,599.1,False,osrm
+Albion,Augustana,337.5,False,osrm
 Albion,Aurora,224.4,False,osrm
+Albion,Averett,639.7,False,osrm
 Albion,Babson,793.0,False,osrm
 Albion,Baldwin Wallace,211.8,False,osrm
+Albion,Baruch,668.4,False,osrm
 Albion,Bates,936.4,False,osrm
+Albion,Belhaven,882.7,False,osrm
 Albion,Benedictine,202.0,False,osrm
+Albion,Berea,372.7,False,osrm
 Albion,Berry,667.5,False,osrm
 Albion,Bethany (WV),347.6,False,osrm
 Albion,Bethany Luth,621.6,False,osrm
@@ -304,6 +325,8 @@ Albion,Bridgewater (VA),574.6,False,osrm
 Albion,Bridgewater St.,817.8,False,osrm
 Albion,Brockport St.,393.9,False,osrm
 Albion,Brooklyn College,672.7,False,osrm
+Albion,Bryn Athyn,638.5,False,osrm
+Albion,Cairn,644.3,False,osrm
 Albion,Cal Lutheran,2240.3,False,osrm
 Albion,Calvin,82.5,False,osrm
 Albion,Capital,247.7,False,osrm
@@ -312,36 +335,63 @@ Albion,Carroll,292.4,False,osrm
 Albion,Carthage,253.2,False,osrm
 Albion,Case Western,222.5,False,osrm
 Albion,Catholic,571.0,False,osrm
+Albion,Centenary (NJ),620.0,False,osrm
 Albion,Centre,369.5,False,osrm
 Albion,Chapman,2187.3,False,osrm
 Albion,Chatham,339.9,False,osrm
 Albion,Chicago,182.6,False,osrm
 Albion,Christopher Newport,708.1,False,osrm
+Albion,City College (NY),670.2,False,osrm
 Albion,Claremont-Mudd-Scripps,2158.6,False,osrm
 Albion,Clark,765.0,False,osrm
+Albion,Coast Guard,782.8,False,osrm
 Albion,Coe,421.7,False,osrm
 Albion,Colby,903.6,False,osrm
 Albion,Colorado College,1248.0,False,osrm
+Albion,Concordia (WI),292.5,False,osrm
 Albion,Concordia Moorhead,830.0,False,osrm
 Albion,Connecticut College,783.5,False,osrm
+Albion,Cornell,407.8,False,osrm
 Albion,Cortland,538.0,False,ncaa_verified
+Albion,Crown,630.6,False,osrm
 Albion,Denison,251.7,False,osrm
 Albion,DePauw,262.5,False,osrm
 Albion,DeSales,599.4,False,osrm
 Albion,Dickinson,520.0,True,ncaa_verified
+Albion,Drew,640.9,False,osrm
+Albion,Dubuque,368.2,False,osrm
 Albion,East Texas Baptist,1010.6,False,osrm
+Albion,Eastern Connecticut,796.5,False,osrm
+Albion,Eastern Mennonite,564.2,False,osrm
 Albion,Elizabethtown,549.8,False,osrm
+Albion,Elmhurst,205.9,False,osrm
 Albion,Emmanuel,802.3,False,osrm
 Albion,Emory,705.5,False,osrm
 Albion,Endicott,824.1,False,osrm
+Albion,Eureka,298.9,False,osrm
+Albion,Farmingdale,701.5,False,osrm
+Albion,Framingham St.,780.9,False,osrm
+Albion,Franciscan,333.2,False,osrm
 Albion,Franklin,236.2,False,osrm
 Albion,Franklin & Marshall,567.6,False,osrm
+Albion,Fredonia,367.3,False,osrm
+Albion,Gallaudet,573.9,False,osrm
+Albion,George Fox,2319.5,False,osrm
 Albion,Gettysburg,516.0,True,ncaa_verified
+Albion,Greensboro,627.6,False,osrm
+Albion,Greenville,408.0,False,osrm
+Albion,Grinnell,460.3,False,osrm
 Albion,Guilford,624.2,False,osrm
 Albion,Gustavus Adolphus,632.0,False,osrm
+Albion,Gwynedd-Mercy,628.5,False,osrm
 Albion,Hamilton,540.5,False,osrm
 Albion,Hamline,593.8,False,osrm
+Albion,Hampden-Sydney,682.4,False,osrm
+Albion,Hanover,313.1,False,osrm
 Albion,Hardin-Simmons,1244.2,False,osrm
+Albion,Hartford,768.0,False,osrm
+Albion,Heidelberg,156.3,False,osrm
+Albion,Hendrix,788.1,False,osrm
 Albion,Hollins,562.7,False,osrm
 Albion,Hope,96.8,False,osrm
 Albion,Houghton,416.5,False,osrm
@@ -438,19 +488,25 @@ Albion,Williams,673.0,False,osrm
 Albion,Wisconsin Lutheran,281.1,False,osrm
 Albion,Wittenberg,225.2,False,osrm
 Albion,WPI,766.6,False,osrm
+Albright,Alfred St.,234.5,False,osrm
 Albright,Alvernia,4.5,False,osrm
 Albright,Amherst,290.0,False,ncaa_verified
 Albright,Anderson,585.1,False,osrm
 Albright,Arcadia,67.0,False,ncaa_verified
+Albright,Asbury,609.0,False,osrm
 Albright,Augsburg,1115.6,False,osrm
+Albright,Augustana,856.7,False,osrm
 Albright,Aurora,758.0,False,ncaa_verified
+Albright,Averett,403.1,False,osrm
 Albright,Babson,326.0,False,ncaa_verified
 Albright,Baldwin Wallace,389.0,False,ncaa_verified
 Albright,Baruch,127.0,False,ncaa_verified
 Albright,Bates,470.0,False,ncaa_verified
 Albright,Belhaven,1117.0,False,ncaa_verified
 Albright,Benedictine,742.0,False,ncaa_verified
+Albright,Berea,606.2,False,osrm
 Albright,Berry,774.0,False,ncaa_verified
+Albright,Bethany (WV),289.8,False,osrm
 Albright,Bethany Luth,1151.0,False,ncaa_verified
 Albright,Bethel,1127.0,False,ncaa_verified
 Albright,Bowdoin,465.0,False,ncaa_verified
@@ -468,7 +524,9 @@ Albright,Capital,425.0,False,ncaa_verified
 Albright,Carnegie Mellon,264.0,False,ncaa_verified
 Albright,Carroll,823.0,False,ncaa_verified
 Albright,Carthage,787.0,False,ncaa_verified
+Albright,Case Western,374.2,False,osrm
 Albright,Catholic,148.0,False,ncaa_verified
+Albright,Centenary (NJ),81.1,False,osrm
 Albright,Centre,629.0,False,ncaa_verified
 Albright,Chapman,2670.9,False,osrm
 Albright,Chatham,260.0,False,ncaa_verified
@@ -476,6 +534,7 @@ Albright,Chicago,713.0,False,ncaa_verified
 Albright,Christopher Newport,325.0,False,ncaa_verified
 Albright,City College (NY),132.3,False,osrm
 Albright,Claremont-Mudd-Scripps,2642.2,False,osrm
+Albright,Clark,295.4,False,osrm
 Albright,Coast Guard,247.0,False,ncaa_verified
 Albright,Coe,949.0,False,ncaa_verified
 Albright,Colby,513.0,True,ncaa_verified
@@ -483,33 +542,48 @@ Albright,Colorado College,1671.0,False,ncaa_verified
 Albright,Concordia (TX),1625.6,False,osrm
 Albright,Concordia (WI),810.8,False,osrm
 Albright,Concordia Moorhead,1358.0,False,ncaa_verified
+Albright,Connecticut College,246.4,False,osrm
+Albright,Cornell,927.0,False,osrm
 Albright,Cortland,198.0,False,ncaa_verified
 Albright,Crown,1147.1,False,osrm
 Albright,Denison,410.0,False,ncaa_verified
 Albright,DePauw,651.0,False,ncaa_verified
 Albright,DeSales,41.0,False,ncaa_verified
+Albright,Dickinson,79.0,False,osrm
 Albright,Drew,103.3,False,osrm
 Albright,Dubuque,886.5,False,osrm
 Albright,East Texas Baptist,1349.0,False,ncaa_verified
 Albright,Eastern Connecticut,260.7,False,osrm
+Albright,Eastern Mennonite,241.0,False,osrm
 Albright,Elizabethtown,51.0,False,ncaa_verified
 Albright,Elmhurst,725.4,False,osrm
+Albright,Emmanuel,332.7,False,osrm
 Albright,Emory,774.0,False,ncaa_verified
 Albright,Endicott,362.0,False,ncaa_verified
+Albright,Eureka,795.3,False,osrm
 Albright,Farmingdale,157.7,False,osrm
 Albright,Framingham St.,317.0,False,ncaa_verified
 Albright,Franciscan,298.9,False,osrm
 Albright,Franklin,622.0,False,ncaa_verified
 Albright,Franklin & Marshall,32.0,False,osrm
+Albright,Fredonia,306.6,False,osrm
 Albright,Gallaudet,149.0,False,ncaa_verified
+Albright,George Fox,2838.7,False,osrm
 Albright,Gettysburg,99.0,False,ncaa_verified
+Albright,Greensboro,448.6,False,osrm
+Albright,Greenville,794.4,False,osrm
 Albright,Grinnell,979.5,False,osrm
 Albright,Guilford,454.0,False,ncaa_verified
 Albright,Gustavus Adolphus,1158.0,False,ncaa_verified
 Albright,Gwynedd-Mercy,57.8,False,osrm
+Albright,Hamilton,237.7,False,osrm
 Albright,Hamline,1121.0,False,ncaa_verified
+Albright,Hampden-Sydney,319.7,False,osrm
 Albright,Hanover,610.0,False,ncaa_verified
 Albright,Hardin-Simmons,1627.0,False,ncaa_verified
+Albright,Hartford,240.1,False,osrm
+Albright,Heidelberg,455.4,False,osrm
+Albright,Hendrix,1147.5,False,osrm
 Albright,Hilbert,298.7,False,osrm
 Albright,Hood,129.8,False,osrm
 Albright,Hope,694.0,False,ncaa_verified
@@ -685,51 +759,99 @@ Albright,Worcester St.,297.2,False,osrm
 Albright,WPI,301.0,False,ncaa_verified
 Albright,Yeshiva,130.6,False,osrm
 Albright,York (PA),58.0,False,ncaa_verified
+Alfred St.,Alvernia,236.1,False,osrm
 Alfred St.,Amherst,363.6,False,osrm
 Alfred St.,Anderson,529,False,ncaa_verified
+Alfred St.,Arcadia,298.5,False,osrm
 Alfred St.,Asbury,580.7,False,osrm
+Alfred St.,Augsburg,992.6,False,osrm
+Alfred St.,Augustana,731.9,False,osrm
 Alfred St.,Aurora,618.8,False,osrm
+Alfred St.,Averett,554.3,False,osrm
 Alfred St.,Babson,421.9,False,osrm
 Alfred St.,Baldwin Wallace,254.1,False,osrm
+Alfred St.,Baruch,306.6,False,osrm
 Alfred St.,Bates,565.2,False,osrm
 Alfred St.,Belhaven,1162.1,False,osrm
+Alfred St.,Benedictine,596.4,False,osrm
+Alfred St.,Berea,601.6,False,osrm
 Alfred St.,Berry,861.0,False,osrm
 Alfred St.,Bethany (WV),283.9,False,osrm
+Alfred St.,Bethany Luth,1016.9,False,osrm
 Alfred St.,Bethel,1007.9,False,osrm
 Alfred St.,Bowdoin,559.8,False,osrm
+Alfred St.,Brandeis,423.3,False,osrm
 Alfred St.,Brevard,711.6,False,osrm
 Alfred St.,Bridgewater (VA),402.6,False,osrm
 Alfred St.,Bridgewater St.,446.6,False,osrm
+Alfred St.,Brockport St.,94.8,False,osrm
 Alfred St.,Brooklyn College,310.8,False,osrm
+Alfred St.,Bryn Athyn,303.5,False,osrm
+Alfred St.,Cairn,309.3,False,osrm
 Alfred St.,Cal Lutheran,2634.7,False,osrm
 Alfred St.,Calvin,476.0,False,ncaa_verified
+Alfred St.,Capital,377.1,False,osrm
 Alfred St.,Carnegie Mellon,221.2,False,osrm
 Alfred St.,Carroll,685.9,False,osrm
 Alfred St.,Carthage,646.7,False,osrm
+Alfred St.,Case Western,237.9,False,osrm
+Alfred St.,Catholic,328.7,False,osrm
 Alfred St.,Centenary (NJ),258.2,False,osrm
 Alfred St.,Centre,598.4,False,osrm
+Alfred St.,Chapman,2581.7,False,osrm
 Alfred St.,Chatham,220.7,False,osrm
 Alfred St.,Chicago,576.0,False,osrm
 Alfred St.,Christopher Newport,493,False,ncaa_verified
+Alfred St.,City College (NY),308.4,False,osrm
 Alfred St.,Claremont-Mudd-Scripps,2553.0,False,osrm
 Alfred St.,Clark,393.9,False,osrm
+Alfred St.,Coast Guard,387.8,False,osrm
 Alfred St.,Coe,816.0,False,osrm
+Alfred St.,Colby,607.0,False,osrm
 Alfred St.,Colorado College,1642.4,False,osrm
+Alfred St.,Concordia (WI),685.9,False,osrm
 Alfred St.,Concordia Moorhead,1223.5,False,osrm
+Alfred St.,Connecticut College,388.5,False,osrm
+Alfred St.,Cornell,802.2,False,osrm
 Alfred St.,Cortland,119.0,False,osrm
+Alfred St.,Crown,1024.0,False,osrm
 Alfred St.,Denison,360.7,False,osrm
 Alfred St.,DePauw,598.3,False,osrm
 Alfred St.,DeSales,250.9,False,osrm
+Alfred St.,Dickinson,230.5,False,osrm
+Alfred St.,Drew,279.0,False,osrm
+Alfred St.,Dubuque,761.6,False,osrm
 Alfred St.,East Texas Baptist,1313.6,False,osrm
+Alfred St.,Eastern Connecticut,384.5,False,osrm
+Alfred St.,Eastern Mennonite,392.2,False,osrm
+Alfred St.,Elizabethtown,234.7,False,osrm
+Alfred St.,Elmhurst,600.3,False,osrm
 Alfred St.,Emmanuel,431.2,False,osrm
+Alfred St.,Emory,889.9,False,osrm
 Alfred St.,Endicott,454.9,False,osrm
+Alfred St.,Eureka,693.2,False,osrm
+Alfred St.,Farmingdale,339.6,False,osrm
 Alfred St.,Framingham St.,411.5,False,osrm
+Alfred St.,Franciscan,270.8,False,osrm
 Alfred St.,Franklin,568.0,False,osrm
+Alfred St.,Franklin & Marshall,246.6,False,osrm
+Alfred St.,Fredonia,101.3,False,osrm
+Alfred St.,Gallaudet,330.1,False,osrm
 Alfred St.,George Fox,2713.8,False,osrm
 Alfred St.,Gettysburg,251.7,False,osrm
+Alfred St.,Greensboro,599.7,False,osrm
+Alfred St.,Greenville,743.7,False,osrm
+Alfred St.,Grinnell,854.6,False,osrm
+Alfred St.,Guilford,601.7,False,osrm
 Alfred St.,Gustavus Adolphus,1025.4,False,osrm
+Alfred St.,Gwynedd-Mercy,284.3,False,osrm
+Alfred St.,Hamilton,175.6,False,osrm
+Alfred St.,Hamline,989.0,False,osrm
+Alfred St.,Hanover,558.8,False,osrm
 Alfred St.,Hardin-Simmons,1578.1,False,osrm
 Alfred St.,Hartford,356.0,False,osrm
+Alfred St.,Heidelberg,330.5,False,osrm
+Alfred St.,Hendrix,1102.8,False,osrm
 Alfred St.,Hope,503,False,ncaa_verified
 Alfred St.,Houghton,32.5,False,osrm
 Alfred St.,Hunter,307.7,False,osrm
@@ -832,50 +954,96 @@ Alfred St.,Wisconsin Lutheran,674.5,False,osrm
 Alvernia,Amherst,289.2,False,osrm
 Alvernia,Anderson,587.7,False,osrm
 Alvernia,Arcadia,63.1,False,osrm
+Alvernia,Asbury,611.6,False,osrm
 Alvernia,Augsburg,1118.8,False,osrm
+Alvernia,Augustana,859.9,False,osrm
 Alvernia,Aurora,746.8,False,osrm
+Alvernia,Averett,405.8,False,osrm
 Alvernia,Babson,325.7,False,osrm
+Alvernia,Baldwin Wallace,381.8,False,osrm
+Alvernia,Baruch,127.3,False,osrm
 Alvernia,Bates,476,False,ncaa_verified
 Alvernia,Belhaven,1093.3,False,osrm
+Alvernia,Benedictine,724.4,False,osrm
+Alvernia,Berea,608.9,False,osrm
+Alvernia,Berry,757.8,False,osrm
+Alvernia,Bethany (WV),292.4,False,osrm
 Alvernia,Bethany Luth,1143.1,False,osrm
+Alvernia,Bethel,1137.8,False,osrm
+Alvernia,Bowdoin,463.6,False,osrm
 Alvernia,Brandeis,329.1,False,osrm
+Alvernia,Brevard,616.1,False,osrm
+Alvernia,Bridgewater (VA),254.1,False,osrm
+Alvernia,Bridgewater St.,329.4,False,osrm
 Alvernia,Brockport St.,300.2,False,osrm
 Alvernia,Brooklyn College,133.3,False,osrm
+Alvernia,Bryn Athyn,68.1,False,osrm
 Alvernia,Cairn,73.9,False,osrm
+Alvernia,Cal Lutheran,2721.4,False,osrm
 Alvernia,Calvin,661.6,False,osrm
+Alvernia,Capital,426.1,False,osrm
+Alvernia,Carnegie Mellon,262.4,False,osrm
+Alvernia,Carroll,813.9,False,osrm
 Alvernia,Carthage,774.7,False,osrm
+Alvernia,Case Western,377.4,False,osrm
 Alvernia,Catholic,144.7,False,osrm
+Alvernia,Centenary (NJ),83.4,False,osrm
+Alvernia,Centre,627.8,False,osrm
 Alvernia,Chapman,2673.5,False,osrm
 Alvernia,Chatham,259.8,False,osrm
 Alvernia,Chicago,704.1,False,osrm
 Alvernia,Christopher Newport,322.2,False,osrm
 Alvernia,City College (NY),134.6,False,osrm
 Alvernia,Claremont-Mudd-Scripps,2644.8,False,osrm
+Alvernia,Clark,297.7,False,osrm
+Alvernia,Coast Guard,247.9,False,osrm
 Alvernia,Coe,944.1,False,osrm
+Alvernia,Colorado College,1672.9,False,osrm
 Alvernia,Concordia (TX),1628.2,False,osrm
 Alvernia,Concordia (WI),820.6,False,osrm
 Alvernia,Concordia Moorhead,1351.5,False,osrm
+Alvernia,Connecticut College,248.7,False,osrm
+Alvernia,Cornell,930.2,False,osrm
 Alvernia,Cortland,199.1,False,osrm
 Alvernia,Crown,1150.2,False,osrm
 Alvernia,Denison,410.7,False,osrm
 Alvernia,DePauw,651.6,False,osrm
 Alvernia,DeSales,42.7,False,osrm
+Alvernia,Dickinson,81.7,False,osrm
 Alvernia,Drew,105.6,False,osrm
 Alvernia,Dubuque,889.7,False,osrm
+Alvernia,East Texas Baptist,1340.0,False,osrm
 Alvernia,Eastern Connecticut,263.0,False,osrm
+Alvernia,Eastern Mennonite,243.7,False,osrm
+Alvernia,Elizabethtown,49.6,False,osrm
 Alvernia,Elmhurst,728.3,False,osrm
+Alvernia,Emmanuel,335.0,False,osrm
 Alvernia,Emory,767.1,False,osrm
 Alvernia,Endicott,358.7,False,osrm
+Alvernia,Eureka,797.9,False,osrm
 Alvernia,Farmingdale,159.9,False,osrm
 Alvernia,Framingham St.,315.3,False,osrm
 Alvernia,Franciscan,301.5,False,osrm
 Alvernia,Franklin,619.9,False,osrm
 Alvernia,Franklin & Marshall,34.6,False,osrm
+Alvernia,Fredonia,309.8,False,osrm
+Alvernia,Gallaudet,136.8,False,osrm
+Alvernia,George Fox,2841.9,False,osrm
 Alvernia,Gettysburg,98.1,False,osrm
+Alvernia,Greensboro,451.2,False,osrm
+Alvernia,Greenville,797.0,False,osrm
 Alvernia,Grinnell,982.7,False,osrm
+Alvernia,Guilford,453.2,False,osrm
 Alvernia,Gustavus Adolphus,1153.4,False,osrm
 Alvernia,Gwynedd-Mercy,42.3,False,osrm
+Alvernia,Hamilton,240.0,False,osrm
+Alvernia,Hamline,1117.0,False,osrm
+Alvernia,Hampden-Sydney,322.3,False,osrm
+Alvernia,Hanover,608.4,False,osrm
 Alvernia,Hardin-Simmons,1624.3,False,osrm
+Alvernia,Hartford,242.4,False,osrm
+Alvernia,Heidelberg,458.6,False,osrm
+Alvernia,Hendrix,1150.1,False,osrm
 Alvernia,Hilbert,301.9,False,osrm
 Alvernia,Hood,132.4,False,osrm
 Alvernia,Hope,673.4,False,osrm
@@ -1080,6 +1248,7 @@ Amherst,Hanover,892.0,False,ncaa_verified
 Amherst,Hardin-Simmons,1896.0,False,ncaa_verified
 Amherst,Hartford,53.6,False,osrm
 Amherst,Heidelberg,662.2,False,osrm
+Amherst,Hendrix,1423.2,False,osrm
 Amherst,Hilbert,395.7,False,osrm
 Amherst,Hollins,617.5,False,osrm
 Amherst,Hood,403.4,False,osrm
@@ -1300,13 +1469,16 @@ Amherst,York (PA),358.0,False,ncaa_verified
 Anderson,Arcadia,627.9,False,osrm
 Anderson,Asbury,230.6,False,osrm
 Anderson,Augsburg,622.4,False,osrm
+Anderson,Augustana,336.0,False,osrm
 Anderson,Aurora,244.4,False,osrm
+Anderson,Averett,535.5,False,osrm
 Anderson,Babson,896.3,False,osrm
 Anderson,Baldwin Wallace,274.8,False,osrm
 Anderson,Baruch,709.0,False,osrm
 Anderson,Bates,1036.7,False,osrm
 Anderson,Belhaven,709.1,False,osrm
 Anderson,Benedictine,219.1,False,osrm
+Anderson,Berea,239.9,False,osrm
 Anderson,Berry,524.0,False,ncaa_verified
 Anderson,Bethany (WV),301.7,False,osrm
 Anderson,Bethany Luth,642.0,False,osrm
@@ -1318,6 +1490,7 @@ Anderson,Bridgewater (VA),531.0,False,ncaa_verified
 Anderson,Bridgewater St.,922.3,False,osrm
 Anderson,Brockport St.,537,False,ncaa_verified
 Anderson,Brooklyn College,713.3,False,osrm
+Anderson,Bryn Athyn,632.9,False,osrm
 Anderson,Cairn,639.0,False,osrm
 Anderson,Cal Lutheran,2163.9,False,osrm
 Anderson,Calvin,230.6,False,osrm
@@ -1336,6 +1509,7 @@ Anderson,Christopher Newport,675.6,False,osrm
 Anderson,City College (NY),710.9,False,osrm
 Anderson,Claremont-Mudd-Scripps,2081.3,False,osrm
 Anderson,Clark,869.5,False,osrm
+Anderson,Coast Guard,823.4,False,osrm
 Anderson,Coe,419.6,False,osrm
 Anderson,Colby,1082.7,False,osrm
 Anderson,Colorado College,1110.3,False,osrm
@@ -1343,6 +1517,7 @@ Anderson,Concordia (TX),1124.9,False,osrm
 Anderson,Concordia (WI),311.3,False,osrm
 Anderson,Concordia Moorhead,855.1,False,osrm
 Anderson,Connecticut College,824.1,False,osrm
+Anderson,Cornell,405.8,False,osrm
 Anderson,Cortland,627.4,False,osrm
 Anderson,Crown,650.4,False,osrm
 Anderson,Denison,191.4,False,osrm
@@ -1353,18 +1528,24 @@ Anderson,Drew,681.5,False,osrm
 Anderson,Dubuque,408.6,False,osrm
 Anderson,East Texas Baptist,837.0,False,osrm
 Anderson,Eastern Connecticut,837.1,False,osrm
+Anderson,Eastern Mennonite,528.2,False,osrm
 Anderson,Elizabethtown,544.3,False,osrm
 Anderson,Elmhurst,223.3,False,osrm
 Anderson,Emmanuel,906.8,False,osrm
 Anderson,Emory,541.7,False,osrm
 Anderson,Endicott,928.6,False,osrm
+Anderson,Eureka,227.4,False,osrm
 Anderson,Farmingdale,742.1,False,osrm
 Anderson,Framingham St.,887.1,False,osrm
 Anderson,Franciscan,304.2,False,osrm
 Anderson,Franklin,62.6,False,osrm
 Anderson,Franklin & Marshall,562.3,False,osrm
+Anderson,Fredonia,430.1,False,osrm
+Anderson,Gallaudet,557.5,False,osrm
 Anderson,George Fox,2317.5,False,osrm
 Anderson,Gettysburg,510.0,True,ncaa_verified
+Anderson,Greensboro,523.4,False,osrm
+Anderson,Greenville,234.4,False,osrm
 Anderson,Grinnell,458.8,False,osrm
 Anderson,Guilford,535.0,False,ncaa_verified
 Anderson,Gustavus Adolphus,652.9,False,osrm
@@ -1372,9 +1553,11 @@ Anderson,Gwynedd-Mercy,622.9,False,osrm
 Anderson,Hamilton,658.0,False,osrm
 Anderson,Hamline,618.8,False,osrm
 Anderson,Hampden-Sydney,568.6,False,osrm
+Anderson,Hanover,139.5,False,osrm
 Anderson,Hardin-Simmons,1070.2,False,osrm
 Anderson,Hartford,808.6,False,osrm
 Anderson,Heidelberg,175.1,False,osrm
+Anderson,Hendrix,614.5,False,osrm
 Anderson,Hilbert,462.2,False,osrm
 Anderson,Hollins,458.5,False,osrm
 Anderson,Hood,512.0,True,ncaa_verified
@@ -1569,6 +1752,7 @@ Arcadia,Asbury,664.0,False,ncaa_verified
 Arcadia,Augsburg,1166.2,False,osrm
 Arcadia,Augustana,906.0,False,ncaa_verified
 Arcadia,Aurora,800.0,False,ncaa_verified
+Arcadia,Averett,394.4,False,osrm
 Arcadia,Babson,300.0,False,ncaa_verified
 Arcadia,Baldwin Wallace,429.0,False,ncaa_verified
 Arcadia,Baruch,100.0,False,ncaa_verified
@@ -1597,6 +1781,7 @@ Arcadia,Carroll,864.0,False,ncaa_verified
 Arcadia,Carthage,826.0,False,ncaa_verified
 Arcadia,Case Western,432.0,False,ncaa_verified
 Arcadia,Catholic,153.0,False,ncaa_verified
+Arcadia,Centenary (NJ),67.8,False,osrm
 Arcadia,Centre,668.0,False,ncaa_verified
 Arcadia,Chapman,2703.0,False,ncaa_verified
 Arcadia,Chatham,299.0,False,ncaa_verified
@@ -1613,6 +1798,7 @@ Arcadia,Concordia (TX),1668.4,False,osrm
 Arcadia,Concordia (WI),861.3,False,osrm
 Arcadia,Concordia Moorhead,1398.0,False,ncaa_verified
 Arcadia,Connecticut College,219.7,False,osrm
+Arcadia,Cornell,977.6,False,osrm
 Arcadia,Cortland,214.0,False,ncaa_verified
 Arcadia,Crown,1197.6,False,osrm
 Arcadia,Denison,450.0,False,ncaa_verified
@@ -1623,6 +1809,7 @@ Arcadia,Drew,73.1,False,osrm
 Arcadia,Dubuque,937.0,False,osrm
 Arcadia,East Texas Baptist,1388.0,False,ncaa_verified
 Arcadia,Eastern Connecticut,239.0,False,ncaa_verified
+Arcadia,Eastern Mennonite,283.9,False,osrm
 Arcadia,Elizabethtown,93.0,False,ncaa_verified
 Arcadia,Elmhurst,776.0,False,osrm
 Arcadia,Emmanuel,309.0,False,ncaa_verified
@@ -1634,6 +1821,7 @@ Arcadia,Framingham St.,290.0,False,ncaa_verified
 Arcadia,Franciscan,341.7,False,osrm
 Arcadia,Franklin,662.0,False,ncaa_verified
 Arcadia,Franklin & Marshall,77.7,False,osrm
+Arcadia,Fredonia,369.7,False,osrm
 Arcadia,Gallaudet,152.0,False,ncaa_verified
 Arcadia,George Fox,2889.3,False,osrm
 Arcadia,Gettysburg,140.0,False,ncaa_verified
@@ -1645,9 +1833,11 @@ Arcadia,Gustavus Adolphus,1197.0,False,ncaa_verified
 Arcadia,Gwynedd-Mercy,12.0,False,osrm
 Arcadia,Hamilton,258.0,False,ncaa_verified
 Arcadia,Hamline,1161.0,False,ncaa_verified
+Arcadia,Hampden-Sydney,320.4,False,osrm
 Arcadia,Hanover,650.0,False,ncaa_verified
 Arcadia,Hardin-Simmons,1666.0,False,ncaa_verified
 Arcadia,Hartford,213.4,False,osrm
+Arcadia,Hendrix,1190.3,False,osrm
 Arcadia,Hilbert,361.8,False,osrm
 Arcadia,Hollins,385.5,False,osrm
 Arcadia,Hood,173.3,False,osrm
@@ -1858,13 +2048,16 @@ Arcadia,Worcester St.,270.5,False,osrm
 Arcadia,WPI,275.0,False,ncaa_verified
 Arcadia,Yeshiva,102.8,False,osrm
 Arcadia,York (PA),100.0,False,ncaa_verified
+Asbury,Augsburg,789.0,False,osrm
 Asbury,Aurora,413.0,False,ncaa_verified
+Asbury,Averett,422.3,False,osrm
 Asbury,Babson,951.0,False,ncaa_verified
 Asbury,Baldwin Wallace,341.0,False,ncaa_verified
 Asbury,Baruch,732.0,False,ncaa_verified
 Asbury,Bates,1092.0,False,ncaa_verified
 Asbury,Belhaven,631.0,False,ncaa_verified
 Asbury,Benedictine,384.0,False,osrm
+Asbury,Berea,43.5,False,osrm
 Asbury,Berry,339.0,False,ncaa_verified
 Asbury,Bethany (WV),345.6,False,osrm
 Asbury,Bethany Luth,806.0,False,ncaa_verified
@@ -1877,6 +2070,7 @@ Asbury,Bridgewater St.,945.0,False,ncaa_verified
 Asbury,Brockport St.,599.0,False,ncaa_verified
 Asbury,Brooklyn College,736.0,False,ncaa_verified
 Asbury,Bryn Athyn,677.0,False,ncaa_verified
+Asbury,Cairn,660.1,False,osrm
 Asbury,Cal Lutheran,2297.0,False,ncaa_verified
 Asbury,Calvin,467.0,False,ncaa_verified
 Asbury,Capital,211.0,False,ncaa_verified
@@ -1891,39 +2085,56 @@ Asbury,Chapman,2211.0,False,ncaa_verified
 Asbury,Chatham,399.0,False,ncaa_verified
 Asbury,Chicago,369.0,False,ncaa_verified
 Asbury,Christopher Newport,587.0,False,ncaa_verified
+Asbury,City College (NY),730.4,False,osrm
 Asbury,Claremont-Mudd-Scripps,2140.6,False,osrm
 Asbury,Clark,893.6,False,osrm
 Asbury,Coast Guard,856.0,False,ncaa_verified
 Asbury,Coe,581.0,False,ncaa_verified
 Asbury,Colby,1106.7,False,osrm
 Asbury,Colorado College,1171.0,False,ncaa_verified
+Asbury,Concordia (WI),476.2,False,osrm
 Asbury,Concordia Moorhead,1012.0,False,ncaa_verified
 Asbury,Connecticut College,844.5,False,osrm
+Asbury,Cornell,569.0,False,osrm
 Asbury,Cortland,695.0,False,ncaa_verified
+Asbury,Crown,820.5,False,osrm
 Asbury,Denison,246.0,False,ncaa_verified
 Asbury,DePauw,235.0,False,ncaa_verified
 Asbury,DeSales,642.0,False,ncaa_verified
 Asbury,Dickinson,539,False,ncaa_verified
+Asbury,Drew,701.5,False,osrm
+Asbury,Dubuque,571.8,False,osrm
 Asbury,East Texas Baptist,776.0,False,ncaa_verified
+Asbury,Eastern Connecticut,858.8,False,osrm
+Asbury,Eastern Mennonite,430.2,False,osrm
 Asbury,Elizabethtown,576.0,False,ncaa_verified
+Asbury,Elmhurst,387.9,False,osrm
 Asbury,Emmanuel,930.9,False,osrm
 Asbury,Emory,391.0,False,ncaa_verified
 Asbury,Endicott,979.0,False,ncaa_verified
 Asbury,Eureka,397.0,False,ncaa_verified
+Asbury,Farmingdale,769.2,False,osrm
 Asbury,Framingham St.,936.0,False,ncaa_verified
+Asbury,Franciscan,349.1,False,osrm
 Asbury,Franklin,172.2,False,osrm
 Asbury,Franklin & Marshall,583.5,False,osrm
 Asbury,Gallaudet,566.0,False,ncaa_verified
 Asbury,George Fox,2410.1,False,osrm
 Asbury,Gettysburg,528.0,False,ncaa_verified
+Asbury,Greensboro,410.2,False,osrm
 Asbury,Greenville,338.0,False,ncaa_verified
+Asbury,Grinnell,621.4,False,osrm
 Asbury,Guilford,430.0,False,ncaa_verified
 Asbury,Gustavus Adolphus,817.0,False,ncaa_verified
+Asbury,Gwynedd-Mercy,644.3,False,osrm
 Asbury,Hamilton,716.0,False,ncaa_verified
 Asbury,Hamline,779.0,False,ncaa_verified
+Asbury,Hampden-Sydney,470.6,False,osrm
 Asbury,Hanover,104.0,False,ncaa_verified
 Asbury,Hardin-Simmons,1070.0,False,ncaa_verified
 Asbury,Hartford,838.2,False,osrm
+Asbury,Heidelberg,282.1,False,osrm
+Asbury,Hendrix,564.3,False,osrm
 Asbury,Hollins,360.5,False,osrm
 Asbury,Hope,437.0,False,ncaa_verified
 Asbury,Houghton,571.0,False,ncaa_verified
@@ -2081,17 +2292,38 @@ Asbury,Wisconsin Lutheran,469.0,False,ncaa_verified
 Asbury,Wittenberg,187.0,False,ncaa_verified
 Asbury,WPI,921.0,False,ncaa_verified
 Asbury,York (PA),590.0,False,ncaa_verified
+Augsburg,Augustana,364.4,False,osrm
 Augsburg,Aurora,397.5,False,osrm
+Augsburg,Averett,1139.7,False,osrm
 Augsburg,Babson,1389.4,False,osrm
+Augsburg,Baldwin Wallace,744.3,False,osrm
+Augsburg,Baruch,1200.9,False,osrm
 Augsburg,Bates,1532.8,False,osrm
 Augsburg,Belhaven,1033.6,False,osrm
+Augsburg,Benedictine,420.0,False,osrm
+Augsburg,Berea,816.3,False,osrm
+Augsburg,Berry,1050.7,False,osrm
+Augsburg,Bethany (WV),880.1,False,osrm
 Augsburg,Bethany Luth,82.1,False,osrm
+Augsburg,Bethel,24.5,False,osrm
+Augsburg,Bowdoin,1527.4,False,osrm
+Augsburg,Brandeis,1390.8,False,osrm
+Augsburg,Brevard,1065.3,False,osrm
+Augsburg,Bridgewater (VA),1107.2,False,osrm
+Augsburg,Bridgewater St.,1414.2,False,osrm
 Augsburg,Brockport St.,994.0,False,osrm
 Augsburg,Brooklyn College,1205.2,False,osrm
+Augsburg,Bryn Athyn,1171.0,False,osrm
 Augsburg,Cairn,1176.8,False,osrm
+Augsburg,Cal Lutheran,1945.9,False,osrm
 Augsburg,Calvin,591.7,False,osrm
+Augsburg,Capital,767.6,False,osrm
+Augsburg,Carnegie Mellon,871.5,False,osrm
+Augsburg,Carroll,319.9,False,osrm
 Augsburg,Carthage,368.8,False,osrm
+Augsburg,Case Western,755.1,False,osrm
 Augsburg,Catholic,1103.6,False,osrm
+Augsburg,Centenary (NJ),1152.6,False,osrm
 Augsburg,Centre,784.3,False,osrm
 Augsburg,Chapman,1892.9,False,osrm
 Augsburg,Chatham,872.4,False,osrm
@@ -2100,33 +2332,55 @@ Augsburg,Christopher Newport,1240.6,False,osrm
 Augsburg,City College (NY),1202.8,False,osrm
 Augsburg,Claremont-Mudd-Scripps,1864.2,False,osrm
 Augsburg,Clark,1361.4,False,osrm
+Augsburg,Coast Guard,1315.3,False,osrm
 Augsburg,Coe,276.7,False,osrm
+Augsburg,Colby,1574.6,False,osrm
 Augsburg,Colorado College,984.9,False,osrm
 Augsburg,Concordia (TX),1163.0,False,osrm
+Augsburg,Concordia (WI),350.3,False,osrm
 Augsburg,Concordia Moorhead,235.4,False,osrm
+Augsburg,Connecticut College,1316.0,False,osrm
+Augsburg,Cornell,294.4,False,osrm
 Augsburg,Cortland,1102.2,False,osrm
 Augsburg,Crown,31.4,False,osrm
 Augsburg,Denison,753.0,False,osrm
 Augsburg,DePauw,613.4,False,osrm
 Augsburg,DeSales,1131.9,False,osrm
+Augsburg,Dickinson,1051.6,False,osrm
 Augsburg,Drew,1173.4,False,osrm
 Augsburg,Dubuque,250.9,False,osrm
+Augsburg,East Texas Baptist,968.9,False,osrm
 Augsburg,Eastern Connecticut,1329.0,False,osrm
+Augsburg,Eastern Mennonite,1096.7,False,osrm
+Augsburg,Elizabethtown,1082.4,False,osrm
 Augsburg,Elmhurst,395.5,False,osrm
+Augsburg,Emmanuel,1398.7,False,osrm
 Augsburg,Emory,1104.6,False,osrm
 Augsburg,Endicott,1422.5,False,osrm
+Augsburg,Eureka,452.3,False,osrm
 Augsburg,Farmingdale,1234.0,False,osrm
 Augsburg,Framingham St.,1379.0,False,osrm
 Augsburg,Franciscan,865.7,False,osrm
 Augsburg,Franklin,615.1,False,osrm
 Augsburg,Franklin & Marshall,1100.2,False,osrm
+Augsburg,Fredonia,899.8,False,osrm
+Augsburg,Gallaudet,1106.4,False,osrm
+Augsburg,George Fox,1758.3,False,osrm
 Augsburg,Gettysburg,1047.4,False,osrm
+Augsburg,Greensboro,1127.7,False,osrm
+Augsburg,Greenville,589.9,False,osrm
 Augsburg,Grinnell,276.1,False,osrm
+Augsburg,Guilford,1124.2,False,osrm
 Augsburg,Gustavus Adolphus,69.6,False,osrm
 Augsburg,Gwynedd-Mercy,1161.0,False,osrm
+Augsburg,Hamilton,1127.7,False,osrm
+Augsburg,Hamline,5.2,False,osrm
 Augsburg,Hampden-Sydney,1172.9,False,osrm
+Augsburg,Hanover,692.0,False,osrm
 Augsburg,Hardin-Simmons,1076.1,False,osrm
+Augsburg,Hartford,1300.5,False,osrm
 Augsburg,Heidelberg,690.1,False,osrm
+Augsburg,Hendrix,829.0,False,osrm
 Augsburg,Hilbert,931.9,False,osrm
 Augsburg,Hood,1060.6,False,osrm
 Augsburg,Hope,557.0,False,osrm
@@ -2236,42 +2490,91 @@ Augsburg,Worcester St.,1363.2,False,osrm
 Augsburg,WPI,1363.0,False,osrm
 Augsburg,Yeshiva,1200.3,False,osrm
 Augsburg,York (PA),1084.4,False,osrm
+Augustana,Aurora,135.3,False,osrm
+Augustana,Averett,853.6,False,osrm
 Augustana,Babson,1121.0,False,ncaa_verified
 Augustana,Baldwin Wallace,486.0,True,ncaa_verified
+Augustana,Baruch,942.9,False,osrm
 Augustana,Bates,1261.0,False,ncaa_verified
+Augustana,Belhaven,750.9,False,osrm
+Augustana,Benedictine,142.4,False,osrm
+Augustana,Berea,531.9,False,osrm
 Augustana,Berry,734.0,False,ncaa_verified
+Augustana,Bethany (WV),619.7,False,osrm
+Augustana,Bethany Luth,326.7,False,osrm
+Augustana,Bethel,356.3,False,osrm
 Augustana,Bowdoin,1257.0,False,ncaa_verified
+Augustana,Brandeis,1132.8,False,osrm
+Augustana,Brevard,780.8,False,osrm
 Augustana,Bridgewater (VA),849.0,False,ncaa_verified
 Augustana,Bridgewater St.,1146.0,False,ncaa_verified
+Augustana,Brockport St.,734.7,False,osrm
 Augustana,Brooklyn College,947.0,False,ncaa_verified
+Augustana,Bryn Athyn,913.0,False,osrm
+Augustana,Cairn,918.8,False,osrm
 Augustana,Cal Lutheran,1899.0,False,ncaa_verified
 Augustana,Calvin,334.0,False,ncaa_verified
 Augustana,Carnegie Mellon,610.0,False,ncaa_verified
 Augustana,Carroll,197.0,False,ncaa_verified
+Augustana,Carthage,208.2,False,osrm
 Augustana,Catholic,847.0,False,ncaa_verified
+Augustana,Centenary (NJ),894.5,False,osrm
 Augustana,Centre,500.0,True,ncaa_verified
+Augustana,Chapman,1853.6,False,osrm
 Augustana,Chatham,615.0,False,ncaa_verified
 Augustana,Chicago,178.0,False,ncaa_verified
 Augustana,Christopher Newport,1009.0,False,ncaa_verified
+Augustana,City College (NY),944.8,False,osrm
+Augustana,Claremont-Mudd-Scripps,1824.9,False,osrm
+Augustana,Clark,1103.4,False,osrm
 Augustana,Coast Guard,1058.0,False,ncaa_verified
 Augustana,Coe,89.0,False,ncaa_verified
+Augustana,Colby,1316.6,False,osrm
 Augustana,Colorado College,915.0,False,ncaa_verified
+Augustana,Concordia (WI),228.3,False,osrm
 Augustana,Concordia Moorhead,597.0,False,ncaa_verified
+Augustana,Connecticut College,1058.0,False,osrm
+Augustana,Cornell,74.1,False,osrm
 Augustana,Cortland,859.0,False,ncaa_verified
+Augustana,Crown,378.5,False,osrm
 Augustana,Denison,512.0,True,ncaa_verified
 Augustana,DePauw,288.0,False,ncaa_verified
 Augustana,DeSales,886.0,False,ncaa_verified
 Augustana,Dickinson,793.0,False,ncaa_verified
+Augustana,Drew,915.4,False,osrm
+Augustana,Dubuque,74.9,False,osrm
 Augustana,East Texas Baptist,821.0,False,ncaa_verified
+Augustana,Eastern Connecticut,1071.0,False,osrm
+Augustana,Eastern Mennonite,838.7,False,osrm
 Augustana,Elizabethtown,825.0,False,ncaa_verified
+Augustana,Elmhurst,157.5,False,osrm
 Augustana,Emmanuel,1130.0,False,ncaa_verified
 Augustana,Emory,790.0,False,ncaa_verified
+Augustana,Endicott,1164.4,False,osrm
+Augustana,Eureka,110.3,False,osrm
+Augustana,Farmingdale,976.0,False,osrm
 Augustana,Framingham St.,1111.0,False,ncaa_verified
+Augustana,Franciscan,607.7,False,osrm
+Augustana,Franklin,330.6,False,osrm
+Augustana,Franklin & Marshall,842.1,False,osrm
+Augustana,Fredonia,641.8,False,osrm
+Augustana,Gallaudet,848.4,False,osrm
+Augustana,George Fox,1985.8,False,osrm
 Augustana,Gettysburg,789.0,False,ncaa_verified
+Augustana,Greensboro,841.5,False,osrm
+Augustana,Greenville,242.0,False,osrm
+Augustana,Grinnell,126.6,False,osrm
 Augustana,Guilford,854.0,False,ncaa_verified
 Augustana,Gustavus Adolphus,345.0,False,ncaa_verified
+Augustana,Gwynedd-Mercy,903.0,False,osrm
 Augustana,Hamilton,869.0,False,ncaa_verified
+Augustana,Hamline,335.1,False,osrm
+Augustana,Hampden-Sydney,886.7,False,osrm
+Augustana,Hanover,407.5,False,osrm
 Augustana,Hardin-Simmons,1006.0,False,ncaa_verified
+Augustana,Hartford,1042.5,False,osrm
+Augustana,Heidelberg,432.1,False,osrm
+Augustana,Hendrix,609.6,False,osrm
 Augustana,Hope,299.0,False,ncaa_verified
 Augustana,Illinois Wesleyan,138.0,False,ncaa_verified
 Augustana,Ithaca,823.0,False,ncaa_verified
@@ -2354,12 +2657,14 @@ Augustana,Widener,912.0,False,ncaa_verified
 Augustana,Willamette,2011.0,False,ncaa_verified
 Augustana,Wisconsin Lutheran,207.0,False,ncaa_verified
 Augustana,Wittenberg,435.0,False,ncaa_verified
+Aurora,Averett,765.9,False,osrm
 Aurora,Babson,1014.0,False,ncaa_verified
 Aurora,Baldwin Wallace,378.0,False,ncaa_verified
 Aurora,Baruch,834.0,False,ncaa_verified
 Aurora,Bates,1153.0,False,ncaa_verified
 Aurora,Belhaven,726.0,False,ncaa_verified
 Aurora,Benedictine,20.0,False,ncaa_verified
+Aurora,Berea,442.5,False,osrm
 Aurora,Berry,703.0,False,ncaa_verified
 Aurora,Bethany (WV),515.0,True,ncaa_verified
 Aurora,Bethany Luth,423.0,False,ncaa_verified
@@ -2398,6 +2703,7 @@ Aurora,Concordia (TX),1084.5,False,osrm
 Aurora,Concordia (WI),127.3,False,osrm
 Aurora,Concordia Moorhead,631.0,False,ncaa_verified
 Aurora,Connecticut College,947.1,False,osrm
+Aurora,Cornell,176.0,False,osrm
 Aurora,Cortland,751.0,False,ncaa_verified
 Aurora,Crown,429.9,False,osrm
 Aurora,Denison,425.0,False,ncaa_verified
@@ -2408,6 +2714,7 @@ Aurora,Drew,804.5,False,osrm
 Aurora,Dubuque,162.7,False,osrm
 Aurora,East Texas Baptist,828.0,False,ncaa_verified
 Aurora,Eastern Connecticut,960.1,False,osrm
+Aurora,Eastern Mennonite,727.8,False,osrm
 Aurora,Elizabethtown,717.0,False,ncaa_verified
 Aurora,Elmhurst,27.4,False,osrm
 Aurora,Emmanuel,1026.9,False,ncaa_verified
@@ -2419,9 +2726,11 @@ Aurora,Framingham St.,1005.0,False,ncaa_verified
 Aurora,Franciscan,501.0,True,ncaa_verified
 Aurora,Franklin,244.0,False,ncaa_verified
 Aurora,Franklin & Marshall,728.6,False,osrm
+Aurora,Fredonia,530.9,False,osrm
 Aurora,Gallaudet,745.0,False,ncaa_verified
 Aurora,George Fox,2109.8,False,osrm
 Aurora,Gettysburg,681.0,False,ncaa_verified
+Aurora,Greensboro,753.8,False,osrm
 Aurora,Greenville,243.0,False,ncaa_verified
 Aurora,Grinnell,251.2,False,osrm
 Aurora,Guilford,769.0,False,ncaa_verified
@@ -2434,6 +2743,7 @@ Aurora,Hanover,323.0,False,ncaa_verified
 Aurora,Hardin-Simmons,1056.0,False,ncaa_verified
 Aurora,Hartford,931.6,False,osrm
 Aurora,Heidelberg,321.2,False,osrm
+Aurora,Hendrix,615.9,False,osrm
 Aurora,Hilbert,563.0,False,osrm
 Aurora,Hollins,688.8,False,osrm
 Aurora,Hood,688.4,False,osrm
@@ -2655,46 +2965,86 @@ Austin College,Susquehanna,1381.1,False,osrm
 Austin College,TCNJ,1487.0,False,osrm
 Austin College,Union (NY),1577.1,False,osrm
 Austin College,Western New England,1668.6,False,osrm
+Averett,Babson,672.6,False,osrm
 Averett,Baldwin Wallace,498,False,ncaa_verified
+Averett,Baruch,474.2,False,osrm
 Averett,Bates,816.0,False,osrm
+Averett,Belhaven,760.4,False,osrm
+Averett,Benedictine,741.2,False,osrm
+Averett,Berea,384.4,False,osrm
+Averett,Berry,436.7,False,osrm
+Averett,Bethany (WV),385.2,False,osrm
+Averett,Bethany Luth,1170.5,False,osrm
 Averett,Bethel,1163.4,False,osrm
 Averett,Bowdoin,810.6,False,osrm
 Averett,Brandeis,674.0,False,osrm
+Averett,Brevard,241.3,False,osrm
 Averett,Bridgewater (VA),158.1,False,osrm
+Averett,Bridgewater St.,676.4,False,osrm
 Averett,Brockport St.,615.7,False,osrm
+Averett,Brooklyn College,473.7,False,osrm
+Averett,Bryn Athyn,402.9,False,osrm
+Averett,Cairn,400.2,False,osrm
 Averett,Cal Lutheran,2536.9,False,osrm
 Averett,Calvin,728.7,False,osrm
 Averett,Capital,407.1,False,osrm
 Averett,Carnegie Mellon,395.8,False,osrm
 Averett,Carroll,833.3,False,osrm
+Averett,Carthage,794.2,False,osrm
 Averett,Case Western,503,False,ncaa_verified
 Averett,Catholic,251.2,False,osrm
+Averett,Centenary (NJ),463.8,False,osrm
 Averett,Centre,402.7,False,osrm
+Averett,Chapman,2483.9,False,osrm
+Averett,Chatham,393.2,False,osrm
 Averett,Chicago,723.5,False,osrm
 Averett,Christopher Newport,215.5,False,osrm
+Averett,Claremont-Mudd-Scripps,2455.2,False,osrm
 Averett,Clark,644.6,False,osrm
+Averett,Coast Guard,594.8,False,osrm
 Averett,Coe,939.2,False,osrm
 Averett,Colby,857.8,False,osrm
 Averett,Colorado College,1564.2,False,osrm
+Averett,Concordia (WI),833.4,False,osrm
 Averett,Concordia Moorhead,1379.0,False,osrm
 Averett,Connecticut College,595.6,False,osrm
 Averett,Cornell,925.3,False,osrm
 Averett,Cortland,562.6,False,osrm
+Averett,Crown,1177.7,False,osrm
 Averett,Denison,404.3,False,osrm
 Averett,DePauw,600.6,False,osrm
+Averett,DeSales,429.2,False,osrm
 Averett,Dickinson,323.7,False,osrm
+Averett,Dubuque,928.1,False,osrm
+Averett,East Texas Baptist,1013.2,False,osrm
+Averett,Eastern Connecticut,609.9,False,osrm
 Averett,Eastern Mennonite,163.4,False,osrm
+Averett,Elizabethtown,364.1,False,osrm
+Averett,Elmhurst,745.0,False,osrm
 Averett,Emmanuel,681.9,False,osrm
 Averett,Emory,371.5,False,osrm
+Averett,Endicott,705.6,False,osrm
+Averett,Eureka,747.0,False,osrm
+Averett,Framingham St.,662.2,False,osrm
+Averett,Franciscan,433.2,False,osrm
 Averett,Franklin,555.7,False,osrm
+Averett,Franklin & Marshall,381.9,False,osrm
 Averett,Fredonia,565.6,False,osrm
+Averett,Gallaudet,249.7,False,osrm
+Averett,George Fox,2799.1,False,osrm
 Averett,Gettysburg,307.5,False,osrm
+Averett,Greensboro,44.8,False,osrm
+Averett,Greenville,719.0,False,osrm
+Averett,Grinnell,977.8,False,osrm
 Averett,Guilford,51.9,False,osrm
 Averett,Gustavus Adolphus,1180.9,False,osrm
+Averett,Gwynedd-Mercy,396.8,False,osrm
 Averett,Hamilton,603.5,False,osrm
 Averett,Hamline,1142.7,False,osrm
+Averett,Hampden-Sydney,84.4,False,osrm
 Averett,Hardin-Simmons,1327.2,False,osrm
 Averett,Hartford,589.3,False,osrm
+Averett,Hendrix,853.1,False,osrm
 Averett,Hollins,87.8,False,osrm
 Averett,Hope,716.9,False,osrm
 Averett,Houghton,531.7,False,osrm
@@ -2787,6 +3137,7 @@ Babson,Bridgewater (VA),565.0,False,ncaa_verified
 Babson,Bridgewater St.,34.0,False,ncaa_verified
 Babson,Brockport St.,400.0,False,ncaa_verified
 Babson,Brooklyn College,214.0,False,ncaa_verified
+Babson,Bryn Athyn,288.8,False,osrm
 Babson,Cairn,284.9,False,osrm
 Babson,Cal Lutheran,3014.0,False,ncaa_verified
 Babson,Calvin,819.0,False,ncaa_verified
@@ -2813,6 +3164,7 @@ Babson,Concordia (TX),1937.8,False,osrm
 Babson,Concordia (WI),1084.9,False,osrm
 Babson,Concordia Moorhead,1612.0,False,ncaa_verified
 Babson,Connecticut College,100.5,False,osrm
+Babson,Cornell,1201.1,False,osrm
 Babson,Cortland,313.0,False,ncaa_verified
 Babson,Crown,1421.2,False,osrm
 Babson,Denison,723.0,False,ncaa_verified
@@ -2823,11 +3175,13 @@ Babson,Drew,230.3,False,osrm
 Babson,Dubuque,1160.6,False,osrm
 Babson,East Texas Baptist,1650.0,False,ncaa_verified
 Babson,Eastern Connecticut,82.0,False,ncaa_verified
+Babson,Eastern Mennonite,553.3,False,osrm
 Babson,Elizabethtown,382.0,False,ncaa_verified
 Babson,Elmhurst,999.6,False,osrm
 Babson,Emmanuel,11.0,False,ncaa_verified
 Babson,Emory,1063.0,False,ncaa_verified
 Babson,Endicott,41.0,False,ncaa_verified
+Babson,Eureka,1092.2,False,osrm
 Babson,Farmingdale,216.9,False,osrm
 Babson,Framingham St.,11.0,False,ncaa_verified
 Babson,Franciscan,599.5,False,osrm
@@ -2849,6 +3203,7 @@ Babson,Hanover,937.0,False,ncaa_verified
 Babson,Hardin-Simmons,1935.0,False,ncaa_verified
 Babson,Hartford,93.5,False,osrm
 Babson,Heidelberg,729.5,False,osrm
+Babson,Hendrix,1459.7,False,osrm
 Babson,Hilbert,454.4,False,osrm
 Babson,Hollins,654.8,False,osrm
 Babson,Hood,440.0,False,osrm
@@ -3080,6 +3435,7 @@ Baldwin Wallace,Bridgewater St.,671.0,False,ncaa_verified
 Baldwin Wallace,Brockport St.,266.0,False,ncaa_verified
 Baldwin Wallace,Brooklyn College,470.0,False,ncaa_verified
 Baldwin Wallace,Bryn Athyn,434.0,False,ncaa_verified
+Baldwin Wallace,Cairn,440.9,False,osrm
 Baldwin Wallace,Cal Lutheran,2381.0,False,ncaa_verified
 Baldwin Wallace,Calvin,288.0,False,ncaa_verified
 Baldwin Wallace,Capital,132.0,False,ncaa_verified
@@ -3094,29 +3450,35 @@ Baldwin Wallace,Chapman,2335.0,False,ncaa_verified
 Baldwin Wallace,Chatham,137.0,False,ncaa_verified
 Baldwin Wallace,Chicago,333.0,False,ncaa_verified
 Baldwin Wallace,Christopher Newport,532.0,False,ncaa_verified
+Baldwin Wallace,City College (NY),466.8,False,osrm
 Baldwin Wallace,Claremont-Mudd-Scripps,2303.1,False,ncaa_verified
 Baldwin Wallace,Clark,625.5,False,osrm
 Baldwin Wallace,Coast Guard,581.0,False,ncaa_verified
 Baldwin Wallace,Coe,569.0,False,ncaa_verified
 Baldwin Wallace,Colby,838.7,False,ncaa_verified
 Baldwin Wallace,Colorado College,1372.0,False,ncaa_verified
+Baldwin Wallace,Concordia (WI),436.0,False,osrm
 Baldwin Wallace,Concordia Moorhead,979.0,False,ncaa_verified
 Baldwin Wallace,Connecticut College,580.1,False,osrm
 Baldwin Wallace,Cornell,552.2,False,osrm
 Baldwin Wallace,Cortland,383.0,False,ncaa_verified
+Baldwin Wallace,Crown,774.1,False,osrm
 Baldwin Wallace,Denison,115.0,False,ncaa_verified
 Baldwin Wallace,DePauw,353.0,False,ncaa_verified
 Baldwin Wallace,DeSales,409.0,False,ncaa_verified
 Baldwin Wallace,Dickinson,315.0,False,ncaa_verified
+Baldwin Wallace,Drew,437.5,False,osrm
 Baldwin Wallace,East Texas Baptist,1067.0,False,ncaa_verified
 Baldwin Wallace,Eastern Connecticut,591.0,False,ncaa_verified
 Baldwin Wallace,Eastern Mennonite,360.8,False,osrm
 Baldwin Wallace,Elizabethtown,348.0,False,ncaa_verified
+Baldwin Wallace,Elmhurst,350.4,False,osrm
 Baldwin Wallace,Emmanuel,653.0,False,ncaa_verified
 Baldwin Wallace,Emory,701.0,False,ncaa_verified
 Baldwin Wallace,Endicott,679.0,False,ncaa_verified
 Baldwin Wallace,Eureka,449.0,False,ncaa_verified
 Baldwin Wallace,Framingham St.,634.0,False,ncaa_verified
+Baldwin Wallace,Franciscan,129.8,False,osrm
 Baldwin Wallace,Franklin,323.0,False,ncaa_verified
 Baldwin Wallace,Franklin & Marshall,364.2,False,osrm
 Baldwin Wallace,Fredonia,163.7,False,osrm
@@ -3125,13 +3487,17 @@ Baldwin Wallace,George Fox,2463.9,False,osrm
 Baldwin Wallace,Gettysburg,312.0,False,ncaa_verified
 Baldwin Wallace,Greensboro,493.0,True,ncaa_verified
 Baldwin Wallace,Greenville,497.0,True,ncaa_verified
+Baldwin Wallace,Grinnell,604.7,False,osrm
 Baldwin Wallace,Guilford,488.0,True,ncaa_verified
 Baldwin Wallace,Gustavus Adolphus,778.0,False,ncaa_verified
+Baldwin Wallace,Gwynedd-Mercy,425.1,False,osrm
 Baldwin Wallace,Hamilton,393.0,False,ncaa_verified
 Baldwin Wallace,Hamline,742.0,False,ncaa_verified
+Baldwin Wallace,Hampden-Sydney,479.0,False,osrm
 Baldwin Wallace,Hanover,315.0,False,ncaa_verified
 Baldwin Wallace,Hardin-Simmons,1332.0,False,ncaa_verified
 Baldwin Wallace,Hartford,564.6,False,osrm
+Baldwin Wallace,Heidelberg,80.6,False,osrm
 Baldwin Wallace,Hendrix,856.7,False,osrm
 Baldwin Wallace,Hollins,412.4,False,osrm
 Baldwin Wallace,Hope,316.0,False,ncaa_verified
@@ -3316,7 +3682,9 @@ Baldwin Wallace,York (PA),355.0,False,ncaa_verified
 Baruch,Bates,346.0,False,ncaa_verified
 Baruch,Belhaven,1221.0,False,ncaa_verified
 Baruch,Benedictine,818.0,False,ncaa_verified
+Baruch,Berea,722.6,False,osrm
 Baruch,Berry,882.0,False,ncaa_verified
+Baruch,Bethany (WV),401.5,False,osrm
 Baruch,Bethany Luth,1226.0,False,ncaa_verified
 Baruch,Bethel,1202.0,False,ncaa_verified
 Baruch,Bowdoin,341.0,False,ncaa_verified
@@ -3334,30 +3702,40 @@ Baruch,Capital,536.0,False,ncaa_verified
 Baruch,Carnegie Mellon,375.0,False,ncaa_verified
 Baruch,Carroll,899.0,False,ncaa_verified
 Baruch,Carthage,862.0,False,ncaa_verified
+Baruch,Case Western,459.5,False,osrm
 Baruch,Catholic,229.0,False,ncaa_verified
+Baruch,Centenary (NJ),55.5,False,osrm
 Baruch,Centre,745.0,False,ncaa_verified
 Baruch,Chapman,2776.0,False,ncaa_verified
 Baruch,Chatham,371.0,False,ncaa_verified
 Baruch,Chicago,789.0,False,ncaa_verified
 Baruch,Christopher Newport,404.0,False,ncaa_verified
+Baruch,City College (NY),7.8,False,osrm
 Baruch,Claremont-Mudd-Scripps,2763.1,False,osrm
+Baruch,Clark,171.8,False,osrm
 Baruch,Coast Guard,123.0,False,ncaa_verified
 Baruch,Coe,1024.0,False,ncaa_verified
 Baruch,Colby,385.0,False,osrm
 Baruch,Colorado College,1782.0,False,ncaa_verified
 Baruch,Concordia (TX),1736.7,False,osrm
+Baruch,Concordia (WI),896.0,False,osrm
 Baruch,Concordia Moorhead,1433.0,False,ncaa_verified
+Baruch,Connecticut College,122.8,False,osrm
+Baruch,Cornell,1012.3,False,osrm
 Baruch,Cortland,219.0,False,ncaa_verified
 Baruch,Crown,1232.3,False,osrm
 Baruch,Denison,521.0,False,ncaa_verified
 Baruch,DePauw,762.0,False,ncaa_verified
 Baruch,DeSales,96.0,False,ncaa_verified
+Baruch,Dickinson,190.5,False,osrm
 Baruch,Drew,29.2,False,osrm
 Baruch,Dubuque,971.8,False,osrm
 Baruch,East Texas Baptist,1456.0,False,ncaa_verified
 Baruch,Eastern Connecticut,137.1,False,osrm
+Baruch,Eastern Mennonite,352.2,False,osrm
 Baruch,Elizabethtown,182.0,False,ncaa_verified
 Baruch,Elmhurst,810.4,False,osrm
+Baruch,Emmanuel,209.1,False,osrm
 Baruch,Emory,866.0,False,ncaa_verified
 Baruch,Endicott,238.0,False,ncaa_verified
 Baruch,Eureka,904.0,False,ncaa_verified
@@ -3366,16 +3744,24 @@ Baruch,Framingham St.,193.0,False,ncaa_verified
 Baruch,Franciscan,410.6,False,osrm
 Baruch,Franklin,733.0,False,ncaa_verified
 Baruch,Franklin & Marshall,164.0,False,osrm
+Baruch,Fredonia,391.9,False,osrm
 Baruch,Gallaudet,229.0,False,ncaa_verified
+Baruch,George Fox,2924.0,False,osrm
 Baruch,Gettysburg,215.0,False,ncaa_verified
+Baruch,Greensboro,537.0,False,osrm
+Baruch,Greenville,906.1,False,osrm
 Baruch,Grinnell,1064.8,False,osrm
 Baruch,Guilford,550.0,False,ncaa_verified
 Baruch,Gustavus Adolphus,1233.0,False,ncaa_verified
 Baruch,Gwynedd-Mercy,99.4,False,osrm
 Baruch,Hamilton,258.0,False,ncaa_verified
 Baruch,Hamline,1197.0,False,ncaa_verified
+Baruch,Hampden-Sydney,399.4,False,osrm
 Baruch,Hanover,721.0,False,ncaa_verified
 Baruch,Hardin-Simmons,1735.0,False,ncaa_verified
+Baruch,Hartford,116.5,False,osrm
+Baruch,Heidelberg,540.7,False,osrm
+Baruch,Hendrix,1258.6,False,osrm
 Baruch,Hood,241.6,False,osrm
 Baruch,Hope,770.0,False,ncaa_verified
 Baruch,Houghton,334.0,False,ncaa_verified
@@ -3843,6 +4229,7 @@ Bates,WPI,168.0,False,ncaa_verified
 Bates,Yeshiva,334.8,False,osrm
 Bates,York (PA),533.0,False,ncaa_verified
 Belhaven,Benedictine,746.0,False,ncaa_verified
+Belhaven,Berea,622.2,False,osrm
 Belhaven,Berry,358.0,False,ncaa_verified
 Belhaven,Bethany (WV),928.9,False,osrm
 Belhaven,Bethany Luth,1011.0,False,ncaa_verified
@@ -3862,6 +4249,7 @@ Belhaven,Capital,792.0,False,ncaa_verified
 Belhaven,Carnegie Mellon,995.0,False,ncaa_verified
 Belhaven,Carroll,856.0,False,ncaa_verified
 Belhaven,Carthage,805.0,False,ncaa_verified
+Belhaven,Case Western,935.5,False,osrm
 Belhaven,Catholic,1012.0,False,ncaa_verified
 Belhaven,Centenary (NJ),1151.6,False,osrm
 Belhaven,Centre,607.0,False,ncaa_verified
@@ -3879,6 +4267,8 @@ Belhaven,Colorado College,1277.0,False,ncaa_verified
 Belhaven,Concordia (TX),537.0,False,osrm
 Belhaven,Concordia (WI),839.2,False,osrm
 Belhaven,Concordia Moorhead,1266.0,False,ncaa_verified
+Belhaven,Connecticut College,1323.0,False,osrm
+Belhaven,Cornell,754.6,False,osrm
 Belhaven,Cortland,1250.0,False,ncaa_verified
 Belhaven,Crown,1049.0,False,osrm
 Belhaven,Denison,823.0,False,ncaa_verified
@@ -3889,6 +4279,7 @@ Belhaven,Drew,1180.0,False,osrm
 Belhaven,Dubuque,824.3,False,osrm
 Belhaven,East Texas Baptist,264.0,False,ncaa_verified
 Belhaven,Eastern Connecticut,1337.4,False,osrm
+Belhaven,Eastern Mennonite,851.2,False,osrm
 Belhaven,Elizabethtown,1075.0,False,ncaa_verified
 Belhaven,Elmhurst,742.7,False,osrm
 Belhaven,Emmanuel,1412.0,False,ncaa_verified
@@ -3900,9 +4291,11 @@ Belhaven,Framingham St.,1423.0,False,ncaa_verified
 Belhaven,Franciscan,931.5,False,osrm
 Belhaven,Franklin,679.0,False,ncaa_verified
 Belhaven,Franklin & Marshall,1069.7,False,osrm
+Belhaven,Fredonia,1074.7,False,osrm
 Belhaven,Gallaudet,1011.0,False,ncaa_verified
 Belhaven,George Fox,2475.2,False,osrm
 Belhaven,Gettysburg,1025.0,False,ncaa_verified
+Belhaven,Greensboro,714.6,False,osrm
 Belhaven,Greenville,525.0,False,ncaa_verified
 Belhaven,Grinnell,797.1,False,osrm
 Belhaven,Guilford,786.0,False,ncaa_verified
@@ -3915,6 +4308,7 @@ Belhaven,Hanover,634.0,False,ncaa_verified
 Belhaven,Hardin-Simmons,593.0,False,ncaa_verified
 Belhaven,Hartford,1316.7,False,osrm
 Belhaven,Heidelberg,864.6,False,osrm
+Belhaven,Hendrix,284.6,False,osrm
 Belhaven,Hilbert,1106.8,False,osrm
 Belhaven,Hood,966.6,False,osrm
 Belhaven,Hope,856.0,False,ncaa_verified
@@ -4116,6 +4510,7 @@ Belhaven,Worcester St.,1373.8,False,osrm
 Belhaven,WPI,1389.0,False,ncaa_verified
 Belhaven,Yeshiva,1207.2,False,osrm
 Belhaven,York (PA),1035.0,False,ncaa_verified
+Benedictine,Berea,418.2,False,osrm
 Benedictine,Berry,685.0,False,ncaa_verified
 Benedictine,Bethany (WV),498.0,True,ncaa_verified
 Benedictine,Bethany Luth,432.0,False,ncaa_verified
@@ -4128,6 +4523,7 @@ Benedictine,Bridgewater St.,1023.0,False,ncaa_verified
 Benedictine,Brockport St.,619.0,False,ncaa_verified
 Benedictine,Brooklyn College,823.0,False,ncaa_verified
 Benedictine,Bryn Athyn,787.0,False,ncaa_verified
+Benedictine,Cairn,783.6,False,osrm
 Benedictine,Cal Lutheran,2033.0,False,ncaa_verified
 Benedictine,Calvin,197.3,False,osrm
 Benedictine,Capital,381.0,False,ncaa_verified
@@ -4136,40 +4532,62 @@ Benedictine,Carroll,114.0,False,ncaa_verified
 Benedictine,Carthage,77.0,False,ncaa_verified
 Benedictine,Case Western,361.9,False,osrm
 Benedictine,Catholic,724.0,False,ncaa_verified
+Benedictine,Centenary (NJ),759.4,False,osrm
 Benedictine,Centre,399.0,False,ncaa_verified
 Benedictine,Chapman,1992.3,False,osrm
 Benedictine,Chatham,491.0,True,ncaa_verified
 Benedictine,Chicago,35.0,False,ncaa_verified
 Benedictine,Christopher Newport,886.0,False,ncaa_verified
+Benedictine,City College (NY),809.6,False,osrm
 Benedictine,Claremont-Mudd-Scripps,1963.6,False,osrm
 Benedictine,Clark,968.2,False,osrm
 Benedictine,Coast Guard,934.0,False,ncaa_verified
 Benedictine,Coe,222.0,False,ncaa_verified
 Benedictine,Colby,1181.4,False,osrm
 Benedictine,Colorado College,1048.0,False,ncaa_verified
+Benedictine,Concordia (WI),126.8,False,osrm
 Benedictine,Concordia Moorhead,639.0,False,ncaa_verified
 Benedictine,Connecticut College,922.8,False,osrm
+Benedictine,Cornell,212.8,False,osrm
 Benedictine,Cortland,736.0,False,ncaa_verified
+Benedictine,Crown,454.9,False,osrm
 Benedictine,Denison,409.0,False,ncaa_verified
 Benedictine,DePauw,199.0,False,ncaa_verified
 Benedictine,DeSales,762.0,False,ncaa_verified
 Benedictine,Dickinson,658.4,False,osrm
+Benedictine,Drew,780.2,False,osrm
+Benedictine,Dubuque,215.3,False,osrm
 Benedictine,East Texas Baptist,872.0,False,ncaa_verified
+Benedictine,Eastern Connecticut,935.8,False,osrm
+Benedictine,Eastern Mennonite,703.5,False,osrm
 Benedictine,Elizabethtown,701.0,False,ncaa_verified
+Benedictine,Elmhurst,26.9,False,osrm
 Benedictine,Emmanuel,1005.5,False,osrm
 Benedictine,Emory,742.0,False,ncaa_verified
 Benedictine,Endicott,1032.0,False,ncaa_verified
+Benedictine,Eureka,104.2,False,osrm
+Benedictine,Farmingdale,840.8,False,osrm
 Benedictine,Framingham St.,987.0,False,ncaa_verified
+Benedictine,Franciscan,472.5,False,osrm
 Benedictine,Franklin,228.0,False,ncaa_verified
 Benedictine,Franklin & Marshall,707.0,False,osrm
 Benedictine,Gallaudet,731.0,False,ncaa_verified
+Benedictine,George Fox,2124.5,False,osrm
 Benedictine,Gettysburg,665.0,False,ncaa_verified
+Benedictine,Greensboro,729.5,False,osrm
+Benedictine,Greenville,234.2,False,osrm
+Benedictine,Grinnell,265.2,False,osrm
 Benedictine,Guilford,751.0,False,ncaa_verified
 Benedictine,Gustavus Adolphus,439.0,False,ncaa_verified
+Benedictine,Gwynedd-Mercy,767.8,False,osrm
 Benedictine,Hamilton,734.5,False,osrm
 Benedictine,Hamline,402.0,False,ncaa_verified
+Benedictine,Hampden-Sydney,774.7,False,osrm
 Benedictine,Hanover,305.0,False,ncaa_verified
 Benedictine,Hardin-Simmons,1065.0,False,ncaa_verified
+Benedictine,Hartford,907.3,False,osrm
+Benedictine,Heidelberg,296.9,False,osrm
+Benedictine,Hendrix,608.9,False,osrm
 Benedictine,Hollins,664.5,False,osrm
 Benedictine,Hope,176.0,False,ncaa_verified
 Benedictine,Houghton,597.0,False,ncaa_verified
@@ -4302,38 +4720,81 @@ Benedictine,Wittenberg,333.0,False,ncaa_verified
 Benedictine,WPI,969.8,False,osrm
 Benedictine,York (PA),701.0,False,ncaa_verified
 Berea,Berry,303.0,False,ncaa_verified
+Berea,Bethany (WV),345.0,False,osrm
+Berea,Bethany Luth,846.4,False,osrm
+Berea,Bethel,839.2,False,osrm
 Berea,Bowdoin,1059.0,False,ncaa_verified
+Berea,Brandeis,922.3,False,osrm
+Berea,Brevard,252.3,False,osrm
 Berea,Bridgewater (VA),425.0,False,ncaa_verified
 Berea,Bridgewater St.,937.0,False,ncaa_verified
+Berea,Brockport St.,614.1,False,osrm
 Berea,Brooklyn College,753.0,False,ncaa_verified
+Berea,Bryn Athyn,653.7,False,osrm
+Berea,Cairn,659.5,False,osrm
 Berea,Cal Lutheran,2239.0,False,ncaa_verified
 Berea,Calvin,495.0,True,ncaa_verified
+Berea,Capital,230.9,False,osrm
 Berea,Carnegie Mellon,409.0,False,ncaa_verified
 Berea,Carroll,515.0,True,ncaa_verified
+Berea,Carthage,470.0,False,osrm
+Berea,Case Western,373.5,False,osrm
 Berea,Catholic,551.0,False,ncaa_verified
+Berea,Centenary (NJ),672.5,False,osrm
 Berea,Centre,32.0,False,ncaa_verified
+Berea,Chapman,2197.3,False,osrm
 Berea,Chatham,430.0,False,ncaa_verified
 Berea,Chicago,402.0,False,ncaa_verified
 Berea,Christopher Newport,574.0,False,ncaa_verified
+Berea,City College (NY),729.7,False,osrm
+Berea,Claremont-Mudd-Scripps,2168.6,False,osrm
+Berea,Clark,892.9,False,osrm
 Berea,Coast Guard,846.0,False,ncaa_verified
 Berea,Coe,613.0,False,ncaa_verified
+Berea,Colby,1106.1,False,osrm
 Berea,Colorado College,1204.0,False,ncaa_verified
 Berea,Concordia Moorhead,1049.0,False,ncaa_verified
+Berea,Connecticut College,843.9,False,osrm
+Berea,Cornell,602.0,False,osrm
 Berea,Cortland,730.0,False,ncaa_verified
+Berea,Crown,853.5,False,osrm
 Berea,Denison,260.0,False,ncaa_verified
 Berea,DePauw,270.0,False,ncaa_verified
 Berea,DeSales,639.0,False,ncaa_verified
 Berea,Dickinson,533.0,False,ncaa_verified
+Berea,Drew,700.8,False,osrm
+Berea,Dubuque,604.8,False,osrm
 Berea,East Texas Baptist,773.0,False,ncaa_verified
+Berea,Eastern Connecticut,858.2,False,osrm
+Berea,Eastern Mennonite,429.6,False,osrm
 Berea,Elizabethtown,567.0,False,ncaa_verified
+Berea,Elmhurst,420.9,False,osrm
 Berea,Emmanuel,933.0,False,ncaa_verified
 Berea,Emory,349.0,False,ncaa_verified
+Berea,Endicott,953.9,False,osrm
+Berea,Eureka,423.7,False,osrm
+Berea,Farmingdale,768.6,False,osrm
 Berea,Framingham St.,914.0,False,ncaa_verified
+Berea,Franciscan,355.7,False,osrm
+Berea,Franklin,205.3,False,osrm
+Berea,Franklin & Marshall,582.8,False,osrm
+Berea,Gallaudet,529.7,False,osrm
+Berea,George Fox,2443.1,False,osrm
 Berea,Gettysburg,525.0,False,ncaa_verified
+Berea,Greensboro,372.2,False,osrm
+Berea,Greenville,363.0,False,osrm
+Berea,Grinnell,654.5,False,osrm
 Berea,Guilford,412.0,False,ncaa_verified
 Berea,Gustavus Adolphus,852.0,False,ncaa_verified
+Berea,Gwynedd-Mercy,643.7,False,osrm
 Berea,Hamilton,739.0,False,ncaa_verified
+Berea,Hamline,818.5,False,osrm
+Berea,Hampden-Sydney,444.1,False,osrm
+Berea,Hanover,128.9,False,osrm
 Berea,Hardin-Simmons,1056.0,False,ncaa_verified
+Berea,Hartford,837.6,False,osrm
+Berea,Heidelberg,302.4,False,osrm
+Berea,Hendrix,583.0,False,osrm
 Berea,Hope,451.0,False,ncaa_verified
 Berea,Illinois Wesleyan,398.0,False,ncaa_verified
 Berea,Ithaca,693.0,False,ncaa_verified
@@ -4434,6 +4895,7 @@ Berry,Bridgewater St.,1093.0,False,ncaa_verified
 Berry,Brockport St.,912.0,False,ncaa_verified
 Berry,Brooklyn College,885.0,False,ncaa_verified
 Berry,Bryn Athyn,818.0,False,ncaa_verified
+Berry,Cairn,809.7,False,osrm
 Berry,Cal Lutheran,2188.0,False,ncaa_verified
 Berry,Calvin,768.0,False,ncaa_verified
 Berry,Capital,529.0,False,ncaa_verified
@@ -4448,41 +4910,54 @@ Berry,Chapman,2142.0,False,ncaa_verified
 Berry,Chatham,669.0,False,ncaa_verified
 Berry,Chicago,658.0,False,ncaa_verified
 Berry,Christopher Newport,653.0,False,ncaa_verified
+Berry,City College (NY),873.3,False,osrm
 Berry,Claremont-Mudd-Scripps,2119.8,False,osrm
 Berry,Clark,1036.5,False,osrm
 Berry,Coast Guard,1003.0,False,ncaa_verified
 Berry,Coe,786.0,False,ncaa_verified
 Berry,Colby,1249.6,False,osrm
 Berry,Colorado College,1335.0,False,ncaa_verified
+Berry,Concordia (WI),740.2,False,osrm
 Berry,Concordia Moorhead,1309.0,False,ncaa_verified
 Berry,Connecticut College,987.4,False,osrm
+Berry,Cornell,789.2,False,osrm
 Berry,Cortland,928.0,False,ncaa_verified
+Berry,Crown,1088.0,False,osrm
 Berry,Denison,560.0,False,ncaa_verified
 Berry,DePauw,494.0,True,ncaa_verified
 Berry,DeSales,796.0,False,ncaa_verified
 Berry,Dickinson,690.0,False,ncaa_verified
+Berry,Drew,844.4,False,osrm
+Berry,Dubuque,792.0,False,osrm
 Berry,East Texas Baptist,610.0,False,ncaa_verified
 Berry,Eastern Connecticut,1021.0,False,ncaa_verified
 Berry,Elizabethtown,731.0,False,ncaa_verified
+Berry,Elmhurst,651.9,False,osrm
 Berry,Emmanuel,1091.0,False,ncaa_verified
 Berry,Emory,78.0,False,ncaa_verified
 Berry,Endicott,1115.0,False,ncaa_verified
 Berry,Eureka,642.0,False,ncaa_verified
+Berry,Farmingdale,898.7,False,osrm
 Berry,Framingham St.,1071.0,False,ncaa_verified
+Berry,Franciscan,642.0,False,osrm
 Berry,Franklin,461.0,False,ncaa_verified
 Berry,Franklin & Marshall,734.1,False,osrm
+Berry,Fredonia,799.0,False,osrm
 Berry,Gallaudet,667.0,False,ncaa_verified
 Berry,George Fox,2572.6,False,osrm
 Berry,Gettysburg,682.0,False,ncaa_verified
 Berry,Greensboro,392.0,False,ncaa_verified
 Berry,Greenville,488.0,True,ncaa_verified
+Berry,Grinnell,826.3,False,osrm
 Berry,Guilford,396.0,False,ncaa_verified
 Berry,Gustavus Adolphus,1042.0,False,ncaa_verified
+Berry,Gwynedd-Mercy,793.8,False,osrm
 Berry,Hamilton,972.0,False,ncaa_verified
 Berry,Hamline,1072.0,False,ncaa_verified
 Berry,Hanover,418.0,False,ncaa_verified
 Berry,Hardin-Simmons,941.0,False,ncaa_verified
 Berry,Hartford,981.1,False,osrm
+Berry,Heidelberg,588.8,False,osrm
 Berry,Hollins,415.4,False,osrm
 Berry,Hope,712.0,False,ncaa_verified
 Berry,Houghton,890.0,False,ncaa_verified
@@ -4667,6 +5142,8 @@ Bethany (WV),Bridgewater (VA),239.6,False,osrm
 Bethany (WV),Bridgewater St.,605.0,False,osrm
 Bethany (WV),Brockport St.,312.8,False,osrm
 Bethany (WV),Brooklyn College,419.0,False,osrm
+Bethany (WV),Bryn Athyn,338.6,False,osrm
+Bethany (WV),Cairn,344.4,False,osrm
 Bethany (WV),Cal Lutheran,2441.3,False,osrm
 Bethany (WV),Calvin,421.6,False,osrm
 Bethany (WV),Capital,140.9,False,osrm
@@ -4681,34 +5158,54 @@ Bethany (WV),Chapman,2388.3,False,osrm
 Bethany (WV),Chatham,46.7,False,osrm
 Bethany (WV),Chicago,464.1,False,osrm
 Bethany (WV),Christopher Newport,400.9,False,osrm
+Bethany (WV),City College (NY),410.1,False,osrm
 Bethany (WV),Claremont-Mudd-Scripps,2359.6,False,osrm
 Bethany (WV),Clark,573.3,False,osrm
+Bethany (WV),Coast Guard,523.5,False,osrm
 Bethany (WV),Coe,704.9,False,osrm
 Bethany (WV),Colby,786.4,False,osrm
 Bethany (WV),Colorado College,1387.6,False,osrm
+Bethany (WV),Concordia (WI),574.0,False,osrm
 Bethany (WV),Concordia Moorhead,1111.5,False,osrm
 Bethany (WV),Connecticut College,526.0,False,ncaa_verified
+Bethany (WV),Cornell,691.0,False,osrm
 Bethany (WV),Cortland,386.9,False,osrm
+Bethany (WV),Crown,912.1,False,osrm
 Bethany (WV),Denison,125.5,False,osrm
 Bethany (WV),DePauw,366.3,False,osrm
 Bethany (WV),DeSales,318.3,False,osrm
 Bethany (WV),Dickinson,219.2,False,osrm
+Bethany (WV),Drew,381.2,False,osrm
+Bethany (WV),Dubuque,649.7,False,osrm
 Bethany (WV),East Texas Baptist,1078.0,False,osrm
+Bethany (WV),Eastern Connecticut,538.6,False,osrm
+Bethany (WV),Eastern Mennonite,229.9,False,osrm
 Bethany (WV),Elizabethtown,249.9,False,osrm
 Bethany (WV),Emmanuel,610.6,False,osrm
 Bethany (WV),Emory,671.1,False,osrm
 Bethany (WV),Endicott,634.3,False,osrm
+Bethany (WV),Farmingdale,453.5,False,osrm
 Bethany (WV),Framingham St.,590.9,False,osrm
+Bethany (WV),Franciscan,17.3,False,osrm
 Bethany (WV),Franklin,334.7,False,osrm
 Bethany (WV),Franklin & Marshall,267.7,False,osrm
+Bethany (WV),Fredonia,211.4,False,osrm
+Bethany (WV),Gallaudet,263.2,False,osrm
 Bethany (WV),George Fox,2602.7,False,osrm
 Bethany (WV),Gettysburg,214.9,False,osrm
+Bethany (WV),Greensboro,413.0,False,osrm
+Bethany (WV),Grinnell,743.5,False,osrm
 Bethany (WV),Guilford,409.6,False,osrm
 Bethany (WV),Gustavus Adolphus,913.5,False,osrm
+Bethany (WV),Gwynedd-Mercy,328.6,False,osrm
 Bethany (WV),Hamilton,439.3,False,osrm
 Bethany (WV),Hamline,875.3,False,osrm
+Bethany (WV),Hampden-Sydney,341.8,False,osrm
+Bethany (WV),Hanover,323.2,False,osrm
 Bethany (WV),Hardin-Simmons,1362.3,False,osrm
 Bethany (WV),Hartford,525,False,ncaa_verified
+Bethany (WV),Heidelberg,183.5,False,osrm
+Bethany (WV),Hendrix,867.2,False,osrm
 Bethany (WV),Hollins,297.1,False,osrm
 Bethany (WV),Hope,433.4,False,osrm
 Bethany (WV),Houghton,270.2,False,osrm
@@ -4859,6 +5356,7 @@ Bethany Luth,Carroll,348.0,False,ncaa_verified
 Bethany Luth,Carthage,395.0,False,ncaa_verified
 Bethany Luth,Case Western,778.8,False,osrm
 Bethany Luth,Catholic,1132.0,False,ncaa_verified
+Bethany Luth,Centenary (NJ),1176.3,False,osrm
 Bethany Luth,Centre,813.0,False,ncaa_verified
 Bethany Luth,Chapman,1832.0,False,ncaa_verified
 Bethany Luth,Chatham,898.0,False,ncaa_verified
@@ -4875,6 +5373,7 @@ Bethany Luth,Concordia (TX),1127.7,False,osrm
 Bethany Luth,Concordia (WI),374.0,False,osrm
 Bethany Luth,Concordia Moorhead,304.0,False,ncaa_verified
 Bethany Luth,Connecticut College,1339.7,False,osrm
+Bethany Luth,Cornell,258.2,False,osrm
 Bethany Luth,Cortland,1143.0,False,ncaa_verified
 Bethany Luth,Crown,60.5,False,osrm
 Bethany Luth,Denison,823.0,False,ncaa_verified
@@ -4885,6 +5384,7 @@ Bethany Luth,Drew,1197.1,False,osrm
 Bethany Luth,Dubuque,276.0,False,osrm
 Bethany Luth,East Texas Baptist,952.0,False,ncaa_verified
 Bethany Luth,Eastern Connecticut,1352.8,False,osrm
+Bethany Luth,Eastern Mennonite,1120.4,False,osrm
 Bethany Luth,Elizabethtown,1108.0,False,ncaa_verified
 Bethany Luth,Elmhurst,419.2,False,osrm
 Bethany Luth,Emmanuel,1426.1,False,ncaa_verified
@@ -4896,9 +5396,11 @@ Bethany Luth,Framingham St.,1394.0,False,ncaa_verified
 Bethany Luth,Franciscan,889.4,False,osrm
 Bethany Luth,Franklin,640.0,False,ncaa_verified
 Bethany Luth,Franklin & Marshall,1124.9,False,osrm
+Bethany Luth,Fredonia,923.5,False,osrm
 Bethany Luth,Gallaudet,1137.0,False,ncaa_verified
 Bethany Luth,George Fox,1723.8,False,osrm
 Bethany Luth,Gettysburg,1073.0,False,ncaa_verified
+Bethany Luth,Greensboro,1151.4,False,osrm
 Bethany Luth,Greenville,565.0,False,ncaa_verified
 Bethany Luth,Grinnell,239.9,False,osrm
 Bethany Luth,Guilford,1165.0,False,ncaa_verified
@@ -4911,6 +5413,7 @@ Bethany Luth,Hanover,718.0,False,ncaa_verified
 Bethany Luth,Hardin-Simmons,1044.0,False,ncaa_verified
 Bethany Luth,Hartford,1324.2,False,osrm
 Bethany Luth,Heidelberg,713.8,False,osrm
+Bethany Luth,Hendrix,792.7,False,osrm
 Bethany Luth,Hilbert,955.7,False,osrm
 Bethany Luth,Hollins,1086.5,False,osrm
 Bethany Luth,Hood,1084.7,False,osrm
@@ -5124,6 +5627,7 @@ Bethel,Bridgewater St.,1408.0,False,ncaa_verified
 Bethel,Brockport St.,1002.0,False,ncaa_verified
 Bethel,Brooklyn College,1207.0,False,ncaa_verified
 Bethel,Bryn Athyn,1174.0,False,ncaa_verified
+Bethel,Cairn,1194.5,False,osrm
 Bethel,Cal Lutheran,1978.0,False,ncaa_verified
 Bethel,Calvin,595.0,False,ncaa_verified
 Bethel,Capital,768.0,False,ncaa_verified
@@ -5138,43 +5642,56 @@ Bethel,Chapman,1932.0,False,ncaa_verified
 Bethel,Chatham,875.0,False,ncaa_verified
 Bethel,Chicago,417.0,False,ncaa_verified
 Bethel,Christopher Newport,1270.0,False,ncaa_verified
+Bethel,City College (NY),1220.5,False,osrm
 Bethel,Claremont-Mudd-Scripps,1887.7,False,ncaa_verified
 Bethel,Clark,1379.1,False,osrm
 Bethel,Coast Guard,1318.0,False,ncaa_verified
 Bethel,Coe,258.0,False,ncaa_verified
 Bethel,Colby,1521.3,False,ncaa_verified
 Bethel,Colorado College,994.0,False,ncaa_verified
+Bethel,Concordia (WI),367.9,False,osrm
 Bethel,Concordia Moorhead,234.0,False,ncaa_verified
 Bethel,Connecticut College,1333.7,False,osrm
 Bethel,Cornell,290.0,False,osrm
 Bethel,Cortland,1120.0,False,ncaa_verified
+Bethel,Crown,53.1,False,osrm
 Bethel,Denison,751.0,False,ncaa_verified
 Bethel,DePauw,589.0,False,ncaa_verified
 Bethel,DeSales,1146.0,False,ncaa_verified
 Bethel,Dickinson,1069.3,False,ncaa_verified
+Bethel,Drew,1191.1,False,osrm
+Bethel,Dubuque,271.2,False,osrm
 Bethel,East Texas Baptist,993.0,False,ncaa_verified
 Bethel,Eastern Connecticut,1330.0,False,ncaa_verified
 Bethel,Eastern Mennonite,1114.4,False,osrm
 Bethel,Elizabethtown,1085.0,False,ncaa_verified
+Bethel,Elmhurst,413.2,False,osrm
 Bethel,Emmanuel,1416.4,False,ncaa_verified
 Bethel,Emory,1134.0,False,ncaa_verified
 Bethel,Endicott,1416.0,False,ncaa_verified
 Bethel,Eureka,456.0,False,ncaa_verified
+Bethel,Farmingdale,1251.7,False,osrm
 Bethel,Framingham St.,1372.0,False,ncaa_verified
+Bethel,Franciscan,883.4,False,osrm
 Bethel,Franklin,616.0,False,ncaa_verified
 Bethel,Franklin & Marshall,1117.9,False,osrm
 Bethel,Fredonia,917.5,False,osrm
 Bethel,Gallaudet,1113.0,False,ncaa_verified
 Bethel,George Fox,1763.0,False,osrm
 Bethel,Gettysburg,1049.0,False,ncaa_verified
+Bethel,Greensboro,1145.3,False,osrm
 Bethel,Greenville,596.0,False,ncaa_verified
+Bethel,Grinnell,299.6,False,osrm
 Bethel,Guilford,1141.0,False,ncaa_verified
 Bethel,Gustavus Adolphus,79.0,False,ncaa_verified
+Bethel,Gwynedd-Mercy,1178.7,False,osrm
 Bethel,Hamilton,1129.0,False,ncaa_verified
 Bethel,Hamline,8.0,False,ncaa_verified
+Bethel,Hampden-Sydney,1190.5,False,osrm
 Bethel,Hanover,695.0,False,ncaa_verified
 Bethel,Hardin-Simmons,1084.0,False,ncaa_verified
 Bethel,Hartford,1318.2,False,osrm
+Bethel,Heidelberg,707.8,False,osrm
 Bethel,Hendrix,852.4,False,osrm
 Bethel,Hollins,1080.4,False,osrm
 Bethel,Hope,561.0,False,ncaa_verified
@@ -5354,6 +5871,7 @@ Bowdoin,Bridgewater St.,165.0,False,ncaa_verified
 Bowdoin,Brockport St.,539.0,False,ncaa_verified
 Bowdoin,Brooklyn College,348.0,False,ncaa_verified
 Bowdoin,Bryn Athyn,430.0,False,ncaa_verified
+Bowdoin,Cairn,419.6,False,osrm
 Bowdoin,Cal Lutheran,3152.0,False,ncaa_verified
 Bowdoin,Calvin,958.0,False,ncaa_verified
 Bowdoin,Capital,893.0,False,ncaa_verified
@@ -5368,29 +5886,37 @@ Bowdoin,Chapman,3107.0,False,ncaa_verified
 Bowdoin,Chatham,693.0,False,ncaa_verified
 Bowdoin,Chicago,1102.0,False,ncaa_verified
 Bowdoin,Christopher Newport,738.0,False,ncaa_verified
+Bowdoin,City College (NY),331.4,False,osrm
 Bowdoin,Claremont-Mudd-Scripps,3086.9,False,ncaa_verified
 Bowdoin,Clark,164.0,False,osrm
 Bowdoin,Coast Guard,235.0,False,ncaa_verified
 Bowdoin,Coe,1339.0,False,ncaa_verified
 Bowdoin,Colby,50.9,False,ncaa_verified
 Bowdoin,Colorado College,2130.0,False,ncaa_verified
+Bowdoin,Concordia (WI),1219.8,False,osrm
 Bowdoin,Concordia Moorhead,1751.0,False,ncaa_verified
 Bowdoin,Connecticut College,233.6,False,osrm
 Bowdoin,Cornell,1336.1,False,osrm
 Bowdoin,Cortland,452.0,False,ncaa_verified
+Bowdoin,Crown,1557.9,False,osrm
 Bowdoin,Denison,856.0,False,ncaa_verified
 Bowdoin,DePauw,1110.0,False,ncaa_verified
 Bowdoin,DeSales,434.0,False,ncaa_verified
 Bowdoin,Dickinson,527.0,False,ncaa_verified
+Bowdoin,Drew,365.2,False,osrm
+Bowdoin,Dubuque,1295.5,False,osrm
 Bowdoin,East Texas Baptist,1791.0,False,ncaa_verified
 Bowdoin,Eastern Connecticut,219.0,False,ncaa_verified
 Bowdoin,Eastern Mennonite,688.2,False,osrm
 Bowdoin,Elizabethtown,517.0,True,ncaa_verified
+Bowdoin,Elmhurst,1134.2,False,osrm
 Bowdoin,Emmanuel,135.0,False,ncaa_verified
 Bowdoin,Emory,1201.0,False,ncaa_verified
 Bowdoin,Endicott,129.0,False,ncaa_verified
 Bowdoin,Eureka,1221.0,False,ncaa_verified
+Bowdoin,Farmingdale,351.8,False,osrm
 Bowdoin,Framingham St.,154.0,False,ncaa_verified
+Bowdoin,Franciscan,734.4,False,osrm
 Bowdoin,Franklin,1080.0,False,osrm
 Bowdoin,Franklin & Marshall,505.0,True,ncaa_verified
 Bowdoin,Fredonia,620.8,False,osrm
@@ -5399,13 +5925,17 @@ Bowdoin,George Fox,3247.7,False,osrm
 Bowdoin,Gettysburg,549.0,False,ncaa_verified
 Bowdoin,Greensboro,876.0,False,ncaa_verified
 Bowdoin,Greenville,1256.0,False,ncaa_verified
+Bowdoin,Grinnell,1388.5,False,osrm
 Bowdoin,Guilford,886.0,False,ncaa_verified
 Bowdoin,Gustavus Adolphus,1548.0,False,ncaa_verified
+Bowdoin,Gwynedd-Mercy,435.3,False,osrm
 Bowdoin,Hamilton,403.0,False,ncaa_verified
 Bowdoin,Hamline,1514.0,False,ncaa_verified
+Bowdoin,Hampden-Sydney,735.3,False,osrm
 Bowdoin,Hanover,1073.0,False,ncaa_verified
 Bowdoin,Hardin-Simmons,2069.0,False,ncaa_verified
 Bowdoin,Hartford,228.4,False,osrm
+Bowdoin,Heidelberg,864.5,False,osrm
 Bowdoin,Hendrix,1594.6,False,osrm
 Bowdoin,Hollins,789.8,False,osrm
 Bowdoin,Hope,985.0,False,ncaa_verified
@@ -5592,6 +6122,7 @@ Brandeis,Bridgewater (VA),564.0,False,osrm
 Brandeis,Bridgewater St.,33.0,False,osrm
 Brandeis,Brockport St.,401.0,False,osrm
 Brandeis,Brooklyn College,207.7,False,osrm
+Brandeis,Bryn Athyn,289.1,False,osrm
 Brandeis,Cairn,285.2,False,osrm
 Brandeis,Cal Lutheran,3034.0,False,osrm
 Brandeis,Calvin,822.8,False,osrm
@@ -5601,13 +6132,16 @@ Brandeis,Carroll,1085.2,False,osrm
 Brandeis,Carthage,1046.0,False,osrm
 Brandeis,Case Western,628.5,False,osrm
 Brandeis,Catholic,424.3,False,osrm
+Brandeis,Centenary (NJ),250.3,False,osrm
 Brandeis,Centre,943.0,False,osrm
 Brandeis,Chapman,2981.0,False,osrm
 Brandeis,Chatham,558.1,False,osrm
 Brandeis,Chicago,976.8,False,osrm
 Brandeis,Christopher Newport,598.1,False,osrm
+Brandeis,City College (NY),196.8,False,osrm
 Brandeis,Claremont-Mudd-Scripps,2953.8,False,osrm
 Brandeis,Clark,35.4,False,osrm
+Brandeis,Coast Guard,101.7,False,osrm
 Brandeis,Coe,1215.4,False,osrm
 Brandeis,Colby,189.1,False,osrm
 Brandeis,Colorado College,1997.0,False,osrm
@@ -5632,22 +6166,30 @@ Brandeis,Elmhurst,999.9,False,osrm
 Brandeis,Emmanuel,11.5,False,osrm
 Brandeis,Emory,1059.4,False,osrm
 Brandeis,Endicott,34.0,False,osrm
+Brandeis,Eureka,1092.6,False,osrm
 Brandeis,Farmingdale,217.3,False,osrm
 Brandeis,Framingham St.,12.3,False,osrm
 Brandeis,Franciscan,599.8,False,osrm
 Brandeis,Franklin,945.5,False,osrm
 Brandeis,Franklin & Marshall,363.5,False,osrm
 Brandeis,Fredonia,489,False,ncaa_verified
+Brandeis,Gallaudet,426.8,False,osrm
+Brandeis,George Fox,3113.2,False,osrm
 Brandeis,Gettysburg,426.3,False,osrm
+Brandeis,Greensboro,738.4,False,osrm
+Brandeis,Greenville,1121.2,False,osrm
 Brandeis,Grinnell,1254.0,False,osrm
 Brandeis,Guilford,747.2,False,osrm
 Brandeis,Gustavus Adolphus,1425.5,False,osrm
 Brandeis,Gwynedd-Mercy,300.7,False,osrm
 Brandeis,Hamilton,261.2,False,osrm
 Brandeis,Hamline,1386.6,False,osrm
+Brandeis,Hampden-Sydney,600.7,False,osrm
+Brandeis,Hanover,936.2,False,osrm
 Brandeis,Hardin-Simmons,1934.2,False,osrm
 Brandeis,Hartford,93.9,False,osrm
 Brandeis,Heidelberg,729.9,False,osrm
+Brandeis,Hendrix,1460.0,False,osrm
 Brandeis,Hollins,655.2,False,osrm
 Brandeis,Hood,441.4,False,osrm
 Brandeis,Hope,849.8,False,osrm
@@ -5827,6 +6369,7 @@ Brevard,Bridgewater St.,969.0,False,ncaa_verified
 Brevard,Brockport St.,789.0,False,ncaa_verified
 Brevard,Brooklyn College,756.0,False,ncaa_verified
 Brevard,Bryn Athyn,675.0,False,ncaa_verified
+Brevard,Cairn,667.9,False,osrm
 Brevard,Cal Lutheran,2379.0,False,ncaa_verified
 Brevard,Calvin,784.0,False,ncaa_verified
 Brevard,Capital,497.0,True,ncaa_verified
@@ -5841,38 +6384,55 @@ Brevard,Chapman,2331.0,False,ncaa_verified
 Brevard,Chatham,524.0,False,ncaa_verified
 Brevard,Chicago,683.0,False,ncaa_verified
 Brevard,Christopher Newport,469.0,False,ncaa_verified
+Brevard,City College (NY),731.6,False,osrm
 Brevard,Claremont-Mudd-Scripps,2295.8,False,ncaa_verified
 Brevard,Clark,894.7,False,osrm
 Brevard,Coast Guard,877.0,False,ncaa_verified
 Brevard,Coe,894.0,False,ncaa_verified
 Brevard,Colby,1107.9,False,ncaa_verified
 Brevard,Colorado College,1485.0,False,ncaa_verified
+Brevard,Concordia (WI),758.1,False,osrm
 Brevard,Concordia Moorhead,1327.0,False,ncaa_verified
 Brevard,Connecticut College,845.7,False,osrm
+Brevard,Cornell,850.9,False,osrm
 Brevard,Cortland,785.0,False,ncaa_verified
+Brevard,Crown,1102.4,False,osrm
 Brevard,Denison,454.0,False,ncaa_verified
 Brevard,DePauw,550.0,False,ncaa_verified
 Brevard,DeSales,653.0,False,ncaa_verified
 Brevard,Dickinson,534.2,False,ncaa_verified
+Brevard,Drew,702.6,False,osrm
+Brevard,Dubuque,853.7,False,osrm
 Brevard,East Texas Baptist,812.0,False,ncaa_verified
+Brevard,Eastern Connecticut,860.0,False,osrm
+Brevard,Eastern Mennonite,373.9,False,osrm
 Brevard,Elizabethtown,589.0,False,ncaa_verified
+Brevard,Elmhurst,669.8,False,osrm
 Brevard,Emmanuel,934.8,False,ncaa_verified
 Brevard,Emory,165.0,False,ncaa_verified
 Brevard,Endicott,991.0,False,ncaa_verified
 Brevard,Eureka,711.0,False,ncaa_verified
+Brevard,Farmingdale,757.0,False,osrm
 Brevard,Framingham St.,946.0,False,ncaa_verified
 Brevard,Franklin,487.0,True,ncaa_verified
 Brevard,Franklin & Marshall,592.4,False,osrm
+Brevard,Fredonia,675.5,False,osrm
 Brevard,Gallaudet,525.0,False,ncaa_verified
 Brevard,George Fox,2692.7,False,osrm
 Brevard,Gettysburg,556.0,False,ncaa_verified
+Brevard,Greensboro,196.5,False,osrm
+Brevard,Greenville,612.6,False,osrm
+Brevard,Grinnell,903.4,False,osrm
 Brevard,Guilford,198.0,False,ncaa_verified
 Brevard,Gustavus Adolphus,1128.0,False,ncaa_verified
+Brevard,Gwynedd-Mercy,652.1,False,osrm
 Brevard,Hamilton,860.0,False,ncaa_verified
 Brevard,Hamline,1093.0,False,ncaa_verified
+Brevard,Hampden-Sydney,325.7,False,osrm
 Brevard,Hanover,440.0,False,ncaa_verified
 Brevard,Hardin-Simmons,1176.0,False,ncaa_verified
 Brevard,Hartford,839.4,False,osrm
+Brevard,Hendrix,689.2,False,osrm
 Brevard,Hollins,273.7,False,osrm
 Brevard,Hope,733.0,False,ncaa_verified
 Brevard,Houghton,771.0,False,ncaa_verified
@@ -6033,6 +6593,7 @@ Bridgewater (VA),Bridgewater St.,578.0,False,ncaa_verified
 Bridgewater (VA),Brockport St.,466.0,False,ncaa_verified
 Bridgewater (VA),Brooklyn College,368.0,False,ncaa_verified
 Bridgewater (VA),Bryn Athyn,302.0,False,ncaa_verified
+Bridgewater (VA),Cairn,306.5,False,osrm
 Bridgewater (VA),Cal Lutheran,2577.0,False,ncaa_verified
 Bridgewater (VA),Calvin,671.0,False,ncaa_verified
 Bridgewater (VA),Capital,345.0,False,ncaa_verified
@@ -6047,29 +6608,37 @@ Bridgewater (VA),Chapman,2530.0,False,ncaa_verified
 Bridgewater (VA),Chatham,263.0,False,ncaa_verified
 Bridgewater (VA),Chicago,715.0,False,ncaa_verified
 Bridgewater (VA),Christopher Newport,193.0,False,ncaa_verified
+Bridgewater (VA),City College (NY),370.2,False,osrm
 Bridgewater (VA),Claremont-Mudd-Scripps,2510.2,False,osrm
 Bridgewater (VA),Clark,538,False,ncaa_verified
 Bridgewater (VA),Coast Guard,486.0,True,ncaa_verified
 Bridgewater (VA),Coe,932.0,False,ncaa_verified
 Bridgewater (VA),Colby,746.5,False,osrm
 Bridgewater (VA),Colorado College,1574.0,False,ncaa_verified
+Bridgewater (VA),Concordia (WI),803.6,False,osrm
 Bridgewater (VA),Concordia Moorhead,1362.0,False,ncaa_verified
 Bridgewater (VA),Connecticut College,487.0,True,ncaa_verified
 Bridgewater (VA),Cornell,911.9,False,osrm
 Bridgewater (VA),Cortland,411.0,False,ncaa_verified
+Bridgewater (VA),Crown,1141.7,False,osrm
 Bridgewater (VA),Denison,351.0,False,ncaa_verified
 Bridgewater (VA),DePauw,594.0,False,ncaa_verified
 Bridgewater (VA),DeSales,279.0,False,ncaa_verified
 Bridgewater (VA),Dickinson,174.0,False,ncaa_verified
+Bridgewater (VA),Drew,341.2,False,osrm
+Bridgewater (VA),Dubuque,879.3,False,osrm
 Bridgewater (VA),East Texas Baptist,1099.0,False,ncaa_verified
 Bridgewater (VA),Eastern Connecticut,504.0,True,ncaa_verified
 Bridgewater (VA),Eastern Mennonite,8.7,False,osrm
 Bridgewater (VA),Elizabethtown,214.0,False,ncaa_verified
+Bridgewater (VA),Elmhurst,718.0,False,osrm
 Bridgewater (VA),Emmanuel,575.0,False,ncaa_verified
 Bridgewater (VA),Emory,524.0,False,ncaa_verified
 Bridgewater (VA),Endicott,601.0,False,ncaa_verified
 Bridgewater (VA),Eureka,742.0,False,ncaa_verified
+Bridgewater (VA),Farmingdale,395.5,False,osrm
 Bridgewater (VA),Framingham St.,555.0,False,ncaa_verified
+Bridgewater (VA),Franciscan,250.0,False,osrm
 Bridgewater (VA),Franklin,529.0,False,ncaa_verified
 Bridgewater (VA),Franklin & Marshall,231.0,False,osrm
 Bridgewater (VA),Fredonia,414.7,False,osrm
@@ -6080,11 +6649,15 @@ Bridgewater (VA),Greensboro,206.0,False,ncaa_verified
 Bridgewater (VA),Greenville,725.0,False,ncaa_verified
 Bridgewater (VA),Guilford,204.0,False,ncaa_verified
 Bridgewater (VA),Gustavus Adolphus,1165.0,False,ncaa_verified
+Bridgewater (VA),Gwynedd-Mercy,290.7,False,osrm
 Bridgewater (VA),Hamilton,456.0,False,ncaa_verified
 Bridgewater (VA),Hamline,1125.0,False,ncaa_verified
+Bridgewater (VA),Hampden-Sydney,114.7,False,osrm
 Bridgewater (VA),Hanover,501.0,True,ncaa_verified
 Bridgewater (VA),Hardin-Simmons,1377.0,False,ncaa_verified
 Bridgewater (VA),Hartford,501,False,ncaa_verified
+Bridgewater (VA),Heidelberg,448.2,False,osrm
+Bridgewater (VA),Hendrix,902.9,False,osrm
 Bridgewater (VA),Hollins,98.1,False,osrm
 Bridgewater (VA),Hope,699.0,False,ncaa_verified
 Bridgewater (VA),Houghton,382.0,False,ncaa_verified
@@ -6268,6 +6841,7 @@ Bridgewater (VA),York (PA),215.0,False,ncaa_verified
 Bridgewater St.,Brockport St.,427.0,False,ncaa_verified
 Bridgewater St.,Brooklyn College,225.0,False,ncaa_verified
 Bridgewater St.,Bryn Athyn,303.0,False,ncaa_verified
+Bridgewater St.,Cairn,297.1,False,osrm
 Bridgewater St.,Cal Lutheran,3039.0,False,ncaa_verified
 Bridgewater St.,Calvin,846.0,False,ncaa_verified
 Bridgewater St.,Capital,751.0,False,ncaa_verified
@@ -6282,27 +6856,37 @@ Bridgewater St.,Chapman,2995.0,False,ncaa_verified
 Bridgewater St.,Chatham,583.0,False,ncaa_verified
 Bridgewater St.,Chicago,992.0,False,ncaa_verified
 Bridgewater St.,Christopher Newport,611.0,False,ncaa_verified
+Bridgewater St.,City College (NY),208.9,False,osrm
 Bridgewater St.,Claremont-Mudd-Scripps,2977.1,False,ncaa_verified
 Bridgewater St.,Clark,58.5,False,osrm
 Bridgewater St.,Coast Guard,93.0,False,ncaa_verified
 Bridgewater St.,Coe,1229.0,False,ncaa_verified
 Bridgewater St.,Colby,208.9,False,ncaa_verified
 Bridgewater St.,Colorado College,1996.0,False,ncaa_verified
+Bridgewater St.,Concordia (WI),1104.9,False,osrm
 Bridgewater St.,Concordia Moorhead,1639.0,False,ncaa_verified
 Bridgewater St.,Connecticut College,83.1,False,osrm
+Bridgewater St.,Cornell,1221.2,False,osrm
 Bridgewater St.,Cortland,339.0,False,ncaa_verified
+Bridgewater St.,Crown,1443.0,False,osrm
 Bridgewater St.,Denison,736.0,False,ncaa_verified
 Bridgewater St.,DePauw,976.0,False,ncaa_verified
 Bridgewater St.,DeSales,308.0,False,ncaa_verified
 Bridgewater St.,Dickinson,406.0,False,ncaa_verified
+Bridgewater St.,Drew,242.8,False,osrm
+Bridgewater St.,Dubuque,1180.7,False,osrm
 Bridgewater St.,East Texas Baptist,1668.0,False,ncaa_verified
 Bridgewater St.,Eastern Connecticut,83.0,False,ncaa_verified
+Bridgewater St.,Eastern Mennonite,565.7,False,osrm
 Bridgewater St.,Elizabethtown,395.0,False,ncaa_verified
+Bridgewater St.,Elmhurst,1019.3,False,osrm
 Bridgewater St.,Emmanuel,33.0,False,ncaa_verified
 Bridgewater St.,Emory,1076.0,False,ncaa_verified
 Bridgewater St.,Endicott,59.0,False,ncaa_verified
 Bridgewater St.,Eureka,1109.0,False,ncaa_verified
+Bridgewater St.,Farmingdale,229.4,False,osrm
 Bridgewater St.,Framingham St.,44.0,False,ncaa_verified
+Bridgewater St.,Franciscan,619.5,False,osrm
 Bridgewater St.,Franklin,947.0,False,ncaa_verified
 Bridgewater St.,Franklin & Marshall,377.5,False,osrm
 Bridgewater St.,Gallaudet,440.0,False,ncaa_verified
@@ -6310,13 +6894,17 @@ Bridgewater St.,George Fox,3136.3,False,osrm
 Bridgewater St.,Gettysburg,428.0,False,ncaa_verified
 Bridgewater St.,Greensboro,754.0,False,ncaa_verified
 Bridgewater St.,Greenville,1120.0,False,ncaa_verified
+Bridgewater St.,Grinnell,1273.7,False,osrm
 Bridgewater St.,Guilford,762.0,False,ncaa_verified
 Bridgewater St.,Gustavus Adolphus,1442.0,False,ncaa_verified
+Bridgewater St.,Gwynedd-Mercy,312.9,False,osrm
 Bridgewater St.,Hamilton,290.0,False,ncaa_verified
 Bridgewater St.,Hamline,1402.0,False,ncaa_verified
+Bridgewater St.,Hampden-Sydney,612.8,False,osrm
 Bridgewater St.,Hanover,933.0,False,ncaa_verified
 Bridgewater St.,Hardin-Simmons,1948.0,False,ncaa_verified
 Bridgewater St.,Hartford,117.0,False,osrm
+Bridgewater St.,Heidelberg,749.6,False,osrm
 Bridgewater St.,Hendrix,1472.2,False,osrm
 Bridgewater St.,Hollins,667.3,False,osrm
 Bridgewater St.,Hope,874.0,False,ncaa_verified
@@ -6504,6 +7092,7 @@ Brockport St.,Carroll,699.0,False,ncaa_verified
 Brockport St.,Carthage,662.0,False,ncaa_verified
 Brockport St.,Case Western,248.3,False,osrm
 Brockport St.,Catholic,394.0,False,ncaa_verified
+Brockport St.,Centenary (NJ),287.0,False,osrm
 Brockport St.,Centre,614.0,False,ncaa_verified
 Brockport St.,Chapman,2590.0,False,ncaa_verified
 Brockport St.,Chatham,281.0,False,ncaa_verified
@@ -6545,7 +7134,9 @@ Brockport St.,Franklin,581.0,False,ncaa_verified
 Brockport St.,Franklin & Marshall,309.4,False,osrm
 Brockport St.,Fredonia,106.0,False,osrm
 Brockport St.,Gallaudet,394.0,False,ncaa_verified
+Brockport St.,George Fox,2716.1,False,osrm
 Brockport St.,Gettysburg,316.0,False,ncaa_verified
+Brockport St.,Greensboro,662.5,False,osrm
 Brockport St.,Greenville,754.0,False,ncaa_verified
 Brockport St.,Grinnell,856.9,False,osrm
 Brockport St.,Guilford,692.0,False,ncaa_verified
@@ -6558,6 +7149,7 @@ Brockport St.,Hanover,572.0,False,ncaa_verified
 Brockport St.,Hardin-Simmons,1590.0,False,ncaa_verified
 Brockport St.,Hartford,355.9,False,osrm
 Brockport St.,Heidelberg,340.9,False,osrm
+Brockport St.,Hendrix,1113.2,False,osrm
 Brockport St.,Hilbert,74.5,False,osrm
 Brockport St.,Hollins,556.5,False,osrm
 Brockport St.,Hood,348.7,False,osrm
@@ -6788,6 +7380,7 @@ Brooklyn College,Concordia (TX),1742.9,False,osrm
 Brooklyn College,Concordia (WI),901.0,False,osrm
 Brooklyn College,Concordia Moorhead,1439.0,False,ncaa_verified
 Brooklyn College,Connecticut College,130.0,False,osrm
+Brooklyn College,Cornell,1021.4,False,osrm
 Brooklyn College,Cortland,223.0,False,ncaa_verified
 Brooklyn College,Crown,1241.4,False,osrm
 Brooklyn College,Denison,526.0,False,ncaa_verified
@@ -6798,6 +7391,7 @@ Brooklyn College,Drew,35.5,False,osrm
 Brooklyn College,Dubuque,980.8,False,osrm
 Brooklyn College,East Texas Baptist,1453.0,False,ncaa_verified
 Brooklyn College,Eastern Connecticut,151.0,False,ncaa_verified
+Brooklyn College,Eastern Mennonite,358.4,False,osrm
 Brooklyn College,Elizabethtown,182.0,False,ncaa_verified
 Brooklyn College,Elmhurst,819.5,False,osrm
 Brooklyn College,Emmanuel,222.0,False,ncaa_verified
@@ -6809,6 +7403,7 @@ Brooklyn College,Framingham St.,203.0,False,ncaa_verified
 Brooklyn College,Franciscan,427.8,False,osrm
 Brooklyn College,Franklin,738.0,False,ncaa_verified
 Brooklyn College,Franklin & Marshall,163.6,False,osrm
+Brooklyn College,Fredonia,401.0,False,osrm
 Brooklyn College,Gallaudet,227.0,False,ncaa_verified
 Brooklyn College,George Fox,2933.0,False,osrm
 Brooklyn College,Gettysburg,218.0,False,ncaa_verified
@@ -6820,9 +7415,12 @@ Brooklyn College,Gustavus Adolphus,1242.0,False,ncaa_verified
 Brooklyn College,Gwynedd-Mercy,99.0,False,osrm
 Brooklyn College,Hamilton,267.0,False,ncaa_verified
 Brooklyn College,Hamline,1202.0,False,ncaa_verified
+Brooklyn College,Hampden-Sydney,399.0,False,osrm
 Brooklyn College,Hanover,726.0,False,ncaa_verified
 Brooklyn College,Hardin-Simmons,1738.0,False,ncaa_verified
 Brooklyn College,Hartford,123.7,False,osrm
+Brooklyn College,Heidelberg,549.8,False,osrm
+Brooklyn College,Hendrix,1264.9,False,osrm
 Brooklyn College,Hilbert,380.1,False,osrm
 Brooklyn College,Hollins,460.0,False,osrm
 Brooklyn College,Hood,241.1,False,osrm
@@ -7032,39 +7630,71 @@ Brooklyn College,Worcester St.,180.8,False,osrm
 Brooklyn College,WPI,187.0,False,ncaa_verified
 Brooklyn College,Yeshiva,19.1,False,osrm
 Brooklyn College,York (PA),195.0,False,ncaa_verified
+Bryn Athyn,Cairn,4.7,False,osrm
 Bryn Athyn,Cal Lutheran,2792.0,False,ncaa_verified
 Bryn Athyn,Calvin,713.0,False,ncaa_verified
 Bryn Athyn,Capital,473.0,False,ncaa_verified
 Bryn Athyn,Carnegie Mellon,308.0,False,ncaa_verified
 Bryn Athyn,Carroll,868.0,False,ncaa_verified
 Bryn Athyn,Carthage,831.0,False,ncaa_verified
+Bryn Athyn,Case Western,430.0,False,osrm
 Bryn Athyn,Catholic,157.0,False,ncaa_verified
+Bryn Athyn,Centenary (NJ),61.2,False,osrm
 Bryn Athyn,Centre,674.0,False,ncaa_verified
 Bryn Athyn,Chapman,2707.0,False,ncaa_verified
 Bryn Athyn,Chatham,304.0,False,ncaa_verified
 Bryn Athyn,Chicago,757.0,False,ncaa_verified
 Bryn Athyn,Christopher Newport,329.0,False,ncaa_verified
+Bryn Athyn,City College (NY),94.0,False,osrm
+Bryn Athyn,Claremont-Mudd-Scripps,2685.2,False,osrm
+Bryn Athyn,Clark,257.2,False,osrm
 Bryn Athyn,Coast Guard,210.0,False,ncaa_verified
 Bryn Athyn,Coe,988.0,False,ncaa_verified
+Bryn Athyn,Colby,470.3,False,osrm
 Bryn Athyn,Colorado College,1716.0,False,ncaa_verified
+Bryn Athyn,Concordia (WI),866.6,False,osrm
 Bryn Athyn,Concordia Moorhead,1402.0,False,ncaa_verified
+Bryn Athyn,Connecticut College,208.1,False,osrm
+Bryn Athyn,Cornell,982.9,False,osrm
 Bryn Athyn,Cortland,219.0,False,ncaa_verified
+Bryn Athyn,Crown,1204.7,False,osrm
 Bryn Athyn,Denison,455.0,False,ncaa_verified
 Bryn Athyn,DePauw,696.0,False,ncaa_verified
 Bryn Athyn,DeSales,38.0,False,ncaa_verified
+Bryn Athyn,Dickinson,127.2,False,osrm
+Bryn Athyn,Drew,66.5,False,osrm
+Bryn Athyn,Dubuque,942.3,False,osrm
 Bryn Athyn,East Texas Baptist,1395.0,False,ncaa_verified
+Bryn Athyn,Eastern Connecticut,222.5,False,osrm
+Bryn Athyn,Eastern Mennonite,289.2,False,osrm
 Bryn Athyn,Elizabethtown,98.0,False,ncaa_verified
+Bryn Athyn,Elmhurst,781.0,False,osrm
+Bryn Athyn,Emmanuel,294.5,False,osrm
 Bryn Athyn,Emory,794.0,False,ncaa_verified
 Bryn Athyn,Endicott,327.0,False,ncaa_verified
 Bryn Athyn,Eureka,883.0,False,ncaa_verified
+Bryn Athyn,Farmingdale,120.6,False,osrm
 Bryn Athyn,Framingham St.,280.0,False,ncaa_verified
+Bryn Athyn,Franciscan,347.0,False,osrm
 Bryn Athyn,Franklin,666.0,False,ncaa_verified
+Bryn Athyn,Franklin & Marshall,82.7,False,osrm
+Bryn Athyn,Fredonia,375.0,False,osrm
 Bryn Athyn,Gallaudet,158.0,False,ncaa_verified
+Bryn Athyn,George Fox,2894.5,False,osrm
 Bryn Athyn,Gettysburg,144.0,False,ncaa_verified
+Bryn Athyn,Greensboro,463.9,False,osrm
+Bryn Athyn,Greenville,842.5,False,osrm
+Bryn Athyn,Grinnell,1035.3,False,osrm
+Bryn Athyn,Guilford,472.7,False,osrm
 Bryn Athyn,Gustavus Adolphus,1239.0,False,ncaa_verified
+Bryn Athyn,Gwynedd-Mercy,14.0,False,osrm
+Bryn Athyn,Hamilton,260.4,False,osrm
 Bryn Athyn,Hamline,1164.0,False,ncaa_verified
+Bryn Athyn,Hampden-Sydney,326.2,False,osrm
 Bryn Athyn,Hanover,655.0,False,ncaa_verified
 Bryn Athyn,Hardin-Simmons,1672.0,False,ncaa_verified
+Bryn Athyn,Hartford,201.8,False,osrm
+Bryn Athyn,Hendrix,1195.6,False,osrm
 Bryn Athyn,Hope,741.0,False,ncaa_verified
 Bryn Athyn,Houghton,334.0,False,ncaa_verified
 Bryn Athyn,Hunter,91.0,False,ncaa_verified
@@ -7173,10 +7803,15 @@ Bryn Athyn,Williams,250.0,False,ncaa_verified
 Bryn Athyn,Wisconsin Lutheran,859.0,False,ncaa_verified
 Bryn Athyn,Wittenberg,519.0,True,ncaa_verified
 Bryn Athyn,York (PA),111.0,False,ncaa_verified
+Cairn,Cal Lutheran,2772.7,False,osrm
 Cairn,Calvin,718.3,False,osrm
+Cairn,Capital,477.4,False,osrm
+Cairn,Carnegie Mellon,313.8,False,osrm
 Cairn,Carroll,872.4,False,osrm
 Cairn,Carthage,833.8,False,osrm
+Cairn,Case Western,435.9,False,osrm
 Cairn,Catholic,150.8,False,osrm
+Cairn,Centenary (NJ),64.0,False,osrm
 Cairn,Centre,679.2,False,osrm
 Cairn,Chapman,2724.9,False,osrm
 Cairn,Chatham,311.1,False,osrm
@@ -7185,35 +7820,55 @@ Cairn,Christopher Newport,324.5,False,osrm
 Cairn,City College (NY),90.1,False,osrm
 Cairn,Claremont-Mudd-Scripps,2695.6,False,osrm
 Cairn,Clark,253.3,False,osrm
+Cairn,Coast Guard,203.5,False,osrm
 Cairn,Coe,1002.6,False,osrm
 Cairn,Colby,466,False,ncaa_verified
 Cairn,Colorado College,1724.2,False,osrm
 Cairn,Concordia (TX),1680.5,False,osrm
 Cairn,Concordia (WI),872.5,False,osrm
 Cairn,Concordia Moorhead,1410.0,False,osrm
+Cairn,Connecticut College,204.2,False,osrm
+Cairn,Cornell,988.7,False,osrm
 Cairn,Cortland,225.8,False,osrm
 Cairn,Crown,1208.8,False,osrm
 Cairn,Denison,462.1,False,osrm
 Cairn,DePauw,702.9,False,osrm
 Cairn,DeSales,40.6,False,osrm
+Cairn,Dickinson,133.0,False,osrm
 Cairn,Drew,69.8,False,osrm
 Cairn,Dubuque,948.2,False,osrm
+Cairn,East Texas Baptist,1391.3,False,osrm
 Cairn,Eastern Connecticut,218.6,False,osrm
+Cairn,Eastern Mennonite,295.0,False,osrm
+Cairn,Elizabethtown,103.6,False,osrm
 Cairn,Elmhurst,787.1,False,osrm
+Cairn,Emmanuel,290.6,False,osrm
 Cairn,Emory,785.9,False,osrm
 Cairn,Endicott,317.1,False,osrm
+Cairn,Eureka,849.3,False,osrm
 Cairn,Farmingdale,117.2,False,osrm
 Cairn,Framingham St.,270.9,False,osrm
 Cairn,Franciscan,352.8,False,osrm
 Cairn,Franklin,671.2,False,osrm
 Cairn,Franklin & Marshall,88.7,False,osrm
+Cairn,Fredonia,380.9,False,osrm
+Cairn,Gallaudet,153.1,False,osrm
+Cairn,George Fox,2900.4,False,osrm
 Cairn,Gettysburg,149.5,False,osrm
+Cairn,Greensboro,464.7,False,osrm
+Cairn,Greenville,848.4,False,osrm
 Cairn,Grinnell,1041.9,False,osrm
+Cairn,Guilford,473.5,False,osrm
 Cairn,Gustavus Adolphus,1211.7,False,osrm
 Cairn,Gwynedd-Mercy,24.0,False,osrm
+Cairn,Hamilton,266.3,False,osrm
+Cairn,Hamline,1175.6,False,osrm
 Cairn,Hampden-Sydney,327.1,False,osrm
+Cairn,Hanover,659.8,False,osrm
 Cairn,Hardin-Simmons,1676.6,False,osrm
+Cairn,Hartford,197.9,False,osrm
 Cairn,Heidelberg,521,False,ncaa_verified
+Cairn,Hendrix,1201.5,False,osrm
 Cairn,Hilbert,372.9,False,osrm
 Cairn,Hood,167.8,False,osrm
 Cairn,Hope,731.9,False,osrm
@@ -7351,29 +8006,37 @@ Cal Lutheran,Chapman,79.0,False,ncaa_verified
 Cal Lutheran,Chatham,2472.0,False,ncaa_verified
 Cal Lutheran,Chicago,2065.0,False,ncaa_verified
 Cal Lutheran,Christopher Newport,2729.0,False,ncaa_verified
+Cal Lutheran,City College (NY),2848.1,False,osrm
 Cal Lutheran,Claremont-Mudd-Scripps,85.1,False,ncaa_verified
 Cal Lutheran,Clark,3006.8,False,osrm
 Cal Lutheran,Coast Guard,2952.0,False,ncaa_verified
 Cal Lutheran,Coe,1852.0,False,ncaa_verified
 Cal Lutheran,Colby,3147.7,False,ncaa_verified
 Cal Lutheran,Colorado College,1123.0,False,ncaa_verified
+Cal Lutheran,Concordia (WI),2124.7,False,osrm
 Cal Lutheran,Concordia Moorhead,1830.0,False,ncaa_verified
 Cal Lutheran,Connecticut College,2961.3,False,osrm
 Cal Lutheran,Cornell,1866.5,False,osrm
 Cal Lutheran,Cortland,2753.0,False,ncaa_verified
+Cal Lutheran,Crown,1925.2,False,osrm
 Cal Lutheran,Denison,2316.0,False,ncaa_verified
 Cal Lutheran,DePauw,2076.0,False,ncaa_verified
 Cal Lutheran,DeSales,2736.0,False,ncaa_verified
 Cal Lutheran,Dickinson,2636.0,False,ncaa_verified
+Cal Lutheran,Drew,2818.7,False,osrm
+Cal Lutheran,Dubuque,1924.3,False,osrm
 Cal Lutheran,East Texas Baptist,1637.0,False,ncaa_verified
 Cal Lutheran,Eastern Connecticut,2962.0,False,ncaa_verified
 Cal Lutheran,Eastern Mennonite,2592.5,False,osrm
 Cal Lutheran,Elizabethtown,2668.0,False,ncaa_verified
+Cal Lutheran,Elmhurst,2053.9,False,osrm
 Cal Lutheran,Emmanuel,3024.0,False,ncaa_verified
 Cal Lutheran,Emory,2222.0,False,ncaa_verified
 Cal Lutheran,Endicott,3049.0,False,ncaa_verified
 Cal Lutheran,Eureka,2005.0,False,ncaa_verified
+Cal Lutheran,Farmingdale,2879.3,False,osrm
 Cal Lutheran,Framingham St.,3005.0,False,ncaa_verified
+Cal Lutheran,Franciscan,2438.4,False,osrm
 Cal Lutheran,Franklin,2128.0,False,ncaa_verified
 Cal Lutheran,Franklin & Marshall,2701.1,False,osrm
 Cal Lutheran,Fredonia,2545.1,False,osrm
@@ -7382,13 +8045,17 @@ Cal Lutheran,George Fox,956.0,False,osrm
 Cal Lutheran,Gettysburg,2632.0,False,ncaa_verified
 Cal Lutheran,Greensboro,2508.0,False,ncaa_verified
 Cal Lutheran,Greenville,1917.0,False,ncaa_verified
+Cal Lutheran,Grinnell,1788.2,False,osrm
 Cal Lutheran,Guilford,2503.0,False,ncaa_verified
 Cal Lutheran,Gustavus Adolphus,1891.0,False,ncaa_verified
+Cal Lutheran,Gwynedd-Mercy,2757.1,False,osrm
 Cal Lutheran,Hamilton,2763.0,False,ncaa_verified
 Cal Lutheran,Hamline,1970.0,False,ncaa_verified
+Cal Lutheran,Hampden-Sydney,2596.4,False,osrm
 Cal Lutheran,Hanover,2167.0,False,ncaa_verified
 Cal Lutheran,Hardin-Simmons,1301.0,False,ncaa_verified
 Cal Lutheran,Hartford,2945.8,False,osrm
+Cal Lutheran,Heidelberg,2335.5,False,osrm
 Cal Lutheran,Hendrix,1685.5,False,osrm
 Cal Lutheran,Hollins,2497.2,False,osrm
 Cal Lutheran,Hope,2193.0,False,ncaa_verified
@@ -7633,6 +8300,7 @@ Calvin,Hanover,388.0,False,ncaa_verified
 Calvin,Hardin-Simmons,1241.0,False,ncaa_verified
 Calvin,Hartford,776.0,False,osrm
 Calvin,Heidelberg,230.1,False,osrm
+Calvin,Hendrix,789.2,False,osrm
 Calvin,Hilbert,392.9,False,osrm
 Calvin,Hollins,636.4,False,osrm
 Calvin,Hood,603.2,False,osrm
@@ -7860,41 +8528,56 @@ Capital,Chapman,2240.0,False,ncaa_verified
 Capital,Chatham,187.0,False,ncaa_verified
 Capital,Chicago,354.0,False,ncaa_verified
 Capital,Christopher Newport,544.0,False,ncaa_verified
+Capital,City College (NY),567.5,False,osrm
 Capital,Claremont-Mudd-Scripps,2221.9,False,osrm
 Capital,Clark,726.1,False,osrm
 Capital,Coast Guard,659.0,False,ncaa_verified
 Capital,Coe,565.0,False,ncaa_verified
 Capital,Colby,939.3,False,osrm
 Capital,Colorado College,1248.0,False,ncaa_verified
+Capital,Concordia (WI),424.9,False,osrm
 Capital,Concordia Moorhead,998.0,False,ncaa_verified
 Capital,Connecticut College,680.7,False,osrm
 Capital,Cornell,553.3,False,osrm
 Capital,Cortland,506.0,True,ncaa_verified
+Capital,Crown,763.0,False,osrm
 Capital,Denison,33.0,False,ncaa_verified
 Capital,DePauw,227.0,False,ncaa_verified
 Capital,DeSales,452.0,False,ncaa_verified
 Capital,Dickinson,352.8,False,osrm
+Capital,Dubuque,556.1,False,osrm
 Capital,East Texas Baptist,941.0,False,ncaa_verified
+Capital,Eastern Connecticut,693.7,False,osrm
 Capital,Eastern Mennonite,335.4,False,osrm
 Capital,Elizabethtown,384.0,False,ncaa_verified
+Capital,Elmhurst,373.0,False,osrm
 Capital,Emmanuel,763.4,False,osrm
 Capital,Emory,575.0,False,ncaa_verified
 Capital,Endicott,790.0,False,ncaa_verified
 Capital,Eureka,376.0,False,ncaa_verified
+Capital,Farmingdale,598.7,False,osrm
 Capital,Framingham St.,744.0,False,ncaa_verified
+Capital,Franciscan,143.5,False,osrm
 Capital,Franklin,199.0,False,ncaa_verified
 Capital,Franklin & Marshall,401.4,False,osrm
 Capital,Fredonia,286.7,False,osrm
 Capital,Gallaudet,401.0,False,ncaa_verified
+Capital,George Fox,2465.0,False,osrm
 Capital,Gettysburg,348.0,False,ncaa_verified
+Capital,Greensboro,394.2,False,osrm
 Capital,Greenville,374.0,False,ncaa_verified
+Capital,Grinnell,605.8,False,osrm
 Capital,Guilford,399.0,False,ncaa_verified
 Capital,Gustavus Adolphus,798.0,False,ncaa_verified
+Capital,Gwynedd-Mercy,462.2,False,osrm
 Capital,Hamilton,517.0,True,ncaa_verified
 Capital,Hamline,765.0,False,ncaa_verified
+Capital,Hampden-Sydney,439.4,False,osrm
 Capital,Hanover,188.0,False,ncaa_verified
 Capital,Hardin-Simmons,1208.0,False,ncaa_verified
 Capital,Hartford,665.2,False,osrm
+Capital,Heidelberg,95.2,False,osrm
+Capital,Hendrix,731.0,False,osrm
 Capital,Hollins,329.3,False,osrm
 Capital,Hope,347.0,False,ncaa_verified
 Capital,Houghton,367.0,False,ncaa_verified
@@ -8062,20 +8745,25 @@ Carnegie Mellon,Chapman,2421.0,False,ncaa_verified
 Carnegie Mellon,Chatham,5.0,False,ncaa_verified
 Carnegie Mellon,Chicago,455.0,False,ncaa_verified
 Carnegie Mellon,Christopher Newport,406.0,False,ncaa_verified
+Carnegie Mellon,City College (NY),380.0,False,osrm
 Carnegie Mellon,Claremont-Mudd-Scripps,2404.1,False,osrm
 Carnegie Mellon,Clark,534,False,ncaa_verified
 Carnegie Mellon,Coast Guard,496.0,True,ncaa_verified
 Carnegie Mellon,Coe,693.0,False,ncaa_verified
 Carnegie Mellon,Colby,746.3,False,osrm
 Carnegie Mellon,Colorado College,1429.0,False,ncaa_verified
+Carnegie Mellon,Concordia (WI),567.1,False,osrm
 Carnegie Mellon,Concordia Moorhead,1101.0,False,ncaa_verified
 Carnegie Mellon,Connecticut College,497.0,False,ncaa_verified
 Carnegie Mellon,Cornell,683.4,False,osrm
 Carnegie Mellon,Cortland,340.0,False,ncaa_verified
+Carnegie Mellon,Crown,905.2,False,osrm
 Carnegie Mellon,Denison,168.0,False,ncaa_verified
 Carnegie Mellon,DePauw,411.0,False,ncaa_verified
 Carnegie Mellon,DeSales,289.0,False,ncaa_verified
 Carnegie Mellon,Dickinson,189.0,False,ncaa_verified
+Carnegie Mellon,Drew,351.1,False,osrm
+Carnegie Mellon,Dubuque,642.9,False,osrm
 Carnegie Mellon,East Texas Baptist,1120.0,False,ncaa_verified
 Carnegie Mellon,Eastern Connecticut,499.0,True,ncaa_verified
 Carnegie Mellon,Eastern Mennonite,234.2,False,osrm
@@ -8084,7 +8772,9 @@ Carnegie Mellon,Emmanuel,570.0,False,ncaa_verified
 Carnegie Mellon,Emory,682.0,False,ncaa_verified
 Carnegie Mellon,Endicott,597.0,False,ncaa_verified
 Carnegie Mellon,Eureka,557.0,False,ncaa_verified
+Carnegie Mellon,Farmingdale,423.4,False,osrm
 Carnegie Mellon,Framingham St.,552.0,False,ncaa_verified
+Carnegie Mellon,Franciscan,41.8,False,osrm
 Carnegie Mellon,Franklin,379.0,False,ncaa_verified
 Carnegie Mellon,Franklin & Marshall,237.6,False,osrm
 Carnegie Mellon,Fredonia,176.9,False,osrm
@@ -8093,13 +8783,17 @@ Carnegie Mellon,George Fox,2595.1,False,osrm
 Carnegie Mellon,Gettysburg,186.0,False,ncaa_verified
 Carnegie Mellon,Greensboro,427.0,False,ncaa_verified
 Carnegie Mellon,Greenville,554.0,False,ncaa_verified
+Carnegie Mellon,Grinnell,735.9,False,osrm
 Carnegie Mellon,Guilford,421.0,False,ncaa_verified
 Carnegie Mellon,Gustavus Adolphus,905.0,False,ncaa_verified
+Carnegie Mellon,Gwynedd-Mercy,298.5,False,osrm
 Carnegie Mellon,Hamilton,402.0,False,ncaa_verified
 Carnegie Mellon,Hamline,864.0,False,ncaa_verified
+Carnegie Mellon,Hampden-Sydney,352.4,False,osrm
 Carnegie Mellon,Hanover,368.0,False,ncaa_verified
 Carnegie Mellon,Hardin-Simmons,1388.0,False,ncaa_verified
 Carnegie Mellon,Hartford,473,False,ncaa_verified
+Carnegie Mellon,Heidelberg,211.8,False,osrm
 Carnegie Mellon,Hendrix,911.7,False,osrm
 Carnegie Mellon,Hollins,335.8,False,osrm
 Carnegie Mellon,Hope,438.0,False,ncaa_verified
@@ -8291,6 +8985,7 @@ Carroll,Chapman,2038.0,False,ncaa_verified
 Carroll,Chatham,572.0,False,ncaa_verified
 Carroll,Chicago,115.0,False,ncaa_verified
 Carroll,Christopher Newport,966.0,False,ncaa_verified
+Carroll,City College (NY),897.4,False,osrm
 Carroll,Claremont-Mudd-Scripps,2010.8,False,ncaa_verified
 Carroll,Clark,1056.0,False,osrm
 Carroll,Coast Guard,1016.0,False,ncaa_verified
@@ -8298,6 +8993,7 @@ Carroll,Coe,233.0,False,ncaa_verified
 Carroll,Colby,1198.2,False,ncaa_verified
 Carroll,Colorado College,1098.0,False,ncaa_verified
 Carroll,Concordia (TX),1180.2,False,osrm
+Carroll,Concordia (WI),33.0,False,osrm
 Carroll,Concordia Moorhead,556.0,False,ncaa_verified
 Carroll,Connecticut College,1010.6,False,osrm
 Carroll,Cornell,219.1,False,osrm
@@ -8335,9 +9031,11 @@ Carroll,Gustavus Adolphus,356.0,False,ncaa_verified
 Carroll,Gwynedd-Mercy,855.6,False,osrm
 Carroll,Hamilton,826.0,False,ncaa_verified
 Carroll,Hamline,319.0,False,ncaa_verified
+Carroll,Hampden-Sydney,865.6,False,osrm
 Carroll,Hanover,391.0,False,ncaa_verified
 Carroll,Hardin-Simmons,1152.0,False,ncaa_verified
 Carroll,Hartford,995.1,False,osrm
+Carroll,Heidelberg,384.7,False,osrm
 Carroll,Hendrix,711.5,False,osrm
 Carroll,Hollins,755.5,False,osrm
 Carroll,Hood,755.2,False,osrm
@@ -8563,6 +9261,7 @@ Carthage,Concordia (TX),1162.3,False,osrm
 Carthage,Concordia (WI),52.7,False,osrm
 Carthage,Concordia Moorhead,603.0,False,ncaa_verified
 Carthage,Connecticut College,972.8,False,osrm
+Carthage,Cornell,227.7,False,osrm
 Carthage,Cortland,779.0,False,ncaa_verified
 Carthage,Crown,400.2,False,osrm
 Carthage,Denison,410.0,False,ncaa_verified
@@ -8573,6 +9272,7 @@ Carthage,Drew,830.1,False,osrm
 Carthage,Dubuque,166.2,False,osrm
 Carthage,East Texas Baptist,933.0,False,ncaa_verified
 Carthage,Eastern Connecticut,985.8,False,osrm
+Carthage,Eastern Mennonite,753.5,False,osrm
 Carthage,Elizabethtown,745.0,False,ncaa_verified
 Carthage,Elmhurst,62.0,False,osrm
 Carthage,Emmanuel,1055.5,False,osrm
@@ -8584,9 +9284,11 @@ Carthage,Framingham St.,1031.0,False,ncaa_verified
 Carthage,Franciscan,527.0,False,ncaa_verified
 Carthage,Franklin,276.0,False,ncaa_verified
 Carthage,Franklin & Marshall,756.5,False,osrm
+Carthage,Fredonia,556.6,False,osrm
 Carthage,Gallaudet,773.0,False,ncaa_verified
 Carthage,George Fox,2103.6,False,osrm
 Carthage,Gettysburg,709.0,False,ncaa_verified
+Carthage,Greensboro,782.6,False,osrm
 Carthage,Greenville,331.0,False,ncaa_verified
 Carthage,Grinnell,324.1,False,osrm
 Carthage,Guilford,797.0,False,ncaa_verified
@@ -8599,6 +9301,7 @@ Carthage,Hanover,352.0,False,ncaa_verified
 Carthage,Hardin-Simmons,1137.0,False,ncaa_verified
 Carthage,Hartford,957.3,False,osrm
 Carthage,Heidelberg,346.9,False,osrm
+Carthage,Hendrix,693.7,False,osrm
 Carthage,Hilbert,588.7,False,osrm
 Carthage,Hollins,717.6,False,osrm
 Carthage,Hood,716.4,False,osrm
@@ -8806,42 +9509,60 @@ Carthage,WPI,1015.0,False,ncaa_verified
 Carthage,Yeshiva,857.4,False,osrm
 Carthage,York (PA),745.0,False,ncaa_verified
 Case Western,Catholic,373.0,False,ncaa_verified
+Case Western,Centenary (NJ),412.1,False,osrm
 Case Western,Centre,374.0,False,ncaa_verified
 Case Western,Chapman,2346.7,False,osrm
 Case Western,Chatham,141.0,False,ncaa_verified
 Case Western,Chicago,342.0,False,ncaa_verified
 Case Western,Christopher Newport,535.0,False,ncaa_verified
+Case Western,City College (NY),462.3,False,osrm
 Case Western,Claremont-Mudd-Scripps,2318.0,False,osrm
 Case Western,Clark,599.6,False,osrm
 Case Western,Coast Guard,585.0,False,ncaa_verified
 Case Western,Coe,579.0,False,ncaa_verified
 Case Western,Colby,812.8,False,osrm
 Case Western,Colorado College,1389.0,False,ncaa_verified
+Case Western,Concordia (WI),450.9,False,osrm
 Case Western,Concordia Moorhead,989.0,False,ncaa_verified
 Case Western,Connecticut College,575.5,False,osrm
 Case Western,Cornell,567.1,False,osrm
 Case Western,Cortland,366.0,False,ncaa_verified
+Case Western,Crown,789.0,False,osrm
 Case Western,Denison,132.0,False,ncaa_verified
 Case Western,DePauw,369.0,False,ncaa_verified
 Case Western,DeSales,412.0,False,ncaa_verified
 Case Western,Dickinson,319.0,False,ncaa_verified
+Case Western,Drew,432.9,False,osrm
+Case Western,Dubuque,526.6,False,osrm
 Case Western,East Texas Baptist,1084.0,False,ncaa_verified
+Case Western,Eastern Connecticut,588.5,False,osrm
 Case Western,Eastern Mennonite,356.2,False,osrm
 Case Western,Elizabethtown,351.0,False,ncaa_verified
+Case Western,Elmhurst,365.3,False,osrm
 Case Western,Emmanuel,637.0,False,ncaa_verified
 Case Western,Emory,717.0,False,ncaa_verified
 Case Western,Endicott,660.6,False,osrm
+Case Western,Eureka,458.2,False,osrm
 Case Western,Framingham St.,618.0,False,ncaa_verified
+Case Western,Franciscan,125.2,False,osrm
 Case Western,Franklin,338.5,False,osrm
 Case Western,Franklin & Marshall,359.7,False,osrm
 Case Western,Fredonia,147.1,False,osrm
+Case Western,Gallaudet,365.9,False,osrm
+Case Western,George Fox,2478.8,False,osrm
 Case Western,Gettysburg,315.0,False,ncaa_verified
+Case Western,Grinnell,619.6,False,osrm
 Case Western,Guilford,493.0,True,ncaa_verified
 Case Western,Gustavus Adolphus,792.0,False,ncaa_verified
+Case Western,Gwynedd-Mercy,420.5,False,osrm
 Case Western,Hamilton,376.0,False,ncaa_verified
 Case Western,Hamline,752.2,False,osrm
+Case Western,Hampden-Sydney,474.4,False,osrm
+Case Western,Hanover,329.3,False,osrm
 Case Western,Hardin-Simmons,1349.0,False,ncaa_verified
 Case Western,Hartford,560.0,False,osrm
+Case Western,Heidelberg,95.5,False,osrm
+Case Western,Hendrix,873.3,False,osrm
 Case Western,Hollins,415.3,False,osrm
 Case Western,Hope,325.0,False,ncaa_verified
 Case Western,Houghton,226.4,False,osrm
@@ -8979,6 +9700,7 @@ Case Western,Wisconsin Lutheran,444.0,False,ncaa_verified
 Case Western,Wittenberg,191.0,False,ncaa_verified
 Case Western,Wooster,63.9,False,osrm
 Case Western,WPI,601.2,False,osrm
+Catholic,Centenary (NJ),212.7,False,osrm
 Catholic,Centre,571.0,False,ncaa_verified
 Catholic,Chapman,2634.0,False,ncaa_verified
 Catholic,Chatham,240.0,False,ncaa_verified
@@ -9020,6 +9742,7 @@ Catholic,Franklin,592.0,False,ncaa_verified
 Catholic,Franklin & Marshall,112.9,False,osrm
 Catholic,Fredonia,346.6,False,osrm
 Catholic,Gallaudet,3.0,False,ncaa_verified
+Catholic,George Fox,2826.9,False,osrm
 Catholic,Gettysburg,85.0,False,ncaa_verified
 Catholic,Greensboro,314.0,False,ncaa_verified
 Catholic,Greenville,767.0,False,ncaa_verified
@@ -9034,6 +9757,7 @@ Catholic,Hanover,581.0,False,ncaa_verified
 Catholic,Hardin-Simmons,1522.0,False,ncaa_verified
 Catholic,Hartford,339.6,False,osrm
 Catholic,Heidelberg,443.6,False,osrm
+Catholic,Hendrix,1041.5,False,osrm
 Catholic,Hilbert,364.2,False,osrm
 Catholic,Hollins,236.7,False,osrm
 Catholic,Hood,45.7,False,osrm
@@ -9247,28 +9971,58 @@ Catholic,WPI,403.0,False,ncaa_verified
 Catholic,Yeshiva,230.1,False,osrm
 Catholic,York (PA),95.0,False,ncaa_verified
 Centenary (NJ),Centre,692.1,False,osrm
+Centenary (NJ),Chapman,2744.0,False,osrm
 Centenary (NJ),Chatham,319.4,False,osrm
 Centenary (NJ),Chicago,738.4,False,osrm
 Centenary (NJ),Christopher Newport,386.8,False,osrm
+Centenary (NJ),City College (NY),57.8,False,osrm
 Centenary (NJ),Claremont-Mudd-Scripps,2715.3,False,osrm
 Centenary (NJ),Clark,220.1,False,osrm
+Centenary (NJ),Coast Guard,170.3,False,osrm
 Centenary (NJ),Coe,978.3,False,osrm
+Centenary (NJ),Colby,433.2,False,osrm
 Centenary (NJ),Colorado College,1760.0,False,osrm
+Centenary (NJ),Concordia (WI),848.2,False,osrm
 Centenary (NJ),Concordia Moorhead,1385.8,False,osrm
+Centenary (NJ),Connecticut College,171.0,False,osrm
+Centenary (NJ),Cornell,964.5,False,osrm
 Centenary (NJ),Cortland,170.2,False,osrm
+Centenary (NJ),Crown,1186.3,False,osrm
 Centenary (NJ),Denison,471.0,False,ncaa_verified
 Centenary (NJ),DePauw,738.7,False,osrm
 Centenary (NJ),DeSales,44.8,False,osrm
+Centenary (NJ),Dickinson,140.9,False,osrm
+Centenary (NJ),Drew,28.2,False,osrm
+Centenary (NJ),Dubuque,924.0,False,osrm
 Centenary (NJ),East Texas Baptist,1398.9,False,osrm
+Centenary (NJ),Eastern Connecticut,185.4,False,osrm
+Centenary (NJ),Eastern Mennonite,302.6,False,osrm
+Centenary (NJ),Elizabethtown,127.0,False,osrm
+Centenary (NJ),Elmhurst,762.6,False,osrm
 Centenary (NJ),Emmanuel,257.4,False,osrm
+Centenary (NJ),Emory,828.7,False,osrm
 Centenary (NJ),Endicott,281.1,False,osrm
+Centenary (NJ),Eureka,855.6,False,osrm
+Centenary (NJ),Farmingdale,89.0,False,osrm
 Centenary (NJ),Framingham St.,237.7,False,osrm
+Centenary (NJ),Franciscan,361.1,False,osrm
 Centenary (NJ),Franklin,708.4,False,osrm
+Centenary (NJ),Franklin & Marshall,112.0,False,osrm
+Centenary (NJ),Fredonia,344.1,False,osrm
+Centenary (NJ),Gallaudet,213.0,False,osrm
 Centenary (NJ),George Fox,2876.2,False,osrm
 Centenary (NJ),Gettysburg,162.2,False,osrm
+Centenary (NJ),Greenville,884.2,False,osrm
+Centenary (NJ),Grinnell,1017.0,False,osrm
 Centenary (NJ),Gustavus Adolphus,1187.7,False,osrm
+Centenary (NJ),Gwynedd-Mercy,65.4,False,osrm
+Centenary (NJ),Hamilton,211.1,False,osrm
+Centenary (NJ),Hamline,1151.3,False,osrm
+Centenary (NJ),Hampden-Sydney,386.9,False,osrm
+Centenary (NJ),Hanover,699.2,False,osrm
 Centenary (NJ),Hardin-Simmons,1683.3,False,osrm
 Centenary (NJ),Hartford,164.7,False,osrm
+Centenary (NJ),Hendrix,1209.1,False,osrm
 Centenary (NJ),Hope,699.7,False,osrm
 Centenary (NJ),Houghton,282.3,False,osrm
 Centenary (NJ),Hunter,57.0,False,osrm
@@ -9380,10 +10134,12 @@ Centre,Coe,583.0,False,ncaa_verified
 Centre,Colby,1122.8,False,ncaa_verified
 Centre,Colorado College,1177.0,False,ncaa_verified
 Centre,Concordia (TX),1039.8,False,osrm
+Centre,Concordia (WI),477.5,False,osrm
 Centre,Concordia Moorhead,1020.0,False,ncaa_verified
 Centre,Connecticut College,860.5,False,osrm
 Centre,Cornell,570.3,False,osrm
 Centre,Cortland,731.0,False,ncaa_verified
+Centre,Crown,821.8,False,osrm
 Centre,Denison,262.0,False,ncaa_verified
 Centre,DePauw,239.0,False,ncaa_verified
 Centre,DeSales,659.0,False,ncaa_verified
@@ -9421,6 +10177,7 @@ Centre,Hanover,110.0,False,ncaa_verified
 Centre,Hardin-Simmons,1036.0,False,ncaa_verified
 Centre,Hartford,854.2,False,osrm
 Centre,Heidelberg,300.1,False,osrm
+Centre,Hendrix,545.3,False,osrm
 Centre,Hilbert,542.3,False,osrm
 Centre,Hollins,358.3,False,osrm
 Centre,Hood,525,False,ncaa_verified
@@ -9637,6 +10394,7 @@ Chapman,Christopher Newport,2680.0,False,ncaa_verified
 Chapman,City College (NY),2794.0,False,osrm
 Chapman,Claremont-Mudd-Scripps,29.2,False,osrm
 Chapman,Clark,2952.7,False,osrm
+Chapman,Coast Guard,2906.5,False,osrm
 Chapman,Coe,1806.0,False,ncaa_verified
 Chapman,Colby,3165.8,False,osrm
 Chapman,Colorado College,1076.0,False,ncaa_verified
@@ -9644,6 +10402,7 @@ Chapman,Concordia (TX),1370.3,False,osrm
 Chapman,Concordia (WI),2068.2,False,osrm
 Chapman,Concordia Moorhead,1781.3,False,osrm
 Chapman,Connecticut College,2907.2,False,osrm
+Chapman,Cornell,1812.4,False,osrm
 Chapman,Cortland,2707.0,False,ncaa_verified
 Chapman,Crown,1871.1,False,osrm
 Chapman,Denison,2276.4,False,osrm
@@ -9654,6 +10413,7 @@ Chapman,Drew,2764.6,False,osrm
 Chapman,Dubuque,1870.1,False,osrm
 Chapman,East Texas Baptist,1573.0,False,ncaa_verified
 Chapman,Eastern Connecticut,2920.3,False,osrm
+Chapman,Eastern Mennonite,2538.4,False,osrm
 Chapman,Elizabethtown,2622.0,False,ncaa_verified
 Chapman,Elmhurst,1999.8,False,osrm
 Chapman,Emmanuel,2989.9,False,osrm
@@ -9665,8 +10425,12 @@ Chapman,Framingham St.,2958.0,False,ncaa_verified
 Chapman,Franciscan,2389.2,False,osrm
 Chapman,Franklin,2074.0,False,osrm
 Chapman,Franklin & Marshall,2647.0,False,osrm
+Chapman,Fredonia,2491.0,False,osrm
 Chapman,Gallaudet,2640.0,False,ncaa_verified
+Chapman,George Fox,975.9,False,osrm
 Chapman,Gettysburg,2586.0,False,ncaa_verified
+Chapman,Greensboro,2470.4,False,osrm
+Chapman,Greenville,1872.9,False,osrm
 Chapman,Grinnell,1734.1,False,osrm
 Chapman,Guilford,2471.8,False,osrm
 Chapman,Gustavus Adolphus,1844.0,False,ncaa_verified
@@ -9676,7 +10440,9 @@ Chapman,Hamline,1894.8,False,osrm
 Chapman,Hampden-Sydney,2542.3,False,osrm
 Chapman,Hanover,2121.0,False,ncaa_verified
 Chapman,Hardin-Simmons,1237.0,False,ncaa_verified
+Chapman,Hartford,2891.7,False,osrm
 Chapman,Heidelberg,2281.3,False,osrm
+Chapman,Hendrix,1631.4,False,osrm
 Chapman,Hilbert,2523.2,False,osrm
 Chapman,Hollins,2443.1,False,osrm
 Chapman,Hood,2596.7,False,osrm
@@ -9875,6 +10641,7 @@ Chatham,Concordia (TX),1411.7,False,osrm
 Chatham,Concordia (WI),568.1,False,osrm
 Chatham,Concordia Moorhead,1106.0,False,ncaa_verified
 Chatham,Connecticut College,493.0,True,ncaa_verified
+Chatham,Cornell,684.3,False,osrm
 Chatham,Cortland,337.0,False,ncaa_verified
 Chatham,Crown,904.3,False,osrm
 Chatham,Denison,173.0,False,ncaa_verified
@@ -9885,6 +10652,7 @@ Chatham,Drew,349.2,False,osrm
 Chatham,Dubuque,643.8,False,osrm
 Chatham,East Texas Baptist,1123.0,False,ncaa_verified
 Chatham,Eastern Connecticut,496.0,True,ncaa_verified
+Chatham,Eastern Mennonite,232.3,False,osrm
 Chatham,Elizabethtown,218.0,False,ncaa_verified
 Chatham,Elmhurst,485.0,True,ncaa_verified
 Chatham,Emmanuel,567.0,False,ncaa_verified
@@ -9896,6 +10664,7 @@ Chatham,Framingham St.,548.0,False,ncaa_verified
 Chatham,Franciscan,42.8,False,osrm
 Chatham,Franklin,384.0,False,ncaa_verified
 Chatham,Franklin & Marshall,235.8,False,osrm
+Chatham,Fredonia,177.8,False,osrm
 Chatham,Gallaudet,246.0,False,ncaa_verified
 Chatham,George Fox,2596.0,False,osrm
 Chatham,Gettysburg,182.0,False,ncaa_verified
@@ -9912,6 +10681,7 @@ Chatham,Hanover,372.0,False,ncaa_verified
 Chatham,Hardin-Simmons,1393.0,False,ncaa_verified
 Chatham,Hartford,471,False,ncaa_verified
 Chatham,Heidelberg,212.7,False,osrm
+Chatham,Hendrix,912.6,False,osrm
 Chatham,Hilbert,209.9,False,osrm
 Chatham,Hollins,333.9,False,osrm
 Chatham,Hood,196.2,False,osrm
@@ -10670,33 +11440,55 @@ Christopher Newport,Yeshiva,403.9,False,osrm
 Christopher Newport,York (PA),269.0,False,ncaa_verified
 City College (NY),Claremont-Mudd-Scripps,2765.3,False,osrm
 City College (NY),Clark,167.3,False,osrm
+City College (NY),Coast Guard,117.5,False,osrm
 City College (NY),Coe,1028.4,False,osrm
+City College (NY),Colby,380.5,False,osrm
 City College (NY),Colorado College,1810.1,False,osrm
 City College (NY),Concordia (TX),1741.9,False,osrm
+City College (NY),Concordia (WI),898.3,False,osrm
 City College (NY),Concordia Moorhead,1435.8,False,osrm
+City College (NY),Connecticut College,118.3,False,osrm
+City College (NY),Cornell,1014.5,False,osrm
 City College (NY),Cortland,220.2,False,osrm
 City College (NY),Crown,1234.6,False,osrm
 City College (NY),Denison,518,False,ncaa_verified
 City College (NY),DePauw,788.8,False,osrm
 City College (NY),DeSales,93.9,False,osrm
+City College (NY),Dickinson,195.7,False,osrm
 City College (NY),Drew,34.5,False,osrm
 City College (NY),Dubuque,974.0,False,osrm
+City College (NY),East Texas Baptist,1453.7,False,osrm
 City College (NY),Eastern Connecticut,132.6,False,osrm
+City College (NY),Eastern Mennonite,357.4,False,osrm
+City College (NY),Elizabethtown,184.1,False,osrm
 City College (NY),Elmhurst,812.7,False,osrm
+City College (NY),Emmanuel,204.6,False,osrm
 City College (NY),Emory,865.9,False,osrm
 City College (NY),Endicott,228.3,False,osrm
+City College (NY),Eureka,905.6,False,osrm
 City College (NY),Farmingdale,36.2,False,osrm
 City College (NY),Framingham St.,184.9,False,osrm
 City College (NY),Franciscan,415.8,False,osrm
 City College (NY),Franklin,758.5,False,osrm
 City College (NY),Franklin & Marshall,169.1,False,osrm
+City College (NY),Fredonia,394.1,False,osrm
+City College (NY),Gallaudet,230.6,False,osrm
+City College (NY),George Fox,2926.2,False,osrm
 City College (NY),Gettysburg,230.0,False,osrm
+City College (NY),Greensboro,542.2,False,osrm
+City College (NY),Greenville,934.2,False,osrm
 City College (NY),Grinnell,1067.0,False,osrm
+City College (NY),Guilford,551.0,False,osrm
 City College (NY),Gustavus Adolphus,1237.8,False,osrm
 City College (NY),Gwynedd-Mercy,104.5,False,osrm
+City College (NY),Hamilton,242.5,False,osrm
+City College (NY),Hamline,1201.4,False,osrm
 City College (NY),Hampden-Sydney,404.5,False,osrm
+City College (NY),Hanover,749.3,False,osrm
 City College (NY),Hardin-Simmons,1738.0,False,osrm
+City College (NY),Hartford,112.0,False,osrm
 City College (NY),Heidelberg,542.9,False,osrm
+City College (NY),Hendrix,1263.8,False,osrm
 City College (NY),Hilbert,373.3,False,osrm
 City College (NY),Hood,246.7,False,osrm
 City College (NY),Hope,757.7,False,osrm
@@ -10808,6 +11600,7 @@ City College (NY),Yeshiva,2.4,False,osrm
 City College (NY),York (PA),194.1,False,osrm
 Claremont-Mudd-Scripps,Austin College,1379.1,False,osrm
 Claremont-Mudd-Scripps,Clark,2924.4,False,osrm
+Claremont-Mudd-Scripps,Coast Guard,2878.3,False,osrm
 Claremont-Mudd-Scripps,Coe,1780.1,False,ncaa_verified
 Claremont-Mudd-Scripps,Colby,3065.3,False,ncaa_verified
 Claremont-Mudd-Scripps,Colorado College,1048.3,False,ncaa_verified
@@ -10815,6 +11608,7 @@ Claremont-Mudd-Scripps,Concordia (TX),1357.5,False,osrm
 Claremont-Mudd-Scripps,Concordia (WI),2042.3,False,osrm
 Claremont-Mudd-Scripps,Concordia Moorhead,1753.0,False,ncaa_verified
 Claremont-Mudd-Scripps,Connecticut College,2879.0,False,osrm
+Claremont-Mudd-Scripps,Cornell,1784.2,False,osrm
 Claremont-Mudd-Scripps,Cortland,2661.1,False,ncaa_verified
 Claremont-Mudd-Scripps,Crown,1842.8,False,osrm
 Claremont-Mudd-Scripps,Denison,2247.9,False,ncaa_verified
@@ -10825,18 +11619,24 @@ Claremont-Mudd-Scripps,Drew,2736.3,False,osrm
 Claremont-Mudd-Scripps,Dubuque,1841.9,False,osrm
 Claremont-Mudd-Scripps,East Texas Baptist,1557.8,False,ncaa_verified
 Claremont-Mudd-Scripps,Eastern Connecticut,2892.0,False,osrm
+Claremont-Mudd-Scripps,Eastern Mennonite,2510.1,False,osrm
 Claremont-Mudd-Scripps,Elizabethtown,2601.0,False,osrm
 Claremont-Mudd-Scripps,Elmhurst,1971.5,False,osrm
 Claremont-Mudd-Scripps,Emmanuel,2961.1,False,ncaa_verified
 Claremont-Mudd-Scripps,Emory,2154.3,False,ncaa_verified
 Claremont-Mudd-Scripps,Endicott,2984.2,False,osrm
+Claremont-Mudd-Scripps,Eureka,1931.3,False,osrm
 Claremont-Mudd-Scripps,Farmingdale,2796.9,False,osrm
 Claremont-Mudd-Scripps,Framingham St.,2941.8,False,ncaa_verified
 Claremont-Mudd-Scripps,Franciscan,2360.9,False,osrm
 Claremont-Mudd-Scripps,Franklin,2045.7,False,ncaa_verified
 Claremont-Mudd-Scripps,Franklin & Marshall,2618.8,False,osrm
+Claremont-Mudd-Scripps,Fredonia,2462.8,False,osrm
+Claremont-Mudd-Scripps,Gallaudet,2641.0,False,osrm
 Claremont-Mudd-Scripps,George Fox,973.0,False,osrm
 Claremont-Mudd-Scripps,Gettysburg,2566.0,False,osrm
+Claremont-Mudd-Scripps,Greensboro,2442.1,False,osrm
+Claremont-Mudd-Scripps,Greenville,1844.6,False,osrm
 Claremont-Mudd-Scripps,Grinnell,1705.8,False,osrm
 Claremont-Mudd-Scripps,Guilford,2443.5,False,osrm
 Claremont-Mudd-Scripps,Gustavus Adolphus,1794.9,False,osrm
@@ -10844,6 +11644,7 @@ Claremont-Mudd-Scripps,Gwynedd-Mercy,2679.6,False,osrm
 Claremont-Mudd-Scripps,Hamilton,2690.7,False,osrm
 Claremont-Mudd-Scripps,Hamline,1866.6,False,osrm
 Claremont-Mudd-Scripps,Hampden-Sydney,2514.0,False,osrm
+Claremont-Mudd-Scripps,Hanover,2089.3,False,osrm
 Claremont-Mudd-Scripps,Hardin-Simmons,1224.1,False,ncaa_verified
 Claremont-Mudd-Scripps,Hartford,2863.4,False,osrm
 Claremont-Mudd-Scripps,Heidelberg,2253.1,False,osrm
@@ -11040,14 +11841,17 @@ Claremont-Mudd-Scripps,Worcester St.,2926.1,False,osrm
 Claremont-Mudd-Scripps,WPI,2926.0,False,osrm
 Claremont-Mudd-Scripps,Yeshiva,2763.2,False,osrm
 Claremont-Mudd-Scripps,York (PA),2603.0,False,osrm
+Clark,Coast Guard,71.5,False,osrm
 Clark,Coe,1187.0,False,osrm
 Clark,Colby,211.3,False,osrm
 Clark,Colorado College,1968.7,False,osrm
 Clark,Concordia (TX),1909.8,False,osrm
+Clark,Concordia (WI),1056.9,False,osrm
 Clark,Concordia Moorhead,1594.5,False,osrm
 Clark,Connecticut College,70.7,False,osrm
 Clark,Cornell,1173.1,False,osrm
 Clark,Cortland,286.3,False,osrm
+Clark,Crown,1395.0,False,osrm
 Clark,Denison,710.5,False,osrm
 Clark,DePauw,947.4,False,osrm
 Clark,DeSales,261.7,False,osrm
@@ -11055,20 +11859,25 @@ Clark,Dickinson,363.5,False,osrm
 Clark,Drew,202.3,False,osrm
 Clark,Dubuque,1132.6,False,osrm
 Clark,East Texas Baptist,1621.6,False,osrm
+Clark,Eastern Connecticut,54.8,False,osrm
 Clark,Eastern Mennonite,525.2,False,osrm
 Clark,Elizabethtown,352.0,False,osrm
 Clark,Elmhurst,971.3,False,osrm
 Clark,Emmanuel,44.0,False,osrm
 Clark,Emory,1033.7,False,osrm
 Clark,Endicott,67.7,False,osrm
+Clark,Eureka,1064.2,False,osrm
 Clark,Farmingdale,188.9,False,osrm
 Clark,Framingham St.,24.3,False,osrm
 Clark,Franciscan,571.5,False,osrm
 Clark,Franklin,917.1,False,osrm
 Clark,Franklin & Marshall,337.0,False,osrm
 Clark,Fredonia,457.8,False,osrm
+Clark,Gallaudet,398.4,False,osrm
 Clark,George Fox,3084.8,False,osrm
 Clark,Gettysburg,397.9,False,osrm
+Clark,Greensboro,710.0,False,osrm
+Clark,Greenville,1092.8,False,osrm
 Clark,Grinnell,1225.6,False,osrm
 Clark,Guilford,718.8,False,osrm
 Clark,Gustavus Adolphus,1396.4,False,osrm
@@ -11076,6 +11885,7 @@ Clark,Gwynedd-Mercy,272.4,False,osrm
 Clark,Hamilton,232.9,False,osrm
 Clark,Hamline,1358.2,False,osrm
 Clark,Hampden-Sydney,572.3,False,osrm
+Clark,Hanover,907.9,False,osrm
 Clark,Hardin-Simmons,1905.9,False,osrm
 Clark,Hartford,65.5,False,osrm
 Clark,Heidelberg,701.5,False,osrm
@@ -11260,31 +12070,51 @@ Clark,WPI,2.5,False,osrm
 Clark,Yeshiva,166.4,False,osrm
 Clark,York (PA),361.9,False,osrm
 Coast Guard,Coe,1141.0,False,ncaa_verified
+Coast Guard,Colby,281.7,False,osrm
 Coast Guard,Colorado College,1904.0,False,ncaa_verified
+Coast Guard,Concordia (WI),1012.3,False,osrm
 Coast Guard,Concordia Moorhead,1550.0,False,ncaa_verified
+Coast Guard,Connecticut College,0.7,False,osrm
+Coast Guard,Cornell,1128.5,False,osrm
 Coast Guard,Cortland,306.0,False,ncaa_verified
+Coast Guard,Crown,1350.4,False,osrm
 Coast Guard,Denison,644.0,False,ncaa_verified
 Coast Guard,DePauw,884.0,False,ncaa_verified
 Coast Guard,DeSales,216.0,False,ncaa_verified
 Coast Guard,Dickinson,314.0,False,ncaa_verified
+Coast Guard,Drew,152.0,False,osrm
+Coast Guard,Dubuque,1088.0,False,osrm
 Coast Guard,East Texas Baptist,1571.0,False,ncaa_verified
 Coast Guard,Eastern Connecticut,27.0,False,ncaa_verified
+Coast Guard,Eastern Mennonite,475.0,False,osrm
 Coast Guard,Elizabethtown,303.0,False,ncaa_verified
+Coast Guard,Elmhurst,926.6,False,osrm
 Coast Guard,Emmanuel,111.0,False,ncaa_verified
 Coast Guard,Emory,984.0,False,ncaa_verified
 Coast Guard,Endicott,137.0,False,ncaa_verified
+Coast Guard,Eureka,1019.6,False,osrm
+Coast Guard,Farmingdale,138.6,False,osrm
 Coast Guard,Framingham St.,92.0,False,ncaa_verified
+Coast Guard,Franciscan,533.4,False,osrm
 Coast Guard,Franklin,855.0,False,ncaa_verified
+Coast Guard,Franklin & Marshall,286.7,False,osrm
 Coast Guard,Gallaudet,348.0,False,ncaa_verified
+Coast Guard,George Fox,3040.2,False,osrm
 Coast Guard,Gettysburg,336.0,False,ncaa_verified
 Coast Guard,Greensboro,663.0,False,ncaa_verified
 Coast Guard,Greenville,1030.0,False,ncaa_verified
+Coast Guard,Grinnell,1181.0,False,osrm
 Coast Guard,Guilford,671.0,False,ncaa_verified
 Coast Guard,Gustavus Adolphus,1353.0,False,ncaa_verified
+Coast Guard,Gwynedd-Mercy,222.1,False,osrm
 Coast Guard,Hamilton,269.0,False,ncaa_verified
 Coast Guard,Hamline,1312.0,False,ncaa_verified
+Coast Guard,Hampden-Sydney,522.1,False,osrm
 Coast Guard,Hanover,842.0,False,ncaa_verified
 Coast Guard,Hardin-Simmons,1856.0,False,ncaa_verified
+Coast Guard,Hartford,54.0,False,osrm
+Coast Guard,Heidelberg,656.9,False,osrm
+Coast Guard,Hendrix,1381.4,False,osrm
 Coast Guard,Hope,852.0,False,ncaa_verified
 Coast Guard,Houghton,426.0,False,ncaa_verified
 Coast Guard,Hunter,128.0,False,ncaa_verified
@@ -11690,6 +12520,7 @@ Coe,Yeshiva,1026.9,False,osrm
 Coe,York (PA),907.0,False,ncaa_verified
 Colby,Colorado College,2181.9,False,ncaa_verified
 Colby,Concordia (TX),2120.2,False,osrm
+Colby,Concordia (WI),1267.3,False,osrm
 Colby,Concordia Moorhead,1523.3,False,ncaa_verified
 Colby,Connecticut College,281.0,False,osrm
 Colby,Cornell,1383.5,False,osrm
@@ -11709,21 +12540,30 @@ Colby,Elmhurst,1181.9,False,osrm
 Colby,Emmanuel,181.7,False,ncaa_verified
 Colby,Emory,1242.6,False,ncaa_verified
 Colby,Endicott,167.9,False,osrm
+Colby,Eureka,1274.6,False,osrm
 Colby,Farmingdale,399.3,False,osrm
 Colby,Framingham St.,201.3,False,ncaa_verified
 Colby,Franciscan,781.8,False,osrm
 Colby,Franklin,1130.5,False,ncaa_verified
 Colby,Franklin & Marshall,547.4,False,osrm
 Colby,Fredonia,668.2,False,osrm
+Colby,Gallaudet,608.8,False,osrm
+Colby,George Fox,3295.2,False,osrm
 Colby,Gettysburg,608.3,False,osrm
+Colby,Greensboro,920.4,False,osrm
+Colby,Greenville,1303.2,False,osrm
 Colby,Grinnell,1436.0,False,osrm
 Colby,Guilford,929.2,False,osrm
 Colby,Gustavus Adolphus,1606.8,False,osrm
 Colby,Gwynedd-Mercy,490.0,True,ncaa_verified
 Colby,Hamilton,443.3,False,osrm
 Colby,Hamline,1568.6,False,osrm
+Colby,Hampden-Sydney,782.7,False,osrm
+Colby,Hanover,1118.3,False,osrm
 Colby,Hardin-Simmons,2116.4,False,ncaa_verified
 Colby,Hartford,275.9,False,osrm
+Colby,Heidelberg,911.9,False,osrm
+Colby,Hendrix,1642.0,False,osrm
 Colby,Hollins,837.2,False,osrm
 Colby,Hood,624.9,False,osrm
 Colby,Hope,960.7,False,ncaa_verified
@@ -11892,10 +12732,12 @@ Colby,WPI,209.7,False,osrm
 Colby,Yeshiva,376.8,False,osrm
 Colby,York (PA),572.3,False,osrm
 Colorado College,Concordia (TX),843.0,False,osrm
+Colorado College,Concordia (WI),1131.1,False,osrm
 Colorado College,Concordia Moorhead,959.0,False,ncaa_verified
 Colorado College,Connecticut College,1923.3,False,osrm
 Colorado College,Cornell,872.9,False,osrm
 Colorado College,Cortland,1747.0,False,ncaa_verified
+Colorado College,Crown,889.4,False,osrm
 Colorado College,Denison,1277.0,False,ncaa_verified
 Colorado College,DePauw,1038.0,False,ncaa_verified
 Colorado College,DeSales,1697.0,False,ncaa_verified
@@ -12295,27 +13137,48 @@ Concordia (TX),WPI,1911.5,False,osrm
 Concordia (TX),Yeshiva,1743.8,False,osrm
 Concordia (TX),York (PA),1564.1,False,osrm
 Concordia (WI),Concordia Moorhead,583.5,False,osrm
+Concordia (WI),Connecticut College,1011.8,False,osrm
+Concordia (WI),Cornell,249.1,False,osrm
 Concordia (WI),Cortland,794.0,False,osrm
 Concordia (WI),Crown,381.0,False,osrm
 Concordia (WI),Denison,440.0,False,osrm
 Concordia (WI),DePauw,280.2,False,osrm
 Concordia (WI),DeSales,828.5,False,osrm
+Concordia (WI),Dickinson,747.4,False,osrm
 Concordia (WI),Drew,868.9,False,osrm
 Concordia (WI),Dubuque,188.1,False,osrm
+Concordia (WI),East Texas Baptist,967.1,False,osrm
 Concordia (WI),Eastern Connecticut,1024.8,False,osrm
+Concordia (WI),Eastern Mennonite,792.5,False,osrm
+Concordia (WI),Elizabethtown,778.2,False,osrm
 Concordia (WI),Elmhurst,101.3,False,osrm
+Concordia (WI),Emmanuel,1094.5,False,osrm
 Concordia (WI),Emory,788.9,False,osrm
 Concordia (WI),Endicott,1117.2,False,osrm
+Concordia (WI),Eureka,227.9,False,osrm
 Concordia (WI),Farmingdale,929.0,False,osrm
 Concordia (WI),Framingham St.,1074.8,False,osrm
 Concordia (WI),Franciscan,545.1,False,osrm
 Concordia (WI),Franklin,309.1,False,osrm
 Concordia (WI),Franklin & Marshall,795.7,False,osrm
+Concordia (WI),Fredonia,595.6,False,osrm
+Concordia (WI),Gallaudet,802.2,False,osrm
+Concordia (WI),George Fox,2105.7,False,osrm
 Concordia (WI),Gettysburg,743.0,False,osrm
+Concordia (WI),Greensboro,821.6,False,osrm
+Concordia (WI),Greenville,364.5,False,osrm
 Concordia (WI),Grinnell,344.2,False,osrm
+Concordia (WI),Guilford,818.1,False,osrm
 Concordia (WI),Gustavus Adolphus,384.9,False,osrm
 Concordia (WI),Gwynedd-Mercy,856.7,False,osrm
+Concordia (WI),Hamilton,823.5,False,osrm
+Concordia (WI),Hamline,346.5,False,osrm
+Concordia (WI),Hampden-Sydney,866.8,False,osrm
+Concordia (WI),Hanover,386.0,False,osrm
 Concordia (WI),Hardin-Simmons,1175.0,False,osrm
+Concordia (WI),Hartford,996.3,False,osrm
+Concordia (WI),Heidelberg,385.9,False,osrm
+Concordia (WI),Hendrix,740.2,False,osrm
 Concordia (WI),Hood,755.6,False,osrm
 Concordia (WI),Hope,252.6,False,osrm
 Concordia (WI),Huntingdon,853.3,False,osrm
@@ -12437,6 +13300,7 @@ Concordia Moorhead,Elmhurst,628.7,False,osrm
 Concordia Moorhead,Emmanuel,1622.0,False,ncaa_verified
 Concordia Moorhead,Emory,1365.0,False,ncaa_verified
 Concordia Moorhead,Endicott,1647.0,False,ncaa_verified
+Concordia Moorhead,Eureka,685.5,False,osrm
 Concordia Moorhead,Farmingdale,1467.2,False,osrm
 Concordia Moorhead,Framingham St.,1602.0,False,ncaa_verified
 Concordia Moorhead,Franciscan,1098.9,False,osrm
@@ -12677,26 +13541,45 @@ Concordia Moorhead,Yeshiva,1433.5,False,osrm
 Concordia Moorhead,York (PA),1316.0,False,ncaa_verified
 Connecticut College,Cornell,1129.0,False,osrm
 Connecticut College,Cortland,299.8,False,osrm
+Connecticut College,Crown,1350.9,False,osrm
 Connecticut College,Denison,643.2,False,osrm
 Connecticut College,DePauw,903.3,False,osrm
 Connecticut College,DeSales,212.0,False,osrm
 Connecticut College,Dickinson,313.8,False,osrm
+Connecticut College,Drew,152.6,False,osrm
+Connecticut College,Dubuque,1088.5,False,osrm
 Connecticut College,East Texas Baptist,1571.8,False,osrm
+Connecticut College,Eastern Connecticut,27.4,False,osrm
 Connecticut College,Eastern Mennonite,475.5,False,osrm
 Connecticut College,Elizabethtown,302.2,False,osrm
+Connecticut College,Elmhurst,927.2,False,osrm
 Connecticut College,Emmanuel,109.3,False,osrm
 Connecticut College,Emory,984.0,False,osrm
 Connecticut College,Endicott,133.0,False,osrm
+Connecticut College,Eureka,1020.1,False,osrm
+Connecticut College,Farmingdale,139.2,False,osrm
+Connecticut College,Framingham St.,89.6,False,osrm
+Connecticut College,Franciscan,533.9,False,osrm
 Connecticut College,Franklin,873.0,False,osrm
 Connecticut College,Franklin & Marshall,287.2,False,osrm
 Connecticut College,Fredonia,489,False,ncaa_verified
+Connecticut College,Gallaudet,348.7,False,osrm
+Connecticut College,George Fox,3040.7,False,osrm
 Connecticut College,Gettysburg,348.2,False,osrm
+Connecticut College,Greensboro,660.3,False,osrm
+Connecticut College,Greenville,1048.7,False,osrm
+Connecticut College,Grinnell,1181.5,False,osrm
 Connecticut College,Guilford,669.1,False,osrm
 Connecticut College,Gustavus Adolphus,1352.3,False,osrm
+Connecticut College,Gwynedd-Mercy,222.6,False,osrm
 Connecticut College,Hamilton,263.2,False,osrm
 Connecticut College,Hamline,1314.1,False,osrm
+Connecticut College,Hampden-Sydney,522.6,False,osrm
+Connecticut College,Hanover,863.8,False,osrm
 Connecticut College,Hardin-Simmons,1856.1,False,osrm
 Connecticut College,Hartford,53.5,False,osrm
+Connecticut College,Heidelberg,657.4,False,osrm
+Connecticut College,Hendrix,1381.9,False,osrm
 Connecticut College,Hollins,577.1,False,osrm
 Connecticut College,Hope,851.8,False,osrm
 Connecticut College,Houghton,411.9,False,osrm
@@ -12807,21 +13690,44 @@ Connecticut College,Wittenberg,718.7,False,osrm
 Connecticut College,Wooster,590.2,False,osrm
 Connecticut College,WPI,72.2,False,osrm
 Cornell,Cortland,914.8,False,osrm
+Cornell,Crown,309.2,False,osrm
 Cornell,Denison,580.2,False,osrm
 Cornell,DePauw,359.4,False,osrm
+Cornell,DeSales,944.5,False,osrm
 Cornell,Dickinson,864.2,False,osrm
+Cornell,Drew,986.0,False,osrm
+Cornell,Dubuque,64.1,False,osrm
+Cornell,East Texas Baptist,825.8,False,osrm
+Cornell,Eastern Connecticut,1141.6,False,osrm
 Cornell,Eastern Mennonite,909.3,False,osrm
+Cornell,Elizabethtown,894.9,False,osrm
+Cornell,Elmhurst,198.6,False,osrm
 Cornell,Emmanuel,1211.3,False,osrm
 Cornell,Emory,842.2,False,osrm
+Cornell,Endicott,1235.0,False,osrm
+Cornell,Eureka,181.0,False,osrm
+Cornell,Farmingdale,1046.6,False,osrm
+Cornell,Framingham St.,1191.6,False,osrm
+Cornell,Franciscan,678.3,False,osrm
 Cornell,Franklin,401.3,False,osrm
+Cornell,Franklin & Marshall,912.7,False,osrm
 Cornell,Fredonia,712.4,False,osrm
+Cornell,Gallaudet,919.0,False,osrm
+Cornell,George Fox,1945.0,False,osrm
 Cornell,Gettysburg,860.0,False,osrm
+Cornell,Greensboro,912.2,False,osrm
+Cornell,Greenville,312.7,False,osrm
+Cornell,Grinnell,85.8,False,osrm
 Cornell,Guilford,908.7,False,osrm
 Cornell,Gustavus Adolphus,272.4,False,osrm
+Cornell,Gwynedd-Mercy,973.6,False,osrm
 Cornell,Hamilton,940.3,False,osrm
 Cornell,Hamline,265.8,False,osrm
+Cornell,Hampden-Sydney,957.4,False,osrm
+Cornell,Hanover,478.2,False,osrm
 Cornell,Hardin-Simmons,964.7,False,osrm
 Cornell,Hartford,1113.1,False,osrm
+Cornell,Hendrix,576.1,False,osrm
 Cornell,Hollins,847.3,False,osrm
 Cornell,Hope,368.3,False,osrm
 Cornell,Houghton,791.7,False,osrm
@@ -13157,10 +14063,15 @@ Cortland,York (PA),254.0,False,ncaa_verified
 Crown,Denison,783.7,False,osrm
 Crown,DePauw,644.1,False,osrm
 Crown,DeSales,1162.6,False,osrm
+Crown,Dickinson,1082.3,False,osrm
 Crown,Drew,1204.1,False,osrm
 Crown,Dubuque,274.6,False,osrm
+Crown,East Texas Baptist,984.3,False,osrm
 Crown,Eastern Connecticut,1359.7,False,osrm
+Crown,Eastern Mennonite,1127.4,False,osrm
+Crown,Elizabethtown,1113.1,False,osrm
 Crown,Elmhurst,426.2,False,osrm
+Crown,Emmanuel,1429.4,False,osrm
 Crown,Emory,1135.3,False,osrm
 Crown,Endicott,1453.2,False,osrm
 Crown,Farmingdale,1264.7,False,osrm
@@ -13168,11 +14079,24 @@ Crown,Framingham St.,1409.7,False,osrm
 Crown,Franciscan,896.4,False,osrm
 Crown,Franklin,645.8,False,osrm
 Crown,Franklin & Marshall,1130.9,False,osrm
+Crown,Fredonia,930.5,False,osrm
+Crown,Gallaudet,1137.1,False,osrm
+Crown,George Fox,1752.6,False,osrm
 Crown,Gettysburg,1078.1,False,osrm
+Crown,Greensboro,1158.4,False,osrm
+Crown,Greenville,620.6,False,osrm
 Crown,Grinnell,291.4,False,osrm
+Crown,Guilford,1154.9,False,osrm
 Crown,Gustavus Adolphus,47.7,False,osrm
 Crown,Gwynedd-Mercy,1191.7,False,osrm
+Crown,Hamilton,1158.4,False,osrm
+Crown,Hamline,35.5,False,osrm
+Crown,Hampden-Sydney,1203.5,False,osrm
+Crown,Hanover,722.7,False,osrm
 Crown,Hardin-Simmons,1091.5,False,osrm
+Crown,Hartford,1331.2,False,osrm
+Crown,Heidelberg,720.8,False,osrm
+Crown,Hendrix,844.3,False,osrm
 Crown,Hilbert,962.7,False,osrm
 Crown,Hood,1091.4,False,osrm
 Crown,Hope,591.5,False,osrm
@@ -13305,6 +14229,7 @@ Denison,Elmhurst,354.7,False,osrm
 Denison,Emmanuel,733.0,False,ncaa_verified
 Denison,Emory,605.0,False,ncaa_verified
 Denison,Endicott,755.0,False,ncaa_verified
+Denison,Eureka,401.0,False,osrm
 Denison,Farmingdale,571.7,False,osrm
 Denison,Framingham St.,713.0,False,ncaa_verified
 Denison,Franciscan,128.3,False,osrm
@@ -13805,6 +14730,7 @@ DeSales,Drew,66.8,False,osrm
 DeSales,Dubuque,904.2,False,osrm
 DeSales,East Texas Baptist,1364.0,False,ncaa_verified
 DeSales,Eastern Connecticut,229.0,False,ncaa_verified
+DeSales,Eastern Mennonite,267.7,False,osrm
 DeSales,Elizabethtown,90.0,False,ncaa_verified
 DeSales,Elmhurst,743.1,False,osrm
 DeSales,Emmanuel,305.0,False,ncaa_verified
@@ -13816,6 +14742,7 @@ DeSales,Framingham St.,285.0,False,ncaa_verified
 DeSales,Franciscan,326.2,False,osrm
 DeSales,Franklin,649.0,False,ncaa_verified
 DeSales,Franklin & Marshall,71.5,False,osrm
+DeSales,Fredonia,324.4,False,osrm
 DeSales,Gallaudet,178.0,False,ncaa_verified
 DeSales,George Fox,2856.4,False,osrm
 DeSales,Gettysburg,129.0,False,ncaa_verified
@@ -13827,9 +14754,11 @@ DeSales,Gustavus Adolphus,1177.0,False,ncaa_verified
 DeSales,Gwynedd-Mercy,28.0,False,osrm
 DeSales,Hamilton,224.0,False,ncaa_verified
 DeSales,Hamline,1140.0,False,ncaa_verified
+DeSales,Hampden-Sydney,350.3,False,osrm
 DeSales,Hanover,636.0,False,ncaa_verified
 DeSales,Hardin-Simmons,1649.0,False,ncaa_verified
 DeSales,Hartford,203.5,False,osrm
+DeSales,Heidelberg,473.1,False,osrm
 DeSales,Hendrix,1174.2,False,osrm
 DeSales,Hilbert,316.4,False,osrm
 DeSales,Hollins,369.3,False,osrm
@@ -14043,26 +14972,40 @@ DeSales,Worcester St.,260.7,False,osrm
 DeSales,WPI,269.0,False,ncaa_verified
 DeSales,Yeshiva,94.1,False,osrm
 DeSales,York (PA),97.0,False,ncaa_verified
+Dickinson,Drew,169.3,False,osrm
+Dickinson,Dubuque,823.2,False,osrm
 Dickinson,East Texas Baptist,1259.0,False,ncaa_verified
 Dickinson,Eastern Connecticut,332.0,False,ncaa_verified
 Dickinson,Eastern Mennonite,162.2,False,osrm
 Dickinson,Elizabethtown,60.0,False,ncaa_verified
+Dickinson,Elmhurst,661.9,False,osrm
 Dickinson,Emmanuel,403.0,False,ncaa_verified
 Dickinson,Emory,690.0,False,ncaa_verified
 Dickinson,Endicott,422.4,False,osrm
+Dickinson,Eureka,724.3,False,osrm
+Dickinson,Farmingdale,223.6,False,osrm
 Dickinson,Framingham St.,383.0,False,ncaa_verified
+Dickinson,Franciscan,227.9,False,osrm
 Dickinson,Franklin,547.6,False,ncaa_verified
 Dickinson,Franklin & Marshall,57.3,False,osrm
 Dickinson,Fredonia,247.7,False,osrm
+Dickinson,Gallaudet,112.1,False,osrm
+Dickinson,George Fox,2775.4,False,osrm
 Dickinson,Gettysburg,35.0,False,ncaa_verified
 Dickinson,Greensboro,372.0,False,ncaa_verified
 Dickinson,Greenville,723.0,False,ncaa_verified
+Dickinson,Grinnell,916.2,False,osrm
 Dickinson,Guilford,371.0,False,ncaa_verified
 Dickinson,Gustavus Adolphus,1087.0,False,ncaa_verified
+Dickinson,Gwynedd-Mercy,118.1,False,osrm
 Dickinson,Hamilton,283.0,False,ncaa_verified
 Dickinson,Hamline,1048.8,False,osrm
+Dickinson,Hampden-Sydney,280.4,False,osrm
+Dickinson,Hanover,534.8,False,osrm
 Dickinson,Hardin-Simmons,1543.0,False,ncaa_verified
 Dickinson,Hartford,306.1,False,osrm
+Dickinson,Heidelberg,392.1,False,osrm
+Dickinson,Hendrix,1068.7,False,osrm
 Dickinson,Hollins,263.8,False,osrm
 Dickinson,Hope,621.0,False,ncaa_verified
 Dickinson,Houghton,243.7,False,osrm
@@ -14215,22 +15158,38 @@ Dickinson,Wittenberg,399.0,False,ncaa_verified
 Dickinson,Wooster,325.4,False,osrm
 Dickinson,WPI,368.0,False,ncaa_verified
 Drew,Dubuque,944.7,False,osrm
+Drew,East Texas Baptist,1426.1,False,osrm
 Drew,Eastern Connecticut,169.0,False,osrm
+Drew,Eastern Mennonite,329.8,False,osrm
+Drew,Elizabethtown,148.5,False,osrm
 Drew,Elmhurst,783.6,False,osrm
+Drew,Emmanuel,241.0,False,osrm
 Drew,Emory,853.2,False,osrm
 Drew,Endicott,264.7,False,osrm
+Drew,Eureka,876.3,False,osrm
 Drew,Farmingdale,61.6,False,osrm
 Drew,Framingham St.,221.3,False,osrm
 Drew,Franciscan,388.2,False,osrm
 Drew,Franklin,706.6,False,osrm
 Drew,Franklin & Marshall,133.5,False,osrm
+Drew,Fredonia,364.8,False,osrm
+Drew,Gallaudet,224.7,False,osrm
+Drew,George Fox,2896.9,False,osrm
 Drew,Gettysburg,189.4,False,osrm
+Drew,Greensboro,537.4,False,osrm
+Drew,Greenville,883.8,False,osrm
 Drew,Grinnell,1037.7,False,osrm
+Drew,Guilford,539.4,False,osrm
 Drew,Gustavus Adolphus,1208.4,False,osrm
 Drew,Gwynedd-Mercy,70.7,False,osrm
+Drew,Hamilton,250.9,False,osrm
+Drew,Hamline,1172.0,False,osrm
 Drew,Hampden-Sydney,398.7,False,osrm
+Drew,Hanover,695.1,False,osrm
 Drew,Hardin-Simmons,1710.4,False,osrm
+Drew,Hartford,150.2,False,osrm
 Drew,Heidelberg,524,False,ncaa_verified
+Drew,Hendrix,1236.2,False,osrm
 Drew,Hilbert,344.0,False,osrm
 Drew,Hood,223.6,False,osrm
 Drew,Hope,728.4,False,osrm
@@ -14355,22 +15314,37 @@ Drew,Worcester St.,205.4,False,osrm
 Drew,WPI,205.3,False,osrm
 Drew,Yeshiva,38.9,False,osrm
 Drew,York (PA),158.5,False,osrm
+Dubuque,East Texas Baptist,896.2,False,osrm
 Dubuque,Eastern Connecticut,1101.9,False,osrm
+Dubuque,Eastern Mennonite,869.6,False,osrm
+Dubuque,Elizabethtown,855.2,False,osrm
 Dubuque,Elmhurst,168.4,False,osrm
+Dubuque,Emmanuel,1171.6,False,osrm
 Dubuque,Emory,845.2,False,osrm
 Dubuque,Endicott,1195.3,False,osrm
+Dubuque,Eureka,184.0,False,osrm
 Dubuque,Farmingdale,1006.9,False,osrm
 Dubuque,Framingham St.,1151.9,False,osrm
 Dubuque,Franciscan,638.6,False,osrm
 Dubuque,Franklin,404.3,False,osrm
 Dubuque,Franklin & Marshall,873.0,False,osrm
+Dubuque,Fredonia,672.7,False,osrm
+Dubuque,Gallaudet,879.3,False,osrm
+Dubuque,George Fox,2002.6,False,osrm
 Dubuque,Gettysburg,820.3,False,osrm
+Dubuque,Greensboro,915.2,False,osrm
+Dubuque,Greenville,315.7,False,osrm
 Dubuque,Grinnell,144.3,False,osrm
+Dubuque,Guilford,911.7,False,osrm
 Dubuque,Gustavus Adolphus,290.2,False,osrm
 Dubuque,Gwynedd-Mercy,933.9,False,osrm
+Dubuque,Hamilton,900.6,False,osrm
+Dubuque,Hamline,246.8,False,osrm
 Dubuque,Hampden-Sydney,960.4,False,osrm
 Dubuque,Hardin-Simmons,1022.4,False,osrm
+Dubuque,Hartford,1073.4,False,osrm
 Dubuque,Heidelberg,463.0,False,osrm
+Dubuque,Hendrix,683.3,False,osrm
 Dubuque,Hilbert,704.8,False,osrm
 Dubuque,Hood,833.5,False,osrm
 Dubuque,Hope,333.6,False,osrm
@@ -14496,26 +15470,36 @@ Dubuque,WPI,1135.9,False,osrm
 Dubuque,Yeshiva,973.1,False,osrm
 Dubuque,York (PA),857.3,False,osrm
 East Texas Baptist,Eastern Connecticut,1594.0,False,ncaa_verified
+East Texas Baptist,Eastern Mennonite,1098.1,False,osrm
 East Texas Baptist,Elizabethtown,1299.0,False,ncaa_verified
+East Texas Baptist,Elmhurst,870.3,False,osrm
 East Texas Baptist,Emmanuel,1665.0,False,ncaa_verified
 East Texas Baptist,Emory,641.0,False,ncaa_verified
 East Texas Baptist,Endicott,1683.0,False,ncaa_verified
 East Texas Baptist,Eureka,737.0,False,ncaa_verified
+East Texas Baptist,Farmingdale,1481.1,False,osrm
 East Texas Baptist,Framingham St.,1646.0,False,ncaa_verified
+East Texas Baptist,Franciscan,1081.0,False,osrm
 East Texas Baptist,Franklin,817.0,False,ncaa_verified
 East Texas Baptist,Franklin & Marshall,1316.5,False,osrm
+East Texas Baptist,Fredonia,1224.2,False,osrm
 East Texas Baptist,Gallaudet,1236.0,False,ncaa_verified
 East Texas Baptist,George Fox,2188.5,False,osrm
 East Texas Baptist,Gettysburg,1250.0,False,ncaa_verified
 East Texas Baptist,Greensboro,967.0,False,ncaa_verified
 East Texas Baptist,Greenville,610.0,False,ncaa_verified
+East Texas Baptist,Grinnell,779.0,False,osrm
 East Texas Baptist,Guilford,971.0,False,ncaa_verified
 East Texas Baptist,Gustavus Adolphus,963.0,False,ncaa_verified
+East Texas Baptist,Gwynedd-Mercy,1376.2,False,osrm
 East Texas Baptist,Hamilton,1451.0,False,ncaa_verified
 East Texas Baptist,Hamline,985.0,False,ncaa_verified
+East Texas Baptist,Hampden-Sydney,1101.9,False,osrm
 East Texas Baptist,Hanover,782.0,False,ncaa_verified
 East Texas Baptist,Hardin-Simmons,335.0,False,ncaa_verified
 East Texas Baptist,Hartford,1563.5,False,osrm
+East Texas Baptist,Heidelberg,1010.6,False,osrm
+East Texas Baptist,Hendrix,239.7,False,osrm
 East Texas Baptist,Hollins,997.8,False,osrm
 East Texas Baptist,Hope,983.0,False,ncaa_verified
 East Texas Baptist,Houghton,1302.0,False,ncaa_verified
@@ -14697,18 +15681,30 @@ Eastern Connecticut,Elmhurst,940.0,False,osrm
 Eastern Connecticut,Emmanuel,95.0,False,ncaa_verified
 Eastern Connecticut,Emory,1002.0,False,ncaa_verified
 Eastern Connecticut,Endicott,120.0,False,ncaa_verified
+Eastern Connecticut,Eureka,1032.7,False,osrm
 Eastern Connecticut,Farmingdale,154.5,False,osrm
 Eastern Connecticut,Framingham St.,76.0,False,ncaa_verified
 Eastern Connecticut,Franciscan,539.9,False,osrm
 Eastern Connecticut,Franklin,885.5,False,osrm
 Eastern Connecticut,Franklin & Marshall,302.6,False,osrm
+Eastern Connecticut,Fredonia,453.4,False,osrm
+Eastern Connecticut,Gallaudet,364.0,False,osrm
+Eastern Connecticut,George Fox,3053.3,False,osrm
 Eastern Connecticut,Gettysburg,354.0,False,ncaa_verified
+Eastern Connecticut,Greensboro,675.6,False,osrm
+Eastern Connecticut,Greenville,1061.3,False,osrm
 Eastern Connecticut,Grinnell,1194.1,False,osrm
 Eastern Connecticut,Guilford,687.0,False,ncaa_verified
 Eastern Connecticut,Gustavus Adolphus,1363.0,False,ncaa_verified
 Eastern Connecticut,Gwynedd-Mercy,238.0,False,osrm
 Eastern Connecticut,Hamilton,246.0,False,ncaa_verified
+Eastern Connecticut,Hamline,1328.4,False,osrm
+Eastern Connecticut,Hampden-Sydney,537.9,False,osrm
+Eastern Connecticut,Hanover,876.3,False,osrm
 Eastern Connecticut,Hardin-Simmons,1874.0,False,ncaa_verified
+Eastern Connecticut,Hartford,31.8,False,osrm
+Eastern Connecticut,Heidelberg,670.0,False,osrm
+Eastern Connecticut,Hendrix,1397.3,False,osrm
 Eastern Connecticut,Hilbert,421.9,False,osrm
 Eastern Connecticut,Hood,380.1,False,osrm
 Eastern Connecticut,Hope,829.0,False,ncaa_verified
@@ -14870,17 +15866,34 @@ Eastern Connecticut,Worcester St.,57.3,False,osrm
 Eastern Connecticut,WPI,56.7,False,osrm
 Eastern Connecticut,Yeshiva,132.0,False,osrm
 Eastern Connecticut,York (PA),327.5,False,osrm
+Eastern Mennonite,Elizabethtown,202.7,False,osrm
+Eastern Mennonite,Elmhurst,707.5,False,osrm
 Eastern Mennonite,Emmanuel,560.1,False,osrm
 Eastern Mennonite,Emory,528.0,False,osrm
+Eastern Mennonite,Endicott,583.9,False,osrm
+Eastern Mennonite,Eureka,738.9,False,osrm
+Eastern Mennonite,Farmingdale,385.1,False,osrm
+Eastern Mennonite,Framingham St.,540.4,False,osrm
+Eastern Mennonite,Franciscan,240.4,False,osrm
 Eastern Mennonite,Franklin,547.7,False,osrm
+Eastern Mennonite,Franklin & Marshall,220.5,False,osrm
 Eastern Mennonite,Fredonia,404.2,False,osrm
+Eastern Mennonite,Gallaudet,132.9,False,osrm
+Eastern Mennonite,George Fox,2814.5,False,osrm
 Eastern Mennonite,Gettysburg,146.2,False,osrm
+Eastern Mennonite,Greensboro,209.5,False,osrm
+Eastern Mennonite,Greenville,734.4,False,osrm
+Eastern Mennonite,Grinnell,961.8,False,osrm
 Eastern Mennonite,Guilford,211.5,False,osrm
 Eastern Mennonite,Gustavus Adolphus,1134.4,False,osrm
+Eastern Mennonite,Gwynedd-Mercy,280.2,False,osrm
 Eastern Mennonite,Hamilton,442.2,False,osrm
 Eastern Mennonite,Hamline,1096.2,False,osrm
+Eastern Mennonite,Hampden-Sydney,120.1,False,osrm
 Eastern Mennonite,Hardin-Simmons,1382.5,False,osrm
 Eastern Mennonite,Hartford,467.5,False,osrm
+Eastern Mennonite,Heidelberg,437.8,False,osrm
+Eastern Mennonite,Hendrix,908.3,False,osrm
 Eastern Mennonite,Hollins,103.5,False,osrm
 Eastern Mennonite,Hope,644.6,False,osrm
 Eastern Mennonite,Houghton,370.3,False,osrm
@@ -14956,23 +15969,34 @@ Eastern Mennonite,Wisconsin Lutheran,781.7,False,osrm
 Eastern Mennonite,Wittenberg,381.3,False,osrm
 Eastern Mennonite,Wooster,348.7,False,osrm
 Eastern Mennonite,WPI,524.4,False,osrm
+Elizabethtown,Elmhurst,693.0,False,osrm
 Elizabethtown,Emmanuel,392.0,False,ncaa_verified
 Elizabethtown,Emory,731.0,False,ncaa_verified
 Elizabethtown,Endicott,418.0,False,ncaa_verified
 Elizabethtown,Eureka,757.0,False,ncaa_verified
+Elizabethtown,Farmingdale,212.5,False,osrm
 Elizabethtown,Framingham St.,373.0,False,ncaa_verified
+Elizabethtown,Franciscan,259.0,False,osrm
 Elizabethtown,Franklin,580.0,False,ncaa_verified
 Elizabethtown,Franklin & Marshall,18.6,False,osrm
+Elizabethtown,Fredonia,273.6,False,osrm
 Elizabethtown,Gallaudet,115.0,False,ncaa_verified
+Elizabethtown,George Fox,2806.5,False,osrm
 Elizabethtown,Gettysburg,58.0,False,ncaa_verified
 Elizabethtown,Greensboro,413.0,False,ncaa_verified
 Elizabethtown,Greenville,755.0,False,ncaa_verified
+Elizabethtown,Grinnell,947.3,False,osrm
 Elizabethtown,Guilford,411.0,False,ncaa_verified
 Elizabethtown,Gustavus Adolphus,1119.0,False,ncaa_verified
+Elizabethtown,Gwynedd-Mercy,87.6,False,osrm
 Elizabethtown,Hamilton,282.0,False,ncaa_verified
 Elizabethtown,Hamline,1079.0,False,ncaa_verified
+Elizabethtown,Hampden-Sydney,289.9,False,osrm
 Elizabethtown,Hanover,569.0,False,ncaa_verified
 Elizabethtown,Hardin-Simmons,1584.0,False,ncaa_verified
+Elizabethtown,Hartford,293.7,False,osrm
+Elizabethtown,Heidelberg,423.2,False,osrm
+Elizabethtown,Hendrix,1107.6,False,osrm
 Elizabethtown,Hollins,302.7,False,osrm
 Elizabethtown,Hope,653.0,False,ncaa_verified
 Elizabethtown,Houghton,262.0,False,ncaa_verified
@@ -15136,20 +16160,32 @@ Elizabethtown,Wisconsin Lutheran,772.0,False,ncaa_verified
 Elizabethtown,Wittenberg,431.0,False,ncaa_verified
 Elizabethtown,WPI,357.0,False,ncaa_verified
 Elizabethtown,York (PA),30.0,False,ncaa_verified
+Elmhurst,Emmanuel,1008.1,False,osrm
 Elmhurst,Emory,701.9,False,osrm
 Elmhurst,Endicott,1031.8,False,osrm
+Elmhurst,Eureka,129.7,False,osrm
 Elmhurst,Farmingdale,843.4,False,osrm
 Elmhurst,Framingham St.,988.4,False,osrm
 Elmhurst,Franciscan,477.0,False,ncaa_verified
 Elmhurst,Franklin,220.6,False,osrm
 Elmhurst,Franklin & Marshall,709.5,False,osrm
+Elmhurst,Gallaudet,715.8,False,osrm
+Elmhurst,George Fox,2132.1,False,osrm
 Elmhurst,Gettysburg,656.8,False,osrm
+Elmhurst,Greensboro,733.1,False,osrm
+Elmhurst,Greenville,266.1,False,osrm
 Elmhurst,Grinnell,272.9,False,osrm
+Elmhurst,Guilford,729.6,False,osrm
 Elmhurst,Gustavus Adolphus,431.5,False,osrm
 Elmhurst,Gwynedd-Mercy,770.4,False,osrm
+Elmhurst,Hamilton,737.1,False,osrm
+Elmhurst,Hamline,395.1,False,osrm
 Elmhurst,Hampden-Sydney,778.3,False,osrm
+Elmhurst,Hanover,297.5,False,osrm
 Elmhurst,Hardin-Simmons,1075.0,False,osrm
+Elmhurst,Hartford,909.9,False,osrm
 Elmhurst,Heidelberg,299.5,False,osrm
+Elmhurst,Hendrix,634.4,False,osrm
 Elmhurst,Hilbert,541.3,False,osrm
 Elmhurst,Hood,670.0,False,osrm
 Elmhurst,Hope,166.2,False,osrm
@@ -15277,20 +16313,29 @@ Elmhurst,York (PA),693.8,False,osrm
 Emmanuel,Austin College,1739.6,False,osrm
 Emmanuel,Emory,1073.0,False,ncaa_verified
 Emmanuel,Endicott,21.9,False,osrm
+Emmanuel,Eureka,1101.4,False,osrm
+Emmanuel,Farmingdale,226.1,False,osrm
 Emmanuel,Framingham St.,21.0,False,ncaa_verified
+Emmanuel,Franciscan,608.6,False,osrm
 Emmanuel,Franklin,954.3,False,ncaa_verified
 Emmanuel,Franklin & Marshall,374.2,False,osrm
 Emmanuel,Fredonia,495,False,ncaa_verified
+Emmanuel,Gallaudet,435.6,False,osrm
 Emmanuel,George Fox,3122.0,False,osrm
 Emmanuel,Gettysburg,424.0,False,ncaa_verified
 Emmanuel,Greensboro,750.0,False,ncaa_verified
 Emmanuel,Greenville,1130.0,False,ncaa_verified
+Emmanuel,Grinnell,1262.8,False,osrm
 Emmanuel,Guilford,759.0,False,ncaa_verified
 Emmanuel,Gustavus Adolphus,1424.0,False,ncaa_verified
+Emmanuel,Gwynedd-Mercy,309.5,False,osrm
 Emmanuel,Hamilton,275.0,False,ncaa_verified
 Emmanuel,Hamline,1395.4,False,osrm
+Emmanuel,Hampden-Sydney,609.5,False,osrm
+Emmanuel,Hanover,945.1,False,osrm
 Emmanuel,Hardin-Simmons,1944.0,False,ncaa_verified
 Emmanuel,Hartford,102.7,False,osrm
+Emmanuel,Heidelberg,738.7,False,osrm
 Emmanuel,Hendrix,1468.9,False,osrm
 Emmanuel,Hollins,664.0,False,osrm
 Emmanuel,Hope,857.0,False,ncaa_verified
@@ -15482,6 +16527,7 @@ Emory,Hanover,474.0,False,ncaa_verified
 Emory,Hardin-Simmons,971.0,False,ncaa_verified
 Emory,Hartford,974.7,False,osrm
 Emory,Heidelberg,634.2,False,osrm
+Emory,Hendrix,547.1,False,osrm
 Emory,Hilbert,876.5,False,osrm
 Emory,Hollins,422.8,False,osrm
 Emory,Hood,638.3,False,osrm
@@ -15702,6 +16748,7 @@ Endicott,Franklin & Marshall,397.3,False,osrm
 Endicott,Gallaudet,463.0,False,ncaa_verified
 Endicott,George Fox,3145.1,False,osrm
 Endicott,Gettysburg,450.0,False,ncaa_verified
+Endicott,Greensboro,770.3,False,osrm
 Endicott,Greenville,1155.0,False,ncaa_verified
 Endicott,Grinnell,1285.9,False,osrm
 Endicott,Guilford,784.0,False,ncaa_verified
@@ -15714,6 +16761,7 @@ Endicott,Hanover,972.0,False,ncaa_verified
 Endicott,Hardin-Simmons,1968.0,False,ncaa_verified
 Endicott,Hartford,125.8,False,osrm
 Endicott,Heidelberg,761.8,False,osrm
+Endicott,Hendrix,1491.9,False,osrm
 Endicott,Hilbert,486,False,ncaa_verified
 Endicott,Hollins,687.1,False,osrm
 Endicott,Hood,480.0,True,ncaa_verified
@@ -15920,12 +16968,28 @@ Endicott,Worcester St.,71.4,False,osrm
 Endicott,WPI,66.0,False,ncaa_verified
 Endicott,Yeshiva,226.7,False,osrm
 Endicott,York (PA),422.0,False,ncaa_verified
+Eureka,Farmingdale,937.1,False,osrm
 Eureka,Framingham St.,1072.0,False,ncaa_verified
+Eureka,Franklin,222.8,False,osrm
+Eureka,Franklin & Marshall,772.3,False,osrm
+Eureka,Fredonia,602.9,False,osrm
 Eureka,Gallaudet,776.0,False,ncaa_verified
+Eureka,George Fox,2092.2,False,osrm
 Eureka,Gettysburg,722.0,False,ncaa_verified
+Eureka,Greensboro,733.7,False,osrm
+Eureka,Greenville,156.7,False,osrm
+Eureka,Grinnell,232.9,False,osrm
+Eureka,Guilford,730.2,False,osrm
 Eureka,Gustavus Adolphus,446.0,False,ncaa_verified
+Eureka,Gwynedd-Mercy,833.2,False,osrm
+Eureka,Hamilton,830.8,False,osrm
+Eureka,Hamline,452.1,False,osrm
+Eureka,Hampden-Sydney,778.9,False,osrm
 Eureka,Hanover,299.0,False,ncaa_verified
 Eureka,Hardin-Simmons,965.0,False,ncaa_verified
+Eureka,Hartford,1003.6,False,osrm
+Eureka,Heidelberg,393.2,False,osrm
+Eureka,Hendrix,524.3,False,osrm
 Eureka,Hope,261.0,False,ncaa_verified
 Eureka,Hunter,901.0,False,ncaa_verified
 Eureka,Husson,1326.0,False,ncaa_verified
@@ -16026,13 +17090,24 @@ Farmingdale,Framingham St.,204.0,False,osrm
 Farmingdale,Franciscan,443.6,False,osrm
 Farmingdale,Franklin,762.0,False,osrm
 Farmingdale,Franklin & Marshall,197.4,False,osrm
+Farmingdale,Fredonia,424.9,False,osrm
+Farmingdale,Gallaudet,258.7,False,osrm
+Farmingdale,George Fox,2957.0,False,osrm
 Farmingdale,Gettysburg,258.2,False,osrm
+Farmingdale,Greensboro,570.4,False,osrm
+Farmingdale,Greenville,939.1,False,osrm
 Farmingdale,Grinnell,1098.8,False,osrm
+Farmingdale,Guilford,579.2,False,osrm
 Farmingdale,Gustavus Adolphus,1268.6,False,osrm
 Farmingdale,Gwynedd-Mercy,132.7,False,osrm
+Farmingdale,Hamilton,273.2,False,osrm
+Farmingdale,Hamline,1232.1,False,osrm
 Farmingdale,Hampden-Sydney,432.7,False,osrm
+Farmingdale,Hanover,750.5,False,osrm
 Farmingdale,Hardin-Simmons,1765.4,False,osrm
+Farmingdale,Hartford,131.1,False,osrm
 Farmingdale,Heidelberg,573.7,False,osrm
+Farmingdale,Hendrix,1291.6,False,osrm
 Farmingdale,Hilbert,404.1,False,osrm
 Farmingdale,Hood,275.2,False,osrm
 Farmingdale,Hope,788.5,False,osrm
@@ -16160,6 +17235,7 @@ Farmingdale,York (PA),222.3,False,osrm
 Framingham St.,Franciscan,589.3,False,osrm
 Framingham St.,Franklin,936.0,False,ncaa_verified
 Framingham St.,Franklin & Marshall,354.8,False,osrm
+Framingham St.,Fredonia,475.7,False,osrm
 Framingham St.,Gallaudet,418.0,False,ncaa_verified
 Framingham St.,George Fox,3102.7,False,osrm
 Framingham St.,Gettysburg,405.0,False,ncaa_verified
@@ -16390,13 +17466,22 @@ Framingham St.,Yeshiva,184.3,False,osrm
 Framingham St.,York (PA),378.0,False,ncaa_verified
 Franciscan,Franklin,337.2,False,osrm
 Franciscan,Franklin & Marshall,275.5,False,osrm
+Franciscan,Fredonia,202.8,False,osrm
+Franciscan,Gallaudet,272.9,False,osrm
+Franciscan,George Fox,2573.0,False,osrm
 Franciscan,Gettysburg,222.7,False,osrm
+Franciscan,Greensboro,421.1,False,osrm
 Franciscan,Grinnell,730.7,False,osrm
+Franciscan,Guilford,417.7,False,osrm
 Franciscan,Gustavus Adolphus,901.5,False,osrm
 Franciscan,Gwynedd-Mercy,336.4,False,osrm
+Franciscan,Hamilton,430.8,False,osrm
+Franciscan,Hamline,848.2,False,osrm
 Franciscan,Hampden-Sydney,351.5,False,osrm
+Franciscan,Hanover,325.7,False,osrm
 Franciscan,Hardin-Simmons,1364.9,False,osrm
 Franciscan,Heidelberg,168.9,False,osrm
+Franciscan,Hendrix,869.7,False,osrm
 Franciscan,Hilbert,235.0,False,osrm
 Franciscan,Hood,227.1,False,osrm
 Franciscan,Hope,421.4,False,osrm
@@ -16526,6 +17611,8 @@ Franklin,Fredonia,477.9,False,osrm
 Franklin,Gallaudet,599.0,False,ncaa_verified
 Franklin,George Fox,2313.6,False,osrm
 Franklin,Gettysburg,545.0,False,ncaa_verified
+Franklin,Greensboro,536.3,False,osrm
+Franklin,Greenville,199.3,False,osrm
 Franklin,Grinnell,454.4,False,osrm
 Franklin,Guilford,533.0,False,ncaa_verified
 Franklin,Gustavus Adolphus,647.0,False,ncaa_verified
@@ -16537,6 +17624,7 @@ Franklin,Hanover,81.0,False,ncaa_verified
 Franklin,Hardin-Simmons,1049.0,False,ncaa_verified
 Franklin,Hartford,856.4,False,osrm
 Franklin,Heidelberg,236.0,False,osrm
+Franklin,Hendrix,569.5,False,osrm
 Franklin,Hilbert,511,False,ncaa_verified
 Franklin,Hollins,475,False,ncaa_verified
 Franklin,Hood,545.8,False,osrm
@@ -16742,7 +17830,12 @@ Franklin,Worcester St.,919.1,False,osrm
 Franklin,WPI,920.0,False,ncaa_verified
 Franklin,Yeshiva,756.2,False,osrm
 Franklin,York (PA),581.0,False,ncaa_verified
+Franklin & Marshall,Fredonia,290.7,False,osrm
+Franklin & Marshall,Gallaudet,114.0,False,osrm
+Franklin & Marshall,George Fox,2823.6,False,osrm
 Franklin & Marshall,Gettysburg,54.7,False,osrm
+Franklin & Marshall,Greensboro,425.8,False,osrm
+Franklin & Marshall,Greenville,771.6,False,osrm
 Franklin & Marshall,Grinnell,964.4,False,osrm
 Franklin & Marshall,Guilford,427.8,False,osrm
 Franklin & Marshall,Gustavus Adolphus,1134.8,False,osrm
@@ -16750,8 +17843,11 @@ Franklin & Marshall,Gwynedd-Mercy,72.7,False,osrm
 Franklin & Marshall,Hamilton,262.2,False,osrm
 Franklin & Marshall,Hamline,1097.0,False,osrm
 Franklin & Marshall,Hampden-Sydney,290.1,False,osrm
+Franklin & Marshall,Hanover,583.0,False,osrm
 Franklin & Marshall,Hardin-Simmons,1598.9,False,osrm
+Franklin & Marshall,Hartford,278.8,False,osrm
 Franklin & Marshall,Heidelberg,440.4,False,osrm
+Franklin & Marshall,Hendrix,1124.7,False,osrm
 Franklin & Marshall,Hilbert,308.3,False,osrm
 Franklin & Marshall,Hollins,319.8,False,osrm
 Franklin & Marshall,Hood,90.2,False,osrm
@@ -16924,13 +18020,23 @@ Franklin & Marshall,Worcester St.,335.9,False,osrm
 Franklin & Marshall,WPI,338.7,False,osrm
 Franklin & Marshall,Yeshiva,169.3,False,osrm
 Franklin & Marshall,York (PA),27.5,False,osrm
+Fredonia,Gallaudet,350.1,False,osrm
+Fredonia,George Fox,2623.9,False,osrm
 Fredonia,Gettysburg,260.0,False,osrm
+Fredonia,Greensboro,586.8,False,osrm
+Fredonia,Greenville,653.8,False,osrm
+Fredonia,Grinnell,764.7,False,osrm
 Fredonia,Guilford,583.4,False,osrm
 Fredonia,Gustavus Adolphus,937.3,False,osrm
+Fredonia,Gwynedd-Mercy,356.6,False,osrm
 Fredonia,Hamilton,232.8,False,osrm
 Fredonia,Hamline,899.1,False,osrm
+Fredonia,Hampden-Sydney,522.7,False,osrm
+Fredonia,Hanover,468.9,False,osrm
 Fredonia,Hardin-Simmons,1508.1,False,osrm
 Fredonia,Hartford,440.7,False,osrm
+Fredonia,Heidelberg,240.6,False,osrm
+Fredonia,Hendrix,1012.9,False,osrm
 Fredonia,Hollins,497,False,ncaa_verified
 Fredonia,Hope,455.4,False,osrm
 Fredonia,Houghton,75.5,False,osrm
@@ -17006,12 +18112,22 @@ Fredonia,Wisconsin Lutheran,584.6,False,osrm
 Fredonia,Wittenberg,323.8,False,osrm
 Fredonia,Wooster,203.5,False,osrm
 Fredonia,WPI,458.9,False,osrm
+Gallaudet,George Fox,2829.7,False,osrm
 Gallaudet,Gettysburg,91.0,False,ncaa_verified
+Gallaudet,Greensboro,311.6,False,osrm
+Gallaudet,Greenville,767.9,False,osrm
+Gallaudet,Grinnell,970.5,False,osrm
 Gallaudet,Guilford,321.0,False,ncaa_verified
 Gallaudet,Gustavus Adolphus,1144.0,False,ncaa_verified
+Gallaudet,Gwynedd-Mercy,147.4,False,osrm
+Gallaudet,Hamilton,386.1,False,osrm
 Gallaudet,Hamline,1108.0,False,ncaa_verified
+Gallaudet,Hampden-Sydney,173.9,False,osrm
 Gallaudet,Hanover,586.0,False,ncaa_verified
 Gallaudet,Hardin-Simmons,1521.0,False,ncaa_verified
+Gallaudet,Hartford,339.9,False,osrm
+Gallaudet,Heidelberg,446.4,False,osrm
+Gallaudet,Hendrix,1039.5,False,osrm
 Gallaudet,Hope,681.0,False,ncaa_verified
 Gallaudet,Houghton,357.0,False,ncaa_verified
 Gallaudet,Hunter,224.0,False,ncaa_verified
@@ -17127,10 +18243,19 @@ Gallaudet,Wisconsin Lutheran,800.0,False,ncaa_verified
 Gallaudet,Wittenberg,449.0,False,ncaa_verified
 Gallaudet,York (PA),93.0,False,ncaa_verified
 George Fox,Gettysburg,2772.6,False,osrm
+George Fox,Greensboro,2789.7,False,osrm
+George Fox,Greenville,2118.3,False,osrm
+George Fox,Grinnell,1868.1,False,osrm
+George Fox,Guilford,2786.2,False,osrm
 George Fox,Gustavus Adolphus,1735.8,False,osrm
+George Fox,Gwynedd-Mercy,2886.2,False,osrm
+George Fox,Hamilton,2852.9,False,osrm
 George Fox,Hamline,1761.9,False,osrm
+George Fox,Hampden-Sydney,2859.4,False,osrm
+George Fox,Hanover,2369.3,False,osrm
 George Fox,Hardin-Simmons,1865.1,False,osrm
 George Fox,Hartford,3025.7,False,osrm
+George Fox,Heidelberg,2415.3,False,osrm
 George Fox,Hendrix,2192.3,False,osrm
 George Fox,Hope,2281.0,False,osrm
 George Fox,Houghton,2704.3,False,osrm
@@ -17476,10 +18601,18 @@ Gettysburg,Worcester St.,384.9,False,osrm
 Gettysburg,WPI,390.0,False,ncaa_verified
 Gettysburg,Yeshiva,218.3,False,osrm
 Gettysburg,York (PA),31.0,False,ncaa_verified
+Greensboro,Greenville,705.4,False,osrm
+Greensboro,Grinnell,964.2,False,osrm
 Greensboro,Guilford,6.0,False,ncaa_verified
 Greensboro,Gustavus Adolphus,1180.0,False,ncaa_verified
+Greensboro,Gwynedd-Mercy,459.0,False,osrm
 Greensboro,Hamilton,655.0,False,ncaa_verified
+Greensboro,Hamline,1129.1,False,osrm
+Greensboro,Hampden-Sydney,128.8,False,osrm
+Greensboro,Hanover,471.4,False,osrm
 Greensboro,Hardin-Simmons,1296.0,False,ncaa_verified
+Greensboro,Hartford,651.5,False,osrm
+Greensboro,Hendrix,839.4,False,osrm
 Greensboro,Hope,749.0,False,ncaa_verified
 Greensboro,Illinois Wesleyan,725.0,False,ncaa_verified
 Greensboro,Ithaca,621.0,False,ncaa_verified
@@ -17562,12 +18695,18 @@ Greensboro,Widener,434.0,False,ncaa_verified
 Greensboro,Willamette,2839.0,False,ncaa_verified
 Greensboro,Wisconsin Lutheran,830.0,False,ncaa_verified
 Greensboro,Wittenberg,429.0,False,ncaa_verified
+Greenville,Grinnell,364.5,False,osrm
 Greenville,Guilford,730.0,False,ncaa_verified
 Greenville,Gustavus Adolphus,576.0,False,ncaa_verified
+Greenville,Gwynedd-Mercy,833.2,False,osrm
 Greenville,Hamilton,881.0,False,ncaa_verified
 Greenville,Hamline,590.0,False,ncaa_verified
+Greenville,Hampden-Sydney,774.8,False,osrm
 Greenville,Hanover,291.0,False,ncaa_verified
 Greenville,Hardin-Simmons,838.0,False,ncaa_verified
+Greenville,Hartford,1032.7,False,osrm
+Greenville,Heidelberg,408.9,False,osrm
+Greenville,Hendrix,396.7,False,osrm
 Greenville,Hope,380.0,False,ncaa_verified
 Greenville,Houghton,732.0,False,ncaa_verified
 Greenville,Hunter,905.0,False,ncaa_verified
@@ -17629,6 +18768,7 @@ Greenville,Roger Williams,1101.0,False,ncaa_verified
 Greenville,Rowan,861.0,False,ncaa_verified
 Greenville,Scranton,842.0,False,ncaa_verified
 Greenville,Shenandoah,696.0,False,ncaa_verified
+Greenville,Simpson (IA),380.9,False,osrm
 Greenville,Skidmore,975.0,False,ncaa_verified
 Greenville,Smith,1068.0,False,ncaa_verified
 Greenville,Southern Virginia,680.0,False,ncaa_verified
@@ -17679,11 +18819,17 @@ Greenville,Wittenberg,325.0,False,ncaa_verified
 Greenville,WPI,1094.0,False,ncaa_verified
 Greenville,York (PA),755.0,False,ncaa_verified
 Grinnell,Bridgewater (VA),963.9,False,osrm
+Grinnell,Guilford,961.0,False,osrm
 Grinnell,Gustavus Adolphus,255.3,False,osrm
 Grinnell,Gwynedd-Mercy,1025.9,False,osrm
+Grinnell,Hamilton,992.6,False,osrm
+Grinnell,Hamline,276.4,False,osrm
 Grinnell,Hampden-Sydney,1009.6,False,osrm
+Grinnell,Hanover,530.5,False,osrm
 Grinnell,Hardin-Simmons,886.1,False,osrm
+Grinnell,Hartford,1165.4,False,osrm
 Grinnell,Heidelberg,555.0,False,osrm
+Grinnell,Hendrix,638.9,False,osrm
 Grinnell,Hilbert,796.8,False,osrm
 Grinnell,Hood,924.3,False,osrm
 Grinnell,Hope,420.6,False,osrm
@@ -17809,11 +18955,14 @@ Grinnell,WPI,1227.3,False,osrm
 Grinnell,Yeshiva,1065.1,False,osrm
 Grinnell,York (PA),949.3,False,osrm
 Guilford,Gustavus Adolphus,1169.0,False,ncaa_verified
+Guilford,Gwynedd-Mercy,467.7,False,osrm
 Guilford,Hamilton,653.0,False,ncaa_verified
 Guilford,Hamline,1135.0,False,ncaa_verified
+Guilford,Hampden-Sydney,135.4,False,osrm
 Guilford,Hanover,505.0,True,ncaa_verified
 Guilford,Hardin-Simmons,1300.0,False,ncaa_verified
 Guilford,Hartford,660.2,False,osrm
+Guilford,Hendrix,836.3,False,osrm
 Guilford,Hollins,108.6,False,osrm
 Guilford,Hope,742.0,False,ncaa_verified
 Guilford,Houghton,579.0,False,ncaa_verified
@@ -18208,9 +19357,14 @@ Gustavus Adolphus,Worcester St.,1397.9,False,osrm
 Gustavus Adolphus,WPI,1390.0,False,ncaa_verified
 Gustavus Adolphus,Yeshiva,1234.9,False,osrm
 Gustavus Adolphus,York (PA),1120.0,False,ncaa_verified
+Gwynedd-Mercy,Hamilton,241.7,False,osrm
+Gwynedd-Mercy,Hamline,1159.8,False,osrm
 Gwynedd-Mercy,Hampden-Sydney,320.9,False,osrm
+Gwynedd-Mercy,Hanover,644.0,False,osrm
 Gwynedd-Mercy,Hardin-Simmons,1659.9,False,osrm
+Gwynedd-Mercy,Hartford,214.9,False,osrm
 Gwynedd-Mercy,Heidelberg,506,False,ncaa_verified
+Gwynedd-Mercy,Hendrix,1185.7,False,osrm
 Gwynedd-Mercy,Hilbert,348.4,False,osrm
 Gwynedd-Mercy,Hood,168.0,False,osrm
 Gwynedd-Mercy,Hope,716.1,False,osrm
@@ -18336,9 +19490,12 @@ Gwynedd-Mercy,WPI,271.8,False,osrm
 Gwynedd-Mercy,Yeshiva,105.4,False,osrm
 Gwynedd-Mercy,York (PA),97.8,False,osrm
 Hamilton,Hamline,1124.0,False,ncaa_verified
+Hamilton,Hampden-Sydney,560.3,False,osrm
 Hamilton,Hanover,699.0,False,ncaa_verified
 Hamilton,Hardin-Simmons,1716.0,False,ncaa_verified
 Hamilton,Hartford,216.0,False,osrm
+Hamilton,Heidelberg,468.5,False,osrm
+Hamilton,Hendrix,1240.7,False,osrm
 Hamilton,Hollins,543.7,False,osrm
 Hamilton,Hope,596.0,False,ncaa_verified
 Hamilton,Houghton,186.0,False,ncaa_verified
@@ -18497,9 +19654,12 @@ Hamilton,Wittenberg,557.0,False,ncaa_verified
 Hamilton,Wooster,431.3,False,osrm
 Hamilton,WPI,239.0,False,ncaa_verified
 Hamilton,York (PA),292.0,False,ncaa_verified
+Hamline,Hampden-Sydney,1169.4,False,osrm
 Hamline,Hanover,689.0,False,ncaa_verified
 Hamline,Hardin-Simmons,1077.0,False,ncaa_verified
 Hamline,Hartford,1297.1,False,osrm
+Hamline,Heidelberg,686.7,False,osrm
+Hamline,Hendrix,829.7,False,osrm
 Hamline,Hollins,1059.3,False,osrm
 Hamline,Hope,555.0,False,ncaa_verified
 Hamline,Houghton,975.0,False,ncaa_verified
@@ -18659,8 +19819,10 @@ Hamline,Wittenberg,717.0,False,ncaa_verified
 Hamline,Wooster,755.0,False,osrm
 Hamline,WPI,1350.0,False,ncaa_verified
 Hamline,York (PA),1079.0,False,ncaa_verified
+Hampden-Sydney,Hanover,540.0,False,osrm
 Hampden-Sydney,Hardin-Simmons,1387.0,False,osrm
 Hampden-Sydney,Heidelberg,524.0,False,ncaa_verified
+Hampden-Sydney,Hendrix,912.8,False,osrm
 Hampden-Sydney,Hilbert,505,False,ncaa_verified
 Hampden-Sydney,Hood,212.1,False,osrm
 Hampden-Sydney,Hope,748.5,False,osrm
@@ -18763,6 +19925,9 @@ Hampden-Sydney,WPI,570.3,False,osrm
 Hampden-Sydney,Yeshiva,403.9,False,osrm
 Hampden-Sydney,York (PA),265.6,False,osrm
 Hanover,Hardin-Simmons,1067.0,False,ncaa_verified
+Hanover,Hartford,849.3,False,osrm
+Hanover,Heidelberg,260.5,False,osrm
+Hanover,Hendrix,565.5,False,osrm
 Hanover,Hope,332.0,False,ncaa_verified
 Hanover,Houghton,550.0,False,ncaa_verified
 Hanover,Hunter,721.0,False,ncaa_verified
@@ -19108,6 +20273,8 @@ Hardin-Simmons,Worcester St.,1905.0,False,osrm
 Hardin-Simmons,WPI,1910.0,False,ncaa_verified
 Hardin-Simmons,Yeshiva,1739.9,False,osrm
 Hardin-Simmons,York (PA),1585.0,False,ncaa_verified
+Hartford,Heidelberg,640.3,False,osrm
+Hartford,Hendrix,1375.4,False,osrm
 Hartford,Hollins,570.6,False,osrm
 Hartford,Hope,805.4,False,osrm
 Hartford,Houghton,379.6,False,osrm
@@ -19243,6 +20410,7 @@ Hartford,Wittenberg,701.5,False,osrm
 Hartford,Wooster,573.0,False,osrm
 Hartford,WPI,66.9,False,osrm
 Hartford,York (PA),305.7,False,osrm
+Heidelberg,Hendrix,788.7,False,osrm
 Heidelberg,Hilbert,272.6,False,osrm
 Heidelberg,Hood,401.3,False,osrm
 Heidelberg,Hope,238.0,False,osrm
@@ -33642,6 +34810,7 @@ Scranton,WPI,256.0,False,ncaa_verified
 Scranton,Yeshiva,121.0,False,osrm
 Scranton,York (PA),148.0,False,ncaa_verified
 Shenandoah,Austin College,1244.7,False,osrm
+Shenandoah,Farmingdale,319.6,False,osrm
 Shenandoah,Simpson (IA),981.0,False,ncaa_verified
 Shenandoah,Skidmore,445.0,False,ncaa_verified
 Shenandoah,Smith,443.0,False,ncaa_verified
@@ -35537,6 +36706,7 @@ TCNJ,Worcester St.,234.3,False,osrm
 TCNJ,WPI,239.0,False,ncaa_verified
 TCNJ,Yeshiva,68.9,False,osrm
 TCNJ,York (PA),126.0,False,ncaa_verified
+Texas Lutheran,Huntingdon,795.8,False,osrm
 Texas Lutheran,Transylvania,1124.0,False,ncaa_verified
 Texas Lutheran,Trine,1315.0,False,ncaa_verified
 Texas Lutheran,Trinity (CT),1908.0,False,ncaa_verified
@@ -36609,6 +37779,3 @@ WPI,Worcester St.,5.2,False,osrm
 WPI,Yeshiva,168.1,False,osrm
 WPI,York (PA),364.0,False,ncaa_verified
 Yeshiva,York (PA),196.0,False,osrm
-Texas Lutheran,Huntingdon,795.8,False,osrm
-Shenandoah,Farmingdale,319.6,False,osrm
-Greenville,Simpson (IA),380.9,False,osrm
