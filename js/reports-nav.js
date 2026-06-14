@@ -27,6 +27,22 @@
       return;
     }
 
+    // "You are here" highlighting for the Reports section. The nav is shared,
+    // build-generated markup with NO server-side active state (navigation.js's
+    // setActiveNavLink only matches root pages by filename, and the dropdown's
+    // report links are absolute /reports/* paths). So when we're on the reports
+    // index or any wrapped report page, mark the Reports trigger active and the
+    // matching dropdown entry active here, client-side.
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith('/reports/') || currentPath === '/reports') {
+      trigger.classList.add('active');
+      menu.querySelectorAll('a').forEach(function (link) {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    }
+
     // Mobile: Toggle dropdown on click
     trigger.addEventListener('click', function (e) {
       // Only handle on mobile (check if hamburger menu is visible)

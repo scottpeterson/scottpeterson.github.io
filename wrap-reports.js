@@ -14,7 +14,14 @@
  * 3. Wraps content in site template with nav/header/footer
  * 4. Scopes CSS to prevent conflicts (body{} -> .report-slug{})
  * 5. Outputs wrapped reports to reports/{slug}.html
- * 6. Generates reports/index.html with a grid of all reports
+ * 6. Delegates reports/index.html to build.js (single source of truth)
+ *
+ * NAV / INDEX SINGLE SOURCE OF TRUTH:
+ * The header nav and reports/index.html are owned by build.js (TemplateEngine).
+ * This script imports that engine and calls engine.renderNavShell() for the
+ * wrapped pages and engine.regenerateReportsIndex() for the index, so the menu
+ * and index never drift from the rest of the site. This file no longer carries
+ * its own hardcoded nav or index markup.
  *
  * CSS ISOLATION:
  * Reports often have global styles targeting body, *, etc.
@@ -31,6 +38,7 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+const TemplateEngine = require('./build.js');
 
 const SOURCE_DIR = 'data/static_reports_html';
 const OUTPUT_DIR = 'reports';
@@ -257,71 +265,13 @@ function scopeSelector(selector, scopeClass) {
 }
 
 /**
- * Generate navigation HTML with Reports dropdown
- * Mirrors the full site navigation from build.js
+ * Generate the wrapped HTML for a single report.
+ * `nav` is the canonical <nav> shell rendered once by build.js
+ * (engine.renderNavShell) and shared across all wrapped pages — client-side
+ * navigation.js handles the active-link highlight, so no per-page nav needed.
  */
-function generateNav(reports, currentSlug = null) {
-  // Build Reports dropdown items
-  const dropdownItems = reports
-    .map(r => {
-      const isActive = r.slug === currentSlug ? ' class="active"' : '';
-      return `              <li><a href="${r.slug}.html"${isActive}>${r.title}</a></li>`;
-    })
-    .join('\n');
-
-  // Navigation with Reports dropdown - matches full site nav from build.js
-  return `
-    <nav class="main-nav">
-      <div class="nav-container">
-        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
-
-        <!-- Hamburger Menu Toggle (only appears on mobile) -->
-        <div class="menu-toggle" id="menuToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links" id="navMenu">
-          <!-- Close button placed separately at the top of the menu -->
-          <div class="menu-close" id="menuClose"></div>
-
-          <li><a href="/">Home</a></li>
-          <li><a href="/npi.html">NPI</a></li>
-          <li><a href="/season_simulations.html">Season Simulations</a></li>
-          <li><a href="/current_season_rankings.html">Current Season Rankings</a></li>
-          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
-          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
-          <li><a href="/distances.html">Distances</a></li>
-          <li><a href="/preseason_rankings.html">26-27 Preseason Rankings</a></li>
-          <li><a href="/returners.html">Returning and Non-Returning</a></li>
-          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
-          <li class="nav-dropdown">
-            <a href="/reports/" class="dropdown-trigger${currentSlug ? ' active' : ''}">Reports <span class="dropdown-arrow">▾</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/reports/">All Reports</a></li>
-              <li class="dropdown-divider"></li>
-${dropdownItems}
-            </ul>
-          </li>
-          <li><a href="/premium.html">Premium</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Overlay for mobile -->
-      <div class="nav-overlay" id="navOverlay"></div>
-    </nav>`;
-}
-
-/**
- * Generate the wrapped HTML for a single report
- */
-function generateWrappedReport(report, allReports) {
+function generateWrappedReport(report, nav) {
   const { slug, title, styles, body, externalScripts, inlineScripts } = report;
-
-  const nav = generateNav(allReports, slug);
 
   // Generate external script tags
   const externalScriptTags = externalScripts
@@ -383,75 +333,6 @@ ${body}
     <script src="/js/reports-nav.js"></script>
 ${externalScriptTags}
 ${inlineScriptTags}
-  </body>
-</html>`;
-}
-
-/**
- * Generate the reports index page
- */
-function generateIndexPage(reports) {
-  const nav = generateNav(reports);
-
-  // Sort reports alphabetically by title
-  const sortedReports = [...reports].sort((a, b) =>
-    a.title.localeCompare(b.title)
-  );
-
-  // Generate report cards
-  const cards = sortedReports
-    .map(r => {
-      return `        <a href="${r.slug}.html" class="report-card">
-          <h3>${r.title}</h3>
-          <span class="report-card-arrow">→</span>
-        </a>`;
-    })
-    .join('\n');
-
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reports - The D3 Stat Lab</title>
-
-    <!-- Block AI/LLM crawlers from using content for training -->
-    <meta name="robots" content="noai, noimageai" />
-    <meta name="googlebot" content="noai, noimageai" />
-
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/css/reports.css" />
-
-    <!-- GoatCounter Analytics -->
-    <script
-      data-goatcounter="https://thed3statlab.goatcounter.com/count"
-      async
-      src="https://gc.zgo.at/count.js"
-    ></script>
-  </head>
-  <body>
-    ${nav}
-
-    <main>
-      <header>
-        <h1>Reports</h1>
-        <p>Interactive reports and visualizations for D3 Women's Basketball</p>
-      </header>
-
-      <div class="reports-grid">
-${cards}
-      </div>
-    </main>
-
-    <footer>
-      <p>&copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights reserved.</p>
-    </footer>
-    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
-
-    <!-- JavaScript for navigation -->
-    <script src="/js/navigation.js"></script>
-    <script src="/js/reports-nav.js"></script>
   </body>
 </html>`;
 }
@@ -541,20 +422,34 @@ async function main() {
       console.log(`  ✓ Processed ${file} → ${report.slug}.html`);
     }
 
-    // Generate wrapped reports
+    // Build the canonical nav once via build.js (single source of truth). Pass
+    // the reports explicitly (shaped like getReportsList: { slug, title, file },
+    // title-sorted to match) so the dropdown is built from this in-memory set
+    // rather than the reports/ dir, which is still mid-write here.
+    const engine = new TemplateEngine();
+    await engine.loadConfig();
+    const navReports = reports
+      .map(r => ({ slug: r.slug, title: r.title, file: `${r.slug}.html` }))
+      .sort((a, b) => a.title.localeCompare(b.title));
+    const nav = await engine.renderNavShell({
+      absolute: true,
+      reports: navReports,
+    });
+
+    // Generate wrapped reports (Prettier-formatted via writeHtml so the output
+    // matches what the pre-commit hook produces — no idempotency drift).
     console.log('\n📝 Generating wrapped reports...\n');
     for (const report of reports) {
-      const html = generateWrappedReport(report, reports);
+      const html = generateWrappedReport(report, nav);
       const outputPath = path.join(OUTPUT_DIR, `${report.slug}.html`);
-      await fs.writeFile(outputPath, html, 'utf8');
+      await engine.writeHtml(outputPath, html);
       console.log(`  ✓ Generated ${outputPath}`);
     }
 
-    // Generate index page
-    const indexHtml = generateIndexPage(reports);
-    const indexPath = path.join(OUTPUT_DIR, 'index.html');
-    await fs.writeFile(indexPath, indexHtml, 'utf8');
-    console.log(`  ✓ Generated ${indexPath}`);
+    // reports/index.html is owned solely by build.js — regenerate it from the
+    // now-complete reports/ dir so wrap-reports and `npm run build` produce the
+    // exact same index.
+    await engine.regenerateReportsIndex();
 
     console.log(`\n✅ Successfully wrapped ${reports.length} reports!`);
     console.log('   View at: http://localhost:8000/reports/\n');

@@ -322,7 +322,7 @@ class TemplateEngine {
   // `absolute` emits root-relative hrefs (leading /) so pages living in a
   // subdirectory (reports/index.html) can share this exact same nav instead of
   // hand-maintaining their own copy that drifts.
-  async generateNavigation({ absolute = false } = {}) {
+  async generateNavigation({ absolute = false, reports = null } = {}) {
     const navItems = [];
     const href = h =>
       !absolute ||
@@ -335,7 +335,10 @@ class TemplateEngine {
     for (const item of this.navConfig()) {
       // Handle Reports dropdown specially
       if (item.isDropdown && item.key === 'reports') {
-        const reportsDropdown = await this.generateReportsDropdown(absolute);
+        const reportsDropdown = await this.generateReportsDropdown(
+          absolute,
+          reports
+        );
         if (reportsDropdown) {
           navItems.push(reportsDropdown);
         }
@@ -365,6 +368,41 @@ class TemplateEngine {
     }
 
     return navItems.join('\n          ');
+  }
+
+  // Render the complete <nav class="main-nav"> block — the chrome wrapper plus
+  // the canonical nav items from generateNavigation. This is the SINGLE source
+  // for the header markup of every JS-generated page (reports/index.html via
+  // regenerateReportsIndex, and each wrapped report page via wrap-reports.js,
+  // which imports this engine). Keep this wrapper byte-identical to the one in
+  // templates/base.html so root pages and report pages share one header.
+  // `reports` can be passed explicitly (wrap-reports.js does) so the dropdown is
+  // built from an in-memory list instead of the reports/ dir mid-write.
+  async renderNavShell({ absolute = false, reports = null } = {}) {
+    const navItems = await this.generateNavigation({ absolute, reports });
+    return `<nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          ${navItems}
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>`;
   }
 
   // Get list of reports from the reports directory
@@ -427,17 +465,20 @@ class TemplateEngine {
   // Generate Reports dropdown menu by reading reports directory.
   // `absolute` prefixes hrefs with / so the dropdown works from a subdirectory
   // page (reports/index.html) as well as the root pages.
-  async generateReportsDropdown(absolute = false) {
-    const reports = await this.getReportsList();
+  async generateReportsDropdown(absolute = false, reports = null) {
+    // Callers may pass an explicit reports list (wrap-reports.js does, from its
+    // in-memory set) to avoid a disk read while the wrapped files are mid-write;
+    // otherwise read the current reports/ directory.
+    const reportList = reports || (await this.getReportsList());
 
-    if (reports.length === 0) {
+    if (reportList.length === 0) {
       return null;
     }
 
     const pfx = absolute ? '/' : '';
 
     // Build dropdown items from report files
-    const dropdownItems = reports
+    const dropdownItems = reportList
       .map(
         r =>
           `              <li><a href="${pfx}reports/${r.file}">${this.escapeHtml(r.title)}</a></li>`
@@ -477,12 +518,11 @@ ${dropdownItems}
       )
       .join('\n');
 
-    // Reuse the canonical nav (absolute hrefs since this page is one dir down).
-    // This keeps reports/index.html in lockstep with every other page — it picks
-    // up new nav items, feature-flag gating, and label changes automatically,
-    // instead of the hand-maintained copy that previously drifted (it had lost
-    // the Distances link and used a different href style).
-    const navItems = await this.generateNavigation({ absolute: true });
+    // Reuse the canonical nav shell (absolute hrefs since this page is one dir
+    // down). This keeps reports/index.html in lockstep with every other page —
+    // it picks up new nav items, feature-flag gating, and label changes
+    // automatically, instead of a hand-maintained copy that drifts.
+    const navShell = await this.renderNavShell({ absolute: true });
 
     const html = `<!doctype html>
 <html lang="en">
@@ -507,29 +547,7 @@ ${dropdownItems}
     ></script>
   </head>
   <body>
-    <nav class="main-nav">
-      <div class="nav-container">
-        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
-
-        <!-- Hamburger Menu Toggle (only appears on mobile) -->
-        <div class="menu-toggle" id="menuToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links" id="navMenu">
-          <!-- Close button placed separately at the top of the menu -->
-          <div class="menu-close" id="menuClose"></div>
-
-          ${navItems}
-        </ul>
-      </div>
-
-      <!-- Overlay for mobile -->
-      <div class="nav-overlay" id="navOverlay"></div>
-    </nav>
+    ${navShell}
 
     <main>
       <header>
