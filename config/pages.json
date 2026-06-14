@@ -38,7 +38,7 @@
   "preseason_rankings": {
     "title": "26-27 Preseason Rankings",
     "heading": "26-27 Preseason Rankings",
-    "description": "D3 WBB preseason rankings — way too early, for the 2026-27 season.",
+    "description": "D3 WBB preseason rankings: way too early, for the 2026-27 season.",
     "sectionTitle": "Preseason Team Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -86,7 +86,7 @@
   "returners": {
     "title": "Returning and Non-Returning",
     "heading": "Returning and Non-Returning",
-    "description": "D3 WBB returning production — for teams with published rosters: underclassmen minutes lost, minutes incoming from D3 transfers, minutes back from 5th years, and more.",
+    "description": "D3 WBB returning production for teams with published rosters: underclassmen minutes lost, minutes incoming from D3 transfers, minutes back from 5th years, and more.",
     "sectionTitle": "Returning and Non-Returning",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -125,7 +125,7 @@
   "npi": {
     "title": "NPI",
     "heading": "NPI",
-    "description": "D3 WBB NCAA Power Index (NPI) — daily values, rankings, and analysis.",
+    "description": "D3 WBB NCAA Power Index (NPI): daily values, rankings, and analysis.",
     "sectionTitle": "NPI Analysis",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -191,7 +191,7 @@
   "season_simulations": {
     "title": "Season Simulations",
     "heading": "Season Simulations",
-    "description": "D3 WBB season simulations — Efficiency-Rating-based projections of NCAA qualification rates.",
+    "description": "D3 WBB season simulations: Efficiency-Rating-based projections of NCAA qualification rates.",
     "sectionTitle": "Season Simulations",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -428,7 +428,7 @@
   "premium": {
     "title": "Premium",
     "heading": "Premium D3 Women's Basketball Single Team Report",
-    "description": "Know exactly where your team stands—and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
+    "description": "Know exactly where your team stands, and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
     "template": "premium-page",
     "featureFlag": "premium",
     "showInNav": true,
@@ -439,7 +439,7 @@
       {
         "id": "offseason-report",
         "name": "Offseason Outlook Report",
-        "tagline": "Know exactly where your team stands heading into next season. Returning production, conference outlook, regional rankings, and roster analysis\u2014all in one report.",
+        "tagline": "Know exactly where your team stands heading into next season. Returning production, conference outlook, regional rankings, and roster analysis, all in one report.",
         "season": "offseason",
         "active": false,
         "salesEnabled": false,
@@ -452,7 +452,7 @@
         "priceOriginal": null,
         "pricePeriod": "one-time payment",
         "pricingHeading": "Offseason Access",
-        "pricingClarification": "One-time purchase for the 2026 offseason. Not a subscription\u2014no recurring charges.",
+        "pricingClarification": "One-time purchase for the 2026 offseason. Not a subscription, no recurring charges.",
         "pricingFeatures": [
           "12-page offseason outlook for your team",
           "Delivered via email within 24 hours",
@@ -480,17 +480,17 @@
           {
             "icon": "clipboard",
             "title": "Roster Outlook & Top Returners",
-            "description": "Your full roster split into potential returners and graduates with per-30 stats, Impact scores, and minutes share\u2014plus the top returning players across your conference"
+            "description": "Your full roster split into potential returners and graduates with per-30 stats, Impact scores, and minutes share, plus the top returning players across your conference"
           }
         ]
       },
       {
         "id": "single-team-report",
         "name": "Single Team Report",
-        "tagline": "Know exactly where your team stands—and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
+        "tagline": "Know exactly where your team stands, and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
         "season": "in-season",
         "active": true,
-        "badgeText": "Buy Now \u2014 Delivers November",
+        "badgeText": "Buy Now: Delivers November",
         "countdownDate": "2026-11-02",
         "countdownLabel": "First report delivers in",
         "salesEnabled": true,
@@ -502,7 +502,7 @@
         "priceOriginal": "$49",
         "pricePeriod": "one-time payment",
         "pricingHeading": "Premium Access",
-        "pricingClarification": "One-time purchase for the 2025-26 season. Not a subscription—no recurring charges.",
+        "pricingClarification": "One-time purchase for the 2025-26 season. Not a subscription, no recurring charges.",
         "pricingFeatures": [
           "Weekly PDF report delivered every Monday",
           "Full coverage from November through March"
