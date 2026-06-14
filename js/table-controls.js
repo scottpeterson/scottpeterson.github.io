@@ -281,10 +281,7 @@ class TableController {
     }
 
     // Clean header text by removing sort indicators and other symbols
-    const cleanHeader = headerText
-      .replace(/[↕↑↓]/g, '')
-      .toLowerCase()
-      .trim();
+    const cleanHeader = headerText.replace(/[↕↑↓]/g, '').toLowerCase().trim();
 
     // Handle percentage values (Returning column) - do this first
     if (cleanHeader === 'returning') {
@@ -380,10 +377,7 @@ class TableController {
   // Apply red font color for negative values on specific columns
   applyNegativeValueStyling(td, value, headerText) {
     // Clean header text by removing sort indicators and other symbols
-    const cleanHeader = headerText
-      .replace(/[↕↑↓]/g, '')
-      .toLowerCase()
-      .trim();
+    const cleanHeader = headerText.replace(/[↕↑↓]/g, '').toLowerCase().trim();
 
     // Define which columns should have red font for negative values
     // Format: { 'page-identifier': ['column1', 'column2'] }
@@ -430,10 +424,7 @@ class TableController {
   // Green for "A" (automatic qualifier), Blue for "C-01" through "C-21" (pool C bids)
   applyBidTypeColoring(td, row, headerText) {
     // Clean header text
-    const cleanHeader = headerText
-      .replace(/[↕↑↓]/g, '')
-      .toLowerCase()
-      .trim();
+    const cleanHeader = headerText.replace(/[↕↑↓]/g, '').toLowerCase().trim();
 
     // Only apply to Team column on NPI page
     if (cleanHeader !== 'team') {
