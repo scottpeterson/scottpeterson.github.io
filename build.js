@@ -12,6 +12,7 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+const { execFileSync } = require('child_process');
 const prettier = require('prettier');
 
 // Obfuscation key - used for XOR encoding
@@ -743,11 +744,33 @@ ${cards}
     return result;
   }
 
-  // Get file modification date
-  async getFileModificationDate(filePath) {
+  // Deterministic "last updated" timestamp for a committed data file: the
+  // committer date of the most recent commit that touched it, formatted in a
+  // FIXED timezone.
+  //
+  // INTENT / root-cause fix: this used to read the filesystem mtime
+  // (fs.stat().mtime). mtime is NOT preserved across git clone / checkout / CI,
+  // so a fresh build emitted a different "Last updated" line than the committed
+  // HTML — phantom, non-idempotent diffs (and the timezone floated with the
+  // build machine). Git committer date is durable (it lives in history),
+  // identical on every machine, and auto-updates when the data is committed.
+  // Pinning timeZone makes the rendered string machine-independent too.
+  //
+  // Uses execFileSync (argv array, no shell) so the config-derived path can't be
+  // interpreted as a shell command. Returns null when the file isn't tracked or
+  // git isn't available (e.g. an exported tarball) — callers omit the line.
+  getDataUpdatedDate(filePath) {
     try {
-      const stats = await fs.stat(filePath);
-      return stats.mtime.toLocaleString('en-US', {
+      const iso = execFileSync(
+        'git',
+        ['log', '-1', '--format=%cI', '--', filePath],
+        { encoding: 'utf8' }
+      ).trim();
+      if (!iso) {
+        return null;
+      }
+      return new Date(iso).toLocaleString('en-US', {
+        timeZone: 'America/New_York',
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -757,7 +780,7 @@ ${cards}
       });
     } catch (error) {
       console.warn(
-        `Could not get modification date for ${filePath}:`,
+        `Could not get git commit date for ${filePath}:`,
         error.message
       );
       return null;
@@ -1179,20 +1202,18 @@ ${pricingFeaturesHtml}
         });
       }
 
-      // Get last updated date for data file
+      // Get last updated date for data file (git commit date, see
+      // getDataUpdatedDate — deterministic and clone/CI-safe).
       let lastUpdated = null;
       if (pageConfig.dataSource) {
         const dataFilePath = `data/${pageConfig.dataSource}.json`;
-        lastUpdated = await this.getFileModificationDate(dataFilePath);
+        lastUpdated = this.getDataUpdatedDate(dataFilePath);
       } else if (pageConfig.isDistancesPage) {
         // The distances page has no dataSource (its data is computed from a CSV),
         // so it never got the auto "Last updated" line the data pages show. Use
-        // the source CSV's mod time (the real "data changed" signal — distances.json
-        // is regenerated every build), falling back to the generated JSON.
-        lastUpdated =
-          (await this.getFileModificationDate(
-            'data/calculated_distances.csv'
-          )) || (await this.getFileModificationDate('data/distances.json'));
+        // the source CSV's commit date (the real "data changed" signal —
+        // distances.json is generated and git-ignored).
+        lastUpdated = this.getDataUpdatedDate('data/calculated_distances.csv');
       }
 
       // Render full page
