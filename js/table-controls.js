@@ -90,7 +90,7 @@ class TableController {
     if (tbody) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="100%" style="text-align: center; padding: 20px; color: #666;">
+          <td colspan="100%" style="text-align: center; padding: 20px; color: var(--text-3);">
             Unable to load data for ${dataSource}. Please ensure you're viewing this page through a web server.
             <br><small>Try running: <code>npm start</code> or <code>python -m http.server</code></small>
           </td>
@@ -452,6 +452,11 @@ class TableController {
     // Get bid type from row data
     const bidType = row['Bid Type'] || row['bid type'] || row.bidType || '';
 
+    // NOTE: these are intentional data-visualization colors (categorical bid
+    // types), NOT theme chrome — they deliberately do not map to the design
+    // tokens (forest green / dodger blue / dark orange are distinct from
+    // --success/--blue-500/--orange-500). Don't "tokenize" them; doing so would
+    // change the values and the meaning of the encoding.
     if (bidType === 'AQ') {
       // Green for automatic qualifier
       td.style.color = '#228B22'; // Forest green
