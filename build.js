@@ -232,9 +232,19 @@ class TemplateEngine {
     return this.isFeatureEnabled(pageConfig.featureFlag);
   }
 
-  // Generate navigation HTML based on config and feature flags
-  async generateNavigation() {
+  // Generate navigation HTML based on config and feature flags.
+  // `absolute` emits root-relative hrefs (leading /) so pages living in a
+  // subdirectory (reports/index.html) can share this exact same nav instead of
+  // hand-maintaining their own copy that drifts.
+  async generateNavigation({ absolute = false } = {}) {
     const navItems = [];
+    const href = h =>
+      !absolute ||
+      h.startsWith('/') ||
+      h.startsWith('#') ||
+      h.startsWith('http')
+        ? h
+        : '/' + h;
 
     // Define navigation order and structure
     // 'reports' is a special key that triggers the Reports dropdown
@@ -286,7 +296,7 @@ class TemplateEngine {
     for (const item of navConfig) {
       // Handle Reports dropdown specially
       if (item.isDropdown && item.key === 'reports') {
-        const reportsDropdown = await this.generateReportsDropdown();
+        const reportsDropdown = await this.generateReportsDropdown(absolute);
         if (reportsDropdown) {
           navItems.push(reportsDropdown);
         }
@@ -310,7 +320,7 @@ class TemplateEngine {
         continue;
       }
 
-      navItems.push(`<li><a href="${item.href}">${item.label}</a></li>`);
+      navItems.push(`<li><a href="${href(item.href)}">${item.label}</a></li>`);
     }
 
     return navItems.join('\n          ');
@@ -360,6 +370,12 @@ class TemplateEngine {
         reports.push({ slug, title, file });
       }
 
+      // Deterministic order: fs.readdir order is filesystem-defined and varies
+      // by machine, which made the main-page Reports dropdown (this list) and
+      // reports/index.html disagree, and could reorder on a fresh clone. Sort by
+      // title once here so every consumer shares one stable order.
+      reports.sort((a, b) => a.title.localeCompare(b.title));
+
       return reports;
     } catch (error) {
       console.warn('Could not read reports directory:', error.message);
@@ -367,25 +383,30 @@ class TemplateEngine {
     }
   }
 
-  // Generate Reports dropdown menu by reading reports directory
-  async generateReportsDropdown() {
+  // Generate Reports dropdown menu by reading reports directory.
+  // `absolute` prefixes hrefs with / so the dropdown works from a subdirectory
+  // page (reports/index.html) as well as the root pages.
+  async generateReportsDropdown(absolute = false) {
     const reports = await this.getReportsList();
 
     if (reports.length === 0) {
       return null;
     }
 
+    const pfx = absolute ? '/' : '';
+
     // Build dropdown items from report files
     const dropdownItems = reports
       .map(
-        r => `              <li><a href="reports/${r.file}">${r.title}</a></li>`
+        r =>
+          `              <li><a href="${pfx}reports/${r.file}">${r.title}</a></li>`
       )
       .join('\n');
 
     return `<li class="nav-dropdown">
-            <a href="reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
+            <a href="${pfx}reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
             <ul class="dropdown-menu">
-              <li><a href="reports/">All Reports</a></li>
+              <li><a href="${pfx}reports/">All Reports</a></li>
               <li class="dropdown-divider"></li>
 ${dropdownItems}
             </ul>
@@ -404,13 +425,9 @@ ${dropdownItems}
       return;
     }
 
-    // Sort reports alphabetically by title
-    const sortedReports = [...reports].sort((a, b) =>
-      a.title.localeCompare(b.title)
-    );
-
+    // reports is already title-sorted by getReportsList (deterministic order).
     // Generate report cards
-    const cards = sortedReports
+    const cards = reports
       .map(
         r => `        <a href="${r.slug}.html" class="report-card">
           <h3>${r.title}</h3>
@@ -419,12 +436,12 @@ ${dropdownItems}
       )
       .join('\n');
 
-    // Build dropdown items for reports nav
-    const dropdownItems = sortedReports
-      .map(
-        r => `              <li><a href="${r.slug}.html">${r.title}</a></li>`
-      )
-      .join('\n');
+    // Reuse the canonical nav (absolute hrefs since this page is one dir down).
+    // This keeps reports/index.html in lockstep with every other page — it picks
+    // up new nav items, feature-flag gating, and label changes automatically,
+    // instead of the hand-maintained copy that previously drifted (it had lost
+    // the Distances link and used a different href style).
+    const navItems = await this.generateNavigation({ absolute: true });
 
     const html = `<!doctype html>
 <html lang="en">
@@ -465,26 +482,7 @@ ${dropdownItems}
           <!-- Close button placed separately at the top of the menu -->
           <div class="menu-close" id="menuClose"></div>
 
-          <li><a href="/">Home</a></li>
-          <li><a href="/npi.html">NPI</a></li>
-          <li><a href="/season_simulations.html">Season Simulations</a></li>
-          <li><a href="/current_season_rankings.html">Current Season Rankings</a></li>
-          <li><a href="/conference_rankings.html">Conference Rankings</a></li>
-          <li><a href="/composite_rankings.html">Composite Rankings</a></li>
-          <li><a href="/preseason_rankings.html">26-27 Preseason Rankings</a></li>
-          <li><a href="/returners.html">Returning and Non-Returning</a></li>
-          <li><a href="/publishing_tracker.html">Publishing Tracker</a></li>
-          <li class="nav-dropdown">
-            <a href="/reports/" class="dropdown-trigger">Reports <span class="dropdown-arrow">▾</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/reports/">All Reports</a></li>
-              <li class="dropdown-divider"></li>
-${dropdownItems}
-            </ul>
-          </li>
-          <li><a href="/premium.html">Premium</a></li>
-          <li><a href="/contact.html">Contact &amp; About</a></li>
-          <li><a href="/reference.html">Reference</a></li>
+          ${navItems}
         </ul>
       </div>
 
