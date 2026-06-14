@@ -25,7 +25,8 @@
   opacity: 0;
   visibility: hidden;
   /* Ultra-fast 30ms transition for snappy feel */
-  transition: opacity 30ms ease-out,
+  transition:
+    opacity 30ms ease-out,
     visibility 30ms ease-out;
   /* Remove backdrop-filter for speed - it's expensive */
 }
@@ -44,13 +45,15 @@
   max-width: 560px;
   background: #1a1a1a;
   border-radius: 12px;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 50%),
+  box-shadow:
+    0 25px 50px -12px rgb(0 0 0 / 50%),
     0 0 0 1px rgb(255 255 255 / 10%);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   /* Ultra-fast 30ms transition - no scale transform for speed */
-  transition: opacity 30ms ease-out,
+  transition:
+    opacity 30ms ease-out,
     visibility 30ms ease-out;
   overflow: hidden;
   /* GPU acceleration hints */
@@ -268,12 +271,14 @@
   max-height: 80vh;
   background: #1a1a1a;
   border-radius: 12px;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 50%),
+  box-shadow:
+    0 25px 50px -12px rgb(0 0 0 / 50%),
     0 0 0 1px rgb(255 255 255 / 10%);
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease,
+  transition:
+    opacity 0.2s ease,
     visibility 0.2s ease,
     transform 0.2s ease;
   overflow: hidden;
@@ -313,7 +318,8 @@
   align-items: center;
   justify-content: center;
   color: #888;
-  transition: background 0.15s ease,
+  transition:
+    background 0.15s ease,
     color 0.15s ease;
 }
 
