@@ -10,6 +10,13 @@ build/
 *.min.js
 *.min.css
 
+# Build-generated data: the build writes these MINIFIED. Prettier would expand
+# them (e.g. distances.json balloons to 60k+ lines) and fight the build on every
+# commit. Leaving them minified keeps the build idempotent — the same root-cause
+# fix as the Prettier-formatted HTML emitted by build.js (see writeHtml()).
+data-encoded/
+data/distances.json
+
 # Logs
 *.log
 
