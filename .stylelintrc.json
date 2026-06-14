@@ -1,16 +1,10 @@
 {
   "rules": {
-    "indentation": 2,
-    "string-quotes": "single",
     "no-duplicate-selectors": null,
     "no-descending-specificity": null,
     "declaration-block-no-shorthand-property-overrides": null,
-    "color-hex-case": "lower",
-    "color-hex-length": "short",
-    "color-named": "never",
-    "selector-combinator-space-after": "always",
-    "selector-combinator-space-before": "always",
     "selector-class-pattern": null,
+    "color-named": "never",
     "property-no-unknown": [
       true,
       {
@@ -20,10 +14,6 @@
           "backdrop-filter"
         ]
       }
-    ],
-    "declaration-block-trailing-semicolon": "always",
-    "declaration-colon-space-before": "never",
-    "number-leading-zero": "always",
-    "function-url-quotes": "always"
+    ]
   }
 }

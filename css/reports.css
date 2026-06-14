@@ -102,8 +102,8 @@
 
 /* Report content container - starts with .report- prefix */
 [class^='report-']:not(.report-wrapper):not(.report-back-link):not(
-.report-card
-):not(.report-card-arrow) {
+    .report-card
+  ):not(.report-card-arrow) {
   /* Allow reports to define their own layout */
   /* This selector catches .report-bubble_watch, .report-undefeated_watch, etc. */
 }
