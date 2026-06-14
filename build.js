@@ -167,6 +167,10 @@ class TemplateEngine {
         'templates/premium-multi-page.html',
         'utf8'
       );
+      this.templates.premiumAudience = await fs.readFile(
+        'templates/premium-audience.html',
+        'utf8'
+      );
       this.templates.simplePage = await fs.readFile(
         'templates/simple-page.html',
         'utf8'
@@ -799,41 +803,30 @@ ${cards}
     return `<svg ${attrs}>${paths[name]}</svg>`;
   }
 
-  // Render product sections for multi-product premium page
-  // Each product gets its own self-contained block with sample, features, pricing, and form.
-  // Products are sorted so active products render first.
-  // The globalSalesEnabled flag acts as a master kill switch — a product's form only
-  // shows when both globalSalesEnabled AND the product's own salesEnabled are true.
-  renderProductSections(products, globalSalesEnabled) {
-    // Sort: active products first
-    const sorted = [...products].sort((a, b) => {
-      if (a.active === b.active) {
-        return 0;
-      }
-      return a.active ? -1 : 1;
-    });
+  // Build the renderable pieces for a single product: the centered header block
+  // and the body (sample + features + pricing). Returned separately so callers
+  // can place the header in a <summary> (collapsed area) while the body lives in
+  // the disclosure. globalSalesEnabled is the master kill switch — a product's
+  // purchase form only shows when both it AND product.salesEnabled are true.
+  buildProductPieces(product, globalSalesEnabled) {
+    const isActive = product.active;
+    const sectionClass = isActive
+      ? 'product-section product-section--active'
+      : 'product-section product-section--inactive';
+    const badgeClass = isActive
+      ? 'product-badge product-badge--active'
+      : 'product-badge product-badge--upcoming';
+    // Allow per-product badge text override, fall back to defaults
+    const badgeText =
+      product.badgeText || (isActive ? 'Available Now' : 'Returns Next Season');
+    const canPurchase = globalSalesEnabled && product.salesEnabled;
 
-    return sorted
-      .map((product, index) => {
-        const isActive = product.active;
-        const sectionClass = isActive
-          ? 'product-section product-section--active'
-          : 'product-section product-section--inactive';
-        const badgeClass = isActive
-          ? 'product-badge product-badge--active'
-          : 'product-badge product-badge--upcoming';
-        // Allow per-product badge text override, fall back to defaults
-        const badgeText =
-          product.badgeText ||
-          (isActive ? 'Available Now' : 'Returns Next Season');
-        const canPurchase = globalSalesEnabled && product.salesEnabled;
-
-        // Build sample section
-        let sampleHtml = '';
-        // eslint-disable-next-line quotes
-        const defaultSampleHeading = "See Exactly What You'll Get";
-        if (product.samplePdf) {
-          sampleHtml = `
+    // Build sample section
+    let sampleHtml = '';
+    // eslint-disable-next-line quotes
+    const defaultSampleHeading = "See Exactly What You'll Get";
+    if (product.samplePdf) {
+      sampleHtml = `
       <section class="premium-sample">
         <h3>${product.sampleHeading || defaultSampleHeading}</h3>
         <p class="sample-description">${product.sampleDescription || ''}</p>
@@ -841,56 +834,56 @@ ${cards}
           ${product.sampleButtonText || 'View Sample'}
         </a>
       </section>`;
-        } else if (product.sampleHeading) {
-          sampleHtml = `
+    } else if (product.sampleHeading) {
+      sampleHtml = `
       <section class="premium-sample">
         <h3>${product.sampleHeading}</h3>
         <p class="sample-description">${product.sampleDescription || ''}</p>
       </section>`;
-        }
+    }
 
-        // Build features grid
-        let featuresHtml = '';
-        if (product.features && product.features.length > 0) {
-          const featureCards = product.features
-            .map(
-              f => `
+    // Build features grid
+    let featuresHtml = '';
+    if (product.features && product.features.length > 0) {
+      const featureCards = product.features
+        .map(
+          f => `
             <div class="feature-card">
               <div class="feature-icon">${this.featureIcon(f.icon)}</div>
               <h3>${f.title}</h3>
               <p>${f.description}</p>
             </div>`
-            )
-            .join('');
+        )
+        .join('');
 
-          featuresHtml = `
+      featuresHtml = `
       <section class="premium-features">
         <h3>What You'll Get</h3>
         <div class="features-grid">
           ${featureCards}
         </div>
       </section>`;
-        }
+    }
 
-        // Build pricing features list
-        const pricingFeaturesHtml = (product.pricingFeatures || [])
-          .map(f => `              <li>✓ ${f}</li>`)
-          .join('\n');
+    // Build pricing features list
+    const pricingFeaturesHtml = (product.pricingFeatures || [])
+      .map(f => `              <li>✓ ${f}</li>`)
+      .join('\n');
 
-        // Build price display
-        const priceOriginalHtml = product.priceOriginal
-          ? `<span class="price-original">${product.priceOriginal}</span>`
-          : '';
+    // Build price display
+    const priceOriginalHtml = product.priceOriginal
+      ? `<span class="price-original">${product.priceOriginal}</span>`
+      : '';
 
-        // Build urgency note
-        const urgencyHtml = product.urgencyNote
-          ? `<p class="urgency-note">${product.urgencyNote}</p>`
-          : '';
+    // Build urgency note
+    const urgencyHtml = product.urgencyNote
+      ? `<p class="urgency-note">${product.urgencyNote}</p>`
+      : '';
 
-        // Build form/CTA based on sales status
-        let formHtml = '';
-        if (canPurchase) {
-          formHtml = `
+    // Build form/CTA based on sales status
+    let formHtml = '';
+    if (canPurchase) {
+      formHtml = `
           <form class="premium-form" data-stripe-link="${product.stripePaymentLink}">
             <div class="form-group">
               <label for="email-${product.id}">Email Address</label>
@@ -925,15 +918,15 @@ ${cards}
             </button>
             <p class="trust-signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure payment via Stripe</p>
           </form>`;
-        } else {
-          formHtml = `
+    } else {
+      formHtml = `
           <p class="sales-disabled-message">
             This report is not currently available for purchase.
           </p>`;
-        }
+    }
 
-        // Build pricing section
-        const pricingHtml = `
+    // Build pricing section
+    const pricingHtml = `
       <section class="premium-pricing">
         <h3>${product.pricingHeading || 'Access'}</h3>
         <div class="pricing-card">
@@ -950,33 +943,99 @@ ${pricingFeaturesHtml}
         </div>
       </section>`;
 
-        // Countdown element: rendered as a placeholder, JS fills in the number
-        const countdownHtml = product.countdownDate
-          ? `<p class="product-countdown" data-countdown-date="${product.countdownDate}">
+    // Countdown element: rendered as a placeholder, JS fills in the number
+    const countdownHtml = product.countdownDate
+      ? `<p class="product-countdown" data-countdown-date="${product.countdownDate}">
               <span class="countdown-label">${product.countdownLabel || 'Returns in'}</span>
               <span class="countdown-days"></span>
             </p>`
-          : '';
+      : '';
 
-        // Divider between products (not after the last one)
-        const divider =
-          index < sorted.length - 1 ? '<hr class="product-divider" />' : '';
-
-        return `
-    <section class="${sectionClass}" id="product-${product.id}">
+    const headerHtml = `
       <div class="product-header">
         <h2>${product.name}</h2>
         <span class="${badgeClass}">${badgeText}</span>
         ${countdownHtml}
         <p class="product-tagline">${product.tagline}</p>
-      </div>
+      </div>`;
+
+    const bodyHtml = `
       ${sampleHtml}
       ${featuresHtml}
-      ${pricingHtml}
+      ${pricingHtml}`;
+
+    return { sectionClass, headerHtml, bodyHtml };
+  }
+
+  // Render a flat list of products as standalone (always-expanded) sections,
+  // separated by dividers. Used for active products at the top of the page.
+  renderProductSections(products, globalSalesEnabled) {
+    return products
+      .map((product, index) => {
+        const { sectionClass, headerHtml, bodyHtml } = this.buildProductPieces(
+          product,
+          globalSalesEnabled
+        );
+        const divider =
+          index < products.length - 1 ? '<hr class="product-divider" />' : '';
+        return `
+    <section class="${sectionClass}" id="product-${product.id}">
+      ${headerHtml}${bodyHtml}
     </section>
     ${divider}`;
       })
       .join('\n');
+  }
+
+  // Render the collapsible "secondary" area: inactive/upcoming product(s) plus
+  // the shared audience ("Perfect For") section, all under ONE large caret in a
+  // native <details> that defaults closed. This keeps an out-of-season product
+  // (and the appeal copy that trails it) from occupying a full screen above the
+  // FAQ. The lead inactive product's header is the <summary> so the collapsed
+  // state still announces what's inside. If there are no inactive products the
+  // audience section is returned on its own (uncollapsed), preserving layout.
+  renderOffseasonArea(inactiveProducts, audienceHtml, globalSalesEnabled) {
+    if (!inactiveProducts || inactiveProducts.length === 0) {
+      return audienceHtml;
+    }
+
+    const [lead, ...rest] = inactiveProducts;
+    const leadPieces = this.buildProductPieces(lead, globalSalesEnabled);
+
+    // Any additional inactive products render as full sections inside the body.
+    const restHtml = rest
+      .map(product => {
+        const { sectionClass, headerHtml, bodyHtml } = this.buildProductPieces(
+          product,
+          globalSalesEnabled
+        );
+        return `
+        <section class="${sectionClass}" id="product-${product.id}">
+          ${headerHtml}${bodyHtml}
+        </section>`;
+      })
+      .join('\n');
+
+    // Large chevron caret (Feather-style), rotated by CSS from the [open] state.
+    const caret =
+      '<svg class="offseason-collapse__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>';
+
+    return `
+    <details class="offseason-collapse">
+      <summary class="offseason-collapse__summary">
+        ${caret}
+        <div class="offseason-collapse__heading">
+          ${leadPieces.headerHtml}
+        </div>
+      </summary>
+      <div class="offseason-collapse__body">
+        <section class="${leadPieces.sectionClass}" id="product-${lead.id}">
+          ${leadPieces.bodyHtml}
+        </section>
+        ${restHtml}
+        ${audienceHtml}
+      </div>
+    </details>`;
   }
 
   // Build the home page premium teaser band from the ACTIVE premium product.
@@ -1062,16 +1121,26 @@ ${pricingFeaturesHtml}
           pageConfig.products &&
           pageConfig.products.length > 0
         ) {
-          // Multi-product mode: generate product sections from config data
-          // and inject into the multi-product template
+          // Multi-product mode: active products render expanded at the top;
+          // inactive/upcoming products (+ the shared "Perfect For" appeal) drop
+          // into one large-caret collapse below, so an out-of-season product
+          // doesn't bury the FAQ. Order preserves config order within each group.
+          const activeProducts = pageConfig.products.filter(p => p.active);
+          const inactiveProducts = pageConfig.products.filter(p => !p.active);
+
           const productSectionsHtml = this.renderProductSections(
-            pageConfig.products,
+            activeProducts,
             premiumSalesEnabled
           );
-          tableContent = this.templates.premiumMultiPage.replace(
-            '{{PRODUCT_SECTIONS}}',
-            productSectionsHtml
+          const secondaryAreaHtml = this.renderOffseasonArea(
+            inactiveProducts,
+            this.templates.premiumAudience,
+            premiumSalesEnabled
           );
+
+          tableContent = this.templates.premiumMultiPage
+            .replace('{{PRODUCT_SECTIONS}}', productSectionsHtml)
+            .replace('{{SECONDARY_AREA}}', secondaryAreaHtml);
           // Override heading/description with umbrella branding when multi-product
           if (pageConfig.multiProductHeading) {
             pageConfig = {
