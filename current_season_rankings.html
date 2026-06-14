@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basketball Statistics - Current Season Rankings</title>
 
+    <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
+         client doesn't round-trip to config/pages.json on every navigation, and
+         the data download starts here (during head parse) instead of waiting for
+         DOMContentLoaded. See data-loader.js (__PAGE_CONFIG__ / __DATA_PREFETCH__). -->
+    <script>
+      window.__PAGE_CONFIG__ = {
+        dataSource: 'currentSeasonRankings',
+        columnMappings: {
+          Team: 'Team',
+          Conf: 'Conf',
+          Rank: 'Rank',
+          'Value of Results': 'Value of Results',
+          'TOP 50 W': 'TOP 50 W',
+          'OUT OF TOP 30 L': 'OUT OF TOP 30 L',
+          'Overall Wins Massey': 'Overall Wins Massey',
+          Eff: 'Eff',
+          Underlying: 'Underlying',
+          STAT: 'STAT',
+          STDEV: 'STDEV',
+        },
+      };
+      (function () {
+        var ds = window.__PAGE_CONFIG__.dataSource;
+        if (ds) {
+          window.__DATA_PREFETCH__ = {
+            source: ds,
+            promise: fetch('data-encoded/' + ds + '.json'),
+          };
+        }
+      })();
+    </script>
+
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
     <meta name="googlebot" content="noai, noimageai" />

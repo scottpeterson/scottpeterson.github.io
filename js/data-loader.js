@@ -39,19 +39,33 @@ class DataLoader {
     return JSON.parse(jsonString);
   }
 
-  // Load page configuration (not encoded since it's needed for page structure)
+  // Load this page's configuration. The build inlines the current page's config
+  // into the document <head> as window.__PAGE_CONFIG__ (just dataSource +
+  // columnMappings, the only fields read at runtime), so the common path needs
+  // no network request. Falls back to fetching the full config/pages.json and
+  // selecting the current page if the inline config is somehow absent.
   async loadPageConfig() {
     if (this.pageConfig) {
       return this.pageConfig;
     }
 
+    if (window.__PAGE_CONFIG__) {
+      this.pageConfig = window.__PAGE_CONFIG__;
+      return this.pageConfig;
+    }
+
     try {
       const response = await fetch('config/pages.json');
-      this.pageConfig = await response.json();
+      const allConfig = await response.json();
+      const path = window.location.pathname;
+      const currentPage =
+        path.substring(path.lastIndexOf('/') + 1).replace('.html', '') ||
+        'index';
+      this.pageConfig = allConfig[currentPage] || null;
       return this.pageConfig;
     } catch (error) {
       console.error('Error loading page config:', error);
-      return {};
+      return null;
     }
   }
 
@@ -62,8 +76,18 @@ class DataLoader {
     }
 
     try {
-      // Fetch from encoded data directory
-      const response = await fetch(`data-encoded/${dataSource}.json`);
+      // Reuse the in-flight request the document <head> kicked off for this page's
+      // data, if it matches — otherwise fetch now. The prefetch is single-use (a
+      // Response body can't be read twice), and the cache.has() guard above means
+      // a given source is only loaded once anyway.
+      let response;
+      const prefetch = window.__DATA_PREFETCH__;
+      if (prefetch && prefetch.source === dataSource && prefetch.promise) {
+        window.__DATA_PREFETCH__ = null;
+        response = await prefetch.promise;
+      } else {
+        response = await fetch(`data-encoded/${dataSource}.json`);
+      }
 
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -89,17 +113,11 @@ class DataLoader {
     }
   }
 
-  // Get current page configuration
+  // Get current page configuration. pageConfig is already this page's config
+  // object (inlined by the build or selected from the full config in the
+  // fallback path), so return it directly.
   getCurrentPageConfig() {
-    const path = window.location.pathname;
-    const currentPage =
-      path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
-    console.log('Path:', path, 'Current page:', currentPage);
-    console.log(
-      'Available page configs:',
-      this.pageConfig ? Object.keys(this.pageConfig) : 'No config loaded'
-    );
-    return this.pageConfig ? this.pageConfig[currentPage] : null;
+    return this.pageConfig || window.__PAGE_CONFIG__ || null;
   }
 
   // Clear cache

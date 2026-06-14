@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basketball Statistics - Composite Rankings</title>
 
+    <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
+         client doesn't round-trip to config/pages.json on every navigation, and
+         the data download starts here (during head parse) instead of waiting for
+         DOMContentLoaded. See data-loader.js (__PAGE_CONFIG__ / __DATA_PREFETCH__). -->
+    <script>
+      window.__PAGE_CONFIG__ = {
+        dataSource: 'compositeRankings',
+        columnMappings: {
+          Team: 'Team',
+          Conf: 'Conf',
+          Region: 'Region',
+          'Massey Rank': 'Massey Rank',
+          'Eff Rank': 'Eff Rank',
+          'NPI Rank': 'NPI Rank',
+          'Curr Season Results Rank': 'Curr Season Results Rank',
+          'Strength of Record': 'Strength of Record',
+          'Wins Above Bubble': 'Wins Above Bubble',
+          'Preseason Rank': 'Preseason Rank',
+          MEDIAN: 'MEDIAN',
+          OVR_RANK: 'OVR_RANK',
+          Stdev: 'Stdev',
+        },
+      };
+      (function () {
+        var ds = window.__PAGE_CONFIG__.dataSource;
+        if (ds) {
+          window.__DATA_PREFETCH__ = {
+            source: ds,
+            promise: fetch('data-encoded/' + ds + '.json'),
+          };
+        }
+      })();
+    </script>
+
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
     <meta name="googlebot" content="noai, noimageai" />

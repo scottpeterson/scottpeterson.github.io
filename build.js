@@ -541,11 +541,14 @@ ${cards}
       NAV_ITEMS: data.navItems || '',
       PREMIUM_BAND: data.premiumBand || '',
       HERO: data.hero || '',
+      HEAD_PRELOAD: data.headPreload || '',
     };
 
     Object.keys(mappings).forEach(key => {
       const regex = new RegExp(`{{${key}}}`, 'g');
-      result = result.replace(regex, mappings[key] || '');
+      // Use a replacer function so any `$` in the value (e.g. inline-script
+      // dollar signs) is inserted literally, not interpreted as a $-pattern.
+      result = result.replace(regex, () => mappings[key] || '');
     });
 
     return result;
@@ -1142,6 +1145,32 @@ ${pricingFeaturesHtml}
       // This allows testing without rebuilding
       const commandPaletteEnabled = true;
 
+      // Per-page runtime config inlined into <head>. The client only ever reads
+      // dataSource + columnMappings (main.js / table-controls.js), so we inline
+      // just those — no need to ship (or fetch) the whole multi-page config.
+      // When a dataSource exists we also kick off its (cacheable) fetch right
+      // here so the download overlaps document parsing instead of starting after
+      // DOMContentLoaded. data-loader.js consumes both globals.
+      const runtimeConfig = {};
+      if (pageConfig.dataSource) {
+        runtimeConfig.dataSource = pageConfig.dataSource;
+      }
+      if (pageConfig.columnMappings) {
+        runtimeConfig.columnMappings = pageConfig.columnMappings;
+      }
+      const headPreload = `<script>
+        window.__PAGE_CONFIG__ = ${JSON.stringify(runtimeConfig)};
+        (function () {
+          var ds = window.__PAGE_CONFIG__.dataSource;
+          if (ds) {
+            window.__DATA_PREFETCH__ = {
+              source: ds,
+              promise: fetch('data-encoded/' + ds + '.json'),
+            };
+          }
+        })();
+      </script>`;
+
       const fullPage = this.renderTemplate(this.templates.base, {
         title: pageConfig.title,
         heading: pageConfig.heading,
@@ -1165,6 +1194,7 @@ ${pricingFeaturesHtml}
         showBuyButton: showBuyButton,
         commandPaletteEnabled: commandPaletteEnabled,
         navItems: navItems,
+        headPreload: headPreload,
       });
 
       // Determine output filename

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basketball Statistics - {{PAGE_TITLE}}</title>
 
+    <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
+         client doesn't round-trip to config/pages.json on every navigation, and
+         the data download starts here (during head parse) instead of waiting for
+         DOMContentLoaded. See data-loader.js (__PAGE_CONFIG__ / __DATA_PREFETCH__). -->
+    {{HEAD_PRELOAD}}
+
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
     <meta name="googlebot" content="noai, noimageai" />
