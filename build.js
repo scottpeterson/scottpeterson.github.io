@@ -320,7 +320,9 @@ class TemplateEngine {
         continue;
       }
 
-      navItems.push(`<li><a href="${href(item.href)}">${item.label}</a></li>`);
+      navItems.push(
+        `<li><a href="${href(item.href)}">${this.escapeHtml(item.label)}</a></li>`
+      );
     }
 
     return navItems.join('\n          ');
@@ -399,7 +401,7 @@ class TemplateEngine {
     const dropdownItems = reports
       .map(
         r =>
-          `              <li><a href="${pfx}reports/${r.file}">${r.title}</a></li>`
+          `              <li><a href="${pfx}reports/${r.file}">${this.escapeHtml(r.title)}</a></li>`
       )
       .join('\n');
 
@@ -430,7 +432,7 @@ ${dropdownItems}
     const cards = reports
       .map(
         r => `        <a href="${r.slug}.html" class="report-card">
-          <h3>${r.title}</h3>
+          <h3>${this.escapeHtml(r.title)}</h3>
           <span class="report-card-arrow">→</span>
         </a>`
       )
@@ -526,14 +528,21 @@ ${cards}
     // Handle arrays
     result = this.handleArrays(result, data);
 
-    // Replace simple variables (case-insensitive mapping)
-    const mappings = {
+    // Plain-text values (from config/page data) — HTML-escaped on interpolation
+    // so a literal "<"/"&" in copy can't break or inject markup.
+    const textMappings = {
       PAGE_TITLE: data.title,
       PAGE_HEADING: data.heading,
       PAGE_DESCRIPTION: data.description,
       SECTION_TITLE: data.sectionTitle,
       SEARCH_PLACEHOLDER: data.searchPlaceholder,
       LAST_UPDATED: data.lastUpdated,
+    };
+
+    // Pre-rendered, build-generated markup — inserted verbatim. These are
+    // trusted HTML/inline-script fragments the build assembled itself; escaping
+    // them would corrupt the intended markup.
+    const markupMappings = {
       CONTENT: data.content || '',
       NAV_ITEMS: data.navItems || '',
       PREMIUM_BAND: data.premiumBand || '',
@@ -542,14 +551,40 @@ ${cards}
       BODY_CLASS: data.bodyClass || '',
     };
 
-    Object.keys(mappings).forEach(key => {
+    for (const [key, value] of Object.entries(textMappings)) {
       const regex = new RegExp(`{{${key}}}`, 'g');
-      // Use a replacer function so any `$` in the value (e.g. inline-script
-      // dollar signs) is inserted literally, not interpreted as a $-pattern.
-      result = result.replace(regex, () => mappings[key] || '');
-    });
+      const escaped = this.escapeHtml(value || '');
+      result = result.replace(regex, () => escaped);
+    }
+
+    for (const [key, value] of Object.entries(markupMappings)) {
+      const regex = new RegExp(`{{${key}}}`, 'g');
+      // Replacer function so any `$` in the markup (e.g. inline-script dollar
+      // signs) is inserted literally, not interpreted as a $-pattern.
+      result = result.replace(regex, () => value || '');
+    }
 
     return result;
+  }
+
+  // HTML-escape a dynamic text value before it lands in generated markup.
+  //
+  // INTENT: config/pages.json (and report metadata) is plain text authored by a
+  // human; without escaping, a literal "<", ">", or "&" in a value would emit
+  // invalid markup or, worse, inject tags. This escapes the characters that are
+  // significant in the only contexts build.js interpolates these values into:
+  // HTML text and double-quoted attributes. Apostrophes are DELIBERATELY not
+  // escaped — every attribute in the templates is double-quoted (Prettier
+  // enforces this), so a bare ' can never break out, and escaping it would only
+  // litter readable copy like "Women's" with &#39;. Config is verified free of
+  // pre-existing entities/tags, so there is no double-encoding risk. Only use
+  // this for TEXT — never on build-generated markup (it would corrupt the HTML).
+  escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
 
   // Guard against shipping a page with unrendered template syntax. Scans for any
@@ -620,7 +655,7 @@ ${cards}
     // Handle COLUMNS array
     if (data.columns && Array.isArray(data.columns)) {
       const columnHtml = data.columns
-        .map(col => `<th>${col}</th>`)
+        .map(col => `<th>${this.escapeHtml(col)}</th>`)
         .join('\n          ');
       result = result.replace(/{{#COLUMNS}}[\s\S]*?{{\/COLUMNS}}/g, columnHtml);
     }
@@ -631,8 +666,8 @@ ${cards}
         .map(
           ([column, description]) =>
             `          <div class="legend-item">
-            <span class="legend-column">${column}</span>
-            <span class="legend-description">${description}</span>
+            <span class="legend-column">${this.escapeHtml(column)}</span>
+            <span class="legend-description">${this.escapeHtml(description)}</span>
           </div>`
         )
         .join('\n');
@@ -706,7 +741,10 @@ ${cards}
         '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>',
     };
     if (!paths[name]) {
-      return name;
+      // Unknown key: fall through to the raw config value (e.g. an emoji), but
+      // escape it — it's untrusted text landing in markup. Known keys below
+      // return trusted inline SVG and must NOT be escaped.
+      return this.escapeHtml(name);
     }
     return `<svg ${attrs}>${paths[name]}</svg>`;
   }
@@ -736,17 +774,17 @@ ${cards}
     if (product.samplePdf) {
       sampleHtml = `
       <section class="premium-sample">
-        <h3>${product.sampleHeading || defaultSampleHeading}</h3>
-        <p class="sample-description">${product.sampleDescription || ''}</p>
+        <h3>${this.escapeHtml(product.sampleHeading || defaultSampleHeading)}</h3>
+        <p class="sample-description">${this.escapeHtml(product.sampleDescription || '')}</p>
         <a href="${product.samplePdf}" target="_blank" rel="noopener noreferrer" class="sample-button">
-          ${product.sampleButtonText || 'View Sample'}
+          ${this.escapeHtml(product.sampleButtonText || 'View Sample')}
         </a>
       </section>`;
     } else if (product.sampleHeading) {
       sampleHtml = `
       <section class="premium-sample">
-        <h3>${product.sampleHeading}</h3>
-        <p class="sample-description">${product.sampleDescription || ''}</p>
+        <h3>${this.escapeHtml(product.sampleHeading)}</h3>
+        <p class="sample-description">${this.escapeHtml(product.sampleDescription || '')}</p>
       </section>`;
     }
 
@@ -758,8 +796,8 @@ ${cards}
           f => `
             <div class="feature-card">
               <div class="feature-icon">${this.featureIcon(f.icon)}</div>
-              <h3>${f.title}</h3>
-              <p>${f.description}</p>
+              <h3>${this.escapeHtml(f.title)}</h3>
+              <p>${this.escapeHtml(f.description)}</p>
             </div>`
         )
         .join('');
@@ -775,17 +813,17 @@ ${cards}
 
     // Build pricing features list
     const pricingFeaturesHtml = (product.pricingFeatures || [])
-      .map(f => `              <li>✓ ${f}</li>`)
+      .map(f => `              <li>✓ ${this.escapeHtml(f)}</li>`)
       .join('\n');
 
     // Build price display
     const priceOriginalHtml = product.priceOriginal
-      ? `<span class="price-original">${product.priceOriginal}</span>`
+      ? `<span class="price-original">${this.escapeHtml(product.priceOriginal)}</span>`
       : '';
 
     // Build urgency note
     const urgencyHtml = product.urgencyNote
-      ? `<p class="urgency-note">${product.urgencyNote}</p>`
+      ? `<p class="urgency-note">${this.escapeHtml(product.urgencyNote)}</p>`
       : '';
 
     // Build form/CTA based on sales status
@@ -822,7 +860,7 @@ ${cards}
             ${urgencyHtml}
 
             <button type="submit" class="premium-button product-checkout-button" disabled>
-              ${product.buttonText || 'Get Access'}
+              ${this.escapeHtml(product.buttonText || 'Get Access')}
             </button>
             <p class="trust-signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure payment via Stripe</p>
           </form>`;
@@ -836,14 +874,14 @@ ${cards}
     // Build pricing section
     const pricingHtml = `
       <section class="premium-pricing">
-        <h3>${product.pricingHeading || 'Access'}</h3>
+        <h3>${this.escapeHtml(product.pricingHeading || 'Access')}</h3>
         <div class="pricing-card">
           <div class="price">
             ${priceOriginalHtml}
-            <span class="price-amount">${product.price}</span>
-            <span class="price-period">${product.pricePeriod || ''}</span>
+            <span class="price-amount">${this.escapeHtml(product.price)}</span>
+            <span class="price-period">${this.escapeHtml(product.pricePeriod || '')}</span>
           </div>
-          <p class="pricing-clarification">${product.pricingClarification || ''}</p>
+          <p class="pricing-clarification">${this.escapeHtml(product.pricingClarification || '')}</p>
           <ul class="pricing-features">
 ${pricingFeaturesHtml}
           </ul>
@@ -854,17 +892,17 @@ ${pricingFeaturesHtml}
     // Countdown element: rendered as a placeholder, JS fills in the number
     const countdownHtml = product.countdownDate
       ? `<p class="product-countdown" data-countdown-date="${product.countdownDate}">
-              <span class="countdown-label">${product.countdownLabel || 'Returns in'}</span>
+              <span class="countdown-label">${this.escapeHtml(product.countdownLabel || 'Returns in')}</span>
               <span class="countdown-days"></span>
             </p>`
       : '';
 
     const headerHtml = `
       <div class="product-header">
-        <h2>${product.name}</h2>
-        <span class="${badgeClass}">${badgeText}</span>
+        <h2>${this.escapeHtml(product.name)}</h2>
+        <span class="${badgeClass}">${this.escapeHtml(badgeText)}</span>
         ${countdownHtml}
-        <p class="product-tagline">${product.tagline}</p>
+        <p class="product-tagline">${this.escapeHtml(product.tagline)}</p>
       </div>`;
 
     const bodyHtml = `
@@ -964,13 +1002,13 @@ ${pricingFeaturesHtml}
 
     // Original price shown struck-through when present (e.g. $49 -> $39)
     const originalPrice = product.priceOriginal
-      ? `<span class="home-premium__price-original">${product.priceOriginal}</span>`
+      ? `<span class="home-premium__price-original">${this.escapeHtml(product.priceOriginal)}</span>`
       : '';
 
     // Up to three short selling points from the product's pricing features
     const features = (product.pricingFeatures || [])
       .slice(0, 3)
-      .map(f => `<li>${f}</li>`)
+      .map(f => `<li>${this.escapeHtml(f)}</li>`)
       .join('\n          ');
     const featuresHtml = features
       ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
@@ -979,14 +1017,14 @@ ${pricingFeaturesHtml}
     return `<section class="home-premium">
   <div class="home-premium__inner">
     <span class="home-premium__eyebrow">Premium Report</span>
-    <h2 class="home-premium__title">${product.name}</h2>
-    <p class="home-premium__tagline">${product.tagline}</p>
+    <h2 class="home-premium__title">${this.escapeHtml(product.name)}</h2>
+    <p class="home-premium__tagline">${this.escapeHtml(product.tagline)}</p>
     ${featuresHtml}
     <div class="home-premium__price">
-      ${originalPrice}<span class="home-premium__price-now">${product.price}</span>
-      <span class="home-premium__price-period">${product.pricePeriod}</span>
+      ${originalPrice}<span class="home-premium__price-now">${this.escapeHtml(product.price)}</span>
+      <span class="home-premium__price-period">${this.escapeHtml(product.pricePeriod)}</span>
     </div>
-    <a href="premium.html" class="btn btn--primary btn--lg">${product.buttonText} &rarr;</a>
+    <a href="premium.html" class="btn btn--primary btn--lg">${this.escapeHtml(product.buttonText)} &rarr;</a>
   </div>
 </section>`;
   }
