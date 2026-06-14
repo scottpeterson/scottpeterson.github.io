@@ -139,7 +139,10 @@
         </div>
 
         <div class="table-container">
-          <table class="stats-table" id="statsTable">
+          <!-- is-loading hides the table until JS populates it (data is loaded/decoded
+         client-side), so the first visible paint already has content-sized columns
+         and there's no narrow→wide blip. TableController.revealTable() fades it in. -->
+          <table class="stats-table is-loading" id="statsTable">
             <thead>
               <tr>
                 <th>Team</th>

@@ -266,7 +266,8 @@ header {
      clipped to the padding box, and the brand gradient clipped to the border box
      — the 2px transparent border reveals the gradient, rounded corners and all. */
   border: 2px solid transparent;
-  background: linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
+  background:
+    linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
     var(--grad-accent) border-box;
 }
 
@@ -335,7 +336,8 @@ h2 {
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease,
     background 0.15s ease;
 }
@@ -459,12 +461,13 @@ h2 {
 .home-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(13 20 28 / 92%) 0%,
-    rgb(13 20 28 / 78%) 38%,
-    rgb(13 20 28 / 40%) 100%
-  ),
+  background:
+    linear-gradient(
+      90deg,
+      rgb(13 20 28 / 92%) 0%,
+      rgb(13 20 28 / 78%) 38%,
+      rgb(13 20 28 / 40%) 100%
+    ),
     linear-gradient(0deg, rgb(13 20 28 / 70%) 0%, rgb(13 20 28 / 0%) 55%);
 }
 
@@ -560,7 +563,8 @@ h2 {
 .explore-card {
   display: block;
   text-decoration: none;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease;
 }
 
@@ -787,6 +791,21 @@ h2 {
   line-height: 1.5;
 }
 
+/* Reveal-on-load: TableController hides the table while it's empty and fades it
+   in once rows are populated, so the FIRST visible paint already has all rows
+   and the auto-sized columns are final — no narrow→wide "blip". Column widths
+   still modulate to content (table-layout stays auto; no fixed width). The
+   is-loading class is only added to JS-driven tables, so any static .stats-table
+   is unaffected and visible by default. */
+.stats-table.is-loading {
+  opacity: 0;
+}
+
+.stats-table.is-loaded {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
 .stats-table thead th {
   background: var(--grad-brand);
   color: #fff;
@@ -826,14 +845,6 @@ h2 {
   left: 0;
   font-weight: 500;
   z-index: 50;
-
-  /* Reserve the team-name column's width up front. With table-layout: auto the
-     column was sized from content, so it rendered narrow (just the "Team" header)
-     on the loading row, then snapped wider once data arrived — a visible blip.
-     A min-width sized for typical D3 school names keeps it stable from first
-     paint. nowrap keeps names on one line so the width doesn't shift on filter. */
-  min-width: 200px;
-  white-space: nowrap;
 }
 
 /* First column background for odd rows (default white) */
@@ -888,7 +899,8 @@ footer {
      the gradient; the navy chrome gradient fills the padding box. */
   border: 0 solid transparent;
   border-top-width: 3px;
-  background: var(--grad-chrome) padding-box,
+  background:
+    var(--grad-chrome) padding-box,
     var(--grad-accent) border-box;
 }
 
@@ -973,7 +985,8 @@ footer {
   border-radius: var(--r-md);
   font-size: 14px;
   color: var(--text-2);
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
@@ -982,7 +995,8 @@ footer {
 .filter-select:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1158,7 +1172,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -1218,7 +1233,8 @@ footer {
 .form-textarea:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1600,7 +1616,8 @@ footer {
 
 .distances-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1751,7 +1768,8 @@ footer {
 
 .ryan-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1877,7 +1895,8 @@ footer {
   border-radius: var(--r-md);
   padding: var(--space-4);
   box-shadow: var(--elev-1);
-  transition: transform 0.3s ease,
+  transition:
+    transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -2324,7 +2343,8 @@ footer {
   border-radius: var(--r-sm);
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   background-color: #fff;
 }

@@ -22,6 +22,10 @@ class TableController {
         return false;
       }
 
+      // Hide the table until it's populated so the first visible paint already
+      // has its final, content-sized columns (avoids the load-time width blip).
+      this.table.classList.add('is-loading');
+
       // Add event listeners for search and filter if they exist
       if (this.searchInput) {
         this.searchInput.addEventListener('input', () => this.filterTable());
@@ -63,7 +67,21 @@ class TableController {
     } catch (error) {
       console.error('Error loading table data:', error);
       this.showDataLoadingError(dataSource);
+    } finally {
+      // Reveal the (now fully-rendered) table — success or error — so the user
+      // never sees the intermediate empty/narrow state.
+      this.revealTable();
     }
+  }
+
+  // Fade the table in once its rows are in the DOM (paired with is-loading set
+  // in init()). Done in one place so every load path reveals exactly once.
+  revealTable() {
+    if (!this.table) {
+      return;
+    }
+    this.table.classList.remove('is-loading');
+    this.table.classList.add('is-loaded');
   }
 
   // Show error message when data fails to load

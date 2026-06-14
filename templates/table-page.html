@@ -1,6 +1,6 @@
 <section class="table-section">
   <h2>{{SECTION_TITLE}}</h2>
-  
+
   {{#SHOW_PROGRESS}}
   <!-- Progress Indicators -->
   <div class="progress-indicators">
@@ -23,13 +23,16 @@
       </div>
     </div>
   </div>
-  {{/SHOW_PROGRESS}}
-  
-  {{#HAS_SEARCH}}
+  {{/SHOW_PROGRESS}} {{#HAS_SEARCH}}
   <!-- Search and Filter Controls -->
   <div class="table-controls">
     <div class="search-container">
-      <input type="text" id="teamSearch" placeholder="{{SEARCH_PLACEHOLDER}}" class="search-input">
+      <input
+        type="text"
+        id="teamSearch"
+        placeholder="{{SEARCH_PLACEHOLDER}}"
+        class="search-input"
+      />
     </div>
     <div class="filter-container">
       <select id="conferenceFilter" class="filter-select">
@@ -38,9 +41,12 @@
     </div>
   </div>
   {{/HAS_SEARCH}}
-  
+
   <div class="table-container">
-    <table class="stats-table" id="statsTable">
+    <!-- is-loading hides the table until JS populates it (data is loaded/decoded
+         client-side), so the first visible paint already has content-sized columns
+         and there's no narrow→wide blip. TableController.revealTable() fades it in. -->
+    <table class="stats-table is-loading" id="statsTable">
       <thead>
         <tr>
           {{#COLUMNS}}
