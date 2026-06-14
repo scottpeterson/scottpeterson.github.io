@@ -552,158 +552,61 @@ ${cards}
     return result;
   }
 
-  // Handle conditional sections {{#VAR}} content {{/VAR}}
+  // Guard against shipping a page with unrendered template syntax. Scans for any
+  // surviving mustache token — a section ({{#X}}/{{^X}}/{{/X}}) or a plain
+  // variable ({{X}}) — and throws if found. No generated page legitimately
+  // contains "{{", so a hit is always a build bug: a typo'd token, a conditional
+  // missing from the flags map in handleConditionals, or a new {{VAR}} with no
+  // entry in renderTemplate's mappings. Throwing here makes that loud at build
+  // time instead of leaving literal braces visible on the live page.
+  assertNoUnresolvedTokens(html, filename) {
+    const leftover = html.match(/{{[^}]*}}/g);
+    if (leftover) {
+      const unique = [...new Set(leftover)];
+      throw new Error(
+        `Unresolved template token(s) in ${filename}: ${unique.join(', ')}`
+      );
+    }
+  }
+
+  // Handle conditional sections {{#VAR}} content {{/VAR}} (and the inverted
+  // {{^VAR}} content {{/VAR}}).
+  //
+  // INTENT: one data-driven pass over a single source-of-truth table instead of
+  // 11 copy-pasted if/else blocks. To add a conditional, add ONE row here and use
+  // the token in a template — nothing else changes. The map key is the literal
+  // token name as written in the template ({{#TOKEN}}); the value is the data
+  // property that decides truthiness. Each token is handled in both forms:
+  //   {{#TOKEN}}…{{/TOKEN}}  keep when truthy, strip when falsy
+  //   {{^TOKEN}}…{{/TOKEN}}  keep when falsy,  strip when truthy (mustache inverse)
   handleConditionals(template, data) {
+    // token-as-written-in-template -> deciding data flag
+    const flags = {
+      HAS_SEARCH: data.hasSearch,
+      SHOW_PROGRESS: data.showProgress,
+      LAST_UPDATED: data.lastUpdated,
+      LEGEND: data.legend,
+      salesEnabled: data.salesEnabled,
+      IS_PREMIUM_PAGE: data.isPremiumPage,
+      IS_DISTANCES_PAGE: data.isDistancesPage,
+      IS_RYAN_PAGE: data.isRyanPage,
+      SHOW_DEFAULT_HEADER: data.showDefaultHeader,
+      SHOW_BUY_BUTTON: data.showBuyButton,
+      COMMAND_PALETTE: data.commandPaletteEnabled,
+    };
+
     let result = template;
-
-    // Handle HAS_SEARCH conditional
-    if (data.hasSearch) {
+    for (const [token, value] of Object.entries(flags)) {
+      const truthy = Boolean(value);
+      // Positive section: {{#token}}…{{/token}}
       result = result.replace(
-        /{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g,
-        '$1'
+        new RegExp(`{{#${token}}}([\\s\\S]*?){{/${token}}}`, 'g'),
+        truthy ? '$1' : ''
       );
-    } else {
-      result = result.replace(/{{#HAS_SEARCH}}([\s\S]*?){{\/HAS_SEARCH}}/g, '');
-    }
-
-    // Handle SHOW_PROGRESS conditional
-    if (data.showProgress) {
+      // Inverted section: {{^token}}…{{/token}}
       result = result.replace(
-        /{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#SHOW_PROGRESS}}([\s\S]*?){{\/SHOW_PROGRESS}}/g,
-        ''
-      );
-    }
-
-    // Handle LAST_UPDATED conditional
-    if (data.lastUpdated) {
-      result = result.replace(
-        /{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#LAST_UPDATED}}([\s\S]*?){{\/LAST_UPDATED}}/g,
-        ''
-      );
-    }
-
-    // Handle LEGEND conditional
-    if (data.legend) {
-      result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '$1');
-    } else {
-      result = result.replace(/{{#LEGEND}}([\s\S]*?){{\/LEGEND}}/g, '');
-    }
-
-    // Handle salesEnabled conditional (positive)
-    if (data.salesEnabled) {
-      result = result.replace(
-        /{{#salesEnabled}}([\s\S]*?){{\/salesEnabled}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#salesEnabled}}([\s\S]*?){{\/salesEnabled}}/g,
-        ''
-      );
-    }
-
-    // Handle salesEnabled conditional (negative)
-    if (!data.salesEnabled) {
-      result = result.replace(
-        /\{\{\^salesEnabled\}\}([\s\S]*?)\{\{\/salesEnabled\}\}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /\{\{\^salesEnabled\}\}([\s\S]*?)\{\{\/salesEnabled\}\}/g,
-        ''
-      );
-    }
-
-    // Handle IS_PREMIUM_PAGE conditional
-    if (data.isPremiumPage) {
-      result = result.replace(
-        /{{#IS_PREMIUM_PAGE}}([\s\S]*?){{\/IS_PREMIUM_PAGE}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#IS_PREMIUM_PAGE}}([\s\S]*?){{\/IS_PREMIUM_PAGE}}/g,
-        ''
-      );
-    }
-
-    // Handle IS_DISTANCES_PAGE conditional
-    if (data.isDistancesPage) {
-      result = result.replace(
-        /{{#IS_DISTANCES_PAGE}}([\s\S]*?){{\/IS_DISTANCES_PAGE}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#IS_DISTANCES_PAGE}}([\s\S]*?){{\/IS_DISTANCES_PAGE}}/g,
-        ''
-      );
-    }
-
-    // Handle IS_RYAN_PAGE conditional
-    if (data.isRyanPage) {
-      result = result.replace(
-        /{{#IS_RYAN_PAGE}}([\s\S]*?){{\/IS_RYAN_PAGE}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#IS_RYAN_PAGE}}([\s\S]*?){{\/IS_RYAN_PAGE}}/g,
-        ''
-      );
-    }
-
-    // Handle SHOW_DEFAULT_HEADER conditional
-    // The home page suppresses the generic <header> and renders its own hero
-    // (templates/home-content.html) instead, so this is false only for index.
-    if (data.showDefaultHeader) {
-      result = result.replace(
-        /{{#SHOW_DEFAULT_HEADER}}([\s\S]*?){{\/SHOW_DEFAULT_HEADER}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#SHOW_DEFAULT_HEADER}}([\s\S]*?){{\/SHOW_DEFAULT_HEADER}}/g,
-        ''
-      );
-    }
-
-    // Handle SHOW_BUY_BUTTON conditional
-    if (data.showBuyButton) {
-      result = result.replace(
-        /{{#SHOW_BUY_BUTTON}}([\s\S]*?){{\/SHOW_BUY_BUTTON}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#SHOW_BUY_BUTTON}}([\s\S]*?){{\/SHOW_BUY_BUTTON}}/g,
-        ''
-      );
-    }
-
-    // Handle COMMAND_PALETTE conditional
-    // Always include command palette assets - the feature flag check is done in JS
-    // This allows enabling via URL parameter without rebuilding
-    if (data.commandPaletteEnabled) {
-      result = result.replace(
-        /{{#COMMAND_PALETTE}}([\s\S]*?){{\/COMMAND_PALETTE}}/g,
-        '$1'
-      );
-    } else {
-      result = result.replace(
-        /{{#COMMAND_PALETTE}}([\s\S]*?){{\/COMMAND_PALETTE}}/g,
-        ''
+        new RegExp(`{{\\^${token}}}([\\s\\S]*?){{/${token}}}`, 'g'),
+        truthy ? '' : '$1'
       );
     }
 
@@ -1278,16 +1181,13 @@ ${pricingFeaturesHtml}
       });
 
       // Determine output filename
-      let filename;
-      if (pageKey === 'index') {
-        filename = 'index.html';
-      } else if (pageKey === 'publishing_tracker') {
-        filename = 'publishing_tracker.html';
-      } else if (pageKey === 'preseason_rankings') {
-        filename = 'preseason_rankings.html';
-      } else {
-        filename = `${pageKey}.html`;
-      }
+      const filename = `${pageKey}.html`;
+
+      // Fail loudly on any unresolved mustache token. A surviving {{...}} means a
+      // template references a conditional/variable the build never filled in (a
+      // typo'd token, a missing flags-map row, or a new {{VAR}} with no mapping).
+      // Catching it here turns a silent broken-page bug into a build failure.
+      this.assertNoUnresolvedTokens(fullPage, filename);
 
       // Write file (Prettier-formatted so output matches the committed files)
       await this.writeHtml(filename, fullPage);
