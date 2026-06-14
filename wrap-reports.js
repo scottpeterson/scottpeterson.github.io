@@ -147,8 +147,6 @@ function scopeCSS(css, slug) {
   let result = '';
   let depth = 0;
   let currentRule = '';
-  const inMedia = false;
-  const mediaQuery = '';
 
   for (let i = 0; i < css.length; i++) {
     const char = css[i];

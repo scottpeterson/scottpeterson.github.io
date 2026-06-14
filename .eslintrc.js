@@ -33,8 +33,8 @@ module.exports = {
     window: 'readonly',
     document: 'readonly',
     console: 'readonly',
-    // Our global functions
-    initMobileNav: 'writable',
-    setActiveNavLink: 'writable',
+    // Cross-file global functions are declared via /* exported */ directives in
+    // the files that define them (e.g. js/navigation.js), so no-unused-vars
+    // doesn't flag their definitions. With no-undef off, the call sites are fine.
   },
 };

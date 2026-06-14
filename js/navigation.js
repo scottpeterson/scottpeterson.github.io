@@ -203,3 +203,13 @@ function setActiveNavLink() {
     console.error('Error in setActiveNavLink:', error);
   }
 }
+
+// Expose the page-init helpers on window, matching how the other modules publish
+// their globals (window.dataLoader, window.tableController, window.app). main.js
+// invokes these from its DOMContentLoaded handler; the explicit exports make the
+// cross-file contract greppable and keep them from reading as unused.
+window.initEmailProtection = initEmailProtection;
+window.initMobileNav = initMobileNav;
+window.syncNavScrollOffset = syncNavScrollOffset;
+window.initHomeNavScrim = initHomeNavScrim;
+window.setActiveNavLink = setActiveNavLink;

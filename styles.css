@@ -1906,19 +1906,6 @@ footer {
   margin: 0 auto;
 }
 
-.premium-intro {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.premium-tagline {
-  font-size: 1.3rem;
-  color: #555;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .premium-features {
   margin-bottom: 50px;
 }
@@ -2027,13 +2014,6 @@ footer {
   color: var(--navy-900);
 }
 
-.price-value {
-  font-size: 1.1rem;
-  color: var(--success);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
 .price-period {
   font-size: 1.2rem;
   color: #555;
@@ -2081,12 +2061,6 @@ footer {
   height: 0.95em;
   vertical-align: -0.15em;
   margin-right: 4px;
-}
-
-.pricing-note {
-  margin-top: 20px;
-  color: #888;
-  font-size: 0.9rem;
 }
 
 /* Premium Sample Section */
@@ -2207,42 +2181,11 @@ footer {
   box-shadow: var(--elev-2);
 }
 
-.simple-page-text {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
-  line-height: 1.8;
-}
-
 .simple-page-actions {
   margin-top: 30px;
 }
 
 /* .button / .button-primary styling now lives in the BUTTON SYSTEM block. */
-
-/* Premium Intro Section */
-.premium-intro {
-  margin-bottom: 40px;
-}
-
-.premium-intro-box {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-  border-left: 4px solid var(--blue-500);
-  padding: 25px 30px;
-  border-radius: var(--r-sm);
-}
-
-.premium-intro-box h2 {
-  color: var(--navy-900);
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.premium-intro-box p {
-  color: #555;
-  line-height: 1.7;
-  margin: 0;
-}
 
 /* Premium Honor Section */
 .premium-honor {
@@ -2679,10 +2622,6 @@ footer {
 
 /* Mobile responsive adjustments for premium pages */
 @media (max-width: 768px) {
-  .premium-tagline {
-    font-size: 1.1rem;
-  }
-
   .features-grid {
     grid-template-columns: 1fr;
     gap: 20px;

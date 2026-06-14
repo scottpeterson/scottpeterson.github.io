@@ -248,7 +248,7 @@
     // Actions section FIRST (Search Team at the top)
     if (actionItems.length > 0) {
       html += '<div class="command-palette-section">Actions</div>';
-      actionItems.forEach((item, i) => {
+      actionItems.forEach(item => {
         const globalIndex = filteredItems.indexOf(item);
         html += renderItem(item, globalIndex);
       });
@@ -257,7 +257,7 @@
     // Navigation section
     if (navItems.length > 0) {
       html += '<div class="command-palette-section">Navigation</div>';
-      navItems.forEach((item, i) => {
+      navItems.forEach(item => {
         const globalIndex = filteredItems.indexOf(item);
         html += renderItem(item, globalIndex);
       });

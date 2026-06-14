@@ -412,9 +412,6 @@ ${dropdownItems}
       a.title.localeCompare(b.title)
     );
 
-    // Generate nav (same as main pages use)
-    const navItems = await this.generateNavigation();
-
     // Generate report cards
     const cards = sortedReports
       .map(
