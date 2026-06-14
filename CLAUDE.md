@@ -131,7 +131,15 @@ The mobile navigation system includes:
 
 ## Deployment
 
-This site is deployed via GitHub Pages, so changes pushed to the main branch are automatically deployed. No build process is required.
+This site is deployed via GitHub Pages: GitHub serves the committed HTML directly, so the
+**hosting** needs no build step or CI pipeline — pushing to `main` publishes whatever HTML is
+in the repo.
+
+That does **not** mean you can skip the build locally. The HTML files are generated artifacts.
+After editing `config/pages.json`, `templates/`, `build.js`, `styles.css`, or any input under
+`data/`, you must run `npm run build` (and `npm run wrap-reports` when report inputs change),
+then commit the regenerated HTML. Because nothing rebuilds in CI, **the commit is the build** —
+if you forget, the published site silently lags your source changes.
 
 ---
 
