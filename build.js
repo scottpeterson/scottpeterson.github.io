@@ -11,6 +11,7 @@
 // The client-side data-loader.js contains the corresponding decode function.
 
 const fs = require('fs').promises;
+const { watch } = require('fs');
 const path = require('path');
 const prettier = require('prettier');
 
@@ -1331,6 +1332,95 @@ ${pricingFeaturesHtml}
       process.exit(1);
     }
   }
+
+  // Delete every file the build generates, so the next build starts clean. This
+  // is the exact inverse of generateAll's outputs: one <pageKey>.html per config
+  // page, reports/index.html, the whole data-encoded/ dir, and the generated
+  // data/distances.json. Source files (templates, config, styles, js, raw data,
+  // hand-authored reports/*.html) are never touched. Missing files are ignored
+  // so clean is safe to run repeatedly.
+  async clean() {
+    console.log('🧹 Cleaning generated files...\n');
+    await this.loadConfig();
+
+    const targets = Object.keys(this.config)
+      .filter(key => !key.startsWith('_'))
+      .map(key => `${key}.html`);
+    targets.push('reports/index.html', 'data/distances.json');
+
+    let removed = 0;
+    const tryUnlink = async file => {
+      try {
+        await fs.unlink(file);
+        console.log(`  ✓ Removed ${file}`);
+        removed++;
+      } catch (error) {
+        if (error.code !== 'ENOENT') {
+          throw error;
+        }
+      }
+    };
+
+    for (const file of targets) {
+      await tryUnlink(file);
+    }
+
+    // The entire data-encoded/ dir is build output — clear it.
+    try {
+      const encoded = await fs.readdir('data-encoded');
+      for (const file of encoded) {
+        await tryUnlink(path.join('data-encoded', file));
+      }
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+    }
+
+    console.log(
+      `\n✅ Clean complete — removed ${removed} generated files. Run 'npm run build' to regenerate.`
+    );
+  }
+
+  // Watch source files and rebuild on change. Deliberately watches ONLY pure
+  // source locations (templates, config, js, styles.css) — never data/ or
+  // reports/, because the build writes into those (data/distances.json,
+  // reports/index.html), which would retrigger the watcher in an infinite loop.
+  // Edits to data or reports during a dev session need a manual `npm run build`.
+  // Uses Node's built-in fs.watch (recursive; supported on macOS/Windows and
+  // Node 20+ Linux) so there's no watcher dependency.
+  async dev() {
+    await this.generateAll();
+
+    const watchPaths = ['templates', 'config', 'js', 'styles.css'];
+    let timer = null;
+    const scheduleRebuild = filename => {
+      clearTimeout(timer);
+      // Debounce: editors fire several events per save, and a recursive watch
+      // can echo; coalesce into one rebuild.
+      timer = setTimeout(async () => {
+        console.log(`\n♻️  Change detected (${filename}) — rebuilding...`);
+        try {
+          await this.generateAll();
+        } catch (error) {
+          console.error('Rebuild failed:', error);
+        }
+        console.log('\n👀 Watching for changes (Ctrl+C to stop)...');
+      }, 150);
+    };
+
+    for (const p of watchPaths) {
+      try {
+        watch(p, { recursive: true }, (_event, filename) =>
+          scheduleRebuild(filename || p)
+        );
+      } catch (error) {
+        console.warn(`Could not watch ${p}:`, error.message);
+      }
+    }
+
+    console.log('\n👀 Watching for changes (Ctrl+C to stop)...');
+  }
 }
 
 // CLI usage
@@ -1346,12 +1436,10 @@ if (require.main === module) {
       break;
     case 'dev':
       console.log('🚀 Development mode - watching for changes...');
-      // In a real implementation, you'd add file watching here
-      engine.generateAll();
+      engine.dev();
       break;
     case 'clean':
-      console.log('🧹 Cleaning generated files...');
-      // Clean up generated HTML files
+      engine.clean();
       break;
     default:
       console.log('Usage: node build.js [build|dev|clean]');
