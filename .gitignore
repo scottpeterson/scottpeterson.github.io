@@ -11,5 +11,9 @@ coverage/
 .env.production.local
 *.md
 
-# Exception: the design system is canonical docs and must be version-controlled
-!docs/design-system.md
+# Exception: everything under docs/ is canonical documentation and must be
+# version-controlled. (The blanket *.md ignore above is meant to drop scratch
+# notes at the repo root, not the docs/ directory — a per-file exception list
+# silently dropped new docs, so allow the whole folder.)
+!docs/
+!docs/**/*.md
