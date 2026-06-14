@@ -1,0 +1,28 @@
+<!--
+  Home page hero — TRUE full-bleed, dark cinematic.
+
+  INTENT: Rendered into the HERO slot in base.html (a full-width sibling of
+  <main>, between the nav and the page body) for the index page ONLY. Being
+  outside <main> lets it span the full viewport width with no max-width/padding
+  fighting and no 100vw scrollbar hacks.
+
+  The arena photo (images/arena-hero.jpg) is dimmed by .home-hero__overlay so the
+  white headline/subhead/CTAs stay legible over a busy, bright image. The generic
+  <header> is suppressed on the home page (SHOW_DEFAULT_HEADER in build.js) — this
+  hero IS the page heading. The page heading/description come from config/pages.json.
+
+  NOTE: never write literal brace-token syntax in a comment — the template engine
+  blind-replaces over the whole file (comments included) and would substitute it.
+-->
+<section class="home-hero">
+  <div class="home-hero__overlay"></div>
+  <div class="home-hero__inner">
+    <span class="home-badge">Division III Women's Basketball</span>
+    <h1 class="home-hero__title">{{PAGE_HEADING}}</h1>
+    <p class="home-hero__sub">{{PAGE_DESCRIPTION}}</p>
+    <div class="home-hero__actions">
+      <a href="#explore" class="btn btn--primary">Explore the data &darr;</a>
+      <a href="premium.html" class="btn btn--ghost">See Premium &rarr;</a>
+    </div>
+  </div>
+</section>

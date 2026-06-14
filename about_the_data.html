@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basketball Statistics - Composite Rankings</title>
+    <title>Basketball Statistics - About the Data</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -109,151 +109,98 @@
 
     <main>
       <header>
-        <h1>Composite Rankings</h1>
+        <h1>About the Data</h1>
         <p>
-          Team Rankings based off median of NPI, Massey, Efficiency, and Current
-          Season Results.
-        </p>
-
-        <p class="last-updated">
-          <em>Last updated: February 28, 2026 at 09:22 AM EST</em>
+          Where the numbers come from, who inspires the work, and the corners of
+          D3 women's basketball worth following.
         </p>
       </header>
 
-      <section class="table-section">
-        <h2>Composite Rankings</h2>
+      <!--
+  About the Data page.
 
-        <!-- Search and Filter Controls -->
-        <div class="table-controls">
-          <div class="search-container">
-            <input
-              type="text"
-              id="teamSearch"
-              placeholder="Search for team..."
-              class="search-input"
-            />
+  INTENT: Holds the reference/credits content that used to live on the home page —
+  data sources, inspiration, media, and D3 links of interest. Moved here so the
+  landing page can be a focused hero + premium funnel. Uses the shared
+  .home-grid / .home-card styles (styles.css). Keep every link and href intact;
+  add/remove entries here, not on the home page.
+-->
+      <section class="home-content">
+        <div class="home-grid">
+          <div class="home-card data-sources-section">
+            <h3>Data comes from:</h3>
+            <ul>
+              <li>
+                <a href="https://www.d3hoops.com/landing/index" target="_blank"
+                  >D3Hoops</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://masseyratings.com/cbw2026/ncaa-d3/ratings"
+                  target="_blank"
+                  >Massey Ratings</a
+                >
+              </li>
+              <li>
+                <a href="https://d3datacast.com/" target="_blank">D3Datacast</a>
+              </li>
+              <li>
+                <span class="home-card__note"
+                  >Official School Athletics Team Sites (for Pt Diff, Reb Diff,
+                  TO Diff data)</span
+                >
+              </li>
+            </ul>
           </div>
-          <div class="filter-container">
-            <select id="conferenceFilter" class="filter-select">
-              <option value="">All Conferences</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="table-container">
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Conf</th>
-                <th>Region</th>
-                <th>Massey Rank</th>
-                <th>Eff Rank</th>
-                <th>NPI Rank</th>
-                <th>Curr Season Results Rank</th>
-                <th>Strength of Record</th>
-                <th>Wins Above Bubble</th>
-                <th>Preseason Rank</th>
-                <th>MEDIAN</th>
-                <th>OVR_RANK</th>
-                <th>Stdev</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- Data will be loaded dynamically -->
-            </tbody>
-          </table>
+          <div class="home-card inspiration-section">
+            <h3>Additionally inspiration comes from:</h3>
+            <ul>
+              <li>
+                <a href="https://www.fantastic50.net/" target="_blank"
+                  >Drew Pasteur's work/blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="home-card media-section">
+            <h3>Catch me periodically on:</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.youtube.com/@dishingonD3BBALL"
+                  target="_blank"
+                  >Dishing on D3 WBB</a
+                >
+                <span class="home-card__note">(YouTube)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="home-card links-section">
+            <h3>Division III Basketball Links of Interest:</h3>
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/@d3datacast" target="_blank"
+                  >D3 Datacast</a
+                >
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@bobquill" target="_blank"
+                  >The Q-Cast</a
+                >
+              </li>
+              <li>
+                <a href="https://d3wbbscoop.substack.com/" target="_blank"
+                  >The Scoop on D3 Newsletter by Riley Zayas</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
-      <div class="table-section">
-        <section class="legend-section">
-          <h2>Column Legend</h2>
-          <div class="legend-grid">
-            <div class="legend-item">
-              <span class="legend-column">Team</span>
-              <span class="legend-description"
-                >Name of the college or university basketball team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Conf</span>
-              <span class="legend-description"
-                >Conference affiliation of the team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Region</span>
-              <span class="legend-description"
-                >NCAA tournament region the team belongs to</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Massey Rank</span>
-              <span class="legend-description"
-                >Team ranking according to Massey rating system</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Eff Rank</span>
-              <span class="legend-description"
-                >Team ranking based on efficiency metrics</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">NPI Rank</span>
-              <span class="legend-description"
-                >Team ranking based on NCAA Power Index</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Curr Season Results Rank</span>
-              <span class="legend-description"
-                >Ranking based on current season performance</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Strength of Record</span>
-              <span class="legend-description"
-                >Measures how difficult a team's win-loss record is to achieve
-                based on its schedule</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Wins Above Bubble</span>
-              <span class="legend-description"
-                >Measures how many more (or fewer) wins a team has compared to
-                what an average bubble team would be expected to achieve against
-                the same schedule</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Preseason Rank</span>
-              <span class="legend-description"
-                >Team's preseason ranking prediction</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">MEDIAN</span>
-              <span class="legend-description"
-                >Median value across all ranking systems (not including
-                preseason)</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">OVR_RANK</span>
-              <span class="legend-description"
-                >Overall composite ranking position</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Stdev</span>
-              <span class="legend-description"
-                >Standard deviation across different ranking systems</span
-              >
-            </div>
-          </div>
-        </section>
-      </div>
     </main>
 
     <!-- Premium Buy Button (Feature Flagged) -->

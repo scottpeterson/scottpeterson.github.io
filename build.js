@@ -161,6 +161,14 @@ class TemplateEngine {
         'templates/ryan-page.html',
         'utf8'
       );
+      this.templates.aboutDataPage = await fs.readFile(
+        'templates/about-data-page.html',
+        'utf8'
+      );
+      this.templates.homeHero = await fs.readFile(
+        'templates/home-hero.html',
+        'utf8'
+      );
       console.log('✓ Templates loaded');
     } catch (error) {
       console.error('Error loading templates:', error);
@@ -247,6 +255,11 @@ class TemplateEngine {
         href: 'publishing_tracker.html',
       },
       { key: 'reports', label: 'Reports', href: 'reports/', isDropdown: true },
+      {
+        key: 'about_the_data',
+        label: 'About the Data',
+        href: 'about_the_data.html',
+      },
       { key: 'premium', label: 'Premium', href: 'premium.html' },
       { key: 'contact', label: 'Contact', href: 'contact.html' },
     ];
@@ -508,6 +521,8 @@ ${cards}
       LAST_UPDATED: data.lastUpdated,
       CONTENT: data.content || '',
       NAV_ITEMS: data.navItems || '',
+      PREMIUM_BAND: data.premiumBand || '',
+      HERO: data.hero || '',
     };
 
     Object.keys(mappings).forEach(key => {
@@ -626,6 +641,21 @@ ${cards}
     } else {
       result = result.replace(
         /{{#IS_RYAN_PAGE}}([\s\S]*?){{\/IS_RYAN_PAGE}}/g,
+        ''
+      );
+    }
+
+    // Handle SHOW_DEFAULT_HEADER conditional
+    // The home page suppresses the generic <header> and renders its own hero
+    // (templates/home-content.html) instead, so this is false only for index.
+    if (data.showDefaultHeader) {
+      result = result.replace(
+        /{{#SHOW_DEFAULT_HEADER}}([\s\S]*?){{\/SHOW_DEFAULT_HEADER}}/g,
+        '$1'
+      );
+    } else {
+      result = result.replace(
+        /{{#SHOW_DEFAULT_HEADER}}([\s\S]*?){{\/SHOW_DEFAULT_HEADER}}/g,
         ''
       );
     }
@@ -894,14 +924,71 @@ ${pricingFeaturesHtml}
       .join('\n');
   }
 
+  // Build the home page premium teaser band from the ACTIVE premium product.
+  // Pulls copy/price straight from config.premium.products so the home funnel
+  // never drifts from the Premium page. Returns '' when the premium feature
+  // flag is off or no product is active, so the home page simply omits it.
+  renderHomePremium() {
+    if (!this.isFeatureEnabled('premium')) {
+      return '';
+    }
+
+    const premium = this.config.premium;
+    const products = (premium && premium.products) || [];
+    const product = products.find(p => p.active);
+    if (!product) {
+      return '';
+    }
+
+    // Original price shown struck-through when present (e.g. $49 -> $39)
+    const originalPrice = product.priceOriginal
+      ? `<span class="home-premium__price-original">${product.priceOriginal}</span>`
+      : '';
+
+    // Up to three short selling points from the product's pricing features
+    const features = (product.pricingFeatures || [])
+      .slice(0, 3)
+      .map(f => `<li>${f}</li>`)
+      .join('\n          ');
+    const featuresHtml = features
+      ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
+      : '';
+
+    return `<section class="home-premium">
+  <div class="home-premium__inner">
+    <span class="home-premium__eyebrow">Premium Report</span>
+    <h2 class="home-premium__title">${product.name}</h2>
+    <p class="home-premium__tagline">${product.tagline}</p>
+    ${featuresHtml}
+    <div class="home-premium__price">
+      ${originalPrice}<span class="home-premium__price-now">${product.price}</span>
+      <span class="home-premium__price-period">${product.pricePeriod}</span>
+    </div>
+    <a href="premium.html" class="btn btn--primary btn--lg">${product.buttonText} &rarr;</a>
+  </div>
+</section>`;
+  }
+
   // Generate a single page
   async generatePage(pageKey, pageConfig) {
     try {
       // Handle special home page content
       let tableContent = '';
       if (pageKey === 'index') {
-        // Use home content template for index page
-        tableContent = this.templates.homeContent;
+        // Use home content template for index page.
+        // Rendered through renderTemplate so the hero can pull
+        // {{PAGE_HEADING}}/{{PAGE_DESCRIPTION}} from config/pages.json and the
+        // {{PREMIUM_BAND}} teaser (built from the active premium product so its
+        // copy/price stay in sync with the Premium page). Config stays the
+        // single source of truth for home copy.
+        tableContent = this.renderTemplate(this.templates.homeContent, {
+          heading: pageConfig.heading,
+          description: pageConfig.description,
+          premiumBand: this.renderHomePremium(),
+        });
+      } else if (pageConfig.isAboutDataPage) {
+        // Static reference page: data sources, inspiration, media, D3 links
+        tableContent = this.templates.aboutDataPage;
       } else if (pageConfig.isContactPage) {
         // Use contact page template for contact page
         tableContent = this.renderTemplate(this.templates.contactPage, {
@@ -979,10 +1066,15 @@ ${pricingFeaturesHtml}
       // Render full page
       const navItems = await this.generateNavigation();
 
-      // Determine if buy button should show (feature flagged)
+      // Determine if buy button should show (feature flagged).
+      // Suppressed on the home page, which has its own richer .home-premium band
+      // (showing both would stack two redundant premium CTAs above the footer).
       const premiumEnabled = this.isFeatureEnabled('premium');
       const showBuyButton =
-        premiumEnabled && !pageConfig.isPremiumPage && !pageConfig.isSimplePage;
+        premiumEnabled &&
+        !pageConfig.isPremiumPage &&
+        !pageConfig.isSimplePage &&
+        pageKey !== 'index';
 
       // Command palette is always included in the build
       // The actual feature flag check is done client-side via URL parameter
@@ -993,6 +1085,16 @@ ${pricingFeaturesHtml}
         title: pageConfig.title,
         heading: pageConfig.heading,
         description: pageConfig.description,
+        // Home page renders its own full-bleed hero (in the {{HERO}} slot above
+        // <main>) instead of the generic header.
+        showDefaultHeader: pageKey !== 'index',
+        hero:
+          pageKey === 'index'
+            ? this.renderTemplate(this.templates.homeHero, {
+                heading: pageConfig.heading,
+                description: pageConfig.description,
+              })
+            : '',
         lastUpdated: lastUpdated,
         content: tableContent,
         legend: pageConfig.legend,

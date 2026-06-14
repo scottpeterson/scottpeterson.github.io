@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Set active navigation link
     setActiveNavLink();
 
+    // Offset in-page anchor scrolling by the (variable-height) sticky nav
+    syncNavScrollOffset();
+
     // Assemble obfuscated email addresses
     initEmailProtection();
 

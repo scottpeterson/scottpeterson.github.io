@@ -1,172 +1,47 @@
-<section class="home-content">
-  <div class="data-sources-section">
-    <h3
-      style="
-        color: #2c3e50;
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      "
-    >
-      Data comes from:
-    </h3>
-    <ul style="list-style: none; padding: 0; margin-bottom: 30px">
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://www.d3hoops.com/landing/index"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >D3Hoops</a
-        >
-      </li>
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://masseyratings.com/cbw2026/ncaa-d3/ratings"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >Massey Ratings</a
-        >
-      </li>
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://d3datacast.com/"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >D3Datacast</a
-        >
-      </li>
-      <li style="margin-bottom: 8px">
-        <span style="color: #666; font-weight: 500; font-size: 1.1rem"
-          >Official School Athletics Team Sites (for Pt Diff, Reb Diff, TO Diff
-          data)</span
-        >
-      </li>
-    </ul>
-  </div>
+<!--
+  Home page body (inside <main>) — explore hub + premium funnel.
 
-  <div class="inspiration-section">
-    <h3
-      style="
-        color: #2c3e50;
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      "
-    >
-      Additionally inspiration comes from:
-    </h3>
-    <ul style="list-style: none; padding: 0; margin-bottom: 30px">
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://www.fantastic50.net/"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >Drew Pasteur's work/blog</a
-        >
-      </li>
-    </ul>
-  </div>
+  INTENT: The landing page for The D3 Stat Lab. The full-bleed hero lives in
+  templates/home-hero.html (rendered into base.html's HERO slot above <main>).
+  This file holds:
+   1. .home-explore — a hub of cards linking to the primary data pages.
+   2. The PREMIUM_BAND slot — the premium product teaser, generated in build.js
+      from the ACTIVE product in config.premium.products so copy/price stay in
+      sync with the Premium page. Renders empty when the premium flag is off.
 
-  <div class="media-section">
-    <h3
-      style="
-        color: #2c3e50;
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      "
-    >
-      Catch me periodically on:
-    </h3>
-    <ul style="list-style: none; padding: 0; margin-bottom: 30px">
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://www.youtube.com/@dishingonD3BBALL"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >Dishing on D3 WBB</a
-        >
-        <span style="color: #666">(YouTube)</span>
-      </li>
-    </ul>
-  </div>
+  NOTE: the template engine does a blind find/replace over this whole file
+  (comments included), so never write the literal brace-token syntax in a
+  comment — it would be substituted too.
 
-  <div class="links-section">
-    <h3
-      style="
-        color: #2c3e50;
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      "
-    >
-      Division III Basketball Links of Interest:
-    </h3>
-    <ul style="list-style: none; padding: 0; margin-bottom: 30px">
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://www.youtube.com/@d3datacast"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >D3 Datacast</a
-        >
-      </li>
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://www.youtube.com/@bobquill"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >The Q-Cast</a
-        >
-      </li>
-      <li style="margin-bottom: 8px">
-        <a
-          href="https://d3wbbscoop.substack.com/"
-          target="_blank"
-          style="
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-          "
-          >The Scoop on D3 Newsletter by Riley Zayas</a
-        >
-      </li>
-    </ul>
+  The four reference/link sections that used to live here now live on the
+  "About the Data" page (templates/about-data-page.html). Do not re-add them here.
+-->
+<section class="home-explore" id="explore">
+  <h2 class="home-section__title">Explore the data</h2>
+  <p class="home-section__lead">
+    Independent Division III women's basketball analytics &mdash; rankings,
+    simulations, and ratings, updated through the season.
+  </p>
+  <div class="home-grid home-grid--explore">
+    <a href="npi.html" class="explore-card">
+      <h3>NPI</h3>
+      <p>
+        The NCAA's NPI metric for every D3 women's team, sortable and
+        searchable.
+      </p>
+      <span class="explore-card__cta">View NPI &rarr;</span>
+    </a>
+    <a href="season_simulations.html" class="explore-card">
+      <h3>Season Simulations</h3>
+      <p>10,000+ simulations projecting records, seeds, and tournament odds.</p>
+      <span class="explore-card__cta">View simulations &rarr;</span>
+    </a>
+    <a href="composite_rankings.html" class="explore-card">
+      <h3>Composite Rankings</h3>
+      <p>Multiple rating systems blended into one composite team ranking.</p>
+      <span class="explore-card__cta">View composite &rarr;</span>
+    </a>
   </div>
 </section>
+
+{{PREMIUM_BAND}}

@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+/* Static fallback offset for in-page anchor jumps so targets clear the sticky
+   nav when JS is unavailable. syncNavScrollOffset() (navigation.js) overrides
+   this with the exact measured nav height at runtime. */
+html {
+  scroll-padding-top: 160px;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -171,14 +178,19 @@ main {
 
 header {
   margin-bottom: 30px;
-  border-bottom: 3px solid transparent;
-  border-image: linear-gradient(135deg, #3498db, #2980b9, #ff4f00) 1;
-  padding-bottom: 20px;
-  background: rgb(255 255 255 / 95%);
-  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(10px);
+  /* Brand-gradient border that RESPECTS the rounded corners. border-image can't
+     follow border-radius (it lays a square-cornered line that overshoots the
+     corners), so we layer two backgrounds instead: the translucent white fill
+     clipped to the padding box, and the brand gradient clipped to the border box
+     — the 2px transparent border reveals the gradient, rounded corners and all. */
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
+    linear-gradient(135deg, #3498db, #2980b9, #ff4f00) border-box;
 }
 
 .last-updated {
@@ -200,6 +212,374 @@ h2 {
   color: #2c3e50;
   margin-bottom: 15px;
   font-weight: 600;
+}
+
+/* ===========================================================================
+   Home page — full-bleed cinematic hero + explore hub + premium funnel
+   ---------------------------------------------------------------------------
+   INTENT: A true full-bleed dark hero (templates/home-hero.html, rendered into
+   base.html's {{HERO}} slot as a full-width sibling of <main> — no 100vw hacks).
+   The arena photo is dimmed by a dark overlay so white text stays legible over a
+   busy, bright image. Below it, an "explore" hub of cards links to the main data
+   pages, then a premium teaser band (built in build.js from the active product).
+   The generic <header> is suppressed on the home page (SHOW_DEFAULT_HEADER).
+   Reuses brand tokens: #3498db->#2980b9 button gradient, #ff4f00 orange accent.
+   =========================================================================== */
+
+/* Shared button system (used by hero + premium band) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgb(52 152 219 / 35%);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgb(52 152 219 / 50%);
+}
+
+/* Ghost button reads on the dark hero photo */
+.btn--ghost {
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  border-color: rgb(255 255 255 / 60%);
+  backdrop-filter: blur(4px);
+}
+
+.btn--ghost:hover {
+  background: rgb(255 255 255 / 18%);
+  transform: translateY(-2px);
+}
+
+.btn--lg {
+  padding: 16px 34px;
+  font-size: 1.1rem;
+}
+
+/* --- Hero ----------------------------------------------------------------- */
+.home-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 78vh;
+  /* Image lives at /images (served from repo root, same dir as this CSS). */
+  background: #0f1720 url('images/arena-hero.jpg') center 35% / cover no-repeat;
+  overflow: hidden;
+}
+
+/* Dark scrim: heavier on the left (where the text sits), lighter to the right,
+   plus a bottom vignette for depth. Tuned for a busy, bright arena photo. */
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(13 20 28 / 92%) 0%,
+      rgb(13 20 28 / 78%) 38%,
+      rgb(13 20 28 / 40%) 100%
+    ),
+    linear-gradient(0deg, rgb(13 20 28 / 70%) 0%, rgb(13 20 28 / 0%) 55%);
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 90px 20px;
+  color: #fff;
+}
+
+/* Clean eyebrow (not a status pill): a small uppercase label that establishes
+   hierarchy above the H1 with type alone — no decorative pill chrome. Shares one
+   deliberate treatment with .home-premium__eyebrow; only the accent color differs
+   per context. Tracking kept modest (0.08em, the legible range for small caps). */
+.home-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7fc4ff;
+}
+
+.home-hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 18px;
+  max-width: 16ch;
+  text-shadow: 0 2px 24px rgb(0 0 0 / 45%);
+}
+
+.home-hero__sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.55;
+  color: #d6e0ea;
+  max-width: 52ch;
+  margin: 0 0 32px;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* --- Explore hub ---------------------------------------------------------- */
+.home-explore {
+  margin: 50px 0;
+}
+
+.home-section__title {
+  font-size: 1.9rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.home-section__lead {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin: 0 0 26px;
+}
+
+.home-grid--explore {
+  margin-bottom: 26px;
+}
+
+.explore-card {
+  display: block;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 8%);
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 14%);
+}
+
+.explore-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.explore-card p {
+  color: #555;
+  font-size: 0.98rem;
+  margin: 0 0 14px;
+}
+
+.explore-card__cta {
+  color: #2980b9;
+  font-weight: 600;
+}
+
+.explore-card:hover .explore-card__cta {
+  color: #ff4f00;
+}
+
+/* --- Premium teaser band -------------------------------------------------- */
+.home-premium {
+  margin: 50px 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 55%, #2c3e50 100%);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 22%);
+  overflow: hidden;
+}
+
+.home-premium__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 30px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Same clean-eyebrow treatment as .home-badge, brand-orange accent on the navy
+   band. No pill chrome — the type carries the signal. */
+.home-premium__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff9a6b;
+}
+
+.home-premium__title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.home-premium__tagline {
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: #cfd8e2;
+  margin: 0 auto 22px;
+  max-width: 56ch;
+}
+
+.home-premium__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 26px;
+  display: inline-block;
+  text-align: left;
+}
+
+.home-premium__features li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: #eaf0f6;
+  font-size: 1.02rem;
+}
+
+.home-premium__features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4fd18b;
+  font-weight: 800;
+}
+
+.home-premium__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.home-premium__price-original {
+  color: #93a1b0;
+  text-decoration: line-through;
+  font-size: 1.3rem;
+}
+
+.home-premium__price-now {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home-premium__price-period {
+  color: #aebac6;
+  font-size: 0.95rem;
+}
+
+/* --- Shared card grid (also used by the About the Data page) -------------- */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.home-card {
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 8%);
+}
+
+.home-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.home-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-card li {
+  margin-bottom: 8px;
+}
+
+.home-card a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.home-card a:hover {
+  text-decoration: underline;
+}
+
+.home-card__note {
+  color: #666;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    min-height: 62vh;
+    background-position: center 30%;
+  }
+
+  .home-hero__inner {
+    padding: 60px 18px;
+  }
+
+  .home-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-hero__actions .btn {
+    width: 100%;
+  }
+
+  .home-premium__inner {
+    padding: 38px 22px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Table Styles */
@@ -2020,12 +2400,24 @@ footer {
 }
 
 /* Premium CTA Banner (Buy Button) */
+/* Premium CTA band — the brand-blue "action" tier. Sits at the top of the
+   footer zone on pages that show it. No top stroke: the saturated blue against
+   the light content is contrast enough (structure via color, not chrome). */
 .premium-cta-banner {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  padding: 30px 20px;
+  padding: 36px 20px;
   margin: 40px 0 0;
   text-align: center;
-  border-top: 4px solid #2c3e50;
+}
+
+/* When the band precedes the footer, fuse them into one footer zone: drop the
+   gray gap (footer's top margin) and the footer's own accent stroke so the blue
+   "action" tier flows straight into the navy "chrome" tier. The footer's soft
+   upward shadow is the only seam — elevation, not a competing border. */
+.premium-cta-banner + footer {
+  margin-top: 0;
+  border-top: 0;
+  border-image: none;
 }
 
 .premium-cta-content {

@@ -95,6 +95,29 @@ function initMobileNav() {
   }
 }
 
+// Keep in-page anchor jumps (e.g. the home page's "Explore the data" button ->
+// #explore) clear of the sticky nav. The nav wraps to a variable number of rows
+// depending on viewport width/zoom, so a fixed CSS offset can't be right at every
+// size. Measure the real nav height and set it as scroll-padding-top on the
+// scroll container; this insets where #anchor targets come to rest so they never
+// hide behind the nav. Re-measured on resize.
+function syncNavScrollOffset() {
+  try {
+    const nav = document.querySelector('.main-nav');
+    if (!nav) {
+      return;
+    }
+    const apply = function () {
+      const offset = nav.offsetHeight + 12; // small breathing gap below the nav
+      document.documentElement.style.scrollPaddingTop = offset + 'px';
+    };
+    apply();
+    window.addEventListener('resize', apply);
+  } catch (error) {
+    console.error('Error in syncNavScrollOffset:', error);
+  }
+}
+
 // Function to set the active navigation link
 function setActiveNavLink() {
   try {

@@ -48,7 +48,10 @@
       <div class="nav-overlay" id="navOverlay"></div>
     </nav>
 
+    {{HERO}}
+
     <main>
+      {{#SHOW_DEFAULT_HEADER}}
       <header>
         <h1>{{PAGE_HEADING}}</h1>
         <p>{{PAGE_DESCRIPTION}}</p>
@@ -56,8 +59,7 @@
         <p class="last-updated"><em>Last updated: {{LAST_UPDATED}}</em></p>
         {{/LAST_UPDATED}}
       </header>
-
-      {{CONTENT}} {{#LEGEND}}
+      {{/SHOW_DEFAULT_HEADER}} {{CONTENT}} {{#LEGEND}}
       <div class="table-section">
         <section class="legend-section">
           <h2>Column Legend</h2>
