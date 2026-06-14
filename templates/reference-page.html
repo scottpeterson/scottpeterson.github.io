@@ -120,10 +120,22 @@
     NPI is computed by iteration. A team's rating is the average of its
     contributing game NPIs, and each game's NPI depends on the opponent's rating
     from the previous pass. Because every rating depends on opponents' ratings,
-    there is no closed form: the calculation repeats until the ratings stop
-    changing. "Settling" means the iteration reaches a stable set of ratings.
-    The run stops once the average per-team change falls below 0.0001, after a
-    minimum of 10 passes and a maximum of 80.
+    there is no closed form: the calculation repeats over the full set of teams
+    until the ratings stabilize. "Settling" means the iteration reaches a stable
+    set of ratings (a fixed point), where another pass leaves every rating
+    essentially unchanged.
+  </p>
+  <p>
+    <strong>The D3 Stat Lab's implementation:</strong> this site stops iterating
+    once the average per-team change between passes falls below 0.0001, with a
+    minimum of 10 passes and a maximum of 80. The NCAA does not publish how many
+    iterations its official NPI runs; it most likely uses a fixed count set high
+    enough that convergence is reached well before the final pass (for example,
+    around 100), rather than testing for convergence directly. That difference
+    does not change the result in practice: once the ratings have settled,
+    further passes do not move them, so a convergence-threshold stop and a fixed
+    high-count stop arrive at the same ratings, as long as the system settles at
+    all (the condition below).
   </p>
   <p>
     How readily it settles is governed by how strongly each team's rating
