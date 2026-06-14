@@ -5,6 +5,83 @@
   box-sizing: border-box;
 }
 
+/* ===========================================================================
+   DESIGN TOKENS — single source of truth for color, type, elevation, radius.
+   See docs/design-system.md. RULE: new UI must use these tokens; do not
+   introduce raw hex/px or one-off gradients/shadows. Values alias what the
+   codebase already used, so adopting them is visually a no-op.
+   =========================================================================== */
+:root {
+  /* Brand / chrome */
+  --navy-900: #2c3e50;
+  --navy-700: #34495e;
+  --blue-500: #3498db;
+  --blue-600: #2980b9;
+  --blue-300: #7fc4ff;
+  --orange-500: #ff4f00;
+  --orange-300: #ff9a6b;
+
+  /* Text ramp (replaces 15+ ad-hoc grays) */
+  --text-1: #2c3e50; /* headings        */
+  --text-2: #333; /* body            */
+  --text-3: #666; /* secondary       */
+  --text-4: #999; /* tertiary / hint */
+
+  /* Lines & surfaces */
+  --border: #e1e5e8;
+  --surface: rgb(255 255 255 / 95%);
+  --surface-line: rgb(255 255 255 / 20%);
+
+  /* Status */
+  --success: #27ae60;
+  --danger: #e74c3c;
+  --warning: #f0a500;
+
+  /* Gradients (single definitions; default stops match the literals in use) */
+  --grad-brand: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+  --grad-chrome: linear-gradient(
+    135deg,
+    var(--navy-900),
+    var(--navy-700) 50%,
+    var(--navy-900)
+  );
+  --grad-accent: linear-gradient(
+    135deg,
+    var(--blue-500),
+    var(--blue-600),
+    var(--orange-500)
+  );
+
+  /* Elevation scale */
+  --elev-1: 0 4px 16px rgb(0 0 0 / 8%);
+  --elev-2: 0 8px 32px rgb(0 0 0 / 10%);
+  --elev-3: 0 12px 40px rgb(0 0 0 / 15%);
+  --elev-modal: 0 25px 50px -12px rgb(0 0 0 / 50%);
+  --shadow-action: 0 4px 16px rgb(52 152 219 / 35%);
+
+  /* Radius scale */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Type scale */
+  --text-xs: 0.78rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-md: 1.1rem;
+  --text-lg: 1.3rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+
+  /* Spacing rhythm (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+}
+
 /* Static fallback offset for in-page anchor jumps so targets clear the sticky
    nav when JS is unavailable. syncNavScrollOffset() (navigation.js) overrides
    this with the exact measured nav height at runtime. */
@@ -188,8 +265,7 @@ header {
      clipped to the padding box, and the brand gradient clipped to the border box
      — the 2px transparent border reveals the gradient, rounded corners and all. */
   border: 2px solid transparent;
-  background:
-    linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
+  background: linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
     linear-gradient(135deg, #3498db, #2980b9, #ff4f00) border-box;
 }
 
@@ -239,8 +315,7 @@ h2 {
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
-  transition:
-    transform 0.15s ease,
+  transition: transform 0.15s ease,
     box-shadow 0.15s ease,
     background 0.15s ease;
 }
@@ -290,13 +365,12 @@ h2 {
 .home-hero__overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgb(13 20 28 / 92%) 0%,
-      rgb(13 20 28 / 78%) 38%,
-      rgb(13 20 28 / 40%) 100%
-    ),
+  background: linear-gradient(
+    90deg,
+    rgb(13 20 28 / 92%) 0%,
+    rgb(13 20 28 / 78%) 38%,
+    rgb(13 20 28 / 40%) 100%
+  ),
     linear-gradient(0deg, rgb(13 20 28 / 70%) 0%, rgb(13 20 28 / 0%) 55%);
 }
 
@@ -379,8 +453,7 @@ h2 {
   padding: 24px;
   box-shadow: 0 8px 32px rgb(0 0 0 / 8%);
   text-decoration: none;
-  transition:
-    transform 0.15s ease,
+  transition: transform 0.15s ease,
     box-shadow 0.15s ease;
 }
 
@@ -856,8 +929,7 @@ footer {
   border-radius: 12px;
   font-size: 14px;
   color: #333;
-  transition:
-    border-color 0.3s ease,
+  transition: border-color 0.3s ease,
     box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
@@ -866,8 +938,7 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1042,8 +1113,7 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -1107,8 +1177,7 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1538,8 +1607,7 @@ footer {
 
 .distances-form .form-select:hover {
   border-color: #3498db;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1690,8 +1758,7 @@ footer {
 
 .ryan-form .form-select:hover {
   border-color: #3498db;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1817,8 +1884,7 @@ footer {
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -2309,8 +2375,7 @@ footer {
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  transition:
-    border-color 0.3s ease,
+  transition: border-color 0.3s ease,
     box-shadow 0.3s ease;
   background-color: #fff;
 }
