@@ -10,3 +10,6 @@ coverage/
 .env.test.local
 .env.production.local
 *.md
+
+# Exception: the design system is canonical docs and must be version-controlled
+!docs/design-system.md
