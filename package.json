@@ -13,7 +13,12 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint '**/*.js' --fix --ignore-path .gitignore",
     "lint:css": "stylelint '**/*.css' --fix --ignore-path .gitignore",
+    "lint:check": "npm run lint:check:js && npm run lint:check:css",
+    "lint:check:js": "eslint '**/*.js' --ignore-path .gitignore",
+    "lint:check:css": "stylelint '**/*.css' --ignore-path .gitignore",
     "format": "prettier --write '**/*.{js,css,html,json,md}'",
+    "format:check": "prettier --check '**/*.{js,css,html,json,md}'",
+    "verify": "npm run format:check && npm run lint:check",
     "prepare": "husky"
   },
   "keywords": [
