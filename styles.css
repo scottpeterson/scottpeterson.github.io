@@ -53,12 +53,38 @@
     var(--orange-500)
   );
 
-  /* Elevation scale */
-  --elev-1: 0 4px 16px rgb(0 0 0 / 8%);
-  --elev-2: 0 8px 32px rgb(0 0 0 / 10%);
-  --elev-3: 0 12px 40px rgb(0 0 0 / 15%);
-  --elev-modal: 0 25px 50px -12px rgb(0 0 0 / 50%);
-  --shadow-action: 0 4px 16px rgb(52 152 219 / 35%);
+  /* Shadow system — every box-shadow in the codebase resolves to one of these.
+     Neutral elevation is a weight ladder (--elev-0..3 + modal); the role-named
+     neutral tokens (bar/top/menu/inset/drawer/hover) cover shadows whose
+     geometry or direction is outside that ladder. Colored shadows are semantic
+     (brand action, success, gold) + small accent glows. Components REUSE these
+     (e.g. a card hover lifts to --elev-3) rather than hand-rolling values.
+     See docs/design-system.md §3 for the snap decisions behind the tight set. */
+
+  /* Neutral elevation — ambient drop shadows */
+  --elev-0: 0 2px 8px rgb(0 0 0 / 8%); /* resting: inputs, small chips      */
+  --elev-1: 0 4px 16px rgb(0 0 0 / 8%); /* low card                          */
+  --elev-2: 0 8px 32px rgb(0 0 0 / 10%); /* standard card                     */
+  --elev-3: 0 12px 40px rgb(0 0 0 / 15%); /* raised / card-hover lift          */
+  --elev-modal: 0 25px 50px -12px rgb(0 0 0 / 50%); /* modal / palette          */
+  --elev-hover: 0 6px 20px rgb(0 0 0 / 20%); /* generic neutral hover lift     */
+  --elev-bar: 0 4px 20px rgb(0 0 0 / 15%); /* wide bar (nav/header, callouts) */
+  --elev-top: 0 -4px 20px rgb(0 0 0 / 15%); /* upward (footer)                 */
+  --elev-menu: 0 8px 24px rgb(0 0 0 / 25%); /* floating dropdown menu          */
+  --elev-inset: inset 0 2px 4px rgb(0 0 0 / 10%); /* recessed (progress track) */
+  --elev-drawer: -5px 0 15px rgb(0 0 0 / 10%); /* leftward (mobile slide-in)   */
+
+  /* Colored shadows — semantic action + accent glows */
+  --shadow-action: 0 4px 16px rgb(52 152 219 / 35%); /* primary button rest    */
+  --shadow-action-hover: 0 6px 22px rgb(52 152 219 / 50%); /* primary hover     */
+  --shadow-success: 0 4px 16px rgb(39 174 96 / 30%); /* success button rest     */
+  --shadow-success-hover: 0 6px 20px rgb(39 174 96 / 40%); /* success hover      */
+  --shadow-gold: 0 4px 20px rgb(212 160 23 / 25%); /* NCAA-verified gold glow   */
+  --shadow-focus: 0 0 0 3px rgb(52 152 219 / 20%); /* input focus ring          */
+  --glow-blue: 0 2px 8px rgb(52 152 219 / 30%); /* small brand accent glow      */
+  --glow-success: 0 0 15px 3px rgb(46 204 113 / 30%); /* status pulse (green)    */
+  --glow-warning: 0 0 15px 3px rgb(243 156 18 / 30%); /* status pulse (amber)    */
+  --glow-danger: 0 0 15px 3px rgb(231 76 60 / 30%); /* status pulse (red)        */
 
   /* Radius scale */
   --r-sm: 8px;
@@ -102,7 +128,7 @@ body {
 /* Navigation */
 .main-nav {
   background: var(--grad-chrome);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-bar);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -156,7 +182,7 @@ body {
 
 .nav-links a:hover {
   background: linear-gradient(135deg, var(--navy-700) 0%, var(--blue-500) 100%);
-  box-shadow: 0 2px 8px rgb(52 152 219 / 30%);
+  box-shadow: var(--glow-blue);
   border-radius: var(--r-pill);
 }
 
@@ -181,7 +207,7 @@ body.home .main-nav {
 
 body.home.nav-solid .main-nav {
   background: var(--grad-chrome);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-bar);
   backdrop-filter: blur(10px);
 }
 
@@ -210,7 +236,7 @@ body.home.nav-solid .home-hero::before {
 .nav-links a.active {
   background: var(--grad-brand);
   color: #fff;
-  box-shadow: 0 2px 10px rgb(52 152 219 / 40%);
+  box-shadow: var(--glow-blue);
   border-radius: var(--r-pill);
 }
 
@@ -239,7 +265,7 @@ body.home.nav-solid .home-hero::before {
   right: 0;
   background: var(--navy-900);
   border-radius: var(--r-sm);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  box-shadow: var(--elev-menu);
   padding: 8px 0;
   z-index: 200;
   list-style: none;
@@ -429,32 +455,32 @@ h2 {
 .premium-button:hover:not(:disabled),
 .form-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgb(52 152 219 / 50%);
+  box-shadow: var(--shadow-action-hover);
 }
 
 /* Secondary — white button for use on a colored / dark band */
 .cta-button {
   background: #fff;
   color: var(--blue-600);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-1);
 }
 
 .cta-button:hover {
   background: #ecf0f1;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
+  box-shadow: var(--elev-hover);
 }
 
 /* Success — semantic green (sample / download actions) */
 .sample-button {
   background: var(--grad-success);
   color: #fff;
-  box-shadow: 0 4px 16px rgb(39 174 96 / 30%);
+  box-shadow: var(--shadow-success);
 }
 
 .sample-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
+  box-shadow: var(--shadow-success-hover);
 }
 
 /* Ghost — reads on the dark hero photo */
@@ -656,7 +682,7 @@ h2 {
   margin: 50px 0;
   border-radius: var(--r-lg);
   background: var(--grad-chrome);
-  box-shadow: 0 12px 40px rgb(0 0 0 / 22%);
+  box-shadow: var(--elev-3);
   overflow: hidden;
 }
 
@@ -871,7 +897,7 @@ h2 {
   border: 1px solid var(--blue-600);
   border-bottom: 3px solid var(--blue-600);
   z-index: 100;
-  box-shadow: 0 2px 8px rgb(52 152 219 / 30%);
+  box-shadow: var(--glow-blue);
   position: sticky;
   top: 0;
 
@@ -947,7 +973,7 @@ footer {
   text-align: center;
   padding: 25px;
   margin-top: 40px;
-  box-shadow: 0 -4px 20px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-top);
   backdrop-filter: blur(10px);
   /* Brand top stroke via background-clip — replaces border-image (which can't
      follow a radius and is banned by the design system), matching the header/nav
@@ -1044,22 +1070,20 @@ footer {
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  box-shadow: var(--elev-0);
 }
 
 .search-input:focus,
 .filter-select:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
-    0 4px 12px rgb(0 0 0 / 12%);
+  box-shadow: var(--shadow-focus), var(--elev-1);
   background: #fff;
 }
 
 .search-input:hover,
 .filter-select:hover {
-  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-hover);
 }
 
 .search-input::placeholder {
@@ -1172,7 +1196,7 @@ footer {
   background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
   border-radius: var(--r-md);
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgb(0 0 0 / 10%);
+  box-shadow: var(--elev-inset);
   border: 1px solid rgb(255 255 255 / 20%);
 }
 
@@ -1188,7 +1212,7 @@ footer {
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   width: 0%;
   position: relative;
-  box-shadow: 0 2px 8px rgb(52 152 219 / 40%);
+  box-shadow: var(--glow-blue);
 }
 
 .progress-fill::before {
@@ -1281,7 +1305,7 @@ footer {
   font-size: 14px;
   color: var(--text-2);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  box-shadow: var(--elev-0);
   font-family: inherit;
 }
 
@@ -1289,9 +1313,7 @@ footer {
 .form-textarea:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 20%),
-    0 4px 12px rgb(0 0 0 / 12%);
+  box-shadow: var(--shadow-focus), var(--elev-1);
   background: #fff;
 }
 
@@ -1553,7 +1575,7 @@ footer {
   body.home .main-nav {
     position: sticky;
     background: var(--grad-chrome);
-    box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+    box-shadow: var(--elev-bar);
     backdrop-filter: blur(10px);
   }
 
@@ -1594,7 +1616,7 @@ footer {
     transition: right 0.3s ease;
     z-index: 100;
     overflow-y: auto;
-    box-shadow: -5px 0 15px rgb(0 0 0 / 10%);
+    box-shadow: var(--elev-drawer);
   }
 
   .nav-links.active {
@@ -1676,7 +1698,7 @@ footer {
   padding: 20px;
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
   border-radius: var(--r-md);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  box-shadow: var(--elev-bar);
   border: 1px solid #e9ecef;
 }
 
@@ -1711,7 +1733,7 @@ footer {
 
 .legend-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-1);
   border-color: var(--blue-500);
 }
 
@@ -1790,9 +1812,7 @@ footer {
 
 .distances-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 12%),
-    0 4px 12px rgb(0 0 0 / 10%);
+  box-shadow: var(--shadow-focus), var(--elev-1);
 }
 
 .distance-result {
@@ -1801,7 +1821,7 @@ footer {
   border-radius: var(--r-md);
   padding: 30px;
   text-align: center;
-  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  box-shadow: var(--elev-bar);
   border: 1px solid #e9ecef;
 }
 
@@ -1844,7 +1864,7 @@ footer {
 .distance-result.distance-verified {
   border-color: #d4a017;
   border-width: 2px;
-  box-shadow: 0 4px 20px rgb(212 160 23 / 25%);
+  box-shadow: var(--shadow-gold);
 }
 
 /* Light gray for no data found */
@@ -1942,9 +1962,7 @@ footer {
 
 .ryan-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow:
-    0 0 0 3px rgb(52 152 219 / 12%),
-    0 4px 12px rgb(0 0 0 / 10%);
+  box-shadow: var(--shadow-focus), var(--elev-1);
 }
 
 .ryan-results {
@@ -2221,7 +2239,7 @@ footer {
   background: #fff;
   border-radius: var(--r-sm);
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--elev-0);
   text-align: center;
 }
 
@@ -2280,7 +2298,7 @@ footer {
   border-radius: var(--r-sm);
   padding: 25px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+  box-shadow: var(--elev-0);
 }
 
 .faq-item h3 {
@@ -2534,7 +2552,7 @@ footer {
 .form-select:focus {
   outline: none;
   border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 10%);
+  box-shadow: var(--shadow-focus);
 }
 
 .form-input::placeholder {

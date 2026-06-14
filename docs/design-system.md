@@ -75,7 +75,11 @@ literal (see the rules in `CLAUDE.md`).
     var(--orange-500)
   );
 
-  /* Elevation scale */
+  /* Shadow system — see §3 "Shadows" for the full set + reuse rules.
+     Neutral ladder: --elev-0 (resting) .. --elev-3 (raised) + --elev-modal,
+     plus role tokens --elev-hover/-bar/-top/-menu/-inset/-drawer.
+     Colored: --shadow-action(+ -hover), --shadow-success(+ -hover),
+     --shadow-gold, --shadow-focus, --glow-blue, --glow-success/-warning/-danger. */
   --elev-1: 0 4px 16px rgb(0 0 0 / 8%);
   --elev-2: 0 8px 32px rgb(0 0 0 / 10%);
   --elev-3: 0 12px 40px rgb(0 0 0 / 15%);
@@ -199,9 +203,23 @@ context variants sharing one base, not stray duplicates. New markup should use `
 **Radius:** ⬜ mostly done — the big outliers (6px, 20px) are folded into `--r-*`; a small tail of
 raw values remains (`3px`, `4px`, `10px`, each ×2). Low priority; fold in when nearby.
 
-**Shadows:** ⬜ partial — `--elev-1/2/3`, `--elev-modal`, and `--shadow-action` exist and cover the
-main surfaces, but ~37 of ~50 `box-shadow`s are still bespoke. Many are intentional per-context
-hover/glow variants, so this is a snap-the-clear-dupes job, not a blanket replace.
+**Shadows:** ✅ done — **every `box-shadow` resolves to a token** (the `:root` "Shadow system"
+block). Neutral elevation is a weight ladder (`--elev-0..3` + `--elev-modal`) plus role-named
+tokens for shadows outside that ladder (`--elev-bar` nav/header, `--elev-top` footer, `--elev-menu`
+dropdowns, `--elev-inset` progress track, `--elev-drawer` mobile slide-in, `--elev-hover` generic
+hover lift). Colored shadows are semantic: `--shadow-action`(+`-hover`), `--shadow-success`
+(+`-hover`), `--shadow-gold`, `--shadow-focus` (the compound input focus ring, used as
+`var(--shadow-focus), var(--elev-1)`), `--glow-blue` (small brand accent), and
+`--glow-success/-warning/-danger` (the command-palette status-pulse keyframes). Components reuse
+them — a card hover lifts to `--elev-3`; each button colour has a rest + hover pair.
+
+- _Tight-semantic snaps_ (sub-perceptual, chosen with the user): premium band `40px/22%`→`--elev-3`,
+  faq `/5%` + audience-card legacy `rgba()` + report-card `/10%`→`--elev-0`/`--elev-1`, the `/40%`
+  blue glows→`--glow-blue`, focus-ring alphas (`10/12%`)→`--shadow-focus` `/20%`, the `0 4px 20px`
+  `/10%` callouts→`--elev-bar` `/15%`.
+- _Out of scope (kept raw):_ the palette/modal **white hairline** `0 0 0 1px rgb(255 255 255 /10%)`
+  (a 1px border-ring, not elevation; pairs with `var(--elev-modal)`), and two one-off **`text-shadow`s**
+  (hero title depth, an orange text glow) — `text-shadow` is a separate property, not the elevation system.
 
 **Type:** ✅ one font stack. 30+ ad-hoc sizes + mixed px/rem → map to `--text-*`. Weights
 500/600/700/800 used without rule → body 400, links/labels 500, h2/h3/buttons 600, h1/eyebrow 700,

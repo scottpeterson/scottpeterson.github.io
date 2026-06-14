@@ -34,8 +34,9 @@ fresh-build CI guard — see the decision row below.
 Design-system pieces already shipped (detail in `design-system.md` §4): token `:root` foundation,
 brand/navy gradients → `--grad-*`, footer `border-image` → `background-clip`, `:focus-visible`
 site-wide, emoji → inline-SVG icon set, unified `.btn` button system (single `:disabled`),
-merged `.explore-card`/`.home-card`, shared `.eyebrow` base, and the near-duplicate gray/border
-color collapse.
+merged `.explore-card`/`.home-card`, shared `.eyebrow` base, the near-duplicate gray/border
+color collapse, and a full shadow token system (every `box-shadow` resolves to a token; see
+`design-system.md` §3 "Shadows").
 
 ## Resolved (was "Remaining")
 

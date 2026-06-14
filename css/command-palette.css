@@ -423,7 +423,7 @@
   }
   50% {
     background: rgb(46 204 113 / 25%);
-    box-shadow: 0 0 15px 3px rgb(46 204 113 / 30%);
+    box-shadow: var(--glow-success);
     border: 1px solid rgb(46 204 113 / 40%);
   }
 }
@@ -457,7 +457,7 @@
   }
   50% {
     background: rgb(243 156 18 / 25%);
-    box-shadow: 0 0 15px 3px rgb(243 156 18 / 30%);
+    box-shadow: var(--glow-warning);
     border: 1px solid rgb(243 156 18 / 40%);
   }
 }
@@ -491,7 +491,7 @@
   }
   50% {
     background: rgb(231 76 60 / 25%);
-    box-shadow: 0 0 15px 3px rgb(231 76 60 / 30%);
+    box-shadow: var(--glow-danger);
     border: 1px solid rgb(231 76 60 / 40%);
   }
 }
