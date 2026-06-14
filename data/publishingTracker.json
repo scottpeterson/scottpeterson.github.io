@@ -18,6 +18,18 @@
     "Roster Published?": "TRUE"
   },
   {
+    "Team": "Buena Vista",
+    "Conf": "ARC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
+    "Team": "Concordia-Chicago",
+    "Conf": "NACC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "TRUE"
+  },
+  {
     "Team": "Fitchburg St.",
     "Conf": "MASCAC",
     "Schedule Published?": "TRUE",
@@ -48,14 +60,14 @@
     "Roster Published?": "TRUE"
   },
   {
-    "Team": "Buena Vista",
-    "Conf": "ARC",
+    "Team": "Christopher Newport",
+    "Conf": "C2C",
     "Schedule Published?": "FALSE",
     "Roster Published?": "TRUE"
   },
   {
-    "Team": "Christopher Newport",
-    "Conf": "C2C",
+    "Team": "Grinnell",
+    "Conf": "MWC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "TRUE"
   },
@@ -114,6 +126,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Baruch",
+    "Conf": "CUNYAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Benedictine",
     "Conf": "NACC",
     "Schedule Published?": "TRUE",
@@ -122,6 +140,24 @@
   {
     "Team": "Calvin",
     "Conf": "MIAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Case Western",
+    "Conf": "UAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Chapman",
+    "Conf": "SCIAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Chicago",
+    "Conf": "UAA",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -138,8 +174,26 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Concordia Moorhead",
+    "Conf": "MIAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Cornell",
+    "Conf": "MWC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Gustavus Adolphus",
     "Conf": "MIAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Heidelberg",
+    "Conf": "OAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -168,6 +222,18 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Lycoming",
+    "Conf": "LAND",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Marian",
+    "Conf": "NACC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Marietta",
     "Conf": "OAC",
     "Schedule Published?": "TRUE",
@@ -182,6 +248,12 @@
   {
     "Team": "McDaniel",
     "Conf": "CC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Medgar Evers",
+    "Conf": "CUNYAC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -222,6 +294,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "Shenandoah",
+    "Conf": "ODAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "Spalding",
     "Conf": "SLIAC",
     "Schedule Published?": "TRUE",
@@ -240,6 +318,12 @@
     "Roster Published?": "FALSE"
   },
   {
+    "Team": "St. Mary's (IN)",
+    "Conf": "MIAA",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
     "Team": "St. Norbert",
     "Conf": "NACC",
     "Schedule Published?": "TRUE",
@@ -248,6 +332,24 @@
   {
     "Team": "SUNY Canton",
     "Conf": "SUNYAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "SUNY Potsdam",
+    "Conf": "SUNYAC",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "SUNYIT",
+    "Conf": "E8",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "University of New England",
+    "Conf": "CNE",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -272,6 +374,12 @@
   {
     "Team": "William Smith",
     "Conf": "LL",
+    "Schedule Published?": "TRUE",
+    "Roster Published?": "FALSE"
+  },
+  {
+    "Team": "Wisconsin Lutheran",
+    "Conf": "NACC",
     "Schedule Published?": "TRUE",
     "Roster Published?": "FALSE"
   },
@@ -336,12 +444,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Anna Maria",
-    "Conf": "MASCAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Arcadia",
     "Conf": "MACF",
     "Schedule Published?": "FALSE",
@@ -386,12 +488,6 @@
   {
     "Team": "Bard",
     "Conf": "LL",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Baruch",
-    "Conf": "CUNYAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -558,12 +654,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Case Western",
-    "Conf": "UAA",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Castleton",
     "Conf": "LEC",
     "Schedule Published?": "FALSE",
@@ -606,20 +696,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Chapman",
-    "Conf": "SCIAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Chatham",
     "Conf": "PAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Chicago",
-    "Conf": "UAA",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -678,26 +756,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Concordia Moorhead",
-    "Conf": "MIAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Concordia-Chicago",
-    "Conf": "NACC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Connecticut College",
     "Conf": "NESCAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Cornell",
-    "Conf": "MWC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -966,12 +1026,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Grinnell",
-    "Conf": "MWC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Grove City",
     "Conf": "PAC",
     "Schedule Published?": "FALSE",
@@ -1028,12 +1082,6 @@
   {
     "Team": "Haverford",
     "Conf": "CC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Heidelberg",
-    "Conf": "OAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -1266,12 +1314,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Lycoming",
-    "Conf": "LAND",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Lynchburg",
     "Conf": "ODAC",
     "Schedule Published?": "FALSE",
@@ -1332,12 +1374,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Marian",
-    "Conf": "NACC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Mary Baldwin",
     "Conf": "USAC",
     "Schedule Published?": "FALSE",
@@ -1382,12 +1418,6 @@
   {
     "Team": "McMurry",
     "Conf": "ASC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Medgar Evers",
-    "Conf": "CUNYAC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -1920,12 +1950,6 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "Shenandoah",
-    "Conf": "ODAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "Simpson (IA)",
     "Conf": "ARC",
     "Schedule Published?": "FALSE",
@@ -2000,12 +2024,6 @@
   {
     "Team": "St. Lawrence",
     "Conf": "LL",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "St. Mary's (IN)",
-    "Conf": "MIAA",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -2100,20 +2118,8 @@
     "Roster Published?": "FALSE"
   },
   {
-    "Team": "SUNY Potsdam",
-    "Conf": "SUNYAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
     "Team": "SUNY Purchase",
     "Conf": "SKY",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "SUNYIT",
-    "Conf": "E8",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -2204,12 +2210,6 @@
   {
     "Team": "Univ Ozarks",
     "Conf": "SCAC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "University of New England",
-    "Conf": "CNE",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },
@@ -2426,12 +2426,6 @@
   {
     "Team": "Wilson",
     "Conf": "UEC",
-    "Schedule Published?": "FALSE",
-    "Roster Published?": "FALSE"
-  },
-  {
-    "Team": "Wisconsin Lutheran",
-    "Conf": "NACC",
     "Schedule Published?": "FALSE",
     "Roster Published?": "FALSE"
   },

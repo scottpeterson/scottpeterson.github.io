@@ -12,7 +12,6 @@
 
 const fs = require('fs').promises;
 const path = require('path');
-const { execFileSync } = require('child_process');
 const prettier = require('prettier');
 
 // Obfuscation key - used for XOR encoding
@@ -742,32 +741,24 @@ ${cards}
     return result;
   }
 
-  // Deterministic "last updated" timestamp for a committed data file: the
-  // committer date of the most recent commit that touched it, formatted in a
-  // FIXED timezone.
+  // "Last updated" for a data file = the file's own modification time, i.e. when
+  // the underlying data actually changed on disk. The author's data pipeline
+  // writes each JSON when its data changes, so the mtime IS the real
+  // "data changed" moment — which is exactly what this line must show.
   //
-  // INTENT / root-cause fix: this used to read the filesystem mtime
-  // (fs.stat().mtime). mtime is NOT preserved across git clone / checkout / CI,
-  // so a fresh build emitted a different "Last updated" line than the committed
-  // HTML — phantom, non-idempotent diffs (and the timezone floated with the
-  // build machine). Git committer date is durable (it lives in history),
-  // identical on every machine, and auto-updates when the data is committed.
-  // Pinning timeZone makes the rendered string machine-independent too.
+  // The only refinement over a bare mtime is pinning the timezone for the
+  // display string, so the formatted date doesn't shift with the build machine's
+  // locale (the instant is the same; only the rendering is fixed to Eastern).
   //
-  // Uses execFileSync (argv array, no shell) so the config-derived path can't be
-  // interpreted as a shell command. Returns null when the file isn't tracked or
-  // git isn't available (e.g. an exported tarball) — callers omit the line.
-  getDataUpdatedDate(filePath) {
+  // NOTE: this is deliberately the filesystem mtime, NOT the git commit date.
+  // The commit date is "when the data was committed", which lags the real change
+  // and is wrong here. The tradeoff is that mtime isn't preserved by a fresh
+  // `git clone`, so this line is not reproducible in a clean CI checkout — that's
+  // accepted in exchange for showing the true data-change time.
+  async getDataUpdatedDate(filePath) {
     try {
-      const iso = execFileSync(
-        'git',
-        ['log', '-1', '--format=%cI', '--', filePath],
-        { encoding: 'utf8' }
-      ).trim();
-      if (!iso) {
-        return null;
-      }
-      return new Date(iso).toLocaleString('en-US', {
+      const stats = await fs.stat(filePath);
+      return stats.mtime.toLocaleString('en-US', {
         timeZone: 'America/New_York',
         year: 'numeric',
         month: 'long',
@@ -777,10 +768,7 @@ ${cards}
         timeZoneName: 'short',
       });
     } catch (error) {
-      console.warn(
-        `Could not get git commit date for ${filePath}:`,
-        error.message
-      );
+      console.warn(`Could not stat ${filePath}:`, error.message);
       return null;
     }
   }
@@ -1200,18 +1188,19 @@ ${pricingFeaturesHtml}
         });
       }
 
-      // Get last updated date for data file (git commit date, see
-      // getDataUpdatedDate — deterministic and clone/CI-safe).
+      // Get last updated date for data file (the data file's own mtime — when
+      // the data actually changed; see getDataUpdatedDate).
       let lastUpdated = null;
       if (pageConfig.dataSource) {
         const dataFilePath = `data/${pageConfig.dataSource}.json`;
-        lastUpdated = this.getDataUpdatedDate(dataFilePath);
+        lastUpdated = await this.getDataUpdatedDate(dataFilePath);
       } else if (pageConfig.isDistancesPage) {
-        // The distances page has no dataSource (its data is computed from a CSV),
-        // so it never got the auto "Last updated" line the data pages show. Use
-        // the source CSV's commit date (the real "data changed" signal —
-        // distances.json is generated and git-ignored).
-        lastUpdated = this.getDataUpdatedDate('data/calculated_distances.csv');
+        // The distances page's data comes from a CSV (data/distances.json is
+        // regenerated every build, so its mtime is always "now" and useless).
+        // Use the source CSV's mtime — the real "distance data changed" signal.
+        lastUpdated = await this.getDataUpdatedDate(
+          'data/calculated_distances.csv'
+        );
       }
 
       // Render full page
