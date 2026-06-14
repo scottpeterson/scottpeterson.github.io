@@ -594,7 +594,7 @@ h2 {
 }
 
 .home-section__lead {
-  color: #555;
+  color: var(--text-3);
   font-size: 1.1rem;
   max-width: 60ch;
   margin: 0 0 26px;
@@ -637,7 +637,7 @@ h2 {
 }
 
 .explore-card p {
-  color: #555;
+  color: var(--text-3);
   font-size: 0.98rem;
   margin: 0 0 14px;
 }
@@ -1098,7 +1098,7 @@ footer {
 .loading {
   text-align: center;
   padding: 40px;
-  color: #555;
+  color: var(--text-3);
   font-size: 1.1rem;
 }
 
@@ -1320,7 +1320,7 @@ footer {
 }
 
 .contact-info p {
-  color: #555;
+  color: var(--text-3);
   margin-bottom: 15px;
 }
 
@@ -1727,7 +1727,7 @@ footer {
 }
 
 .legend-description {
-  color: #555;
+  color: var(--text-3);
   font-size: 0.85rem;
   line-height: 1.4;
 }
@@ -1817,7 +1817,7 @@ footer {
 
 .distance-miles .distance-unit {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--text-3);
   margin-left: 6px;
 }
 
@@ -1864,7 +1864,7 @@ footer {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: 10px;
   border: 1px solid #e9ecef;
-  color: #555;
+  color: var(--text-3);
   font-size: 0.9rem;
   line-height: 1.7;
 }
@@ -2086,7 +2086,7 @@ footer {
 }
 
 .feature-card p {
-  color: #555;
+  color: var(--text-3);
   line-height: 1.6;
   text-align: center;
 }
@@ -2143,12 +2143,12 @@ footer {
 
 .price-period {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--text-3);
 }
 
 .pricing-clarification {
   text-align: center;
-  color: #555;
+  color: var(--text-3);
   font-size: 0.95rem;
   margin: 15px 0 25px;
   line-height: 1.6;
@@ -2165,7 +2165,7 @@ footer {
 
 .pricing-features li {
   padding: 10px 0;
-  color: #555;
+  color: var(--text-3);
   font-size: 1rem;
   border-bottom: 1px solid #eee;
 }
@@ -2232,7 +2232,7 @@ footer {
 }
 
 .audience-card p {
-  color: #555;
+  color: var(--text-3);
   line-height: 1.5;
   margin: 0;
 }
@@ -2290,7 +2290,7 @@ footer {
 }
 
 .faq-item p {
-  color: #555;
+  color: var(--text-3);
   line-height: 1.6;
 }
 
@@ -2330,7 +2330,7 @@ footer {
 }
 
 .honor-content p {
-  color: #555;
+  color: var(--text-3);
   line-height: 1.8;
   margin-bottom: 15px;
 }
@@ -2384,7 +2384,7 @@ footer {
 }
 
 .product-tagline {
-  color: #555;
+  color: var(--text-3);
   font-size: 1.1rem;
   margin-top: 12px;
   line-height: 1.6;
@@ -2393,7 +2393,7 @@ footer {
 .product-countdown {
   margin-top: 10px;
   font-size: 1.05rem;
-  color: #555;
+  color: var(--text-3);
 }
 
 .countdown-label {
@@ -2565,7 +2565,7 @@ footer {
   display: block;
   margin-top: 6px;
   font-size: 0.85rem;
-  color: #555;
+  color: var(--text-3);
 }
 
 .form-checkbox-group {
