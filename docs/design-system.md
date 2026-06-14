@@ -196,9 +196,12 @@ context variants sharing one base, not stray duplicates. New markup should use `
     family with `#f8f9fa` / `#f5f5f5`. A real but separate effort (would need `--surface-2/3`);
     out of scope for the near-dupe pass and mostly used as a background, not a border.
 
-**Radius outliers** to fold into 8/12/16/pill: 3px, 4px, 6px, 10px, 20px (nav pill → `--r-pill`).
+**Radius:** ⬜ mostly done — the big outliers (6px, 20px) are folded into `--r-*`; a small tail of
+raw values remains (`3px`, `4px`, `10px`, each ×2). Low priority; fold in when nearby.
 
-**Shadows:** ~15 values → `--elev-1/2/3` + `--elev-modal`; brand-blue button shadow → `--shadow-action`.
+**Shadows:** ⬜ partial — `--elev-1/2/3`, `--elev-modal`, and `--shadow-action` exist and cover the
+main surfaces, but ~37 of ~50 `box-shadow`s are still bespoke. Many are intentional per-context
+hover/glow variants, so this is a snap-the-clear-dupes job, not a blanket replace.
 
 **Type:** ✅ one font stack. 30+ ad-hoc sizes + mixed px/rem → map to `--text-*`. Weights
 500/600/700/800 used without rule → body 400, links/labels 500, h2/h3/buttons 600, h1/eyebrow 700,
