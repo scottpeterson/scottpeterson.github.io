@@ -233,22 +233,14 @@ class TemplateEngine {
   }
 
   // Generate navigation HTML based on config and feature flags.
-  // `absolute` emits root-relative hrefs (leading /) so pages living in a
-  // subdirectory (reports/index.html) can share this exact same nav instead of
-  // hand-maintaining their own copy that drifts.
-  async generateNavigation({ absolute = false } = {}) {
-    const navItems = [];
-    const href = h =>
-      !absolute ||
-      h.startsWith('/') ||
-      h.startsWith('#') ||
-      h.startsWith('http')
-        ? h
-        : '/' + h;
-
-    // Define navigation order and structure
-    // 'reports' is a special key that triggers the Reports dropdown
-    const navConfig = [
+  // Single source of truth for the site's top-level navigation: order, labels,
+  // hrefs, and which config key each maps to. 'reports' is special — it renders
+  // as a dropdown in the header nav. EVERYTHING that needs to know the menu
+  // (header nav HTML, reports/index.html nav, the CMD+K command palette) derives
+  // from this one list, so the menu can't drift between surfaces. Add/rename a
+  // page here once and every surface updates on the next build.
+  navConfig() {
+    return [
       { key: 'index', label: 'Home', href: '/' },
       { key: 'npi', label: 'NPI', href: 'npi.html' },
       {
@@ -292,8 +284,55 @@ class TemplateEngine {
       { key: 'contact', label: 'Contact & About', href: 'contact.html' },
       { key: 'reference', label: 'Reference', href: 'reference.html' },
     ];
+  }
 
-    for (const item of navConfig) {
+  // Flat navigation list for the CMD+K command palette, inlined into each page as
+  // window.__NAV_ITEMS__. Built from the SAME navConfig() and the SAME visibility
+  // gating as generateNavigation (config present, showInNav, feature flag), so
+  // the palette is always in lockstep with the real menu — no hand-maintained
+  // second copy to drift. The Reports dropdown collapses to a single "Reports"
+  // entry pointing at the index (individual reports aren't palette destinations),
+  // and only appears when at least one report exists. js/command-palette.js
+  // enriches each {title, href} with an icon/description/shortcut.
+  async getPaletteNavItems() {
+    const items = [];
+    for (const item of this.navConfig()) {
+      if (item.isDropdown && item.key === 'reports') {
+        const reports = await this.getReportsList();
+        if (reports.length > 0) {
+          items.push({ title: item.label, href: item.href });
+        }
+        continue;
+      }
+
+      const pageConfig = this.config[item.key];
+      if (
+        !pageConfig ||
+        pageConfig.showInNav === false ||
+        !this.shouldShowPage(pageConfig)
+      ) {
+        continue;
+      }
+
+      items.push({ title: item.label, href: item.href });
+    }
+    return items;
+  }
+
+  // `absolute` emits root-relative hrefs (leading /) so pages living in a
+  // subdirectory (reports/index.html) can share this exact same nav instead of
+  // hand-maintaining their own copy that drifts.
+  async generateNavigation({ absolute = false } = {}) {
+    const navItems = [];
+    const href = h =>
+      !absolute ||
+      h.startsWith('/') ||
+      h.startsWith('#') ||
+      h.startsWith('http')
+        ? h
+        : '/' + h;
+
+    for (const item of this.navConfig()) {
       // Handle Reports dropdown specially
       if (item.isDropdown && item.key === 'reports') {
         const reportsDropdown = await this.generateReportsDropdown(absolute);
@@ -1176,8 +1215,15 @@ ${pricingFeaturesHtml}
       if (pageConfig.columnMappings) {
         runtimeConfig.columnMappings = pageConfig.columnMappings;
       }
+
+      // Inline the canonical nav list so the CMD+K command palette renders the
+      // exact same menu as the header (see getPaletteNavItems). Identical on
+      // every page, but cheap to embed, and keeps the palette's source of truth
+      // server-side instead of a hand-maintained JS copy.
+      const paletteNavItems = await this.getPaletteNavItems();
       const headPreload = `<script>
         window.__PAGE_CONFIG__ = ${JSON.stringify(runtimeConfig)};
+        window.__NAV_ITEMS__ = ${JSON.stringify(paletteNavItems)};
         (function () {
           var ds = window.__PAGE_CONFIG__.dataSource;
           if (ds) {

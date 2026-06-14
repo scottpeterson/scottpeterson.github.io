@@ -36,74 +36,97 @@
   // ==========================================================================
 
   /**
-   * Navigation items available in the command palette.
-   * These match the site's navigation structure.
+   * Presentation enrichment for nav items, keyed by href.
+   *
+   * The nav itself (which pages exist, their labels, order, and feature-flag
+   * gating) is the SERVER's source of truth: build.js inlines it as
+   * window.__NAV_ITEMS__ (see getPaletteNavItems in build.js). This map adds
+   * only the palette-specific decoration — icon, description, and any keyboard
+   * shortcut — so the two never drift on membership/labels. An href with no
+   * entry here still appears, falling back to the default 'navigate' icon and no
+   * description, so a newly-added page shows up in CMD+K automatically.
    */
-  const NAVIGATION_ITEMS = [
-    { title: 'Home', href: '/', icon: 'home' },
-    {
-      title: 'NPI',
-      href: 'npi.html',
-      icon: 'target',
-      description: 'NCAA Power Index rankings',
-    },
-    {
-      title: 'Season Simulations',
-      href: 'season_simulations.html',
+  const NAV_ENRICHMENT = {
+    '/': { icon: 'home' },
+    'npi.html': { icon: 'target', description: 'NCAA Power Index rankings' },
+    'season_simulations.html': {
       icon: 'dice',
       description: 'Tournament probability projections',
     },
-    {
-      title: 'Current Season Rankings',
-      href: 'current_season_rankings.html',
+    'current_season_rankings.html': {
       icon: 'calendar',
       description: 'Rankings based on this season',
     },
-    {
-      title: 'Conference Rankings',
-      href: 'conference_rankings.html',
+    'conference_rankings.html': {
       icon: 'trophy',
       description: 'Conference performance rankings',
     },
-    {
-      title: 'Composite Rankings',
-      href: 'composite_rankings.html',
+    'composite_rankings.html': {
       icon: 'layers',
       description: 'Combined ranking systems',
     },
-    {
-      title: 'Preseason Rankings',
-      href: 'preseason_rankings.html',
-      icon: 'sun',
-      description: '25-26 preseason projections',
+    'distances.html': {
+      icon: 'mapPin',
+      description: 'Travel distances between schools',
     },
-    {
-      title: 'Returning & Non-Returning',
-      href: 'returners.html',
+    'preseason_rankings.html': {
+      icon: 'sun',
+      description: 'Preseason projections',
+    },
+    'returners.html': {
       icon: 'refresh',
       description: 'Player retention data',
     },
-    {
-      title: 'Publishing Tracker',
-      href: 'publishing_tracker.html',
+    'publishing_tracker.html': {
       icon: 'clipboard',
       description: 'Schedule/roster publishing status',
     },
-    {
-      title: 'Premium',
-      href: 'premium.html',
+    'reports/': { icon: 'fileText', description: 'Analysis and writeups' },
+    'premium.html': {
       icon: 'star',
       description: 'Weekly team reports',
       shortcut: 'p',
     },
-    {
-      title: 'Contact',
-      href: 'contact.html',
+    'contact.html': {
       icon: 'mail',
       description: 'Get in touch',
       shortcut: 'c',
     },
-  ];
+    'reference.html': {
+      icon: 'book',
+      description: 'Provisional members and NPI methodology',
+    },
+  };
+
+  /**
+   * Build the palette's navigation items from the build-injected nav list,
+   * decorated via NAV_ENRICHMENT. window.__NAV_ITEMS__ is inlined in <head>
+   * (before this body script runs), so it's available at module init. If it's
+   * somehow absent (e.g. a stale cached page from before this change), we degrade
+   * to a nav-less palette rather than ship a second, drift-prone hardcoded copy.
+   */
+  function buildNavigationItems() {
+    const injected = Array.isArray(window.__NAV_ITEMS__)
+      ? window.__NAV_ITEMS__
+      : [];
+    if (injected.length === 0) {
+      console.warn(
+        'Command palette: window.__NAV_ITEMS__ missing; navigation unavailable.'
+      );
+    }
+    return injected.map(navItem => {
+      const extra = NAV_ENRICHMENT[navItem.href] || {};
+      return {
+        title: navItem.title,
+        href: navItem.href,
+        icon: extra.icon || 'navigate',
+        description: extra.description,
+        shortcut: extra.shortcut,
+      };
+    });
+  }
+
+  const NAVIGATION_ITEMS = buildNavigationItems();
 
   /**
    * Action items (non-navigation) available in the command palette.
@@ -181,6 +204,14 @@
     // Publishing Tracker - clipboard for tracking
     clipboard:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>',
+    // Distances - map pin for travel between schools
+    mapPin:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    // Reports - document for analysis writeups
+    fileText:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+    // Reference - open book for evergreen notes/methodology
+    book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
   };
 
   // ==========================================================================
