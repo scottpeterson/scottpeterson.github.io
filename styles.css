@@ -1331,6 +1331,106 @@ footer {
   color: var(--blue-600);
 }
 
+/* ===========================================================================
+   Reference page — evergreen reference notes
+   ---------------------------------------------------------------------------
+   INTENT: Long-form factual notes, each a chunk of <h2> + prose inside the
+   shared .table-section content card. These rules are SCOPED to
+   .reference-section so the generic prose/table styling never leaks onto other
+   pages that also use .table-section (legend, contact). All values come from
+   the design tokens; the fact tables and formula callouts are the only
+   reference-specific components.
+   =========================================================================== */
+.reference-section {
+  margin-bottom: 30px;
+}
+
+.reference-section p {
+  color: var(--text-2);
+  line-height: 1.65;
+  margin: 0 0 16px;
+  max-width: 72ch;
+}
+
+.reference-section ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+  max-width: 72ch;
+}
+
+.reference-section li {
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.reference-section strong {
+  color: var(--navy-900);
+  font-weight: 600;
+}
+
+.reference-section a {
+  color: var(--blue-500);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.reference-section a:hover {
+  color: var(--blue-600);
+}
+
+.reference-sources {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+/* Monospace callout for a single display formula. Tinted block (no left-border
+   accent — those are reserved for semantic alerts), token radius. */
+.reference-formula {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  background: rgb(44 62 80 / 5%);
+  border-radius: var(--r-sm);
+  padding: 12px 16px;
+  color: var(--navy-900);
+  font-size: var(--text-sm);
+  overflow-x: auto;
+}
+
+/* Compact static fact table. Distinct from .stats-table (the JS data grid):
+   no sticky gradient header, no fixed-height scroll container, just a clean
+   read. Wrapped in .reference-table-wrap so it scrolls horizontally on narrow
+   viewports instead of overflowing the card. */
+.reference-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 20px;
+}
+
+.reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.reference-table th,
+.reference-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.reference-table thead th {
+  color: var(--navy-900);
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--navy-900);
+}
+
+.reference-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .table-controls {

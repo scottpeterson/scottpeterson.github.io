@@ -183,6 +183,10 @@ class TemplateEngine {
         'templates/ryan-page.html',
         'utf8'
       );
+      this.templates.referencePage = await fs.readFile(
+        'templates/reference-page.html',
+        'utf8'
+      );
       this.templates.homeHero = await fs.readFile(
         'templates/home-hero.html',
         'utf8'
@@ -275,6 +279,7 @@ class TemplateEngine {
       { key: 'reports', label: 'Reports', href: 'reports/', isDropdown: true },
       { key: 'premium', label: 'Premium', href: 'premium.html' },
       { key: 'contact', label: 'Contact & About', href: 'contact.html' },
+      { key: 'reference', label: 'Reference', href: 'reference.html' },
     ];
 
     for (const item of navConfig) {
@@ -477,7 +482,8 @@ ${dropdownItems}
             </ul>
           </li>
           <li><a href="/premium.html">Premium</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/contact.html">Contact &amp; About</a></li>
+          <li><a href="/reference.html">Reference</a></li>
         </ul>
       </div>
 
@@ -1157,6 +1163,11 @@ ${pricingFeaturesHtml}
         tableContent = this.renderTemplate(this.templates.ryanPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
+      } else if (pageConfig.isReferencePage) {
+        // Static reference page: evergreen notes (no data source, no search).
+        // The template is plain markup, but render it through renderTemplate so
+        // it picks up the same token substitution as every other page.
+        tableContent = this.renderTemplate(this.templates.referencePage, {});
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
         tableContent = this.renderTemplate(this.templates.tablePage, {

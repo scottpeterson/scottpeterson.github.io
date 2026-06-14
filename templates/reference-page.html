@@ -1,0 +1,196 @@
+<!--
+  Reference page body (inside <main>).
+
+  INTENT: A growing library of evergreen reference notes for D3 women's
+  basketball and for how The D3 Stat Lab's numbers work. Each note is one
+  self-contained "chunk": an <h2> header plus body text, wrapped in the shared
+  .table-section content card and scoped by .reference-section for prose/table
+  styling (see the "Reference page" block in styles.css). To add a note, copy an
+  existing <section class="table-section reference-section"> block. Keep the copy
+  factual and concise; no em dashes (site-wide copy rule).
+
+  Sources for the current notes:
+   - Provisional Members: /Users/scottpeterson/d3_basketball_provisional_members_npi.md
+   - NPI "Settling" Criteria: /Users/scottpeterson/NPI_CONVERGENCE_MATH.md
+-->
+<section class="table-section reference-section">
+  <h2>Provisional Members</h2>
+  <p>
+    Whether a game against a provisional or reclassifying member counts toward
+    the NCAA Power Index (NPI), and whether that member can reach the NCAA
+    postseason, depends on the member's stage.
+  </p>
+  <ul>
+    <li>
+      <strong>NPI:</strong> Games against third-year provisional members and
+      third-year reclassifying-into-Division III members count. Games against
+      first- and second-year members, all members reclassifying out of Division
+      III, and exploratory schools do not count.
+    </li>
+    <li>
+      <strong>Postseason:</strong> No provisional or reclassifying member is
+      eligible for NCAA championships in any year. Eligibility begins only after
+      the school converts to active membership, which follows all three
+      provisional years.
+    </li>
+  </ul>
+  <p>The current cycle (2026-27):</p>
+  <div class="reference-table-wrap">
+    <table class="reference-table">
+      <thead>
+        <tr>
+          <th>School</th>
+          <th>Status</th>
+          <th>Counts for NPI</th>
+          <th>Postseason eligible</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Carlow</td>
+          <td>3rd-year provisional</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Penn State-Brandywine</td>
+          <td>3rd-year provisional</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Regent</td>
+          <td>2nd-year provisional</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Johnson &amp; Wales (NC)</td>
+          <td>2nd-year provisional</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Azusa Pacific</td>
+          <td>1st-year reclassifying (from D2)</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>St. Francis (PA)</td>
+          <td>1st-year reclassifying (from D1)</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Maine-Augusta</td>
+          <td>Exploratory</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reference-sources">
+    Sources:
+    <a
+      href="https://ncaaorg.s3.amazonaws.com/membership/d3/D3Mem_ReclassProvInstChampCriteria.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      >NCAA Provisional &amp; Reclassifying Selection Criteria</a
+    >,
+    <a
+      href="https://ncaaorg.s3.amazonaws.com/membership/d3/D3Mem_ProvisionalMembershipProcessFAQ.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      >NCAA D3 Provisional Member Process FAQ</a
+    >,
+    <a
+      href="https://www.d3hoops.com/interactive/faq/ncaatournament"
+      target="_blank"
+      rel="noopener noreferrer"
+      >d3hoops NCAA Tournament FAQ</a
+    >.
+  </p>
+</section>
+
+<section class="table-section reference-section">
+  <h2>NPI "Settling" Criteria</h2>
+  <p>
+    NPI is computed by iteration. A team's rating is the average of its
+    contributing game NPIs, and each game's NPI depends on the opponent's rating
+    from the previous pass. Because every rating depends on opponents' ratings,
+    there is no closed form: the calculation repeats until the ratings stop
+    changing. "Settling" means the iteration reaches a stable set of ratings.
+    The run stops once the average per-team change falls below 0.0001, after a
+    minimum of 10 passes and a maximum of 80.
+  </p>
+  <p>
+    How readily it settles is governed by how strongly each team's rating
+    amplifies changes in its opponents' ratings. For one team that amplification
+    is:
+  </p>
+  <p class="reference-formula">
+    &#945; = SW + QBM &#215; (quality wins &#247; contributing games)
+  </p>
+  <ul>
+    <li>
+      The system is guaranteed to settle when the largest &#945; across all
+      teams stays below 1. This is sufficient, not necessary.
+    </li>
+    <li>
+      A schedule-proof bound is SW + QBM &#8804; 1, equivalently QBM &#8804; RW.
+      At SW = 0.80 that caps QBM at 0.20.
+    </li>
+    <li>
+      Per-team breakpoint: a team's &#945; passes 1 once more than RW &#247; QBM
+      of its contributing games are quality wins.
+    </li>
+  </ul>
+  <p>The default dials for women's basketball:</p>
+  <div class="reference-table-wrap">
+    <table class="reference-table">
+      <thead>
+        <tr>
+          <th>Dial</th>
+          <th>Meaning</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RW</td>
+          <td>Result weight (win/loss), with RW = 1 &#8722; SW</td>
+          <td>0.20</td>
+        </tr>
+        <tr>
+          <td>SW</td>
+          <td>Strength-of-schedule weight</td>
+          <td>0.80</td>
+        </tr>
+        <tr>
+          <td>QBM</td>
+          <td>Quality bonus multiplier</td>
+          <td>2/3 (&#8776; 0.667)</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>
+            Quality win threshold (opponent rating above which a win is a
+            quality win)
+          </td>
+          <td>54.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    At these defaults the breakpoint is 0.30, so any team whose contributing
+    games are more than 30% quality wins has &#945; above 1. The system still
+    settles because the quantity that actually governs convergence, the spectral
+    radius of the iteration's Jacobian, stays below 1 given real schedule
+    structure rather than because of margin in the &#945; bound. A "contributing
+    game" is one that feeds a team's rating: its top wins plus games at or below
+    the team's own current rating.
+  </p>
+</section>

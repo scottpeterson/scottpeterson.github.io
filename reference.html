@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Statistics - Reference</title>
+
+    <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
+         client doesn't round-trip to config/pages.json on every navigation, and
+         the data download starts here (during head parse) instead of waiting for
+         DOMContentLoaded. See data-loader.js (__PAGE_CONFIG__ / __DATA_PREFETCH__). -->
+    <script>
+      window.__PAGE_CONFIG__ = {};
+      (function () {
+        var ds = window.__PAGE_CONFIG__.dataSource;
+        if (ds) {
+          window.__DATA_PREFETCH__ = {
+            source: ds,
+            promise: fetch('data-encoded/' + ds + '.json'),
+          };
+        }
+      })();
+    </script>
+
+    <!-- Block AI/LLM crawlers from using content for training -->
+    <meta name="robots" content="noai, noimageai" />
+    <meta name="googlebot" content="noai, noimageai" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
+    <link rel="stylesheet" href="css/command-palette.css" />
+
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://thed3statlab.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  </head>
+  <body class="">
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo"><a href="/">The D3 Stat Lab</a></div>
+
+        <!-- Hamburger Menu Toggle (only appears on mobile) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navMenu">
+          <!-- Close button placed separately at the top of the menu -->
+          <div class="menu-close" id="menuClose"></div>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="npi.html">NPI</a></li>
+          <li><a href="season_simulations.html">Season Simulations</a></li>
+          <li>
+            <a href="current_season_rankings.html">Current Season Rankings</a>
+          </li>
+          <li><a href="conference_rankings.html">Conference Rankings</a></li>
+          <li><a href="composite_rankings.html">Composite Rankings</a></li>
+          <li><a href="distances.html">Distances</a></li>
+          <li>
+            <a href="preseason_rankings.html">26-27 Preseason Rankings</a>
+          </li>
+          <li><a href="returners.html">Returning and Non-Returning</a></li>
+          <li><a href="publishing_tracker.html">Publishing Tracker</a></li>
+          <li class="nav-dropdown">
+            <a href="reports/" class="dropdown-trigger"
+              >Reports <span class="dropdown-arrow">▾</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="reports/">All Reports</a></li>
+              <li class="dropdown-divider"></li>
+              <li>
+                <a href="reports/player_plus_minus_rankings.html"
+                  >D3 WBB Player Plus/Minus Rankings</a
+                >
+              </li>
+              <li>
+                <a href="reports/points_by_class_report.html"
+                  >D3 WBB Points by Class</a
+                >
+              </li>
+              <li>
+                <a href="reports/schedule_builder.html"
+                  >D3 WBB Schedule Builder — 2026-27</a
+                >
+              </li>
+              <li>
+                <a href="reports/team_roster_report.html"
+                  >D3 WBB Team Roster Report</a
+                >
+              </li>
+              <li>
+                <a href="reports/top25_schedule_quality.html"
+                  >All NPI Teams - Schedule Quality</a
+                >
+              </li>
+              <li>
+                <a href="reports/tournament_history.html"
+                  >2026 NCAA D3 WBB Tournament — Historical Performance</a
+                >
+              </li>
+              <li>
+                <a href="reports/transfer_report.html"
+                  >D3 WBB Transfer Report</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="contact.html">Contact & About</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay for mobile -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Reference</h1>
+        <p>
+          Reference notes on Division III women's basketball and how The D3 Stat
+          Lab's numbers work.
+        </p>
+      </header>
+      <!--
+  Reference page body (inside <main>).
+
+  INTENT: A growing library of evergreen reference notes for D3 women's
+  basketball and for how The D3 Stat Lab's numbers work. Each note is one
+  self-contained "chunk": an <h2> header plus body text, wrapped in the shared
+  .table-section content card and scoped by .reference-section for prose/table
+  styling (see the "Reference page" block in styles.css). To add a note, copy an
+  existing <section class="table-section reference-section"> block. Keep the copy
+  factual and concise; no em dashes (site-wide copy rule).
+
+  Sources for the current notes:
+   - Provisional Members: /Users/scottpeterson/d3_basketball_provisional_members_npi.md
+   - NPI "Settling" Criteria: /Users/scottpeterson/NPI_CONVERGENCE_MATH.md
+-->
+      <section class="table-section reference-section">
+        <h2>Provisional Members</h2>
+        <p>
+          Whether a game against a provisional or reclassifying member counts
+          toward the NCAA Power Index (NPI), and whether that member can reach
+          the NCAA postseason, depends on the member's stage.
+        </p>
+        <ul>
+          <li>
+            <strong>NPI:</strong> Games against third-year provisional members
+            and third-year reclassifying-into-Division III members count. Games
+            against first- and second-year members, all members reclassifying
+            out of Division III, and exploratory schools do not count.
+          </li>
+          <li>
+            <strong>Postseason:</strong> No provisional or reclassifying member
+            is eligible for NCAA championships in any year. Eligibility begins
+            only after the school converts to active membership, which follows
+            all three provisional years.
+          </li>
+        </ul>
+        <p>The current cycle (2026-27):</p>
+        <div class="reference-table-wrap">
+          <table class="reference-table">
+            <thead>
+              <tr>
+                <th>School</th>
+                <th>Status</th>
+                <th>Counts for NPI</th>
+                <th>Postseason eligible</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Carlow</td>
+                <td>3rd-year provisional</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Penn State-Brandywine</td>
+                <td>3rd-year provisional</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Regent</td>
+                <td>2nd-year provisional</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Johnson &amp; Wales (NC)</td>
+                <td>2nd-year provisional</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Azusa Pacific</td>
+                <td>1st-year reclassifying (from D2)</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>St. Francis (PA)</td>
+                <td>1st-year reclassifying (from D1)</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Maine-Augusta</td>
+                <td>Exploratory</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="reference-sources">
+          Sources:
+          <a
+            href="https://ncaaorg.s3.amazonaws.com/membership/d3/D3Mem_ReclassProvInstChampCriteria.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >NCAA Provisional &amp; Reclassifying Selection Criteria</a
+          >,
+          <a
+            href="https://ncaaorg.s3.amazonaws.com/membership/d3/D3Mem_ProvisionalMembershipProcessFAQ.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >NCAA D3 Provisional Member Process FAQ</a
+          >,
+          <a
+            href="https://www.d3hoops.com/interactive/faq/ncaatournament"
+            target="_blank"
+            rel="noopener noreferrer"
+            >d3hoops NCAA Tournament FAQ</a
+          >.
+        </p>
+      </section>
+
+      <section class="table-section reference-section">
+        <h2>NPI "Settling" Criteria</h2>
+        <p>
+          NPI is computed by iteration. A team's rating is the average of its
+          contributing game NPIs, and each game's NPI depends on the opponent's
+          rating from the previous pass. Because every rating depends on
+          opponents' ratings, there is no closed form: the calculation repeats
+          until the ratings stop changing. "Settling" means the iteration
+          reaches a stable set of ratings. The run stops once the average
+          per-team change falls below 0.0001, after a minimum of 10 passes and a
+          maximum of 80.
+        </p>
+        <p>
+          How readily it settles is governed by how strongly each team's rating
+          amplifies changes in its opponents' ratings. For one team that
+          amplification is:
+        </p>
+        <p class="reference-formula">
+          &#945; = SW + QBM &#215; (quality wins &#247; contributing games)
+        </p>
+        <ul>
+          <li>
+            The system is guaranteed to settle when the largest &#945; across
+            all teams stays below 1. This is sufficient, not necessary.
+          </li>
+          <li>
+            A schedule-proof bound is SW + QBM &#8804; 1, equivalently QBM
+            &#8804; RW. At SW = 0.80 that caps QBM at 0.20.
+          </li>
+          <li>
+            Per-team breakpoint: a team's &#945; passes 1 once more than RW
+            &#247; QBM of its contributing games are quality wins.
+          </li>
+        </ul>
+        <p>The default dials for women's basketball:</p>
+        <div class="reference-table-wrap">
+          <table class="reference-table">
+            <thead>
+              <tr>
+                <th>Dial</th>
+                <th>Meaning</th>
+                <th>Default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RW</td>
+                <td>Result weight (win/loss), with RW = 1 &#8722; SW</td>
+                <td>0.20</td>
+              </tr>
+              <tr>
+                <td>SW</td>
+                <td>Strength-of-schedule weight</td>
+                <td>0.80</td>
+              </tr>
+              <tr>
+                <td>QBM</td>
+                <td>Quality bonus multiplier</td>
+                <td>2/3 (&#8776; 0.667)</td>
+              </tr>
+              <tr>
+                <td>T</td>
+                <td>
+                  Quality win threshold (opponent rating above which a win is a
+                  quality win)
+                </td>
+                <td>54.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          At these defaults the breakpoint is 0.30, so any team whose
+          contributing games are more than 30% quality wins has &#945; above 1.
+          The system still settles because the quantity that actually governs
+          convergence, the spectral radius of the iteration's Jacobian, stays
+          below 1 given real schedule structure rather than because of margin in
+          the &#945; bound. A "contributing game" is one that feeds a team's
+          rating: its top wins plus games at or below the team's own current
+          rating.
+        </p>
+      </section>
+    </main>
+
+    <!-- Premium Buy Button (Feature Flagged) -->
+    <div class="premium-cta-banner">
+      <div class="premium-cta-content">
+        <h3>Want personalized insights for your team?</h3>
+        <p>
+          Get a weekly report with NCAA Tournament odds, high-leverage games,
+          and more
+        </p>
+        <a href="premium.html" class="cta-button">Get Premium Access →</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript for search, filter and active page functionality -->
+    <script src="js/navigation.js"></script>
+    <script src="js/reports-nav.js"></script>
+    <script src="js/table-controls.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
+    <script src="js/confetti.js"></script>
+    <script src="js/team-summary.js"></script>
+    <script src="js/command-palette.js"></script>
+  </body>
+</html>
