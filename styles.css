@@ -870,70 +870,6 @@ h2 {
   white-space: nowrap;
 }
 
-/* Home Page Content */
-.home-content {
-  background: var(--surface);
-  backdrop-filter: blur(10px);
-  border-radius: var(--r-lg);
-  box-shadow: var(--elev-3);
-  padding: 30px;
-  margin-bottom: 30px;
-  border: 1px solid var(--surface-line);
-  transition: all 0.3s ease;
-}
-
-.home-content h3 {
-  color: var(--navy-900);
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.home-content a {
-  color: var(--blue-500);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.home-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.home-content li {
-  margin-bottom: 8px;
-  padding: 8px 0;
-  border-bottom: 1px solid rgb(228 230 233 / 50%);
-  transition: all 0.2s ease;
-}
-
-.home-content li:hover {
-  background: rgb(248 249 250 / 50%);
-  border-radius: 6px;
-}
-
-.home-content li:last-child {
-  border-bottom: none;
-}
-
-.home-content .data-sources-section,
-.home-content .inspiration-section,
-.home-content .media-section,
-.home-content .github-section,
-.home-content .links-section {
-  margin-bottom: 30px;
-  padding: 20px;
-  background: linear-gradient(
-    135deg,
-    rgb(255 255 255 / 60%) 0%,
-    rgb(248 249 250 / 40%) 100%
-  );
-  border-radius: var(--r-md);
-  border: 1px solid rgb(255 255 255 / 20%);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
-  transition: all 0.3s ease;
-}
-
 /* Footer */
 footer {
   color: #ecf0f1;
@@ -1361,33 +1297,6 @@ footer {
 
   .progress-percentage {
     font-size: 15px;
-  }
-
-  /* Home content responsive adjustments */
-  .home-content {
-    padding: 20px;
-  }
-
-  .home-content .intro-section,
-  .home-content .data-sources-section,
-  .home-content .inspiration-section,
-  .home-content .media-section,
-  .home-content .github-section,
-  .home-content .links-section {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .home-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .home-content p {
-    font-size: 1.1rem !important;
-  }
-
-  .home-content li a {
-    font-size: 1rem !important;
   }
 
   /* Contact form mobile adjustments */
