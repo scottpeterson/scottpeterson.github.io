@@ -1036,7 +1036,7 @@ footer {
 .filter-select {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   background: #fff;
   border-radius: var(--r-md);
   font-size: 14px;
@@ -1063,7 +1063,7 @@ footer {
 }
 
 .search-input::placeholder {
-  color: #aaa;
+  color: var(--text-4);
 }
 
 .filter-select {
@@ -1090,7 +1090,7 @@ footer {
 .no-results {
   text-align: center;
   padding: 20px;
-  color: #777;
+  color: var(--text-3);
   font-style: italic;
 }
 
@@ -1275,7 +1275,7 @@ footer {
 .form-textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   background: #fff;
   border-radius: var(--r-md);
   font-size: 14px;
@@ -1705,7 +1705,7 @@ footer {
   padding: 12px;
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: var(--r-sm);
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--border);
   transition: all 0.2s ease;
 }
 
@@ -1825,7 +1825,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  color: #777;
+  color: var(--text-3);
   font-size: 0.9rem;
 }
 
@@ -2488,7 +2488,7 @@ footer {
 }
 
 .sales-disabled-message {
-  color: #888;
+  color: var(--text-3);
   font-style: italic;
   font-size: 1rem;
   margin-top: 20px;
@@ -2520,7 +2520,7 @@ footer {
 .form-select {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: var(--r-sm);
   font-size: 1rem;
   font-family: inherit;
