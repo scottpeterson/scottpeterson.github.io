@@ -1113,6 +1113,15 @@ ${pricingFeaturesHtml}
       if (pageConfig.dataSource) {
         const dataFilePath = `data/${pageConfig.dataSource}.json`;
         lastUpdated = await this.getFileModificationDate(dataFilePath);
+      } else if (pageConfig.isDistancesPage) {
+        // The distances page has no dataSource (its data is computed from a CSV),
+        // so it never got the auto "Last updated" line the data pages show. Use
+        // the source CSV's mod time (the real "data changed" signal — distances.json
+        // is regenerated every build), falling back to the generated JSON.
+        lastUpdated =
+          (await this.getFileModificationDate(
+            'data/calculated_distances.csv'
+          )) || (await this.getFileModificationDate('data/distances.json'));
       }
 
       // Render full page
