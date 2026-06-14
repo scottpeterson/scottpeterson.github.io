@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Offset in-page anchor scrolling by the (variable-height) sticky nav
     syncNavScrollOffset();
 
+    // Home page: transparent nav over the hero, solid once scrolled past it
+    initHomeNavScrim();
+
     // Assemble obfuscated email addresses
     initEmailProtection();
 

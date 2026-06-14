@@ -160,6 +160,53 @@ body {
   border-radius: 20px;
 }
 
+/* ── Home page: transparent nav over the hero ─────────────────────────────────
+   On the landing page the nav floats transparent over the arena photo so the
+   image owns the first screen. JS adds body.nav-solid (navigation.js
+   initHomeNavScrim) to restore the solid chrome once the hero scrolls past —
+   otherwise the light nav text would disappear over the white content below.
+   Scoped to body.home so every other page keeps the default solid sticky nav. */
+body.home .main-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    backdrop-filter 0.25s ease;
+}
+
+body.home.nav-solid .main-nav {
+  background: var(--grad-chrome);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  backdrop-filter: blur(10px);
+}
+
+/* Top-down scrim behind the transparent nav. The hero's own overlay is lightest
+   on the right (where the nav links sit), so this band keeps them legible. It
+   fades to nothing below the nav and is hidden once the nav goes solid. */
+body.home .home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 160px;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgb(13 20 28 / 65%) 0%,
+    rgb(13 20 28 / 0%) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+body.home.nav-solid .home-hero::before {
+  opacity: 0;
+}
+
 .nav-links a.active {
   background: var(--grad-brand);
   color: #fff;
@@ -266,7 +313,8 @@ header {
      clipped to the padding box, and the brand gradient clipped to the border box
      — the 2px transparent border reveals the gradient, rounded corners and all. */
   border: 2px solid transparent;
-  background: linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
+  background:
+    linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
     var(--grad-accent) border-box;
 }
 
@@ -335,7 +383,8 @@ h2 {
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease,
     background 0.15s ease;
 }
@@ -459,12 +508,13 @@ h2 {
 .home-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(13 20 28 / 92%) 0%,
-    rgb(13 20 28 / 78%) 38%,
-    rgb(13 20 28 / 40%) 100%
-  ),
+  background:
+    linear-gradient(
+      90deg,
+      rgb(13 20 28 / 92%) 0%,
+      rgb(13 20 28 / 78%) 38%,
+      rgb(13 20 28 / 40%) 100%
+    ),
     linear-gradient(0deg, rgb(13 20 28 / 70%) 0%, rgb(13 20 28 / 0%) 55%);
 }
 
@@ -560,7 +610,8 @@ h2 {
 .explore-card {
   display: block;
   text-decoration: none;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease;
 }
 
@@ -895,7 +946,8 @@ footer {
      the gradient; the navy chrome gradient fills the padding box. */
   border: 0 solid transparent;
   border-top-width: 3px;
-  background: var(--grad-chrome) padding-box,
+  background:
+    var(--grad-chrome) padding-box,
     var(--grad-accent) border-box;
 }
 
@@ -980,7 +1032,8 @@ footer {
   border-radius: var(--r-md);
   font-size: 14px;
   color: var(--text-2);
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
@@ -989,7 +1042,8 @@ footer {
 .filter-select:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1165,7 +1219,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -1225,7 +1280,8 @@ footer {
 .form-textarea:focus {
   border-color: var(--blue-500);
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1607,7 +1663,8 @@ footer {
 
 .distances-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1758,7 +1815,8 @@ footer {
 
 .ryan-form .form-select:hover {
   border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1884,7 +1942,8 @@ footer {
   border-radius: var(--r-md);
   padding: var(--space-4);
   box-shadow: var(--elev-1);
-  transition: transform 0.3s ease,
+  transition:
+    transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -2395,7 +2454,8 @@ footer {
   border-radius: var(--r-sm);
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   background-color: #fff;
 }

@@ -546,6 +546,7 @@ ${cards}
       PREMIUM_BAND: data.premiumBand || '',
       HERO: data.hero || '',
       HEAD_PRELOAD: data.headPreload || '',
+      BODY_CLASS: data.bodyClass || '',
     };
 
     Object.keys(mappings).forEach(key => {
@@ -1247,6 +1248,9 @@ ${pricingFeaturesHtml}
         // Home page renders its own full-bleed hero (in the {{HERO}} slot above
         // <main>) instead of the generic header.
         showDefaultHeader: pageKey !== 'index',
+        // Home page gets body.home for the transparent-over-hero nav treatment;
+        // other pages get an empty class (default solid sticky nav).
+        bodyClass: pageKey === 'index' ? 'home' : '',
         hero:
           pageKey === 'index'
             ? this.renderTemplate(this.templates.homeHero, {

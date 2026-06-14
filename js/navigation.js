@@ -118,6 +118,63 @@ function syncNavScrollOffset() {
   }
 }
 
+// Home page only: the nav sits transparent over the hero image so the photo
+// fills the viewport on arrival, then flips to the solid chrome once the hero
+// scrolls past (otherwise the light nav text would vanish over the white content
+// below). An IntersectionObserver on the hero — offset by the nav's height — is
+// cheaper and jank-free vs a scroll handler. No-ops on every non-home page (the
+// hero element only exists there), so it's safe to call unconditionally.
+function initHomeNavScrim() {
+  try {
+    const hero = document.querySelector('.home-hero');
+    const nav = document.querySelector('.main-nav');
+    if (!hero || !nav) {
+      return; // Not the home page (or markup missing) — leave the solid nav.
+    }
+
+    // Fallback for the (rare) browser without IntersectionObserver: keep the
+    // nav solid so text is always legible.
+    if (!('IntersectionObserver' in window)) {
+      document.body.classList.add('nav-solid');
+      return;
+    }
+
+    const applyObserver = function () {
+      const navHeight = nav.offsetHeight;
+      const observer = new IntersectionObserver(
+        function (entries) {
+          // Solid once the hero is fully scrolled above the nav line.
+          document.body.classList.toggle(
+            'nav-solid',
+            !entries[0].isIntersecting
+          );
+        },
+        { rootMargin: '-' + navHeight + 'px 0px 0px 0px', threshold: 0 }
+      );
+      observer.observe(hero);
+      return observer;
+    };
+
+    let observer = applyObserver();
+
+    // The nav height changes when it wraps to more/fewer rows across breakpoints,
+    // which shifts the trigger line — rebuild the observer on resize so the flip
+    // point stays accurate.
+    let resizeTimer = null;
+    window.addEventListener('resize', function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () {
+        if (observer) {
+          observer.disconnect();
+        }
+        observer = applyObserver();
+      }, 150);
+    });
+  } catch (error) {
+    console.error('Error in initHomeNavScrim:', error);
+  }
+}
+
 // Function to set the active navigation link
 function setActiveNavLink() {
   try {
