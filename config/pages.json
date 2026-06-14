@@ -463,22 +463,22 @@
         "stripePaymentLink": "https://buy.stripe.com/aFa6oI9P313c8mrbln9sk02",
         "features": [
           {
-            "icon": "\ud83d\udcca",
+            "icon": "chart",
             "title": "Season Summary & Returning Production",
             "description": "Your team's record, NPI, NCAA Tournament result, returning scoring percentage, and scoring distribution by class with a conference-wide heat map"
           },
           {
-            "icon": "\ud83d\udea8",
+            "icon": "alert",
             "title": "Graduation Vulnerability & Coaching Changes",
             "description": "Which conference teams lose the most from their top 5 scorers, key departures by name, and head coaching changes in your conference and region"
           },
           {
-            "icon": "\ud83c\udfc6",
+            "icon": "trophy",
             "title": "Conference & Regional Outlook",
             "description": "Full conference standings with returning %, NCAA Tournament drought history, Region Top 25 projected preseason rankings, and returning All-Americans"
           },
           {
-            "icon": "\ud83d\udccb",
+            "icon": "clipboard",
             "title": "Roster Outlook & Top Returners",
             "description": "Your full roster split into potential returners and graduates with per-30 stats, Impact scores, and minutes share\u2014plus the top returning players across your conference"
           }
@@ -512,22 +512,22 @@
         "stripePaymentLink": "https://buy.stripe.com/8x2bJ24uJ13cgSX89b9sk01",
         "features": [
           {
-            "icon": "📊",
+            "icon": "chart",
             "title": "Complete Team Analytics",
             "description": "NPI, efficiency ratings, tempo, height rankings, returning production, roster breakdown, radar charts, and composite rankings across multiple rating systems"
           },
           {
-            "icon": "🔮",
+            "icon": "target",
             "title": "Tournament Projections",
             "description": "NCAA Tournament odds from 10,000+ simulations, auto-bid vs. at-large percentages, Top-4/8/16 probabilities, at-large bid scenarios, and conference tournament outlook"
           },
           {
-            "icon": "📈",
+            "icon": "trending",
             "title": "Weekly Game Previews",
             "description": "Upcoming matchups with win probabilities, playoff leverage scores, opponent key players, past week results, and NPI change attribution"
           },
           {
-            "icon": "👥",
+            "icon": "users",
             "title": "Player Impact Analysis",
             "description": "Full roster with Pts/30, Reb/30, Ast/30, impact scores, plus/minus stats, playing time percentages, and week-over-week performance tracking"
           }
