@@ -39,6 +39,7 @@
 
   /* Gradients (single definitions; default stops match the literals in use) */
   --grad-brand: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+  --grad-success: linear-gradient(135deg, var(--success), #229954);
   --grad-chrome: linear-gradient(
     135deg,
     var(--navy-900),
@@ -302,16 +303,35 @@ h2 {
    Reuses brand tokens: #3498db->#2980b9 button gradient, #ff4f00 orange accent.
    =========================================================================== */
 
-/* Shared button system (used by hero + premium band) */
-.btn {
+/* ===========================================================================
+   BUTTON SYSTEM — design-system phase 1 (single source of truth)
+
+   INTENT: One tokenized button look, shared by every button-like element on the
+   site. The legacy class names (.cta-button, .premium-button, .sample-button,
+   .form-submit, .button/.button-primary) are GROUPED into these rules rather
+   than renamed — that keeps existing JS selectors (premium.js, distances.js,
+   ryan.js) and HTML untouched while unifying padding / radius / gradient /
+   shadow / hover. For any NEW button, use `.btn` + a variant; do not add a new
+   bespoke button class.
+
+   Variants: --primary (brand gradient) · --secondary (white-on-band) ·
+   --success (green) · --ghost (on dark) · --lg (size) · --block (full width).
+   =========================================================================== */
+.btn,
+.button,
+.cta-button,
+.premium-button,
+.sample-button,
+.form-submit {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 13px 26px;
-  border-radius: 8px;
+  border-radius: var(--r-sm);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--text-base);
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
@@ -320,18 +340,65 @@ h2 {
     background 0.15s ease;
 }
 
-.btn--primary {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px rgb(52 152 219 / 35%);
+/* Keyboard focus ring — was missing site-wide (a11y gap fixed here) */
+.btn:focus-visible,
+.button:focus-visible,
+.cta-button:focus-visible,
+.premium-button:focus-visible,
+.sample-button:focus-visible,
+.form-submit:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
 }
 
-.btn--primary:hover {
+/* Primary — brand gradient (the default call-to-action everywhere) */
+.btn--primary,
+.button-primary,
+.premium-button,
+.form-submit {
+  background: var(--grad-brand);
+  color: #fff;
+  box-shadow: var(--shadow-action);
+}
+
+.btn--primary:hover,
+.button-primary:hover,
+.premium-button:hover:not(:disabled),
+.form-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 22px rgb(52 152 219 / 50%);
 }
 
-/* Ghost button reads on the dark hero photo */
+/* Secondary — white button for use on a colored / dark band */
+.btn--secondary,
+.cta-button {
+  background: #fff;
+  color: var(--blue-600);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.btn--secondary:hover,
+.cta-button:hover {
+  background: #ecf0f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
+}
+
+/* Success — semantic green (sample / download actions) */
+.btn--success,
+.sample-button {
+  background: var(--grad-success);
+  color: #fff;
+  box-shadow: 0 4px 16px rgb(39 174 96 / 30%);
+}
+
+.btn--success:hover,
+.sample-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
+}
+
+/* Ghost — reads on the dark hero photo */
 .btn--ghost {
   background: rgb(255 255 255 / 8%);
   color: #fff;
@@ -344,9 +411,36 @@ h2 {
   transform: translateY(-2px);
 }
 
-.btn--lg {
+/* Size + width modifiers. The prominent form/checkout buttons get --lg so they
+   stay as substantial as before the consolidation. */
+.btn--lg,
+.premium-button,
+.form-submit {
   padding: 16px 34px;
-  font-size: 1.1rem;
+  font-size: var(--text-md);
+}
+
+.btn--block,
+.form-submit {
+  width: 100%;
+}
+
+/* Disabled — ONE definition (was duplicated: old styles.css ~2024 & ~2447) */
+.btn:disabled,
+.button:disabled,
+.premium-button:disabled,
+.form-submit:disabled {
+  background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+  box-shadow: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover,
+.premium-button:disabled:hover,
+.form-submit:disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* --- Hero ----------------------------------------------------------------- */
@@ -1187,24 +1281,7 @@ footer {
   min-height: 120px;
 }
 
-.form-submit {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
-  border: none;
-  padding: 22px 30px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgb(52 152 219 / 40%);
-  width: 100%;
-}
-
-.form-submit:hover {
-  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-  box-shadow: 0 6px 16px rgb(52 152 219 / 50%);
-}
+/* .form-submit styling now lives in the BUTTON SYSTEM block (primary + lg + block). */
 
 .contact-info {
   background: linear-gradient(
@@ -2002,29 +2079,7 @@ footer {
   border-bottom: none;
 }
 
-.premium-button {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
-  border: none;
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgb(52 152 219 / 30%);
-}
-
-.premium-button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-  box-shadow: 0 6px 20px rgb(52 152 219 / 40%);
-  transform: translateY(-2px);
-}
-
-.premium-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+/* .premium-button styling now lives in the BUTTON SYSTEM block (primary + lg). */
 
 .trust-signal {
   margin-top: 15px;
@@ -2045,24 +2100,7 @@ footer {
   padding: 30px 20px;
 }
 
-.sample-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-  color: #fff;
-  text-decoration: none;
-  padding: 18px 45px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgb(39 174 96 / 30%);
-}
-
-.sample-button:hover {
-  background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
-  box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
-  transform: translateY(-2px);
-}
+/* .sample-button styling now lives in the BUTTON SYSTEM block (success variant). */
 
 /* Premium Audience Section */
 .premium-audience {
@@ -2184,26 +2222,7 @@ footer {
   margin-top: 30px;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.button-primary {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
-  box-shadow: 0 4px 15px rgb(52 152 219 / 30%);
-}
-
-.button-primary:hover {
-  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-  box-shadow: 0 6px 20px rgb(52 152 219 / 40%);
-  transform: translateY(-2px);
-}
+/* .button / .button-primary styling now lives in the BUTTON SYSTEM block. */
 
 /* Premium Intro Section */
 .premium-intro {
@@ -2444,17 +2463,7 @@ footer {
   user-select: none;
 }
 
-.premium-button:disabled {
-  background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
-  cursor: not-allowed;
-  opacity: 0.6;
-  box-shadow: none;
-}
-
-.premium-button:disabled:hover {
-  transform: none;
-  background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
-}
+/* .premium-button:disabled now handled by the single :disabled rule in the BUTTON SYSTEM block. */
 
 .sales-disabled-message {
   color: #e74c3c;
@@ -2503,24 +2512,7 @@ footer {
   margin-bottom: 20px;
 }
 
-.cta-button {
-  display: inline-block;
-  background: #fff;
-  color: #2980b9;
-  padding: 14px 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
-}
-
-.cta-button:hover {
-  background: #ecf0f1;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgb(0 0 0 / 30%);
-}
+/* .cta-button styling now lives in the BUTTON SYSTEM block (secondary variant). */
 
 /* Fire/Flame Text Effect for Premium Nav Link */
 @keyframes fire-flow {
