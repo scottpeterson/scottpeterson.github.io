@@ -157,7 +157,7 @@ body {
 .nav-links a:hover {
   background: linear-gradient(135deg, var(--navy-700) 0%, var(--blue-500) 100%);
   box-shadow: 0 2px 8px rgb(52 152 219 / 30%);
-  border-radius: 20px;
+  border-radius: var(--r-pill);
 }
 
 /* ── Home page: transparent nav over the hero ─────────────────────────────────
@@ -211,7 +211,7 @@ body.home.nav-solid .home-hero::before {
   background: var(--grad-brand);
   color: #fff;
   box-shadow: 0 2px 10px rgb(52 152 219 / 40%);
-  border-radius: 20px;
+  border-radius: var(--r-pill);
 }
 
 /* Dropdown Navigation (Reports menu) */
@@ -396,6 +396,20 @@ h2 {
 .premium-button:focus-visible,
 .sample-button:focus-visible,
 .form-submit:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+/* Same keyboard ring for links — buttons had one but links didn't, so the only
+   focus indicator was the browser default outline, which is invisible over the
+   dark navy nav. :focus-visible keeps it keyboard-only (no ring on mouse/tap). */
+.logo a:focus-visible,
+.nav-links a:focus-visible,
+.dropdown-menu a:focus-visible,
+.explore-card:focus-visible,
+.home-card a:focus-visible,
+.contact-links a:focus-visible,
+.reference-section a:focus-visible {
   outline: 3px solid var(--blue-500);
   outline-offset: 2px;
 }
@@ -2247,7 +2261,7 @@ footer {
   padding: 0.5rem;
   background: #fff8e6;
   border-radius: 4px;
-  border-left: 3px solid #f0a500;
+  border-left: 3px solid var(--warning);
 }
 
 .premium-faq {
@@ -2352,7 +2366,7 @@ footer {
 .product-badge {
   display: inline-block;
   padding: 4px 14px;
-  border-radius: 20px;
+  border-radius: var(--r-pill);
   font-size: 0.85rem;
   font-weight: 600;
   margin-left: 12px;
@@ -2695,7 +2709,7 @@ footer {
   position: absolute;
   inset: 4px 0;
   background: rgba(40, 40, 40, 0.75);
-  border-radius: 20px;
+  border-radius: var(--r-pill);
   z-index: -1;
 }
 
@@ -2729,7 +2743,7 @@ footer {
   position: absolute;
   inset: 4px 0;
   background: rgba(20, 20, 20, 0.9);
-  border-radius: 20px;
+  border-radius: var(--r-pill);
   z-index: -1;
 }
 
