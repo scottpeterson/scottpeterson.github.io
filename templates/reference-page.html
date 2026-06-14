@@ -122,8 +122,13 @@
     from the previous pass. Because every rating depends on opponents' ratings,
     there is no closed form: the calculation repeats over the full set of teams
     until the ratings stabilize. "Settling" means the iteration reaches a stable
-    set of ratings (a fixed point), where another pass leaves every rating
-    essentially unchanged.
+    set of ratings (a
+    <a
+      href="https://en.wikipedia.org/wiki/Fixed_point_(mathematics)"
+      target="_blank"
+      rel="noopener noreferrer"
+      >fixed point</a
+    >), where another pass leaves every rating essentially unchanged.
   </p>
   <p>
     <strong>The D3 Stat Lab's implementation:</strong> this site stops iterating
@@ -199,10 +204,21 @@
   <p>
     At these defaults the breakpoint is 0.30, so any team whose contributing
     games are more than 30% quality wins has &#945; above 1. The system still
-    settles because the quantity that actually governs convergence, the spectral
-    radius of the iteration's Jacobian, stays below 1 given real schedule
-    structure rather than because of margin in the &#945; bound. A "contributing
-    game" is one that feeds a team's rating: its top wins plus games at or below
-    the team's own current rating.
+    settles because the quantity that actually governs convergence, the
+    <a
+      href="https://en.wikipedia.org/wiki/Spectral_radius"
+      target="_blank"
+      rel="noopener noreferrer"
+      >spectral radius</a
+    >
+    of the iteration's
+    <a
+      href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Jacobian</a
+    >, stays below 1 given real schedule structure rather than because of margin
+    in the &#945; bound. A "contributing game" is one that feeds a team's
+    rating: its top wins plus games at or below the team's own current rating.
   </p>
 </section>
