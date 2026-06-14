@@ -205,7 +205,7 @@ function setActiveNavLink() {
 }
 
 // Expose the page-init helpers on window, matching how the other modules publish
-// their globals (window.dataLoader, window.tableController, window.app). main.js
+// their globals (window.dataLoader, window.tableController). main.js
 // invokes these from its DOMContentLoaded handler; the explicit exports make the
 // cross-file contract greppable and keep them from reading as unused.
 window.initEmailProtection = initEmailProtection;

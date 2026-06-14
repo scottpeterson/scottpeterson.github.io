@@ -119,11 +119,6 @@ class DataLoader {
   getCurrentPageConfig() {
     return this.pageConfig || window.__PAGE_CONFIG__ || null;
   }
-
-  // Clear cache
-  clearCache() {
-    this.cache.clear();
-  }
 }
 
 // Create global instance

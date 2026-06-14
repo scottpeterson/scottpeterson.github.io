@@ -51,16 +51,3 @@ document.addEventListener('DOMContentLoaded', async function () {
     console.error('Error initializing application:', error);
   }
 });
-
-// Utility function to get current page name
-function getCurrentPageName() {
-  const path = window.location.pathname;
-  return (
-    path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index'
-  );
-}
-
-// Export for use in other modules
-window.app = {
-  getCurrentPageName,
-};
