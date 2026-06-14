@@ -183,10 +183,6 @@ class TemplateEngine {
         'templates/ryan-page.html',
         'utf8'
       );
-      this.templates.aboutDataPage = await fs.readFile(
-        'templates/about-data-page.html',
-        'utf8'
-      );
       this.templates.homeHero = await fs.readFile(
         'templates/home-hero.html',
         'utf8'
@@ -277,13 +273,8 @@ class TemplateEngine {
         href: 'publishing_tracker.html',
       },
       { key: 'reports', label: 'Reports', href: 'reports/', isDropdown: true },
-      {
-        key: 'about_the_data',
-        label: 'About the Data',
-        href: 'about_the_data.html',
-      },
       { key: 'premium', label: 'Premium', href: 'premium.html' },
-      { key: 'contact', label: 'Contact', href: 'contact.html' },
+      { key: 'contact', label: 'Contact & About', href: 'contact.html' },
     ];
 
     for (const item of navConfig) {
@@ -1098,11 +1089,10 @@ ${pricingFeaturesHtml}
           description: pageConfig.description,
           premiumBand: this.renderHomePremium(),
         });
-      } else if (pageConfig.isAboutDataPage) {
-        // Static reference page: data sources, inspiration, media, D3 links
-        tableContent = this.templates.aboutDataPage;
       } else if (pageConfig.isContactPage) {
-        // Use contact page template for contact page
+        // Combined Contact + About page: contact form/connect links up top, then
+        // the "About the Data" reference content (sources, inspiration, media,
+        // D3 links). Both live in templates/contact-page.html now.
         tableContent = this.renderTemplate(this.templates.contactPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
