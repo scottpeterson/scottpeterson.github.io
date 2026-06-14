@@ -1530,6 +1530,24 @@ footer {
     justify-content: space-between;
   }
 
+  /* Home page: the transparent-over-hero nav is a desktop flourish. On phones
+     the short hero leaves no room for it, so the fixed, background-less nav
+     floats its hamburger on top of the hero copy. Restore the normal solid
+     sticky bar here — sticky reserves its own space, so the hero starts cleanly
+     below it and the hamburger sits inside the bar. Desktop keeps the
+     transparent treatment (the body.home rules above still apply >768px). */
+  body.home .main-nav {
+    position: sticky;
+    background: var(--grad-chrome);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+    backdrop-filter: blur(10px);
+  }
+
+  /* No scrim needed once the bar is solid and above the hero. */
+  body.home .home-hero::before {
+    content: none;
+  }
+
   .menu-toggle {
     display: flex;
     position: relative;
