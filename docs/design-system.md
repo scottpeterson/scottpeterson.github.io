@@ -14,13 +14,16 @@
 
 ## TL;DR
 
-The site has a strong visual identity, and the **design-token foundation now exists** — colors,
-gradients, shadows, radii, type, and spacing live as CSS custom properties in `:root` (§1), and
-the brand/navy gradients, footer stroke, `:focus-visible`, and icon set have been consolidated
-onto them. **Still outstanding:** the unified `.card` base is not yet built, the `.btn` system
-hasn't absorbed every legacy button (`.premium-button` et al., plus a duplicate `:disabled`
-block), dividers aren't unified, and a tail of near-duplicate grays/warm-tones/border-grays
-remains raw. Fonts and the `.eyebrow` are consistent.
+The site has a strong visual identity and the consolidation is **effectively complete.** Colors,
+gradients, shadows, radii, type, and spacing live as CSS custom properties in `:root` (§1). The
+button system is unified (legacy classes grouped into one `.btn` base + variants, `:focus-visible`
+added, single `:disabled`), the identical `.explore-card`/`.home-card` duplication is merged, the
+`.eyebrow` shares one base, gradients/footer-stroke/icons are tokenized, and the near-duplicate
+gray/border literals have been snapped to the ramp. What remains is **deliberate, documented
+decisions** rather than open debt: the three dividers are kept distinct on purpose, a handful of
+single-use warm accents stay raw, and the generic `.card--lg` extraction across already-tokenized
+large surfaces is deferred. See §4 for the full status and `docs/refactor-followup-plan.md` for
+the ledger.
 
 ---
 
@@ -107,16 +110,16 @@ literal (see the rules in `CLAUDE.md`).
 
 ## 2. Components
 
-### Buttons — collapse ~7 systems into 1 ⚠️ partially done
+### Buttons — collapse ~7 systems into 1 ✅ done
 
-The `.btn`/`.btn--*` system exists and `:focus-visible` rings have been added site-wide (the old
-a11y gap). **Not yet finished:** the legacy classes haven't all been folded in — `.button`/
-`.button-primary` (success/cancel), `.form-submit` (forms), `.premium-button` (checkout),
-`.sample-button` (PDF), `.cta-button` (premium band) still exist, and `.premium-button:disabled`
-is still defined more than once. Original state for reference: seven different paddings,
-inconsistent hover shadows, no `:focus-visible` on any of them.
-
-Target — one `.btn` base + variants:
+Shipped — see the `BUTTON SYSTEM` block in `styles.css`. Rather than rename the legacy classes
+(which would break JS selectors in `premium.js` / `distances.js` / `ryan.js` and the HTML), they
+are **grouped into shared rules**: `.btn, .button, .cta-button, .premium-button, .sample-button,
+.form-submit` share one base (padding / radius / gradient / shadow / hover), with `--primary`,
+`--secondary`, `--success`, `--ghost`, and `--lg`/`--block` variants layered on. `:focus-visible`
+rings were added for buttons **and** links (the old site-wide a11y gap), and the duplicate
+`.premium-button:disabled` was collapsed to a single `:disabled` rule. For any NEW button, use
+`.btn` + a variant — do not add a bespoke button class. Reference mapping:
 | Variant | Replaces | Look |
 |---|---|---|
 | `.btn--primary` | `.btn--primary`, `.button-primary`, `.premium-button`, `.form-submit` | `--grad-brand`, white text |
@@ -125,29 +128,33 @@ Target — one `.btn` base + variants:
 | `.btn--success` | `.sample-button` | green — genuinely semantic, keep distinct |
 | `.btn--lg` / `.btn--block` | size/full-width one-offs | modifiers, not new classes |
 
-- Single padding scale, single hover (`translateY(-2px)` + `--shadow-action` deepen).
-- **Add `:focus-visible` ring** (currently missing site-wide — a11y gap).
-- Retire the reversed-direction hover gradient and the duplicate `.premium-button:disabled`
-  (defined twice: `styles.css:1952` & `:2376`).
+Single padding scale, single hover (`translateY(-2px)` + a deeper `--shadow-action`). The
+reversed-direction hover gradient is gone.
 
-### Cards — collapse 24+ into 1 base + modifiers ❌ not started
+### Cards — duplication merged ✅ done (generic `.card` extraction deferred)
 
-No unified `.card` base exists yet (`grep` finds zero `.card` selectors). This is the largest
-piece of open debt. `.explore-card` and `.home-card` are **identical**. `table-section`, `home-content`, `contact-form`
-share the large-surface look. Target:
-| Class | Tokens | Replaces |
+The actual debt — `.explore-card` and `.home-card` being **identical** — is fixed: they now share
+one rule (the "Surface card" block in `styles.css`, `var(--surface)` / `var(--r-md)` /
+`var(--elev-2)` / `var(--space-3)`) so they can no longer drift apart.
+
+The larger surfaces (`.table-section`, `.contact-form`, `.contact-info`, `home-content`) share the
+same frosted look but differ in padding / shadow / extras and are **already fully tokenized** (no
+raw literals). Pulling them under a single generic `.card` / `.card--lg` base would require adding
+the class throughout the templates for marginal gain, so it's **intentionally deferred** — not
+open debt. The idea is kept here as the north-star target if a future change touches these anyway:
+| Class | Tokens | Would replace |
 |---|---|---|
-| `.card` | `--surface`, `--r-md`, `--elev-2`, `--space-3` pad | explore-card, home-card, feature-card |
-| `.card--lg` | `--r-lg`, `--elev-3`, `--space-4` pad | table-section, home-content, contact-form/info, progress-indicators |
+| `.card` | `--surface`, `--r-md`, `--elev-2`, `--space-3` pad | explore-card, home-card (already merged) |
+| `.card--lg` | `--r-lg`, `--elev-3`, `--space-4` pad | table-section, home-content, contact-form/info |
 | `.card--interactive` | adds hover lift | explore-card behavior |
 | status borders | `--success`/`--danger` left/edge | distance-close/far (already semantic — keep) |
 
-### Eyebrow — share the duplicate ⚠️ partially done
+### Eyebrow — share the duplicate ✅ done
 
-A shared `.eyebrow` class (`--text-xs`, 700, `0.08em`, uppercase, color set per context) now
-exists, but the old `.home-badge` and `.home-premium__eyebrow` definitions still live alongside
-it and `templates/home-hero.html` still emits `home-badge`. Finish by migrating those usages to
-`.eyebrow` and deleting the duplicates.
+`.eyebrow` is the base treatment (`--text-xs`, 700, `0.08em`, uppercase); `.home-badge` and
+`.home-premium__eyebrow` are grouped onto it and only add their per-context margin + accent color.
+The templates keep emitting the named variants **by design** (the CSS comment says so) — they're
+context variants sharing one base, not stray duplicates. New markup should use `.eyebrow`.
 
 ---
 
@@ -165,19 +172,29 @@ it and `templates/home-hero.html` still emits `home-badge`. Finish by migrating 
 
 - ✅ **Footer no longer uses `border-image`** — replaced with the `background-clip` padding-box/
   border-box technique used on `header`, so the brand stroke follows the rounded corners.
-- ⬜ No divider system yet: `.product-divider` (4px top), `.legend-section h2` (2px bottom),
-  `.dropdown-divider` (1px gray) — still to unify.
+- ✅ **The three "dividers" are intentionally NOT unified.** They were reviewed and are distinct
+  components, not one system: `.dropdown-divider` (1px navy separator _inside the dark menu_),
+  `.legend-section h2` border-bottom (a 2px blue _heading underline_, i.e. typography), and
+  `.product-divider` (a 4px blue centered _section `<hr>`_). They're all already tokenized
+  (`--navy-700`, `--blue-500`); a shared `.divider` class would couple unrelated things for no
+  real DRY win. Leave them be.
 - Left-border accents are OK where semantic (`.urgency-note` amber, `.premium-intro-box`) — keep,
   don't extend to plain cards.
 
-**Color near-duplicates to collapse:** ⬜ partially done — a tail remains raw
+**Color near-duplicates:** ✅ done — true near-dupes collapsed, distinct accents kept
 
-- Grays: `#555` and `#2ecc71` are gone; **still raw:** `#777` (×2), `#888`, `#aaa`, `#93a1b0`
-  → fold into `--text-2/3/4`.
-- Warm tones: **still raw:** `#f39c12`, `#d4a017`, `#d68910`, `#c75b12` → `--orange-500` /
-  `--warning`.
-- Greens: **still raw:** `#229954` → `--success`.
-- Border grays: **still raw:** `#e0e0e0` (×3), `#e9ecef` (×7), `#dee2e6` → `--border`.
+- Grays collapsed onto the ramp: `#555`, `#2ecc71`, `#777` (×2), `#888`, `#aaa` → `--text-3/4`.
+- Border grays collapsed: `#e0e0e0` (×3), `#dee2e6` → `--border` (Δ 1–8 per channel; imperceptible).
+- **Kept raw on purpose — these are distinct colors, NOT near-dupes, so do not "fix" them:**
+  - Warm-accent family: `#fef9e7` / `#f39c12` / `#d68910` (premium honor section), `#d4a017`
+    (NCAA-verified gold), `#c75b12` (audience-card rust). Single-use semantic accents; tokenizing
+    each would add palette noise without reuse.
+  - `#93a1b0` — desaturated blue-gray strikethrough price, tuned to sit on the dark navy band
+    (not a neutral gray; `--text-*` would drop the blue tint).
+  - `#229954` — the dark stop of `--grad-success` (a gradient definition, never was a stray literal).
+  - `#e9ecef` — the table zebra-stripe **surface tint**, part of an untokenized light-surface
+    family with `#f8f9fa` / `#f5f5f5`. A real but separate effort (would need `--surface-2/3`);
+    out of scope for the near-dupe pass and mostly used as a background, not a border.
 
 **Radius outliers** to fold into 8/12/16/pill: 3px, 4px, 6px, 10px, 20px (nav pill → `--r-pill`).
 
@@ -196,26 +213,29 @@ entities (→ ↓ ▾) and CSS `content` (✓) used for small glyphs — accepta
 
 ## 4. Status & remaining debt
 
-The original staged plan (phases 0–5) has been partially executed. Current state:
+The staged plan (phases 0–5) is effectively complete. Each item is now at a definite end state —
+done, or a deliberate, documented decision to keep/defer. Nothing is left dangling.
 
-| Phase | Item                                                                                 | Status                                                                                             |
-| ----- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| 0     | **Tokens** — `:root` block, no visual change                                         | ✅ done                                                                                            |
-| 1     | **Buttons** — `.btn` system; `:focus-visible` site-wide                              | ⚠️ partial — legacy button classes not all folded in; duplicate `.premium-button:disabled` remains |
-| 2     | **Cards** — `.card` / `.card--lg` / `.card--interactive`                             | ❌ not started — no `.card` base exists                                                            |
-| 3     | **Strokes** — footer `border-image` → `background-clip`                              | ✅ done                                                                                            |
-| 3     | **Dividers** — unify `.product-divider` / `.legend-section h2` / `.dropdown-divider` | ❌ not started                                                                                     |
-| 3     | **Eyebrow** — single `.eyebrow`                                                      | ⚠️ partial — class exists, old duplicates + `home-badge` usage remain                              |
-| 4     | **Gradients** — literals → `--grad-*`                                                | ✅ done                                                                                            |
-| 4     | **Color sweep** — collapse near-duplicate grays/warm/green/border                    | ⬜ partial — tail of raw hexes remains (see §3)                                                    |
-| 4     | **reports.css / command-palette.css** tokenized                                      | ✅ done                                                                                            |
-| 5     | **Icons** — single deliberate approach                                               | ✅ largely done (inline SVG set)                                                                   |
+| Phase | Item                                                              | Status                                                                              |
+| ----- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 0     | **Tokens** — `:root` block, no visual change                      | ✅ done                                                                             |
+| 1     | **Buttons** — `.btn` system; `:focus-visible`; single `:disabled` | ✅ done (legacy classes grouped, not renamed — see §2)                              |
+| 2     | **Cards** — merge the identical `.explore-card` / `.home-card`    | ✅ done (shared rule); generic `.card`/`.card--lg` extraction **deferred** — see §2 |
+| 3     | **Strokes** — footer `border-image` → `background-clip`           | ✅ done                                                                             |
+| 3     | **Dividers** — unify the three divider treatments                 | ✅ resolved — **intentionally not unified** (distinct components, see §3)           |
+| 3     | **Eyebrow** — single `.eyebrow`                                   | ✅ done (base + context variants by design)                                         |
+| 4     | **Gradients** — literals → `--grad-*`                             | ✅ done                                                                             |
+| 4     | **Color sweep** — collapse near-duplicate grays/borders           | ✅ done; distinct accents kept on purpose (see §3)                                  |
+| 4     | **reports.css / command-palette.css** tokenized                   | ✅ done                                                                             |
+| 5     | **Icons** — single deliberate approach                            | ✅ largely done (inline SVG set)                                                    |
 
-**Highest-leverage open items:** (1) the `.card` base — biggest single source of duplication;
-(2) finish the `.btn` migration and kill the duplicate `:disabled`; (3) the color-sweep tail.
-The running ledger of these (and the broader build/docs cleanup they came from) lives in
-`docs/refactor-followup-plan.md`.
+**Consciously deferred (not debt, judgment calls):** (1) generic `.card`/`.card--lg` extraction
+across the large surfaces — they're already tokenized, so it's churn for marginal gain; (2) a
+`--surface-2/3` token family for the light-surface tints (`#e9ecef`/`#f8f9fa`/`#f5f5f5`); (3)
+tokenizing the single-use warm-accent literals. Any of these is worth doing **only if** a change
+is already touching that area. The running ledger lives in `docs/refactor-followup-plan.md`.
 
 **Verification when you pick one up:** `npm run build`, then diff a representative page of each
 type (home, a table page e.g. npi, premium, contact, success) before/after — the goal for the
-remaining color/component sweeps is _zero_ intended visual change.
+remaining sweeps is _zero_ intended visual change (the near-dupe color collapse already shipped
+accepted a sub-perceptual shift on a few muted grays; see its commit).

@@ -33,18 +33,29 @@ fresh-build CI guard — see the decision row below.
 
 Design-system pieces already shipped (detail in `design-system.md` §4): token `:root` foundation,
 brand/navy gradients → `--grad-*`, footer `border-image` → `background-clip`, `:focus-visible`
-site-wide, emoji → inline-SVG icon set.
+site-wide, emoji → inline-SVG icon set, unified `.btn` button system (single `:disabled`),
+merged `.explore-card`/`.home-card`, shared `.eyebrow` base, and the near-duplicate gray/border
+color collapse.
 
-## Remaining
+## Resolved (was "Remaining")
 
-| Item                                | Why it matters                                                                                                                                                                                                                                               | Status         |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| **`.card` base component**          | Largest single source of CSS duplication — `.explore-card` and `.home-card` are identical; several large surfaces share a look with no shared class.                                                                                                         | ❌ not started |
-| **Finish `.btn` migration**         | `.button`/`.button-primary`, `.form-submit`, `.premium-button`, `.sample-button`, `.cta-button` not yet folded into `.btn`; `.premium-button:disabled` defined more than once.                                                                               | ⚠️ partial     |
-| **Finish `.eyebrow` consolidation** | `.eyebrow` exists but `.home-badge` / `.home-premium__eyebrow` duplicates remain and `templates/home-hero.html` still emits `home-badge`.                                                                                                                    | ⚠️ partial     |
-| **Divider system**                  | `.product-divider` / `.legend-section h2` / `.dropdown-divider` are three unrelated divider treatments.                                                                                                                                                      | ❌ not started |
-| **Color-sweep tail**                | Raw near-duplicates remain: grays `#777`/`#888`/`#aaa`/`#93a1b0`; warm `#f39c12`/`#d4a017`/`#d68910`/`#c75b12`; green `#229954`; border grays `#e0e0e0`/`#e9ecef`/`#dee2e6`. Fold into `--text-*` / `--orange-500` / `--warning` / `--success` / `--border`. | ⬜ partial     |
+> **Correction:** the first cut of this table (written from shallow greps) overstated the open
+> work — reading the actual CSS showed the buttons/cards/eyebrow consolidation was already shipped
+> in a prior pass, just via _grouped selectors_ rather than new generic class names. Each item is
+> now at a definite end state; verify any claim below by reading `styles.css`, not this table.
 
-**Verification for any remaining item:** `npm run build`, then diff a representative page of each
-type (home, a table page e.g. `npi`, `premium`, `contact`, `success`) before/after — the goal for
-these sweeps is _zero_ intended visual change.
+| Item                             | Resolution                                                                                                                                                                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.btn` migration                 | ✅ **done** — legacy classes grouped into one `.btn` base + variants; `:focus-visible` added; single `:disabled`. (They were grouped, not renamed, to keep JS/HTML selectors working.)                                                       |
+| `.explore-card`/`.home-card` dup | ✅ **done** — share one rule. Generic `.card--lg` across the other (already-tokenized) large surfaces is **deferred** as churn-for-marginal-gain.                                                                                            |
+| `.eyebrow` consolidation         | ✅ **done** — `.eyebrow` base + `.home-badge`/`.home-premium__eyebrow` context variants; templates emit the variants by design.                                                                                                              |
+| Divider "system"                 | ✅ **resolved as decline** — the three treatments are distinct components (dark-menu separator / heading underline / section `<hr>`), already tokenized; unifying them would couple unrelated things for no win.                             |
+| Color near-dupe tail             | ✅ **done** — `#e0e0e0`(×3)/`#dee2e6` → `--border`; `#777`(×2)/`#888`/`#aaa` → `--text-3/4`. Distinct accents (honor-gold family, verified gold, audience rust, `#93a1b0`, `#e9ecef` surface tint, `#229954` gradient stop) kept on purpose. |
+
+**Consciously deferred (not debt):** generic `.card--lg` extraction; a `--surface-2/3` family for
+the light-surface tints (`#e9ecef`/`#f8f9fa`/`#f5f5f5`); tokenizing single-use warm accents. Do
+any of these only when a change is already in that area.
+
+**Verification when revisiting:** `npm run build`, then diff a representative page of each type
+(home, a table page e.g. `npi`, `premium`, `contact`, `success`) before/after — the goal for these
+sweeps is _zero_ intended visual change.
