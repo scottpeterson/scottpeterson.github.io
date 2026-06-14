@@ -419,14 +419,12 @@ h2 {
 }
 
 /* Secondary — white button for use on a colored / dark band */
-.btn--secondary,
 .cta-button {
   background: #fff;
   color: var(--blue-600);
   box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
 }
 
-.btn--secondary:hover,
 .cta-button:hover {
   background: #ecf0f1;
   transform: translateY(-2px);
@@ -434,14 +432,12 @@ h2 {
 }
 
 /* Success — semantic green (sample / download actions) */
-.btn--success,
 .sample-button {
   background: var(--grad-success);
   color: #fff;
   box-shadow: 0 4px 16px rgb(39 174 96 / 30%);
 }
 
-.btn--success:hover,
 .sample-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgb(39 174 96 / 40%);
@@ -469,7 +465,6 @@ h2 {
   font-size: var(--text-md);
 }
 
-.btn--block,
 .form-submit {
   width: 100%;
 }
