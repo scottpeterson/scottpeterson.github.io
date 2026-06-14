@@ -48,6 +48,30 @@ Pages include interactive data tables with:
 - Responsive design for mobile viewing
 - "No results" message when filters return empty results
 
+## Design System
+
+**Before any UI, CSS, or template change, read `docs/design-system.md`** — the catalog of
+components and the design-token reference. The look & feel is intentional; keep it consistent.
+
+Rules (these override convenience):
+
+- **Use the design tokens** defined in `:root` at the top of `styles.css` — colors
+  (`--navy-900`, `--blue-500`, `--orange-500`, text ramp `--text-1..4`), gradients
+  (`--grad-brand`, `--grad-chrome`, `--grad-accent`), elevation (`--elev-1..3`), radius
+  (`--r-sm/md/lg/pill`), type (`--text-xs..2xl`), spacing (`--space-1..5`). **Never introduce a
+  raw hex/rgb color, px radius, or one-off gradient/shadow when a token exists.** If a genuinely
+  new value is needed, add a token rather than a literal.
+- **Reuse components, don't fork them.** There is one button system (`.btn` + `.btn--*`), one
+  card system (`.card` + modifiers), one `.eyebrow`. Do not create a new button/card class for a
+  one-off — use or extend the shared component.
+- **Strokes are signal, used sparingly.** Rounded elements use the `background-clip`
+  padding-box/border-box gradient technique (see `header` in `styles.css`), **never
+  `border-image`** (it can't follow `border-radius`). Reserve left-border accents for genuine
+  callouts (alerts/warnings), not default card chrome.
+- **Match the type scale and the 8px spacing rhythm.** No ad-hoc font sizes.
+- After CSS/template/config changes, run `npm run build` and validate locally (the build emits
+  raw HTML; the pre-commit hook prettier-formats it).
+
 ## Development Workflow
 
 ### Build System
