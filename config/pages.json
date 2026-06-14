@@ -15,7 +15,7 @@
   "publishing_tracker": {
     "title": "Publishing Tracker",
     "heading": "Publishing Tracker",
-    "description": "Track 2025-26 Schedule and Roster publishing progress.",
+    "description": "D3 WBB schedule and roster publishing progress for 2025-26.",
     "sectionTitle": "Team Publishing Status",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -38,7 +38,7 @@
   "preseason_rankings": {
     "title": "26-27 Preseason Rankings",
     "heading": "26-27 Preseason Rankings",
-    "description": "Way too early preseason rankings for the upcoming 2026-27 D3 WBB season.",
+    "description": "D3 WBB preseason rankings — way too early, for the 2026-27 season.",
     "sectionTitle": "Preseason Team Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -86,7 +86,7 @@
   "returners": {
     "title": "Returning and Non-Returning",
     "heading": "Returning and Non-Returning",
-    "description": "For teams with published rosters, which teams have the most underclassmen minutes not returning, minutes incoming from D3 transfers, minutes returning from 5th years, and more.",
+    "description": "D3 WBB returning production — for teams with published rosters: underclassmen minutes lost, minutes incoming from D3 transfers, minutes back from 5th years, and more.",
     "sectionTitle": "Returning and Non-Returning",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -125,7 +125,7 @@
   "npi": {
     "title": "NPI",
     "heading": "NPI",
-    "description": "Daily NCAA Power Index (NPI) values, rankings, and analysis for D3 WBB.",
+    "description": "D3 WBB NCAA Power Index (NPI) — daily values, rankings, and analysis.",
     "sectionTitle": "NPI Analysis",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -191,7 +191,7 @@
   "season_simulations": {
     "title": "Season Simulations",
     "heading": "Season Simulations",
-    "description": "D3 WBB season simulations, based off Efficiency Ratings, to project NCAA Qualification rates.",
+    "description": "D3 WBB season simulations — Efficiency-Rating-based projections of NCAA qualification rates.",
     "sectionTitle": "Season Simulations",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -260,7 +260,7 @@
   "current_season_rankings": {
     "title": "Current Season Rankings",
     "heading": "Current Season Rankings",
-    "description": "Ranking of teams based on this season's results.",
+    "description": "D3 WBB team rankings based on this season's results.",
     "sectionTitle": "Current Season Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -308,7 +308,7 @@
   "composite_rankings": {
     "title": "Composite Rankings",
     "heading": "Composite Rankings",
-    "description": "Team Rankings based off median of NPI, Massey, Efficiency, and Current Season Results.",
+    "description": "D3 WBB team rankings from the median of NPI, Massey, Efficiency, and current-season results.",
     "sectionTitle": "Composite Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -362,7 +362,7 @@
   "conference_rankings": {
     "title": "Conference Rankings",
     "heading": "Conference Rankings",
-    "description": "Ranking of Conferences based off non-conference results.",
+    "description": "D3 WBB conference rankings based on non-conference results.",
     "sectionTitle": "Conference Rankings",
     "hasSearch": true,
     "searchPlaceholder": "Search for conference...",
@@ -401,7 +401,7 @@
   "distances": {
     "title": "Distances",
     "heading": "School Distance Calculator",
-    "description": "Calculate the driving distance between any two D3 Basketball schools.",
+    "description": "Driving distance between any two D3 basketball schools.",
     "sectionTitle": "Distance Calculator",
     "hasSearch": false,
     "dataSource": null,
