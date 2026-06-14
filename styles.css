@@ -266,7 +266,8 @@ header {
      clipped to the padding box, and the brand gradient clipped to the border box
      — the 2px transparent border reveals the gradient, rounded corners and all. */
   border: 2px solid transparent;
-  background: linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
+  background:
+    linear-gradient(rgb(255 255 255 / 95%), rgb(255 255 255 / 95%)) padding-box,
     linear-gradient(135deg, #3498db, #2980b9, #ff4f00) border-box;
 }
 
@@ -335,7 +336,8 @@ h2 {
   text-decoration: none;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease,
     background 0.15s ease;
 }
@@ -459,12 +461,13 @@ h2 {
 .home-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(13 20 28 / 92%) 0%,
-    rgb(13 20 28 / 78%) 38%,
-    rgb(13 20 28 / 40%) 100%
-  ),
+  background:
+    linear-gradient(
+      90deg,
+      rgb(13 20 28 / 92%) 0%,
+      rgb(13 20 28 / 78%) 38%,
+      rgb(13 20 28 / 40%) 100%
+    ),
     linear-gradient(0deg, rgb(13 20 28 / 70%) 0%, rgb(13 20 28 / 0%) 55%);
 }
 
@@ -539,21 +542,29 @@ h2 {
   margin-bottom: 26px;
 }
 
+/* Surface card — the shared frosted-white box (design-system phase 2).
+   .home-card uses the same surface; .explore-card adds the link + hover lift.
+   Both point at the same tokens so they can no longer drift apart. */
+.explore-card,
+.home-card {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border-radius: var(--r-md);
+  padding: var(--space-3);
+  box-shadow: var(--elev-2);
+}
+
 .explore-card {
   display: block;
-  background: rgb(255 255 255 / 95%);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 8px 32px rgb(0 0 0 / 8%);
   text-decoration: none;
-  transition: transform 0.15s ease,
+  transition:
+    transform 0.15s ease,
     box-shadow 0.15s ease;
 }
 
 .explore-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgb(0 0 0 / 14%);
+  box-shadow: var(--elev-3);
 }
 
 .explore-card h3 {
@@ -679,13 +690,7 @@ h2 {
   gap: 20px;
 }
 
-.home-card {
-  background: rgb(255 255 255 / 95%);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 8px 32px rgb(0 0 0 / 8%);
-}
+/* .home-card surface is defined alongside .explore-card above (shared box). */
 
 .home-card h3 {
   color: #2c3e50;
@@ -751,13 +756,13 @@ h2 {
 
 /* Table Styles */
 .table-section {
-  background: rgb(255 255 255 / 95%);
+  background: var(--surface);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
+  border-radius: var(--r-lg);
+  box-shadow: var(--elev-3);
   padding: 25px;
   margin-bottom: 30px;
-  border: 1px solid rgb(255 255 255 / 20%);
+  border: 1px solid var(--surface-line);
   transition: all 0.3s ease;
 
   /* Ensure no height constraints */
@@ -867,13 +872,13 @@ h2 {
 
 /* Home Page Content */
 .home-content {
-  background: rgb(255 255 255 / 95%);
+  background: var(--surface);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
+  border-radius: var(--r-lg);
+  box-shadow: var(--elev-3);
   padding: 30px;
   margin-bottom: 30px;
-  border: 1px solid rgb(255 255 255 / 20%);
+  border: 1px solid var(--surface-line);
   transition: all 0.3s ease;
 }
 
@@ -1023,7 +1028,8 @@ footer {
   border-radius: 12px;
   font-size: 14px;
   color: #333;
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
@@ -1032,7 +1038,8 @@ footer {
 .filter-select:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1109,20 +1116,16 @@ footer {
   gap: 30px;
   margin-bottom: 25px;
   padding: 25px;
-  background: linear-gradient(
-    135deg,
-    rgb(255 255 255 / 90%) 0%,
-    rgb(248 249 250 / 80%) 100%
-  );
+  background: var(--surface);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgb(255 255 255 / 30%);
-  box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--surface-line);
+  box-shadow: var(--elev-2);
   transition: all 0.3s ease;
 }
 
 .progress-indicators:hover {
-  box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
+  box-shadow: var(--elev-3);
 }
 
 .progress-item {
@@ -1207,7 +1210,8 @@ footer {
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     sans-serif;
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
@@ -1229,16 +1233,12 @@ footer {
 }
 
 .contact-form {
-  background: linear-gradient(
-    135deg,
-    rgb(255 255 255 / 95%) 0%,
-    rgb(248 249 250 / 90%) 100%
-  );
+  background: var(--surface);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 30px;
-  box-shadow: 0 12px 40px rgb(0 0 0 / 15%);
-  border: 1px solid rgb(255 255 255 / 20%);
+  box-shadow: var(--elev-3);
+  border: 1px solid var(--surface-line);
 }
 
 .form-group {
@@ -1271,7 +1271,8 @@ footer {
 .form-textarea:focus {
   border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 20%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 20%),
     0 4px 12px rgb(0 0 0 / 12%);
   background: #fff;
 }
@@ -1284,16 +1285,12 @@ footer {
 /* .form-submit styling now lives in the BUTTON SYSTEM block (primary + lg + block). */
 
 .contact-info {
-  background: linear-gradient(
-    135deg,
-    rgb(255 255 255 / 90%) 0%,
-    rgb(248 249 250 / 80%) 100%
-  );
+  background: var(--surface);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 25px;
-  box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
-  border: 1px solid rgb(255 255 255 / 20%);
+  box-shadow: var(--elev-2);
+  border: 1px solid var(--surface-line);
   height: fit-content;
 }
 
@@ -1684,7 +1681,8 @@ footer {
 
 .distances-form .form-select:hover {
   border-color: #3498db;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1835,7 +1833,8 @@ footer {
 
 .ryan-form .form-select:hover {
   border-color: #3498db;
-  box-shadow: 0 0 0 3px rgb(52 152 219 / 12%),
+  box-shadow:
+    0 0 0 3px rgb(52 152 219 / 12%),
     0 4px 12px rgb(0 0 0 / 10%);
 }
 
@@ -1958,16 +1957,17 @@ footer {
 
 .feature-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition: transform 0.3s ease,
+  border-radius: var(--r-md);
+  padding: var(--space-4);
+  box-shadow: var(--elev-1);
+  transition:
+    transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgb(0 0 0 / 12%);
+  box-shadow: var(--elev-2);
 }
 
 .feature-icon {
@@ -2394,7 +2394,8 @@ footer {
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease,
+  transition:
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
   background-color: #fff;
 }
