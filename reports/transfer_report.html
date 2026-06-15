@@ -45,7 +45,7 @@
         margin-bottom: 18px;
       }
       .report-transfer_report /* Toggle bars */
-      .toggles {
+.toggles {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -5490,6 +5490,23 @@
                 name: 'D2',
                 players: [
                   {
+                    name: 'Ashtyn Kelderman',
+                    other_school: 'Missouri-St. Louis',
+                    level: 'D2',
+                    d3_team: 'Loras',
+                    class: 'SO',
+                    min: 731,
+                    pts: 302,
+                    reb: 117,
+                    ast: 52,
+                    pts_per30: 12.39,
+                    reb_per30: 4.8,
+                    ast_per30: 2.13,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
                     name: 'Carmen Cruz',
                     other_school: 'Menlo',
                     level: 'D2',
@@ -5508,18 +5525,18 @@
                   },
                 ],
                 agg: {
-                  count_total: 1,
-                  count_matched: 1,
-                  count_qualifying: 1,
+                  count_total: 2,
+                  count_matched: 2,
+                  count_qualifying: 2,
                   count_elite: 0,
-                  avg_min: 587.0,
-                  avg_pts_per30: 16.35,
-                  avg_reb_per30: 5.21,
-                  avg_ast_per30: 1.69,
+                  avg_min: 659.0,
+                  avg_pts_per30: 14.37,
+                  avg_reb_per30: 5.0,
+                  avg_ast_per30: 1.91,
                   max_min: {
-                    player: 'Carmen Cruz',
-                    team: 'Puget Sound',
-                    value: 587,
+                    player: 'Ashtyn Kelderman',
+                    team: 'Loras',
+                    value: 731,
                   },
                   max_pts_per30: {
                     player: 'Carmen Cruz',
@@ -5532,9 +5549,9 @@
                     value: 5.21,
                   },
                   max_ast_per30: {
-                    player: 'Carmen Cruz',
-                    team: 'Puget Sound',
-                    value: 1.69,
+                    player: 'Ashtyn Kelderman',
+                    team: 'Loras',
+                    value: 2.13,
                   },
                 },
               },
@@ -5600,7 +5617,7 @@
               data_dir: 'myapp/data/2027',
               stats_dir: 'myapp/data/2026',
               transfers_filename: 'transfers_outgoing.csv',
-              total_transfers: 4,
+              total_transfers: 5,
               qualifying_threshold: 100,
               top_n_badge: 100,
               npi_snapshot_date: '2026-02-28',
