@@ -91,6 +91,43 @@
         color: #fff;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
       }
+      .report-transfer_report .toggle-row.chips-row {
+        align-items: flex-start;
+      }
+      .report-transfer_report .toggle-row.chips-row .label {
+        padding-top: 6px;
+      }
+      .report-transfer_report .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        max-width: 900px;
+      }
+      .report-transfer_report .chip {
+        padding: 4px 12px;
+        border: 1px solid #cbd5e1;
+        background: #fff;
+        color: #475569;
+        font-size: 0.82em;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 999px;
+        transition: all 0.15s;
+      }
+      .report-transfer_report .chip:hover {
+        border-color: #1e3a5f;
+        color: #0f172a;
+      }
+      .report-transfer_report .chip.active {
+        background: #1e3a5f;
+        border-color: #1e3a5f;
+        color: #fff;
+      }
+      .report-transfer_report .chip .chip-count {
+        opacity: 0.75;
+        font-weight: 400;
+        margin-left: 3px;
+      }
       .report-transfer_report .summary-note {
         text-align: center;
         color: #64748b;
@@ -477,6 +514,10 @@
                   Outgoing
                 </button>
               </div>
+            </div>
+            <div class="toggle-row chips-row">
+              <span class="label">Team</span>
+              <div class="chips" id="teamChips"></div>
             </div>
           </div>
 
@@ -6465,6 +6506,9 @@
       const MIN_QUAL = 100;
       let CURRENT_LABEL = '2026-27';
       let CURRENT_DIRECTION = 'incoming';
+      let CURRENT_TEAM = null;
+      const CHIP_MIN_COUNT = 2;
+      const CHIP_MAX = 10;
       let DATA = SEASONS[CURRENT_LABEL][CURRENT_DIRECTION];
 
       function fmt(n, digits = 1) {
@@ -6483,6 +6527,85 @@
 
       function isOutgoing() {
         return DATA.meta.direction === 'outgoing';
+      }
+
+      // Mirrors bucket_aggregates() in Python so a team-filtered view stays consistent.
+      function computeAgg(players) {
+        const qualifying = players.filter(p => p.qualifying);
+        const matched = players.filter(p => p.matched);
+        const round2 = v => Math.round(v * 100) / 100;
+        const avg = key =>
+          qualifying.length
+            ? round2(
+                qualifying.reduce((s, p) => s + p[key], 0) / qualifying.length
+              )
+            : 0;
+        const maxRecord = (pool, key) => {
+          if (!pool.length) return null;
+          const top = pool.reduce((best, p) => (p[key] > best[key] ? p : best));
+          return { player: top.name, team: top.d3_team, value: top[key] };
+        };
+        return {
+          count_total: players.length,
+          count_matched: matched.length,
+          count_qualifying: qualifying.length,
+          count_elite: players.filter(p => p.elite_team).length,
+          avg_min: avg('min'),
+          avg_pts_per30: avg('pts_per30'),
+          avg_reb_per30: avg('reb_per30'),
+          avg_ast_per30: avg('ast_per30'),
+          max_min: maxRecord(
+            matched.filter(p => p.min > 0),
+            'min'
+          ),
+          max_pts_per30: maxRecord(qualifying, 'pts_per30'),
+          max_reb_per30: maxRecord(qualifying, 'reb_per30'),
+          max_ast_per30: maxRecord(qualifying, 'ast_per30'),
+        };
+      }
+
+      function viewBuckets() {
+        if (!CURRENT_TEAM) return DATA.buckets;
+        return DATA.buckets.map(b => {
+          const players = b.players.filter(p => p.d3_team === CURRENT_TEAM);
+          return { name: b.name, players, agg: computeAgg(players) };
+        });
+      }
+
+      function topTeams() {
+        const counts = new Map();
+        DATA.buckets.forEach(b =>
+          b.players.forEach(p => {
+            if (p.d3_team)
+              counts.set(p.d3_team, (counts.get(p.d3_team) || 0) + 1);
+          })
+        );
+        return Array.from(counts.entries())
+          .filter(([, n]) => n >= CHIP_MIN_COUNT)
+          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+          .slice(0, CHIP_MAX);
+      }
+
+      function renderTeamChips() {
+        const host = document.getElementById('teamChips');
+        const teams = topTeams();
+        if (CURRENT_TEAM && !teams.some(([t]) => t === CURRENT_TEAM))
+          CURRENT_TEAM = null;
+        const chip = (team, label) =>
+          `<button class="chip${team === CURRENT_TEAM ? ' active' : ''}" data-team="${team || ''}">${label}</button>`;
+        host.innerHTML =
+          chip(null, 'All') +
+          teams
+            .map(([t, n]) =>
+              chip(t, `${t}<span class="chip-count">(${n})</span>`)
+            )
+            .join('');
+        host.querySelectorAll('.chip').forEach(btn => {
+          btn.addEventListener('click', () => {
+            CURRENT_TEAM = btn.dataset.team || null;
+            applyView();
+          });
+        });
       }
 
       function bucketHeader(bucketName) {
@@ -6518,7 +6641,7 @@
 
       function renderSummary() {
         const body = document.getElementById('summaryBody');
-        body.innerHTML = DATA.buckets
+        body.innerHTML = viewBuckets()
           .map(b => {
             const a = b.agg;
             const noStats = a.count_total - a.count_matched;
@@ -6562,7 +6685,7 @@
           return;
         }
 
-        host.innerHTML = DATA.buckets
+        host.innerHTML = viewBuckets()
           .filter(b => b.agg.count_total > 0)
           .map(b => {
             const a = b.agg;
@@ -6691,10 +6814,12 @@
       function applyView() {
         DATA = SEASONS[CURRENT_LABEL][CURRENT_DIRECTION];
         document.body.classList.toggle('preseason', !DATA.meta.has_stats);
+        renderTeamChips();
 
         const dirWord = isOutgoing() ? 'Outgoing' : 'Incoming';
         document.getElementById('subtitle').textContent =
-          `${CURRENT_LABEL} ${dirWord} Transfers by ${divisionHeader()}`;
+          `${CURRENT_LABEL} ${dirWord} Transfers by ${divisionHeader()}` +
+          (CURRENT_TEAM ? ` (${CURRENT_TEAM} only)` : '');
 
         const meta = DATA.meta;
         const noteParts = [`${meta.data_dir}/${meta.transfers_filename}`];
