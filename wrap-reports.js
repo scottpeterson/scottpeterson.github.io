@@ -23,7 +23,7 @@
  * and index never drift from the rest of the site. This file no longer carries
  * its own hardcoded nav or index markup.
  *
- * CSS ISOLATION:
+ * CSS ISOLATION (implemented in lib/embed-html.js, shared with build.js):
  * Reports often have global styles targeting body, *, etc.
  * To prevent conflicts with the site styles, we:
  * - Wrap report content in a div with class .report-{slug}
@@ -39,6 +39,14 @@
 const fs = require('fs').promises;
 const path = require('path');
 const TemplateEngine = require('./build.js');
+const {
+  extractTitle,
+  extractStyles,
+  extractExternalScripts,
+  extractInlineScripts,
+  extractBody,
+  scopeCSS,
+} = require('./lib/embed-html.js');
 
 const SOURCE_DIR = 'data/static_reports_html';
 const OUTPUT_DIR = 'reports';
@@ -70,200 +78,6 @@ function slugToTitle(slug) {
  * Extract content between tags using regex
  * Returns the first match or null
  */
-function extractBetween(html, startTag, endTag) {
-  const regex = new RegExp(`${startTag}([\\s\\S]*?)${endTag}`, 'i');
-  const match = html.match(regex);
-  return match ? match[1].trim() : null;
-}
-
-/**
- * Extract the <title> from HTML
- */
-function extractTitle(html) {
-  const match = html.match(/<title>([^<]*)<\/title>/i);
-  return match ? match[1].trim() : null;
-}
-
-/**
- * Extract all <style> blocks from HTML
- */
-function extractStyles(html) {
-  const styles = [];
-  const regex = /<style[^>]*>([\s\S]*?)<\/style>/gi;
-  let match;
-  while ((match = regex.exec(html)) !== null) {
-    styles.push(match[1].trim());
-  }
-  return styles.join('\n\n');
-}
-
-/**
- * Extract external script URLs (src attributes)
- */
-function extractExternalScripts(html) {
-  const scripts = [];
-  const regex = /<script[^>]+src=["']([^"']+)["'][^>]*>/gi;
-  let match;
-  while ((match = regex.exec(html)) !== null) {
-    scripts.push(match[1]);
-  }
-  return scripts;
-}
-
-/**
- * Extract inline script content
- */
-function extractInlineScripts(html) {
-  const scripts = [];
-  // Match script tags without src attribute that have content
-  const regex = /<script(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/gi;
-  let match;
-  while ((match = regex.exec(html)) !== null) {
-    const content = match[1].trim();
-    if (content) {
-      scripts.push(content);
-    }
-  }
-  return scripts;
-}
-
-/**
- * Extract body content (everything between <body> and </body>)
- * Strips out script tags since we handle those separately
- */
-function extractBody(html) {
-  let body = extractBetween(html, '<body[^>]*>', '</body>') || '';
-  // Remove all script tags (both with src and inline) since we handle them separately
-  body = body.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
-  return body.trim();
-}
-
-/**
- * Scope CSS selectors to prevent conflicts with site styles
- *
- * Transforms:
- *   body { ... } -> .report-slug { ... }
- *   * { ... } -> .report-slug * { ... }
- *   .class { ... } -> .report-slug .class { ... }
- *
- * This keeps report styles isolated to their wrapper div
- */
-function scopeCSS(css, slug) {
-  const scopeClass = `.report-${slug}`;
-
-  // Split CSS into rules (handling nested braces for @media etc.)
-  let result = '';
-  let depth = 0;
-  let currentRule = '';
-
-  for (let i = 0; i < css.length; i++) {
-    const char = css[i];
-
-    if (char === '{') {
-      depth++;
-      currentRule += char;
-    } else if (char === '}') {
-      depth--;
-      currentRule += char;
-
-      if (depth === 0) {
-        // Process completed rule
-        if (currentRule.trim().startsWith('@media')) {
-          // Handle @media blocks
-          result += scopeMediaBlock(currentRule, scopeClass);
-        } else if (
-          currentRule.trim().startsWith('@keyframes') ||
-          currentRule.trim().startsWith('@-webkit-keyframes')
-        ) {
-          // Keep keyframes as-is
-          result += currentRule;
-        } else {
-          // Regular rule
-          result += scopeRule(currentRule, scopeClass);
-        }
-        currentRule = '';
-      }
-    } else {
-      currentRule += char;
-    }
-  }
-
-  return result;
-}
-
-/**
- * Scope a single CSS rule
- */
-function scopeRule(rule, scopeClass) {
-  // Match selector and body
-  const match = rule.match(/^([^{]+)\{([\s\S]*)\}$/);
-  if (!match) {
-    return rule;
-  }
-
-  const selector = match[1].trim();
-  const body = match[2];
-
-  // Transform selector
-  const scopedSelector = scopeSelector(selector, scopeClass);
-  return `${scopedSelector} {\n${body}}\n`;
-}
-
-/**
- * Scope a @media block
- */
-function scopeMediaBlock(block, scopeClass) {
-  // Extract media query and inner rules
-  const mediaMatch = block.match(/@media([^{]+)\{([\s\S]*)\}$/);
-  if (!mediaMatch) {
-    return block;
-  }
-
-  const mediaQuery = mediaMatch[1].trim();
-  const innerCSS = mediaMatch[2];
-
-  // Scope inner rules
-  const scopedInner = scopeCSS(innerCSS, scopeClass.replace('.report-', ''));
-
-  return `@media ${mediaQuery} {\n${scopedInner}}\n`;
-}
-
-/**
- * Scope a single selector
- */
-function scopeSelector(selector, scopeClass) {
-  // Handle multiple selectors (comma-separated)
-  return selector
-    .split(',')
-    .map(s => {
-      s = s.trim();
-
-      // body -> .report-slug
-      if (s === 'body') {
-        return scopeClass;
-      }
-
-      // html -> .report-slug (treat similarly)
-      if (s === 'html') {
-        return scopeClass;
-      }
-
-      // * -> .report-slug *
-      if (s === '*') {
-        return `${scopeClass} *`;
-      }
-
-      // body.class or body .class -> .report-slug.class or .report-slug .class
-      if (s.startsWith('body')) {
-        return s.replace(/^body/, scopeClass);
-      }
-
-      // Regular selectors -> .report-slug .selector
-      return `${scopeClass} ${s}`;
-    })
-    .join(', ');
-}
-
 /**
  * Generate the wrapped HTML for a single report.
  * `nav` is the canonical <nav> shell rendered once by build.js
@@ -348,7 +162,7 @@ async function processReport(filename) {
   const extractedTitle = extractTitle(html);
   const title = extractedTitle || slugToTitle(slug);
   const rawStyles = extractStyles(html);
-  const styles = scopeCSS(rawStyles, slug);
+  const styles = scopeCSS(rawStyles, `.report-${slug}`);
   const body = extractBody(html);
   const externalScripts = extractExternalScripts(html);
   const inlineScripts = extractInlineScripts(html);
