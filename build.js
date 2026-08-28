@@ -576,6 +576,45 @@ ${cards}
   }
 
   // Simple template replacement
+  // Turn a standalone HTML document into a page body for the site shell.
+  //
+  // Output order matters: the scoped <style> comes first so the report's own
+  // rules apply on first paint, then the report body inside its scope wrapper,
+  // then the report's scripts. Scripts go after the markup they query because
+  // they are appended to <main>, not <head>, and most reports run their init
+  // code at parse time rather than waiting for DOMContentLoaded.
+  async renderEmbeddedHtml(pageKey, pageConfig) {
+    const {
+      extractStyles,
+      extractBody,
+      extractExternalScripts,
+      extractInlineScripts,
+      scopeCSS,
+    } = require('./lib/embed-html.js');
+
+    const html = await fs.readFile(pageConfig.embedHtml, 'utf8');
+    const scopeClass = `.embed-${pageKey}`;
+    const styles = scopeCSS(extractStyles(html), scopeClass);
+    const body = extractBody(html);
+    const externalScriptTags = extractExternalScripts(html)
+      .map(src => `<script src="${this.escapeHtml(src)}"></script>`)
+      .join('\n');
+    const inlineScriptTags = extractInlineScripts(html)
+      .map(content => `<script>\n${content}\n</script>`)
+      .join('\n');
+
+    return [
+      `<style>\n${styles}\n</style>`,
+      '<section class="table-section">',
+      `<div class="${scopeClass.slice(1)}">\n${body}\n</div>`,
+      '</section>',
+      externalScriptTags,
+      inlineScriptTags,
+    ]
+      .filter(Boolean)
+      .join('\n');
+  }
+
   renderTemplate(template, data) {
     let result = template;
 
@@ -1171,6 +1210,15 @@ ${pricingFeaturesHtml}
         tableContent = this.renderTemplate(this.templates.ryanPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
+      } else if (pageConfig.embedHtml) {
+        // Embedded standalone HTML (e.g. bethany.html). The config points at a
+        // self-contained document under data/embedded_html/; the build pulls
+        // its <style>, <body>, and scripts apart and drops them into the site
+        // shell. This is the hidden-page twin of wrap-reports.js: same
+        // extraction and CSS scoping (lib/embed-html.js), but the page is a
+        // root-level destination page with showInNav false rather than a
+        // reports/ entry that appears in the Reports dropdown.
+        tableContent = await this.renderEmbeddedHtml(pageKey, pageConfig);
       } else if (pageConfig.isReferencePage) {
         // Static reference page: evergreen notes (no data source, no search).
         // The template is plain markup, but render it through renderTemplate so
