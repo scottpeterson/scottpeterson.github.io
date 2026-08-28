@@ -556,5 +556,15 @@
     "dataSource": null,
     "showInNav": false,
     "isRyanPage": true
+  },
+  "bethany": {
+    "title": "Bethany",
+    "heading": "NPI Proposal Comparison",
+    "description": "",
+    "sectionTitle": "NPI Proposal Comparison",
+    "hasSearch": false,
+    "dataSource": null,
+    "showInNav": false,
+    "embedHtml": "data/embedded_html/npi_proposal_comparison.html"
   }
 }
