@@ -4,7 +4,7 @@
     "Conf": "CC",
     "Pub?": "TRUE",
     "Surp Gone": 59,
-    "Exp Gone": "1,405",
+    "Exp Gone": "1,405 ",
     "Transfers In": 0,
     "5th": 776,
     "5th Year Last Names": "McNulty"
@@ -34,7 +34,7 @@
     "Conf": "MASCAC",
     "Pub?": "TRUE",
     "Surp Gone": 711,
-    "Exp Gone": "1,281",
+    "Exp Gone": "1,281 ",
     "Transfers In": 0,
     "5th": 704,
     "5th Year Last Names": "Patch"
@@ -54,7 +54,7 @@
     "Conf": "LL",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,679",
+    "Exp Gone": "1,679 ",
     "Transfers In": 0,
     "5th": 480,
     "5th Year Last Names": "Strauf"
@@ -64,7 +64,7 @@
     "Conf": "SCAC",
     "Pub?": "TRUE",
     "Surp Gone": 653,
-    "Exp Gone": "1,635",
+    "Exp Gone": "1,635 ",
     "Transfers In": 0,
     "5th": 418,
     "5th Year Last Names": "Jones"
@@ -74,7 +74,7 @@
     "Conf": "NEWMAC",
     "Pub?": "TRUE",
     "Surp Gone": 55,
-    "Exp Gone": "1,358",
+    "Exp Gone": "1,358 ",
     "Transfers In": 0,
     "5th": 389,
     "5th Year Last Names": "Lebrun"
@@ -90,14 +90,64 @@
     "5th Year Last Names": "Vazquez"
   },
   {
+    "Team": "Salem (NC)",
+    "Conf": "USAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 701,
+    "Exp Gone": 582,
+    "Transfers In": 0,
+    "5th": 376,
+    "5th Year Last Names": "Smallwood"
+  },
+  {
+    "Team": "Oglethorpe",
+    "Conf": "SAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 721,
+    "Exp Gone": "2,073 ",
+    "Transfers In": 0,
+    "5th": 364,
+    "5th Year Last Names": "Winfrey"
+  },
+  {
+    "Team": "Millsaps",
+    "Conf": "SAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 23,
+    "Exp Gone": "1,334 ",
+    "Transfers In": 0,
+    "5th": 259,
+    "5th Year Last Names": "Keyes"
+  },
+  {
     "Team": "Blackburn",
     "Conf": "SLIAC",
     "Pub?": "TRUE",
     "Surp Gone": 967,
-    "Exp Gone": "1,083",
+    "Exp Gone": "1,083 ",
     "Transfers In": 0,
     "5th": 152,
     "5th Year Last Names": "Harris"
+  },
+  {
+    "Team": "Spalding",
+    "Conf": "SLIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 588,
+    "Exp Gone": "2,733 ",
+    "Transfers In": 0,
+    "5th": 87,
+    "5th Year Last Names": "King"
+  },
+  {
+    "Team": "Penn College",
+    "Conf": "UEC",
+    "Pub?": "TRUE",
+    "Surp Gone": 7,
+    "Exp Gone": "1,229 ",
+    "Transfers In": 0,
+    "5th": 49,
+    "5th Year Last Names": "Newcomer"
   },
   {
     "Team": "Maryville",
@@ -114,7 +164,7 @@
     "Conf": "LL",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,180",
+    "Exp Gone": "1,180 ",
     "Transfers In": 0,
     "5th": 20,
     "5th Year Last Names": "Pysnack"
@@ -124,7 +174,7 @@
     "Conf": "MIAA",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,159",
+    "Exp Gone": "1,159 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": "Goodin"
@@ -133,19 +183,9 @@
     "Team": "UW-Eau Claire",
     "Conf": "WIAC",
     "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,708",
-    "Transfers In": "1,985",
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Springfield",
-    "Conf": "NEWMAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,037",
-    "Transfers In": 791,
+    "Surp Gone": 540,
+    "Exp Gone": "1,708 ",
+    "Transfers In": "1,985 ",
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -154,8 +194,28 @@
     "Conf": "NAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,487",
-    "Transfers In": 788,
+    "Exp Gone": "1,487 ",
+    "Transfers In": "1,524 ",
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Webster",
+    "Conf": "SLIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 914,
+    "Exp Gone": "1,714 ",
+    "Transfers In": "1,216 ",
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Springfield",
+    "Conf": "NEWMAC",
+    "Pub?": "FALSE",
+    "Surp Gone": 0,
+    "Exp Gone": "2,037 ",
+    "Transfers In": 791,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -164,8 +224,28 @@
     "Conf": "MIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,425",
+    "Exp Gone": "2,425 ",
     "Transfers In": 709,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Wilmington",
+    "Conf": "OAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 173,
+    "Exp Gone": "1,863 ",
+    "Transfers In": 681,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "WashU",
+    "Conf": "UAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 0,
+    "Exp Gone": "1,017 ",
+    "Transfers In": 651,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -184,8 +264,38 @@
     "Conf": "WIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,564",
+    "Exp Gone": "3,564 ",
     "Transfers In": 540,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Guilford",
+    "Conf": "ODAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 304,
+    "Exp Gone": "2,872 ",
+    "Transfers In": 247,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Central (IA)",
+    "Conf": "ARC",
+    "Pub?": "TRUE",
+    "Surp Gone": "1,043 ",
+    "Exp Gone": "1,535 ",
+    "Transfers In": 191,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "UW-La Crosse",
+    "Conf": "WIAC",
+    "Pub?": "FALSE",
+    "Surp Gone": 0,
+    "Exp Gone": "2,136 ",
+    "Transfers In": 118,
     "5th": 0,
     "5th Year Last Names": ""
   },
@@ -194,7 +304,7 @@
     "Conf": "NCAC",
     "Pub?": "TRUE",
     "Surp Gone": 681,
-    "Exp Gone": "3,784",
+    "Exp Gone": "3,784 ",
     "Transfers In": 24,
     "5th": 0,
     "5th Year Last Names": ""
@@ -203,8 +313,18 @@
     "Team": "Dallas Univ",
     "Conf": "SCAC",
     "Pub?": "TRUE",
-    "Surp Gone": "2,514",
+    "Surp Gone": "2,514 ",
     "Exp Gone": 0,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Southern Virginia",
+    "Conf": "USAC",
+    "Pub?": "TRUE",
+    "Surp Gone": "2,363 ",
+    "Exp Gone": "2,901 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -213,7 +333,7 @@
     "Team": "UW-Stout",
     "Conf": "WIAC",
     "Pub?": "TRUE",
-    "Surp Gone": "2,138",
+    "Surp Gone": "2,138 ",
     "Exp Gone": 776,
     "Transfers In": 0,
     "5th": 0,
@@ -223,7 +343,7 @@
     "Team": "Greensboro",
     "Conf": "USAC",
     "Pub?": "TRUE",
-    "Surp Gone": "2,090",
+    "Surp Gone": "2,090 ",
     "Exp Gone": 692,
     "Transfers In": 0,
     "5th": 0,
@@ -233,8 +353,18 @@
     "Team": "Agnes Scott",
     "Conf": "CCS",
     "Pub?": "TRUE",
-    "Surp Gone": "1,600",
+    "Surp Gone": "1,600 ",
     "Exp Gone": 559,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Westminster (MO)",
+    "Conf": "SLIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": "1,588 ",
+    "Exp Gone": "2,930 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -243,8 +373,8 @@
     "Team": "Rockford",
     "Conf": "NACC",
     "Pub?": "TRUE",
-    "Surp Gone": "1,490",
-    "Exp Gone": "1,726",
+    "Surp Gone": "1,490 ",
+    "Exp Gone": "1,726 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -253,8 +383,8 @@
     "Team": "Averett",
     "Conf": "ODAC",
     "Pub?": "TRUE",
-    "Surp Gone": "1,438",
-    "Exp Gone": "1,232",
+    "Surp Gone": "1,438 ",
+    "Exp Gone": "1,232 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -263,8 +393,18 @@
     "Team": "Cornell",
     "Conf": "MWC",
     "Pub?": "TRUE",
-    "Surp Gone": "1,438",
+    "Surp Gone": "1,438 ",
     "Exp Gone": 81,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Illinois Col",
+    "Conf": "MWC",
+    "Pub?": "TRUE",
+    "Surp Gone": "1,266 ",
+    "Exp Gone": 664,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -273,8 +413,18 @@
     "Team": "Centenary (LA)",
     "Conf": "SCAC",
     "Pub?": "TRUE",
-    "Surp Gone": "1,171",
-    "Exp Gone": "2,403",
+    "Surp Gone": "1,171 ",
+    "Exp Gone": "2,403 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Gwynedd-Mercy",
+    "Conf": "AEC",
+    "Pub?": "TRUE",
+    "Surp Gone": "1,153 ",
+    "Exp Gone": 794,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -283,8 +433,18 @@
     "Team": "Heidelberg",
     "Conf": "OAC",
     "Pub?": "TRUE",
-    "Surp Gone": "1,032",
+    "Surp Gone": "1,032 ",
     "Exp Gone": 34,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Howard Payne",
+    "Conf": "ASC",
+    "Pub?": "TRUE",
+    "Surp Gone": 964,
+    "Exp Gone": 889,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -294,7 +454,7 @@
     "Conf": "MWC",
     "Pub?": "FALSE",
     "Surp Gone": 937,
-    "Exp Gone": "1,451",
+    "Exp Gone": "1,451 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -324,7 +484,7 @@
     "Conf": "HCAC",
     "Pub?": "TRUE",
     "Surp Gone": 837,
-    "Exp Gone": "1,545",
+    "Exp Gone": "1,545 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -344,7 +504,17 @@
     "Conf": "SLIAC",
     "Pub?": "TRUE",
     "Surp Gone": 802,
-    "Exp Gone": "1,998",
+    "Exp Gone": "1,998 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Southwestern",
+    "Conf": "SAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 795,
+    "Exp Gone": 0,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -354,7 +524,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 788,
-    "Exp Gone": "1,757",
+    "Exp Gone": "1,757 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -364,7 +534,7 @@
     "Conf": "ASC",
     "Pub?": "TRUE",
     "Surp Gone": 760,
-    "Exp Gone": "2,110",
+    "Exp Gone": "2,110 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -380,11 +550,21 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Rhode Island College",
+    "Conf": "LEC",
+    "Pub?": "FALSE",
+    "Surp Gone": 736,
+    "Exp Gone": 0,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Loras",
     "Conf": "ARC",
     "Pub?": "FALSE",
     "Surp Gone": 731,
-    "Exp Gone": "2,190",
+    "Exp Gone": "2,190 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -394,7 +574,7 @@
     "Conf": "MWC",
     "Pub?": "TRUE",
     "Surp Gone": 725,
-    "Exp Gone": "1,127",
+    "Exp Gone": "1,127 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -404,7 +584,7 @@
     "Conf": "NACC",
     "Pub?": "TRUE",
     "Surp Gone": 706,
-    "Exp Gone": "1,866",
+    "Exp Gone": "1,866 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -420,11 +600,21 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Albion",
+    "Conf": "MIAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 694,
+    "Exp Gone": "1,817 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Franciscan",
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 681,
-    "Exp Gone": "1,540",
+    "Exp Gone": "1,540 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -434,7 +624,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 653,
-    "Exp Gone": "1,088",
+    "Exp Gone": "1,088 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -444,7 +634,37 @@
     "Conf": "ASC",
     "Pub?": "TRUE",
     "Surp Gone": 652,
-    "Exp Gone": "1,985",
+    "Exp Gone": "1,985 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Augsburg",
+    "Conf": "MIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 646,
+    "Exp Gone": "1,301 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Oswego St.",
+    "Conf": "SUNYAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 621,
+    "Exp Gone": "2,685 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Northwestern (MN)",
+    "Conf": "UMAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 621,
+    "Exp Gone": 0,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -470,11 +690,31 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Concordia (TX)",
+    "Conf": "SCAC",
+    "Pub?": "FALSE",
+    "Surp Gone": 557,
+    "Exp Gone": 933,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Carlow",
     "Conf": "AMCC",
     "Pub?": "TRUE",
     "Surp Gone": 538,
     "Exp Gone": 724,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Mt. St. Joseph",
+    "Conf": "HCAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 528,
+    "Exp Gone": "1,712 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -490,21 +730,21 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Sewanee",
-    "Conf": "SAA",
+    "Team": "Methodist",
+    "Conf": "USAC",
     "Pub?": "TRUE",
-    "Surp Gone": 470,
-    "Exp Gone": 908,
+    "Surp Gone": 480,
+    "Exp Gone": 830,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
   },
   {
-    "Team": "Augsburg",
-    "Conf": "MIAC",
+    "Team": "Sewanee",
+    "Conf": "SAA",
     "Pub?": "TRUE",
-    "Surp Gone": 455,
-    "Exp Gone": "1,301",
+    "Surp Gone": 470,
+    "Exp Gone": 908,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -524,7 +764,7 @@
     "Conf": "NACC",
     "Pub?": "TRUE",
     "Surp Gone": 401,
-    "Exp Gone": "2,536",
+    "Exp Gone": "2,536 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -544,7 +784,7 @@
     "Conf": "ARC",
     "Pub?": "TRUE",
     "Surp Gone": 386,
-    "Exp Gone": "1,468",
+    "Exp Gone": "1,468 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -554,7 +794,7 @@
     "Conf": "NAC",
     "Pub?": "TRUE",
     "Surp Gone": 344,
-    "Exp Gone": "2,030",
+    "Exp Gone": "2,030 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -564,7 +804,7 @@
     "Conf": "LEC",
     "Pub?": "TRUE",
     "Surp Gone": 331,
-    "Exp Gone": "2,513",
+    "Exp Gone": "2,513 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -574,17 +814,7 @@
     "Conf": "CCIW",
     "Pub?": "TRUE",
     "Surp Gone": 306,
-    "Exp Gone": "1,853",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Guilford",
-    "Conf": "ODAC",
-    "Pub?": "TRUE",
-    "Surp Gone": 304,
-    "Exp Gone": "2,872",
+    "Exp Gone": "1,853 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -594,7 +824,27 @@
     "Conf": "NAC",
     "Pub?": "TRUE",
     "Surp Gone": 273,
-    "Exp Gone": "1,356",
+    "Exp Gone": "1,356 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Meredith",
+    "Conf": "USAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 266,
+    "Exp Gone": 665,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Marian",
+    "Conf": "NACC",
+    "Pub?": "TRUE",
+    "Surp Gone": 250,
+    "Exp Gone": 994,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -604,7 +854,37 @@
     "Conf": "SCAC",
     "Pub?": "TRUE",
     "Surp Gone": 206,
-    "Exp Gone": "1,881",
+    "Exp Gone": "1,881 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "NVU-Lyndon",
+    "Conf": "NAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 195,
+    "Exp Gone": "1,980 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Covenant",
+    "Conf": "CCS",
+    "Pub?": "TRUE",
+    "Surp Gone": 184,
+    "Exp Gone": "1,144 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Hendrix",
+    "Conf": "SCAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 181,
+    "Exp Gone": "1,065 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -614,7 +894,17 @@
     "Conf": "HCAC",
     "Pub?": "TRUE",
     "Surp Gone": 171,
-    "Exp Gone": "1,535",
+    "Exp Gone": "1,535 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Wooster",
+    "Conf": "NCAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 171,
+    "Exp Gone": 984,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -624,7 +914,17 @@
     "Conf": "PAC",
     "Pub?": "TRUE",
     "Surp Gone": 161,
-    "Exp Gone": "1,889",
+    "Exp Gone": "1,889 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Minn-Morris",
+    "Conf": "UMAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 153,
+    "Exp Gone": "1,286 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -644,7 +944,27 @@
     "Conf": "ODAC",
     "Pub?": "TRUE",
     "Surp Gone": 150,
-    "Exp Gone": "3,466",
+    "Exp Gone": "3,466 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Oberlin",
+    "Conf": "NCAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 140,
+    "Exp Gone": "2,834 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Greenville",
+    "Conf": "SLIAC",
+    "Pub?": "FALSE",
+    "Surp Gone": 136,
+    "Exp Gone": "1,147 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -654,7 +974,7 @@
     "Conf": "MIAA",
     "Pub?": "TRUE",
     "Surp Gone": 135,
-    "Exp Gone": "1,543",
+    "Exp Gone": "1,543 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -664,7 +984,17 @@
     "Conf": "MIAA",
     "Pub?": "TRUE",
     "Surp Gone": 108,
-    "Exp Gone": "1,084",
+    "Exp Gone": "1,084 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Haverford",
+    "Conf": "CC",
+    "Pub?": "TRUE",
+    "Surp Gone": 100,
+    "Exp Gone": "1,655 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -674,7 +1004,27 @@
     "Conf": "MWC",
     "Pub?": "TRUE",
     "Surp Gone": 93,
-    "Exp Gone": "3,229",
+    "Exp Gone": "3,229 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Crown",
+    "Conf": "UMAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 92,
+    "Exp Gone": "1,019 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Waynesburg",
+    "Conf": "PAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 63,
+    "Exp Gone": "2,152 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -690,11 +1040,21 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Brandeis",
+    "Conf": "UAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 52,
+    "Exp Gone": "2,507 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Texas Lutheran",
     "Conf": "SCAC",
     "Pub?": "TRUE",
     "Surp Gone": 42,
-    "Exp Gone": "2,728",
+    "Exp Gone": "2,728 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -704,7 +1064,7 @@
     "Conf": "NACC",
     "Pub?": "TRUE",
     "Surp Gone": 42,
-    "Exp Gone": "1,579",
+    "Exp Gone": "1,579 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -714,7 +1074,7 @@
     "Conf": "HCAC",
     "Pub?": "TRUE",
     "Surp Gone": 30,
-    "Exp Gone": "3,440",
+    "Exp Gone": "3,440 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -724,7 +1084,17 @@
     "Conf": "AMCC",
     "Pub?": "TRUE",
     "Surp Gone": 26,
-    "Exp Gone": "1,770",
+    "Exp Gone": "1,770 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Mt. Union",
+    "Conf": "OAC",
+    "Pub?": "FALSE",
+    "Surp Gone": 24,
+    "Exp Gone": 635,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -734,7 +1104,7 @@
     "Conf": "ARC",
     "Pub?": "TRUE",
     "Surp Gone": 21,
-    "Exp Gone": "2,103",
+    "Exp Gone": "2,103 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -745,6 +1115,16 @@
     "Pub?": "TRUE",
     "Surp Gone": 15,
     "Exp Gone": 905,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Shenandoah",
+    "Conf": "ODAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 15,
+    "Exp Gone": "1,553 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -764,7 +1144,17 @@
     "Conf": "MIAC",
     "Pub?": "TRUE",
     "Surp Gone": 10,
-    "Exp Gone": "1,755",
+    "Exp Gone": "1,755 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Wartburg",
+    "Conf": "ARC",
+    "Pub?": "TRUE",
+    "Surp Gone": 5,
+    "Exp Gone": 614,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -780,11 +1170,31 @@
     "5th Year Last Names": ""
   },
   {
+    "Team": "Chicago",
+    "Conf": "UAA",
+    "Pub?": "TRUE",
+    "Surp Gone": 2,
+    "Exp Gone": "2,069 ",
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
+    "Team": "Macalester",
+    "Conf": "MIAC",
+    "Pub?": "TRUE",
+    "Surp Gone": 1,
+    "Exp Gone": 578,
+    "Transfers In": 0,
+    "5th": 0,
+    "5th Year Last Names": ""
+  },
+  {
     "Team": "Trinity (CT)",
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,586",
+    "Exp Gone": "2,586 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -804,7 +1214,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "4,546",
+    "Exp Gone": "4,546 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -814,7 +1224,7 @@
     "Conf": "CCS",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "4,304",
+    "Exp Gone": "4,304 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -824,7 +1234,7 @@
     "Conf": "SLIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "4,159",
+    "Exp Gone": "4,159 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -834,7 +1244,7 @@
     "Conf": "UMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,978",
+    "Exp Gone": "3,978 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -844,7 +1254,7 @@
     "Conf": "AEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,883",
+    "Exp Gone": "3,883 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -854,7 +1264,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,759",
+    "Exp Gone": "3,759 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -864,7 +1274,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,616",
+    "Exp Gone": "3,616 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -874,7 +1284,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,593",
+    "Exp Gone": "3,593 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -884,7 +1294,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,549",
+    "Exp Gone": "3,549 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -894,7 +1304,7 @@
     "Conf": "LL",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,502",
+    "Exp Gone": "3,502 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -904,7 +1314,7 @@
     "Conf": "ASC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,374",
+    "Exp Gone": "3,374 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -914,7 +1324,7 @@
     "Conf": "CC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,333",
+    "Exp Gone": "3,333 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -922,9 +1332,9 @@
   {
     "Team": "Nazareth",
     "Conf": "E8",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "3,317",
+    "Exp Gone": "3,317 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -934,7 +1344,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,226",
+    "Exp Gone": "3,226 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -944,7 +1354,7 @@
     "Conf": "MIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,166",
+    "Exp Gone": "3,166 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -954,7 +1364,7 @@
     "Conf": "CCIW",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,115",
+    "Exp Gone": "3,115 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -964,7 +1374,7 @@
     "Conf": "E8",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,110",
+    "Exp Gone": "3,110 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -974,7 +1384,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,103",
+    "Exp Gone": "3,103 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -984,7 +1394,7 @@
     "Conf": "CCIW",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "3,081",
+    "Exp Gone": "3,081 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -994,7 +1404,7 @@
     "Conf": "WIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,080",
+    "Exp Gone": "3,080 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1004,7 +1414,7 @@
     "Conf": "CCIW",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,035",
+    "Exp Gone": "3,035 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1014,7 +1424,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,008",
+    "Exp Gone": "3,008 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1024,7 +1434,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "3,002",
+    "Exp Gone": "3,002 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1034,7 +1444,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,965",
+    "Exp Gone": "2,965 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1044,37 +1454,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,963",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Westminster (MO)",
-    "Conf": "SLIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,930",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Southern Virginia",
-    "Conf": "USAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,901",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Oberlin",
-    "Conf": "NCAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,834",
+    "Exp Gone": "2,963 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1084,17 +1464,7 @@
     "Conf": "NWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,820",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Spalding",
-    "Conf": "SLIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,820",
+    "Exp Gone": "2,820 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1104,7 +1474,7 @@
     "Conf": "CC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,757",
+    "Exp Gone": "2,757 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1112,9 +1482,9 @@
   {
     "Team": "Berea",
     "Conf": "HCAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,752",
+    "Exp Gone": "2,752 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1124,7 +1494,7 @@
     "Conf": "HCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,726",
+    "Exp Gone": "2,726 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1134,7 +1504,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,726",
+    "Exp Gone": "2,726 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1144,7 +1514,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,725",
+    "Exp Gone": "2,725 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1154,7 +1524,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,725",
+    "Exp Gone": "2,725 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1164,7 +1534,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,724",
+    "Exp Gone": "2,724 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1174,7 +1544,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,712",
+    "Exp Gone": "2,712 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1184,17 +1554,7 @@
     "Conf": "SAA",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,708",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Oswego St.",
-    "Conf": "SUNYAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,685",
+    "Exp Gone": "2,708 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1204,7 +1564,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,668",
+    "Exp Gone": "2,668 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1214,7 +1574,7 @@
     "Conf": "CCS",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,653",
+    "Exp Gone": "2,653 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1224,7 +1584,7 @@
     "Conf": "NACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,638",
+    "Exp Gone": "2,638 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1234,7 +1594,7 @@
     "Conf": "OAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,626",
+    "Exp Gone": "2,626 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1244,7 +1604,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,604",
+    "Exp Gone": "2,604 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1254,7 +1614,7 @@
     "Conf": "NCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,603",
+    "Exp Gone": "2,603 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1262,9 +1622,9 @@
   {
     "Team": "Transylvania",
     "Conf": "HCAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,600",
+    "Exp Gone": "2,600 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1274,7 +1634,7 @@
     "Conf": "E8",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,584",
+    "Exp Gone": "2,584 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1284,7 +1644,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,583",
+    "Exp Gone": "2,583 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1294,7 +1654,7 @@
     "Conf": "NAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,561",
+    "Exp Gone": "2,561 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1304,7 +1664,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,559",
+    "Exp Gone": "2,559 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1314,7 +1674,7 @@
     "Conf": "AMCC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,556",
+    "Exp Gone": "2,556 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1324,7 +1684,7 @@
     "Conf": "E8",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,551",
+    "Exp Gone": "2,551 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1334,7 +1694,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,542",
+    "Exp Gone": "2,542 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1344,7 +1704,7 @@
     "Conf": "NEWMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,542",
+    "Exp Gone": "2,542 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1354,7 +1714,7 @@
     "Conf": "CCS",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,516",
+    "Exp Gone": "2,516 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1364,17 +1724,7 @@
     "Conf": "AEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,509",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Brandeis",
-    "Conf": "UAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,507",
+    "Exp Gone": "2,509 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1384,7 +1734,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,494",
+    "Exp Gone": "2,494 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1394,7 +1744,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,487",
+    "Exp Gone": "2,487 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1404,17 +1754,7 @@
     "Conf": "SAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,465",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Oglethorpe",
-    "Conf": "SAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,437",
+    "Exp Gone": "2,465 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1424,7 +1764,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,425",
+    "Exp Gone": "2,425 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1434,7 +1774,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,417",
+    "Exp Gone": "2,417 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1444,7 +1784,7 @@
     "Conf": "SKY",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,409",
+    "Exp Gone": "2,409 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1454,7 +1794,7 @@
     "Conf": "NACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,407",
+    "Exp Gone": "2,407 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1464,7 +1804,7 @@
     "Conf": "CCS",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,395",
+    "Exp Gone": "2,395 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1474,7 +1814,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,395",
+    "Exp Gone": "2,395 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1484,7 +1824,7 @@
     "Conf": "MASCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,384",
+    "Exp Gone": "2,384 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1494,7 +1834,7 @@
     "Conf": "LL",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,373",
+    "Exp Gone": "2,373 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1504,7 +1844,7 @@
     "Conf": "UEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,368",
+    "Exp Gone": "2,368 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1514,7 +1854,7 @@
     "Conf": "MASCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,342",
+    "Exp Gone": "2,342 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1524,7 +1864,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,338",
+    "Exp Gone": "2,338 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1534,7 +1874,7 @@
     "Conf": "ASC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,321",
+    "Exp Gone": "2,321 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1544,7 +1884,7 @@
     "Conf": "UMAC",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,318",
+    "Exp Gone": "2,318 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1554,7 +1894,7 @@
     "Conf": "OAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,311",
+    "Exp Gone": "2,311 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1564,7 +1904,7 @@
     "Conf": "SAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,309",
+    "Exp Gone": "2,309 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1574,7 +1914,7 @@
     "Conf": "USAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,304",
+    "Exp Gone": "2,304 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1584,7 +1924,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,303",
+    "Exp Gone": "2,303 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1594,7 +1934,7 @@
     "Conf": "NCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,299",
+    "Exp Gone": "2,299 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1604,7 +1944,7 @@
     "Conf": "CC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,283",
+    "Exp Gone": "2,283 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1612,9 +1952,9 @@
   {
     "Team": "Elmira",
     "Conf": "E8",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,233",
+    "Exp Gone": "2,233 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1624,7 +1964,7 @@
     "Conf": "IND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,221",
+    "Exp Gone": "2,221 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1634,7 +1974,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,214",
+    "Exp Gone": "2,214 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1644,17 +1984,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,188",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Waynesburg",
-    "Conf": "PAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,152",
+    "Exp Gone": "2,188 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1664,7 +1994,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,142",
+    "Exp Gone": "2,142 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1674,7 +2004,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,139",
+    "Exp Gone": "2,139 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1684,17 +2014,7 @@
     "Conf": "MIAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,137",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "UW-La Crosse",
-    "Conf": "WIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,136",
+    "Exp Gone": "2,137 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1704,7 +2024,7 @@
     "Conf": "ARC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,126",
+    "Exp Gone": "2,126 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1714,7 +2034,7 @@
     "Conf": "AMCC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,124",
+    "Exp Gone": "2,124 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1722,9 +2042,9 @@
   {
     "Team": "Babson",
     "Conf": "NEWMAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "2,124",
+    "Exp Gone": "2,124 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1734,7 +2054,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,111",
+    "Exp Gone": "2,111 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1744,7 +2064,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,104",
+    "Exp Gone": "2,104 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1754,7 +2074,7 @@
     "Conf": "WIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,104",
+    "Exp Gone": "2,104 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1764,7 +2084,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,092",
+    "Exp Gone": "2,092 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1774,17 +2094,7 @@
     "Conf": "MIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,081",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Chicago",
-    "Conf": "UAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "2,069",
+    "Exp Gone": "2,081 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1794,7 +2104,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,059",
+    "Exp Gone": "2,059 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1804,7 +2114,7 @@
     "Conf": "NAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,025",
+    "Exp Gone": "2,025 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1814,7 +2124,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,023",
+    "Exp Gone": "2,023 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1824,7 +2134,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,017",
+    "Exp Gone": "2,017 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1834,7 +2144,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,013",
+    "Exp Gone": "2,013 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1844,7 +2154,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,004",
+    "Exp Gone": "2,004 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1854,7 +2164,7 @@
     "Conf": "NWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "2,002",
+    "Exp Gone": "2,002 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1864,17 +2174,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,993",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "NVU-Lyndon",
-    "Conf": "NAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,980",
+    "Exp Gone": "1,993 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1884,7 +2184,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,975",
+    "Exp Gone": "1,975 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1894,7 +2194,7 @@
     "Conf": "ODAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,963",
+    "Exp Gone": "1,963 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1904,7 +2204,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,955",
+    "Exp Gone": "1,955 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1914,7 +2214,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,934",
+    "Exp Gone": "1,934 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1924,7 +2224,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,914",
+    "Exp Gone": "1,914 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1934,7 +2234,7 @@
     "Conf": "NWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,908",
+    "Exp Gone": "1,908 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1944,7 +2244,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,888",
+    "Exp Gone": "1,888 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1954,7 +2254,7 @@
     "Conf": "CC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,878",
+    "Exp Gone": "1,878 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1964,7 +2264,7 @@
     "Conf": "NEWMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,873",
+    "Exp Gone": "1,873 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1974,7 +2274,7 @@
     "Conf": "LL",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,865",
+    "Exp Gone": "1,865 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -1984,17 +2284,7 @@
     "Conf": "SCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,864",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Wilmington",
-    "Conf": "OAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,863",
+    "Exp Gone": "1,864 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2004,7 +2294,7 @@
     "Conf": "HCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,858",
+    "Exp Gone": "1,858 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2014,7 +2304,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,835",
+    "Exp Gone": "1,835 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2024,7 +2314,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,822",
+    "Exp Gone": "1,822 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2034,17 +2324,7 @@
     "Conf": "ODAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,819",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Albion",
-    "Conf": "MIAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,817",
+    "Exp Gone": "1,819 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2054,7 +2334,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,813",
+    "Exp Gone": "1,813 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2064,7 +2344,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,802",
+    "Exp Gone": "1,802 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2074,7 +2354,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,796",
+    "Exp Gone": "1,796 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2084,7 +2364,7 @@
     "Conf": "NACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,796",
+    "Exp Gone": "1,796 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2094,7 +2374,7 @@
     "Conf": "UAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,787",
+    "Exp Gone": "1,787 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2104,7 +2384,7 @@
     "Conf": "MWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,781",
+    "Exp Gone": "1,781 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2114,7 +2394,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,781",
+    "Exp Gone": "1,781 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2124,7 +2404,7 @@
     "Conf": "AMCC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,768",
+    "Exp Gone": "1,768 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2134,7 +2414,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,767",
+    "Exp Gone": "1,767 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2144,7 +2424,7 @@
     "Conf": "MASCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,762",
+    "Exp Gone": "1,762 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2154,7 +2434,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,753",
+    "Exp Gone": "1,753 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2162,9 +2442,9 @@
   {
     "Team": "Franklin & Marshall",
     "Conf": "CC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,723",
+    "Exp Gone": "1,723 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2174,27 +2454,7 @@
     "Conf": "WIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,720",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Webster",
-    "Conf": "SLIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,714",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Mt. St. Joseph",
-    "Conf": "HCAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,712",
+    "Exp Gone": "1,720 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2204,7 +2464,7 @@
     "Conf": "ASC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,708",
+    "Exp Gone": "1,708 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2214,7 +2474,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,708",
+    "Exp Gone": "1,708 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2224,7 +2484,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,692",
+    "Exp Gone": "1,692 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2234,7 +2494,7 @@
     "Conf": "MACF",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,691",
+    "Exp Gone": "1,691 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2244,7 +2504,7 @@
     "Conf": "UEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,685",
+    "Exp Gone": "1,685 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2254,7 +2514,7 @@
     "Conf": "MWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,684",
+    "Exp Gone": "1,684 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2264,7 +2524,7 @@
     "Conf": "AEC",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,676",
+    "Exp Gone": "1,676 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2274,7 +2534,7 @@
     "Conf": "SLIAC",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,671",
+    "Exp Gone": "1,671 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2284,17 +2544,7 @@
     "Conf": "NWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,663",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Haverford",
-    "Conf": "CC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,655",
+    "Exp Gone": "1,663 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2304,7 +2554,7 @@
     "Conf": "E8",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,648",
+    "Exp Gone": "1,648 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2314,7 +2564,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,630",
+    "Exp Gone": "1,630 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2324,7 +2574,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,618",
+    "Exp Gone": "1,618 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2334,7 +2584,7 @@
     "Conf": "MACC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,617",
+    "Exp Gone": "1,617 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2344,7 +2594,7 @@
     "Conf": "NWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,616",
+    "Exp Gone": "1,616 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2354,7 +2604,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,612",
+    "Exp Gone": "1,612 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2364,7 +2614,7 @@
     "Conf": "ODAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,606",
+    "Exp Gone": "1,606 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2374,7 +2624,7 @@
     "Conf": "LL",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,604",
+    "Exp Gone": "1,604 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2384,7 +2634,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,599",
+    "Exp Gone": "1,599 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2394,17 +2644,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,593",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Millsaps",
-    "Conf": "SAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,593",
+    "Exp Gone": "1,593 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2414,17 +2654,7 @@
     "Conf": "NEWMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,570",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Shenandoah",
-    "Conf": "ODAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,553",
+    "Exp Gone": "1,570 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2434,17 +2664,7 @@
     "Conf": "UAA",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,548",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Central (IA)",
-    "Conf": "ARC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,535",
+    "Exp Gone": "1,548 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2454,7 +2674,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,530",
+    "Exp Gone": "1,530 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2464,7 +2684,7 @@
     "Conf": "C2C",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,525",
+    "Exp Gone": "1,525 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2474,7 +2694,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,522",
+    "Exp Gone": "1,522 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2484,7 +2704,7 @@
     "Conf": "PAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,512",
+    "Exp Gone": "1,512 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2494,7 +2714,7 @@
     "Conf": "LAND",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,489",
+    "Exp Gone": "1,489 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2504,7 +2724,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,487",
+    "Exp Gone": "1,487 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2514,7 +2734,7 @@
     "Conf": "LL",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,477",
+    "Exp Gone": "1,477 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2524,7 +2744,7 @@
     "Conf": "CCIW",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,472",
+    "Exp Gone": "1,472 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2534,7 +2754,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,470",
+    "Exp Gone": "1,470 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2544,7 +2764,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,465",
+    "Exp Gone": "1,465 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2554,7 +2774,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,460",
+    "Exp Gone": "1,460 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2564,7 +2784,7 @@
     "Conf": "MWC",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,441",
+    "Exp Gone": "1,441 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2574,7 +2794,7 @@
     "Conf": "UEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,437",
+    "Exp Gone": "1,437 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2584,7 +2804,7 @@
     "Conf": "CUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,422",
+    "Exp Gone": "1,422 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2594,7 +2814,7 @@
     "Conf": "UAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,411",
+    "Exp Gone": "1,411 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2604,7 +2824,7 @@
     "Conf": "ARC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,389",
+    "Exp Gone": "1,389 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2614,7 +2834,7 @@
     "Conf": "MWC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,384",
+    "Exp Gone": "1,384 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2624,7 +2844,7 @@
     "Conf": "SCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,382",
+    "Exp Gone": "1,382 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2634,7 +2854,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,378",
+    "Exp Gone": "1,378 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2644,7 +2864,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,377",
+    "Exp Gone": "1,377 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2654,7 +2874,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,372",
+    "Exp Gone": "1,372 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2664,7 +2884,7 @@
     "Conf": "CC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,371",
+    "Exp Gone": "1,371 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2674,7 +2894,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,363",
+    "Exp Gone": "1,363 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2684,7 +2904,7 @@
     "Conf": "NAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,353",
+    "Exp Gone": "1,353 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2694,7 +2914,7 @@
     "Conf": "ODAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,350",
+    "Exp Gone": "1,350 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2704,7 +2924,7 @@
     "Conf": "NEWMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,344",
+    "Exp Gone": "1,344 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2714,7 +2934,7 @@
     "Conf": "NCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,331",
+    "Exp Gone": "1,331 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2724,7 +2944,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,310",
+    "Exp Gone": "1,310 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2734,7 +2954,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,308",
+    "Exp Gone": "1,308 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2744,17 +2964,7 @@
     "Conf": "NAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,292",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Minn-Morris",
-    "Conf": "UMAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,286",
+    "Exp Gone": "1,292 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2764,7 +2974,7 @@
     "Conf": "CCIW",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,282",
+    "Exp Gone": "1,282 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2774,17 +2984,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,279",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Penn College",
-    "Conf": "UEC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,278",
+    "Exp Gone": "1,279 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2794,7 +2994,7 @@
     "Conf": "ARC",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,266",
+    "Exp Gone": "1,266 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2804,7 +3004,7 @@
     "Conf": "NCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,265",
+    "Exp Gone": "1,265 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2814,7 +3014,7 @@
     "Conf": "MASCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,261",
+    "Exp Gone": "1,261 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2824,7 +3024,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,256",
+    "Exp Gone": "1,256 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2834,7 +3034,7 @@
     "Conf": "UEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,227",
+    "Exp Gone": "1,227 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2844,7 +3044,7 @@
     "Conf": "UMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,226",
+    "Exp Gone": "1,226 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2854,7 +3054,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,222",
+    "Exp Gone": "1,222 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2864,7 +3064,7 @@
     "Conf": "MIAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,215",
+    "Exp Gone": "1,215 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2874,7 +3074,7 @@
     "Conf": "AEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,213",
+    "Exp Gone": "1,213 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2884,7 +3084,7 @@
     "Conf": "WIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,210",
+    "Exp Gone": "1,210 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2894,7 +3094,7 @@
     "Conf": "SUNYAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,203",
+    "Exp Gone": "1,203 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2904,7 +3104,7 @@
     "Conf": "CCIW",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,196",
+    "Exp Gone": "1,196 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2914,7 +3114,7 @@
     "Conf": "NEWMAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,194",
+    "Exp Gone": "1,194 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2924,7 +3124,7 @@
     "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,187",
+    "Exp Gone": "1,187 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2934,17 +3134,7 @@
     "Conf": "CNE",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,150",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Greenville",
-    "Conf": "SLIAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,147",
+    "Exp Gone": "1,150 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2954,7 +3144,7 @@
     "Conf": "GNAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,145",
+    "Exp Gone": "1,145 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2964,17 +3154,7 @@
     "Conf": "UEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,145",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Covenant",
-    "Conf": "CCS",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,144",
+    "Exp Gone": "1,145 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2984,7 +3164,7 @@
     "Conf": "NJAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,142",
+    "Exp Gone": "1,142 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -2994,7 +3174,7 @@
     "Conf": "SKY",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,133",
+    "Exp Gone": "1,133 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3004,7 +3184,7 @@
     "Conf": "LL",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,119",
+    "Exp Gone": "1,119 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3014,7 +3194,7 @@
     "Conf": "MIAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,104",
+    "Exp Gone": "1,104 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3024,7 +3204,7 @@
     "Conf": "NESCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,088",
+    "Exp Gone": "1,088 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3034,17 +3214,7 @@
     "Conf": "E8",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,067",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Hendrix",
-    "Conf": "SCAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,065",
+    "Exp Gone": "1,067 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3054,7 +3224,7 @@
     "Conf": "C2C",
     "Pub?": "TRUE",
     "Surp Gone": 0,
-    "Exp Gone": "1,059",
+    "Exp Gone": "1,059 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3064,7 +3234,7 @@
     "Conf": "SCIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,044",
+    "Exp Gone": "1,044 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3074,7 +3244,7 @@
     "Conf": "UAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,035",
+    "Exp Gone": "1,035 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3084,37 +3254,7 @@
     "Conf": "MASCAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
-    "Exp Gone": "1,028",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Crown",
-    "Conf": "UMAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,019",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "WashU",
-    "Conf": "UAA",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": "1,017",
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Marian",
-    "Conf": "NACC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 994,
+    "Exp Gone": "1,028 ",
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3130,31 +3270,11 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Wooster",
-    "Conf": "NCAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 984,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Capital",
     "Conf": "OAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 960,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Salem (NC)",
-    "Conf": "USAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 958,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3195,26 +3315,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 939,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Concordia (TX)",
-    "Conf": "SCAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 933,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Howard Payne",
-    "Conf": "ASC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 889,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3310,16 +3410,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Methodist",
-    "Conf": "USAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 830,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "SUNY Purchase",
     "Conf": "SKY",
     "Pub?": "FALSE",
@@ -3345,16 +3435,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 817,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Gwynedd-Mercy",
-    "Conf": "AEC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 794,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3510,26 +3590,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Meredith",
-    "Conf": "USAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 665,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Illinois Col",
-    "Conf": "MWC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 664,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Lancaster Bib",
     "Conf": "UEC",
     "Pub?": "FALSE",
@@ -3550,16 +3610,6 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Mt. Union",
-    "Conf": "OAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 635,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Clarkson",
     "Conf": "LL",
     "Pub?": "FALSE",
@@ -3575,16 +3625,6 @@
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 622,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Wartburg",
-    "Conf": "ARC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 614,
     "Transfers In": 0,
     "5th": 0,
     "5th Year Last Names": ""
@@ -3652,16 +3692,6 @@
   {
     "Team": "Alfred",
     "Conf": "E8",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 578,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Macalester",
-    "Conf": "MIAC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 578,
@@ -3792,7 +3822,7 @@
   {
     "Team": "Thiel",
     "Conf": "PAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": 307,
     "Transfers In": 0,
@@ -3882,7 +3912,7 @@
   {
     "Team": "Otterbein",
     "Conf": "OAC",
-    "Pub?": "FALSE",
+    "Pub?": "TRUE",
     "Surp Gone": 0,
     "Exp Gone": 85,
     "Transfers In": 0,
@@ -3990,28 +4020,8 @@
     "5th Year Last Names": ""
   },
   {
-    "Team": "Northwestern (MN)",
-    "Conf": "UMAC",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 0,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
     "Team": "Trinity (DC)",
     "Conf": "IND",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 0,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Southwestern",
-    "Conf": "SAA",
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 0,
@@ -4072,16 +4082,6 @@
   {
     "Team": "Misericordia",
     "Conf": "MACF",
-    "Pub?": "FALSE",
-    "Surp Gone": 0,
-    "Exp Gone": 0,
-    "Transfers In": 0,
-    "5th": 0,
-    "5th Year Last Names": ""
-  },
-  {
-    "Team": "Rhode Island College",
-    "Conf": "LEC",
     "Pub?": "FALSE",
     "Surp Gone": 0,
     "Exp Gone": 0,
