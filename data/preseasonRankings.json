@@ -536,8 +536,8 @@
     "Adj": 0,
     "STAT": 16.27,
     "Projected Preseason Rank": 36,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 0.87,
+    "Dangerous": 2.62
   },
   {
     "Team": "Ripon",
@@ -581,8 +581,8 @@
     "Adj": 0,
     "STAT": 15.74,
     "Projected Preseason Rank": 39,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.43,
+    "Dangerous": 6.15
   },
   {
     "Team": "MSOE",
@@ -686,8 +686,8 @@
     "Adj": 0,
     "STAT": 14.49,
     "Projected Preseason Rank": 46,
-    "Safe Loss Threshold": 3.56,
-    "Dangerous": 5.29
+    "Safe Loss Threshold": 4.06,
+    "Dangerous": 5.79
   },
   {
     "Team": "Washington & Jefferson",
@@ -1751,8 +1751,8 @@
     "Adj": 0,
     "STAT": 5.99,
     "Projected Preseason Rank": 117,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.71,
+    "Dangerous": 6.43
   },
   {
     "Team": "John Carroll",
@@ -1871,8 +1871,8 @@
     "Adj": 0,
     "STAT": 5.64,
     "Projected Preseason Rank": 125,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.65,
+    "Dangerous": 5.38
   },
   {
     "Team": "Penn State-Abington",
@@ -2036,8 +2036,8 @@
     "Adj": 0,
     "STAT": 5,
     "Projected Preseason Rank": 136,
-    "Safe Loss Threshold": 5.03,
-    "Dangerous": 6.75
+    "Safe Loss Threshold": 4.42,
+    "Dangerous": 6.15
   },
   {
     "Team": "Chapman",
@@ -2636,8 +2636,8 @@
     "Adj": 0.5,
     "STAT": 2.59,
     "Projected Preseason Rank": 176,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.23,
+    "Dangerous": 5.95
   },
   {
     "Team": "Montclair St.",
@@ -3206,8 +3206,8 @@
     "Adj": 0,
     "STAT": 0.3,
     "Projected Preseason Rank": 214,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 5.37,
+    "Dangerous": 7.09
   },
   {
     "Team": "Dominican",
@@ -4211,8 +4211,8 @@
     "Adj": 0,
     "STAT": "(3.70)",
     "Projected Preseason Rank": 281,
-    "Safe Loss Threshold": 2.39,
-    "Dangerous": 4.13
+    "Safe Loss Threshold": 0.36,
+    "Dangerous": 2.12
   },
   {
     "Team": "Martin Luther",
@@ -4466,8 +4466,8 @@
     "Adj": 0,
     "STAT": "(4.33)",
     "Projected Preseason Rank": 298,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 2.5,
+    "Dangerous": 4.24
   },
   {
     "Team": "Curry",
@@ -4496,8 +4496,8 @@
     "Adj": 0,
     "STAT": "(4.43)",
     "Projected Preseason Rank": 300,
-    "Safe Loss Threshold": 3.36,
-    "Dangerous": 5.09
+    "Safe Loss Threshold": 3.24,
+    "Dangerous": 4.97
   },
   {
     "Team": "Eastern Mennonite",
@@ -4511,8 +4511,8 @@
     "Adj": 0,
     "STAT": "(4.47)",
     "Projected Preseason Rank": 301,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.71,
+    "Dangerous": 5.44
   },
   {
     "Team": "St. John Fisher",
@@ -4556,8 +4556,8 @@
     "Adj": 0,
     "STAT": "(4.57)",
     "Projected Preseason Rank": 304,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.22,
+    "Dangerous": 4.95
   },
   {
     "Team": "Sarah Lawrence",
@@ -4811,8 +4811,8 @@
     "Adj": 0,
     "STAT": "(5.31)",
     "Projected Preseason Rank": 321,
-    "Safe Loss Threshold": 2.07,
-    "Dangerous": 3.81
+    "Safe Loss Threshold": 2.51,
+    "Dangerous": 4.25
   },
   {
     "Team": "North Park",
@@ -4916,8 +4916,8 @@
     "Adj": 0,
     "STAT": "(5.63)",
     "Projected Preseason Rank": 328,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 2.16,
+    "Dangerous": 3.9
   },
   {
     "Team": "William Smith",
@@ -4961,8 +4961,8 @@
     "Adj": 0,
     "STAT": "(5.69)",
     "Projected Preseason Rank": 331,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 4.19,
+    "Dangerous": 5.91
   },
   {
     "Team": "Meredith",
@@ -4976,8 +4976,8 @@
     "Adj": 0,
     "STAT": "(5.74)",
     "Projected Preseason Rank": 332,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": "(1.38)",
+    "Dangerous": 0.39
   },
   {
     "Team": "Mary Baldwin",
@@ -5126,8 +5126,8 @@
     "Adj": 0,
     "STAT": "(6.25)",
     "Projected Preseason Rank": 342,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.98,
+    "Dangerous": 5.71
   },
   {
     "Team": "Hiram",
@@ -5546,8 +5546,8 @@
     "Adj": 0,
     "STAT": "(7.86)",
     "Projected Preseason Rank": 370,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 2.7,
+    "Dangerous": 4.44
   },
   {
     "Team": "Crown",
@@ -5741,8 +5741,8 @@
     "Adj": 0,
     "STAT": "(9.28)",
     "Projected Preseason Rank": 383,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 3.37,
+    "Dangerous": 5.1
   },
   {
     "Team": "Rockford",
@@ -5876,8 +5876,8 @@
     "Adj": 0,
     "STAT": "(10.38)",
     "Projected Preseason Rank": 392,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": 1.8,
+    "Dangerous": 3.54
   },
   {
     "Team": "Fitchburg St.",
@@ -5951,8 +5951,8 @@
     "Adj": 0,
     "STAT": "(11.22)",
     "Projected Preseason Rank": 397,
-    "Safe Loss Threshold": "#DIV/0!",
-    "Dangerous": "#DIV/0!"
+    "Safe Loss Threshold": "(0.74)",
+    "Dangerous": 1.02
   },
   {
     "Team": "MA Col Lib Arts",
