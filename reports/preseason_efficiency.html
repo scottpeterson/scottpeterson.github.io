@@ -15,7 +15,7 @@
 
     <!-- Scoped report styles -->
     <style>
-      .report-preseason_efficiency :root {
+      .report-preseason_efficiency {
         color-scheme: light;
         --bg: #f4f3ef;
         --surface: #ffffff;
@@ -40,7 +40,7 @@
         --fs-sm: 0.85rem;
         --fs-md: 0.95rem;
       }
-      .report-preseason_efficiency :root[data-theme='dark'] {
+      :root[data-theme='dark'] .report-preseason_efficiency {
         color-scheme: dark;
         --bg: #15181d;
         --surface: #1d2128;
@@ -57,7 +57,7 @@
         --gray: #252a32;
       }
       @media (prefers-color-scheme: dark) {
-        .report-preseason_efficiency :root:not([data-theme='light']) {
+        :root:not([data-theme='light']) .report-preseason_efficiency {
           color-scheme: dark;
           --bg: #15181d;
           --surface: #1d2128;
@@ -188,12 +188,12 @@
       .report-preseason_efficiency .seg button.active::before {
         content: '\2713\00a0';
       }
-      .report-preseason_efficiency :root[data-theme='dark'] .seg button.active {
+      :root[data-theme='dark'] .report-preseason_efficiency .seg button.active {
         color: #15181d;
       }
       @media (prefers-color-scheme: dark) {
-        .report-preseason_efficiency
-          :root:not([data-theme='light'])
+        :root:not([data-theme='light'])
+          .report-preseason_efficiency
           .seg
           button.active {
           color: #15181d;
