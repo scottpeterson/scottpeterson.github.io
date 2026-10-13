@@ -119,6 +119,16 @@
    report's scoped styles can take effect without conflicts.
    ========================================================================== */
 
+/* styles.css gives h1 and h2 the site navy (--navy-900). A report that leaves
+   its headings to inherit the body color (the normal case for a themed report)
+   would otherwise show navy headings on its own dark background. Inherit from
+   the report container instead. A report that sets its own heading color still
+   wins: its scoped rule has the same specificity and loads after this file. */
+[class^='report-'] h1,
+[class^='report-'] h2 {
+  color: inherit;
+}
+
 [class^='report-'] .legend-item {
   background: none;
   border: none;
