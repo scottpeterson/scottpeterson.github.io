@@ -94,7 +94,9 @@ function generateWrappedReport(report, nav) {
 
   // Generate inline script tags
   const inlineScriptTags = inlineScripts
-    .map(content => `    <script>\n${content}\n    </script>`)
+    .map(
+      ({ attrs, content }) => `    <script${attrs}>\n${content}\n    </script>`
+    )
     .join('\n');
 
   return `<!doctype html>

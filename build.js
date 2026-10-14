@@ -600,7 +600,7 @@ ${cards}
       .map(src => `<script src="${this.escapeHtml(src)}"></script>`)
       .join('\n');
     const inlineScriptTags = extractInlineScripts(html)
-      .map(content => `<script>\n${content}\n</script>`)
+      .map(({ attrs, content }) => `<script${attrs}>\n${content}\n</script>`)
       .join('\n');
 
     return [
