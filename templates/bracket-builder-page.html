@@ -1,0 +1,140 @@
+<section class="table-section bb">
+  <h2>{{SECTION_TITLE}}</h2>
+
+  <p class="bb-intro">
+    Drag a team from the field into a first-round slot, or tap a team and then
+    tap a slot. Each slot shows the seed line the committee pattern expects.
+    Pick a host once a pod has four teams. A flight is a team that travels 500
+    miles or more to its host. The 2027 semifinals and final are at the Alliant
+    Energy PowerHouse in Cedar Rapids, Iowa, March 18-20, 2027. Your bracket
+    saves in this browser, so it's still here when you come back.
+  </p>
+
+  <div class="bb-toolbar">
+    <dl class="bb-counts" aria-live="polite">
+      <div>
+        <dt>Placed</dt>
+        <dd id="bb-count-placed">0 / 64</dd>
+      </div>
+      <div>
+        <dt>Flights</dt>
+        <dd id="bb-count-flights">0</dd>
+      </div>
+      <div>
+        <dt>Guaranteed sectional flights</dt>
+        <dd id="bb-count-guaranteed">0</dd>
+      </div>
+      <div>
+        <dt>Errors</dt>
+        <dd id="bb-count-errors">0</dd>
+      </div>
+      <div>
+        <dt>Warnings</dt>
+        <dd id="bb-count-warnings">0</dd>
+      </div>
+    </dl>
+    <div class="bb-actions">
+      <button type="button" class="btn btn--primary" id="bb-share">
+        Share image
+      </button>
+      <button type="button" class="btn btn--outline" id="bb-pdf">
+        Save PDF
+      </button>
+      <button type="button" class="btn btn--outline" id="bb-reset">
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <p id="bb-message" class="bb-message" role="status" aria-live="polite"></p>
+
+  <div class="bb-layout">
+    <aside class="bb-field" aria-label="Field of 64">
+      <div class="bb-field-head">
+        <h3>Field of 64</h3>
+        <div
+          class="bb-chips"
+          id="bb-chips"
+          role="group"
+          aria-label="Show teams"
+        >
+          <button
+            type="button"
+            class="bb-chip"
+            data-show="all"
+            aria-pressed="true"
+          >
+            All <span class="bb-chip-count"></span>
+          </button>
+          <button
+            type="button"
+            class="bb-chip"
+            data-show="open"
+            aria-pressed="false"
+          >
+            Not placed <span class="bb-chip-count"></span>
+          </button>
+          <button
+            type="button"
+            class="bb-chip"
+            data-show="placed"
+            aria-pressed="false"
+          >
+            Placed <span class="bb-chip-count"></span>
+          </button>
+        </div>
+        <input
+          type="search"
+          id="bb-filter"
+          class="bb-filter"
+          placeholder="Filter teams or conferences"
+          aria-label="Filter teams or conferences"
+        />
+      </div>
+      <ol id="bb-field-list" class="bb-field-list">
+        <li class="bb-field-loading">Loading the field...</li>
+      </ol>
+    </aside>
+
+    <div class="bb-bracket">
+      <div class="bb-tabs" role="tablist" id="bb-tabs"></div>
+      <div class="bb-quadrants" id="bb-quadrants"></div>
+    </div>
+  </div>
+
+  <details class="bb-rules">
+    <summary>How the checks work</summary>
+    <ul>
+      <li>
+        Conference opponents can't meet in the first round. The page refuses
+        that drop.
+      </li>
+      <li>
+        Amber warnings: a first-round rematch of a nonconference game played
+        through Selection Sunday, seed lines that differ from the slot, teams
+        from the same region, a host outside the top 16 overall seeds, and
+        possible second-round games between conference opponents or teams that
+        already played.
+      </li>
+      <li>
+        Red errors: a full pod without a host, a team 500 miles or more from its
+        host, more than two top-8 seeds in a quadrant, and two top-8 seeds in
+        the same half of a quadrant, where they would meet before the Elite 8.
+      </li>
+      <li>
+        Sectional check: if every favorite wins its pod, the quadrant's top-4
+        overall seed should have at least as many of the other three sectional
+        teams within 500 miles as any of those teams has.
+      </li>
+      <li>
+        A guaranteed sectional flight is a pod whose four teams are all 500
+        miles or more from every other team in the quadrant. Either its winner
+        flies to the sectional, or its winner hosts and the other three fly.
+      </li>
+      <li>
+        Field: 2026 NCAA tournament field, seeded 1-64. Distances: driving miles
+        between campuses.
+      </li>
+    </ul>
+  </details>
+</section>

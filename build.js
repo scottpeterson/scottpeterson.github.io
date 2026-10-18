@@ -184,6 +184,10 @@ class TemplateEngine {
         'templates/ryan-page.html',
         'utf8'
       );
+      this.templates.bracketBuilderPage = await fs.readFile(
+        'templates/bracket-builder-page.html',
+        'utf8'
+      );
       this.templates.referencePage = await fs.readFile(
         'templates/reference-page.html',
         'utf8'
@@ -721,6 +725,7 @@ ${cards}
       IS_PREMIUM_PAGE: data.isPremiumPage,
       IS_DISTANCES_PAGE: data.isDistancesPage,
       IS_RYAN_PAGE: data.isRyanPage,
+      IS_BRACKET_BUILDER_PAGE: data.isBracketBuilderPage,
       SHOW_DEFAULT_HEADER: data.showDefaultHeader,
       SHOW_BUY_BUTTON: data.showBuyButton,
       COMMAND_PALETTE: data.commandPaletteEnabled,
@@ -1210,6 +1215,11 @@ ${pricingFeaturesHtml}
         tableContent = this.renderTemplate(this.templates.ryanPage, {
           sectionTitle: pageConfig.sectionTitle,
         });
+      } else if (pageConfig.isBracketBuilderPage) {
+        // Bracket builder: drag-and-drop field of 64 with committee checks
+        tableContent = this.renderTemplate(this.templates.bracketBuilderPage, {
+          sectionTitle: pageConfig.sectionTitle,
+        });
       } else if (pageConfig.embedHtml) {
         // Embedded standalone HTML (e.g. bethany.html). The config points at a
         // self-contained document under data/embedded_html/; the build pulls
@@ -1324,6 +1334,7 @@ ${pricingFeaturesHtml}
         isPremiumPage: pageConfig.isPremiumPage || false,
         isDistancesPage: pageConfig.isDistancesPage || false,
         isRyanPage: pageConfig.isRyanPage || false,
+        isBracketBuilderPage: pageConfig.isBracketBuilderPage || false,
         showBuyButton: showBuyButton,
         commandPaletteEnabled: commandPaletteEnabled,
         navItems: navItems,
