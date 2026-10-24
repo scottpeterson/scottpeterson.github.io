@@ -14,7 +14,7 @@
   "publishing_tracker": {
     "title": "Publishing Tracker",
     "heading": "Publishing Tracker",
-    "description": "D3 WBB schedule and roster publishing progress for 2025-26.",
+    "description": "D3 WBB schedule and roster publishing progress for 2026-27.",
     "sectionTitle": "Team Publishing Status",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -30,8 +30,8 @@
     "legend": {
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
-      "Schedule Published?": "Whether the team has published their 2025-26 season schedule",
-      "Roster Published?": "Whether the team has published their 2025-26 roster"
+      "Schedule Published?": "Whether the team has published their 2026-27 season schedule",
+      "Roster Published?": "Whether the team has published their 2026-27 roster"
     }
   },
   "preseason_rankings": {
@@ -498,7 +498,7 @@
         "priceOriginal": "$49",
         "pricePeriod": "one-time payment",
         "pricingHeading": "Premium Access",
-        "pricingClarification": "One-time purchase for the 2025-26 season. Not a subscription, no recurring charges.",
+        "pricingClarification": "One-time purchase for the 2026-27 season. Not a subscription, no recurring charges.",
         "pricingFeatures": [
           "Weekly PDF report delivered every Monday",
           "Full coverage from November through March"
@@ -534,7 +534,7 @@
   "success": {
     "title": "Success",
     "heading": "Payment Successful! 🎉",
-    "description": "Your report is confirmed! You'll receive it via email within 24 hours. Be sure to check your spam folder if you don't see it.",
+    "description": "Your report is confirmed! Your first weekly report arrives by email on November 2, 2026, or the Monday after your purchase if you bought after that date. Be sure to check your spam folder if you don't see it.",
     "featureFlag": "premium",
     "showInNav": false,
     "isSimplePage": true
