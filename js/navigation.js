@@ -51,8 +51,11 @@ function initMobileNav() {
       closeMenu();
     });
 
-    // Close menu when a nav link is clicked
-    const navLinks = navMenu.querySelectorAll('a');
+    // Close menu when a nav link is clicked. The Reports dropdown trigger is
+    // excluded: on mobile, reports-nav.js turns that tap into "expand the
+    // submenu inside the drawer", so closing the drawer here would hide the
+    // submenu the moment it opened. The submenu's own links still close it.
+    const navLinks = navMenu.querySelectorAll('a:not(.dropdown-trigger)');
     navLinks.forEach(function (link) {
       link.addEventListener('click', function () {
         closeMenu();

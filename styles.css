@@ -1620,10 +1620,18 @@ footer {
     right: -100%;
     width: 80%;
     max-width: 300px;
-    height: 100vh;
+    /* 100dvh, not 100vh: on iOS Safari 100vh includes the area under the
+       browser toolbar, so the last items in a 100vh drawer sit behind it. */
+    height: 100dvh;
     background-color: var(--navy-900);
     flex-direction: column;
     align-items: flex-start;
+    /* The desktop rule sets flex-wrap: wrap so the horizontal bar can break
+       into rows. In a column drawer with a fixed height, wrap has the opposite
+       effect: items that do not fit vertically start a second column to the
+       right of the drawer, off screen. Nowrap forces one column so overflow-y
+       takes over and the drawer scrolls. */
+    flex-wrap: nowrap;
     padding: 60px 0 30px;
     transition: right 0.3s ease;
     z-index: 100;

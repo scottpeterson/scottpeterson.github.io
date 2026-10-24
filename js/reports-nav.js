@@ -43,14 +43,14 @@
       });
     }
 
-    // Mobile: Toggle dropdown on click
+    // Mobile: Toggle dropdown on click. Detect mobile with the same breakpoint
+    // the CSS uses. Do not test whether the hamburger is visible: navigation.js
+    // hides the hamburger while the drawer is open, which is exactly when this
+    // handler runs, so that test always said "desktop" and the tap navigated
+    // away instead of expanding the submenu.
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
     trigger.addEventListener('click', function (e) {
-      // Only handle on mobile (check if hamburger menu is visible)
-      const menuToggle = document.getElementById('menuToggle');
-      const isMobile =
-        menuToggle && window.getComputedStyle(menuToggle).display !== 'none';
-
-      if (isMobile) {
+      if (mobileQuery.matches) {
         e.preventDefault();
         menu.classList.toggle('open');
         if (arrow) {
