@@ -928,7 +928,7 @@ ${cards}
       : '';
 
     // Build form/CTA based on sales status
-    let formHtml = '';
+    let formHtml;
     if (canPurchase) {
       formHtml = `
           <form class="premium-form" data-stripe-link="${product.stripePaymentLink}">

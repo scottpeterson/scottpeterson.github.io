@@ -859,7 +859,7 @@
   // Restores a saved bracket, keeping only field teams in real slots and
   // hosts who are in their pod.
   function loadBracket() {
-    let saved = null;
+    let saved;
     try {
       saved = JSON.parse(localStorage.getItem(storageKey()) || 'null');
     } catch (err) {

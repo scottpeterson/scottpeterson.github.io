@@ -124,13 +124,14 @@ are **grouped into shared rules**: `.btn, .button, .cta-button, .premium-button,
 rings were added for buttons **and** links (the old site-wide a11y gap), and the duplicate
 `.premium-button:disabled` was collapsed to a single `:disabled` rule. For any NEW button, use
 `.btn` + a variant — do not add a bespoke button class. Reference mapping:
-| Variant | Replaces | Look |
-|---|---|---|
-| `.btn--primary` | `.btn--primary`, `.button-primary`, `.premium-button`, `.form-submit` | `--grad-brand`, white text |
-| `.btn--secondary` | `.cta-button` | white bg, `--blue-600` text (for use on blue bands) |
-| `.btn--ghost` | `.btn--ghost` | transparent + white border (on dark) |
-| `.btn--success` | `.sample-button` | green — genuinely semantic, keep distinct |
-| `.btn--lg` / `.btn--block` | size/full-width one-offs | modifiers, not new classes |
+
+| Variant                    | Replaces                                                              | Look                                                |
+| -------------------------- | --------------------------------------------------------------------- | --------------------------------------------------- |
+| `.btn--primary`            | `.btn--primary`, `.button-primary`, `.premium-button`, `.form-submit` | `--grad-brand`, white text                          |
+| `.btn--secondary`          | `.cta-button`                                                         | white bg, `--blue-600` text (for use on blue bands) |
+| `.btn--ghost`              | `.btn--ghost`                                                         | transparent + white border (on dark)                |
+| `.btn--success`            | `.sample-button`                                                      | green — genuinely semantic, keep distinct           |
+| `.btn--lg` / `.btn--block` | size/full-width one-offs                                              | modifiers, not new classes                          |
 
 Single padding scale, single hover (`translateY(-2px)` + a deeper `--shadow-action`). The
 reversed-direction hover gradient is gone.
@@ -146,12 +147,13 @@ same frosted look but differ in padding / shadow / extras and are **already full
 raw literals). Pulling them under a single generic `.card` / `.card--lg` base would require adding
 the class throughout the templates for marginal gain, so it's **intentionally deferred** — not
 open debt. The idea is kept here as the north-star target if a future change touches these anyway:
-| Class | Tokens | Would replace |
-|---|---|---|
-| `.card` | `--surface`, `--r-md`, `--elev-2`, `--space-3` pad | explore-card, home-card (already merged) |
-| `.card--lg` | `--r-lg`, `--elev-3`, `--space-4` pad | table-section, home-content, contact-form/info |
-| `.card--interactive` | adds hover lift | explore-card behavior |
-| status borders | `--success`/`--danger` left/edge | distance-close/far (already semantic — keep) |
+
+| Class                | Tokens                                             | Would replace                                  |
+| -------------------- | -------------------------------------------------- | ---------------------------------------------- |
+| `.card`              | `--surface`, `--r-md`, `--elev-2`, `--space-3` pad | explore-card, home-card (already merged)       |
+| `.card--lg`          | `--r-lg`, `--elev-3`, `--space-4` pad              | table-section, home-content, contact-form/info |
+| `.card--interactive` | adds hover lift                                    | explore-card behavior                          |
+| status borders       | `--success`/`--danger` left/edge                   | distance-close/far (already semantic — keep)   |
 
 ### Eyebrow — share the duplicate ✅ done
 

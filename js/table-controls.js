@@ -398,7 +398,7 @@ class TableController {
     if (pageColumns && pageColumns.includes(cleanHeader)) {
       // Parse the value and check if it's negative
       // Handle both standard negative notation (-5) and accounting notation (5)
-      let isNegative = false;
+      let isNegative;
 
       if (typeof value === 'string') {
         const trimmed = value.trim();
