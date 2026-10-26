@@ -30,6 +30,7 @@
         --picked: #dde8fb;
         --accent: #1e5fd6;
         --link: #1e5fd6;
+        --opinion: #eceff3;
         --on-accent: #ffffff;
         --up: #166534;
         --down: #b3261e;
@@ -55,6 +56,7 @@
         --picked: #263e66;
         --accent: #1e5fd6;
         --link: #8db4ff;
+        --opinion: #1d2738;
         --on-accent: #ffffff;
         --up: #4ade80;
         --down: #f87171;
@@ -80,6 +82,7 @@
           --picked: #263e66;
           --accent: #1e5fd6;
           --link: #8db4ff;
+          --opinion: #1d2738;
           --on-accent: #ffffff;
           --up: #4ade80;
           --down: #f87171;
@@ -313,6 +316,40 @@
       .report-d3hoops_ballots .mchip .logo-gap {
         width: 18px;
         margin: 0;
+      }
+      .report-d3hoops_ballots .philosophy {
+        background: var(--opinion);
+        border-radius: 14px;
+        padding: var(--s5);
+        margin-top: var(--s6);
+      }
+      .report-d3hoops_ballots .philosophy h2 {
+        font-size: 18px;
+        margin-bottom: var(--s3);
+      }
+      .report-d3hoops_ballots .philosophy .ph-q {
+        font-size: 20px;
+        font-weight: 700;
+        font-style: italic;
+        margin-bottom: var(--s3);
+      }
+      .report-d3hoops_ballots .philosophy ul {
+        margin: 0;
+        padding-left: 1.2em;
+        color: var(--ink-2);
+        font-style: italic;
+      }
+      .report-d3hoops_ballots .philosophy li + li {
+        margin-top: var(--s1);
+      }
+      .report-d3hoops_ballots .philosophy .ph-sub {
+        margin-top: var(--s5);
+        padding-top: var(--s4);
+        border-top: 1px solid var(--line);
+      }
+      .report-d3hoops_ballots .philosophy h3 {
+        font-size: 15px;
+        margin: 0 0 var(--s2);
       }
       .report-d3hoops_ballots .missed-box {
         background: var(--card);
@@ -707,6 +744,34 @@
               <div class="missed" id="missed"></div>
             </div>
           </section>
+          <section class="philosophy" id="philosophy">
+            <h2>Top 25 Voting Philosophy</h2>
+            <p class="ph-q">
+              &ldquo;Who would win on a neutral court today?&rdquo;
+            </p>
+            <ul>
+              <li>
+                as evidenced by strong wins this year, narrow losses to great
+                teams, good underlying stats in the biggest games
+              </li>
+              <li>as evidenced by watching games</li>
+              <li>
+                as evidenced by strong performance last year + lots of returners
+              </li>
+              <li>elite wins are extra evidence</li>
+              <li>a bad loss is bad evidence</li>
+              <li>injuries are considered</li>
+            </ul>
+            <div class="ph-sub" data-poll="Preseason">
+              <h3>Added for Preseason</h3>
+              <ul>
+                <li>Track record matters</li>
+                <li>Head Coach matters</li>
+                <li>Losing All-Americans or elite elite PGs matter</li>
+              </ul>
+            </div>
+          </section>
+
           <section id="history" class="hidden">
             <div class="banner" id="history-banner"></div>
             <h2 id="history-title"></h2>
@@ -1347,6 +1412,11 @@
           document
             .getElementById('missed-box')
             .classList.toggle('hidden', b.missed.length === 0);
+          document
+            .querySelectorAll('.ph-sub[data-poll]')
+            .forEach(d =>
+              d.classList.toggle('hidden', d.dataset.poll !== b.poll)
+            );
           document.getElementById('missed').innerHTML = b.missed
             .map(
               t =>
