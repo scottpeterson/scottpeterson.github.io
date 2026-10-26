@@ -144,20 +144,24 @@ body {
   align-items: center;
 }
 
-.logo {
+/* Scoped to .main-nav because "logo" is a common class name in embedded
+   reports (team logo images). A bare .logo rule gave those images 30px of
+   vertical padding, which with box-sizing: border-box leaves a 24px image no
+   room to draw. */
+.main-nav .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   padding: 15px 0;
 }
 
-.logo a {
+.main-nav .logo a {
   color: #fff;
   text-decoration: none;
   transition: none;
 }
 
-.logo a:hover {
+.main-nav .logo a:hover {
   color: #fff;
 }
 
@@ -429,7 +433,7 @@ h2 {
 /* Same keyboard ring for links — buttons had one but links didn't, so the only
    focus indicator was the browser default outline, which is invisible over the
    dark navy nav. :focus-visible keeps it keyboard-only (no ring on mouse/tap). */
-.logo a:focus-visible,
+.main-nav .logo a:focus-visible,
 .nav-links a:focus-visible,
 .dropdown-menu a:focus-visible,
 .explore-card:focus-visible,
@@ -1020,7 +1024,7 @@ footer {
     border-bottom: 1px solid var(--navy-700);
   }
 
-  .logo {
+  .main-nav .logo {
     padding: 10px 0;
   }
 
