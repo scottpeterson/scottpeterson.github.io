@@ -129,6 +129,27 @@
   color: inherit;
 }
 
+/* styles.css styles bare header and footer elements as site chrome (rounded
+   white card with a gradient stroke; navy footer bar with a top stroke). A
+   report's own <header> or <footer> (a title band, card headers, a source note)
+   would pick up that chrome on top of its own styles: an extra margin, border,
+   shadow, and padding on the header, and a dark bar behind the footer text.
+   Strip the chrome inside report containers. The report's scoped rules have
+   the same specificity and load after this file, so whatever a report sets
+   for its header or footer still wins. */
+[class^='report-'] header,
+[class^='report-'] footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  background: none;
+  color: inherit;
+  text-align: inherit;
+}
+
 [class^='report-'] .legend-item {
   background: none;
   border: none;
