@@ -120,6 +120,30 @@
         margin-left: 3px;
       }
 
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .overview-grid h3 {
+        margin-top: 0;
+      }
+      table.overview th {
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+      }
+      table.overview th .sort-arrow {
+        font-size: 0.7em;
+        margin-left: 3px;
+      }
+      table.overview tfoot td {
+        font-weight: 700;
+        color: #0f172a;
+        border-top: 2px solid #1e3a5f;
+        border-bottom: none;
+      }
+
       .summary-note {
         text-align: center;
         color: #64748b;
@@ -428,6 +452,24 @@
         <div class="toggle-row chips-row">
           <span class="label">Team</span>
           <div class="chips" id="teamChips"></div>
+        </div>
+      </div>
+
+      <div class="card" id="overviewCard">
+        <h2 id="overviewTitle">Transfers by division</h2>
+        <div class="overview-grid">
+          <div>
+            <h3>Incoming, by origin division</h3>
+            <div class="table-wrap">
+              <table class="summary overview" id="overviewIn"></table>
+            </div>
+          </div>
+          <div>
+            <h3>Outgoing, by destination division</h3>
+            <div class="table-wrap">
+              <table class="summary overview" id="overviewOut"></table>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -5623,7 +5665,7 @@
                     other_school: 'St. Thomas Aquinas',
                     level: 'D2',
                     d3_team: 'Manhattanville',
-                    class: 'SO',
+                    class: 'JR',
                     min: 0,
                     pts: 0,
                     reb: 0,
@@ -7456,10 +7498,146 @@
                     qualifying: false,
                     elite_team: false,
                   },
+                  {
+                    name: 'Mackenzie Amos',
+                    other_school: 'McMurry',
+                    level: 'D3',
+                    d3_team: 'Mary Hardin-Baylor',
+                    class: 'JR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Karlee Cronk',
+                    other_school: 'Mary Hardin-Baylor',
+                    level: 'D3',
+                    d3_team: 'East Texas Baptist',
+                    class: 'FR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Amari Welch',
+                    other_school: 'Mary Hardin-Baylor',
+                    level: 'D3',
+                    d3_team: 'East Texas Baptist',
+                    class: 'SO',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Lailah Hadley',
+                    other_school: 'Wittenberg',
+                    level: 'D3',
+                    d3_team: 'Eureka',
+                    class: 'SR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Arianna Saladini',
+                    other_school: 'Anna Maria',
+                    level: 'D3',
+                    d3_team: 'Fitchburg St.',
+                    class: 'GR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Erin Dixon',
+                    other_school: 'Chatham',
+                    level: 'D3',
+                    d3_team: 'Fitchburg St.',
+                    class: 'GR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Cali Laliberte',
+                    other_school: 'Rivier',
+                    level: 'D3',
+                    d3_team: 'Fitchburg St.',
+                    class: 'SO',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Naveiha Madison',
+                    other_school: 'Worcester St.',
+                    level: 'D3',
+                    d3_team: 'Fitchburg St.',
+                    class: 'SR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
                 ],
                 agg: {
-                  count_total: 104,
-                  count_matched: 100,
+                  count_total: 112,
+                  count_matched: 108,
                   count_qualifying: 0,
                   count_elite: 0,
                   avg_min: 0.0,
@@ -9042,10 +9220,78 @@
                     qualifying: false,
                     elite_team: false,
                   },
+                  {
+                    name: "Ma'Leah Duvall",
+                    other_school: 'Temple College',
+                    level: 'CC',
+                    d3_team: 'Mary Hardin-Baylor',
+                    class: 'JR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Tionna Davis',
+                    other_school: 'Kingsborough Community College',
+                    level: 'CC',
+                    d3_team: 'Brooklyn',
+                    class: 'JR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Princess Akojenu',
+                    other_school: 'Virginia University of Lynchburg',
+                    level: 'NCCAA',
+                    d3_team: 'Brooklyn',
+                    class: 'SO',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
+                  {
+                    name: "Jay'viona Smith-Littlejohn",
+                    other_school: 'Community College of Rhode Island',
+                    level: 'CC',
+                    d3_team: 'Fitchburg St.',
+                    class: 'JR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
                 ],
                 agg: {
-                  count_total: 75,
-                  count_matched: 73,
+                  count_total: 79,
+                  count_matched: 77,
                   count_qualifying: 0,
                   count_elite: 0,
                   avg_min: 0.0,
@@ -9084,7 +9330,7 @@
               data_dir: 'myapp/data/2027',
               stats_dir: 'myapp/data/2027',
               transfers_filename: 'transfers.csv',
-              total_transfers: 238,
+              total_transfers: 250,
               qualifying_threshold: 100,
               top_n_badge: 100,
               npi_snapshot_date: '',
@@ -9168,6 +9414,40 @@
                     elite_team: false,
                   },
                   {
+                    name: 'DJ Kendrick',
+                    other_school: 'Cal State Bakersfield',
+                    level: 'D1',
+                    d3_team: 'Lewis & Clark',
+                    class: 'JR',
+                    min: 402,
+                    pts: 69,
+                    reb: 73,
+                    ast: 18,
+                    pts_per30: 5.15,
+                    reb_per30: 5.45,
+                    ast_per30: 1.34,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Mercedes Artaiz',
+                    other_school: 'Sacred Heart',
+                    level: 'D1',
+                    d3_team: 'Wilkes',
+                    class: 'FR',
+                    min: 213,
+                    pts: 19,
+                    reb: 34,
+                    ast: 5,
+                    pts_per30: 2.68,
+                    reb_per30: 4.79,
+                    ast_per30: 0.7,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
                     name: 'Olivia Johnson',
                     other_school: 'UNC-Asheville',
                     level: 'D1',
@@ -9220,14 +9500,14 @@
                   },
                 ],
                 agg: {
-                  count_total: 7,
-                  count_matched: 7,
-                  count_qualifying: 6,
+                  count_total: 9,
+                  count_matched: 9,
+                  count_qualifying: 8,
                   count_elite: 2,
-                  avg_min: 552.0,
-                  avg_pts_per30: 14.39,
-                  avg_reb_per30: 6.43,
-                  avg_ast_per30: 2.04,
+                  avg_min: 490.88,
+                  avg_pts_per30: 11.77,
+                  avg_reb_per30: 6.1,
+                  avg_ast_per30: 1.79,
                   max_min: { player: 'Bria Medina', team: 'Knox', value: 937 },
                   max_pts_per30: {
                     player: 'Bria Medina',
@@ -9284,6 +9564,23 @@
                     elite_team: false,
                   },
                   {
+                    name: 'Audra Petty',
+                    other_school: 'Ferrum',
+                    level: 'D2',
+                    d3_team: 'Lynchburg',
+                    class: 'SO',
+                    min: 667,
+                    pts: 406,
+                    reb: 142,
+                    ast: 29,
+                    pts_per30: 18.26,
+                    reb_per30: 6.39,
+                    ast_per30: 1.3,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
                     name: 'Alline Ballard',
                     other_school: 'West Virginia State',
                     level: 'D2',
@@ -9318,6 +9615,74 @@
                     elite_team: false,
                   },
                   {
+                    name: 'Raina Burns',
+                    other_school: 'Augusta',
+                    level: 'D2',
+                    d3_team: 'Notre Dame (MD)',
+                    class: 'FR',
+                    min: 577,
+                    pts: 192,
+                    reb: 62,
+                    ast: 46,
+                    pts_per30: 9.98,
+                    reb_per30: 3.22,
+                    ast_per30: 2.39,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Katie Grexa',
+                    other_school: 'Slippery Rock',
+                    level: 'D2',
+                    d3_team: 'Westminster (PA)',
+                    class: 'SO',
+                    min: 538,
+                    pts: 183,
+                    reb: 182,
+                    ast: 29,
+                    pts_per30: 10.2,
+                    reb_per30: 10.15,
+                    ast_per30: 1.62,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Hailey Perez',
+                    other_school: 'Hawaii Pacific',
+                    level: 'D2',
+                    d3_team: 'Lewis & Clark',
+                    class: 'FR',
+                    min: 482,
+                    pts: 186,
+                    reb: 45,
+                    ast: 15,
+                    pts_per30: 11.58,
+                    reb_per30: 2.8,
+                    ast_per30: 0.93,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Leah Skweres',
+                    other_school: 'IUP',
+                    level: 'D2',
+                    d3_team: 'Juniata',
+                    class: 'FR',
+                    min: 402,
+                    pts: 114,
+                    reb: 56,
+                    ast: 16,
+                    pts_per30: 8.51,
+                    reb_per30: 4.18,
+                    ast_per30: 1.19,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
                     name: 'Adriana Howard',
                     other_school: 'Truman State',
                     level: 'D2',
@@ -9330,6 +9695,40 @@
                     pts_per30: 8.82,
                     reb_per30: 8.98,
                     ast_per30: 1.5,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Kyjana Jordan',
+                    other_school: 'Clayton State',
+                    level: 'D2',
+                    d3_team: 'Averett',
+                    class: 'FR',
+                    min: 296,
+                    pts: 110,
+                    reb: 78,
+                    ast: 4,
+                    pts_per30: 11.15,
+                    reb_per30: 7.91,
+                    ast_per30: 0.41,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Roxy Dagostino',
+                    other_school: 'Seton Hill',
+                    level: 'D2',
+                    d3_team: 'Thomas',
+                    class: 'FR',
+                    min: 289,
+                    pts: 170,
+                    reb: 73,
+                    ast: 15,
+                    pts_per30: 17.65,
+                    reb_per30: 7.58,
+                    ast_per30: 1.56,
                     matched: true,
                     qualifying: true,
                     elite_team: false,
@@ -9364,6 +9763,23 @@
                     pts_per30: 5.05,
                     reb_per30: 2.93,
                     ast_per30: 1.47,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Martina Howe',
+                    other_school: 'Glenville State',
+                    level: 'D2',
+                    d3_team: 'Bethany',
+                    class: 'FR',
+                    min: 161,
+                    pts: 46,
+                    reb: 17,
+                    ast: 9,
+                    pts_per30: 8.57,
+                    reb_per30: 3.17,
+                    ast_per30: 1.68,
                     matched: true,
                     qualifying: true,
                     elite_team: false,
@@ -9421,7 +9837,7 @@
                   },
                   {
                     name: 'Sammie Buss',
-                    other_school: 'Maryville',
+                    other_school: 'Maryville (MO)',
                     level: 'D2',
                     d3_team: 'UW-River Falls',
                     class: 'SO',
@@ -9436,25 +9852,42 @@
                     qualifying: false,
                     elite_team: true,
                   },
+                  {
+                    name: 'Kynnade Bates',
+                    other_school: 'Lake Erie',
+                    level: 'D2',
+                    d3_team: 'Capital',
+                    class: 'FR',
+                    min: 3,
+                    pts: 0,
+                    reb: 1,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 10.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
                 ],
                 agg: {
-                  count_total: 11,
-                  count_matched: 11,
-                  count_qualifying: 9,
+                  count_total: 20,
+                  count_matched: 20,
+                  count_qualifying: 17,
                   count_elite: 1,
-                  avg_min: 427.22,
-                  avg_pts_per30: 11.55,
-                  avg_reb_per30: 8.12,
-                  avg_ast_per30: 1.44,
+                  avg_min: 426.88,
+                  avg_pts_per30: 11.75,
+                  avg_reb_per30: 6.97,
+                  avg_ast_per30: 1.42,
                   max_min: {
                     player: 'Riley Walden',
                     team: 'Willamette',
                     value: 783,
                   },
                   max_pts_per30: {
-                    player: 'Alline Ballard',
-                    team: 'Cal Lutheran',
-                    value: 17.16,
+                    player: 'Audra Petty',
+                    team: 'Lynchburg',
+                    value: 18.26,
                   },
                   max_reb_per30: {
                     player: 'Laila Staples',
@@ -9462,9 +9895,9 @@
                     value: 13.64,
                   },
                   max_ast_per30: {
-                    player: 'Ashtyn Kelderman',
-                    team: 'Loras',
-                    value: 2.13,
+                    player: 'Raina Burns',
+                    team: 'Notre Dame (MD)',
+                    value: 2.39,
                   },
                 },
               },
@@ -9484,6 +9917,40 @@
                     pts_per30: 7.11,
                     reb_per30: 2.18,
                     ast_per30: 1.98,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Felicity Figlinski',
+                    other_school: 'Roosevelt',
+                    level: 'NAIA',
+                    d3_team: 'Dubuque',
+                    class: 'JR',
+                    min: 479,
+                    pts: 122,
+                    reb: 56,
+                    ast: 39,
+                    pts_per30: 7.64,
+                    reb_per30: 3.51,
+                    ast_per30: 2.44,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
+                  {
+                    name: 'Kami Carmean',
+                    other_school: 'Warner Pacific',
+                    level: 'NAIA',
+                    d3_team: 'Pacific',
+                    class: 'FR',
+                    min: 122,
+                    pts: 27,
+                    reb: 27,
+                    ast: 6,
+                    pts_per30: 6.64,
+                    reb_per30: 6.64,
+                    ast_per30: 1.48,
                     matched: true,
                     qualifying: true,
                     elite_team: false,
@@ -9524,39 +9991,56 @@
                   },
                 ],
                 agg: {
-                  count_total: 3,
-                  count_matched: 3,
-                  count_qualifying: 1,
+                  count_total: 5,
+                  count_matched: 5,
+                  count_qualifying: 3,
                   count_elite: 0,
-                  avg_min: 591.0,
-                  avg_pts_per30: 7.11,
-                  avg_reb_per30: 2.18,
-                  avg_ast_per30: 1.98,
+                  avg_min: 397.33,
+                  avg_pts_per30: 7.13,
+                  avg_reb_per30: 4.11,
+                  avg_ast_per30: 1.97,
                   max_min: {
                     player: 'Gabbie Wilson',
                     team: 'Willamette',
                     value: 591,
                   },
                   max_pts_per30: {
-                    player: 'Gabbie Wilson',
-                    team: 'Willamette',
-                    value: 7.11,
+                    player: 'Felicity Figlinski',
+                    team: 'Dubuque',
+                    value: 7.64,
                   },
                   max_reb_per30: {
-                    player: 'Gabbie Wilson',
-                    team: 'Willamette',
-                    value: 2.18,
+                    player: 'Kami Carmean',
+                    team: 'Pacific',
+                    value: 6.64,
                   },
                   max_ast_per30: {
-                    player: 'Gabbie Wilson',
-                    team: 'Willamette',
-                    value: 1.98,
+                    player: 'Felicity Figlinski',
+                    team: 'Dubuque',
+                    value: 2.44,
                   },
                 },
               },
               {
                 name: '2-Year/Small',
                 players: [
+                  {
+                    name: 'Vatijah Davis',
+                    other_school: 'Monroe University',
+                    level: 'CC',
+                    d3_team: 'Centenary (NJ)',
+                    class: 'JR',
+                    min: 829,
+                    pts: 532,
+                    reb: 301,
+                    ast: 50,
+                    pts_per30: 19.25,
+                    reb_per30: 10.89,
+                    ast_per30: 1.81,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                  },
                   {
                     name: 'Quinn Pence',
                     other_school: 'Erie Community College',
@@ -9574,35 +10058,52 @@
                     qualifying: true,
                     elite_team: false,
                   },
+                  {
+                    name: 'Samadhi Kankanamalage',
+                    other_school: 'Hudson County CC',
+                    level: 'CC',
+                    d3_team: 'Gwynedd Mercy',
+                    class: 'FR',
+                    min: 35,
+                    pts: 2,
+                    reb: 5,
+                    ast: 1,
+                    pts_per30: 1.71,
+                    reb_per30: 4.29,
+                    ast_per30: 0.86,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: false,
+                  },
                 ],
                 agg: {
-                  count_total: 1,
-                  count_matched: 1,
-                  count_qualifying: 1,
+                  count_total: 3,
+                  count_matched: 3,
+                  count_qualifying: 2,
                   count_elite: 0,
-                  avg_min: 134.0,
-                  avg_pts_per30: 3.36,
-                  avg_reb_per30: 3.81,
-                  avg_ast_per30: 1.12,
+                  avg_min: 481.5,
+                  avg_pts_per30: 11.3,
+                  avg_reb_per30: 7.35,
+                  avg_ast_per30: 1.47,
                   max_min: {
-                    player: 'Quinn Pence',
-                    team: 'Oswego St.',
-                    value: 134,
+                    player: 'Vatijah Davis',
+                    team: 'Centenary (NJ)',
+                    value: 829,
                   },
                   max_pts_per30: {
-                    player: 'Quinn Pence',
-                    team: 'Oswego St.',
-                    value: 3.36,
+                    player: 'Vatijah Davis',
+                    team: 'Centenary (NJ)',
+                    value: 19.25,
                   },
                   max_reb_per30: {
-                    player: 'Quinn Pence',
-                    team: 'Oswego St.',
-                    value: 3.81,
+                    player: 'Vatijah Davis',
+                    team: 'Centenary (NJ)',
+                    value: 10.89,
                   },
                   max_ast_per30: {
-                    player: 'Quinn Pence',
-                    team: 'Oswego St.',
-                    value: 1.12,
+                    player: 'Vatijah Davis',
+                    team: 'Centenary (NJ)',
+                    value: 1.81,
                   },
                 },
               },
@@ -9632,7 +10133,7 @@
               data_dir: 'myapp/data/2027',
               stats_dir: 'myapp/data/2026',
               transfers_filename: 'transfers_outgoing.csv',
-              total_transfers: 22,
+              total_transfers: 37,
               qualifying_threshold: 100,
               top_n_badge: 100,
               npi_snapshot_date: '2026-02-28',
@@ -9805,6 +10306,65 @@
           .join('');
       }
 
+      // Season-wide counts by the level each CSV records, for both directions; ignores the team filter.
+      const LEVEL_ORDER = [
+        'D1',
+        'D2',
+        'D3',
+        'NAIA',
+        'CC',
+        'NJCAA',
+        'NCCAA',
+        'USCAA',
+        'Unknown',
+      ];
+
+      function renderOverviewTable(id, direction, divisionLabel) {
+        const counts = new Map();
+        SEASONS[CURRENT_LABEL][direction].buckets.forEach(b =>
+          b.players.forEach(p => {
+            counts.set(p.level, (counts.get(p.level) || 0) + 1);
+          })
+        );
+        const rank = lvl => {
+          const i = LEVEL_ORDER.indexOf(lvl);
+          return i === -1 ? LEVEL_ORDER.length - 1 : i;
+        };
+        const levels = Array.from(counts.keys()).sort(
+          (a, b) => rank(a) - rank(b) || a.localeCompare(b)
+        );
+        const total = levels.reduce((s, l) => s + counts.get(l), 0);
+        const share = n => {
+          const pct = Math.round((100 * n) / total);
+          return pct === 0 && n > 0 ? '&lt;1%' : `${pct}%`;
+        };
+        const table = document.getElementById(id);
+        if (total === 0) {
+          table.innerHTML = `<tbody><tr><td class="left">No ${direction} transfers tracked for ${CURRENT_LABEL} yet.</td></tr></tbody>`;
+          return;
+        }
+        table.innerHTML = `
+    <thead><tr>
+      <th class="left" data-type="rank">${divisionLabel} <span class="sort-arrow"></span></th>
+      <th data-type="num">Transfers <span class="sort-arrow"></span></th>
+      <th data-type="num">Share <span class="sort-arrow"></span></th>
+    </tr></thead>
+    <tbody>${levels
+      .map(
+        l => `<tr data-rank="${rank(l)}">
+      <td class="left">${l}</td><td>${counts.get(l)}</td><td>${share(counts.get(l))}</td></tr>`
+      )
+      .join('')}</tbody>
+    <tfoot><tr><td class="left">Total</td><td>${total}</td><td>100%</td></tr></tfoot>`;
+      }
+
+      function renderOverview() {
+        document.getElementById('overviewTitle').textContent =
+          `${CURRENT_LABEL} transfers by division`;
+        renderOverviewTable('overviewIn', 'incoming', 'Origin');
+        renderOverviewTable('overviewOut', 'outgoing', 'Destination');
+      }
+
       function renderHighlight(label, rec, unit, digits) {
         if (!rec) {
           return `<div class="highlight empty"><div class="label">${label}</div>
@@ -9917,39 +10477,45 @@
       }
 
       function wireSorting() {
-        document.querySelectorAll('table.players').forEach(table => {
-          const headers = table.querySelectorAll('th');
-          headers.forEach(th => {
-            th.addEventListener('click', () => {
-              const type = th.dataset.type;
-              const tbody = table.querySelector('tbody');
-              const rows = Array.from(tbody.querySelectorAll('tr'));
-              const asc = !th.classList.contains('sort-asc');
-              headers.forEach(h =>
-                h.classList.remove('sort-asc', 'sort-desc', 'sort-active')
-              );
-              th.classList.add('sort-active', asc ? 'sort-asc' : 'sort-desc');
-              const colIdx = Array.from(headers).indexOf(th);
-              rows.sort((r1, r2) => {
-                const a = r1.children[colIdx].textContent.trim();
-                const b = r2.children[colIdx].textContent.trim();
-                if (type === 'num') {
-                  const av =
-                    a === '—' ? -Infinity : parseFloat(a.replace(/,/g, ''));
-                  const bv =
-                    b === '—' ? -Infinity : parseFloat(b.replace(/,/g, ''));
-                  return asc ? av - bv : bv - av;
-                }
-                return asc ? a.localeCompare(b) : b.localeCompare(a);
-              });
-              rows.forEach(r => tbody.appendChild(r));
-              th.querySelector('.sort-arrow').textContent = asc ? '▲' : '▼';
-              headers.forEach(h => {
-                if (h !== th) h.querySelector('.sort-arrow').textContent = '';
+        document
+          .querySelectorAll('table.players, table.overview')
+          .forEach(table => {
+            const headers = table.querySelectorAll('thead th');
+            headers.forEach(th => {
+              th.addEventListener('click', () => {
+                const type = th.dataset.type;
+                const tbody = table.querySelector('tbody');
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const asc = !th.classList.contains('sort-asc');
+                headers.forEach(h =>
+                  h.classList.remove('sort-asc', 'sort-desc', 'sort-active')
+                );
+                th.classList.add('sort-active', asc ? 'sort-asc' : 'sort-desc');
+                const colIdx = Array.from(headers).indexOf(th);
+                rows.sort((r1, r2) => {
+                  if (type === 'rank') {
+                    const d = Number(r1.dataset.rank) - Number(r2.dataset.rank);
+                    return asc ? d : -d;
+                  }
+                  const a = r1.children[colIdx].textContent.trim();
+                  const b = r2.children[colIdx].textContent.trim();
+                  if (type === 'num') {
+                    const av =
+                      a === '—' ? -Infinity : parseFloat(a.replace(/,/g, ''));
+                    const bv =
+                      b === '—' ? -Infinity : parseFloat(b.replace(/,/g, ''));
+                    return asc ? av - bv : bv - av;
+                  }
+                  return asc ? a.localeCompare(b) : b.localeCompare(a);
+                });
+                rows.forEach(r => tbody.appendChild(r));
+                th.querySelector('.sort-arrow').textContent = asc ? '▲' : '▼';
+                headers.forEach(h => {
+                  if (h !== th) h.querySelector('.sort-arrow').textContent = '';
+                });
               });
             });
           });
-        });
       }
 
       function applyView() {
@@ -9983,6 +10549,7 @@
             )
           );
 
+        renderOverview();
         renderSummaryHeader();
         renderSummary();
         renderBuckets();
