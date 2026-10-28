@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T12:37:26+00:00",
+  "generated": "2026-10-28T20:08:46+00:00",
   "players": [
     {
       "team": "Albertus Magnus",
@@ -143,19 +143,13 @@
       "team": "Texas Lutheran",
       "name": "Nayeli Espinoza",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Dallas Christian (NCCAA)"
     },
     {
       "team": "Albertus Magnus",
       "name": "Genevieve Rice",
       "class": "SO",
       "reason": "7 minutes in 2025-26"
-    },
-    {
-      "team": "Bethany Lutheran",
-      "name": "Ary Cardona Ferrer",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
     },
     {
       "team": "Carthage",
@@ -401,13 +395,25 @@
       "team": "Methodist",
       "name": "Jamirica Everhardt",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Greensboro (D3)"
     },
     {
       "team": "Millsaps",
       "name": "Kiayalee King",
       "class": "SO",
       "reason": "27 minutes in 2025-26"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Ashtyn DiRienzo",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Erica Yokota",
+      "class": "FR",
+      "reason": "Freshman"
     },
     {
       "team": "Pacific Lutheran",
@@ -680,22 +686,10 @@
       "reason": "Transfer from Wittenberg (D3)"
     },
     {
-      "team": "Maine Presque Isle",
-      "name": "Natalie Miranda",
-      "class": "SR",
-      "reason": "9 minutes in 2025-26"
-    },
-    {
       "team": "Pitt-Bradford",
       "name": "Yasmine Abu-Aiadeh",
       "class": "SR",
       "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "Susquehanna",
-      "name": "Tatum Laughard",
-      "class": "SR",
-      "reason": "20 minutes in 2025-26"
     },
     {
       "team": "University of New England",
@@ -749,7 +743,7 @@
       "team": "Beloit",
       "name": "Anna Marie Godina",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Waubonsee Community College (CC)"
     },
     {
       "team": "Franklin & Marshall",
@@ -761,7 +755,7 @@
       "team": "Heidelberg",
       "name": "Bianca Baumgartner",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Tiffin (D2)"
     },
     {
       "team": "Mt. St. Vincent",
@@ -792,12 +786,6 @@
       "name": "Maddie Gaynor",
       "class": "JR",
       "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "Nichols",
-      "name": "Maddie Teal",
-      "class": "SO",
-      "reason": "Transfer from Anna Maria (D3)"
     },
     {
       "team": "Brandeis",
@@ -904,8 +892,8 @@
     {
       "team": "New England College",
       "name": "Makaylah Dorvil",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "class": "FR",
+      "reason": "Freshman"
     },
     {
       "team": "Piedmont",
@@ -947,7 +935,7 @@
       "team": "Lake Forest",
       "name": "Alainna Poisson",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Saint Francis (IL) (NAIA)"
     },
     {
       "team": "McMurry",
@@ -1096,12 +1084,6 @@
     {
       "team": "LaGrange",
       "name": "Jaziyah Johnson",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Lakeland",
-      "name": "Aubrey Ehrlich",
       "class": "FR",
       "reason": "Freshman"
     },
@@ -1444,7 +1426,7 @@
     {
       "team": "Elmhurst",
       "name": "Diamond Young",
-      "class": "SR",
+      "class": "SO",
       "reason": "9 minutes in 2025-26"
     },
     {
@@ -1583,7 +1565,7 @@
       "team": "SUNY Brockport",
       "name": "Lundyn McCutchen",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Onondaga Community College (CC)"
     },
     {
       "team": "Endicott",
@@ -1613,7 +1595,7 @@
       "team": "Oglethorpe",
       "name": "Lalah Logan",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Young Harris (D2)"
     },
     {
       "team": "Pratt",
@@ -1661,7 +1643,7 @@
       "team": "Wilmington",
       "name": "Melanie Wyatt",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Lincoln Trail College (CC)"
     },
     {
       "team": "Buffalo St.",
@@ -1691,7 +1673,7 @@
       "team": "Lake Forest",
       "name": "Ahdiayh Chee",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Pima Community College (CC)"
     },
     {
       "team": "Rowan",
@@ -1718,12 +1700,6 @@
       "reason": "Transfer from Webster (D3)"
     },
     {
-      "team": "Bethany Lutheran",
-      "name": "Teagan Epema",
-      "class": "SO",
-      "reason": "14 minutes in 2025-26"
-    },
-    {
       "team": "Centenary (LA)",
       "name": "Markeithdra Willis",
       "class": "SO",
@@ -1733,7 +1709,7 @@
       "team": "Central",
       "name": "Maleah Versteeg",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Morningside (NAIA)"
     },
     {
       "team": "Chatham",
@@ -1884,12 +1860,6 @@
       "name": "Sydney Brown",
       "class": "SO",
       "reason": "9 minutes in 2025-26"
-    },
-    {
-      "team": "Utica",
-      "name": "Madalynne Enos",
-      "class": "SO",
-      "reason": "15 minutes in 2025-26"
     },
     {
       "team": "Concordia (TX)",
@@ -2411,7 +2381,7 @@
       "team": "Albright",
       "name": "Yonique Reynolds",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Bryn Athyn (D3)"
     },
     {
       "team": "Chapman",
@@ -2561,7 +2531,7 @@
       "team": "LeTourneau",
       "name": "Keeley Chaddick",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Southern Nazarene (D2)"
     },
     {
       "team": "Lebanon Valley",
@@ -2579,19 +2549,19 @@
       "team": "MUW",
       "name": "Madison O'Dell",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Robert Morris (D1)"
     },
     {
       "team": "MUW",
       "name": "Ranyha Pruitt",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from East Central Community College (CC)"
     },
     {
       "team": "MUW",
       "name": "Sydney Coward",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Southeastern Baptist (NCCAA)"
     },
     {
       "team": "Olivet",
@@ -2726,12 +2696,6 @@
       "reason": "3 minutes in 2025-26"
     },
     {
-      "team": "Bridgewater (VA)",
-      "name": "Emma Clark",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
       "team": "Coe",
       "name": "Ava Erger",
       "class": "SO",
@@ -2759,7 +2723,7 @@
       "team": "Dallas",
       "name": "Kyndal Underwood",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Newman (D2)"
     },
     {
       "team": "Elmira",
@@ -2801,13 +2765,7 @@
       "team": "Kalamazoo",
       "name": "Savannah Pietila",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "Keuka",
-      "name": "Bree Smith",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Park-Gilbert (NAIA)"
     },
     {
       "team": "King's",
@@ -2838,12 +2796,6 @@
       "name": "Imani Toso",
       "class": "SO",
       "reason": "6 minutes in 2025-26"
-    },
-    {
-      "team": "Maine Presque Isle",
-      "name": "Grace Sloan",
-      "class": "SO",
-      "reason": "17 minutes in 2025-26"
     },
     {
       "team": "UMass Dartmouth",
@@ -2936,12 +2888,6 @@
       "reason": "No 2025-26 minutes"
     },
     {
-      "team": "UW-Eau Claire",
-      "name": "Kate Roeber",
-      "class": "SO",
-      "reason": "17 minutes in 2025-26"
-    },
-    {
       "team": "UW-Oshkosh",
       "name": "Addie Post",
       "class": "SO",
@@ -3016,7 +2962,7 @@
     {
       "team": "La Verne",
       "name": "Leia Mata",
-      "class": "FR",
+      "class": "SO",
       "reason": "Transfer from Willamette (D3)"
     },
     {
@@ -3406,12 +3352,6 @@
     {
       "team": "Ripon",
       "name": "Chaela Luelling",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "SUNY Cobleskill",
-      "name": "Ciarra Gonzalez",
       "class": "FR",
       "reason": "Freshman"
     },
@@ -3881,7 +3821,7 @@
       "team": "MUW",
       "name": "Cora Causey",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Delta State (D2)"
     },
     {
       "team": "Mary Hardin-Baylor",
@@ -3992,16 +3932,10 @@
       "reason": "No 2025-26 minutes"
     },
     {
-      "team": "Bridgewater (VA)",
-      "name": "Carleigh Cameron",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
       "team": "SUNY Brockport",
       "name": "Lucie Scarpine",
       "class": "SO",
-      "reason": "Transfer from SUNY Potsdam"
+      "reason": "Transfer from SUNY Potsdam (D3)"
     },
     {
       "team": "Carleton",
@@ -4104,12 +4038,6 @@
       "name": "Jailyn Davis",
       "class": "SO",
       "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "John Carroll",
-      "name": "Ella Henton",
-      "class": "SO",
-      "reason": "18 minutes in 2025-26"
     },
     {
       "team": "Juniata",
@@ -4538,12 +4466,6 @@
       "reason": "Freshman"
     },
     {
-      "team": "John Carroll",
-      "name": "Trinity Lazzara",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
       "team": "John Jay",
       "name": "Amyah Byas",
       "class": "FR",
@@ -4744,12 +4666,6 @@
     {
       "team": "SUNY Cobleskill",
       "name": "Ali Payne",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "SUNY Cobleskill",
-      "name": "Whitney Cameron",
       "class": "FR",
       "reason": "Freshman"
     },
@@ -5240,12 +5156,6 @@
       "reason": "10 minutes in 2025-26"
     },
     {
-      "team": "York (PA)",
-      "name": "Arianna Jefferies",
-      "class": "SR",
-      "reason": "2 minutes in 2025-26"
-    },
-    {
       "team": "Penn St. Brandywine",
       "name": "Taylor Mims",
       "class": "FR",
@@ -5354,12 +5264,6 @@
       "reason": "7 minutes in 2025-26"
     },
     {
-      "team": "Gustavus Adolphus",
-      "name": "Jordyn Williams",
-      "class": "JR",
-      "reason": "15 minutes in 2025-26"
-    },
-    {
       "team": "Illinois Tech",
       "name": "Chloe Guzik",
       "class": "JR",
@@ -5375,7 +5279,7 @@
       "team": "Nebraska Wesleyan",
       "name": "Ashlin Jacobsen",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Iowa Central Community College (CC)"
     },
     {
       "team": "Nebraska Wesleyan",
@@ -5429,7 +5333,7 @@
       "team": "Concordia (TX)",
       "name": "Felitsa Adil",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Santa Barbara City College (CC)"
     },
     {
       "team": "Carlow",
@@ -5615,7 +5519,7 @@
       "team": "Methodist",
       "name": "Mya Blackshear",
       "class": "SO",
-      "reason": "Transfer from NC Wesleyan"
+      "reason": "Transfer from NC Wesleyan (D3)"
     },
     {
       "team": "Moravian",
@@ -5624,10 +5528,16 @@
       "reason": "26 minutes in 2025-26"
     },
     {
+      "team": "Mt. Holyoke",
+      "name": "Justine Dessureault",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
       "team": "Nebraska Wesleyan",
       "name": "Mattea Kassebaum",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Doane (NAIA)"
     },
     {
       "team": "Northwestern (MN)",
@@ -6059,7 +5969,7 @@
       "team": "Elmira",
       "name": "Jayda McFall",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Onondaga Community College (CC)"
     },
     {
       "team": "Elmira",
@@ -6695,7 +6605,7 @@
       "team": "MUW",
       "name": "Addison Howell",
       "class": "GR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mississippi Valley State (D1)"
     },
     {
       "team": "UW-Superior",
@@ -6983,7 +6893,7 @@
       "team": "UW-Superior",
       "name": "Eva Peterson",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Grand View (NAIA)"
     },
     {
       "team": "UW-Superior",
@@ -7073,13 +6983,7 @@
       "team": "Beloit",
       "name": "Scarlett McVeigh",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "Bethany Lutheran",
-      "name": "Audrey Mathison",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Wenatchee Valley College (CC)"
     },
     {
       "team": "Bryn Mawr",
@@ -7238,10 +7142,16 @@
       "reason": "No 2025-26 minutes"
     },
     {
+      "team": "Maine Presque Isle",
+      "name": "Cady Stairs",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
       "team": "Martin Luther",
       "name": "Payton Holub",
-      "class": "SO",
-      "reason": "4 minutes in 2025-26"
+      "class": "FR",
+      "reason": "Freshman"
     },
     {
       "team": "Messiah",
@@ -8219,7 +8129,7 @@
       "team": "Gwynedd Mercy",
       "name": "Jess Kepner",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Bucks County Community College (CC)"
     },
     {
       "team": "Hollins",
@@ -8369,19 +8279,13 @@
       "team": "Bard",
       "name": "Stephanie Mildner",
       "class": "JR",
-      "reason": "Transfer from Elms"
+      "reason": "Transfer from Elms (D3)"
     },
     {
       "team": "Bluffton",
       "name": "Jewel Persinger",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
-    },
-    {
-      "team": "Bridgewater (VA)",
-      "name": "Hailey Williams",
-      "class": "JR",
-      "reason": "4 minutes in 2025-26"
+      "reason": "Transfer from Heidelberg (D3)"
     },
     {
       "team": "DePauw",
@@ -8435,7 +8339,7 @@
       "team": "Nebraska Wesleyan",
       "name": "Sharon Greek",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Iowa Central Community College (CC)"
     },
     {
       "team": "Rensselaer",
@@ -8462,12 +8366,6 @@
       "reason": "16 minutes in 2025-26"
     },
     {
-      "team": "UW-Eau Claire",
-      "name": "Ellie Edberg",
-      "class": "JR",
-      "reason": "No 2025-26 minutes"
-    },
-    {
       "team": "Wellesley",
       "name": "Bridget Sheahan",
       "class": "JR",
@@ -8489,7 +8387,7 @@
       "team": "Concordia (TX)",
       "name": "Ke'Myreul Wheaton",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Temple College (CC)"
     },
     {
       "team": "Johnson & Wales Providence",
@@ -8501,7 +8399,7 @@
       "team": "NYU",
       "name": "Brooke Baisley",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Boston University (D1)"
     },
     {
       "team": "Greensboro",
@@ -8766,12 +8664,6 @@
       "name": "Lola Hackradt",
       "class": "SO",
       "reason": "21 minutes in 2025-26"
-    },
-    {
-      "team": "UW-Eau Claire",
-      "name": "Sydney Subke",
-      "class": "SO",
-      "reason": "28 minutes in 2025-26"
     },
     {
       "team": "Union",
@@ -9665,7 +9557,7 @@
       "team": "Centenary (LA)",
       "name": "Aniyah Davis",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Southern Arkansas University Tech (CC)"
     },
     {
       "team": "Concordia (MN)",
@@ -9695,13 +9587,13 @@
       "team": "MUW",
       "name": "Alexis Gordon",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Itawamba Community College (CC)"
     },
     {
       "team": "MUW",
       "name": "Shiloh Hatch",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Northwest Mississippi Community College (CC)"
     },
     {
       "team": "Oswego St.",
@@ -9946,12 +9838,6 @@
     {
       "team": "Colby",
       "name": "Zara Griffith",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Concordia (WI)",
-      "name": "Mara Kinstler",
       "class": "FR",
       "reason": "Freshman"
     },
@@ -10439,7 +10325,7 @@
       "team": "Concordia (IL)",
       "name": "Lydianis Boutureira",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Wilbur Wright College (CC)"
     },
     {
       "team": "Crown",
@@ -10487,7 +10373,7 @@
       "team": "St. Mary's (IN)",
       "name": "Kate Gilroy",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Oakton College (CC)"
     },
     {
       "team": "UW-Stevens Point",
@@ -10541,7 +10427,7 @@
       "team": "Eastern Mennonite",
       "name": "Anna Smith",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Bluefield (NAIA)"
     },
     {
       "team": "Gustavus Adolphus",
@@ -11261,7 +11147,7 @@
       "team": "MUW",
       "name": "A'tyia Allen",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Jones College (CC)"
     },
     {
       "team": "Carnegie Mellon",
@@ -11342,12 +11228,6 @@
       "reason": "17 minutes in 2025-26"
     },
     {
-      "team": "Mitchell",
-      "name": "Miranda Hamilton",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
       "team": "Rutgers-Newark",
       "name": "Mariam Dosouki Mohamed",
       "class": "SO",
@@ -11387,7 +11267,7 @@
       "team": "Concordia (TX)",
       "name": "Macie Upshaw",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Midwestern State (D2)"
     },
     {
       "team": "Beloit",
@@ -11907,12 +11787,6 @@
       "reason": "22 minutes in 2025-26"
     },
     {
-      "team": "UW-Eau Claire",
-      "name": "Kasey Stelpflug",
-      "class": "SO",
-      "reason": "14 minutes in 2025-26"
-    },
-    {
       "team": "Dubuque",
       "name": "Jaeda Rupprecht",
       "class": "FR",
@@ -11945,14 +11819,8 @@
     {
       "team": "Centenary (NJ)",
       "name": "Olivia Minnich",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Centenary (NJ)",
-      "name": "Olivia Protheroe",
-      "class": "FR",
-      "reason": "Freshman"
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
     },
     {
       "team": "Maine Farmington",
@@ -12006,7 +11874,7 @@
       "team": "WashU",
       "name": "Annika Pluemer",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Maryville (MO) (D2)"
     },
     {
       "team": "MUW",
@@ -12102,25 +11970,25 @@
       "team": "Huntingdon",
       "name": "Khashya Richardson",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Enterprise State Community College (CC)"
     },
     {
       "team": "La Roche",
       "name": "Jani Washington",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Jamestown Community College (CC)"
     },
     {
       "team": "Sarah Lawrence",
       "name": "Kenedy Nutter",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Santa Barbara City College (CC)"
     },
     {
       "team": "St. Thomas (TX)",
       "name": "Makahlia Edwards",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Wenatchee Valley College (CC)"
     },
     {
       "team": "UW-Superior",
@@ -12179,25 +12047,25 @@
     {
       "team": "East Texas Baptist",
       "name": "Addison Walker",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "class": "SR",
+      "reason": "Transfer from LSU Alexandria (NAIA)"
     },
     {
       "team": "East Texas Baptist",
       "name": "Amari Welch",
-      "class": "SO",
+      "class": "SR",
       "reason": "Transfer from Mary Hardin-Baylor (D3)"
     },
     {
       "team": "East Texas Baptist",
       "name": "Gazey Yates",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Southeastern Oklahoma State (D2)"
     },
     {
       "team": "East Texas Baptist",
       "name": "Savannah Wagner",
-      "class": "SO",
+      "class": "JR",
       "reason": "No 2025-26 minutes"
     },
     {
@@ -12222,7 +12090,7 @@
       "team": "La Roche",
       "name": "Nadirah Tulter",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Central Penn College (USCAA)"
     },
     {
       "team": "St. Thomas (TX)",
@@ -12246,7 +12114,7 @@
       "team": "Westminster (MO)",
       "name": "Lyssa Sportsman",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Lincoln (MO) (D2)"
     },
     {
       "team": "Westminster (MO)",
@@ -12436,12 +12304,6 @@
     },
     {
       "team": "Covenant",
-      "name": "Kennedy Muff",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Covenant",
       "name": "Shea Vanderwey",
       "class": "FR",
       "reason": "Freshman"
@@ -12503,8 +12365,8 @@
     {
       "team": "East Texas Baptist",
       "name": "Aubrey Marjason",
-      "class": "FR",
-      "reason": "Freshman"
+      "class": "SR",
+      "reason": "Transfer from Oklahoma Baptist (D2)"
     },
     {
       "team": "East Texas Baptist",
@@ -12515,13 +12377,13 @@
     {
       "team": "East Texas Baptist",
       "name": "Bailey Litchfield",
-      "class": "FR",
-      "reason": "Freshman"
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
     },
     {
       "team": "East Texas Baptist",
       "name": "Karlee Cronk",
-      "class": "FR",
+      "class": "JR",
       "reason": "Transfer from Mary Hardin-Baylor (D3)"
     },
     {
@@ -12772,12 +12634,6 @@
     },
     {
       "team": "Lebanon Valley",
-      "name": "Felicia Bro",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Lebanon Valley",
       "name": "Kenzie Eckhart",
       "class": "FR",
       "reason": "Freshman"
@@ -12804,7 +12660,7 @@
       "team": "Marymount",
       "name": "Chloe Booth",
       "class": "SO",
-      "reason": "Transfer from Chatham"
+      "reason": "Transfer from Chatham (D3)"
     },
     {
       "team": "Marymount",
@@ -13224,7 +13080,7 @@
       "team": "La Roche",
       "name": "Kendra Altadonna",
       "class": "GR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Jamestown Community College (CC)"
     },
     {
       "team": "Marymount",
@@ -13362,7 +13218,7 @@
       "team": "Mary Baldwin",
       "name": "Jakayla Johnson",
       "class": "JR",
-      "reason": "Transfer from Eastern Mennonite"
+      "reason": "Transfer from Eastern Mennonite (D3)"
     },
     {
       "team": "Mary Baldwin",
@@ -13374,7 +13230,7 @@
       "team": "Mary Baldwin",
       "name": "Kaylan Logan Bouknight",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Carolina University (NCCAA)"
     },
     {
       "team": "Mary Baldwin",
@@ -13398,19 +13254,19 @@
       "team": "Pfeiffer",
       "name": "Destiny Thompson",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mount Olive (D2)"
     },
     {
       "team": "Pfeiffer",
       "name": "Hailey Williams",
       "class": "JR",
-      "reason": "Transfer from Bridgewater (VA)"
+      "reason": "Transfer from Bridgewater (VA) (D3)"
     },
     {
       "team": "Pfeiffer",
       "name": "Kairah Dixon-Booker",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Catawba (D2)"
     },
     {
       "team": "Pfeiffer",
@@ -13422,7 +13278,7 @@
       "team": "Pfeiffer",
       "name": "Maliah Preston",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Johnson & Wales Charlotte (USCAA)"
     },
     {
       "team": "Pfeiffer",
@@ -13452,7 +13308,7 @@
       "team": "Eureka",
       "name": "Jolie Jeffreys",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Spoon River College (CC)"
     },
     {
       "team": "Eureka",
@@ -13524,7 +13380,7 @@
       "team": "Alverno",
       "name": "Addison Ray",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Bryant & Stratton College - Wisconsin (CC)"
     },
     {
       "team": "Alverno",
@@ -13536,13 +13392,13 @@
       "team": "Alverno",
       "name": "Anastasia Drolette",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Allan Hancock College (CC)"
     },
     {
       "team": "Alverno",
       "name": "Avery Gorn",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mt. Mary (NAIA)"
     },
     {
       "team": "Alverno",
@@ -13566,19 +13422,19 @@
       "team": "Alverno",
       "name": "Emily Nicol",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mt. Mary (NAIA)"
     },
     {
       "team": "Alverno",
       "name": "Joselyn Gonzales",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mt. Mary (D3)"
     },
     {
       "team": "Alverno",
       "name": "Moncerat Campos",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Allan Hancock College (CC)"
     },
     {
       "team": "Alverno",
@@ -13590,7 +13446,7 @@
       "team": "Alverno",
       "name": "Sanai Ballard",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Mt. Mary (NAIA)"
     },
     {
       "team": "Alverno",
@@ -13608,7 +13464,7 @@
       "team": "Benedictine",
       "name": "Ambriel Anderson",
       "class": "SO",
-      "reason": "Transfer from Aurora"
+      "reason": "Transfer from Aurora (D3)"
     },
     {
       "team": "Benedictine",
@@ -13620,13 +13476,13 @@
       "team": "Benedictine",
       "name": "Brooke Spychalski",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Illinois Springfield (D2)"
     },
     {
       "team": "Benedictine",
       "name": "Katie Vierra",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Health Sciences and Pharmacy (NAIA)"
     },
     {
       "team": "Benedictine",
@@ -13638,7 +13494,7 @@
       "team": "Benedictine",
       "name": "Makenna Boyle",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Joliet Junior College (CC)"
     },
     {
       "team": "Bethany",
@@ -13929,12 +13785,6 @@
       "reason": "No 2025-26 minutes"
     },
     {
-      "team": "Hollins",
-      "name": "Raynia Russell",
-      "class": "SO",
-      "reason": "No 2025-26 minutes"
-    },
-    {
       "team": "Husson",
       "name": "Addison Cyr",
       "class": "FR",
@@ -14016,7 +13866,7 @@
       "team": "Penn St. Berks",
       "name": "Caraline Herb",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Chestnut Hill (D2)"
     },
     {
       "team": "Penn St. Berks",
@@ -14253,12 +14103,6 @@
       "reason": "Freshman"
     },
     {
-      "team": "SUNY Delhi",
-      "name": "Nevaeh Moore",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
       "team": "Salisbury",
       "name": "Emerson Gunther",
       "class": "FR",
@@ -14464,12 +14308,6 @@
     },
     {
       "team": "Warren Wilson",
-      "name": "Ava Whiteaker",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Warren Wilson",
       "name": "Jada Smith-Hornbuckle",
       "class": "FR",
       "reason": "Freshman"
@@ -14477,12 +14315,6 @@
     {
       "team": "Warren Wilson",
       "name": "Jannah Beth Weeks",
-      "class": "FR",
-      "reason": "Freshman"
-    },
-    {
-      "team": "Warren Wilson",
-      "name": "Kierstan Cucumber",
       "class": "FR",
       "reason": "Freshman"
     },
@@ -14592,13 +14424,13 @@
       "team": "York (PA)",
       "name": "Nylah Davis",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Staten Island (D2)"
     },
     {
       "team": "York (PA)",
       "name": "Reese Kresslein",
       "class": "JR",
-      "reason": "Transfer from Chatham"
+      "reason": "Transfer from Chatham (D3)"
     },
     {
       "team": "Framingham St.",
@@ -14913,12 +14745,6 @@
       "reason": "Freshman"
     },
     {
-      "team": "Albright",
-      "name": "Ame'lle Passee-Diallo",
-      "class": "SO",
-      "reason": "Transfer from Mary Baldwin (D3)"
-    },
-    {
       "team": "Augsburg",
       "name": "Katy Devine",
       "class": "FR",
@@ -14958,7 +14784,7 @@
       "team": "Averett",
       "name": "Jaliyah Mitchell",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Barton (D2)"
     },
     {
       "team": "Averett",
@@ -15240,7 +15066,7 @@
       "team": "Lasell",
       "name": "Natalyah Williams",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from UConn Avery Point (CC)"
     },
     {
       "team": "Lasell",
@@ -15312,7 +15138,7 @@
       "team": "NC Wesleyan",
       "name": "Jada Green",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from College of Southern Nevada (CC)"
     },
     {
       "team": "NC Wesleyan",
@@ -15876,7 +15702,7 @@
       "team": "Mary Hardin-Baylor",
       "name": "Shayla Doss",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from National Park College (CC)"
     },
     {
       "team": "Brooklyn",
@@ -15936,7 +15762,7 @@
       "team": "Mt. St. Vincent",
       "name": "Mackenzie Green",
       "class": "SO",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Community College of Baltimore County (CC)"
     },
     {
       "team": "Mt. St. Vincent",
@@ -16044,7 +15870,7 @@
       "team": "Fitchburg St.",
       "name": "Wynter Jones",
       "class": "SR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from CSU Pueblo (D2)"
     },
     {
       "team": "Luther",
@@ -16259,7 +16085,7 @@
     {
       "team": "Wittenberg",
       "name": "Lynee Cronkleton",
-      "class": "SR",
+      "class": "JR",
       "reason": "No 2025-26 minutes"
     },
     {
@@ -16416,7 +16242,7 @@
       "team": "Hood",
       "name": "Kalea Ferguson",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Allegany College of Maryland (CC)"
     },
     {
       "team": "Chapman",
@@ -16427,6 +16253,696 @@
     {
       "team": "Chapman",
       "name": "Olivia Reynolds",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Maine Presque Isle",
+      "name": "Chloe Boyd",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Maine Presque Isle",
+      "name": "Ally Shields",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Maine Presque Isle",
+      "name": "Katherine Michaud",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Maine Presque Isle",
+      "name": "Lyndsie Durost",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Maine Presque Isle",
+      "name": "Georganna Curtis",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Peyton Brady",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Mikayla Coleman",
+      "class": "JR",
+      "reason": "Transfer from Penn St. Harrisburg (D3)"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Jalyn Childress",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Leah Brown",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Airyana Maze",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Riley Coombs",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Mattie Matonic",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Izzy Knorr",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Brooklyn Kavanaugh",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Eva Philips",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bridgewater (VA)",
+      "name": "Emma Randall",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Elaina Funk",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Ava Melendez",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Ella Smith",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Violet Trump",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Maddy Valakis",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Pitt-Greensburg",
+      "name": "Kaetlin Caylao",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "DeSales",
+      "name": "Emma Barone",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "VTSU Johnson",
+      "name": "Myabelle Begay",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "VTSU Johnson",
+      "name": "Forest Skillman",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "VTSU Johnson",
+      "name": "Evangelica Luneau",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Keuka",
+      "name": "Shea Kelly",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Rosalena Carlson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Aidelyne Varela",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Taylor Mann",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Jailiany Baez",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Camyra Carrion",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Ja'Nell Saunder",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mitchell",
+      "name": "Gabby Scholdfield",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Kara Roberts",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Mia Banks",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Maddie Stocks",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Abby Tassoul",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Hailey Klumb",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Emma Hanson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "UW-Eau Claire",
+      "name": "Bronte Hulberg",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "New England College",
+      "name": "Leeschelle Sohappy",
+      "class": "JR",
+      "reason": "Transfer from Bellevue College (CC)"
+    },
+    {
+      "team": "New England College",
+      "name": "Zahniya Castillo",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "New England College",
+      "name": "Fiona Durham",
+      "class": "JR",
+      "reason": "Transfer from Cuesta College (CC)"
+    },
+    {
+      "team": "New England College",
+      "name": "Deja Lee",
+      "class": "JR",
+      "reason": "Transfer from Fresno City College (CC)"
+    },
+    {
+      "team": "New England College",
+      "name": "Leanne Domingo",
+      "class": "JR",
+      "reason": "Transfer from Barstow Community College (CC)"
+    },
+    {
+      "team": "New England College",
+      "name": "Olivia Adams",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "New England College",
+      "name": "Brianna Ruelas",
+      "class": "JR",
+      "reason": "Transfer from Riverside City College (CC)"
+    },
+    {
+      "team": "Wilson",
+      "name": "Chantel Cannon",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "Savanna Miller",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "Samantha Gilchrist",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "Makenzie Schroeder",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "MyKayla Stueber",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "Kaleah Alles",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "St. Norbert",
+      "name": "Rylee Stublaski",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Johana Rizakova",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Amy Saukkonen",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Sela Pena",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Mt. Holyoke",
+      "name": "Rowan Moden",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Cameron Castillo",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Aliya Tikhtova",
+      "class": "JR",
+      "reason": "Transfer from Penn St. Hazleton (USCAA)"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Madeline Benton",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Alina Sopko",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Evyana Quaciari",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Lydia Beltz",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Aliya Stanley",
+      "class": "",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Penn St. Altoona",
+      "name": "Mackenzie Peachey",
+      "class": "",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Martin Luther",
+      "name": "Brylie Zirbel",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Martin Luther",
+      "name": "Katherine Prahl",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Martin Luther",
+      "name": "Lydia Vasold",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Martin Luther",
+      "name": "Nora Grace Otto",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Martin Luther",
+      "name": "Alexis Schmitz",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Bella Finer",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Kensey Foster",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Olivia Watkins",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Giovanna Grima",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Natalie Hollingshead",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Molly Sholders",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Madison Sciarrino",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Susquehanna",
+      "name": "Megan Henn",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethany Lutheran",
+      "name": "Quinn Vanmaldeghem",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethany Lutheran",
+      "name": "Brooklyn Christianson",
+      "class": "JR",
+      "reason": "Transfer from Concordia (MN) (D3)"
+    },
+    {
+      "team": "Bethany Lutheran",
+      "name": "Katelyn Olson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethany Lutheran",
+      "name": "Andrea Martinez",
+      "class": "SO",
+      "reason": "Transfer from U of Rio Grande (NAIA)"
+    },
+    {
+      "team": "SUNY Geneseo",
+      "name": "Kendall Parker",
+      "class": "SO",
+      "reason": "Transfer from D'Youville University (D2)"
+    },
+    {
+      "team": "SUNY Geneseo",
+      "name": "Allie Parker",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Paige Lee",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Tavi Prado",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Aleasa Heath",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Carson Price",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Kisa Lilly",
+      "class": "JR",
+      "reason": "Transfer from Salisbury (D3)"
+    },
+    {
+      "team": "Washington College",
+      "name": "Miley Alguire",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Riley Watson",
+      "class": "SO",
+      "reason": "Transfer from Shippensburg (D2)"
+    },
+    {
+      "team": "Washington College",
+      "name": "Brooke Barnes",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Washington College",
+      "name": "Bree Korch",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Centenary (NJ)",
+      "name": "Jocelyn Rodriguez",
+      "class": "JR",
+      "reason": "Transfer from Rowan College South Jersey Cumberland (CC)"
+    },
+    {
+      "team": "DeSales",
+      "name": "Daviana Jones",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "DeSales",
+      "name": "Madison Bealer",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "DeSales",
+      "name": "Malaia Hart",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "DeSales",
+      "name": "Maya Okoro",
+      "class": "JR",
+      "reason": "Transfer from Hartford (D3)"
+    },
+    {
+      "team": "DeSales",
+      "name": "Sierra Stevens",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Hilbert",
+      "name": "Cianna Tobia",
+      "class": "JR",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Keuka",
+      "name": "Addison Foster",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Keuka",
+      "name": "Antonia Monico",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Keuka",
+      "name": "Ava Carpenter",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Keuka",
+      "name": "Erin Marone",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Keuka",
+      "name": "Lily Baughman",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Keuka",
+      "name": "Lily Green",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Misericordia",
+      "name": "Addison Fritz",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Nazareth",
+      "name": "Emma Moore",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Nichols",
+      "name": "Shanik Suarez",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "UC Santa Cruz",
+      "name": "Allison Co",
+      "class": "SR",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "UC Santa Cruz",
+      "name": "Sabina Patel",
+      "class": "",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "UC Santa Cruz",
+      "name": "Tia Helmy",
+      "class": "",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Warren Wilson",
+      "name": "Emily Randolph",
       "class": "FR",
       "reason": "Freshman"
     }
