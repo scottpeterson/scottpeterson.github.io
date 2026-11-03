@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T14:44:41+00:00",
+  "generated": "2026-11-03T19:53:58+00:00",
   "players": [
     {
       "team": "Albertus Magnus",
@@ -90,12 +90,6 @@
       "name": "Laila Alexander",
       "class": "FR",
       "reason": "Freshman"
-    },
-    {
-      "team": "Pratt",
-      "name": "Adriana Gambini",
-      "class": "SR",
-      "reason": "25 minutes in 2025-26"
     },
     {
       "team": "Manchester",
@@ -2624,12 +2618,6 @@
       "reason": "27 minutes in 2025-26"
     },
     {
-      "team": "Aurora",
-      "name": "Ambriel Anderson",
-      "class": "SO",
-      "reason": "27 minutes in 2025-26"
-    },
-    {
       "team": "Baruch",
       "name": "Sarah Liu",
       "class": "SO",
@@ -3594,12 +3582,6 @@
       "name": "Mylee Garrett",
       "class": "SR",
       "reason": "29 minutes in 2025-26"
-    },
-    {
-      "team": "Colby-Sawyer",
-      "name": "Larissa Daigle",
-      "class": "SR",
-      "reason": "27 minutes in 2025-26"
     },
     {
       "team": "Delaware Valley",
@@ -5177,7 +5159,7 @@
       "team": "Concordia (IL)",
       "name": "Naella Langston",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Harry S. Truman College (CC)"
     },
     {
       "team": "Dominican",
@@ -6800,12 +6782,6 @@
       "reason": "11 minutes in 2025-26"
     },
     {
-      "team": "Rivier",
-      "name": "Lily Papatola",
-      "class": "JR",
-      "reason": "3 minutes in 2025-26"
-    },
-    {
       "team": "Sewanee",
       "name": "Grace Potter",
       "class": "JR",
@@ -8390,12 +8366,6 @@
       "reason": "5 minutes in 2025-26"
     },
     {
-      "team": "Concordia (MN)",
-      "name": "Kennison Azure",
-      "class": "SO",
-      "reason": "14 minutes in 2025-26"
-    },
-    {
       "team": "Dominican",
       "name": "Dayton Sibert",
       "class": "SO",
@@ -8406,12 +8376,6 @@
       "name": "Emma Herman",
       "class": "SO",
       "reason": "13 minutes in 2025-26"
-    },
-    {
-      "team": "Elizabethtown",
-      "name": "Maggie Mellott",
-      "class": "SO",
-      "reason": "14 minutes in 2025-26"
     },
     {
       "team": "Elmhurst",
@@ -11442,12 +11406,6 @@
       "name": "Shannon Earley",
       "class": "SO",
       "reason": "26 minutes in 2025-26"
-    },
-    {
-      "team": "Concordia (MN)",
-      "name": "Mercedes Lawrence",
-      "class": "SO",
-      "reason": "1 minutes in 2025-26"
     },
     {
       "team": "UW-Eau Claire",
@@ -14526,7 +14484,7 @@
       "team": "Lancaster Bible",
       "name": "Patricia Monroe",
       "class": "JR",
-      "reason": "No 2025-26 minutes"
+      "reason": "Transfer from Bucks County Community College (CC)"
     },
     {
       "team": "Lancaster Bible",
@@ -17628,6 +17586,444 @@
     {
       "team": "SUNY Morrisville",
       "name": "Kaya Mwara",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Lehman",
+      "name": "Gracie Cruz",
+      "class": "JR",
+      "reason": "Transfer from SUNY Sullivan (CC)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Angelina Dietz",
+      "class": "JR",
+      "reason": "Transfer from Herkimer County Community College (CC)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Tyler Dendy",
+      "class": "SR",
+      "reason": "Transfer from Caldwell (D2)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Salimah Williams",
+      "class": "JR",
+      "reason": "Transfer from Monroe University-Bronx (CC)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Julia Koprowski",
+      "class": "JR",
+      "reason": "Transfer from Farmingdale St. (D3)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Justina Boatwright",
+      "class": "SR",
+      "reason": "Transfer from Kingsborough Community College (CC)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Tymere Moorer",
+      "class": "JR",
+      "reason": "Transfer from Monroe University-Bronx (CC)"
+    },
+    {
+      "team": "Lehman",
+      "name": "Lia Juan",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Elizabethtown",
+      "name": "Kierstyn Senuta",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Elizabethtown",
+      "name": "Olive Brandt",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Elizabethtown",
+      "name": "Jaelynn Helmrich",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Elizabethtown",
+      "name": "Kaleyah Caraway",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Elizabethtown",
+      "name": "Reagan Witalec",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ramapo",
+      "name": "Ava Kohler",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ramapo",
+      "name": "Saoirse-Bleu Twomey",
+      "class": "SO",
+      "reason": "Transfer from Centenary (NJ) (D3); played in 24-25, not in 25-26"
+    },
+    {
+      "team": "Ramapo",
+      "name": "Althea Borleo",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Olivia Loveland",
+      "class": "SO",
+      "reason": "Transfer from SIU Edwardsville (D1)"
+    },
+    {
+      "team": "Aurora",
+      "name": "Layla Loveland",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Alana Mainville",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Bella Frohling",
+      "class": "JR",
+      "reason": "Transfer from McHenry County College (CC)"
+    },
+    {
+      "team": "Aurora",
+      "name": "Shelby Emerick",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Brelyn Pool",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Brigit Mahoney",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Ramsie Hoil",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Addison Daliege",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Lilly Elston",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Aurora",
+      "name": "Kaci Peters",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Amelia Delmedico",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Becca Nelson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Brooklyn Hulst",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Anysia Pink",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Drew Pederson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Marissa Tusler",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Bethel",
+      "name": "Alyssa Anderson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Lejla Kendic",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Nia Chin",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Luliana Mckendry",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Rori Novack",
+      "class": "JR",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Alana Jackson",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "SUNY Poly",
+      "name": "Daniela Rodriguez",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Brooklin Davis",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Sara Burzycki",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Aubrey Bashore",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Alexa Morris",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Allie DeMassimo",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Ohio Wesleyan",
+      "name": "Lana Srbinovski",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Cortland",
+      "name": "Emma Burmeister",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "SUNY Cortland",
+      "name": "Kate Stratton",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Janaya Prince Baquero",
+      "class": "SO",
+      "reason": "Transfer from Franklin Pierce (D2)"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Jayle Evins-Mosely",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Shyloh Black",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Graci Hawkins",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Malahzia Weaver",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Chanel Ward",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Shaniya Dunbar",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Kenzi DeJesus",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Isabella Melissano",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Western Connecticut St.",
+      "name": "Celena Gregg",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Concordia (MN)",
+      "name": "Macy Anderson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Concordia (MN)",
+      "name": "Brynn Larson",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Concordia (MN)",
+      "name": "Zoe Keene",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Colby-Sawyer",
+      "name": "Ava O'Rourke",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Colby-Sawyer",
+      "name": "Vivian O'Quinn",
+      "class": "SO",
+      "reason": "Transfer from Drew (D3)"
+    },
+    {
+      "team": "Colby-Sawyer",
+      "name": "Aijah Thoroughgood",
+      "class": "JR",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Colby-Sawyer",
+      "name": "Maggie Sasso",
+      "class": "JR",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Colby-Sawyer",
+      "name": "Sydney Perry",
+      "class": "JR",
+      "reason": "Transfer from Rivier (D3)"
+    },
+    {
+      "team": "Pratt",
+      "name": "Rey Gu",
+      "class": "SO",
+      "reason": "No 2025-26 minutes"
+    },
+    {
+      "team": "Pratt",
+      "name": "Khwaish Saraf",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Pratt",
+      "name": "Phaedra Michaelides",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Rivier",
+      "name": "Nicole De Jesus",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Rivier",
+      "name": "Lily Phillips",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Rivier",
+      "name": "Mackenzie Vesper",
+      "class": "FR",
+      "reason": "Freshman"
+    },
+    {
+      "team": "Rivier",
+      "name": "Maeve Burgess",
       "class": "FR",
       "reason": "Freshman"
     }
