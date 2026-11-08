@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D3 WBB Schedule Builder — 2026-27</title>
+    <title>D3 WBB Schedule Builder: 2026-27</title>
     <style>
       * {
         box-sizing: border-box;
@@ -246,7 +246,7 @@
   <body>
     <h1>D-III Women's Basketball Schedule Builder</h1>
     <div class="subtitle">
-      2026-27 preseason planning — build a schedule and see whether it reaches
+      2026-27 preseason planning. Build a schedule and see whether it reaches
       your goal
     </div>
 
@@ -273,27 +273,27 @@
       <div class="summary-bar">
         <div class="summary-cell">
           <div class="label">Projected NPI</div>
-          <div class="value" id="team-npi">—</div>
-          <div class="sub" id="team-record">— record</div>
+          <div class="value" id="team-npi"></div>
+          <div class="sub" id="team-record"></div>
         </div>
         <div class="summary-cell" id="th-top4">
           <div class="label">Top 4</div>
-          <div class="value" id="th-top4-v">—</div>
+          <div class="value" id="th-top4-v"></div>
           <div class="sub">≥ 65.9</div>
         </div>
         <div class="summary-cell" id="th-top8">
           <div class="label">Top 8</div>
-          <div class="value" id="th-top8-v">—</div>
+          <div class="value" id="th-top8-v"></div>
           <div class="sub">≥ 64.1</div>
         </div>
         <div class="summary-cell" id="th-top16">
           <div class="label">Top 16</div>
-          <div class="value" id="th-top16-v">—</div>
+          <div class="value" id="th-top16-v"></div>
           <div class="sub">≥ 62.1</div>
         </div>
         <div class="summary-cell" id="th-poolc">
           <div class="label">Pool C</div>
-          <div class="value" id="th-poolc-v">—</div>
+          <div class="value" id="th-poolc-v"></div>
           <div class="sub">≥ 58.4</div>
         </div>
       </div>
@@ -1302,12 +1302,12 @@
               rows.push({ oppName: o.name, source: 'CONF' });
             const doubles = target - (n - 1);
             const byRank = [...others].sort((a, b) => a.rank - b.rank);
-            // Double up the highest-ranked peers (closest-to-rival proxy — conferences
+            // Double up the highest-ranked peers (closest-to-rival proxy: conferences
             // typically protect their top matchups; user can edit anything).
             for (let i = 0; i < doubles && i < byRank.length; i++)
               rows.push({ oppName: byRank[i].name, source: 'CONF' });
           } else {
-            // Partial conf schedule — pick rank-proximate opponents
+            // Partial conf schedule: pick rank-proximate opponents
             const byProximity = [...others].sort(
               (a, b) =>
                 Math.abs(a.rank - mainTeam.rank) -
@@ -1318,7 +1318,7 @@
           }
         }
 
-        // Conf tournament slots — 2 synthetic rows, 0 for UAA
+        // Conf tournament slots: 2 synthetic rows, 0 for UAA
         const tourneyCount = mainTeam.conf === 'UAA' ? 0 : CONF_TOURNEY_GAMES;
         // Synthetic opponent: median conference peer (by rank)
         let tourneyOpp = null;
@@ -1425,14 +1425,14 @@
 
         if (regime === 'comfortable') {
           return (
-            `With ${record.w}–${record.l}, you're ${margin.toFixed(1)} above the ${goalName} threshold.` +
+            `With ${record.w}-${record.l}, you're ${margin.toFixed(1)} above the ${goalName} threshold.` +
             floorText +
-            ` You can take one or two strategic risks against higher-NPI opponents — the quality-win bonus upside is worth it when you think you can win.`
+            ` You can take one or two strategic risks against higher-NPI opponents. The quality-win bonus upside is worth it when you think you can win.`
           );
         }
         if (regime === 'thin') {
           return (
-            `You're only ${margin.toFixed(1)} above the ${goalName} threshold — thin margin.` +
+            `You're only ${margin.toFixed(1)} above the ${goalName} threshold. That is a thin margin.` +
             floorText +
             ` One more loss likely drops you under the cutoff. Favor opponents you can beat whose NPI is still high enough to improve your counting-win floor. Avoid scheduling likely losses just for QWB upside.`
           );
@@ -1561,7 +1561,7 @@
           select.dataset.idx = r.idx;
           const emptyOpt = document.createElement('option');
           emptyOpt.value = '';
-          emptyOpt.textContent = '— empty —';
+          emptyOpt.textContent = '(empty)';
           select.appendChild(emptyOpt);
           const sorted = [...teams].sort((a, b) => a.rank - b.rank);
           for (const t of sorted) {
@@ -1584,13 +1584,13 @@
           // Pre rank
           const tdRank = document.createElement('td');
           tdRank.className = 'numeric';
-          tdRank.textContent = r.rank != null ? r.rank : '—';
+          tdRank.textContent = r.rank != null ? r.rank : '';
           tr.appendChild(tdRank);
 
           // Opp NPI
           const tdOppNpi = document.createElement('td');
           tdOppNpi.className = 'numeric';
-          tdOppNpi.textContent = r.oppNpi != null ? r.oppNpi.toFixed(2) : '—';
+          tdOppNpi.textContent = r.oppNpi != null ? r.oppNpi.toFixed(2) : '';
           tr.appendChild(tdOppNpi);
 
           // W/L toggle
@@ -1629,7 +1629,7 @@
           } else {
             for (let i = 0; i < 4; i++) {
               const td = document.createElement('td');
-              td.textContent = '—';
+              td.textContent = '';
               tr.appendChild(td);
             }
           }
@@ -1638,14 +1638,14 @@
           const tdWr = document.createElement('td');
           tdWr.className = 'numeric';
           tdWr.textContent =
-            r.won && r.oppName ? winRankByIdx[r.idx] || '' : '—';
+            r.won && r.oppName ? winRankByIdx[r.idx] || '' : '';
           tr.appendChild(tdWr);
 
           // Count
           const tdC = document.createElement('td');
           tdC.className =
             isCounting && r.oppName ? 'count-true' : 'count-false';
-          tdC.textContent = r.oppName ? (isCounting ? 'TRUE' : 'FALSE') : '—';
+          tdC.textContent = r.oppName ? (isCounting ? 'TRUE' : 'FALSE') : '';
           tr.appendChild(tdC);
 
           tbody.appendChild(tr);
@@ -1654,7 +1654,7 @@
         // Summary bar
         document.getElementById('team-npi').textContent = teamNpi.toFixed(2);
         document.getElementById('team-record').textContent =
-          `${wins_ct}–${losses_ct} record`;
+          `${wins_ct}-${losses_ct} record`;
         const bands = [
           ['top4', thresholds.top4, 'th-top4', 'th-top4-v'],
           ['top8', thresholds.top8, 'th-top8', 'th-top8-v'],

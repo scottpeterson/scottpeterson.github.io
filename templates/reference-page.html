@@ -128,19 +128,22 @@
       target="_blank"
       rel="noopener noreferrer"
       >fixed point</a
-    >), where another pass leaves every rating essentially unchanged.
+    >), where another pass leaves every rating unchanged.
   </p>
   <p>
     <strong>The D3 Stat Lab's implementation:</strong> this site stops iterating
-    once the average per-team change between passes falls below 0.0001, with a
-    minimum of 10 passes and a maximum of 80. The NCAA does not publish how many
-    iterations its official NPI runs; it most likely uses a fixed count set high
-    enough that convergence is reached well before the final pass (for example,
-    around 100), rather than testing for convergence directly. That difference
-    does not change the result in practice: once the ratings have settled,
-    further passes do not move them, so a convergence-threshold stop and a fixed
-    high-count stop arrive at the same ratings, as long as the system settles at
-    all (the condition below).
+    once the average per-team change between passes falls below 0.0001. It runs
+    at least 10 passes and at most 80. The NCAA does not publish how many
+    iterations its official NPI runs. It most likely uses a fixed count instead
+    of testing for convergence directly. That count is most likely set high
+    enough (for example, around 100) that convergence comes well before the
+    final pass.
+  </p>
+  <p>
+    That difference does not change the result in practice. Once the ratings
+    have settled, further passes do not move them. A convergence-threshold stop
+    and a fixed high-count stop therefore arrive at the same ratings. This holds
+    as long as the system settles at all (the condition below).
   </p>
   <p>
     How readily it settles is governed by how strongly each team's rating
