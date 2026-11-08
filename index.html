@@ -9,6 +9,13 @@
     <meta name="theme-color" content="#2c3e50" />
     <meta name="darkreader-lock" />
     <title>Basketball Statistics - Home</title>
+    <meta
+      name="description"
+      content="I love crunching data of all kinds. This site houses Division III Women's Basketball data (like NPI)."
+    />
+    <!-- Abbreviations every reader of the site knows; the prose style checker
+         (check_page.py) skips them. -->
+    <meta name="ste-allow" content="III,NPI,WBB,NCAA,EST,EDT" />
 
     <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
          client doesn't round-trip to config/pages.json on every navigation, and
@@ -51,6 +58,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
@@ -113,7 +127,7 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder — 2026-27</a
+                  >D3 WBB Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
@@ -142,7 +156,7 @@
     </nav>
 
     <!--
-  Home page hero — TRUE full-bleed, dark cinematic.
+  Home page hero: TRUE full-bleed, dark cinematic.
 
   INTENT: Rendered into the HERO slot in base.html (a full-width sibling of
   <main>, between the nav and the page body) for the index page ONLY. Being
@@ -151,10 +165,10 @@
 
   The arena photo (images/arena-hero.jpg) is dimmed by .home-hero__overlay so the
   white headline/subhead/CTAs stay legible over a busy, bright image. The generic
-  <header> is suppressed on the home page (SHOW_DEFAULT_HEADER in build.js) — this
+  <header> is suppressed on the home page (SHOW_DEFAULT_HEADER in build.js); this
   hero IS the page heading. The page heading/description come from config/pages.json.
 
-  NOTE: never write literal brace-token syntax in a comment — the template engine
+  NOTE: never write literal brace-token syntax in a comment. The template engine
   blind-replaces over the whole file (comments included) and would substitute it.
 -->
     <section class="home-hero">
@@ -177,19 +191,19 @@
 
     <main>
       <!--
-  Home page body (inside <main>) — explore hub + premium funnel.
+  Home page body (inside <main>): explore hub + premium funnel.
 
   INTENT: The landing page for The D3 Stat Lab. The full-bleed hero lives in
   templates/home-hero.html (rendered into base.html's HERO slot above <main>).
   This file holds:
-   1. .home-explore — a hub of cards linking to the primary data pages.
-   2. The PREMIUM_BAND slot — the premium product teaser, generated in build.js
+   1. .home-explore: a hub of cards linking to the primary data pages.
+   2. The PREMIUM_BAND slot: the premium product teaser, generated in build.js
       from the ACTIVE product in config.premium.products so copy/price stay in
       sync with the Premium page. Renders empty when the premium flag is off.
 
   NOTE: the template engine does a blind find/replace over this whole file
   (comments included), so never write the literal brace-token syntax in a
-  comment — it would be substituted too.
+  comment, because it would be substituted too.
 
   The four reference/link sections that used to live here now live on the
   combined Contact & About page (templates/contact-page.html). Do not re-add

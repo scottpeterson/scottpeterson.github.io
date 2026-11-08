@@ -133,6 +133,13 @@ ${contrastAllowTag}    <title>${title} - The D3 Stat Lab</title>
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/reports.css" />
 

@@ -45,6 +45,9 @@
   --success: #1e8449;
   --danger: #b03a2e;
   --warning: #f0a500;
+  /* Amber edge for a warning-tinted note: 3.9:1 on the #fff8e6 tint, so the
+     note's outline marks it off the white card behind it. */
+  --warning-edge: #a87200;
 
   /* Gradients (single definitions; default stops match the literals in use) */
   --grad-brand: linear-gradient(135deg, var(--blue-500), var(--blue-600));
@@ -113,14 +116,26 @@
   --r-lg: 16px;
   --r-pill: 999px;
 
-  /* Type scale */
-  --text-xs: 0.78rem;
-  --text-sm: 0.9rem;
-  --text-base: 1rem;
-  --text-md: 1.1rem;
-  --text-lg: 1.3rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
+  /* Brand layer: IBM Plex type, type scale, control size.
+     Source: ~/.claude/skills/design/assets/brand.css (version 2026-11-08).
+     The site builds without access to ~/.claude, so the tokens live here. The
+     font link is in templates/base.html and the wrap-reports.js shell. */
+  --font-sans:
+    'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', roboto, sans-serif;
+  --font-mono:
+    'IBM Plex Mono', ui-monospace, 'SF Mono', menlo, consolas, monospace;
+
+  /* Type scale: 12, 14, 16, 20, 24, 32 px. Every font-size uses one of these. */
+  --fs-caption: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-h3: 1.25rem;
+  --fs-h2: 1.5rem;
+  --fs-h1: 2rem;
+
+  /* Controls: 32px minimum hit size; 36px is the default height. */
+  --control-h: 36px;
+  --control-gap: 8px;
 
   /* Spacing rhythm (8px base) */
   --space-1: 8px;
@@ -138,9 +153,10 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.5;
   color: var(--text-2);
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
@@ -170,10 +186,14 @@ body {
    vertical padding, which with box-sizing: border-box leaves a 24px image no
    room to draw. */
 .main-nav .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: var(--fs-h3);
+  font-weight: 600;
   color: #fff;
   padding: 15px 0;
+  /* Keep the site name on one line; the links wrap instead. */
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: var(--space-2);
 }
 
 .main-nav .logo a {
@@ -202,7 +222,7 @@ body {
   text-decoration: none;
   padding: 8px 10px;
   margin: 4px 0;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
 }
 
 .nav-links a:hover {
@@ -277,7 +297,7 @@ body.home.nav-solid .home-hero::before {
 }
 
 .dropdown-arrow {
-  font-size: 0.7rem;
+  font-size: var(--fs-caption);
   transition: transform 0.2s ease;
 }
 
@@ -315,7 +335,7 @@ body.home.nav-solid .home-hero::before {
   padding: 10px 20px;
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   transition: background 0.2s ease;
 }
 
@@ -371,23 +391,68 @@ header {
 
 .last-updated {
   color: var(--text-3);
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   margin-top: 8px;
   margin-bottom: 0;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--fs-h1);
   color: var(--navy-900);
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--fs-h2);
   color: var(--navy-900);
   margin-bottom: 15px;
   font-weight: 600;
+}
+
+/* Brand type rules (brand.css). h3 needs a size of its own, or the browser
+   default (1.17em) lands off the scale. */
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+b,
+th {
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.01em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+:not(pre) > code {
+  font-size: 0.875em;
+}
+
+pre {
+  font-size: var(--fs-small);
+  line-height: 1.6;
 }
 
 /* ===========================================================================
@@ -429,7 +494,7 @@ h2 {
   padding: 13px 26px;
   border-radius: var(--r-sm);
   font-weight: 600;
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
@@ -527,7 +592,8 @@ h2 {
 .btn--outline {
   background: #fff;
   color: var(--blue-600);
-  border-color: var(--border);
+  /* A control edge needs 3:1 against the white behind it. */
+  border-color: var(--border-control);
 }
 
 .btn--outline:hover {
@@ -539,7 +605,7 @@ h2 {
 .premium-button,
 .form-submit {
   padding: 16px 34px;
-  font-size: var(--text-md);
+  font-size: var(--fs-body);
 }
 
 .form-submit {
@@ -609,9 +675,9 @@ h2 {
 .home-badge,
 .home-premium__eyebrow {
   display: inline-block;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -621,9 +687,9 @@ h2 {
 }
 
 .home-hero__title {
-  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-size: var(--fs-h1);
   line-height: 1.05;
-  font-weight: 800;
+  font-weight: 600;
   color: #fff;
   margin: 0 0 18px;
   max-width: 16ch;
@@ -631,7 +697,7 @@ h2 {
 }
 
 .home-hero__sub {
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-size: var(--fs-h3);
   line-height: 1.55;
   color: #d6e0ea;
   max-width: 52ch;
@@ -650,15 +716,15 @@ h2 {
 }
 
 .home-section__title {
-  font-size: 1.9rem;
+  font-size: var(--fs-h2);
   color: var(--navy-900);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
 .home-section__lead {
   color: var(--text-3);
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   max-width: 60ch;
   margin: 0 0 26px;
 }
@@ -694,14 +760,14 @@ h2 {
 
 .explore-card h3 {
   color: var(--navy-900);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: var(--fs-h3);
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
 .explore-card p {
   color: var(--text-3);
-  font-size: 0.98rem;
+  font-size: var(--fs-body);
   margin: 0 0 14px;
 }
 
@@ -738,14 +804,14 @@ h2 {
 }
 
 .home-premium__title {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 800;
+  font-size: var(--fs-h2);
+  font-weight: 600;
   color: #fff;
   margin-bottom: 14px;
 }
 
 .home-premium__tagline {
-  font-size: 1.12rem;
+  font-size: var(--fs-body);
   line-height: 1.55;
   color: #cfd8e2;
   margin: 0 auto 22px;
@@ -765,7 +831,7 @@ h2 {
   padding-left: 28px;
   margin-bottom: 10px;
   color: #eaf0f6;
-  font-size: 1.02rem;
+  font-size: var(--fs-body);
 }
 
 .home-premium__features li::before {
@@ -773,7 +839,7 @@ h2 {
   position: absolute;
   left: 0;
   color: #4fd18b;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .home-premium__price {
@@ -787,19 +853,19 @@ h2 {
 .home-premium__price-original {
   color: #c5ced8;
   text-decoration: line-through;
-  font-size: 1.3rem;
+  font-size: var(--fs-h3);
 }
 
 .home-premium__price-now {
   color: #fff;
-  font-size: 2.6rem;
-  font-weight: 800;
+  font-size: var(--fs-h1);
+  font-weight: 600;
   line-height: 1;
 }
 
 .home-premium__price-period {
   color: #aebac6;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 
 /* --- Shared card grid (also used by the About the Data page) -------------- */
@@ -813,7 +879,7 @@ h2 {
 
 .home-card h3 {
   color: var(--navy-900);
-  font-size: 1.3rem;
+  font-size: var(--fs-h3);
   margin-bottom: 14px;
   font-weight: 600;
 }
@@ -832,7 +898,7 @@ h2 {
   color: var(--blue-500);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
 }
 
 .home-card a:hover {
@@ -842,7 +908,7 @@ h2 {
 .home-card__note {
   color: var(--text-3);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
 }
 
 @media (max-width: 768px) {
@@ -906,7 +972,7 @@ h2 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 16px;
+  font-size: var(--fs-body);
   line-height: 1.5;
 }
 
@@ -932,7 +998,6 @@ h2 {
   text-align: center;
   padding: 12px 15px;
   border: 1px solid var(--blue-600);
-  border-bottom: 3px solid var(--blue-600);
   z-index: 100;
   box-shadow: var(--glow-blue);
   position: sticky;
@@ -1012,15 +1077,9 @@ footer {
   margin-top: 40px;
   box-shadow: var(--elev-top);
   backdrop-filter: blur(10px);
-  /* Brand top stroke via background-clip — replaces border-image (which can't
-     follow a radius and is banned by the design system), matching the header/nav
-     technique. Only the top border carries width, so only the top edge reveals
-     the gradient; the navy chrome gradient fills the padding box. */
-  border: 0 solid transparent;
-  border-top-width: 3px;
-  background:
-    var(--grad-chrome) padding-box,
-    var(--grad-accent) border-box;
+  /* No accent stroke above the footer (design skill anti-patterns); the navy
+     chrome and the upward shadow mark its edge. */
+  background: var(--grad-chrome);
 }
 
 /* Responsive Styles */
@@ -1050,11 +1109,11 @@ footer {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: var(--fs-h2);
   }
 
   .stats-table {
-    font-size: 16px;
+    font-size: var(--fs-body);
   }
 
   .stats-table th,
@@ -1102,7 +1161,7 @@ footer {
   border: 2px solid var(--border-control);
   background: #fff;
   border-radius: var(--r-md);
-  font-size: 14px;
+  font-size: var(--fs-body);
   color: var(--text-2);
   transition:
     border-color 0.3s ease,
@@ -1160,7 +1219,7 @@ footer {
   text-align: center;
   padding: 40px;
   color: var(--text-3);
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
 }
 
 .loading::after {
@@ -1218,13 +1277,13 @@ footer {
 .progress-title {
   font-weight: 600;
   color: var(--navy-900);
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 
 .progress-percentage {
-  font-weight: bold;
+  font-weight: 600;
   color: var(--blue-500);
-  font-size: 16px;
+  font-size: var(--fs-body);
 }
 
 .progress-bar {
@@ -1287,12 +1346,10 @@ footer {
 .sort-indicator {
   /* Opaque pale blue instead of a faded white: 4.7:1 on the header fill */
   color: #edf3f9;
-  font-size: 0.8em;
+  font-size: var(--fs-caption);
   margin-left: 5px;
   user-select: none;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
-    sans-serif;
+  font-family: var(--font-sans);
   font-variant-emoji: text;
   text-rendering: optimizelegibility;
 }
@@ -1300,7 +1357,7 @@ footer {
 .stats-table th[data-sort='asc'] .sort-indicator,
 .stats-table th[data-sort='desc'] .sort-indicator {
   color: #fff;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Contact Form Styles */
@@ -1330,7 +1387,7 @@ footer {
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--navy-900);
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 
 .form-input,
@@ -1340,7 +1397,7 @@ footer {
   border: 2px solid var(--border-control);
   background: #fff;
   border-radius: var(--r-md);
-  font-size: 14px;
+  font-size: var(--fs-body);
   color: var(--text-2);
   transition: all 0.3s ease;
   box-shadow: var(--elev-0);
@@ -1376,7 +1433,7 @@ footer {
   color: var(--navy-900);
   font-weight: 600;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
 }
 
 .contact-info p {
@@ -1455,19 +1512,21 @@ footer {
 }
 
 .reference-sources {
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
   color: var(--text-3);
 }
 
 /* Monospace callout for a single display formula. Tinted block (no left-border
    accent — those are reserved for semantic alerts), token radius. */
 .reference-formula {
-  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-family: var(--font-mono);
   background: rgb(44 62 80 / 5%);
   border-radius: var(--r-sm);
+  /* The 5% tint alone is 1.09:1 on the card; the shadow marks its edge. */
+  box-shadow: var(--elev-0);
   padding: 12px 16px;
   color: var(--navy-900);
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
   overflow-x: auto;
 }
 
@@ -1483,7 +1542,7 @@ footer {
 .reference-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
 }
 
 .reference-table th,
@@ -1498,7 +1557,7 @@ footer {
   color: var(--navy-900);
   font-weight: 600;
   white-space: nowrap;
-  border-bottom: 2px solid var(--navy-900);
+  border-bottom: 1px solid var(--navy-900);
 }
 
 .reference-table tbody tr:last-child td {
@@ -1523,11 +1582,11 @@ footer {
   }
 
   .progress-title {
-    font-size: 13px;
+    font-size: var(--fs-small);
   }
 
   .progress-percentage {
-    font-size: 15px;
+    font-size: var(--fs-body);
   }
 
   /* Contact form mobile adjustments */
@@ -1550,8 +1609,10 @@ footer {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  /* 32px hit area; the padding keeps the three bars at their 30 x 21 size. */
+  width: 32px;
+  height: 32px;
+  padding: 5px 1px;
   cursor: pointer;
   z-index: 98;
 }
@@ -1571,8 +1632,8 @@ footer {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   z-index: 102;
 }
@@ -1641,9 +1702,16 @@ footer {
   }
 
   .nav-links {
+    /* The closed drawer is display: none, not parked off screen at
+       right: -100%. A fixed box past the right edge widens the page, so a
+       phone could pan sideways onto the hidden drawer (measure_consistency
+       page-overflow, 2026-11-08). allow-discrete keeps display until the
+       slide-out finishes, and @starting-style gives the slide-in its start. */
+    display: none;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 80%;
     max-width: 300px;
     /* 100dvh, not 100vh: on iOS Safari 100vh includes the area under the
@@ -1659,14 +1727,23 @@ footer {
        takes over and the drawer scrolls. */
     flex-wrap: nowrap;
     padding: 60px 0 30px;
-    transition: right 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      display 0.3s allow-discrete;
     z-index: 100;
     overflow-y: auto;
     box-shadow: var(--elev-drawer);
   }
 
   .nav-links.active {
-    right: 0;
+    display: flex;
+    transform: translateX(0);
+  }
+
+  @starting-style {
+    .nav-links.active {
+      transform: translateX(100%);
+    }
   }
 
   .nav-links li {
@@ -1681,6 +1758,7 @@ footer {
   .nav-links a {
     padding: 15px 25px;
     width: 100%;
+    font-size: var(--fs-body);
     border-bottom: 1px solid var(--navy-700);
   }
 
@@ -1751,11 +1829,9 @@ footer {
 .legend-section h2 {
   color: var(--text-1);
   margin-bottom: 20px;
-  font-size: 1.4rem;
+  font-size: var(--fs-h2);
   font-weight: 600;
   text-align: center;
-  border-bottom: 2px solid var(--blue-500);
-  padding-bottom: 10px;
 }
 
 .legend-grid {
@@ -1774,6 +1850,9 @@ footer {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: var(--r-sm);
   border: 1px solid var(--border);
+  /* The fill matches the legend panel behind it, so a resting shadow marks
+     each item's edge (surface contrast, 2026-11-07). */
+  box-shadow: var(--elev-0);
   transition: all 0.2s ease;
 }
 
@@ -1785,7 +1864,7 @@ footer {
 
 .legend-column {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   background: var(--grad-brand);
   color: #fff;
   padding: 4px 8px;
@@ -1796,7 +1875,7 @@ footer {
 
 .legend-description {
   color: var(--text-3);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   line-height: 1.4;
 }
 
@@ -1808,7 +1887,7 @@ footer {
   }
 
   .legend-section h2 {
-    font-size: 1.2rem;
+    font-size: var(--fs-h3);
     margin-bottom: 15px;
   }
 
@@ -1822,11 +1901,11 @@ footer {
   }
 
   .legend-column {
-    font-size: 0.85rem;
+    font-size: var(--fs-small);
   }
 
   .legend-description {
-    font-size: 0.8rem;
+    font-size: var(--fs-small);
   }
 }
 
@@ -1844,14 +1923,14 @@ footer {
 
 /* Oversized click targets for the school dropdowns */
 .distances-form .form-group label {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   padding: 6px 0;
   cursor: pointer;
 }
 
 .distances-form .form-select {
   padding: 16px 44px 16px 18px;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   min-height: 56px;
   cursor: pointer;
 }
@@ -1876,13 +1955,13 @@ footer {
 }
 
 .distance-miles #distance-value {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: var(--fs-h1);
+  font-weight: 600;
   color: var(--navy-900);
 }
 
 .distance-miles .distance-unit {
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
   color: var(--text-3);
   margin-left: 6px;
 }
@@ -1892,7 +1971,7 @@ footer {
   flex-direction: column;
   gap: 4px;
   color: var(--text-3);
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
 }
 
 /* Color-coded result: green for ≤499 miles, red for ≥500 miles */
@@ -1930,14 +2009,20 @@ footer {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: 10px;
   border: 1px solid #e9ecef;
+  /* The fill matches the page card behind it; the shadow marks its edge. */
+  box-shadow: var(--elev-0);
   color: var(--text-3);
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   line-height: 1.7;
+}
+
+.distances-about p + p {
+  margin-top: var(--space-1);
 }
 
 .distances-about h3 {
   color: var(--navy-900);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   margin-bottom: 10px;
 }
 
@@ -1953,12 +2038,12 @@ footer {
   margin-top: 15px;
   width: auto;
   padding: 10px 24px;
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
 }
 
 .distance-request-status {
   margin-top: 10px;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
 }
 
 .distance-request-success {
@@ -1971,7 +2056,7 @@ footer {
 
 @media (max-width: 768px) {
   .distance-miles #distance-value {
-    font-size: 3rem;
+    font-size: var(--fs-h1);
   }
 
   .distance-result {
@@ -1994,14 +2079,14 @@ footer {
 
 /* Oversized dropdown to match distances page select styling */
 .ryan-form .form-group label {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   padding: 6px 0;
   cursor: pointer;
 }
 
 .ryan-form .form-select {
   padding: 16px 44px 16px 18px;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   min-height: 56px;
   cursor: pointer;
 }
@@ -2017,7 +2102,7 @@ footer {
 
 .ryan-results-heading {
   color: var(--navy-900);
-  font-size: 1.1rem;
+  font-size: var(--fs-h3);
   margin-bottom: 15px;
 }
 
@@ -2103,7 +2188,7 @@ footer {
 
 .premium-features h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fs-h2);
   margin-bottom: 30px;
   color: var(--navy-900);
 }
@@ -2143,7 +2228,7 @@ footer {
 }
 
 .feature-card h3 {
-  font-size: 1.4rem;
+  font-size: var(--fs-h3);
   margin-bottom: 12px;
   color: var(--navy-900);
   text-align: center;
@@ -2161,7 +2246,7 @@ footer {
 
 .premium-pricing h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fs-h2);
   margin-bottom: 30px;
   color: var(--navy-900);
 }
@@ -2181,7 +2266,7 @@ footer {
 }
 
 .price-original {
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   color: var(--text-4);
   text-decoration: line-through;
   text-decoration-color: var(--text-4);
@@ -2200,20 +2285,20 @@ footer {
 }
 
 .price-amount {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: var(--fs-h1);
+  font-weight: 600;
   color: var(--navy-900);
 }
 
 .price-period {
-  font-size: 1.2rem;
+  font-size: var(--fs-body);
   color: var(--text-3);
 }
 
 .pricing-clarification {
   text-align: center;
   color: var(--text-3);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   margin: 15px 0 25px;
   line-height: 1.6;
 }
@@ -2230,7 +2315,7 @@ footer {
 .pricing-features li {
   padding: 10px 0;
   color: var(--text-3);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   border-bottom: 1px solid #eee;
 }
 
@@ -2242,7 +2327,7 @@ footer {
 
 .trust-signal {
   margin-top: 15px;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: var(--text-3);
 }
 
@@ -2292,7 +2377,7 @@ footer {
 .audience-card h3 {
   color: #c75b12;
   margin-bottom: 0.75rem;
-  font-size: 1.25rem;
+  font-size: var(--fs-h3);
 }
 
 .audience-card p {
@@ -2320,12 +2405,12 @@ footer {
 .urgency-note {
   text-align: center;
   color: var(--text-3);
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   margin-bottom: 1rem;
   padding: 0.5rem;
   background: #fff8e6;
   border-radius: 4px;
-  border-left: 3px solid var(--warning);
+  border: 1px solid var(--warning-edge);
 }
 
 .premium-faq {
@@ -2334,7 +2419,7 @@ footer {
 
 .premium-faq h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fs-h2);
   margin-bottom: 30px;
   color: var(--navy-900);
 }
@@ -2348,7 +2433,7 @@ footer {
 }
 
 .faq-item h3 {
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
   margin-bottom: 10px;
   color: var(--navy-900);
 }
@@ -2374,6 +2459,10 @@ footer {
 
 .simple-page-actions {
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--control-gap);
 }
 
 /* .button / .button-primary styling now lives in the BUTTON SYSTEM block. */
@@ -2390,7 +2479,7 @@ footer {
 .premium-honor h2 {
   color: #8a5700;
   margin-bottom: 20px;
-  font-size: 1.4rem;
+  font-size: var(--fs-h2);
 }
 
 .honor-content p {
@@ -2423,7 +2512,7 @@ footer {
 
 .product-header h2 {
   display: inline;
-  font-size: 2rem;
+  font-size: var(--fs-h2);
   color: var(--navy-900);
 }
 
@@ -2431,7 +2520,7 @@ footer {
   display: inline-block;
   padding: 4px 14px;
   border-radius: var(--r-pill);
-  font-size: 0.85rem;
+  font-size: var(--fs-caption);
   font-weight: 600;
   margin-left: 12px;
   vertical-align: middle;
@@ -2449,14 +2538,14 @@ footer {
 
 .product-tagline {
   color: var(--text-3);
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   margin-top: 12px;
   line-height: 1.6;
 }
 
 .product-countdown {
   margin-top: 10px;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--text-3);
 }
 
@@ -2465,7 +2554,7 @@ footer {
 }
 
 .countdown-days {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-900);
 }
 
@@ -2477,7 +2566,7 @@ footer {
 
 .product-divider {
   border: none;
-  border-top: 4px solid var(--blue-500);
+  border-top: 1px solid var(--border-control);
   margin: 30px 0 60px;
   max-width: 600px;
   margin-left: auto;
@@ -2491,7 +2580,7 @@ footer {
 .offseason-collapse {
   max-width: 900px;
   margin: var(--space-4) auto var(--space-5);
-  border-top: 3px solid var(--blue-500);
+  border-top: 1px solid var(--border-control);
 }
 
 .offseason-collapse__summary {
@@ -2551,7 +2640,7 @@ footer {
 .sales-disabled-message {
   color: var(--text-3);
   font-style: italic;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   margin-top: 20px;
   padding: 15px;
   background: #f5f5f5;
@@ -2574,7 +2663,7 @@ footer {
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--navy-900);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 
 .form-input,
@@ -2583,7 +2672,7 @@ footer {
   padding: 12px 16px;
   border: 2px solid var(--border-control);
   border-radius: var(--r-sm);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-family: inherit;
   transition:
     border-color 0.3s ease,
@@ -2612,7 +2701,7 @@ footer {
 }
 
 .form-select optgroup {
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   color: var(--blue-500);
 }
@@ -2625,7 +2714,7 @@ footer {
 .form-hint {
   display: block;
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--text-3);
 }
 
@@ -2651,7 +2740,7 @@ footer {
 
 .checkbox-text {
   color: var(--navy-900);
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   user-select: none;
 }
 
@@ -2662,7 +2751,7 @@ footer {
   font-style: italic;
   text-align: center;
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 /* Premium CTA Banner (Buy Button) */
@@ -2692,14 +2781,14 @@ footer {
 
 .premium-cta-content h3 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .premium-cta-content p {
   color: #ecf0f1;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   margin-bottom: 20px;
 }
 
@@ -2790,7 +2879,7 @@ footer {
   }
 
   .price-amount {
-    font-size: 2.5rem;
+    font-size: var(--fs-h1);
   }
 
   .faq-item {
@@ -2803,26 +2892,26 @@ footer {
 
   .form-input,
   .form-select {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: var(--fs-body); /* Prevents zoom on iOS */
   }
 
   .premium-cta-content h3 {
-    font-size: 1.3rem;
+    font-size: var(--fs-h3);
   }
 
   .premium-cta-content p {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
   }
 
   .cta-button {
-    font-size: 1rem;
+    font-size: var(--fs-body);
     padding: 12px 24px;
   }
 
   /* Multi-product mobile adjustments */
   .product-header h2 {
     display: block;
-    font-size: 1.6rem;
+    font-size: var(--fs-h2);
   }
 
   .product-badge {
@@ -2832,7 +2921,7 @@ footer {
   }
 
   .product-tagline {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
 }
 
@@ -2898,13 +2987,13 @@ footer {
 
 .bb-counts dt {
   color: var(--text-3);
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
 }
 
 .bb-counts dd {
   color: var(--text-1);
-  font-size: var(--text-lg);
-  font-weight: 700;
+  font-size: var(--fs-h3);
+  font-weight: 600;
 }
 
 .bb-actions {
@@ -2943,9 +3032,13 @@ footer {
   padding: var(--space-2);
 }
 
+.bb-field-head {
+  margin-bottom: var(--space-1);
+}
+
 .bb-field-head h3 {
   color: var(--text-1);
-  font-size: var(--text-md);
+  font-size: var(--fs-h3);
   margin-bottom: var(--space-1);
 }
 
@@ -2954,7 +3047,7 @@ footer {
   border: 1px solid var(--border-control);
   border-radius: var(--r-sm);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--fs-body);
   padding: var(--space-1);
   margin-bottom: var(--space-1);
 }
@@ -2968,8 +3061,7 @@ footer {
 .bb-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: var(--space-1);
+  gap: var(--space-1);
 }
 
 /* Chips share the quadrant tab look (see .bb-tab) at a smaller size. */
@@ -2979,13 +3071,14 @@ footer {
   gap: 6px;
   background: var(--surface);
   border: 0;
-  border-radius: var(--r-pill);
+  border-radius: var(--r-sm);
   box-shadow: var(--elev-0);
   color: var(--text-2);
   cursor: pointer;
   font: inherit;
-  font-size: var(--text-xs);
-  padding: 6px 12px;
+  font-size: var(--fs-small);
+  /* 10px sides keep all three chips on one row in the 300px field column. */
+  padding: 6px 10px;
 }
 
 .bb-chip:hover {
@@ -3000,11 +3093,11 @@ footer {
 .bb-chip[aria-pressed='true'] {
   background: var(--grad-brand);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .bb-chip-count {
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
 }
 
 .bb-field-list {
@@ -3073,8 +3166,8 @@ footer {
   background: var(--navy-900);
   border-radius: var(--r-pill);
   color: #fff;
-  font-size: var(--text-base);
-  font-weight: 700;
+  font-size: var(--fs-body);
+  font-weight: 600;
   line-height: 1.6;
   padding: 0 6px;
   text-align: center;
@@ -3098,7 +3191,7 @@ footer {
 }
 
 .bb-team-name {
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3107,13 +3200,16 @@ footer {
 
 .bb-team-meta {
   color: var(--text-3);
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
 }
 
 /* Quadrant tabs */
 .bb-tabs {
   display: flex;
   flex-wrap: wrap;
+  /* As wide as its buttons, never stretched across the column. */
+  width: fit-content;
+  max-width: 100%;
   gap: var(--space-1);
   margin-bottom: var(--space-2);
 }
@@ -3124,23 +3220,23 @@ footer {
   gap: var(--space-1);
   background: var(--surface);
   border: 0;
-  border-radius: var(--r-pill);
+  border-radius: var(--r-sm);
   box-shadow: var(--elev-0);
   color: var(--text-2);
   cursor: pointer;
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
   padding: var(--space-1) var(--space-2);
 }
 
 .bb-tab[aria-selected='true'] {
   background: var(--grad-brand);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .bb-tab-count {
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
 }
 
 .bb-tab.has-error::after {
@@ -3150,8 +3246,8 @@ footer {
   background: var(--danger);
   border-radius: var(--r-pill);
   color: #fff;
-  font-size: var(--text-xs);
-  font-weight: 700;
+  font-size: var(--fs-caption);
+  font-weight: 600;
   line-height: 16px;
   text-align: center;
 }
@@ -3220,13 +3316,13 @@ footer {
 
 .bb-quadrant-head h3 {
   color: var(--text-1);
-  font-size: var(--text-lg);
+  font-size: var(--fs-h3);
 }
 
 .bb-quadrant-count,
 .bb-pod-flights {
   color: var(--text-3);
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
 }
 
 .bb-pods {
@@ -3250,7 +3346,7 @@ footer {
 
 .bb-pod-head h4 {
   color: var(--text-1);
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 .bb-game {
@@ -3275,7 +3371,7 @@ footer {
 
 .bb-slot-empty {
   color: var(--text-4);
-  font-size: var(--text-sm);
+  font-size: var(--fs-small);
 }
 
 .bb-slot.is-target {
@@ -3309,8 +3405,8 @@ footer {
   background: color-mix(in srgb, var(--danger) 12%, transparent);
   border-radius: var(--r-pill);
   color: var(--danger);
-  font-size: var(--text-xs);
-  font-weight: 700;
+  font-size: var(--fs-caption);
+  font-weight: 600;
   padding: 2px var(--space-1) 2px 4px;
 }
 
@@ -3333,7 +3429,7 @@ footer {
   color: var(--text-3);
   cursor: pointer;
   font: inherit;
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
   padding: 4px var(--space-1);
 }
 
@@ -3341,7 +3437,7 @@ footer {
   background: var(--navy-900);
   border-color: var(--navy-900);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .bb-remove {
@@ -3353,7 +3449,7 @@ footer {
   border-radius: var(--r-pill);
   color: var(--text-3);
   cursor: pointer;
-  font-size: var(--text-md);
+  font-size: var(--fs-body);
 }
 
 .bb-remove:hover {
@@ -3370,7 +3466,7 @@ footer {
 .bb-issue {
   position: relative;
   color: var(--text-2);
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
   line-height: 1.4;
   padding: 2px 0 2px 16px;
 }
@@ -3397,7 +3493,7 @@ footer {
   background: color-mix(in srgb, var(--danger) 10%, transparent);
   border-radius: var(--r-sm);
   color: var(--text-1);
-  font-size: var(--text-xs);
+  font-size: var(--fs-caption);
   margin: 0 0 var(--space-1);
   padding: 4px var(--space-1);
 }

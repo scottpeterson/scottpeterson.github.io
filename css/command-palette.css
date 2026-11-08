@@ -79,7 +79,7 @@
 
 .command-palette-header-text {
   flex: 1;
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: #888;
   font-weight: 500;
 }
@@ -106,7 +106,7 @@
   background: transparent;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: var(--fs-body);
   color: #fff;
   font-family: inherit;
 }
@@ -120,7 +120,7 @@
   align-items: center;
   gap: 4px;
   color: #999;
-  font-size: 12px;
+  font-size: var(--fs-caption);
   margin-left: 12px;
 }
 
@@ -130,7 +130,7 @@
   padding: 3px 8px;
   border-radius: 4px;
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--fs-caption);
   font-weight: 500;
   border: 1px solid rgb(255 255 255 / 20%);
 }
@@ -166,7 +166,7 @@
 /* Section headers (Navigation, Actions) */
 .command-palette-section {
   padding: 8px 20px 4px;
-  font-size: 11px;
+  font-size: var(--fs-caption);
   font-weight: 600;
   color: #666;
   text-transform: uppercase;
@@ -215,7 +215,7 @@
 }
 
 .command-palette-item-title {
-  font-size: 14px;
+  font-size: var(--fs-small);
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
@@ -223,7 +223,7 @@
 }
 
 .command-palette-item-description {
-  font-size: 12px;
+  font-size: var(--fs-caption);
   color: #666;
   margin-top: 2px;
   white-space: nowrap;
@@ -232,7 +232,7 @@
 }
 
 .command-palette-item-shortcut {
-  font-size: 12px;
+  font-size: var(--fs-caption);
   color: #999;
   margin-left: 12px;
   flex-shrink: 0;
@@ -244,7 +244,7 @@
   padding: 3px 8px;
   border-radius: 4px;
   font-family: inherit;
-  font-size: 11px;
+  font-size: var(--fs-caption);
   font-weight: 500;
   border: 1px solid rgb(255 255 255 / 20%);
 }
@@ -254,7 +254,7 @@
   padding: 24px 20px;
   text-align: center;
   color: #666;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 
 /* ==========================================================================
@@ -301,7 +301,7 @@
 }
 
 .team-summary-title {
-  font-size: 18px;
+  font-size: var(--fs-h3);
   font-weight: 600;
   color: #fff;
   margin: 0;
@@ -358,7 +358,7 @@
 }
 
 .team-summary-section-title {
-  font-size: 12px;
+  font-size: var(--fs-caption);
   font-weight: 600;
   color: var(--blue-500);
   text-transform: uppercase;
@@ -388,7 +388,7 @@
 }
 
 .team-summary-stat-label {
-  font-size: 11px;
+  font-size: var(--fs-caption);
   color: #888;
   margin-bottom: 4px;
   text-transform: uppercase;
@@ -397,7 +397,7 @@
 }
 
 .team-summary-stat-value {
-  font-size: 16px;
+  font-size: var(--fs-body);
   font-weight: 600;
   color: #fff;
   text-align: center;
@@ -540,7 +540,7 @@
 }
 
 .team-summary-not-found-icon {
-  font-size: 48px;
+  font-size: var(--fs-h1);
   margin-bottom: 16px;
   opacity: 0.5;
 }

@@ -1,17 +1,17 @@
 <!--
-  Home page body (inside <main>) — explore hub + premium funnel.
+  Home page body (inside <main>): explore hub + premium funnel.
 
   INTENT: The landing page for The D3 Stat Lab. The full-bleed hero lives in
   templates/home-hero.html (rendered into base.html's HERO slot above <main>).
   This file holds:
-   1. .home-explore — a hub of cards linking to the primary data pages.
-   2. The PREMIUM_BAND slot — the premium product teaser, generated in build.js
+   1. .home-explore: a hub of cards linking to the primary data pages.
+   2. The PREMIUM_BAND slot: the premium product teaser, generated in build.js
       from the ACTIVE product in config.premium.products so copy/price stay in
       sync with the Premium page. Renders empty when the premium flag is off.
 
   NOTE: the template engine does a blind find/replace over this whole file
   (comments included), so never write the literal brace-token syntax in a
-  comment — it would be substituted too.
+  comment, because it would be substituted too.
 
   The four reference/link sections that used to live here now live on the
   combined Contact & About page (templates/contact-page.html). Do not re-add

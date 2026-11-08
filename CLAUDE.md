@@ -58,7 +58,7 @@ Rules (these override convenience):
 - **Use the design tokens** defined in `:root` at the top of `styles.css` — colors
   (`--navy-900`, `--blue-500`, `--orange-500`, text ramp `--text-1..4`), gradients
   (`--grad-brand`, `--grad-chrome`, `--grad-accent`), elevation (`--elev-1..3`), radius
-  (`--r-sm/md/lg/pill`), type (`--text-xs..2xl`), spacing (`--space-1..5`). **Never introduce a
+  (`--r-sm/md/lg/pill`), type (`--font-sans`, `--font-mono`, and the `--fs-caption..h1` scale of 12, 14, 16, 20, 24, 32 px), spacing (`--space-1..5`). **Never introduce a
   raw hex/rgb color, px radius, or one-off gradient/shadow when a token exists.** If a genuinely
   new value is needed, add a token rather than a literal.
 - **Reuse components, don't fork them.** There is one button system (`.btn` + `.btn--*`), one
@@ -68,7 +68,8 @@ Rules (these override convenience):
   padding-box/border-box gradient technique (see `header` in `styles.css`), **never
   `border-image`** (it can't follow `border-radius`). Reserve left-border accents for genuine
   callouts (alerts/warnings), not default card chrome.
-- **Match the type scale and the 8px spacing rhythm.** No ad-hoc font sizes.
+- **Match the type scale and the 8px spacing rhythm.** No ad-hoc font sizes. Type is IBM
+  Plex Sans (Plex Mono for code) at weights 400, 500, and 600; no other family, no 700.
 - After CSS/template/config changes, run `npm run build` and validate locally (the build emits
   raw HTML; the pre-commit hook prettier-formats it).
 

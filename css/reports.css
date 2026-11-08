@@ -45,13 +45,13 @@
 
 .report-card h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--fs-h3);
   font-weight: 600;
   color: var(--text-1);
 }
 
 .report-card-arrow {
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
   color: var(--blue-500);
   transition: transform 0.2s ease;
 }
@@ -79,7 +79,7 @@
   display: inline-block;
   color: var(--blue-500);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   font-weight: 500;
   padding: 8px 16px;
   background: rgb(255 255 255 / 90%);
@@ -235,7 +235,7 @@
 }
 
 .dropdown-arrow {
-  font-size: 0.7rem;
+  font-size: var(--fs-caption);
   transition: transform 0.2s ease;
 }
 
@@ -273,7 +273,7 @@
   padding: 10px 20px;
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   transition: background 0.2s ease;
 }
 

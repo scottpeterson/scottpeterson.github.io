@@ -9,6 +9,13 @@
     <meta name="theme-color" content="#2c3e50" />
     <meta name="darkreader-lock" />
     <title>Basketball Statistics - Current Season Rankings</title>
+    <meta
+      name="description"
+      content="D3 WBB team rankings based on this season's results."
+    />
+    <!-- Abbreviations every reader of the site knows; the prose style checker
+         (check_page.py) skips them. -->
+    <meta name="ste-allow" content="III,NPI,WBB,NCAA,EST,EDT" />
 
     <!-- Per-page runtime config + early data fetch. Inlined by build.js so the
          client doesn't round-trip to config/pages.json on every navigation, and
@@ -66,6 +73,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Command Palette (CMD+K) - Feature flagged via ?cmdK=true URL parameter -->
@@ -128,7 +142,7 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder — 2026-27</a
+                  >D3 WBB Schedule Builder: 2026-27</a
                 >
               </li>
               <li>

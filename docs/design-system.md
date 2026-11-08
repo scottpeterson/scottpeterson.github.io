@@ -93,14 +93,18 @@ literal (see the rules in `CLAUDE.md`).
   --r-lg: 16px;
   --r-pill: 999px;
 
-  /* Type scale */
-  --text-xs: 0.78rem;
-  --text-sm: 0.9rem;
-  --text-base: 1rem;
-  --text-md: 1.1rem;
-  --text-lg: 1.3rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
+  /* Brand type (IBM Plex), copied from ~/.claude/skills/design/assets/brand.css
+     (version 2026-11-08). Type scale: 12, 14, 16, 20, 24, 32 px. */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --fs-caption: 0.75rem; /* captions, badges, footer */
+  --fs-small: 0.875rem; /* secondary text, notes */
+  --fs-body: 1rem; /* body, table cells, buttons, inputs */
+  --fs-h3: 1.25rem; /* subsection heading, the one headline number */
+  --fs-h2: 1.5rem; /* section heading */
+  --fs-h1: 2rem; /* page title, large prices and distances */
+  --control-h: 36px;
+  --control-gap: 8px;
 
   /* Spacing rhythm (8px base) */
   --space-1: 8px;
@@ -158,7 +162,7 @@ open debt. The idea is kept here as the north-star target if a future change tou
 
 ### Eyebrow — share the duplicate ✅ done
 
-`.eyebrow` is the base treatment (`--text-xs`, 700, `0.08em`, uppercase); `.home-badge` and
+`.eyebrow` is the base treatment (`--fs-caption`, 500, `0.06em`, uppercase); `.home-badge` and
 `.home-premium__eyebrow` are grouped onto it and only add their per-context margin + accent color.
 The templates keep emitting the named variants **by design** (the CSS comment says so) — they're
 context variants sharing one base, not stray duplicates. New markup should use `.eyebrow`.
