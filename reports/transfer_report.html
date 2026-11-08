@@ -15,6 +15,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/reports.css" />
 
@@ -27,7 +34,12 @@
       }
       .report-transfer_report {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
         background: #f8fafc;
         color: #1e293b;
         line-height: 1.5;
@@ -39,14 +51,14 @@
       }
       .report-transfer_report h1 {
         text-align: center;
-        font-size: 1.9em;
+        font-size: 2rem;
         margin-bottom: 4px;
         color: #0f172a;
       }
       .report-transfer_report .subtitle {
         text-align: center;
         color: #64748b;
-        font-size: 0.95em;
+        font-size: 1rem;
         margin-bottom: 18px;
       }
       .report-transfer_report .toggles {
@@ -62,7 +74,7 @@
         gap: 10px;
       }
       .report-transfer_report .toggle-row .label {
-        font-size: 0.78em;
+        font-size: 0.75rem;
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -81,7 +93,7 @@
         border: none;
         background: transparent;
         color: #475569;
-        font-size: 0.9em;
+        font-size: 0.875rem;
         font-weight: 600;
         cursor: pointer;
         border-radius: 999px;
@@ -112,7 +124,7 @@
         border: 1px solid #cbd5e1;
         background: #fff;
         color: #475569;
-        font-size: 0.82em;
+        font-size: 0.875rem;
         font-weight: 600;
         cursor: pointer;
         border-radius: 999px;
@@ -150,11 +162,11 @@
         white-space: nowrap;
       }
       .report-transfer_report table.overview th .sort-arrow {
-        font-size: 0.7em;
+        font-size: 0.75rem;
         margin-left: 3px;
       }
       .report-transfer_report table.overview tfoot td {
-        font-weight: 700;
+        font-weight: 600;
         color: #0f172a;
         border-top: 2px solid #1e3a5f;
         border-bottom: none;
@@ -162,7 +174,7 @@
       .report-transfer_report .summary-note {
         text-align: center;
         color: #64748b;
-        font-size: 0.85em;
+        font-size: 0.875rem;
         margin-bottom: 20px;
         font-style: italic;
       }
@@ -174,7 +186,7 @@
         margin-bottom: 24px;
       }
       .report-transfer_report .card h2 {
-        font-size: 1.3em;
+        font-size: 1.25rem;
         color: #1e40af;
         margin-bottom: 14px;
         display: flex;
@@ -182,7 +194,7 @@
         gap: 12px;
       }
       .report-transfer_report .card h2 .tag {
-        font-size: 0.7em;
+        font-size: 0.75rem;
         color: #606f85;
         font-weight: 400;
         background: #f1f5f9;
@@ -190,7 +202,7 @@
         border-radius: 999px;
       }
       .report-transfer_report .card h3 {
-        font-size: 1.05em;
+        font-size: 1rem;
         color: #334155;
         margin: 16px 0 10px;
       }
@@ -203,7 +215,7 @@
       .report-transfer_report table.summary {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.9em;
+        font-size: 0.875rem;
       }
       .report-transfer_report table.summary th {
         background: #1e3a5f;
@@ -240,24 +252,24 @@
         padding: 10px 14px;
       }
       .report-transfer_report .highlight .label {
-        font-size: 0.75em;
+        font-size: 0.75rem;
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-weight: 600;
       }
       .report-transfer_report .highlight .value {
-        font-size: 1.4em;
-        font-weight: 700;
+        font-size: 1.5rem;
+        font-weight: 600;
         color: #0f172a;
         margin: 2px 0;
       }
       .report-transfer_report .highlight .who {
-        font-size: 0.85em;
+        font-size: 0.875rem;
         color: #475569;
       }
       .report-transfer_report .highlight .team {
-        font-size: 0.78em;
+        font-size: 0.75rem;
         color: #64748b;
       }
       .report-transfer_report .highlight.empty .label,
@@ -270,27 +282,27 @@
         gap: 24px;
         flex-wrap: wrap;
         margin-bottom: 14px;
-        font-size: 0.9em;
+        font-size: 0.875rem;
       }
       .report-transfer_report .counts .count-item {
         display: flex;
         flex-direction: column;
       }
       .report-transfer_report .counts .count-label {
-        font-size: 0.72em;
+        font-size: 0.75rem;
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
       .report-transfer_report .counts .count-value {
-        font-size: 1.2em;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 600;
         color: #0f172a;
       }
       .report-transfer_report table.players {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.85em;
+        font-size: 0.875rem;
       }
       .report-transfer_report table.players th {
         background: #1e3a5f;
@@ -298,7 +310,7 @@
         padding: 7px 6px;
         text-align: center;
         font-weight: 600;
-        font-size: 0.82em;
+        font-size: 0.875rem;
         cursor: pointer;
         user-select: none;
         white-space: nowrap;
@@ -312,7 +324,7 @@
         text-align: left;
       }
       .report-transfer_report table.players th .sort-arrow {
-        font-size: 0.7em;
+        font-size: 0.75rem;
         margin-left: 3px;
         opacity: 0.5;
       }
@@ -365,7 +377,7 @@
         display: none;
       }
       .report-transfer_report .origin-note {
-        font-size: 0.85em;
+        font-size: 0.875rem;
         color: #64748b;
         margin: 4px 0 12px;
       }
@@ -373,7 +385,7 @@
         display: inline-block;
         padding: 1px 8px;
         border-radius: 999px;
-        font-size: 0.72em;
+        font-size: 0.75rem;
         font-weight: 600;
         background: #fee2e2;
         color: #b91c1c;
@@ -382,7 +394,7 @@
         display: inline-block;
         padding: 1px 7px;
         border-radius: 999px;
-        font-size: 0.72em;
+        font-size: 0.75rem;
         font-weight: 600;
         background: #e2e8f0;
         color: #475569;
@@ -415,8 +427,8 @@
         margin-left: 6px;
         padding: 1px 7px;
         border-radius: 999px;
-        font-size: 0.72em;
-        font-weight: 700;
+        font-size: 0.75rem;
+        font-weight: 600;
         background: #fef3c7;
         color: #92400e;
         border: 1px solid #fbbf24;
@@ -430,7 +442,7 @@
       .report-transfer_report .note {
         text-align: center;
         color: #5b6e89;
-        font-size: 0.8em;
+        font-size: 0.75rem;
         margin-top: 30px;
       }
     </style>
@@ -16740,10 +16752,10 @@
         head.innerHTML = `
     <th class="left">${isOutgoing() ? 'Destination' : 'Source'}</th>
     <th>Total</th>
-    <th class="stats-only">Produced<br><span style="font-weight:400;font-size:.85em">stats</span></th>
-    <th class="stats-only">No stats<br><span style="font-weight:400;font-size:.85em">recorded</span></th>
-    <th class="stats-only">Qualifying<br><span style="font-weight:400;font-size:.85em">(&ge; ${MIN_QUAL} MIN)</span></th>
-    <th class="stats-only">&#9733; Elite team<br><span style="font-weight:400;font-size:.85em">(Top-100 NPI &amp; SOS)</span></th>
+    <th class="stats-only">Produced<br><span style="font-weight:400;font-size:.875rem">stats</span></th>
+    <th class="stats-only">No stats<br><span style="font-weight:400;font-size:.875rem">recorded</span></th>
+    <th class="stats-only">Qualifying<br><span style="font-weight:400;font-size:.875rem">(&ge; ${MIN_QUAL} MIN)</span></th>
+    <th class="stats-only">&#9733; Elite team<br><span style="font-weight:400;font-size:.875rem">(Top-100 NPI &amp; SOS)</span></th>
     <th class="stats-only">Avg MIN</th>
     <th class="stats-only">Avg PTS/30</th>
     <th class="stats-only">Avg REB/30</th>
@@ -16765,7 +16777,7 @@
       <td class="left">${b.name}</td>
       <td>${a.count_total}</td>
       <td class="stats-only">${a.count_matched}</td>
-      <td class="stats-only">${noStats} <span style="color:#5b6e89;font-size:.85em">(${pct}%)</span></td>
+      <td class="stats-only">${noStats} <span style="color:#5b6e89;font-size:.875rem">(${pct}%)</span></td>
       <td class="stats-only">${a.count_qualifying}</td>
       <td class="stats-only">${a.count_elite}</td>
       <td class="stats-only">${fmt(a.avg_min, 0)}</td>
@@ -16912,9 +16924,9 @@
         <th data-col="level" data-type="str">Lvl <span class="sort-arrow"></span></th>
         ${
           originCols
-            ? `<th data-col="origin_gp" data-type="num">GP at origin<br><span style="font-weight:400;font-size:.85em">${priorLabel}</span> <span class="sort-arrow"></span></th>
-        <th data-col="origin_min" data-type="num">MIN at origin<br><span style="font-weight:400;font-size:.85em">${priorLabel}</span> <span class="sort-arrow"></span></th>
-        <th data-col="origin_pts" data-type="num">PTS at origin<br><span style="font-weight:400;font-size:.85em">${priorLabel}</span> <span class="sort-arrow"></span></th>`
+            ? `<th data-col="origin_gp" data-type="num">GP at origin<br><span style="font-weight:400;font-size:.875rem">${priorLabel}</span> <span class="sort-arrow"></span></th>
+        <th data-col="origin_min" data-type="num">MIN at origin<br><span style="font-weight:400;font-size:.875rem">${priorLabel}</span> <span class="sort-arrow"></span></th>
+        <th data-col="origin_pts" data-type="num">PTS at origin<br><span style="font-weight:400;font-size:.875rem">${priorLabel}</span> <span class="sort-arrow"></span></th>`
             : ''
         }
         <th data-col="min" data-type="num" class="stats-only">MIN <span class="sort-arrow"></span></th>

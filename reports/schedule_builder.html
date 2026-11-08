@@ -15,6 +15,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/reports.css" />
 
@@ -27,7 +34,12 @@
       }
       .report-schedule_builder {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
         background: #1a1a2e;
         color: #eee;
         padding: 16px;
@@ -75,13 +87,21 @@
         border: 1px solid #6080a0;
         border-radius: 5px;
         padding: 7px 9px;
-        font-size: 13px;
+        font-size: 14px;
         min-width: 240px;
       }
       .report-schedule_builder .summary-bar {
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
         gap: 12px;
+      }
+      @media (max-width: 760px) {
+        .report-schedule_builder .summary-bar {
+          grid-template-columns: 1fr 1fr;
+        }
+        .report-schedule_builder .summary-bar > :first-child {
+          grid-column: 1 / -1;
+        }
       }
       .report-schedule_builder .summary-cell {
         background: #0f3460;
@@ -90,14 +110,14 @@
         text-align: center;
       }
       .report-schedule_builder .summary-cell .label {
-        font-size: 11px;
+        font-size: 12px;
         color: #a0a0a0;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
       .report-schedule_builder .summary-cell .value {
-        font-size: 22px;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 600;
         color: #fff;
         margin-top: 2px;
       }
@@ -114,7 +134,7 @@
         color: #ff9999;
       }
       .report-schedule_builder .summary-cell .sub {
-        font-size: 10px;
+        font-size: 12px;
         color: #a0a0a0;
         margin-top: 2px;
       }
@@ -128,7 +148,7 @@
         background: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
         color: #fff;
         padding: 8px 4px;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         text-align: center;
         border-bottom: 2px solid #e94560;
@@ -178,7 +198,7 @@
         border-radius: 3px;
         padding: 2px 6px;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: 600;
         cursor: pointer;
       }
       .report-schedule_builder td select.wl-select.W {
@@ -200,11 +220,11 @@
         font-variant-numeric: tabular-nums;
       }
       .report-schedule_builder td.game-npi {
-        font-weight: 700;
+        font-weight: 600;
         color: #fff;
       }
       .report-schedule_builder .slot-tag {
-        font-size: 10px;
+        font-size: 12px;
         color: #a0a0a0;
         margin-right: 6px;
         padding: 1px 5px;
@@ -231,7 +251,7 @@
         background: #0f3460;
         padding: 10px 14px;
         border-radius: 6px;
-        border-left: 3px solid #e94560;
+        border: 1px solid #e94560;
         margin-top: 10px;
       }
       .report-schedule_builder .reset-btn {
@@ -248,12 +268,19 @@
         background: #1a4580;
       }
       .report-schedule_builder .legend {
-        font-size: 11px;
+        font-size: 12px;
         color: #a0a0a0;
         margin-top: 8px;
       }
       .report-schedule_builder .legend span {
         margin-right: 14px;
+      }
+      @media (max-width: 760px) {
+        .report-schedule_builder table {
+          display: block;
+          max-width: 100%;
+          overflow-x: auto;
+        }
       }
     </style>
 

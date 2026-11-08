@@ -15,6 +15,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/reports.css" />
 
@@ -86,7 +93,12 @@
       }
       .report-best_nonconference_games {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
         background: var(--bg);
         color: var(--ink);
         padding: 20px 16px;
@@ -95,7 +107,7 @@
         text-align: center;
         margin-bottom: 10px;
         color: var(--strong);
-        font-size: 28px;
+        font-size: 32px;
       }
       .report-best_nonconference_games .subtitle {
         text-align: center;
@@ -116,7 +128,7 @@
         gap: 6px;
       }
       .report-best_nonconference_games .caption {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -133,14 +145,14 @@
         border: 1px solid var(--btn-line);
         border-radius: 6px;
         padding: 6px 10px;
-        font-size: 13px;
+        font-size: 14px;
         cursor: pointer;
       }
       .report-best_nonconference_games .buttons button[aria-pressed='true'] {
         background: var(--accent);
         color: var(--on-accent);
         border-color: var(--accent);
-        font-weight: 700;
+        font-weight: 600;
       }
       .report-best_nonconference_games
         .buttons
@@ -152,7 +164,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 8px;
-        font-size: 13px;
+        font-size: 14px;
         color: var(--muted);
       }
       .report-best_nonconference_games .search {
@@ -166,7 +178,7 @@
         border: 1px solid var(--btn-line);
         border-radius: 6px;
         padding: 5px 8px;
-        font-size: 13px;
+        font-size: 14px;
       }
       .report-best_nonconference_games .search {
         font-size: 16px;
@@ -175,7 +187,7 @@
       .report-best_nonconference_games .count {
         text-align: center;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
         margin-bottom: 12px;
       }
       .report-best_nonconference_games .container {
@@ -213,11 +225,11 @@
       }
       .report-best_nonconference_games th[aria-sort='ascending']::after {
         content: ' \25B2';
-        font-size: 10px;
+        font-size: 12px;
       }
       .report-best_nonconference_games th[aria-sort='descending']::after {
         content: ' \25BC';
-        font-size: 10px;
+        font-size: 12px;
       }
       .report-best_nonconference_games th.left,
       .report-best_nonconference_games td.team {
@@ -225,7 +237,7 @@
       }
       .report-best_nonconference_games td {
         padding: 8px 10px;
-        font-size: 13px;
+        font-size: 14px;
         text-align: center;
         vertical-align: middle;
       }
@@ -252,7 +264,7 @@
       }
       .report-best_nonconference_games .conf {
         color: var(--faint);
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 400;
         margin-left: 6px;
       }
@@ -267,7 +279,7 @@
         min-width: 44px;
         padding: 3px 6px;
         border-radius: 4px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 12px;
       }
       .report-best_nonconference_games .rank-elite {
@@ -292,14 +304,14 @@
       }
       .report-best_nonconference_games .row-num {
         color: var(--faint);
-        font-size: 11px;
+        font-size: 12px;
       }
       .report-best_nonconference_games .team-lev {
         color: var(--muted);
       }
       .report-best_nonconference_games .lev,
       .report-best_nonconference_games .check {
-        font-weight: 700;
+        font-weight: 600;
         color: var(--accent);
       }
       .report-best_nonconference_games .explainer {

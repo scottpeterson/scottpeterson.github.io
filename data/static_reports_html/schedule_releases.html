@@ -2,6 +2,12 @@
 <!-- Generator: uv run python create_schedule_release_graphic.py -->
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="contrast-allow" content="header.brand" />
@@ -11,7 +17,7 @@
         text-align: center;
         color: #8892b0;
         margin-top: 40px;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
       }
       .footer a {
         color: #2980b9;
@@ -28,7 +34,12 @@
       }
       body {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
         background: #1a1a2e;
         color: #e0e0e0;
         padding: 20px;
@@ -36,19 +47,19 @@
       h1 {
         text-align: center;
         color: #fff;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin-bottom: 4px;
       }
       .subtitle {
         text-align: center;
         color: #8892b0;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         margin-bottom: 6px;
       }
       .caveat {
         text-align: center;
         color: #ffd43b;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-bottom: 14px;
       }
       .controls {
@@ -61,7 +72,7 @@
         margin: 0 auto 16px;
       }
       .controls label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         color: #8892b0;
       }
       .controls select,
@@ -72,7 +83,7 @@
         border: 1px solid #5c6f95;
         border-radius: 6px;
         padding: 6px 10px;
-        font-size: 0.85rem;
+        font-size: 0.875rem;
       }
       .controls button {
         cursor: pointer;
@@ -99,7 +110,7 @@
       }
       .controls .chip {
         padding: 4px 9px;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         background: transparent;
         color: #8892b0;
         border: 1px solid #5c6f95;
@@ -146,7 +157,7 @@
         border: 1px solid #5c6f95;
         border-radius: 6px;
         padding: 5px 10px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         cursor: pointer;
       }
       .chart-switches button.active {
@@ -155,7 +166,7 @@
         border-color: #3a70bd;
       }
       .count {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         color: #8892b0;
       }
       .chart-wrap {
@@ -164,7 +175,7 @@
       }
       .chart-wrap summary {
         color: #8892b0;
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         cursor: pointer;
         margin-bottom: 8px;
       }
@@ -182,7 +193,7 @@
       }
       #safe-chart .tick {
         fill: #888;
-        font-size: 11px;
+        font-size: 12px;
         font-family: inherit;
       }
       #safe-chart .axis-title {
@@ -192,12 +203,12 @@
       }
       #safe-chart .zero-note {
         fill: #e94560;
-        font-size: 11px;
+        font-size: 12px;
         font-family: inherit;
       }
       #safe-chart .pt-label {
         fill: #98a0b3;
-        font-size: 10px;
+        font-size: 12px;
         font-family: inherit;
       }
       #safe-chart .dot {
@@ -274,13 +285,13 @@
       }
       #safe-chart-tip .tip-new {
         color: #f7b32b;
-        font-size: 11px;
+        font-size: 12px;
         margin-top: 3px;
       }
 
       .new-pill {
-        font-size: 0.68rem;
-        font-weight: 700;
+        font-size: 0.75rem;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         padding: 3px 7px;
@@ -343,19 +354,19 @@
         overflow: hidden;
       }
       .team {
-        font-size: 1.15rem;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 600;
         line-height: 1.1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
       .team-long {
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         white-space: normal;
       }
       .mascot {
-        font-size: 0.72rem;
+        font-size: 0.75rem;
         opacity: 0.85;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -364,8 +375,8 @@
         text-overflow: ellipsis;
       }
       .pre-rank {
-        font-size: 0.8rem;
-        font-weight: 700;
+        font-size: 0.75rem;
+        font-weight: 600;
         padding: 4px 9px;
         border-radius: 12px;
         background: rgba(0, 0, 0, 0.28);
@@ -383,11 +394,10 @@
         background: #16213e;
         padding: 10px 4px 8px;
         text-align: center;
-        border-top: 3px solid transparent;
       }
       /* Fixed row heights so the big numbers line up across all tiles */
       .tile-label {
-        font-size: 0.58rem;
+        font-size: 0.75rem;
         color: #8892b0;
         text-transform: uppercase;
         letter-spacing: 0.03em;
@@ -398,45 +408,33 @@
         justify-content: center;
       }
       .tile-value {
-        font-size: 1.3rem;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 600;
         color: #fff;
         line-height: 1.2;
         height: 1.6rem;
         margin-top: 2px;
       }
       .tile-sub {
-        font-size: 0.62rem;
+        font-size: 0.75rem;
         color: #8892b0;
         height: 0.9rem;
       }
       .tile-tag {
-        font-size: 0.62rem;
+        font-size: 0.75rem;
         font-weight: 600;
         margin-top: 3px;
         height: 0.9rem;
         white-space: nowrap;
       }
-      .tone-strong {
-        border-top-color: #51cf66;
-      }
       .tone-strong .tile-tag {
         color: #51cf66;
-      }
-      .tone-good {
-        border-top-color: #74c0fc;
       }
       .tone-good .tile-tag {
         color: #74c0fc;
       }
-      .tone-mid {
-        border-top-color: #ffd43b;
-      }
       .tone-mid .tile-tag {
         color: #ffd43b;
-      }
-      .tone-weak {
-        border-top-color: #ff6b6b;
       }
       .tone-weak .tile-tag {
         color: #ff6b6b;
@@ -447,7 +445,7 @@
       .key-label {
         display: flex;
         justify-content: space-between;
-        font-size: 0.62rem;
+        font-size: 0.75rem;
         color: #8892b0;
         text-transform: uppercase;
         letter-spacing: 0.04em;
@@ -458,7 +456,7 @@
         letter-spacing: 0;
       }
       .key-count b {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         color: #fff;
       }
       .key-count b.tone-strong {
@@ -479,7 +477,7 @@
         gap: 5px;
       }
       .chip {
-        font-size: 0.74rem;
+        font-size: 0.75rem;
         padding: 3px 8px;
         border-radius: 10px;
         background: #3a70bd;
@@ -491,7 +489,7 @@
       }
       .note {
         padding: 0 12px 10px;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         color: #c0c6d8;
         line-height: 1.35;
       }
@@ -500,7 +498,7 @@
         border-top: 1px solid #0f3460;
       }
       .proj-line {
-        font-size: 0.74rem;
+        font-size: 0.75rem;
         color: #c0c6d8;
         line-height: 1.35;
       }
@@ -525,12 +523,12 @@
       .howto {
         max-width: 1100px;
         margin: 0 auto 18px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         color: #c0c6d8;
       }
       .howto summary {
         color: #8892b0;
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         cursor: pointer;
       }
       .howto dl {
@@ -541,7 +539,7 @@
       }
       .howto dt {
         color: #fff;
-        font-weight: 700;
+        font-weight: 600;
       }
       .howto dd {
         margin: 0;
@@ -557,8 +555,8 @@
       }
       .bid-pill {
         display: inline-block;
-        font-size: 0.68rem;
-        font-weight: 700;
+        font-size: 0.75rem;
+        font-weight: 600;
         letter-spacing: 0.03em;
         padding: 2px 8px;
         border-radius: 9px;

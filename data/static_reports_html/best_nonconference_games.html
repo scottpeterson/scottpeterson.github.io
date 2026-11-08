@@ -2,6 +2,12 @@
 <!-- Generator: uv run python create_best_nonconference_report.py -->
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -96,7 +102,12 @@
       }
       body {
         font-family:
-          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
         background: var(--bg);
         color: var(--ink);
         padding: 20px 16px;
@@ -105,7 +116,7 @@
         text-align: center;
         margin-bottom: 10px;
         color: var(--strong);
-        font-size: 28px;
+        font-size: 32px;
       }
       .subtitle {
         text-align: center;
@@ -126,7 +137,7 @@
         gap: 6px;
       }
       .caption {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -143,14 +154,14 @@
         border: 1px solid var(--btn-line);
         border-radius: 6px;
         padding: 6px 10px;
-        font-size: 13px;
+        font-size: 14px;
         cursor: pointer;
       }
       .buttons button[aria-pressed='true'] {
         background: var(--accent);
         color: var(--on-accent);
         border-color: var(--accent);
-        font-weight: 700;
+        font-weight: 600;
       }
       .buttons button[aria-pressed='true']::before {
         content: '\2713  ';
@@ -160,7 +171,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 8px;
-        font-size: 13px;
+        font-size: 14px;
         color: var(--muted);
       }
       .search {
@@ -174,7 +185,7 @@
         border: 1px solid var(--btn-line);
         border-radius: 6px;
         padding: 5px 8px;
-        font-size: 13px;
+        font-size: 14px;
       }
       .search {
         font-size: 16px;
@@ -183,7 +194,7 @@
       .count {
         text-align: center;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
         margin-bottom: 12px;
       }
       .container {
@@ -221,11 +232,11 @@
       }
       th[aria-sort='ascending']::after {
         content: ' \25B2';
-        font-size: 10px;
+        font-size: 12px;
       }
       th[aria-sort='descending']::after {
         content: ' \25BC';
-        font-size: 10px;
+        font-size: 12px;
       }
       th.left,
       td.team {
@@ -233,7 +244,7 @@
       }
       td {
         padding: 8px 10px;
-        font-size: 13px;
+        font-size: 14px;
         text-align: center;
         vertical-align: middle;
       }
@@ -260,7 +271,7 @@
       }
       .conf {
         color: var(--faint);
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 400;
         margin-left: 6px;
       }
@@ -275,7 +286,7 @@
         min-width: 44px;
         padding: 3px 6px;
         border-radius: 4px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 12px;
       }
       .rank-elite {
@@ -300,14 +311,14 @@
       }
       .row-num {
         color: var(--faint);
-        font-size: 11px;
+        font-size: 12px;
       }
       .team-lev {
         color: var(--muted);
       }
       .lev,
       .check {
-        font-weight: 700;
+        font-weight: 600;
         color: var(--accent);
       }
       .explainer {

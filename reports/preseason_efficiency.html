@@ -15,6 +15,13 @@
     <meta name="googlebot" content="noai, noimageai" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- IBM Plex Sans and Mono, the site's type (styles.css --font-sans). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/reports.css" />
 
@@ -43,8 +50,8 @@
         --s5: 24px;
         --s6: 40px;
         --pill: 36px;
-        --fs-sm: 0.85rem;
-        --fs-md: 0.95rem;
+        --fs-sm: 0.875rem;
+        --fs-md: 1rem;
       }
       :root[data-theme='dark'] .report-preseason_efficiency {
         color-scheme: dark;
@@ -93,11 +100,11 @@
         background: var(--bg);
         color: var(--ink);
         font:
-          16px/1.5 -apple-system,
-          BlinkMacSystemFont,
-          'Segoe UI',
-          Helvetica,
-          Arial,
+          16px/1.5 IBM Plex Sans,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
           sans-serif;
       }
       .report-preseason_efficiency a {
@@ -113,7 +120,7 @@
         padding: var(--s5) var(--s4) 64px;
       }
       .report-preseason_efficiency h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.05;
         margin: 0 0 var(--s2);
       }
@@ -124,7 +131,7 @@
         border-bottom: 1px solid var(--line);
       }
       .report-preseason_efficiency h3 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         margin: var(--s5) 0 var(--s2);
       }
       .report-preseason_efficiency p {
@@ -162,7 +169,7 @@
         gap: var(--s1);
       }
       .report-preseason_efficiency .seglabel {
-        font-size: 0.72rem;
+        font-size: 0.75rem;
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -191,7 +198,7 @@
       .report-preseason_efficiency .seg button.active {
         background: var(--accent);
         color: #fff;
-        font-weight: 700;
+        font-weight: 600;
       }
       .report-preseason_efficiency .seg button.active::before {
         content: '\2713\00a0';
@@ -363,7 +370,7 @@
           padding: var(--s4) var(--s4) 48px;
         }
         .report-preseason_efficiency h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
         .report-preseason_efficiency .controls {
           width: 100%;
