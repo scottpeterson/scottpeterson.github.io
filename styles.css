@@ -12,34 +12,55 @@
    codebase already used, so adopting them is visually a no-op.
    =========================================================================== */
 :root {
-  /* Brand / chrome */
+  /* The site ships one light theme. Declaring it stops Firefox for iOS and
+     other "website dark mode" overlays from recoloring the page. */
+  color-scheme: light;
+
+  /* Brand / chrome. The blues clear WCAG AA (4.5:1) with white text on them
+     and as link text on white; the 2026-11-07 contrast sweep measured the
+     old #3498db at 3.2:1. */
   --navy-900: #2c3e50;
   --navy-700: #34495e;
-  --blue-500: #3498db;
-  --blue-600: #2980b9;
+  --blue-500: #216a9c;
+  --blue-600: #1a5f8f;
   --blue-300: #7fc4ff;
   --orange-500: #ff4f00;
   --orange-300: #ff9a6b;
 
-  /* Text ramp (replaces 15+ ad-hoc grays) */
+  /* Text ramp (replaces 15+ ad-hoc grays). --text-3 clears 4.5:1 on the dark
+     end of the body gradient; --text-4 clears it on white. */
   --text-1: #2c3e50; /* headings        */
   --text-2: #333; /* body            */
-  --text-3: #666; /* secondary       */
-  --text-4: #999; /* tertiary / hint */
+  --text-3: #555; /* secondary       */
+  --text-4: #707070; /* tertiary / hint */
 
-  /* Lines & surfaces */
+  /* Lines & surfaces. --border is a hairline for cards; a field edge needs
+     3:1 against white (SC 1.4.11), which --border-control provides. */
   --border: #e1e5e8;
+  --border-control: #8a9199;
   --surface: rgb(255 255 255 / 95%);
   --surface-line: rgb(255 255 255 / 20%);
 
-  /* Status */
-  --success: #27ae60;
-  --danger: #e74c3c;
+  /* Status: white text passes 4.5:1 on success and danger; warning carries dark text */
+  --success: #1e8449;
+  --danger: #b03a2e;
   --warning: #f0a500;
 
   /* Gradients (single definitions; default stops match the literals in use) */
   --grad-brand: linear-gradient(135deg, var(--blue-500), var(--blue-600));
-  --grad-success: linear-gradient(135deg, var(--success), #229954);
+  --grad-success: linear-gradient(135deg, var(--success), #196f3d);
+  /* Premium nav link text. Every stop clears 4.5:1 on the nav chrome. */
+  --grad-fire: linear-gradient(
+    90deg,
+    #ffa726 0%,
+    #ffb347 15%,
+    #ffd700 30%,
+    #ffb347 45%,
+    #ffa726 60%,
+    #ffc247 75%,
+    #ffa726 90%,
+    #ffb347 100%
+  );
   --grad-chrome: linear-gradient(
     135deg,
     var(--navy-900),
@@ -349,7 +370,7 @@ header {
 }
 
 .last-updated {
-  color: #6c757d;
+  color: var(--text-3);
   font-size: 0.9rem;
   margin-top: 8px;
   margin-bottom: 0;
@@ -764,7 +785,7 @@ h2 {
 }
 
 .home-premium__price-original {
-  color: #93a1b0;
+  color: #c5ced8;
   text-decoration: line-through;
   font-size: 1.3rem;
 }
@@ -1078,7 +1099,7 @@ footer {
 .filter-select {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--border-control);
   background: #fff;
   border-radius: var(--r-md);
   font-size: 14px;
@@ -1264,7 +1285,8 @@ footer {
 
 /* Sort indicators */
 .sort-indicator {
-  opacity: 0.6;
+  /* Opaque pale blue instead of a faded white: 4.7:1 on the header fill */
+  color: #edf3f9;
   font-size: 0.8em;
   margin-left: 5px;
   user-select: none;
@@ -1277,7 +1299,7 @@ footer {
 
 .stats-table th[data-sort='asc'] .sort-indicator,
 .stats-table th[data-sort='desc'] .sort-indicator {
-  opacity: 1;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -1315,7 +1337,7 @@ footer {
 .form-textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--border-control);
   background: #fff;
   border-radius: var(--r-md);
   font-size: 14px;
@@ -2366,7 +2388,7 @@ footer {
 }
 
 .premium-honor h2 {
-  color: #d68910;
+  color: #8a5700;
   margin-bottom: 20px;
   font-size: 1.4rem;
 }
@@ -2422,7 +2444,7 @@ footer {
 
 .product-badge--upcoming {
   background: #fff3e0;
-  color: #e65100;
+  color: #a84300;
 }
 
 .product-tagline {
@@ -2447,11 +2469,8 @@ footer {
   color: var(--navy-900);
 }
 
-/* Subtle de-emphasis for inactive/upcoming products */
-.product-section--inactive {
-  opacity: 0.85;
-}
-
+/* Inactive/upcoming products: the dashed card edge and the badge carry the
+   state. No opacity fade, which pushed the section's text under 4.5:1. */
 .product-section--inactive .pricing-card {
   border: 2px dashed #ccc;
 }
@@ -2562,7 +2581,7 @@ footer {
 .form-select {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--border-control);
   border-radius: var(--r-sm);
   font-size: 1rem;
   font-family: inherit;
@@ -2701,17 +2720,7 @@ footer {
 
 .nav-links a[href='premium.html'],
 .nav-links a[href='/premium.html'] {
-  background: linear-gradient(
-    90deg,
-    #ff4500 0%,
-    /* Orange-red */ #ff8c00 15%,
-    /* Dark orange */ #ffd700 30%,
-    /* Gold/yellow */ #ff8c00 45%,
-    /* Dark orange */ #ff4500 60%,
-    /* Orange-red */ #dc143c 75%,
-    /* Crimson red */ #ff4500 90%,
-    /* Orange-red */ #ff8c00 100% /* Dark orange */
-  );
+  background: var(--grad-fire);
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -2724,17 +2733,7 @@ footer {
 .nav-links a[href='premium.html']:hover,
 .nav-links a[href='/premium.html']:hover {
   position: relative;
-  background: linear-gradient(
-    90deg,
-    #ff4500 0%,
-    #ff8c00 15%,
-    #ffd700 30%,
-    #ff8c00 45%,
-    #ff4500 60%,
-    #dc143c 75%,
-    #ff4500 90%,
-    #ff8c00 100%
-  );
+  background: var(--grad-fire);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -2759,17 +2758,7 @@ footer {
 .nav-links a[href='premium.html'].active,
 .nav-links a[href='/premium.html'].active {
   position: relative;
-  background: linear-gradient(
-    90deg,
-    #ff4500 0%,
-    #ff8c00 15%,
-    #ffd700 30%,
-    #ff8c00 45%,
-    #ff4500 60%,
-    #dc143c 75%,
-    #ff4500 90%,
-    #ff8c00 100%
-  ) !important;
+  background: var(--grad-fire) !important;
   background-size: 200% 100%;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -2962,7 +2951,7 @@ footer {
 
 .bb-filter {
   width: 100%;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-control);
   border-radius: var(--r-sm);
   font: inherit;
   font-size: var(--text-sm);
@@ -3015,7 +3004,7 @@ footer {
 }
 
 .bb-chip-count {
-  opacity: 0.75;
+  font-size: var(--text-xs);
 }
 
 .bb-field-list {
@@ -3152,7 +3141,6 @@ footer {
 
 .bb-tab-count {
   font-size: var(--text-xs);
-  opacity: 0.85;
 }
 
 .bb-tab.has-error::after {
@@ -3212,6 +3200,8 @@ footer {
   width: 10px;
   height: 10px;
   background: var(--bb-quad);
+  /* A darker edge so the warning dot still reads on the white tab */
+  border: 1px solid color-mix(in srgb, var(--bb-quad), #000 45%);
   border-radius: var(--r-pill);
   box-shadow: 0 0 0 2px #fff;
 }

@@ -32,11 +32,12 @@
         --surface: #ffffff;
         --surface2: #ecebe5;
         --line: #d8d5cb;
+        --edge: #948c71;
         --ink: #1e2229;
         --muted: #616873;
         --faint: #8c939d;
         --link: #1f4e79;
-        --pos: #2e8b57;
+        --pos: #28784b;
         --neg: #c0504d;
         --accent: #1f5fbf;
         --bar: #b9d0ee;
@@ -57,6 +58,7 @@
         --surface: #1d2128;
         --surface2: #252a32;
         --line: #363c46;
+        --edge: #616b7d;
         --ink: #e7e9ec;
         --muted: #a7adb7;
         --faint: #7d848f;
@@ -74,6 +76,7 @@
           --surface: #1d2128;
           --surface2: #252a32;
           --line: #363c46;
+          --edge: #616b7d;
           --ink: #e7e9ec;
           --muted: #a7adb7;
           --faint: #7d848f;
@@ -223,7 +226,7 @@
       .ctl input,
       .ctl select {
         height: var(--pill);
-        border: 1px solid var(--line);
+        border: 1px solid var(--edge);
         border-radius: 999px;
         background: var(--surface);
         color: var(--ink);
@@ -2210,26 +2213,8 @@
                 <td>63%</td>
                 <td>Yes</td>
               </tr>
-              <tr data-conf="NJAC" data-team="william paterson">
-                <td class="lead">96</td>
-                <td class="lead">William Paterson</td>
-                <td><span class="conf">NJAC</span></td>
-                <td>+10.6</td>
-                <td>89.7</td>
-                <td>79.1</td>
-                <td>73.8</td>
-                <td class="bar" data-sort="0.645">
-                  <span><i style="width: 64%"></i></span><b>0.645</b>
-                </td>
-                <td>19.8</td>
-                <td><span class="neg">-9.2</span></td>
-                <td>52%</td>
-                <td>43%</td>
-                <td>60%</td>
-                <td></td>
-              </tr>
               <tr data-conf="ODAC" data-team="hollins">
-                <td class="lead">97</td>
+                <td class="lead">96</td>
                 <td class="lead">Hollins</td>
                 <td><span class="conf">ODAC</span></td>
                 <td>+10.6</td>
@@ -2247,7 +2232,7 @@
                 <td></td>
               </tr>
               <tr data-conf="HCAC" data-team="franklin">
-                <td class="lead">98</td>
+                <td class="lead">97</td>
                 <td class="lead">Franklin</td>
                 <td><span class="conf">HCAC</span></td>
                 <td>+10.5</td>
@@ -2262,6 +2247,24 @@
                 <td>66%</td>
                 <td>60%</td>
                 <td>72%</td>
+                <td></td>
+              </tr>
+              <tr data-conf="NJAC" data-team="william paterson">
+                <td class="lead">98</td>
+                <td class="lead">William Paterson</td>
+                <td><span class="conf">NJAC</span></td>
+                <td>+10.5</td>
+                <td>89.6</td>
+                <td>79.2</td>
+                <td>73.8</td>
+                <td class="bar" data-sort="0.643">
+                  <span><i style="width: 64%"></i></span><b>0.643</b>
+                </td>
+                <td>19.8</td>
+                <td><span class="neg">-9.3</span></td>
+                <td>50%</td>
+                <td>42%</td>
+                <td>59%</td>
                 <td></td>
               </tr>
               <tr data-conf="NJAC" data-team="montclair st.">
@@ -2984,8 +2987,26 @@
                 <td>52%</td>
                 <td></td>
               </tr>
-              <tr data-conf="MASCAC" data-team="bridgewater st.">
+              <tr data-conf="C2C" data-team="uc santa cruz">
                 <td class="lead">139</td>
+                <td class="lead">UC Santa Cruz</td>
+                <td><span class="conf">C2C</span></td>
+                <td>+7.3</td>
+                <td>91.3</td>
+                <td>84.0</td>
+                <td>66.3</td>
+                <td class="bar" data-sort="0.597">
+                  <span><i style="width: 60%"></i></span><b>0.597</b>
+                </td>
+                <td>0.5</td>
+                <td><span class="pos">+6.8</span></td>
+                <td>94%</td>
+                <td>91%</td>
+                <td>95%</td>
+                <td></td>
+              </tr>
+              <tr data-conf="MASCAC" data-team="bridgewater st.">
+                <td class="lead">140</td>
                 <td class="lead">Bridgewater St.</td>
                 <td><span class="conf">MASCAC</span></td>
                 <td>+7.3</td>
@@ -3003,7 +3024,7 @@
                 <td></td>
               </tr>
               <tr data-conf="MIAC" data-team="hamline">
-                <td class="lead">140</td>
+                <td class="lead">141</td>
                 <td class="lead">Hamline</td>
                 <td><span class="conf">MIAC</span></td>
                 <td>+7.2</td>
@@ -3021,7 +3042,7 @@
                 <td></td>
               </tr>
               <tr data-conf="LEC" data-team="eastern connecticut st.">
-                <td class="lead">141</td>
+                <td class="lead">142</td>
                 <td class="lead">Eastern Connecticut St.</td>
                 <td><span class="conf">LEC</span></td>
                 <td>+7.1</td>
@@ -3039,7 +3060,7 @@
                 <td></td>
               </tr>
               <tr data-conf="MIAC" data-team="st. benedict">
-                <td class="lead">142</td>
+                <td class="lead">143</td>
                 <td class="lead">St. Benedict</td>
                 <td><span class="conf">MIAC</span></td>
                 <td>+7.1</td>
@@ -3057,7 +3078,7 @@
                 <td></td>
               </tr>
               <tr data-conf="NJAC" data-team="rowan">
-                <td class="lead">143</td>
+                <td class="lead">144</td>
                 <td class="lead">Rowan</td>
                 <td><span class="conf">NJAC</span></td>
                 <td>+6.9</td>
@@ -3075,7 +3096,7 @@
                 <td></td>
               </tr>
               <tr data-conf="SCAC" data-team="austin">
-                <td class="lead">144</td>
+                <td class="lead">145</td>
                 <td class="lead">Austin</td>
                 <td><span class="conf">SCAC</span></td>
                 <td>+6.8</td>
@@ -3093,7 +3114,7 @@
                 <td></td>
               </tr>
               <tr data-conf="NCAC" data-team="wooster">
-                <td class="lead">145</td>
+                <td class="lead">146</td>
                 <td class="lead">Wooster</td>
                 <td><span class="conf">NCAC</span></td>
                 <td>+6.8</td>
@@ -3111,7 +3132,7 @@
                 <td></td>
               </tr>
               <tr data-conf="CNE" data-team="hartford">
-                <td class="lead">146</td>
+                <td class="lead">147</td>
                 <td class="lead">Hartford</td>
                 <td><span class="conf">CNE</span></td>
                 <td>+6.7</td>
@@ -3129,7 +3150,7 @@
                 <td></td>
               </tr>
               <tr data-conf="CCIW" data-team="carthage">
-                <td class="lead">147</td>
+                <td class="lead">148</td>
                 <td class="lead">Carthage</td>
                 <td><span class="conf">CCIW</span></td>
                 <td>+6.7</td>
@@ -3144,24 +3165,6 @@
                 <td>51%</td>
                 <td>47%</td>
                 <td>54%</td>
-                <td></td>
-              </tr>
-              <tr data-conf="C2C" data-team="uc santa cruz">
-                <td class="lead">148</td>
-                <td class="lead">UC Santa Cruz</td>
-                <td><span class="conf">C2C</span></td>
-                <td>+6.7</td>
-                <td>91.0</td>
-                <td>84.3</td>
-                <td>66.3</td>
-                <td class="bar" data-sort="0.589">
-                  <span><i style="width: 59%"></i></span><b>0.589</b>
-                </td>
-                <td>0.5</td>
-                <td><span class="pos">+6.2</span></td>
-                <td>91%</td>
-                <td>88%</td>
-                <td>92%</td>
                 <td></td>
               </tr>
               <tr data-conf="SUNYAC" data-team="suny cobleskill">
@@ -7034,8 +7037,26 @@
                 <td>45%</td>
                 <td></td>
               </tr>
-              <tr data-conf="USAC" data-team="salem (nc)">
+              <tr data-conf="AEC" data-team="st. elizabeth">
                 <td class="lead">364</td>
+                <td class="lead">St. Elizabeth</td>
+                <td><span class="conf">AEC</span></td>
+                <td>-17.1</td>
+                <td>77.8</td>
+                <td>94.9</td>
+                <td>74.2</td>
+                <td class="bar" data-sort="0.281">
+                  <span><i style="width: 28%"></i></span><b>0.281</b>
+                </td>
+                <td>-12.7</td>
+                <td><span class="neg">-4.4</span></td>
+                <td>28%</td>
+                <td>21%</td>
+                <td>20%</td>
+                <td></td>
+              </tr>
+              <tr data-conf="USAC" data-team="salem (nc)">
+                <td class="lead">365</td>
                 <td class="lead">Salem (NC)</td>
                 <td><span class="conf">USAC</span></td>
                 <td>-17.2</td>
@@ -7053,7 +7074,7 @@
                 <td></td>
               </tr>
               <tr data-conf="CUNYAC" data-team="baruch">
-                <td class="lead">365</td>
+                <td class="lead">366</td>
                 <td class="lead">Baruch</td>
                 <td><span class="conf">CUNYAC</span></td>
                 <td>-17.7</td>
@@ -7071,7 +7092,7 @@
                 <td>Yes</td>
               </tr>
               <tr data-conf="NJAC" data-team="kean">
-                <td class="lead">366</td>
+                <td class="lead">367</td>
                 <td class="lead">Kean</td>
                 <td><span class="conf">NJAC</span></td>
                 <td>-17.8</td>
@@ -7086,24 +7107,6 @@
                 <td>46%</td>
                 <td>40%</td>
                 <td>53%</td>
-                <td></td>
-              </tr>
-              <tr data-conf="AEC" data-team="st. elizabeth">
-                <td class="lead">367</td>
-                <td class="lead">St. Elizabeth</td>
-                <td><span class="conf">AEC</span></td>
-                <td>-17.8</td>
-                <td>77.5</td>
-                <td>95.2</td>
-                <td>74.2</td>
-                <td class="bar" data-sort="0.274">
-                  <span><i style="width: 27%"></i></span><b>0.274</b>
-                </td>
-                <td>-12.7</td>
-                <td><span class="neg">-5.1</span></td>
-                <td>22%</td>
-                <td>17%</td>
-                <td>15%</td>
                 <td></td>
               </tr>
               <tr class="flag" data-conf="AMCC" data-team="carlow">
@@ -7809,18 +7812,18 @@
                 <td class="lead">406</td>
                 <td class="lead">VTSU Johnson</td>
                 <td><span class="conf">NAC</span></td>
-                <td>-33.9</td>
-                <td>63.8</td>
-                <td>97.7</td>
+                <td>-33.7</td>
+                <td>63.9</td>
+                <td>97.6</td>
                 <td>79.2</td>
-                <td class="bar" data-sort="0.118">
-                  <span><i style="width: 12%"></i></span><b>0.118</b>
+                <td class="bar" data-sort="0.119">
+                  <span><i style="width: 12%"></i></span><b>0.119</b>
                 </td>
                 <td>-37.3</td>
-                <td><span class="pos">+3.4</span></td>
-                <td>35%</td>
-                <td>28%</td>
+                <td><span class="pos">+3.6</span></td>
+                <td>33%</td>
                 <td>27%</td>
+                <td>26%</td>
                 <td></td>
               </tr>
               <tr data-conf="NAC" data-team="lesley">
@@ -8288,7 +8291,7 @@
       </details>
       <details class="group" open>
         <summary>
-          <h2>Incoming transfers, 2026-27 <span class="count">421</span></h2>
+          <h2>Incoming transfers, 2026-27 <span class="count">422</span></h2>
         </summary>
         <p>
           Sorted by value, the transfer's contribution to the destination's
@@ -12911,6 +12914,17 @@
                 <td>+0.00</td>
               </tr>
               <tr>
+                <td class="lead">Katie O&#x27;Keefe</td>
+                <td class="lead">William Paterson</td>
+                <td>Lebanon Valley</td>
+                <td>D3</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>+15.2</td>
+                <td>&ndash;</td>
+                <td>+0.00</td>
+              </tr>
+              <tr>
                 <td class="lead">Autumn Matthews</td>
                 <td class="lead">Geneva</td>
                 <td>Pitt-Greensburg</td>
@@ -13177,7 +13191,7 @@
         </p>
       </details>
       <footer>
-        Built November 6, 2026 at 10:00 AM. Ratings and rosters through 2025-26;
+        Built November 7, 2026 at 3:39 PM. Ratings and rosters through 2025-26;
         transfers and coaching changes as filed in the repo.
         <a href="https://thed3statlab.com" target="_blank" rel="noopener"
           >TheD3StatLab</a

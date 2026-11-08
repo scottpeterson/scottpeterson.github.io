@@ -85,7 +85,21 @@ function slugToTitle(slug) {
  * navigation.js handles the active-link highlight, so no per-page nav needed.
  */
 function generateWrappedReport(report, nav) {
-  const { slug, title, styles, body, externalScripts, inlineScripts } = report;
+  const {
+    slug,
+    title,
+    styles,
+    body,
+    externalScripts,
+    inlineScripts,
+    contrastAllow,
+  } = report;
+
+  // The contrast checker (html-report skill) exempts school brand colors
+  // through this meta; carry it over from the source report.
+  const contrastAllowTag = contrastAllow
+    ? `    <meta name="contrast-allow" content="${contrastAllow}" />\n`
+    : '';
 
   // Generate external script tags
   const externalScriptTags = externalScripts
@@ -99,12 +113,20 @@ function generateWrappedReport(report, nav) {
     )
     .join('\n');
 
+  // data-theme="light": the site ships one light theme. Reports carry their
+  // own dark theme keyed on :root:not([data-theme="light"]), which a phone in
+  // dark mode would switch on over the site's light page.
   return `<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title} - The D3 Stat Lab</title>
+    <!-- One light theme. These stop Firefox for iOS "Website Dark Mode" (Dark
+         Reader) and similar overlays from recoloring the page. -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#2c3e50" />
+    <meta name="darkreader-lock" />
+${contrastAllowTag}    <title>${title} - The D3 Stat Lab</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -168,6 +190,10 @@ async function processReport(filename) {
   const body = extractBody(html);
   const externalScripts = extractExternalScripts(html);
   const inlineScripts = extractInlineScripts(html);
+  const allowMatch = html.match(
+    /<meta\s+name=["']contrast-allow["']\s+content=["']([^"']*)["']/i
+  );
+  const contrastAllow = allowMatch ? allowMatch[1] : null;
 
   return {
     slug,
@@ -176,6 +202,7 @@ async function processReport(filename) {
     body,
     externalScripts,
     inlineScripts,
+    contrastAllow,
     filename,
   };
 }

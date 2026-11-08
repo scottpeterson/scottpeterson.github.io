@@ -415,7 +415,7 @@ class TableController {
       }
 
       if (isNegative) {
-        td.style.color = 'red';
+        td.style.color = 'var(--danger)';
       }
     }
   }
@@ -444,23 +444,23 @@ class TableController {
     const bidType = row['Bid Type'] || row['bid type'] || row.bidType || '';
 
     // NOTE: these are intentional data-visualization colors (categorical bid
-    // types), NOT theme chrome — they deliberately do not map to the design
-    // tokens (forest green / dodger blue / dark orange are distinct from
-    // --success/--blue-500/--orange-500). Don't "tokenize" them; doing so would
-    // change the values and the meaning of the encoding.
+    // types), NOT theme chrome, so they do not map to the design tokens.
+    // Each clears WCAG AA (4.5:1) on both the white and the striped row
+    // (#e9ecef); the 2026-11-07 contrast sweep measured the former forest
+    // green, dodger blue, and dark orange at 4.4, 3.2, and 2.3.
     if (bidType === 'AQ') {
       // Green for automatic qualifier
-      td.style.color = '#228B22'; // Forest green
+      td.style.color = '#1A701A';
       td.style.fontWeight = 'bold';
     } else if (/^AL-\d{2}$/.test(bidType)) {
       const bidNumber = parseInt(bidType.split('-')[1], 10);
       if (bidNumber >= 1 && bidNumber <= 21) {
         // Blue for Pool C bids (C-01 through C-21)
-        td.style.color = '#1E90FF'; // Dodger blue
+        td.style.color = '#1259A8';
         td.style.fontWeight = 'bold';
       } else if (bidNumber >= 22 && bidNumber <= 36) {
         // Orange for Pool C bids (C-22 through C-36)
-        td.style.color = '#FF8C00'; // Dark orange
+        td.style.color = '#9C4D00';
         td.style.fontWeight = 'bold';
       }
     }

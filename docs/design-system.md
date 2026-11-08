@@ -38,8 +38,8 @@ literal (see the rules in `CLAUDE.md`).
   /* Brand / chrome */
   --navy-900: #2c3e50;
   --navy-700: #34495e;
-  --blue-500: #3498db;
-  --blue-600: #2980b9;
+  --blue-500: #216a9c; /* white text on it 5.8:1; as link text on white 5.8:1 */
+  --blue-600: #1a5f8f;
   --blue-300: #7fc4ff;
   --orange-500: #ff4f00;
   --orange-300: #ff9a6b;
@@ -47,17 +47,18 @@ literal (see the rules in `CLAUDE.md`).
   /* Text ramp (replaces 15+ ad-hoc grays) */
   --text-1: #2c3e50; /* headings        */
   --text-2: #333; /* body            */
-  --text-3: #666; /* secondary       */
-  --text-4: #999; /* tertiary / hint */
+  --text-3: #555; /* secondary; 4.7:1 on the dark end of the body gradient */
+  --text-4: #707070; /* tertiary / hint; 4.9:1 on white */
 
   /* Lines & surfaces */
-  --border: #e1e5e8;
+  --border: #e1e5e8; /* hairline for cards */
+  --border-control: #8a9199; /* field edge, 3.2:1 on white (SC 1.4.11) */
   --surface: rgb(255 255 255 / 95%);
   --surface-line: rgb(255 255 255 / 20%);
 
   /* Status (collapse 3 greens -> 1, 5 warm tones -> 2) */
-  --success: #27ae60;
-  --danger: #e74c3c;
+  --success: #1e8449; /* white text 4.7:1 */
+  --danger: #b03a2e; /* white text 6.0:1; as text on white 6.0:1 */
   --warning: #f0a500;
 
   /* Gradients (single definitions) */

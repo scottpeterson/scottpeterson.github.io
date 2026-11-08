@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- One light theme. These stop Firefox for iOS "Website Dark Mode" (Dark
+         Reader) and similar overlays from recoloring the page. -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#2c3e50" />
+    <meta name="darkreader-lock" />
     <title>D3 WBB Schedule Builder — 2026-27 - The D3 Stat Lab</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
@@ -35,7 +40,7 @@
         font-size: 24px;
       }
       .report-schedule_builder .subtitle {
-        color: #888;
+        color: #a0a0a0;
         margin-bottom: 16px;
         font-size: 12px;
       }
@@ -67,7 +72,7 @@
         margin-top: 4px;
         background: #0f3460;
         color: #fff;
-        border: 1px solid #234;
+        border: 1px solid #6080a0;
         border-radius: 5px;
         padding: 7px 9px;
         font-size: 13px;
@@ -86,7 +91,7 @@
       }
       .report-schedule_builder .summary-cell .label {
         font-size: 11px;
-        color: #888;
+        color: #a0a0a0;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
@@ -97,20 +102,20 @@
         margin-top: 2px;
       }
       .report-schedule_builder .summary-cell.hit {
-        border: 2px solid #3d7a37;
+        border: 2px solid #4a9443;
       }
       .report-schedule_builder .summary-cell.hit .value {
         color: #8fff8f;
       }
       .report-schedule_builder .summary-cell.miss {
-        border: 2px solid #a33040;
+        border: 2px solid #d04a60;
       }
       .report-schedule_builder .summary-cell.miss .value {
         color: #ff9999;
       }
       .report-schedule_builder .summary-cell .sub {
         font-size: 10px;
-        color: #888;
+        color: #a0a0a0;
         margin-top: 2px;
       }
       .report-schedule_builder table {
@@ -146,11 +151,11 @@
       }
       .report-schedule_builder tr.win-row.not-counting {
         background: rgba(45, 90, 39, 0.04);
-        color: #888;
+        color: #a0a0a0;
       }
       .report-schedule_builder tr.loss-row.not-counting {
         background: rgba(139, 38, 53, 0.05);
-        color: #888;
+        color: #a0a0a0;
       }
       .report-schedule_builder td.opp-name {
         text-align: left;
@@ -160,7 +165,7 @@
         width: 100%;
         background: #0f3460;
         color: #fff;
-        border: 1px solid #234;
+        border: 1px solid #6080a0;
         border-radius: 3px;
         padding: 2px 4px;
         font-size: 12px;
@@ -169,7 +174,7 @@
       .report-schedule_builder td select.wl-select {
         background: #0f3460;
         color: #fff;
-        border: 1px solid #234;
+        border: 1px solid #6080a0;
         border-radius: 3px;
         padding: 2px 6px;
         font-size: 12px;
@@ -178,18 +183,18 @@
       }
       .report-schedule_builder td select.wl-select.W {
         color: #8fff8f;
-        border-color: #3d7a37;
+        border-color: #4a9443;
       }
       .report-schedule_builder td select.wl-select.L {
         color: #ff9999;
-        border-color: #a33040;
+        border-color: #d04a60;
       }
       .report-schedule_builder td.count-true {
         color: #8fff8f;
         font-weight: 600;
       }
       .report-schedule_builder td.count-false {
-        color: #666;
+        color: #999;
       }
       .report-schedule_builder td.numeric {
         font-variant-numeric: tabular-nums;
@@ -200,7 +205,7 @@
       }
       .report-schedule_builder .slot-tag {
         font-size: 10px;
-        color: #888;
+        color: #a0a0a0;
         margin-right: 6px;
         padding: 1px 5px;
         background: #234;
@@ -209,7 +214,7 @@
       }
       .report-schedule_builder .slot-tag.conf {
         background: #2d4a5a;
-        color: #aaf;
+        color: #b4b4ff;
       }
       .report-schedule_builder .slot-tag.tourney {
         background: #5a3a5a;
@@ -233,7 +238,7 @@
         margin-top: 10px;
         background: #0f3460;
         color: #eee;
-        border: 1px solid #234;
+        border: 1px solid #6080a0;
         border-radius: 5px;
         padding: 6px 14px;
         cursor: pointer;
@@ -244,7 +249,7 @@
       }
       .report-schedule_builder .legend {
         font-size: 11px;
-        color: #888;
+        color: #a0a0a0;
         margin-top: 8px;
       }
       .report-schedule_builder .legend span {
