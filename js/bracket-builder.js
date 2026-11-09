@@ -947,7 +947,7 @@
     ctx.font = `400 15px ${font}`;
     ctx.fillStyle = text3;
     ctx.fillText(
-      `2026 field · ${Object.keys(slots).length} of 64 placed · ${result.flights} flights · ${result.guaranteed} guaranteed sectional flights`,
+      `Projected ${Number(season) - 1}-${String(season).slice(-2)} field · ${Object.keys(slots).length} of 64 placed · ${result.flights} flights · ${result.guaranteed} guaranteed sectional flights`,
       width / 2,
       78
     );
