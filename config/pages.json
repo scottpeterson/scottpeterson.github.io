@@ -432,7 +432,7 @@
     "showInNav": true,
     "isPremiumPage": true,
     "multiProductHeading": "Premium Reports",
-    "multiProductDescription": "In-depth analytics for your team, delivered to your inbox.",
+    "multiProductDescription": "Weekly team reports by email. School Report Cards grades all 411 programs.",
     "products": [
       {
         "id": "offseason-report",
@@ -526,6 +526,52 @@
             "icon": "users",
             "title": "Player Impact Analysis",
             "description": "Full roster with Pts/30, Reb/30, Ast/30, impact scores, plus/minus stats, playing time percentages, and week-over-week performance tracking"
+          }
+        ]
+      },
+      {
+        "id": "school-report-cards",
+        "name": "School Report Cards",
+        "tagline": "School Report Cards grades all 411 D3 women's basketball programs on nine criteria and ranks them by the priorities you set. Recruits, parents, and high school coaches can use it to build a college short list.",
+        "active": true,
+        "salesEnabled": true,
+        "badgeText": "New: Available Now",
+        "externalUrl": "https://profiles.thed3statlab.com/",
+        "homeBandNote": "Also new: School Report Cards grades all 411 programs and ranks them by your priorities. $129 for a year.",
+        "sampleHeading": "Using the site",
+        "sampleDescription": "You sign in on the web and set your sliders. You can filter the list, compare up to three schools side by side, and open a full profile for any program. The site publishes its method notes and data sources.",
+        "price": "$129",
+        "priceOriginal": null,
+        "pricePeriod": "for 365 days of access",
+        "pricingHeading": "Access",
+        "pricingClarification": "You pay once. Your access ends 365 days after the purchase date and does not renew.",
+        "pricingFeatures": [
+          "Every grade, filter, profile, and comparison for all 411 programs",
+          "You sign in with the email you use at checkout. There is no password.",
+          "You can save your top 20 as a PDF."
+        ],
+        "urgencyNote": null,
+        "buttonText": "Open School Report Cards",
+        "features": [
+          {
+            "icon": "award",
+            "title": "Grades",
+            "description": "Each school gets nine grades: regular season, tournament, coaching stability, roster stability, academics, player development, athletic department, net price, and school finances. Each grade runs from A+ to F and compares the school with all 411 programs."
+          },
+          {
+            "icon": "sliders",
+            "title": "Priorities",
+            "description": "You set a slider for each grade to say how much it counts. Set a slider to 0 to drop that grade. Each time you change a slider, the list sorts again by the new weights."
+          },
+          {
+            "icon": "filter",
+            "title": "Filters",
+            "description": "You can limit the list by region, state, distance from home, campus setting, majors, graduate study, enrollment, and price band."
+          },
+          {
+            "icon": "columns",
+            "title": "Profiles and comparisons",
+            "description": "A school's profile shows its season-by-season records, tournament runs, coach history, departures and transfers, roster, and development table. You can compare up to three schools side by side."
           }
         ]
       }

@@ -840,6 +840,13 @@ ${cards}
         '<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>',
       clipboard:
         '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>',
+      award:
+        '<circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/>',
+      sliders:
+        '<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
+      filter: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
+      columns:
+        '<path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/>',
     };
     if (!paths[name]) {
       // Unknown key: fall through to the raw config value (e.g. an emoji), but
@@ -927,9 +934,17 @@ ${cards}
       ? `<p class="urgency-note">${this.escapeHtml(product.urgencyNote)}</p>`
       : '';
 
-    // Build form/CTA based on sales status
+    // Build form/CTA based on sales status. A product with externalUrl sells
+    // on its own site, so the CTA is a link there instead of the Stripe form.
     let formHtml;
-    if (canPurchase) {
+    if (canPurchase && product.externalUrl) {
+      formHtml = `
+          ${urgencyHtml}
+          <a href="${product.externalUrl}" class="premium-button product-external-button">
+            ${this.escapeHtml(product.buttonText || 'Open the site')}
+          </a>
+          <p class="trust-signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure payment through Stripe</p>`;
+    } else if (canPurchase) {
       formHtml = `
           <form class="premium-form" data-stripe-link="${product.stripePaymentLink}">
             <div class="form-group">
@@ -1115,6 +1130,22 @@ ${pricingFeaturesHtml}
       ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
       : '';
 
+    // One line under the button for each other active product that sets
+    // homeBandNote. The product name inside the note links to its section on
+    // the Premium page; when the note omits the name, the whole line links.
+    const alsoHtml = products
+      .filter(p => p.active && p !== product && p.homeBandNote)
+      .map(p => {
+        const href = `premium.html#product-${p.id}`;
+        const note = this.escapeHtml(p.homeBandNote);
+        const name = this.escapeHtml(p.name);
+        const linked = note.includes(name)
+          ? note.replace(name, `<a href="${href}">${name}</a>`)
+          : `<a href="${href}">${note}</a>`;
+        return `\n    <p class="home-premium__also">${linked}</p>`;
+      })
+      .join('');
+
     return `<section class="home-premium">
   <div class="home-premium__inner">
     <span class="home-premium__eyebrow">Premium Report</span>
@@ -1125,7 +1156,7 @@ ${pricingFeaturesHtml}
       ${originalPrice}<span class="home-premium__price-now">${this.escapeHtml(product.price)}</span>
       <span class="home-premium__price-period">${this.escapeHtml(product.pricePeriod)}</span>
     </div>
-    <a href="premium.html" class="btn btn--primary btn--lg">${this.escapeHtml(product.buttonText)} &rarr;</a>
+    <a href="premium.html" class="btn btn--primary btn--lg">${this.escapeHtml(product.buttonText)} &rarr;</a>${alsoHtml}
   </div>
 </section>`;
   }

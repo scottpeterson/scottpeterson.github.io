@@ -868,6 +868,27 @@ pre {
   font-size: var(--fs-small);
 }
 
+/* One line per other active product, under the band's button. */
+.home-premium__also {
+  margin: 22px auto 0;
+  max-width: 56ch;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: #cfd8e2;
+}
+
+.home-premium__also a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-premium__also a:hover,
+.home-premium__also a:focus-visible {
+  color: var(--orange-300);
+}
+
 /* --- Shared card grid (also used by the About the Data page) -------------- */
 .home-grid {
   display: grid;
