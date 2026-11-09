@@ -489,9 +489,7 @@
         "name": "Single Team Report",
         "tagline": "Know exactly where your team stands, and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
         "active": true,
-        "badgeText": "Buy Now: Delivers November",
-        "countdownDate": "2026-11-02",
-        "countdownLabel": "First report delivers in",
+        "badgeText": "Available Now",
         "salesEnabled": true,
         "samplePdf": "data/Williams_2026-11-02_sample.pdf",
         "sampleHeading": "See Exactly What You'll Get",
@@ -506,7 +504,7 @@
           "Weekly PDF report delivered every Monday",
           "Full coverage from November through March"
         ],
-        "urgencyNote": "Purchase now and your first report delivers November 2, 2026. Weekly reports every Monday through March.",
+        "urgencyNote": "Your first report arrives the Monday after you purchase. Reports continue every Monday through March.",
         "buttonText": "Get Premium Access",
         "stripePaymentLink": "https://buy.stripe.com/8x2bJ24uJ13cgSX89b9sk01",
         "features": [
