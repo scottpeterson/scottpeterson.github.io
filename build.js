@@ -937,7 +937,51 @@ ${cards}
     // Build form/CTA based on sales status. A product with externalUrl sells
     // on its own site, so the CTA is a link there instead of the Stripe form.
     let formHtml;
-    if (canPurchase && product.externalUrl) {
+    if (product.emailSignup) {
+      // Free report sent by email. The form posts to signupEndpoint when
+      // signupEnabled is true; otherwise the card shows signupClosedMessage.
+      // premium.js ignores this form because it has no data-stripe-link.
+      if (product.signupEnabled && product.signupEndpoint) {
+        formHtml = `
+          <form class="premium-form premium-form--signup" method="post" action="${product.signupEndpoint}">
+            <div class="form-group">
+              <label for="email-${product.id}">Email Address</label>
+              <input
+                type="email"
+                id="email-${product.id}"
+                name="email"
+                required
+                placeholder="your@email.com"
+                class="form-input"
+              />
+              <span class="form-hint">The report goes to this address. Check spam if it does not arrive.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="team-${product.id}">Your Team</label>
+              <input
+                type="text"
+                id="team-${product.id}"
+                name="team"
+                required
+                placeholder="School name"
+                class="form-input"
+              />
+            </div>
+
+            ${urgencyHtml}
+
+            <button type="submit" class="premium-button">
+              ${this.escapeHtml(product.buttonText || 'Send Me the Report')}
+            </button>
+          </form>`;
+      } else {
+        formHtml = `
+          <p class="sales-disabled-message">
+            ${this.escapeHtml(product.signupClosedMessage || 'Sign-up is closed.')}
+          </p>`;
+      }
+    } else if (canPurchase && product.externalUrl) {
       formHtml = `
           ${urgencyHtml}
           <a href="${product.externalUrl}" class="premium-button product-external-button">
