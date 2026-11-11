@@ -565,7 +565,7 @@ ${cards}
     </main>
 
     <footer>
-      <p>&copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights reserved.</p>
+      <p>&copy; <span id="currentYear">2026</span> The D3 Stat Lab. All rights reserved.</p>
     </footer>
     <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 

@@ -313,7 +313,7 @@
       }
       for (const m of priorMeetings(a, b)) {
         issues.push(
-          issue('warn', `NCAA tournament rematch: ${meetingText(m)}.`)
+          issue('warn', `NCAA Tournament rematch: ${meetingText(m)}.`)
         );
       }
     }
@@ -389,7 +389,7 @@
           issues.push(
             issue(
               'warn',
-              `Possible second-round NCAA tournament rematch, ${a} and ${b}: ${meetingText(m)}.`
+              `Possible second-round NCAA Tournament rematch, ${a} and ${b}: ${meetingText(m)}.`
             )
           );
         }
@@ -430,7 +430,7 @@
           issues.push(
             issue(
               'error',
-              `${top8[i].t} and ${top8[j].t} are in the same half and would meet before the Elite 8.`
+              `${top8[i].t} and ${top8[j].t} are in the same half and would meet before the Elite Eight.`
             )
           );
         }
@@ -459,7 +459,7 @@
       return { issues, guaranteedPods };
     }
 
-    // Top-4 seed and the sectional host check, assuming every favorite wins.
+    // Top-4 seed and the Sweet 16 pod host check, assuming every favorite wins.
     const top4 = members.filter(t => byName.get(t).overall_seed <= 4);
     if (top4.length !== 1) {
       issues.push(
@@ -489,7 +489,7 @@
         issues.push(
           issue(
             'warn',
-            `Sectional: if the favorites win, ${top4[0]} has ${topCount} of 3 sectional teams within 500 miles. ${better
+            `Sweet 16 pod: if the favorites win, ${top4[0]} has ${topCount} of 3 Sweet 16 pod teams within 500 miles. ${better
               .map(t => `${t} has ${within(t)}`)
               .join(', ')}.`
           )
@@ -497,7 +497,7 @@
       }
     }
 
-    // Guaranteed sectional flights: a pod whose four teams are all 500 miles
+    // Guaranteed Sweet 16 flights: an opening weekend pod whose four teams are all 500 miles
     // or more from every other team in the quadrant.
     PODS.forEach((_, p) => {
       const inside = podTeams(q, p);
@@ -818,7 +818,7 @@
             el(
               'p',
               'bb-guaranteed',
-              'Guaranteed sectional flight: every team in this pod is 500 miles or more from every other team in the quadrant. Either the pod winner flies, or it hosts and the other three fly.'
+              'Guaranteed Sweet 16 flight: every team in this opening weekend pod is 500 miles or more from every other team in the quadrant. Either the pod winner flies, or it hosts and the other three fly.'
             )
           );
         }
@@ -947,7 +947,7 @@
     ctx.font = `400 15px ${font}`;
     ctx.fillStyle = text3;
     ctx.fillText(
-      `Projected ${Number(season) - 1}-${String(season).slice(-2)} field · ${Object.keys(slots).length} of 64 placed · ${result.flights} flights · ${result.guaranteed} guaranteed sectional flights`,
+      `Projected ${Number(season) - 1}-${String(season).slice(-2)} field · ${Object.keys(slots).length} of 64 placed · ${result.flights} flights · ${result.guaranteed} guaranteed Sweet 16 flights`,
       width / 2,
       78
     );
@@ -985,7 +985,7 @@
           ? ` · ${flights.length} ${flights.length === 1 ? 'flight' : 'flights'}`
           : '';
         const guaranteed = result.quadrants[q].pods[p].guaranteed
-          ? ' · guaranteed sectional flight'
+          ? ' · guaranteed Sweet 16 flight'
           : '';
         ctx.fillText(
           `Pod ${pod.name} · ${host ? `at ${host}` : 'no host'}${flightText}${guaranteed}`,

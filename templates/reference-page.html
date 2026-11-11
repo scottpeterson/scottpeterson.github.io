@@ -117,12 +117,12 @@
 <section class="table-section reference-section">
   <h2>NPI "Settling" Criteria</h2>
   <p>
-    NPI is computed by iteration. A team's rating is the average of its
-    contributing game NPIs, and each game's NPI depends on the opponent's rating
-    from the previous pass. Because every rating depends on opponents' ratings,
-    there is no closed form: the calculation repeats over the full set of teams
-    until the ratings stabilize. "Settling" means the iteration reaches a stable
-    set of ratings (a
+    NPI is computed by iteration. A team's rating is the average of its counting
+    game NPIs, and each game's NPI depends on the opponent's rating from the
+    previous pass. Because every rating depends on opponents' ratings, there is
+    no closed form: the calculation repeats over the full set of teams until the
+    ratings stabilize. "Settling" means the iteration reaches a stable set of
+    ratings (a
     <a
       href="https://en.wikipedia.org/wiki/Fixed_point_(mathematics)"
       target="_blank"
@@ -151,7 +151,7 @@
     is:
   </p>
   <p class="reference-formula">
-    &#945; = SW + QBM &#215; (quality wins &#247; contributing games)
+    &#945; = SW + QBM &#215; (quality wins &#247; counting games)
   </p>
   <ul>
     <li>
@@ -164,7 +164,7 @@
     </li>
     <li>
       Per-team breakpoint: a team's &#945; passes 1 once more than RW &#247; QBM
-      of its contributing games are quality wins.
+      of its counting games are quality wins.
     </li>
   </ul>
   <p>The default dials for women's basketball:</p>
@@ -205,9 +205,9 @@
     </table>
   </div>
   <p>
-    At these defaults the breakpoint is 0.30, so any team whose contributing
-    games are more than 30% quality wins has &#945; above 1. The system still
-    settles because the quantity that actually governs convergence, the
+    At these defaults the breakpoint is 0.30, so any team whose counting games
+    are more than 30% quality wins has &#945; above 1. The system still settles
+    because the quantity that actually governs convergence, the
     <a
       href="https://en.wikipedia.org/wiki/Spectral_radius"
       target="_blank"
@@ -221,7 +221,7 @@
       rel="noopener noreferrer"
       >Jacobian</a
     >, stays below 1 given real schedule structure rather than because of margin
-    in the &#945; bound. A "contributing game" is one that feeds a team's
-    rating: its top wins plus games at or below the team's own current rating.
+    in the &#945; bound. A "counting game" is one that feeds a team's rating:
+    its top wins plus games at or below the team's own current rating.
   </p>
 </section>

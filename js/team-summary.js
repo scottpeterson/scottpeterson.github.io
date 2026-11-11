@@ -87,7 +87,7 @@
       title: 'Preseason Rankings',
       fields: [
         { key: 'Projected Preseason Rank', label: 'Preseason Rank' },
-        { key: 'Returning', label: 'Returning %' },
+        { key: 'Returning', label: 'Returning Scoring' },
         { key: 'Safe Loss Threshold', label: 'Safe Losses' },
       ],
     },

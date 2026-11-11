@@ -63,7 +63,7 @@
       "SOS": "SOS",
       "NPI": "NPI",
       "Height": "Height",
-      "Returning": "Returning",
+      "Returning": "Returning Scoring",
       "Projected Preseason Rank": "Projected Preseason Rank",
       "Safe Losses Threshold": "Safe Loss Threshold",
       "Dangerous": "Dangerous"
@@ -71,12 +71,12 @@
     "legend": {
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
-      "Region": "NCAA tournament region the team belongs to",
+      "Region": "NCAA Tournament region the team belongs to",
       "Win%": "2025-26 Win%",
       "SOS": "2025-26 Strength of Schedule",
       "NPI": "2025-26 NPI",
       "Height": "2025-26 Minutes-weighted team height (inches)",
-      "Returning": "Percentage of scoring production returning from previous season",
+      "Returning": "Share of last season's points scored by players on this season's roster",
       "Projected Preseason Rank": "Projected ranking for the start of the season",
       "Safe Losses Threshold": "Maximum number of losses a team can sustain while remaining safe for tournament selection",
       "Dangerous": "This number of losses puts the team in a precarious position for tournament selection"
@@ -85,7 +85,7 @@
   "returners": {
     "title": "Returning and Non-Returning",
     "heading": "Returning and Non-Returning",
-    "description": "D3 WBB returning production for teams with published rosters: underclassmen minutes lost, minutes incoming from D3 transfers, minutes back from 5th years, and more.",
+    "description": "D3 WBB Returning Minutes for teams with published rosters: underclassmen minutes lost, minutes incoming from D3 transfers, minutes back from fifth-years, and more.",
     "sectionTitle": "Returning and Non-Returning",
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
@@ -285,7 +285,7 @@
       "TOP 50 W": "TOP 50 W",
       "OUT OF TOP 30 L": "OUT OF TOP 30 L",
       "Overall Wins Massey": "Overall Wins Massey",
-      "Eff": "Eff",
+      "Eff": "adjEM",
       "Underlying": "Underlying",
       "STAT": "STAT",
       "STDEV": "STDEV"
@@ -298,7 +298,7 @@
       "TOP 50 W": "Number of wins against teams ranked in top 50",
       "OUT OF TOP 30 L": "Number of losses to teams ranked outside top 30",
       "Overall Wins Massey": "Total wins according to Massey ratings system",
-      "Eff": "Team efficiency rating for the current season",
+      "Eff": "Adjusted efficiency margin (adjEM): points per 100 possessions better than an average D3 team",
       "Underlying": "Underlying performance metrics beyond wins/losses",
       "STAT": "Aggregate of the other stats",
       "STDEV": "Standard deviation of STAT"
@@ -332,7 +332,7 @@
       "Conf": "Conf",
       "Region": "Region",
       "Massey Rank": "Massey Rank",
-      "Eff Rank": "Eff Rank",
+      "Eff Rank": "adjEM Rank",
       "NPI Rank": "NPI Rank",
       "Curr Season Results Rank": "Curr Season Results Rank",
       "Strength of Record": "Strength of Record",
@@ -345,14 +345,14 @@
     "legend": {
       "Team": "Name of the college or university basketball team",
       "Conf": "Conference affiliation of the team",
-      "Region": "NCAA tournament region the team belongs to",
+      "Region": "NCAA Tournament region the team belongs to",
       "Massey Rank": "Team ranking according to Massey rating system",
-      "Eff Rank": "Team ranking based on efficiency metrics",
-      "NPI Rank": "Team ranking based on NCAA Power Index",
+      "Eff Rank": "Rank by adjusted efficiency margin (adjEM)",
+      "NPI Rank": "Rank by NCAA Power Index (NPI)",
       "Curr Season Results Rank": "Ranking based on current season performance",
       "Strength of Record": "Measures how difficult a team's win-loss record is to achieve based on its schedule",
       "Wins Above Bubble": "Measures how many more (or fewer) wins a team has compared to what an average bubble team would be expected to achieve against the same schedule",
-      "Preseason Rank": "Team's preseason ranking prediction",
+      "Preseason Rank": "Team's rank before the season started",
       "MEDIAN": "Median value across all ranking systems (not including preseason)",
       "OVR_RANK": "Overall composite ranking position",
       "Stdev": "Standard deviation across different ranking systems"
@@ -437,7 +437,7 @@
       {
         "id": "offseason-report",
         "name": "Offseason Outlook Report",
-        "tagline": "Know exactly where your team stands heading into next season. Returning production, conference outlook, regional rankings, and roster analysis, all in one report.",
+        "tagline": "Know exactly where your team stands heading into next season. Returning Scoring, conference outlook, regional rankings, and roster analysis, all in one report.",
         "active": false,
         "salesEnabled": false,
         "emailSignup": true,
@@ -447,7 +447,7 @@
         "badgeText": "Free: Returns After the Season",
         "samplePdf": "data/FDU_Florham_OffseasonOutlook_2026.pdf",
         "sampleHeading": "See Exactly What You'll Get",
-        "sampleDescription": "The 12-page offseason report covers returning production, graduation vulnerability, conference and regional outlook, coaching changes, top returners, and full roster analysis.",
+        "sampleDescription": "The 12-page offseason report covers Returning Scoring, graduation vulnerability, conference and regional outlook, coaching changes, top returners, and full roster analysis.",
         "sampleButtonText": "View Full Sample Report (12 pages)",
         "price": "Free",
         "priceOriginal": null,
@@ -464,7 +464,7 @@
         "features": [
           {
             "icon": "chart",
-            "title": "Season Summary & Returning Production",
+            "title": "Season Summary & Returning Scoring",
             "description": "Your team's record, NPI, NCAA Tournament result, returning scoring percentage, and scoring distribution by class with a conference-wide heat map"
           },
           {
@@ -493,7 +493,7 @@
         "salesEnabled": true,
         "samplePdf": "data/Williams_2026-11-02_sample.pdf",
         "sampleHeading": "See Exactly What You'll Get",
-        "sampleDescription": "The report covers tournament odds, player impact rankings, and exactly why each upcoming game matters. This preseason sample runs 12 pages; in-season reports run 20+ pages once games begin.",
+        "sampleDescription": "The report covers tournament chances, player impact rankings, and exactly why each upcoming game matters. This preseason sample runs 12 pages; in-season reports run 20+ pages once games begin.",
         "sampleButtonText": "View Preseason Sample Report",
         "price": "$39",
         "priceOriginal": null,
@@ -511,12 +511,12 @@
           {
             "icon": "chart",
             "title": "Complete Team Analytics",
-            "description": "NPI, efficiency ratings, tempo, height rankings, returning production, roster breakdown, radar charts, and composite rankings across multiple rating systems"
+            "description": "NPI, efficiency margins, tempo, height rankings, Returning Scoring, roster breakdown, radar charts, and composite rankings across multiple rating systems"
           },
           {
             "icon": "target",
             "title": "Tournament Projections",
-            "description": "NCAA Tournament odds from 10,000+ simulations, auto-bid vs. at-large percentages, Top-4/8/16 probabilities, at-large bid scenarios, and conference tournament outlook"
+            "description": "NCAA Tournament chances from 10,000+ simulations, auto-bid vs. at-large percentages, Top-4/8/16 probabilities, at-large bid scenarios, and conference tournament outlook"
           },
           {
             "icon": "trending",
@@ -607,7 +607,7 @@
   "bracket_builder": {
     "title": "Bracket Builder",
     "heading": "Division III Women's Basketball Bracket Builder",
-    "description": "Place the projected 2026-27 NCAA tournament field of 64 into a bracket and check each game and pod against the committee's rules.",
+    "description": "Place the projected 2026-27 NCAA Tournament field of 64 into a bracket and check each game and pod against the committee's rules.",
     "sectionTitle": "Build the Bracket",
     "hasSearch": false,
     "dataSource": null,

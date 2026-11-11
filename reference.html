@@ -283,7 +283,7 @@
         <h2>NPI "Settling" Criteria</h2>
         <p>
           NPI is computed by iteration. A team's rating is the average of its
-          contributing game NPIs, and each game's NPI depends on the opponent's
+          counting game NPIs, and each game's NPI depends on the opponent's
           rating from the previous pass. Because every rating depends on
           opponents' ratings, there is no closed form: the calculation repeats
           over the full set of teams until the ratings stabilize. "Settling"
@@ -317,7 +317,7 @@
           amplification is:
         </p>
         <p class="reference-formula">
-          &#945; = SW + QBM &#215; (quality wins &#247; contributing games)
+          &#945; = SW + QBM &#215; (quality wins &#247; counting games)
         </p>
         <ul>
           <li>
@@ -330,7 +330,7 @@
           </li>
           <li>
             Per-team breakpoint: a team's &#945; passes 1 once more than RW
-            &#247; QBM of its contributing games are quality wins.
+            &#247; QBM of its counting games are quality wins.
           </li>
         </ul>
         <p>The default dials for women's basketball:</p>
@@ -371,10 +371,10 @@
           </table>
         </div>
         <p>
-          At these defaults the breakpoint is 0.30, so any team whose
-          contributing games are more than 30% quality wins has &#945; above 1.
-          The system still settles because the quantity that actually governs
-          convergence, the
+          At these defaults the breakpoint is 0.30, so any team whose counting
+          games are more than 30% quality wins has &#945; above 1. The system
+          still settles because the quantity that actually governs convergence,
+          the
           <a
             href="https://en.wikipedia.org/wiki/Spectral_radius"
             target="_blank"
@@ -388,7 +388,7 @@
             rel="noopener noreferrer"
             >Jacobian</a
           >, stays below 1 given real schedule structure rather than because of
-          margin in the &#945; bound. A "contributing game" is one that feeds a
+          margin in the &#945; bound. A "counting game" is one that feeds a
           team's rating: its top wins plus games at or below the team's own
           current rating.
         </p>
@@ -400,7 +400,7 @@
       <div class="premium-cta-content">
         <h3>Want personalized insights for your team?</h3>
         <p>
-          Get a weekly report with NCAA Tournament odds, high-leverage games,
+          Get a weekly report with NCAA Tournament chances, high-leverage games,
           and more
         </p>
         <a href="premium.html" class="cta-button">Get Premium Access →</a>
@@ -409,7 +409,7 @@
 
     <footer>
       <p>
-        &copy; <span id="currentYear">2026</span> D3 Stat Lab. All rights
+        &copy; <span id="currentYear">2026</span> The D3 Stat Lab. All rights
         reserved.
       </p>
     </footer>
