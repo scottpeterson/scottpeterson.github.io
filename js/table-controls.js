@@ -455,11 +455,11 @@ class TableController {
     } else if (/^AL-\d{2}$/.test(bidType)) {
       const bidNumber = parseInt(bidType.split('-')[1], 10);
       if (bidNumber >= 1 && bidNumber <= 21) {
-        // Blue for Pool C bids (C-01 through C-21)
+        // Blue for at-large bids AL-01 through AL-21
         td.style.color = '#1259A8';
         td.style.fontWeight = 'bold';
       } else if (bidNumber >= 22 && bidNumber <= 36) {
-        // Orange for Pool C bids (C-22 through C-36)
+        // Orange for at-large bids AL-22 through AL-36
         td.style.color = '#9C4D00';
         td.style.fontWeight = 'bold';
       }

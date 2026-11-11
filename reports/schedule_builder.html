@@ -82,13 +82,19 @@
       }
       .report-schedule_builder .control select {
         margin-top: 4px;
-        background: #0f3460;
+        background-color: #0f3460;
         color: #fff;
         border: 1px solid #6080a0;
         border-radius: 5px;
-        padding: 7px 9px;
+        padding: 7px 40px 7px 9px;
         font-size: 14px;
         min-width: 240px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a0a0a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
       }
       .report-schedule_builder .summary-bar {
         display: grid;
@@ -157,6 +163,21 @@
         z-index: 3;
         white-space: nowrap;
       }
+      .report-schedule_builder th[data-sort] {
+        cursor: pointer;
+        user-select: none;
+      }
+      .report-schedule_builder th[data-sort]:hover {
+        background: #1a4a7a;
+      }
+      .report-schedule_builder th[data-sort]:focus-visible {
+        outline: 2px solid #93c5fd;
+        outline-offset: -3px;
+      }
+      .report-schedule_builder th .sort-arrow {
+        margin-left: 3px;
+        font-size: 12px;
+      }
       .report-schedule_builder td {
         padding: 3px 4px;
         text-align: center;
@@ -183,23 +204,35 @@
       }
       .report-schedule_builder td select.opp-select {
         width: 100%;
-        background: #0f3460;
+        background-color: #0f3460;
         color: #fff;
         border: 1px solid #6080a0;
         border-radius: 3px;
-        padding: 2px 4px;
+        padding: 2px 40px 2px 4px;
         font-size: 12px;
         max-width: 260px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a0a0a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
       }
       .report-schedule_builder td select.wl-select {
-        background: #0f3460;
+        background-color: #0f3460;
         color: #fff;
         border: 1px solid #6080a0;
         border-radius: 3px;
-        padding: 2px 6px;
+        padding: 2px 40px 2px 6px;
         font-size: 12px;
         font-weight: 600;
         cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a0a0a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
       }
       .report-schedule_builder td select.wl-select.W {
         color: #8fff8f;
@@ -393,7 +426,7 @@
                 <option value="top4">Top 4 seed (≈ 65.9)</option>
                 <option value="top8">Top 8 seed (≈ 64.1)</option>
                 <option value="top16">Top 16 seed (≈ 62.1)</option>
-                <option value="poolC" selected>Pool C bid (≈ 58.4)</option>
+                <option value="poolC" selected>At-large bid (≈ 58.4)</option>
               </select>
             </div>
             <button class="reset-btn" id="reset-btn">Reset schedule</button>
@@ -423,7 +456,7 @@
               <div class="sub">≥ 62.1</div>
             </div>
             <div class="summary-cell" id="th-poolc">
-              <div class="label">Pool C</div>
+              <div class="label">At-large</div>
               <div class="value" id="th-poolc-v"></div>
               <div class="sub">≥ 58.4</div>
             </div>
@@ -432,20 +465,52 @@
         </div>
 
         <div class="panel">
-          <h2>Schedule (rows sorted by opponent NPI, hardest first)</h2>
+          <h2>
+            Schedule (sorted by opponent NPI, hardest first; select a column
+            header to re-sort)
+          </h2>
           <table id="schedule-table">
             <thead>
               <tr>
-                <th style="text-align: left; padding-left: 8px">Opponent</th>
-                <th>Pre&nbsp;Rank</th>
-                <th>Opp&nbsp;NPI</th>
-                <th>W / L</th>
-                <th>WP</th>
-                <th>SOS</th>
-                <th>QWB</th>
-                <th>Game&nbsp;NPI</th>
-                <th>Win&nbsp;Rank</th>
-                <th>Count</th>
+                <th
+                  data-sort="opp"
+                  tabindex="0"
+                  aria-sort="none"
+                  style="text-align: left; padding-left: 8px"
+                >
+                  Opponent <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="rank" tabindex="0" aria-sort="none">
+                  Pre&nbsp;Rank
+                  <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="oppNpi" tabindex="0" aria-sort="descending">
+                  Opp&nbsp;NPI
+                  <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="result" tabindex="0" aria-sort="none">
+                  W / L <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="wp" tabindex="0" aria-sort="none">
+                  WP <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="sos" tabindex="0" aria-sort="none">
+                  SOS <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="qwb" tabindex="0" aria-sort="none">
+                  QWB <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="gn" tabindex="0" aria-sort="none">
+                  Game&nbsp;NPI
+                  <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="winRank" tabindex="0" aria-sort="none">
+                  Win&nbsp;Rank
+                  <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
+                <th data-sort="count" tabindex="0" aria-sort="none">
+                  Count <span class="sort-arrow" aria-hidden="true"></span>
+                </th>
               </tr>
             </thead>
             <tbody id="schedule-body"></tbody>
@@ -1550,7 +1615,7 @@
           top4: 'Top 4',
           top8: 'Top 8',
           top16: 'Top 16',
-          poolC: 'Pool C',
+          poolC: 'At-large',
         }[goal];
 
         // Floor = 15th-best counting win's game NPI → opponent-NPI equivalent
@@ -1597,6 +1662,26 @@
       let mainTeamName = null;
       let goal = 'poolC';
       let rows = []; // [{ oppName, source, result }]
+      let sortKey = 'oppNpi',
+        sortDesc = true;
+      document.querySelectorAll('th[data-sort]').forEach(th => {
+        const go = () => {
+          const k = th.dataset.sort;
+          if (k === sortKey) sortDesc = !sortDesc;
+          else {
+            sortKey = k;
+            sortDesc = !['opp', 'rank', 'winRank', 'result'].includes(k);
+          }
+          render();
+        };
+        th.addEventListener('click', go);
+        th.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            go();
+          }
+        });
+      });
 
       function teamNpiFor(name) {
         const t = teamByName(name);
@@ -1668,15 +1753,57 @@
           }
         }
 
-        // Sort rows for display: opp NPI desc, empty slots at bottom
+        // Sort rows for display by the chosen column (default opp NPI desc); empty slots stay at the bottom
+        const sortVal = r => {
+          if (r.oppNpi == null) return null;
+          const g = gameNpi(r.won, r.oppNpi);
+          switch (sortKey) {
+            case 'opp':
+              return r.oppName;
+            case 'rank':
+              return r.rank;
+            case 'oppNpi':
+              return r.oppNpi;
+            case 'result':
+              return r.won ? 'W' : 'L';
+            case 'wp':
+              return g.wp;
+            case 'sos':
+              return g.sos;
+            case 'qwb':
+              return g.qwb;
+            case 'gn':
+              return g.total;
+            case 'winRank':
+              return r.won ? (winRankByIdx[r.idx] ?? null) : null;
+            case 'count':
+              return countingIdx.has(r.idx) ? 'TRUE' : 'FALSE';
+          }
+          return null;
+        };
         const displayOrder = calcRows
           .map((r, idx) => ({ ...r, idx }))
           .sort((a, b) => {
-            if (a.oppNpi == null && b.oppNpi == null) return 0;
-            if (a.oppNpi == null) return 1;
-            if (b.oppNpi == null) return -1;
-            return b.oppNpi - a.oppNpi;
+            const av = sortVal(a),
+              bv = sortVal(b);
+            if (av == null && bv == null) return 0;
+            if (av == null) return 1;
+            if (bv == null) return -1;
+            const d = typeof av === 'string' ? av.localeCompare(bv) : av - bv;
+            return sortDesc ? -d : d;
           });
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+          const active = th.dataset.sort === sortKey;
+          th.setAttribute(
+            'aria-sort',
+            active ? (sortDesc ? 'descending' : 'ascending') : 'none'
+          );
+          th.querySelector('.sort-arrow').textContent = active
+            ? sortDesc
+              ? '\u25BC'
+              : '\u25B2'
+            : '';
+        });
 
         // Build table
         const tbody = document.getElementById('schedule-body');
