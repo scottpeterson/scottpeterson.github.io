@@ -29,7 +29,7 @@
     npi: {
       title: 'NPI Rankings',
       fields: [
-        { key: 'NPI Rank', label: 'NPI Rank' },
+        { key: 'NPI Rank', label: 'NPI Rank', format: 'rank' },
         { key: 'NPI Value', label: 'NPI Value', decimals: 3 },
         { key: 'Bid Type', label: 'Bid Type' },
         { key: 'Qual Wins', label: 'Qualifying Wins' },
@@ -50,19 +50,24 @@
     seasonSimulations: {
       title: 'Season Simulations',
       fields: [
-        { key: 'Tourn%', label: 'Tournament %' },
-        { key: 'A%', label: 'Auto Bid %' },
-        { key: 'ALWYNI%', label: 'ALWYNI' },
+        { key: 'Tourn%', label: 'Tournament %', format: 'chance' },
+        { key: 'AQ%', label: 'Auto Bid %', format: 'chance' },
+        { key: 'ALWYNI%', label: 'ALWYNI', format: 'chance' },
         { key: 'MedW', label: 'Median Wins' },
         { key: 'MedL', label: 'Median Losses' },
-        { key: 'Med-NPI', label: 'Median NPI' },
+        { key: 'Med-NPI', label: 'Median NPI', decimals: 3 },
       ],
     },
     currentSeasonRankings: {
       title: 'Current Season Results Model',
       fields: [
-        { key: 'Rank', label: 'Current Rank' },
-        { key: 'Value of Results', label: 'Results Value', decimals: 2 },
+        { key: 'Rank', label: 'Current Rank', format: 'rank' },
+        {
+          key: 'Value of Results',
+          label: 'Results Value',
+          decimals: 2,
+          format: 'signed',
+        },
         { key: 'TOP 50 W', label: 'Top 50 Wins' },
         { key: 'OUT OF TOP 30 L', label: 'Out of Top 30 L' },
         {
@@ -75,20 +80,37 @@
     compositeRankings: {
       title: 'Composite Rankings',
       fields: [
-        { key: 'OVR_RANK', label: 'Overall Rank' },
-        { key: 'MEDIAN', label: 'Median Rank' },
-        { key: 'Massey Rank', label: 'Massey' },
-        { key: 'Eff Rank', label: 'Efficiency Rank' },
-        { key: 'Strength of Record', label: 'Strength of Record' },
-        { key: 'Wins Above Bubble', label: 'Wins Above Bubble' },
+        { key: 'OVR_RANK', label: 'Overall Rank', format: 'rank' },
+        { key: 'MEDIAN', label: 'Median Rank', format: 'rank' },
+        { key: 'Massey Rank', label: 'Massey', format: 'rank' },
+        { key: 'Eff Rank', label: 'Efficiency Rank', format: 'rank' },
+        {
+          key: 'Strength of Record',
+          label: 'Strength of Record',
+          format: 'rank',
+        },
+        {
+          key: 'Wins Above Bubble',
+          label: 'Wins Above Bubble',
+          format: 'rank',
+        },
       ],
     },
     preseasonRankings: {
       title: 'Preseason Rankings',
       fields: [
-        { key: 'Projected Preseason Rank', label: 'Preseason Rank' },
-        { key: 'Returning', label: 'Returning Scoring' },
-        { key: 'Safe Loss Threshold', label: 'Safe Losses' },
+        {
+          key: 'Projected Preseason Rank',
+          label: 'Preseason Rank',
+          format: 'rank',
+        },
+        { key: 'Returning', label: 'Returning Scoring', format: 'percent' },
+        {
+          key: 'Safe Loss Threshold',
+          label: 'Safe Losses',
+          decimals: 2,
+          format: 'signed',
+        },
       ],
     },
     returners: {
@@ -276,7 +298,7 @@
           if (value !== undefined && value !== null && value !== '') {
             stats.push({
               label: field.label,
-              value: formatValue(value, field.decimals),
+              value: formatValue(value, field),
             });
           }
         }
@@ -295,17 +317,28 @@
   }
 
   /**
-   * Formats a value for display.
-   * By default, numeric values are displayed as integers.
-   * If decimals is specified, shows that many decimal places.
+   * Formats a value for display with the approved display formats
+   * (js/formats.js). field.format picks the kind: 'rank' (#54), 'chance'
+   * (<1%, 81%, >99%), 'percent' (81%), or 'signed' (+9.9). Without one, a
+   * number shows field.decimals places, or as an integer when none is set.
    */
-  function formatValue(value, decimals = null) {
+  function formatValue(value, field) {
+    const F = window.D3Formats;
+    const decimals = field.decimals ?? 0;
+    if (field.format === 'rank') {
+      return String(F.rank(value));
+    }
+    if (field.format === 'chance') {
+      return String(F.chance(value));
+    }
+    if (field.format === 'percent') {
+      return String(F.percent(value, typeof value === 'number' && value <= 1));
+    }
+    if (field.format === 'signed') {
+      return String(F.signed(value, decimals));
+    }
     if (typeof value === 'number') {
-      if (decimals !== null && decimals > 0) {
-        return value.toFixed(decimals);
-      }
-      // Default: round to integer
-      return Math.round(value).toString();
+      return F.fixed(value, decimals);
     }
     return String(value);
   }

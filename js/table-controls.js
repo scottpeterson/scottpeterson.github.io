@@ -126,6 +126,12 @@ class TableController {
         // Map header text to data property
         let value = this.getValueFromRow(row, headerText);
 
+        // Keep the raw value for sorting: the display text ("#54", "<1%",
+        // "5'8.1") does not parse as the number it stands for.
+        if (value !== null && value !== undefined) {
+          td.dataset.sort = String(value);
+        }
+
         // Apply number formatting for specific columns
         value = this.formatValue(value, headerText);
 
@@ -273,100 +279,120 @@ class TableController {
       .replace(/[^a-zA-Z0-9]/g, '');
   }
 
-  // Format values based on column type
+  // Format values based on column type. The formats follow the approved
+  // display formats in js/formats.js (ranks #54, whole percentages, <1% and
+  // >99% for simulation chances, signed values that can go below zero,
+  // heights 5'8.1). The raw value stays in the cell's data-sort attribute.
   formatValue(value, headerText) {
     // Handle null/undefined/empty values but preserve zero
     if (value === null || value === undefined || value === '') {
       return '';
     }
 
+    const F = window.D3Formats;
     // Clean header text by removing sort indicators and other symbols
     const cleanHeader = headerText.replace(/[↕↑↓]/g, '').toLowerCase().trim();
+    const path = window.location.pathname;
+    const currentPage =
+      path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
 
-    // Handle percentage values (Returning column) - do this first
-    if (cleanHeader === 'returning') {
-      // If it's already a percentage string (e.g., "74.70%"), extract and reformat
-      if (typeof value === 'string' && value.includes('%')) {
-        const numericValue = parseFloat(value.replace('%', ''));
-        if (!isNaN(numericValue)) {
-          return numericValue.toFixed(2) + '%';
-        }
-      }
-      // If it's a decimal between 0 and 1, convert to percentage
-      else if (typeof value === 'number' && value >= 0 && value <= 1) {
-        return (value * 100).toFixed(2) + '%';
-      }
-      // If it's a number > 1, assume it's already a percentage value
-      else {
-        const numericValue = parseFloat(value);
-        if (!isNaN(numericValue)) {
-          return numericValue.toFixed(2) + '%';
-        }
-      }
+    // Every column here holds a rank. "Strength of Record" and "Wins Above
+    // Bubble" are ranks on the composite page, not the metric values.
+    const rankColumns = [
+      'rank',
+      'npi rank',
+      'rank old',
+      'projected preseason rank',
+      'massey rank',
+      'eff rank',
+      'curr season results rank',
+      'strength of record',
+      'wins above bubble',
+      'preseason rank',
+      'median',
+      'ovr_rank',
+    ];
+    // Season simulation chances.
+    const chanceColumns = [
+      'tourn%',
+      'aq%',
+      'at-large%',
+      'alwyni',
+      'f-al%',
+      'sf-al%',
+      'qf-al%',
+      'top4%',
+      'top8%',
+      'top16%',
+    ];
+    // Values that can go below zero, with their decimals. STDEV on the
+    // current season page goes below zero; the composite page's Stdev does not.
+    const signedColumns = {
+      'value diff': 3,
+      'rank diff': 0,
+      'value of results': 2,
+      eff: 1,
+      stat: 2,
+      'safe losses threshold': 2,
+      dangerous: 2,
+    };
+    if (currentPage === 'current_season_rankings') {
+      signedColumns.stdev = 2;
     }
+    const fixedColumns = {
+      npi: 3,
+      'npi value': 3,
+      'value old': 3,
+      'lowest counting win': 3,
+      'next game win npi': 3,
+      'potential increase': 3,
+      'next game loss npi': 3,
+      'med-npi': 3,
+      min: 3,
+      max: 3,
+      sos: 3,
+      qwb: 2,
+      'overall wins massey': 2,
+      underlying: 2,
+      stdev: 2,
+    };
 
-    // Handle decimal formatting for numeric columns
-    const numericValue = parseFloat(value);
-    if (!isNaN(numericValue)) {
-      // 3 decimal places for Win%, SOS
-      if (
-        cleanHeader === 'win%' ||
-        cleanHeader === 'sos' ||
-        cleanHeader === 'npi'
-      ) {
-        return numericValue.toFixed(3);
+    if (rankColumns.includes(cleanHeader)) {
+      return F.rank(value);
+    }
+    if (chanceColumns.includes(cleanHeader)) {
+      return F.chance(value);
+    }
+    // Returning is stored as "68.62%"; preseason Win% as a fraction (0.75),
+    // conference Win% as "75.0%".
+    if (cleanHeader === 'returning' || cleanHeader === 'win%') {
+      const isFraction =
+        typeof value === 'number' && (cleanHeader === 'win%' || value <= 1);
+      return F.percent(value, isFraction);
+    }
+    if (cleanHeader === 'height') {
+      return F.height(value);
+    }
+    if (signedColumns[cleanHeader] !== undefined) {
+      return F.signed(value, signedColumns[cleanHeader]);
+    }
+    if (fixedColumns[cleanHeader] !== undefined) {
+      return F.fixed(value, fixedColumns[cleanHeader]);
+    }
+    // Integer formatting with thousand separators for returners columns
+    if (
+      cleanHeader === 'surp gone' ||
+      cleanHeader === 'exp gone' ||
+      cleanHeader === 'transfers in' ||
+      cleanHeader === '5th'
+    ) {
+      // If the original value is already a formatted string, return it as-is
+      if (typeof value === 'string' && value.includes(',')) {
+        return value.trim();
       }
-      // 2 decimal places for Height
-      else if (cleanHeader === 'height') {
-        return numericValue.toFixed(2);
-      }
-      // Integer formatting with thousand separators for returners columns
-      else if (
-        cleanHeader === 'surp gone' ||
-        cleanHeader === 'exp gone' ||
-        cleanHeader === 'transfers in' ||
-        cleanHeader === '5th'
-      ) {
-        // If the original value is already a formatted string, return it as-is
-        if (typeof value === 'string' && value.includes(',')) {
-          return value;
-        }
+      const numericValue = parseFloat(value);
+      if (isNaN(numericValue) === false) {
         return Math.round(numericValue).toLocaleString();
-      }
-      // 3 decimal places for NPI columns
-      else if (
-        cleanHeader === 'npi value' ||
-        cleanHeader === 'value old' ||
-        cleanHeader === 'value diff' ||
-        cleanHeader === 'lowest counting win' ||
-        cleanHeader === 'next game win npi' ||
-        cleanHeader === 'potential increase' ||
-        cleanHeader === 'next game loss npi'
-      ) {
-        return numericValue.toFixed(3);
-      }
-      // 2 decimal places for QWB
-      else if (cleanHeader === 'qwb') {
-        return numericValue.toFixed(2);
-      }
-      // 2 decimal places for Current Season Rankings columns
-      else if (
-        cleanHeader === 'value of results' ||
-        cleanHeader === 'overall wins massey' ||
-        cleanHeader === 'eff' ||
-        cleanHeader === 'underlying' ||
-        cleanHeader === 'stat' ||
-        cleanHeader === 'stdev'
-      ) {
-        return numericValue.toFixed(2);
-      }
-      // 3 decimal places for Season Simulations NPI columns
-      else if (
-        cleanHeader === 'med-npi' ||
-        cleanHeader === 'min' ||
-        cleanHeader === 'max'
-      ) {
-        return numericValue.toFixed(3);
       }
     }
 
@@ -895,8 +921,10 @@ class TableController {
 
       // Sort rows
       rows.sort((a, b) => {
-        const aVal = a.cells[columnIndex].textContent.trim();
-        const bVal = b.cells[columnIndex].textContent.trim();
+        // Sort on the raw value populateTable stored, not the display text.
+        const sortText = cell => (cell.dataset.sort ?? cell.textContent).trim();
+        const aVal = sortText(a.cells[columnIndex]);
+        const bVal = sortText(b.cells[columnIndex]);
 
         let result;
 
@@ -968,13 +996,14 @@ class TableController {
           row['Roster Published?'] === true
       ).length;
 
-      // Calculate percentages with one decimal place
-      const schedulePercentage = (
-        (schedulePublished / totalTeams) *
-        100
-      ).toFixed(1);
-      const rosterPercentage = ((rosterPublished / totalTeams) * 100).toFixed(
-        1
+      // Whole-number percentages (approved display formats, js/formats.js)
+      const schedulePercentage = window.D3Formats.fixed(
+        (schedulePublished / totalTeams) * 100,
+        0
+      );
+      const rosterPercentage = window.D3Formats.fixed(
+        (rosterPublished / totalTeams) * 100,
+        0
       );
 
       // Update text displays
