@@ -63,7 +63,7 @@
       "SOS": "SOS",
       "NPI": "NPI",
       "Height": "Height",
-      "Returning": "Returning Scoring",
+      "Returning": "Returning",
       "Projected Preseason Rank": "Projected Preseason Rank",
       "Safe Losses Threshold": "Safe Loss Threshold",
       "Dangerous": "Dangerous"
@@ -273,7 +273,6 @@
       "OUT OF TOP 30 L",
       "Overall Wins Massey",
       "Eff",
-      "Underlying",
       "STAT",
       "STDEV"
     ],
@@ -285,8 +284,7 @@
       "TOP 50 W": "TOP 50 W",
       "OUT OF TOP 30 L": "OUT OF TOP 30 L",
       "Overall Wins Massey": "Overall Wins Massey",
-      "Eff": "adjEM",
-      "Underlying": "Underlying",
+      "Eff": "Eff",
       "STAT": "STAT",
       "STDEV": "STDEV"
     },
@@ -299,7 +297,6 @@
       "OUT OF TOP 30 L": "Number of losses to teams ranked outside top 30",
       "Overall Wins Massey": "Total wins according to Massey ratings system",
       "Eff": "Adjusted efficiency margin (adjEM): points per 100 possessions better than an average D3 team",
-      "Underlying": "Underlying performance metrics beyond wins/losses",
       "STAT": "Aggregate of the other stats",
       "STDEV": "Standard deviation of STAT"
     }
@@ -332,7 +329,7 @@
       "Conf": "Conf",
       "Region": "Region",
       "Massey Rank": "Massey Rank",
-      "Eff Rank": "adjEM Rank",
+      "Eff Rank": "Eff Rank",
       "NPI Rank": "NPI Rank",
       "Curr Season Results Rank": "Curr Season Results Rank",
       "Strength of Record": "Strength of Record",
