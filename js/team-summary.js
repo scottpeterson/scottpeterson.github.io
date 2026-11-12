@@ -295,7 +295,12 @@
           const value = field.computed
             ? field.computed(teamRow)
             : teamRow[field.key];
-          if (value !== undefined && value !== null && value !== '') {
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== '' &&
+            window.D3Formats.isExcelError(value) === false
+          ) {
             stats.push({
               label: field.label,
               value: formatValue(value, field),

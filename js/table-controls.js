@@ -288,6 +288,13 @@ class TableController {
     if (value === null || value === undefined || value === '') {
       return '';
     }
+    // Excel errors in the workbook exports ("#N/A" before a team's first
+    // game, "#DIV/0!" for a team with no wins) show as a blank cell. The JSON
+    // keeps the error, so a formula that breaks for every team stays visible
+    // in the data.
+    if (window.D3Formats.isExcelError(value)) {
+      return '';
+    }
 
     const F = window.D3Formats;
     // Clean header text by removing sort indicators and other symbols

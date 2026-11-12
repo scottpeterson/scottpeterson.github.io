@@ -114,7 +114,17 @@
     return `${feet}'${inchText}`;
   }
 
+  // An Excel error the workbook exports wrote as text, such as "#N/A" (no
+  // value yet) or "#DIV/0!" (a team with no wins). Readers see a blank.
+  function isExcelError(value) {
+    return (
+      typeof value === 'string' &&
+      /^#(N\/A|DIV\/0!|VALUE!|REF!|NAME\?|NUM!|NULL!)$/.test(value.trim())
+    );
+  }
+
   window.D3Formats = {
+    isExcelError,
     toNumber,
     fixed,
     signed,
