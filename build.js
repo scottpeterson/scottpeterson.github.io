@@ -798,15 +798,23 @@ ${cards}
   async getDataUpdatedDate(filePath) {
     try {
       const stats = await fs.stat(filePath);
-      return stats.mtime.toLocaleString('en-US', {
-        timeZone: 'America/New_York',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short',
-      });
+      // Approved update-line format: "November 12, 2026, 7:14 AM ET" (no
+      // leading zero on the hour, ET for both EST and EDT). Built from parts
+      // because toLocaleString writes "at" and "EST".
+      const parts = Object.fromEntries(
+        new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/New_York',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        })
+          .formatToParts(stats.mtime)
+          .map(p => [p.type, p.value])
+      );
+      return `${parts.month} ${parts.day}, ${parts.year}, ${parts.hour}:${parts.minute} ${parts.dayPeriod} ET`;
     } catch (error) {
       console.warn(`Could not stat ${filePath}:`, error.message);
       return null;
