@@ -229,61 +229,62 @@
           <h2>Column Legend</h2>
           <div class="legend-grid">
             <div class="legend-item">
-              <span class="legend-column">Team</span>
-              <span class="legend-description"
-                >Name of the college or university basketball team</span
-              >
-            </div>
-            <div class="legend-item">
-              <span class="legend-column">Conf</span>
-              <span class="legend-description"
-                >Conference affiliation of the team</span
-              >
-            </div>
-            <div class="legend-item">
               <span class="legend-column">Rank</span>
-              <span class="legend-description">Current season ranking</span>
+              <span class="legend-description">Rank orders teams by STAT.</span>
             </div>
             <div class="legend-item">
               <span class="legend-column">Value of Results</span>
               <span class="legend-description"
-                >Numerical value representing quality of season results</span
+                >Value of Results is the sum of the team's game values so far.
+                Each game's value comes from the opponent's preseason
+                rank.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">TOP 50 W</span>
               <span class="legend-description"
-                >Number of wins against teams ranked in top 50</span
+                >TOP 50 W is the number of wins over teams ranked in the
+                preseason top 50.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">OUT OF TOP 30 L</span>
               <span class="legend-description"
-                >Number of losses to teams ranked outside top 30</span
+                >OUT OF TOP 30 L is the number of losses to teams ranked outside
+                the preseason top 30.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">Overall Wins Massey</span>
               <span class="legend-description"
-                >Total wins according to Massey ratings system</span
+                >Overall Wins Massey is the average preseason rank of the teams
+                this team has beaten. A team with no wins gets 450.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">Eff</span>
               <span class="legend-description"
-                >Adjusted efficiency margin (adjEM): points per 100 possessions
-                better than an average D3 team</span
+                >Eff is the team's adjusted efficiency margin (adjEM): how many
+                points per 100 possessions it is better than an average D3
+                team.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">STAT</span>
               <span class="legend-description"
-                >Aggregate of the other stats</span
+                >STAT combines five stats into one score. Each stat is compared
+                with the D3 average and weighted: Eff counts 16, OUT OF TOP 30 L
+                counts 10 against the team, Value of Results counts 5.5, TOP 50
+                W counts 5, and Overall Wins Massey counts 2 against the
+                team.</span
               >
             </div>
             <div class="legend-item">
               <span class="legend-column">STDEV</span>
-              <span class="legend-description">Standard deviation of STAT</span>
+              <span class="legend-description"
+                >STDEV is how many standard deviations the team's STAT is above
+                the D3 average. A negative number means below average.</span
+              >
             </div>
           </div>
         </section>

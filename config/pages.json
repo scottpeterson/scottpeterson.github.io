@@ -28,10 +28,8 @@
       "Roster Published?": "Roster Published?"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "Schedule Published?": "Whether the team has published their 2026-27 season schedule",
-      "Roster Published?": "Whether the team has published their 2026-27 roster"
+      "Schedule Published?": "Schedule Published? shows whether the team has published its 2026-27 schedule.",
+      "Roster Published?": "Roster Published? shows whether the team has published its 2026-27 roster."
     }
   },
   "preseason_rankings": {
@@ -69,17 +67,15 @@
       "Dangerous": "Dangerous"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "Region": "NCAA Tournament region the team belongs to",
-      "Win%": "2025-26 Win%",
-      "SOS": "2025-26 Strength of Schedule",
-      "NPI": "2025-26 NPI",
-      "Height": "2025-26 Minutes-weighted team height (inches)",
-      "Returning": "Share of last season's points scored by players on this season's roster",
-      "Projected Preseason Rank": "Projected ranking for the start of the season",
-      "Safe Losses Threshold": "Maximum number of losses a team can sustain while remaining safe for tournament selection",
-      "Dangerous": "This number of losses puts the team in a precarious position for tournament selection"
+      "Region": "Region is the team's NCAA Division III region, numbered 1 to 10.",
+      "Win%": "Win% is the team's 2025-26 winning percentage.",
+      "SOS": "SOS is the team's 2025-26 strength of schedule.",
+      "NPI": "NPI is the team's 2025-26 NPI.",
+      "Height": "Height is the team's 2025-26 average height, weighted by minutes played.",
+      "Returning": "Returning is the share of last season's points scored by players on this season's roster.",
+      "Projected Preseason Rank": "Projected Preseason Rank is the team's projected rank at the start of the 2026-27 season.",
+      "Safe Losses Threshold": "Safe Losses Threshold is the most losses a team can have and still be safe for NCAA Tournament selection.",
+      "Dangerous": "Dangerous is the number of losses that puts the team at risk of missing the NCAA Tournament."
     }
   },
   "returners": {
@@ -111,14 +107,12 @@
       "5th Year Last Names": "5th Year Last Names"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "Pub?": "Whether the team has published their roster publicly",
-      "Surp Gone": "Unexpected player departures and lost minutes",
-      "Exp Gone": "Expected player departures and lost minutes",
-      "Transfers In": "Minutes gained from incoming D3 transfer players",
-      "5th": "Minutes by Fifth-year players returning for an additional season",
-      "5th Year Last Names": "Names of the fifth-year players on the roster"
+      "Pub?": "Pub? shows whether the team has published its 2026-27 roster.",
+      "Surp Gone": "Surp Gone is the minutes lost to players who left with eligibility remaining.",
+      "Exp Gone": "Exp Gone is the minutes lost to players who were expected to leave, such as graduating seniors.",
+      "Transfers In": "Transfers In is the minutes that incoming D3 transfers played last season.",
+      "5th": "5th is the minutes that fifth-year players back for another season played last season.",
+      "5th Year Last Names": "5th Year Last Names lists the last names of the fifth-year players on the roster."
     }
   },
   "npi": {
@@ -168,23 +162,21 @@
       "Rem Games < 50.00 NPI": "Rem Games < 50.00 NPI"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "NPI Value": "Current NCAA Power Index numerical value",
-      "Value Old": "Previous NPI value for comparison",
-      "Value Diff": "Change in NPI value from previous calculation",
-      "NPI Rank": "Current national ranking based on NPI value",
-      "Rank Old": "Previous national ranking for comparison",
-      "Rank Diff": "Change in ranking position from previous update",
-      "Bid Type": "The current NCAA Tournament Bid type in the latest season simulations",
-      "Qual Games": "Number of qualifying games included in NPI calculation",
-      "Qual Wins": "Number of qualifying wins counted in NPI",
+      "NPI Value": "NPI Value is the team's current NPI.",
+      "Value Old": "Value Old is the team's NPI at the previous update.",
+      "Value Diff": "Value Diff is NPI Value minus Value Old.",
+      "NPI Rank": "NPI Rank is the team's rank by NPI.",
+      "Rank Old": "Rank Old is the team's NPI rank at the previous update.",
+      "Rank Diff": "Rank Diff is the number of places the team moved since the previous update. A positive number means it moved up.",
+      "Bid Type": "Bid Type is AQ for a projected automatic bid. Otherwise it is AL with the team's place in the at-large order, for example AL-05.",
+      "Qual Games": "Qual Games is the number of games the NPI counts.",
+      "Qual Wins": "Qual Wins is the number of wins the NPI counts.",
       "QWB": "A win over a team with an NPI above 54.00 earns a Quality Win Bonus (QWB) on top of its Game NPI. The bonus is two thirds of the opponent's NPI above 54.00, so a win over a 60.00 team earns 4.00.",
-      "Lowest Counting Win": "NPI value of the weakest win that still counts",
-      "Next Game Win NPI": "Game NPI of next game, if won",
-      "Potential Increase": "NPI increase if next game is won",
-      "Next Game Loss NPI": "Game NPI of next game, if lost",
-      "Rem Games < 50.00 NPI": "Remaining games against teams with NPI below 50.00"
+      "Lowest Counting Win": "Lowest Counting Win is the Game NPI of the weakest win the NPI still counts.",
+      "Next Game Win NPI": "Next Game Win NPI is the Game NPI the team earns if it wins its next game.",
+      "Potential Increase": "Potential Increase is how much the team's NPI rises if it wins its next game.",
+      "Next Game Loss NPI": "Next Game Loss NPI is the Game NPI the team earns if it loses its next game.",
+      "Rem Games < 50.00 NPI": "Rem Games < 50.00 NPI is the number of remaining games against teams with an NPI below 50.00."
     }
   },
   "season_simulations": {
@@ -236,24 +228,22 @@
       "Rank": "Rank"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "MedW": "Median number of wins projected across simulations",
-      "MedL": "Median number of losses projected across simulations",
-      "Tourn%": "Percentage of simulations making the NCAA Tournament",
-      "AQ%": "Percentage of simulations winning their conference's automatic qualifier",
-      "At-Large%": "Percentage of simulations getting an at-large bid",
+      "MedW": "MedW is the team's median number of wins across the simulations.",
+      "MedL": "MedL is the team's median number of losses across the simulations.",
+      "Tourn%": "Tourn% is the share of simulations in which the team makes the NCAA Tournament.",
+      "AQ%": "AQ% is the share of simulations in which the team wins its conference's automatic bid.",
+      "At-Large%": "At-Large% is the share of simulations in which the team gets an at-large bid.",
       "ALWYNI": "ALWYNI (At Large When You Need It): of the simulations where a team doesn't get the automatic bid, the share where it gets an at-large bid",
-      "F-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference finals",
-      "SF-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference semifinals",
-      "QF-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference quarterfinals",
-      "Top4%": "Percentage of simulations finishing in top 4 nationally",
-      "Top8%": "Percentage of simulations finishing in top 8 nationally",
-      "Top16%": "Percentage of simulations finishing in top 16 nationally",
-      "Med-NPI": "Median NPI value across simulations",
-      "Min": "Minimum NPI value across simulations",
-      "Max": "Maximum NPI value across simulations",
-      "Rank": "Rank by ALWYNI"
+      "F-AL%": "F-AL% is the share of at-large bids in the simulations where the team loses in its conference tournament final.",
+      "SF-AL%": "SF-AL% is the share of at-large bids in the simulations where the team loses in its conference tournament semifinal.",
+      "QF-AL%": "QF-AL% is the share of at-large bids in the simulations where the team loses in its conference tournament quarterfinal.",
+      "Top4%": "Top4% is the share of simulations in which the team finishes in the top 4 of NPI.",
+      "Top8%": "Top8% is the share of simulations in which the team finishes in the top 8 of NPI.",
+      "Top16%": "Top16% is the share of simulations in which the team finishes in the top 16 of NPI.",
+      "Med-NPI": "Med-NPI is the team's median final NPI across the simulations.",
+      "Min": "Min is the team's lowest final NPI in any simulation.",
+      "Max": "Max is the team's highest final NPI in any simulation.",
+      "Rank": "Rank orders teams by ALWYNI."
     }
   },
   "current_season_rankings": {
@@ -289,16 +279,14 @@
       "STDEV": "STDEV"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "Rank": "Current season ranking",
-      "Value of Results": "Numerical value representing quality of season results",
-      "TOP 50 W": "Number of wins against teams ranked in top 50",
-      "OUT OF TOP 30 L": "Number of losses to teams ranked outside top 30",
-      "Overall Wins Massey": "Total wins according to Massey ratings system",
-      "Eff": "Adjusted efficiency margin (adjEM): points per 100 possessions better than an average D3 team",
-      "STAT": "Aggregate of the other stats",
-      "STDEV": "Standard deviation of STAT"
+      "Rank": "Rank orders teams by STAT.",
+      "Value of Results": "Value of Results is the sum of the team's game values so far. Each game's value comes from the opponent's preseason rank.",
+      "TOP 50 W": "TOP 50 W is the number of wins over teams ranked in the preseason top 50.",
+      "OUT OF TOP 30 L": "OUT OF TOP 30 L is the number of losses to teams ranked outside the preseason top 30.",
+      "Overall Wins Massey": "Overall Wins Massey is the average preseason rank of the teams this team has beaten. A team with no wins gets 450.",
+      "Eff": "Eff is the team's adjusted efficiency margin (adjEM): how many points per 100 possessions it is better than an average D3 team.",
+      "STAT": "STAT combines five stats into one score. Each stat is compared with the D3 average and weighted: Eff counts 16, OUT OF TOP 30 L counts 10 against the team, Value of Results counts 5.5, TOP 50 W counts 5, and Overall Wins Massey counts 2 against the team.",
+      "STDEV": "STDEV is how many standard deviations the team's STAT is above the D3 average. A negative number means below average."
     }
   },
   "composite_rankings": {
@@ -340,19 +328,17 @@
       "Stdev": "Stdev"
     },
     "legend": {
-      "Team": "Name of the college or university basketball team",
-      "Conf": "Conference affiliation of the team",
-      "Region": "NCAA Tournament region the team belongs to",
-      "Massey Rank": "Team ranking according to Massey rating system",
-      "Eff Rank": "Rank by adjusted efficiency margin (adjEM)",
-      "NPI Rank": "Rank by NCAA Power Index (NPI)",
-      "Curr Season Results Rank": "Ranking based on current season performance",
-      "Strength of Record": "Measures how difficult a team's win-loss record is to achieve based on its schedule",
-      "Wins Above Bubble": "Measures how many more (or fewer) wins a team has compared to what an average bubble team would be expected to achieve against the same schedule",
-      "Preseason Rank": "Team's rank before the season started",
-      "MEDIAN": "Median value across all ranking systems (not including preseason)",
-      "OVR_RANK": "Overall composite ranking position",
-      "Stdev": "Standard deviation across different ranking systems"
+      "Region": "Region is the team's NCAA Division III region, numbered 1 to 10.",
+      "Massey Rank": "Massey Rank is the team's rank in the Massey ratings.",
+      "Eff Rank": "Eff Rank is the team's rank by adjusted efficiency margin (adjEM).",
+      "NPI Rank": "NPI Rank is the team's rank by NPI.",
+      "Curr Season Results Rank": "Curr Season Results Rank is the team's Rank on the Current Season Rankings page.",
+      "Strength of Record": "Strength of Record is the team's rank by SOR, which measures how hard its record is to match against its schedule.",
+      "Wins Above Bubble": "Wins Above Bubble is the team's rank by WAB: its wins minus the wins a bubble team would expect against its schedule.",
+      "Preseason Rank": "Preseason Rank is the team's rank before the season started.",
+      "MEDIAN": "MEDIAN is the median of the team's Massey, Eff, NPI, Curr Season Results, Strength of Record, and Wins Above Bubble ranks. It leaves out Preseason Rank.",
+      "OVR_RANK": "OVR_RANK orders teams by MEDIAN, lowest first.",
+      "Stdev": "Stdev is the standard deviation of the team's Massey, Eff, NPI, and Curr Season Results ranks. A high Stdev means those rankings disagree about the team."
     }
   },
   "conference_rankings": {
@@ -384,14 +370,13 @@
       "STAT": "STAT"
     },
     "legend": {
-      "Conf": "Name of the conference",
-      "Rank": "Conference ranking position based on performance",
-      "Region": "Geographic region where the conference is located",
-      "Win": "Total wins by conference teams in non-conference play",
-      "Loss": "Total losses by conference teams in non-conference play",
-      "Win%": "Winning percentage in non-conference games",
-      "Wins": "Average Massey ranking of non-conference teams beat",
-      "STAT": "Statistical performance indicator for the conference"
+      "Rank": "Rank orders conferences by STAT.",
+      "Region": "Region is the NCAA Division III region where the conference's teams play.",
+      "Win": "Win is the number of non-conference games the conference's teams have won.",
+      "Loss": "Loss is the number of non-conference games the conference's teams have lost.",
+      "Win%": "Win% is the conference's winning percentage in non-conference games.",
+      "Wins": "Wins is the average Massey rank of the non-conference opponents the conference's teams have beaten.",
+      "STAT": "STAT combines two non-conference results into one score: the conference's Win% and Wins, the average Massey rank of the opponents its teams beat."
     }
   },
   "distances": {
