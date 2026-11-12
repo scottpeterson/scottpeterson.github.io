@@ -203,7 +203,7 @@
       "Tourn%",
       "AQ%",
       "At-Large%",
-      "ALWYNI%",
+      "ALWYNI",
       "F-AL%",
       "SF-AL%",
       "QF-AL%",
@@ -223,7 +223,7 @@
       "Tourn%": "Tourn%",
       "AQ%": "AQ%",
       "At-Large%": "At-Large%",
-      "ALWYNI%": "ALWYNI%",
+      "ALWYNI": "ALWYNI%",
       "F-AL%": "F-AL%",
       "SF-AL%": "SF-AL%",
       "QF-AL%": "QF-AL%",
@@ -243,7 +243,7 @@
       "Tourn%": "Percentage of simulations making the NCAA Tournament",
       "AQ%": "Percentage of simulations winning their conference's automatic qualifier",
       "At-Large%": "Percentage of simulations getting an at-large bid",
-      "ALWYNI%": "Percentage of simulations NOT winning their conference's AQ, and getting an at-large bid",
+      "ALWYNI": "ALWYNI (At Large When You Need It): of the simulations where a team doesn't get the automatic bid, the share where it gets an at-large bid",
       "F-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference finals",
       "SF-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference semifinals",
       "QF-AL%": "Percentage of simulations getting an at-large bid when final loss was in conference quarterfinals",
@@ -253,7 +253,7 @@
       "Med-NPI": "Median NPI value across simulations",
       "Min": "Minimum NPI value across simulations",
       "Max": "Maximum NPI value across simulations",
-      "Rank": "Rank of ALWYNI%"
+      "Rank": "Rank by ALWYNI"
     }
   },
   "current_season_rankings": {

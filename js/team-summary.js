@@ -52,7 +52,7 @@
       fields: [
         { key: 'Tourn%', label: 'Tournament %' },
         { key: 'A%', label: 'Auto Bid %' },
-        { key: 'ALWYNI%', label: 'At-Large %' },
+        { key: 'ALWYNI%', label: 'ALWYNI' },
         { key: 'MedW', label: 'Median Wins' },
         { key: 'MedL', label: 'Median Losses' },
         { key: 'Med-NPI', label: 'Median NPI' },
