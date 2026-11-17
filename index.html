@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light": the site ships one light theme. An embedded report (bethany.html)
+     carries its own dark theme keyed on :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,16 +124,16 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -230,36 +232,106 @@
             </p>
             <span class="explore-card__cta">View composite &rarr;</span>
           </a>
+          <a href="current_season_rankings.html" class="explore-card">
+            <h3>Current Season Rankings</h3>
+            <p>Every team ranked on this season's results.</p>
+            <span class="explore-card__cta">View rankings &rarr;</span>
+          </a>
+          <a href="conference_rankings.html" class="explore-card">
+            <h3>Conference Rankings</h3>
+            <p>Conferences ranked by their non-conference results.</p>
+            <span class="explore-card__cta">View conferences &rarr;</span>
+          </a>
+          <a href="distances.html" class="explore-card">
+            <h3>Distances</h3>
+            <p>Driving distance between any two D3 basketball schools.</p>
+            <span class="explore-card__cta">Find a distance &rarr;</span>
+          </a>
+          <a href="preseason_rankings.html" class="explore-card">
+            <h3>26-27 Preseason Rankings</h3>
+            <p>Projected preseason rankings for the 2026&#8209;27 season.</p>
+            <span class="explore-card__cta">View preseason &rarr;</span>
+          </a>
+          <a href="returners.html" class="explore-card">
+            <h3>Returning and Non-Returning</h3>
+            <p>
+              Returning minutes for each team with a published roster, with
+              minutes lost and minutes added by transfers.
+            </p>
+            <span class="explore-card__cta">View returners &rarr;</span>
+          </a>
+          <a href="publishing_tracker.html" class="explore-card">
+            <h3>Publishing Tracker</h3>
+            <p>
+              Each school's 2026&#8209;27 schedule and roster, marked published
+              or not yet published.
+            </p>
+            <span class="explore-card__cta">View tracker &rarr;</span>
+          </a>
+          <a href="reports/" class="explore-card">
+            <h3>Reports</h3>
+            <p>
+              Standalone reports, including the schedule builder, the transfer
+              report, and the NPI calculator.
+            </p>
+            <span class="explore-card__cta">View reports &rarr;</span>
+          </a>
+          <a href="reference.html" class="explore-card">
+            <h3>Reference</h3>
+            <p>
+              Notes on provisional members and how the site calculates the NPI.
+            </p>
+            <span class="explore-card__cta">Read the reference &rarr;</span>
+          </a>
         </div>
       </section>
 
       <section class="home-premium">
-        <div class="home-premium__inner">
-          <span class="home-premium__eyebrow">Premium Report</span>
+        <div class="home-premium__card">
+          <span class="home-premium__eyebrow">Weekly PDF report</span>
           <h2 class="home-premium__title">Single Team Report</h2>
           <p class="home-premium__tagline">
-            Know exactly where your team stands, and which games will decide
-            their tournament fate. Every Monday, delivered to your inbox.
+            Know where your team stands and which games decide its NCAA
+            Tournament chance. A new report arrives in your inbox every Monday.
           </p>
           <ul class="home-premium__features">
             <li>Weekly PDF report delivered every Monday</li>
             <li>Full coverage from November through March</li>
           </ul>
-          <div class="home-premium__price">
-            <span class="home-premium__price-now">$39</span>
-            <span class="home-premium__price-period">one-time payment</span>
-          </div>
-          <a href="premium.html" class="btn btn--primary btn--lg"
-            >Get Premium Access &rarr;</a
-          >
-          <p class="home-premium__also">
-            Also new:
-            <a href="premium.html#product-school-report-cards"
-              >School Report Cards</a
+          <div class="home-premium__buy">
+            <div class="home-premium__price">
+              <span class="home-premium__price-now">$39</span>
+              <span class="home-premium__price-period">one-time payment</span>
+            </div>
+            <a href="premium.html" class="btn btn--primary btn--lg"
+              >Get Premium Access &rarr;</a
             >
-            grades all 411 programs and ranks them by your priorities. $99 for a
-            year.
+          </div>
+        </div>
+        <div class="home-premium__card">
+          <span class="home-premium__eyebrow">Recruiting website</span>
+          <h2 class="home-premium__title">School Report Cards</h2>
+          <p class="home-premium__tagline">
+            School Report Cards grades all 411 programs on nine criteria and
+            ranks them by the priorities you set.
           </p>
+          <ul class="home-premium__features">
+            <li>Nine grades for each program, from A+ to F</li>
+            <li>Filters, school profiles, and side-by-side comparisons</li>
+          </ul>
+          <div class="home-premium__buy">
+            <div class="home-premium__price">
+              <span class="home-premium__price-now">$99</span>
+              <span class="home-premium__price-period"
+                >for 365 days of access</span
+              >
+            </div>
+            <a
+              href="premium.html#product-school-report-cards"
+              class="btn btn--primary btn--lg"
+              >Get School Report Cards &rarr;</a
+            >
+          </div>
         </div>
       </section>
     </main>

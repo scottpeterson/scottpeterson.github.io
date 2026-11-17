@@ -10,8 +10,167 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D3 WBB Schedule Builder: 2026-27</title>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="darkreader-lock" />
+    <meta
+      name="theme-color"
+      content="#f4f3ef"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a2e"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="description"
+      content="Build a 2026-27 women&#x27;s basketball schedule for one team and see its projected NCAA Power Index against the seed and at-large thresholds."
+    />
+    <title>D3 Women's Basketball Schedule Builder: 2026-27</title>
     <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f3ef;
+        --surface: #ffffff;
+        --surface2: #ecebe5;
+        --line: #d8d5cb;
+        --ink: #1e2229;
+        --muted: #616873;
+        --faint: #7f868f;
+        --accent: #1f5fbf;
+        --on-accent: #ffffff;
+        --pos: #1e7a46;
+        --neg: #b3261e;
+        --warn: #9a5b00;
+        --link: #1f4e79;
+        --soft: #5c636e;
+        --lift:
+          0 1px 2px rgba(30, 34, 41, 0.08), 0 3px 8px rgba(30, 34, 41, 0.06);
+        --field-bg: #ffffff;
+        --field-line: #7a8290;
+        --th-bg: #e3e8f2;
+        --th-hover: #d3dbea;
+        --rule: #c0284a;
+        --win: #1e7a46;
+        --loss: #b3261e;
+        --win-bg: rgba(30, 122, 70, 0.1);
+        --loss-bg: rgba(179, 38, 30, 0.09);
+        --tag-conf-bg: #e2e4fb;
+        --tag-conf: #3730a3;
+        --tag-tourn-bg: #f6e0f4;
+        --tag-tourn: #86198f;
+        --tag-non-bg: #e7e7e7;
+        --tag-non: #3f3f46;
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --bg: #1a1a2e;
+        --surface: #16213e;
+        --surface2: #1f2b4d;
+        --line: #2d3a5c;
+        --ink: #ffffff;
+        --muted: #8892b0;
+        --faint: #8892b0;
+        --accent: #00d4ff;
+        --on-accent: #1a1a2e;
+        --pos: #10b981;
+        --neg: #f87171;
+        --warn: #f59e0b;
+        --link: #64ffda;
+        --soft: #a0a0a0;
+        --lift: 0 2px 10px rgba(0, 0, 0, 0.2);
+        --field-bg: #0f3460;
+        --field-line: #6080a0;
+        --th-bg: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
+        --th-hover: #1a4a7a;
+        --rule: #e94560;
+        --win: #8fff8f;
+        --loss: #ff9999;
+        --win-bg: rgba(45, 90, 39, 0.14);
+        --loss-bg: rgba(139, 38, 53, 0.18);
+        --tag-conf-bg: #2d4a5a;
+        --tag-conf: #b4b4ff;
+        --tag-tourn-bg: #5a3a5a;
+        --tag-tourn: #ffaaff;
+        --tag-non-bg: #3a3a3a;
+        --tag-non: #cccccc;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          color-scheme: dark;
+          --bg: #1a1a2e;
+          --surface: #16213e;
+          --surface2: #1f2b4d;
+          --line: #2d3a5c;
+          --ink: #ffffff;
+          --muted: #8892b0;
+          --faint: #8892b0;
+          --accent: #00d4ff;
+          --on-accent: #1a1a2e;
+          --pos: #10b981;
+          --neg: #f87171;
+          --warn: #f59e0b;
+          --link: #64ffda;
+          --soft: #a0a0a0;
+          --lift: 0 2px 10px rgba(0, 0, 0, 0.2);
+          --field-bg: #0f3460;
+          --field-line: #6080a0;
+          --th-bg: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
+          --th-hover: #1a4a7a;
+          --rule: #e94560;
+          --win: #8fff8f;
+          --loss: #ff9999;
+          --win-bg: rgba(45, 90, 39, 0.14);
+          --loss-bg: rgba(139, 38, 53, 0.18);
+          --tag-conf-bg: #2d4a5a;
+          --tag-conf: #b4b4ff;
+          --tag-tourn-bg: #5a3a5a;
+          --tag-tourn: #ffaaff;
+          --tag-non-bg: #3a3a3a;
+          --tag-non: #cccccc;
+        }
+      }
+      .theme-seg {
+        display: inline-flex;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        overflow: hidden;
+        background: var(--surface);
+      }
+      .theme-seg button {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        padding: 6px 14px;
+        font: inherit;
+        cursor: pointer;
+        min-width: 44px;
+      }
+      .theme-seg button + button {
+        border-left: 1px solid var(--line);
+      }
+      .theme-seg button.active {
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 600;
+      }
+      .theme-seg button.active::before {
+        content: '\2713\00a0';
+      }
+      .theme-ctl {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .theme-ctl .seglabel {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-left: 2px;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -25,33 +184,46 @@
           Segoe UI,
           Roboto,
           sans-serif;
-        background: #1a1a2e;
-        color: #eee;
+        background: var(--bg);
+        color: var(--ink);
         padding: 16px;
         max-width: 1400px;
         margin: 0 auto;
       }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px 20px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
       h1 {
-        color: #fff;
+        color: var(--ink);
         margin-bottom: 4px;
         font-size: 24px;
       }
       .subtitle {
-        color: #a0a0a0;
-        margin-bottom: 16px;
+        color: var(--soft);
         font-size: 12px;
       }
       h2 {
-        color: #fff;
-        margin: 0 0 10px 0;
+        color: var(--ink);
+        margin: 0 0 4px 0;
         font-size: 16px;
       }
+      .panel-note {
+        color: var(--soft);
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
       .panel {
-        background: #16213e;
+        background: var(--surface);
+        border: 1px solid var(--line);
         border-radius: 10px;
         padding: 14px 16px;
         margin-bottom: 14px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--lift);
       }
       .controls-row {
         display: flex;
@@ -63,17 +235,18 @@
         display: flex;
         flex-direction: column;
         font-size: 12px;
-        color: #aaa;
+        color: var(--soft);
       }
       .control select {
         margin-top: 4px;
-        background-color: #0f3460;
-        color: #fff;
-        border: 1px solid #6080a0;
+        background-color: var(--field-bg);
+        color: var(--ink);
+        border: 1px solid var(--field-line);
         border-radius: 5px;
         padding: 7px 40px 7px 9px;
         font-size: 14px;
         min-width: 240px;
+        max-width: 100%;
         -webkit-appearance: none;
         appearance: none;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a0a0a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -81,53 +254,62 @@
         background-position: right 16px center;
         background-size: 12px 8px;
       }
-      .summary-bar {
+      .team-line {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .team-line strong {
+        font-size: 24px;
+        font-variant-numeric: tabular-nums;
+      }
+      .team-line .sub {
+        color: var(--soft);
+        margin-left: 8px;
+      }
+      .goal-list {
+        list-style: none;
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-        gap: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
       }
       @media (max-width: 760px) {
-        .summary-bar {
+        .goal-list {
           grid-template-columns: 1fr 1fr;
         }
-        .summary-bar > :first-child {
-          grid-column: 1 / -1;
+      }
+      @media (max-width: 480px) {
+        .goal-list {
+          grid-template-columns: 1fr;
         }
       }
-      .summary-cell {
-        background: #0f3460;
+      .goal-list li {
+        border: 1px solid var(--line);
+        border-left-width: 4px;
         border-radius: 6px;
-        padding: 10px 12px;
-        text-align: center;
+        padding: 6px 10px;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
       }
-      .summary-cell .label {
-        font-size: 12px;
-        color: #a0a0a0;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+      .goal-list .need {
+        color: var(--soft);
       }
-      .summary-cell .value {
-        font-size: 24px;
+      .goal-list .margin {
         font-weight: 600;
-        color: #fff;
-        margin-top: 2px;
+        font-variant-numeric: tabular-nums;
       }
-      .summary-cell.hit {
-        border: 2px solid #4a9443;
+      .goal-list li.hit {
+        border-left-color: var(--win);
       }
-      .summary-cell.hit .value {
-        color: #8fff8f;
+      .goal-list li.hit .margin {
+        color: var(--win);
       }
-      .summary-cell.miss {
-        border: 2px solid #d04a60;
+      .goal-list li.miss {
+        border-left-color: var(--loss);
       }
-      .summary-cell.miss .value {
-        color: #ff9999;
-      }
-      .summary-cell .sub {
-        font-size: 12px;
-        color: #a0a0a0;
-        margin-top: 2px;
+      .goal-list li.miss .margin {
+        color: var(--loss);
       }
       table {
         width: 100%;
@@ -136,27 +318,31 @@
         font-size: 12px;
       }
       th {
-        background: linear-gradient(180deg, #0f3460 0%, #0a2540 100%);
-        color: #fff;
+        background: var(--th-bg);
+        color: var(--ink);
         padding: 8px 4px;
         font-size: 12px;
         font-weight: 600;
         text-align: center;
-        border-bottom: 2px solid #e94560;
+        border-bottom: 2px solid var(--rule);
         position: sticky;
         top: 0;
         z-index: 3;
         white-space: nowrap;
+      }
+      th.left {
+        text-align: left;
+        padding-left: 8px;
       }
       th[data-sort] {
         cursor: pointer;
         user-select: none;
       }
       th[data-sort]:hover {
-        background: #1a4a7a;
+        background: var(--th-hover);
       }
       th[data-sort]:focus-visible {
-        outline: 2px solid #93c5fd;
+        outline: 2px solid var(--accent);
         outline-offset: -3px;
       }
       th .sort-arrow {
@@ -166,22 +352,21 @@
       td {
         padding: 3px 4px;
         text-align: center;
-        border-bottom: 1px solid #1f2a4a;
-        color: #eee;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
       }
       tr.loss-row {
-        background: rgba(139, 38, 53, 0.18);
+        background: var(--loss-bg);
       }
       tr.win-row.counting {
-        background: rgba(45, 90, 39, 0.14);
+        background: var(--win-bg);
       }
-      tr.win-row.not-counting {
-        background: rgba(45, 90, 39, 0.04);
-        color: #a0a0a0;
-      }
+      tr.win-row.not-counting,
       tr.loss-row.not-counting {
-        background: rgba(139, 38, 53, 0.05);
-        color: #a0a0a0;
+        background: transparent;
+      }
+      tr.not-counting td {
+        color: var(--soft);
       }
       td.opp-name {
         text-align: left;
@@ -189,13 +374,14 @@
       }
       td select.opp-select {
         width: 100%;
-        background-color: #0f3460;
-        color: #fff;
-        border: 1px solid #6080a0;
+        background-color: var(--field-bg);
+        color: var(--ink);
+        border: 1px solid var(--field-line);
         border-radius: 3px;
         padding: 2px 40px 2px 4px;
         font-size: 12px;
-        max-width: 260px;
+        min-width: 270px;
+        max-width: 300px;
         -webkit-appearance: none;
         appearance: none;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a0a0a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -204,9 +390,9 @@
         background-size: 12px 8px;
       }
       td select.wl-select {
-        background-color: #0f3460;
-        color: #fff;
-        border: 1px solid #6080a0;
+        background-color: var(--field-bg);
+        color: var(--ink);
+        border: 1px solid var(--field-line);
         border-radius: 3px;
         padding: 2px 40px 2px 6px;
         font-size: 12px;
@@ -220,78 +406,84 @@
         background-size: 12px 8px;
       }
       td select.wl-select.W {
-        color: #8fff8f;
-        border-color: #4a9443;
+        color: var(--win);
+        border-color: var(--win);
       }
       td select.wl-select.L {
-        color: #ff9999;
-        border-color: #d04a60;
+        color: var(--loss);
+        border-color: var(--loss);
       }
       td.count-true {
-        color: #8fff8f;
+        color: var(--win);
         font-weight: 600;
       }
       td.count-false {
-        color: #999;
+        color: var(--soft);
       }
       td.numeric {
         font-variant-numeric: tabular-nums;
       }
       td.game-npi {
         font-weight: 600;
-        color: #fff;
+        color: var(--ink);
       }
       .slot-tag {
         font-size: 12px;
-        color: #a0a0a0;
         margin-right: 6px;
         padding: 1px 5px;
-        background: #234;
         border-radius: 3px;
         text-transform: uppercase;
       }
       .slot-tag.conf {
-        background: #2d4a5a;
-        color: #b4b4ff;
+        background: var(--tag-conf-bg);
+        color: var(--tag-conf);
       }
       .slot-tag.tourney {
-        background: #5a3a5a;
-        color: #faf;
+        background: var(--tag-tourn-bg);
+        color: var(--tag-tourn);
       }
       .slot-tag.nonconf {
-        background: #3a3a3a;
-        color: #ccc;
+        background: var(--tag-non-bg);
+        color: var(--tag-non);
       }
       .why {
         font-size: 12px;
         line-height: 1.5;
-        color: #ccc;
-        background: #0f3460;
+        color: var(--ink);
+        background: var(--field-bg);
         padding: 10px 14px;
         border-radius: 6px;
-        border: 1px solid #e94560;
+        border: 1px solid var(--rule);
         margin-top: 10px;
       }
       .reset-btn {
-        margin-top: 10px;
-        background: #0f3460;
-        color: #eee;
-        border: 1px solid #6080a0;
+        background: var(--field-bg);
+        color: var(--ink);
+        border: 1px solid var(--field-line);
         border-radius: 5px;
-        padding: 6px 14px;
+        padding: 7px 14px;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 14px;
       }
       .reset-btn:hover {
-        background: #1a4580;
+        background: var(--th-hover);
       }
       .legend {
         font-size: 12px;
-        color: #a0a0a0;
+        color: var(--soft);
         margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
       }
-      .legend span {
-        margin-right: 14px;
+      .footer {
+        text-align: center;
+        color: var(--soft);
+        font-size: 12px;
+        margin-top: 20px;
+      }
+      .footer a {
+        color: var(--link);
       }
 
       /* Phone: a wide table scrolls inside its own box instead of widening the page. */
@@ -305,10 +497,21 @@
     </style>
   </head>
   <body>
-    <h1>D-III Women's Basketball Schedule Builder</h1>
-    <div class="subtitle">
-      2026-27 preseason planning. Build a schedule and see whether it reaches
-      your goal
+    <div class="top">
+      <div>
+        <h1>D-III Women's Basketball Schedule Builder</h1>
+        <p class="subtitle">
+          2026-27 preseason planning. Build a schedule and see whether its NCAA
+          Power Index (NPI) reaches your goal.
+        </p>
+      </div>
+      <div class="theme-ctl">
+        <span class="seglabel" id="lbl-theme">Theme</span>
+        <div class="theme-seg" role="group" aria-labelledby="lbl-theme">
+          <button type="button" class="th" data-theme="light">Light</button
+          ><button type="button" class="th" data-theme="dark">Dark</button>
+        </div>
+      </div>
     </div>
 
     <div class="panel">
@@ -331,50 +534,40 @@
     </div>
 
     <div class="panel">
-      <div class="summary-bar">
-        <div class="summary-cell">
-          <div class="label">Projected NPI</div>
-          <div class="value" id="team-npi"></div>
-          <div class="sub" id="team-record"></div>
-        </div>
-        <div class="summary-cell" id="th-top4">
-          <div class="label">Top 4</div>
-          <div class="value" id="th-top4-v"></div>
-          <div class="sub">≥ 65.9</div>
-        </div>
-        <div class="summary-cell" id="th-top8">
-          <div class="label">Top 8</div>
-          <div class="value" id="th-top8-v"></div>
-          <div class="sub">≥ 64.1</div>
-        </div>
-        <div class="summary-cell" id="th-top16">
-          <div class="label">Top 16</div>
-          <div class="value" id="th-top16-v"></div>
-          <div class="sub">≥ 62.1</div>
-        </div>
-        <div class="summary-cell" id="th-poolc">
-          <div class="label">At-large</div>
-          <div class="value" id="th-poolc-v"></div>
-          <div class="sub">≥ 58.4</div>
-        </div>
-      </div>
+      <p class="team-line">
+        Projected NPI <strong id="team-npi"></strong
+        ><span class="sub" id="team-record"></span>
+      </p>
+      <ul class="goal-list">
+        <li id="th-top4">
+          <span>Top 4 <span class="need">≥ 65.9</span></span
+          ><span class="margin" id="th-top4-v"></span>
+        </li>
+        <li id="th-top8">
+          <span>Top 8 <span class="need">≥ 64.1</span></span
+          ><span class="margin" id="th-top8-v"></span>
+        </li>
+        <li id="th-top16">
+          <span>Top 16 <span class="need">≥ 62.1</span></span
+          ><span class="margin" id="th-top16-v"></span>
+        </li>
+        <li id="th-poolc">
+          <span>At-large <span class="need">≥ 58.4</span></span
+          ><span class="margin" id="th-poolc-v"></span>
+        </li>
+      </ul>
       <div class="why" id="why-text">Pick a team to see guidance.</div>
     </div>
 
     <div class="panel">
-      <h2>
-        Schedule (sorted by opponent NPI, hardest first; select a column header
-        to re-sort)
-      </h2>
+      <h2>Schedule</h2>
+      <p class="panel-note">
+        Rows start sorted by opponent NPI, hardest first.
+      </p>
       <table id="schedule-table">
         <thead>
           <tr>
-            <th
-              data-sort="opp"
-              tabindex="0"
-              aria-sort="none"
-              style="text-align: left; padding-left: 8px"
-            >
+            <th data-sort="opp" tabindex="0" aria-sort="none" class="left">
               Opponent <span class="sort-arrow" aria-hidden="true"></span>
             </th>
             <th data-sort="rank" tabindex="0" aria-sort="none">
@@ -424,6 +617,62 @@
       </div>
     </div>
 
+    <p class="footer">
+      <a href="https://thed3statlab.com" target="_blank" rel="noopener"
+        >The D3 Stat Lab</a
+      >
+    </p>
+
+    <script>
+      (function () {
+        const root = document.documentElement,
+          KEY = 'schedule-builder';
+        let saved = null;
+        try {
+          saved = localStorage.getItem(KEY + '-theme');
+        } catch (e) {}
+        if (saved === 'dark' || saved === 'light')
+          root.setAttribute('data-theme', saved);
+        function isDark() {
+          const t = root.getAttribute('data-theme');
+          return (
+            t === 'dark' ||
+            (!t && matchMedia('(prefers-color-scheme:dark)').matches)
+          );
+        }
+        function paint() {
+          const dark = isDark();
+          document
+            .querySelectorAll('.th')
+            .forEach(b =>
+              b.classList.toggle(
+                'active',
+                (b.dataset.theme === 'dark') === dark
+              )
+            );
+          const bg = getComputedStyle(root).getPropertyValue('--bg').trim();
+          document.querySelectorAll('meta[name=theme-color]').forEach(m => {
+            m.removeAttribute('media');
+            m.content = bg;
+          });
+          document.dispatchEvent(new Event('themechange'));
+        }
+        document.querySelectorAll('.th').forEach(b =>
+          b.addEventListener('click', () => {
+            root.setAttribute('data-theme', b.dataset.theme);
+            try {
+              localStorage.setItem(KEY + '-theme', b.dataset.theme);
+            } catch (e) {}
+            paint();
+          })
+        );
+        matchMedia('(prefers-color-scheme:dark)').addEventListener(
+          'change',
+          paint
+        );
+        paint();
+      })();
+    </script>
     <script>
       const DATA = {
         thresholds: {
@@ -1815,7 +2064,7 @@
         for (const [key, thr, cellId, valId] of bands) {
           const hit = teamNpi >= thr;
           const cell = document.getElementById(cellId);
-          cell.className = 'summary-cell ' + (hit ? 'hit' : 'miss');
+          cell.className = hit ? 'hit' : 'miss';
           document.getElementById(valId).textContent =
             (teamNpi - thr >= 0 ? '+' : '') + (teamNpi - thr).toFixed(2);
         }

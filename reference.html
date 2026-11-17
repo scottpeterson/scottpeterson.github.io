@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light": the site ships one light theme. An embedded report (bethany.html)
+     carries its own dark theme keyed on :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,16 +124,16 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -163,7 +165,11 @@
   .table-section content card and scoped by .reference-section for prose/table
   styling (see the "Reference page" block in styles.css). To add a note, copy an
   existing <section class="table-section reference-section"> block. Keep the copy
-  factual and concise; no em dashes (site-wide copy rule).
+  factual and concise. Use no em dashes (site-wide copy rule).
+
+  The two tables have no sort controls on purpose. Each is a short fixed list:
+  the members table is ordered by membership stage, and the dials table is a
+  legend for the formula above it.
 
   Sources for the current notes:
    - Provisional Members: /Users/scottpeterson/d3_basketball_provisional_members_npi.md
@@ -172,9 +178,9 @@
       <section class="table-section reference-section">
         <h2>Provisional Members</h2>
         <p>
-          Whether a game against a provisional or reclassifying member counts
-          toward the NCAA Power Index (NPI), and whether that member can reach
-          the NCAA postseason, depends on the member's stage.
+          A provisional or reclassifying member's stage decides whether games
+          against it count toward the NCAA Power Index (NPI). The stage also
+          decides whether the member can reach the NCAA postseason.
         </p>
         <ul>
           <li>
@@ -274,11 +280,14 @@
         <h2>NPI "Settling" Criteria</h2>
         <p>
           NPI is computed by iteration. A team's rating is the average of its
-          counting game NPIs, and each game's NPI depends on the opponent's
-          rating from the previous pass. Because every rating depends on
-          opponents' ratings, there is no closed form: the calculation repeats
-          over the full set of teams until the ratings stabilize. "Settling"
-          means the iteration reaches a stable set of ratings (a
+          counting game NPIs. Each game's NPI depends on the opponent's rating
+          from the previous pass.
+        </p>
+        <p>
+          Because every rating depends on opponents' ratings, there is no closed
+          form. Each pass recalculates the rating of every team. The passes
+          repeat until the ratings stabilize. "Settling" means the iteration
+          reaches a stable set of ratings (a
           <a
             href="https://en.wikipedia.org/wiki/Fixed_point_(mathematics)"
             target="_blank"
@@ -286,26 +295,33 @@
             >fixed point</a
           >), where another pass leaves every rating unchanged.
         </p>
+        <p><strong>The D3 Stat Lab's implementation:</strong></p>
+        <ul>
+          <li>
+            This site stops iterating once the average per-team change between
+            passes falls below 0.0001.
+          </li>
+          <li>It runs at least 10 passes and at most 80.</li>
+        </ul>
         <p>
-          <strong>The D3 Stat Lab's implementation:</strong> this site stops
-          iterating once the average per-team change between passes falls below
-          0.0001. It runs at least 10 passes and at most 80. The NCAA does not
-          publish how many iterations its official NPI runs. It most likely uses
-          a fixed count instead of testing for convergence directly. That count
-          is most likely set high enough (for example, around 100) that
-          convergence comes well before the final pass.
+          The NCAA does not publish how many iterations its official NPI runs.
+          It most likely uses a fixed count instead of testing for convergence
+          directly. That count is most likely set high enough (for example,
+          around 100) that convergence comes well before the final pass.
         </p>
         <p>
-          That difference does not change the result in practice. Once the
-          ratings have settled, further passes do not move them. A
+          That difference does not change the result in practice. After the
+          ratings settle, further passes do not move them. A
           convergence-threshold stop and a fixed high-count stop therefore
           arrive at the same ratings. This holds as long as the system settles
           at all (the condition below).
         </p>
         <p>
           How readily it settles is governed by how strongly each team's rating
-          amplifies changes in its opponents' ratings. For one team that
-          amplification is:
+          amplifies changes in its opponents' ratings. The formula for that
+          amplification uses three weights: the strength-of-schedule weight
+          (SW), the quality bonus multiplier (QBM), and the result weight (RW).
+          For one team the amplification is:
         </p>
         <p class="reference-formula">
           &#945; = SW + QBM &#215; (quality wins &#247; counting games)
@@ -364,8 +380,8 @@
         <p>
           At these defaults the breakpoint is 0.30, so any team whose counting
           games are more than 30% quality wins has &#945; above 1. The system
-          still settles because the quantity that actually governs convergence,
-          the
+          still settles. The margin in the &#945; bound does not explain why.
+          The quantity that actually governs convergence is the
           <a
             href="https://en.wikipedia.org/wiki/Spectral_radius"
             target="_blank"
@@ -378,10 +394,11 @@
             target="_blank"
             rel="noopener noreferrer"
             >Jacobian</a
-          >, stays below 1 given real schedule structure rather than because of
-          margin in the &#945; bound. A "counting game" is one that feeds a
-          team's rating: its top wins plus games at or below the team's own
-          current rating.
+          >. With real schedule structure, the spectral radius stays below 1.
+        </p>
+        <p>
+          A "counting game" is one that feeds a team's rating: its top wins plus
+          games at or below the team's own current rating.
         </p>
       </section>
     </main>
@@ -391,8 +408,9 @@
       <div class="premium-cta-content">
         <h3>Want personalized insights for your team?</h3>
         <p>
-          Get a weekly report with NCAA Tournament chances, high-leverage games,
-          and more
+          <!-- ste-keep: word-choice leverage = Fixed name -->
+          Get a weekly report with NCAA Tournament chances, the Leverage of each
+          game, and more
         </p>
         <a href="premium.html" class="cta-button">Get Premium Access →</a>
       </div>

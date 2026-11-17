@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light": the site ships one light theme. An embedded report (bethany.html)
+     carries its own dark theme keyed on :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,16 +124,16 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -211,20 +213,22 @@
         </div>
 
         <div class="distances-about">
-          <h3>How are these distances calculated?</h3>
+          <h3>Distance sources</h3>
           <p>
-            All distances shown are driving miles between school campuses. We've
-            saved official NCAA distances over the years, but for pairs we don't
-            have on file, we use <strong>OSRM</strong> (Open Source Routing
-            Machine), the same open-source routing engine behind many popular
-            mapping apps, to estimate the drive.
+            All distances shown are driving miles between school campuses. We
+            saved official NCAA distances over the years. For a pair we don't
+            have on file, we use the Open Source Routing Machine (OSRM) to
+            estimate the drive. OSRM is the same open-source routing engine
+            behind many popular mapping apps.
           </p>
           <p>
-            From analyzing the largest differences between OSRM and
-            NCAA-verified distances, it's clear the NCAA often prioritizes (a)
-            avoiding toll roads, especially main ones like turnpikes, and (b)
-            shorter driving time over shorter driving distance.
+            The largest differences between OSRM and NCAA-verified distances
+            show that the NCAA often prioritizes:
           </p>
+          <ul>
+            <li>Avoiding toll roads, especially main ones like turnpikes</li>
+            <li>Shorter driving time over shorter driving distance</li>
+          </ul>
         </div>
       </section>
     </main>
@@ -234,8 +238,9 @@
       <div class="premium-cta-content">
         <h3>Want personalized insights for your team?</h3>
         <p>
-          Get a weekly report with NCAA Tournament chances, high-leverage games,
-          and more
+          <!-- ste-keep: word-choice leverage = Fixed name -->
+          Get a weekly report with NCAA Tournament chances, the Leverage of each
+          game, and more
         </p>
         <a href="premium.html" class="cta-button">Get Premium Access →</a>
       </div>

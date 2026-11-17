@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light": the site ships one light theme. An embedded report (bethany.html)
+     carries its own dark theme keyed on :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,16 +124,16 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -274,27 +276,43 @@
               refuses that drop.
             </li>
             <li>
-              Amber warnings: a first-round rematch of a nonconference game
-              played through Selection Sunday, seed lines that differ from the
-              slot, teams from the same region, a host outside the top 16
-              overall seeds, and possible second-round games between conference
-              opponents or teams that already played.
+              An amber warning appears for:
+              <ul>
+                <li>
+                  A first-round rematch of a nonconference game played through
+                  Selection Sunday
+                </li>
+                <li>Seed lines that differ from the slot</li>
+                <li>Teams from the same region</li>
+                <li>A host outside the top 16 overall seeds</li>
+                <li>
+                  Possible second-round games between conference opponents or
+                  teams that already played
+                </li>
+              </ul>
             </li>
             <li>
-              Red errors: a full pod without a host, a team 500 miles or more
-              from its host, more than two top-8 seeds in a quadrant, and two
-              top-8 seeds in the same half of a quadrant, where they would meet
-              before the Elite Eight.
+              A red error appears for:
+              <ul>
+                <li>A full pod without a host</li>
+                <li>A team 500 miles or more from its host</li>
+                <li>More than two top-8 seeds in a quadrant</li>
+                <li>
+                  Two top-8 seeds in the same half of a quadrant, where they
+                  would meet before the Elite Eight
+                </li>
+              </ul>
             </li>
             <li>
-              Sweet 16 pod check: if every favorite wins its opening weekend
-              pod, the quadrant's top-4 overall seed should have at least as
-              many of the other three Sweet 16 pod teams within 500 miles as any
-              of those teams has.
+              The Sweet 16 pod check assumes every favorite wins its opening
+              weekend pod. The check then counts, for each Sweet 16 pod team,
+              how many of the other three are within 500 miles. The quadrant's
+              top-4 overall seed should have a count at least as high as each
+              other team's.
             </li>
             <li>
-              A guaranteed Sweet 16 flight is an opening weekend pod whose four
-              teams are all 500 miles or more from every other team in the
+              A guaranteed Sweet 16 flight is an opening weekend pod with all
+              four teams 500 miles or more from every other team in the
               quadrant. Either its winner flies to the Sweet 16 pod, or its
               winner hosts and the other three fly.
             </li>
@@ -312,8 +330,9 @@
       <div class="premium-cta-content">
         <h3>Want personalized insights for your team?</h3>
         <p>
-          Get a weekly report with NCAA Tournament chances, high-leverage games,
-          and more
+          <!-- ste-keep: word-choice leverage = Fixed name -->
+          Get a weekly report with NCAA Tournament chances, the Leverage of each
+          game, and more
         </p>
         <a href="premium.html" class="cta-button">Get Premium Access →</a>
       </div>

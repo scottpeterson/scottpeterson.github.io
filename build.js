@@ -529,11 +529,18 @@ ${dropdownItems}
     const navShell = await this.renderNavShell({ absolute: true });
 
     const html = `<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- One light theme, as on every other page (templates/base.html). -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#2c3e50" />
+    <meta name="darkreader-lock" />
     <title>Reports - The D3 Stat Lab</title>
+    <meta name="description" content="Standalone reports on Division III women's basketball from The D3 Stat Lab." />
+    <!-- Abbreviations every reader of the site knows, as in templates/base.html. -->
+    <meta name="ste-allow" content="III,NPI,WBB,NCAA,EST,EDT" />
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -992,7 +999,7 @@ ${cards}
     } else if (canPurchase && product.externalUrl) {
       formHtml = `
           ${urgencyHtml}
-          <a href="${product.externalUrl}" class="premium-button product-external-button">
+          <a href="${product.externalUrl}" target="_blank" rel="noopener" class="premium-button product-external-button">
             ${this.escapeHtml(product.buttonText || 'Open the site')}
           </a>
           <p class="trust-signal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure payment through Stripe</p>`;
@@ -1161,55 +1168,55 @@ ${pricingFeaturesHtml}
       return '';
     }
 
+    // One card per product on sale, side by side (Scott, 2026-11-17: "two cards
+    // side-by-side ... one for the pdf reports and one for the school report
+    // cards"). Each card reads its copy from config/pages.json; the home* fields
+    // override the Premium page copy where the card needs a shorter version.
     const premium = this.config.premium;
-    const products = (premium && premium.products) || [];
-    const product = products.find(p => p.active);
-    if (!product) {
+    const products = ((premium && premium.products) || []).filter(
+      p => p.active && p.salesEnabled
+    );
+    if (products.length === 0) {
       return '';
     }
 
-    // Original price shown struck-through when present (e.g. $49 -> $39)
-    const originalPrice = product.priceOriginal
-      ? `<span class="home-premium__price-original">${this.escapeHtml(product.priceOriginal)}</span>`
-      : '';
-
-    // Up to three short selling points from the product's pricing features
-    const features = (product.pricingFeatures || [])
-      .slice(0, 3)
-      .map(f => `<li>${this.escapeHtml(f)}</li>`)
-      .join('\n          ');
-    const featuresHtml = features
-      ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
-      : '';
-
-    // One line under the button for each other active product that sets
-    // homeBandNote. The product name inside the note links to its section on
-    // the Premium page; when the note omits the name, the whole line links.
-    const alsoHtml = products
-      .filter(p => p.active && p !== product && p.homeBandNote)
-      .map(p => {
-        const href = `premium.html#product-${p.id}`;
-        const note = this.escapeHtml(p.homeBandNote);
-        const name = this.escapeHtml(p.name);
-        const linked = note.includes(name)
-          ? note.replace(name, `<a href="${href}">${name}</a>`)
-          : `<a href="${href}">${note}</a>`;
-        return `\n    <p class="home-premium__also">${linked}</p>`;
-      })
-      .join('');
+    const cards = products.map(product => {
+      // Original price shown struck-through when present (e.g. $49 -> $39)
+      const originalPrice = product.priceOriginal
+        ? `<span class="home-premium__price-original">${this.escapeHtml(product.priceOriginal)}</span>`
+        : '';
+      // Up to three short selling points
+      const features = (product.homeFeatures || product.pricingFeatures || [])
+        .slice(0, 3)
+        .map(f => `<li>${this.escapeHtml(f)}</li>`)
+        .join('\n          ');
+      const featuresHtml = features
+        ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
+        : '';
+      // The PDF report sells on premium.html itself; a product sold on its own
+      // site (externalUrl) links to its section of the Premium page.
+      const href = product.externalUrl
+        ? `premium.html#product-${product.id}`
+        : 'premium.html';
+      const buttonText = product.homeButtonText || product.buttonText;
+      const eyebrow = product.homeEyebrow || 'Premium';
+      return `  <div class="home-premium__card">
+    <span class="home-premium__eyebrow">${this.escapeHtml(eyebrow)}</span>
+    <h2 class="home-premium__title">${this.escapeHtml(product.name)}</h2>
+    <p class="home-premium__tagline">${this.escapeHtml(product.homeTagline || product.tagline)}</p>
+    ${featuresHtml}
+    <div class="home-premium__buy">
+      <div class="home-premium__price">
+        ${originalPrice}<span class="home-premium__price-now">${this.escapeHtml(product.price)}</span>
+        <span class="home-premium__price-period">${this.escapeHtml(product.pricePeriod)}</span>
+      </div>
+      <a href="${href}" class="btn btn--primary btn--lg">${this.escapeHtml(buttonText)} &rarr;</a>
+    </div>
+  </div>`;
+    });
 
     return `<section class="home-premium">
-  <div class="home-premium__inner">
-    <span class="home-premium__eyebrow">Premium Report</span>
-    <h2 class="home-premium__title">${this.escapeHtml(product.name)}</h2>
-    <p class="home-premium__tagline">${this.escapeHtml(product.tagline)}</p>
-    ${featuresHtml}
-    <div class="home-premium__price">
-      ${originalPrice}<span class="home-premium__price-now">${this.escapeHtml(product.price)}</span>
-      <span class="home-premium__price-period">${this.escapeHtml(product.pricePeriod)}</span>
-    </div>
-    <a href="premium.html" class="btn btn--primary btn--lg">${this.escapeHtml(product.buttonText)} &rarr;</a>${alsoHtml}
-  </div>
+${cards.join('\n')}
 </section>`;
   }
 

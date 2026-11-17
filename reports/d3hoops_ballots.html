@@ -8,7 +8,12 @@
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#2c3e50" />
     <meta name="darkreader-lock" />
-    <title>D3Hoops.com Ballots - The D3 Stat Lab</title>
+    <meta
+      name="description"
+      content="Scott Peterson's ballots in the D3hoops.com Women's Top 25 poll, with conference and region counts."
+    />
+    <meta name="ste-allow" content="PG,PGs" />
+    <title>D3hoops.com Ballots - The D3 Stat Lab</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -27,11 +32,15 @@
 
     <!-- Scoped report styles -->
     <style>
+      .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+        color: inherit;
+      }
       .report-d3hoops_ballots {
         color-scheme: light;
         --ink: #1a2230;
         --ink-2: #4a5568;
         --ink-3: #5f6b7a;
+        --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235f6b7a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         --surface: #f5f7fa;
         --card: #ffffff;
         --line: #e3e8ef;
@@ -58,6 +67,7 @@
         --ink: #e6ebf2;
         --ink-2: #b4bfcd;
         --ink-3: #97a3b4;
+        --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2397a3b4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         --surface: #0f1724;
         --card: #172131;
         --line: #2a3546;
@@ -79,11 +89,15 @@
         padding: 2px;
       }
       @media (prefers-color-scheme: dark) {
+        .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
         :root:not([data-theme='light']) .report-d3hoops_ballots {
           color-scheme: dark;
           --ink: #e6ebf2;
           --ink-2: #b4bfcd;
           --ink-3: #97a3b4;
+          --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2397a3b4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
           --surface: #0f1724;
           --card: #172131;
           --line: #2a3546;
@@ -201,9 +215,16 @@
         padding: 6px 10px;
         border: 1px solid var(--line);
         border-radius: 7px;
-        background: var(--card);
+        background-color: var(--card);
         color: var(--ink);
         min-width: 220px;
+        -webkit-appearance: none;
+        appearance: none;
+        padding-right: 40px;
+        background-image: var(--chev);
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 12px 8px;
       }
       .report-d3hoops_ballots .seg {
         display: inline-flex;
@@ -234,7 +255,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--s4);
-        align-items: start;
+        align-items: stretch;
       }
       .report-d3hoops_ballots .tallies {
         display: grid;
@@ -302,15 +323,16 @@
       .report-d3hoops_ballots .missed {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 8px;
       }
       .report-d3hoops_ballots .mchip {
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        min-height: 32px;
         border: 1px solid var(--line);
         border-radius: 16px;
-        padding: 2px 10px 2px 4px;
+        padding: 4px 12px 4px 8px;
         font: inherit;
         font-size: 12px;
         font-weight: 600;
@@ -556,12 +578,18 @@
         font-size: 12px;
       }
       @media (max-width: 820px) {
+        .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
         .report-d3hoops_ballots .ballot-cols,
         .report-d3hoops_ballots .tallies {
           grid-template-columns: minmax(0, 1fr);
         }
       }
       @media (max-width: 720px) {
+        .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
         .report-d3hoops_ballots header h1 {
           font-size: 20px;
         }
@@ -581,6 +609,9 @@
         }
       }
       @media (max-width: 420px) {
+        .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
         .report-d3hoops_ballots .regions {
           grid-template-columns: repeat(5, 1fr);
         }
@@ -657,16 +688,16 @@
               </li>
               <li>
                 <a href="/reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="/reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="/reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="/reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="/reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -692,11 +723,11 @@
             <div>
               <div class="brand">
                 <a href="https://www.d3hoops.com" target="_blank" rel="noopener"
-                  >D3Hoops.com</a
+                  >D3hoops.com</a
                 >
                 Women's Top 25
               </div>
-              <h1>Scott Peterson's D3Hoops.com Ballots</h1>
+              <h1>Scott Peterson's D3hoops.com Ballots</h1>
               <p id="sub"></p>
             </div>
             <div class="controls">
@@ -792,10 +823,10 @@
           </section>
 
           <footer>
-            The D3Hoops.com Women's Top 25 poll is published at
+            The D3hoops.com Women's Top 25 poll is published at
             <a href="https://www.d3hoops.com" target="_blank" rel="noopener"
-              >D3Hoops.com</a
-            >. Built November 7, 2026. Conferences and regions follow each
+              >D3hoops.com</a
+            >. Built November 17, 2026. Conferences and regions follow each
             season's alignment.
           </footer>
         </div>

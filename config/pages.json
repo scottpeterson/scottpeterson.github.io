@@ -409,7 +409,7 @@
   "premium": {
     "title": "Premium",
     "heading": "Premium D3 Women's Basketball Single Team Report",
-    "description": "Know exactly where your team stands, and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
+    "description": "Know where your team stands and which games decide its NCAA Tournament chance. A new report arrives in your inbox every Monday.",
     "featureFlag": "premium",
     "showInNav": true,
     "isPremiumPage": true,
@@ -469,13 +469,14 @@
       {
         "id": "single-team-report",
         "name": "Single Team Report",
-        "tagline": "Know exactly where your team stands, and which games will decide their tournament fate. Every Monday, delivered to your inbox.",
+        "homeEyebrow": "Weekly PDF report",
+        "tagline": "Know where your team stands and which games decide its NCAA Tournament chance. A new report arrives in your inbox every Monday.",
         "active": true,
         "badgeText": "Available Now",
         "salesEnabled": true,
         "samplePdf": "data/Williams_2026-11-02_sample.pdf",
         "sampleHeading": "See Exactly What You'll Get",
-        "sampleDescription": "The report covers tournament chances, player impact rankings, and exactly why each upcoming game matters. This preseason sample runs 12 pages; in-season reports run 20+ pages once games begin.",
+        "sampleDescription": "The report covers tournament chances, player impact rankings, and exactly why each upcoming game matters. This preseason sample runs 12 pages. In-season reports run more than 20 pages.",
         "sampleButtonText": "View Preseason Sample Report",
         "price": "$39",
         "priceOriginal": null,
@@ -503,7 +504,7 @@
           {
             "icon": "trending",
             "title": "Weekly Game Previews",
-            "description": "Upcoming matchups with win probabilities, playoff leverage scores, opponent key players, past week results, and NPI change attribution"
+            "description": "Upcoming matchups with win probabilities, each game's Leverage, opponent key players, past week results, and NPI change attribution"
           },
           {
             "icon": "users",
@@ -520,7 +521,13 @@
         "salesEnabled": true,
         "badgeText": "New: Available Now",
         "externalUrl": "https://profiles.thed3statlab.com/",
-        "homeBandNote": "Also new: School Report Cards grades all 411 programs and ranks them by your priorities. $99 for a year.",
+        "homeEyebrow": "Recruiting website",
+        "homeTagline": "School Report Cards grades all 411 programs on nine criteria and ranks them by the priorities you set.",
+        "homeFeatures": [
+          "Nine grades for each program, from A+ to F",
+          "Filters, school profiles, and side-by-side comparisons"
+        ],
+        "homeButtonText": "Get School Report Cards",
         "sampleHeading": "Using the site",
         "sampleDescription": "You sign in on the web and set your sliders. You can filter the list, compare up to three schools side by side, and open a full profile for any program. The site publishes its method notes and data sources.",
         "price": "$99",
@@ -562,8 +569,8 @@
   },
   "success": {
     "title": "Success",
-    "heading": "Payment Successful! 🎉",
-    "description": "Your report is confirmed! Your first weekly report arrives by email on November 2, 2026, or the Monday after your purchase if you bought after that date. Be sure to check your spam folder if you don't see it.",
+    "heading": "Payment complete",
+    "description": "Your report is confirmed. Your first weekly report arrives by email on the Monday after your purchase. If you don't see it, check your spam folder.",
     "featureFlag": "premium",
     "showInNav": false,
     "isSimplePage": true
@@ -571,7 +578,7 @@
   "cancel": {
     "title": "Canceled",
     "heading": "Payment Canceled",
-    "description": "Your payment process was canceled. You have not been charged.",
+    "description": "Your payment was canceled. You were not charged.",
     "featureFlag": "premium",
     "showInNav": false,
     "isSimplePage": true
@@ -579,7 +586,7 @@
   "ryan": {
     "title": "Ryan",
     "heading": "Division III Women's Basketball NCAA Tournament Bracketing Helper",
-    "description": "",
+    "description": "For a selected NCAA Tournament team, see the tournament teams within 499 driving miles, its nonconference tournament opponents, and its past NCAA Tournament opponents.",
     "sectionTitle": "Select a Tournament Team",
     "hasSearch": false,
     "dataSource": null,
@@ -599,7 +606,7 @@
   "bethany": {
     "title": "Bethany",
     "heading": "NPI Proposal Comparison",
-    "description": "",
+    "description": "Compare the real NCAA Power Index at-large field and seeds with alternate quality win bonus settings and a top-8 re-seed for 2025 and 2026.",
     "sectionTitle": "NPI Proposal Comparison",
     "hasSearch": false,
     "dataSource": null,

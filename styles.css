@@ -745,8 +745,11 @@ pre {
   box-shadow: var(--elev-2);
 }
 
+/* Flex column: the "View ..." link sits at the bottom of every card, so the links
+   in one row line up whatever the description length. */
 .explore-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   transition:
     transform 0.15s ease,
@@ -772,6 +775,7 @@ pre {
 }
 
 .explore-card__cta {
+  margin-top: auto;
   color: var(--blue-600);
   font-weight: 600;
 }
@@ -781,23 +785,35 @@ pre {
 }
 
 /* --- Premium teaser band -------------------------------------------------- */
+/* Home page: one card per product on sale, side by side; one column on phones.
+   Each card stacks its copy at the top and its price and button at the bottom,
+   so the two buttons line up whatever the copy length. */
 .home-premium {
   margin: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.home-premium__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: var(--r-lg);
   background: var(--grad-chrome);
   box-shadow: var(--elev-3);
-  overflow: hidden;
-}
-
-.home-premium__inner {
-  max-width: 720px;
-  margin: 0 auto;
   padding: 48px 30px;
   text-align: center;
   color: #fff;
 }
 
-/* Brand-orange accent on the navy band; shares the eyebrow base above. */
+.home-premium__buy {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .home-premium__eyebrow {
   margin-bottom: 14px;
   color: var(--orange-300);
@@ -868,32 +884,21 @@ pre {
   font-size: var(--fs-small);
 }
 
-/* One line per other active product, under the band's button. */
-.home-premium__also {
-  margin: 22px auto 0;
-  max-width: 56ch;
-  font-size: var(--fs-body);
-  line-height: 1.55;
-  color: #cfd8e2;
-}
-
-.home-premium__also a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.home-premium__also a:hover,
-.home-premium__also a:focus-visible {
-  color: var(--orange-300);
-}
-
 /* --- Shared card grid (also used by the About the Data page) -------------- */
 .home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+}
+
+/* Contact page: the long data-sources card spans the full width, and the two short
+   cards share the row below it, so no card sits half empty beside a tall one. */
+.about-data .home-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-data .data-sources-section {
+  grid-column: 1 / -1;
 }
 
 /* .home-card surface is defined alongside .explore-card above (shared box). */
@@ -951,12 +956,17 @@ pre {
     width: 100%;
   }
 
-  .home-premium__inner {
+  .home-premium__card {
     padding: 38px 22px;
   }
 
-  .home-grid {
+  .home-grid,
+  .about-data .home-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-data .data-sources-section {
+    grid-column: auto;
   }
 }
 
@@ -1382,11 +1392,13 @@ footer {
 }
 
 /* Contact Form Styles */
+/* One column: the short contact card sat beside the tall form and stretched to
+   twice its content height (design check, 2026-11-17). It now follows the form. */
 .contact-form-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
-  max-width: 900px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -1447,7 +1459,6 @@ footer {
   padding: 25px;
   box-shadow: var(--elev-2);
   border: 1px solid var(--surface-line);
-  height: fit-content;
 }
 
 .contact-info h3 {
@@ -3083,6 +3094,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1);
+  /* Size the group to its chips, so the row ends where the last chip ends. */
+  width: fit-content;
+  max-width: 100%;
 }
 
 /* Chips share the quadrant tab look (see .bb-tab) at a smaller size. */
@@ -3601,4 +3615,11 @@ main:has(.bb) {
   .bb-actions .btn {
     flex: 1 1 auto;
   }
+}
+
+/* The site ships one light theme (data-theme="light" on <html>). Wrapped and
+   embedded reports carry their own Light/Dark control; hide it here so a reader
+   cannot switch one report to dark inside a light page. */
+.theme-ctl {
+  display: none;
 }

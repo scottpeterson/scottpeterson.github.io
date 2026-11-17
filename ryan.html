@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en">
+<!-- data-theme="light": the site ships one light theme. An embedded report (bethany.html)
+     carries its own dark theme keyed on :root:not([data-theme="light"]). -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +11,10 @@
     <meta name="theme-color" content="#2c3e50" />
     <meta name="darkreader-lock" />
     <title>Basketball Statistics - Ryan</title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="For a selected NCAA Tournament team, see the tournament teams within 499 driving miles, its nonconference tournament opponents, and its past NCAA Tournament opponents."
+    />
     <!-- Abbreviations every reader of the site knows; the prose style checker
          (check_page.py) skips them. -->
     <meta name="ste-allow" content="III,NPI,WBB,NCAA,EST,EDT" />
@@ -119,16 +124,16 @@
               </li>
               <li>
                 <a href="reports/schedule_builder.html"
-                  >D3 WBB Schedule Builder: 2026-27</a
+                  >D3 Women's Basketball Schedule Builder: 2026-27</a
                 >
               </li>
               <li>
                 <a href="reports/transfer_report.html"
-                  >D3 WBB Transfer Report</a
+                  >D3 Women's Basketball Transfer Report</a
                 >
               </li>
               <li>
-                <a href="reports/d3hoops_ballots.html">D3Hoops.com Ballots</a>
+                <a href="reports/d3hoops_ballots.html">D3hoops.com Ballots</a>
               </li>
               <li><a href="reports/npi_calculator.html">NPI Calculator</a></li>
             </ul>
@@ -148,7 +153,11 @@
         <h1>
           Division III Women's Basketball NCAA Tournament Bracketing Helper
         </h1>
-        <p></p>
+        <p>
+          For a selected NCAA Tournament team, see the tournament teams within
+          499 driving miles, its nonconference tournament opponents, and its
+          past NCAA Tournament opponents.
+        </p>
       </header>
       <section class="table-section">
         <h2>Select a Tournament Team</h2>
@@ -246,8 +255,9 @@
       <div class="premium-cta-content">
         <h3>Want personalized insights for your team?</h3>
         <p>
-          Get a weekly report with NCAA Tournament chances, high-leverage games,
-          and more
+          <!-- ste-keep: word-choice leverage = Fixed name -->
+          Get a weekly report with NCAA Tournament chances, the Leverage of each
+          game, and more
         </p>
         <a href="premium.html" class="cta-button">Get Premium Access →</a>
       </div>

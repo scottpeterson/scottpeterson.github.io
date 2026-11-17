@@ -92,14 +92,15 @@ function generateWrappedReport(report, nav) {
     body,
     externalScripts,
     inlineScripts,
-    contrastAllow,
+    carriedMetas,
   } = report;
 
-  // The contrast checker (html-report skill) exempts school brand colors
-  // through this meta; carry it over from the source report.
-  const contrastAllowTag = contrastAllow
-    ? `    <meta name="contrast-allow" content="${contrastAllow}" />\n`
-    : '';
+  // Metas the source report writes for its readers and its checkers: the
+  // description, the abbreviations the style linter skips (ste-allow), and the
+  // brand colors the contrast checker exempts (contrast-allow). Dropping them
+  // failed every wrapped report on 2026-11-17 (missing description, "Leverage"
+  // and "PG" flagged although each report allows them).
+  const carriedMetaTags = carriedMetas.map(m => `    ${m}\n`).join('');
 
   // Generate external script tags
   const externalScriptTags = externalScripts
@@ -126,7 +127,7 @@ function generateWrappedReport(report, nav) {
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#2c3e50" />
     <meta name="darkreader-lock" />
-${contrastAllowTag}    <title>${title} - The D3 Stat Lab</title>
+${carriedMetaTags}    <title>${title} - The D3 Stat Lab</title>
 
     <!-- Block AI/LLM crawlers from using content for training -->
     <meta name="robots" content="noai, noimageai" />
@@ -197,10 +198,17 @@ async function processReport(filename) {
   const body = extractBody(html);
   const externalScripts = extractExternalScripts(html);
   const inlineScripts = extractInlineScripts(html);
-  const allowMatch = html.match(
-    /<meta\s+name=["']contrast-allow["']\s+content=["']([^"']*)["']/i
-  );
-  const contrastAllow = allowMatch ? allowMatch[1] : null;
+  const carriedMetas = ['description', 'ste-allow', 'contrast-allow']
+    .map(name =>
+      html.match(
+        new RegExp(
+          `<meta\\s+name=["']${name}["']\\s+content=(?:"[^"]*"|'[^']*')[^>]*>`,
+          'i'
+        )
+      )
+    )
+    .filter(Boolean)
+    .map(m => m[0]);
 
   return {
     slug,
@@ -209,7 +217,7 @@ async function processReport(filename) {
     body,
     externalScripts,
     inlineScripts,
-    contrastAllow,
+    carriedMetas,
     filename,
   };
 }
