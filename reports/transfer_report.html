@@ -207,10 +207,19 @@
       .report-transfer_report .theme-ctl .seglabel {
         font-size: 0.75rem;
         font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
         color: var(--muted);
         padding-left: 2px;
+      }
+      @media (max-width: 600px) {
+        .report-transfer_report :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
+        .report-transfer_report button,
+        .report-transfer_report select,
+        .report-transfer_report .theme-seg button,
+        .report-transfer_report .seg button {
+          min-height: 44px;
+        }
       }
       .report-transfer_report * {
         box-sizing: border-box;
@@ -266,8 +275,6 @@
       .report-transfer_report .toggle-row .label {
         font-size: 0.75rem;
         color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
         font-weight: 600;
         min-width: 75px;
         text-align: right;
@@ -341,6 +348,15 @@
       .report-transfer_report .chip.chip-more {
         border-style: dashed;
         background: transparent;
+      }
+      @media (max-width: 600px) {
+        .report-transfer_report :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
+        .report-transfer_report .tab,
+        .report-transfer_report .chip {
+          min-height: 44px;
+        }
       }
       .report-transfer_report .overview-grid {
         display: grid;
@@ -423,7 +439,7 @@
         background: var(--head-bg);
         color: var(--head-ink);
         padding: 10px 8px;
-        text-align: center;
+        text-align: right;
         font-weight: 600;
         cursor: pointer;
         user-select: none;
@@ -446,7 +462,7 @@
       }
       .report-transfer_report table.divtable td {
         padding: 10px 8px;
-        text-align: center;
+        text-align: right;
         border-bottom: 1px solid var(--line);
       }
       .report-transfer_report table.divtable td.left {
@@ -471,8 +487,6 @@
       .report-transfer_report .highlight .label {
         font-size: 0.75rem;
         color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
         font-weight: 600;
       }
       .report-transfer_report .highlight .value {
@@ -508,8 +522,6 @@
       .report-transfer_report .counts .count-label {
         font-size: 0.75rem;
         color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
       }
       .report-transfer_report .counts .count-value {
         font-size: 1.25rem;
@@ -531,7 +543,7 @@
         background: var(--head-bg);
         color: var(--head-ink);
         padding: 7px 6px;
-        text-align: center;
+        text-align: right;
         font-weight: 600;
         font-size: 0.875rem;
         cursor: pointer;
@@ -557,12 +569,19 @@
       .report-transfer_report table.players td {
         padding: 5px 6px;
         border-bottom: 1px solid var(--line);
-        text-align: center;
+        text-align: right;
         white-space: nowrap;
       }
       .report-transfer_report table.players td.left {
         text-align: left;
         white-space: normal;
+      }
+      .report-transfer_report table.players th.code,
+      .report-transfer_report table.players td.code {
+        text-align: center;
+      }
+      .report-transfer_report th[data-type='num'] .sort-arrow {
+        margin: 0 3px 0 0;
       }
       .report-transfer_report table.players tr:nth-child(even) {
         background: var(--stripe);
@@ -837,7 +856,7 @@
           </div>
 
           <div class="card" id="summaryCard">
-            <h2 id="summaryTitle">Summary by Source Division</h2>
+            <h2 id="summaryTitle">Summary by source division</h2>
             <div class="table-wrap">
               <table class="divtable" id="summaryTable">
                 <thead>
@@ -852,7 +871,7 @@
 
           <p class="note" id="source-note"></p>
           <p class="footer">
-            Updated November 17, 2026, 9:36 AM ET<br /><a
+            Updated November 17, 2026, 2:54 PM ET<br /><a
               href="https://thed3statlab.com"
               target="_blank"
               rel="noopener"
@@ -7559,11 +7578,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 24,
+                    origin_min: 131,
+                    origin_pts: 38,
                     origin_note:
-                      'Full-season totals not found: Mars Hill site is Presto (403 twice). Partial line from Lenoir-Rhyne game notes dated 2026-02-12 (#14 Jr G, Albany NY via Hudson Valley CC): 23 GP, 0 GS, 140 MIN, 35 PTS through that date; Mars Hill played more games after it. ESPN shows only 2 GP (17 MIN, 6 PTS), likely only games ESPN covers; not used',
+                      'Read in Chrome 2026-11-17. Mars Hill spells her Styianna; GS not listed.',
                   },
                   {
                     name: 'Alyssa Goode',
@@ -8137,8 +8156,8 @@
                   count_matched: 69,
                   count_qualifying: 5,
                   count_elite: 4,
-                  count_origin: 61,
-                  avg_origin_min: 148.44,
+                  count_origin: 62,
+                  avg_origin_min: 148.16,
                   avg_min: 113.8,
                   avg_pts_per30: 11.3,
                   avg_reb_per30: 6.14,
@@ -11705,11 +11724,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'On the 2025-26 roster (Jr G 5-3, Berthoud CO). eutecticsports.com is Presto and blocked; usbasket shows her as a reserve at 0.1 ppg and 1.0 rpg with no GP, so totals cannot be computed.',
+                    origin_gp: 14,
+                    origin_min: 55,
+                    origin_pts: 2,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Andrea Martinez',
@@ -11731,7 +11749,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'rioredstorm.com is Presto and blocked. A search snippet of the 2025-26 Rio Grande RESERVE (JV) roster lists an Andrea Martinez, #15 Fr G/F, Madrid, Spain; no varsity roster entry or stats found',
+                      'rioredstorm.com is Presto and blocked. A search snippet of the 2025-26 Rio Grande RESERVE (JV) roster lists an Andrea Martinez, #15 Fr G/F, Madrid, Spain; no varsity roster entry or stats found. Checked in Chrome 2026-11-17: not on the Rio Grande 2025-26 roster.',
                   },
                   {
                     name: "E'moni Finch",
@@ -11749,11 +11767,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'No season line found; shusaints.com is Presto and blocked. Box scores show her starting as #11 (Adrian 2025-11-12: 28 min, 9 pts; Aquinas 2026-01-03: 29 min, 3 pts). Roster: Jr G 5-3, Columbus OH.',
+                    origin_gp: 27,
+                    origin_min: 766,
+                    origin_pts: 232,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Maleah Versteeg',
@@ -11771,11 +11788,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 0,
+                    origin_min: 0,
+                    origin_pts: 0,
                     origin_note:
-                      'blocked (Presto WAF on curl; WebFetch 403). Morningside 2025-26 roster lists her (FR G 5-6, Waconia MN), matching the Central bio; a Northeast CC box score shows her playing for Morningside JV; no season stats found',
+                      "Read in Chrome 2026-11-17. on Morningside 2025-26 roster (FR G 5-6, Waconia); not in the team's 2025-26 season stats, so 0 games.",
                   },
                   {
                     name: 'Harmonie Bolton',
@@ -11793,11 +11810,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: fiskathletics.com and hbcuac.org (Presto) returned 403 twice; naiastats 403. Confirmed on 2025-26 roster (#3 PG So. 5-4, Detroit MI, from Jackson College). ESPN team stats count only games against Division I opponents, so they are not season totals',
+                    origin_gp: 13,
+                    origin_min: 360,
+                    origin_pts: 110,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Maliyah Maples',
@@ -11968,11 +11984,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: skyhawkathletics.com (Presto) 403 on retry; NCCAA stats service returns no data for Point. Search confirms her on the 2025-26 Point roster (#15 G Fr. 5-7, Guin AL / Marion County HS) but found no season totals',
+                    origin_gp: 23,
+                    origin_min: 399,
+                    origin_pts: 36,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Kiersten Haynes',
@@ -11990,11 +12005,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: tougaloobulldogs.com is Presto and returned 202 with an empty body; search confirms her on the 2025-26 roster (#14 G Jr. 5-7, Clinton MS). ESPN team stats show her in only 1 game (games against Division I opponents only), so no season totals',
+                    origin_gp: 23,
+                    origin_min: 253,
+                    origin_pts: 71,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Savannah Pietila',
@@ -12082,7 +12096,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      "Presto site blocked. Search shows her only on Mount Mercy's 2025-26 JV roster (Fr G 5-4, Des Moines North), and on the 2024-25 JV roster; no varsity stats found",
+                      "Presto site blocked. Search shows her only on Mount Mercy's 2025-26 JV roster (Fr G 5-4, Des Moines North), and on the 2024-25 JV roster; no varsity stats found. Checked in Chrome 2026-11-17: not on the Mount Mercy 2025-26 varsity roster (16 players); JV only, and the JV has no stats.",
                   },
                   {
                     name: 'Melissa McCoy',
@@ -12100,11 +12114,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      "blocked (Presto WAF). ESPN covers only her 1 game against a Division I team (24 min / 0 pts / 5'4 SO); not used",
+                    origin_gp: 27,
+                    origin_min: 782,
+                    origin_pts: 186,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Mckenna Sinon',
@@ -12188,11 +12201,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 17,
+                    origin_min: 373,
+                    origin_pts: 53,
                     origin_note:
-                      'gujackets.com (Presto) blocked; no season totals found. Roster lists her as Fr G 5-5, Humble TX (also spelled Julianna). Only one game line found: 24 min, 8 pts vs Missouri Baptist on 2025-12-06 (mbuspartans.com box score)',
+                      'Read in Chrome 2026-11-17. bio spells Julianna.',
                   },
                   {
                     name: 'Meghanne Freehill',
@@ -12210,11 +12223,11 @@
                     matched: false,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 26,
+                    origin_min: 422,
+                    origin_pts: 124,
                     origin_note:
-                      'blocked (Presto WAF 403 twice). William Penn 2025-26 roster lists #23 G Jr. 5-6, Lewistown IL, previous school Black Hawk CC; box scores show her playing (8 pts in 21 min at Grand View 2026-02-04); no season totals found',
+                      'Read in Chrome 2026-11-17. bio spells Meghanna.',
                   },
                   {
                     name: 'Eva Peterson',
@@ -12266,8 +12279,8 @@
                   count_matched: 28,
                   count_qualifying: 1,
                   count_elite: 0,
-                  count_origin: 15,
-                  avg_origin_min: 277.87,
+                  count_origin: 24,
+                  avg_origin_min: 315.75,
                   avg_min: 110.0,
                   avg_pts_per30: 17.45,
                   avg_reb_per30: 4.91,
@@ -12356,11 +12369,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 27,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 317,
                     origin_note:
-                      'ccriknights.com (Presto) 403 twice. CCRI news release says she averaged 11.8 ppg for the 22-3 team; GP not given, so PTS cannot be computed. So G #23',
+                      'Read in Chrome 2026-11-17. CCRI lists minutes far below her points, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Alexis Halley',
@@ -12378,11 +12391,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: golopes.com and region9athletics.com (Presto) returned 403. Search confirms her on the 2025-26 Lamar roster (#4 G So. 5-6, Detroit MI / Wayne Memorial HS); no season totals found',
+                    origin_gp: 25,
+                    origin_min: 360,
+                    origin_pts: 132,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Delaney Seaman',
@@ -12421,11 +12433,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'On the 2025-26 roster (#3, So G 5-8, Tolono IL). The school and Region 4 stats pages are Presto and blocked; searches returned team totals only, with no individual line.',
+                    origin_gp: 22,
+                    origin_min: 439,
+                    origin_pts: 127,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Anastasia Drolette',
@@ -12443,11 +12454,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked (Presto WAF). Santa Maria Times gives 6.4 PPG and 5.0 RPG for 2025-26 (So F 5-9, Reedley HS) but no GP, so totals not computed',
+                    origin_gp: 24,
+                    origin_min: 544,
+                    origin_pts: 153,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Moncerat Campos',
@@ -12466,10 +12476,9 @@
                     qualifying: false,
                     elite_team: false,
                     origin_gp: 27,
-                    origin_min: null,
+                    origin_min: 642,
                     origin_pts: 54,
-                    origin_note:
-                      'Site blocked (Presto 403). Bio per search: 27 GP, 2.0 ppg, 4.9 rpg; headline says she is heading to Alverno. PTS = 2.0 x 27, computed; GS and MIN not found. Roster: G So. 5-7, Lompoc CA / Cabrillo HS (bio says RFr.)',
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Makayla McNally',
@@ -12552,11 +12561,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'Final totals not found. A search summary of her Co-Lin bio shows a partial 2025-26 row: 9 GP, 66 PTS, 18.1 mpg. That row predates games she played in January and February 2026, so it is not the season total. Recaps confirm she played in 2025-26 (Tylertown).',
+                    origin_gp: 27,
+                    origin_min: 444,
+                    origin_pts: 131,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Ariana Crimm',
@@ -12574,11 +12582,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 23,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 141,
                     origin_note:
-                      'blocked (Presto bot check); 2025-26 EMCC roster lists her (So. G/F 6-0, Pass Christian MS, via Hinds CC); game recaps show her playing through the 2026-03-05 finale; no season totals found',
+                      'Read in Chrome 2026-11-17. EMCC lists 155 minutes for 16 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Cenaya Calhoun',
@@ -12792,11 +12800,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'On the 2025-26 roster (#10, Fr F 5-9, Perth WA, All Saints College). Her school bio says "No statistics available for this season." The NWAC stats site is Presto (blocked).',
+                    origin_gp: 23,
+                    origin_min: 463,
+                    origin_pts: 125,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Makenna Boyle',
@@ -12836,11 +12843,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 29,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 351,
                     origin_note:
-                      'On the 2025-26 roster (#42, So G 5-8, Peru IL / LaSalle-Peru). Second Team All-Arrowhead in 2025-26 (IVCC board book). No stats page reachable (Presto 403); the only game line found is 17 pts and 10 reb vs Highland in January 2026.',
+                      'Read in Chrome 2026-11-17. 122 minutes for 29 starts, minutes not tracked; MIN blank.',
                   },
                   {
                     name: 'Princess Akojenu',
@@ -12884,7 +12891,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'No 2025-26 roster or stats found. Latest record is 2024-25 (So, #23; Region XV All-Academic). She may not have played in 2025-26; unconfirmed.',
+                      'No 2025-26 roster or stats found. Latest record is 2024-25 (So, #23; Region XV All-Academic). She may not have played in 2025-26; unconfirmed. Checked in Chrome 2026-11-17: athletics.kcc.edu is Kankakee, not Kingsborough.',
                   },
                   {
                     name: 'Elle Peterson',
@@ -12945,11 +12952,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'Blocked (Presto WAF); two searches found no 2025-26 individual line. 2025-26 roster lists her #3 So G 5-5, Rochester NY / East Rochester; a 2026-03-01 box score at SUNY Niagara lists her',
+                    origin_gp: 31,
+                    origin_min: 651,
+                    origin_pts: 218,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Alexis Cornejo',
@@ -13080,7 +13086,7 @@
                     origin_min: null,
                     origin_pts: 216,
                     origin_note:
-                      'Wright Times article published 2026-03-05 (read) says she led the team with 216 points; it honors her as a sophomore (#5); team went 0-29. GP, GS, MIN not found. The City Colleges athletics domain now redirects to an unrelated site',
+                      'Wright Times article published 2026-03-05 (read) says she led the team with 216 points; it honors her as a sophomore (#5); team went 0-29. GP, GS, MIN not found. The City Colleges athletics domain now redirects to an unrelated site. Checked in Chrome 2026-11-17: citycollegesofchicagoathletics.com now redirects to an unrelated gambling site.',
                   },
                   {
                     name: 'Naella Langston',
@@ -13142,11 +13148,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 30,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 172,
                     origin_note:
-                      "tcleopards.com (Presto) blocked; no season totals found. Releases list her #5 So G Madisonville TX at 5.8 ppg and later 6.2 ppg mid-season; GP unknown. Name also spelled Ky'Myreul and Ke'myreul",
+                      'Read in Chrome 2026-11-17. Temple lists 119 minutes against 172 points, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Destiny Casey',
@@ -13278,7 +13284,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'On the 2025-26 Truman roster (So G 5-4, Aurora; earlier at Waubonsee in 2024-25). No individual stats found; njcaastats is blocked. latinbasket lists a 2025-26 Truman season but I could not verify its numbers.',
+                      'On the 2025-26 Truman roster (So G 5-4, Aurora; earlier at Waubonsee in 2024-25). No individual stats found; njcaastats is blocked. latinbasket lists a 2025-26 Truman season but I could not verify its numbers. Checked in Chrome 2026-11-17: citycollegesofchicagoathletics.com now redirects to an unrelated gambling site.',
                   },
                   {
                     name: 'Jaylen Zachary',
@@ -13362,11 +13368,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 21,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 102,
                     origin_note:
-                      'blocked (Presto bot check); identity not confirmed. Opponent box scores list #11 Aysia Francis for Suffolk in 2025-26 (for example 9 pts at Dutchess 2026-01-24), but no season totals found',
+                      'Read in Chrome 2026-11-17. Suffolk lists 82 minutes for 21 games and 11 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: "Jay'viona Smith-Littlejohn",
@@ -13388,7 +13394,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      "blocked: ccriknights.com (Presto) 403. Search found her only on CCRI's 2023-24 roster (Fr.) and a 2024-25 player page spelled Jav'Viona Smith-Littlejohn (24 GP, 3.7 ppg); no 2025-26 record found",
+                      "blocked: ccriknights.com (Presto) 403. Search found her only on CCRI's 2023-24 roster (Fr.) and a 2024-25 player page spelled Jav'Viona Smith-Littlejohn (24 GP, 3.7 ppg); no 2025-26 record found. Checked in Chrome 2026-11-17: not on the CCRI 2025-26 roster (15 players).",
                   },
                   {
                     name: 'Barna Ghafari',
@@ -13432,7 +13438,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'blocked (Presto WAF). Per search, the NJCAA 2025-26 Hagerstown lineup lists 10 players and she is not among them; her only HCC bios are 2017-18 and 2018-19. She probably was not on the 2025-26 roster',
+                      'blocked (Presto WAF). Per search, the NJCAA 2025-26 Hagerstown lineup lists 10 players and she is not among them; her only HCC bios are 2017-18 and 2018-19. She probably was not on the 2025-26 roster. Checked in Chrome 2026-11-17: not on the Hagerstown 2025-26 roster (8 players).',
                   },
                   {
                     name: 'Keara Duncan',
@@ -13476,7 +13482,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'Blocked (curl 202 and WebFetch 403). Two searches found no SIC season stats. Greenville bio confirms prev school SIC (Jr F 5-11, Herrin IL) but shows no stats',
+                      'Blocked (curl 202 and WebFetch 403). Two searches found no SIC season stats. Greenville bio confirms prev school SIC (Jr F 5-11, Herrin IL) but shows no stats. Checked in Chrome 2026-11-17: sicfalcons.com has no 2025-26 roster.',
                   },
                   {
                     name: 'Mya Mewborn',
@@ -13608,7 +13614,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'blocked (Presto WAF); search found no mention of her',
+                      "blocked (Presto WAF); search found no mention of her. Checked 2026-11-17: the RealGM SUNY Orange page lists the men's team only.",
                   },
                   {
                     name: 'Kam Gaines',
@@ -13674,7 +13680,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'blocked: escc.prestosports.com returned 403 (Presto WAF); a web search found no page for her',
+                      'blocked: escc.prestosports.com returned 403 (Presto WAF); a web search found no page for her. Checked in Chrome 2026-11-17: not on the Enterprise State 2025-26 roster (12 players).',
                   },
                   {
                     name: 'Delma Salazar',
@@ -13714,11 +13720,10 @@
                     matched: true,
                     qualifying: true,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked (curl 202 and WebFetch 403); January 2026 JCC box scores list her',
+                    origin_gp: 24,
+                    origin_min: 708,
+                    origin_pts: 258,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Kendra Altadonna',
@@ -13740,7 +13745,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'On the 2025-26 roster (#33, So G 5-9, Erie PA). Game recaps show she played all season (22 pts at Penn St. DuBois; 18 reb vs Lakeland), but no season line was found. Stats page blocked.',
+                      'On the 2025-26 roster (#33, So G 5-9, Erie PA). Game recaps show she played all season (22 pts at Penn St. DuBois; 18 reb vs Lakeland), but no season line was found. Stats page blocked. Checked in Chrome 2026-11-17: not on the Jamestown CC 2025-26 roster (11 players).',
                   },
                   {
                     name: 'Nadirah Tulter',
@@ -13758,11 +13763,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 8,
+                    origin_min: 234,
+                    origin_pts: 111,
                     origin_note:
-                      'blocked (Presto WAF); the domain is a guess I could not confirm',
+                      'Read in Chrome 2026-11-17. Central Penn spells her Tutler; 8 games only.',
                   },
                   {
                     name: 'Alyssa Lopez',
@@ -13780,11 +13785,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked (missionsaints.com TLS failure, athletics.missioncollege.edu and mission.prestosports.com 403). Search snippets conflict: history page says 15.8 PPG in 2025-26; bio snippet says 28 GP and 12.7 PPG (and also a 29-game total); not computed because the sources disagree. Sophomore G, First Team All-Conference, Mission career 3PT record (189)',
+                    origin_gp: 28,
+                    origin_min: 1034,
+                    origin_pts: 441,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Giovanna Espinoza',
@@ -13828,7 +13832,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'blocked: sjccjaguars.com and 3c2asports.org returned 202/403 (Presto); a web search found only a different Madison Diaz (UC Merced)',
+                      'blocked: sjccjaguars.com and 3c2asports.org returned 202/403 (Presto); a web search found only a different Madison Diaz (UC Merced). Checked in Chrome 2026-11-17: not on the SJCC 2025-26 roster (15 players).',
                   },
                   {
                     name: 'Anna-Patrice Patterson',
@@ -13919,7 +13923,7 @@
                   },
                   {
                     name: 'Natalyah Williams',
-                    other_school: 'UConn Avery Point',
+                    other_school: 'Community College of Rhode Island',
                     level: 'CC',
                     d3_team: 'Lasell',
                     class: 'JR',
@@ -13933,11 +13937,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 26,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 337,
                     origin_note:
-                      'site has no 2025-26 roster or stats; the 2025-26 URLs redirect to the 2024-25 pages (5-6 G sophomore from New London; 13 GP 13 GS 276 PTS; minutes column broken at 13). Search found no 2025-26 record',
+                      'Read in Chrome 2026-11-17. CCRI does not track minutes (site lists 122 for 26 starts), so MIN is blank. Origin was UConn Avery Point, her 2024-25 school; the CCRI 2025-26 roster, the Rhode Island House citation, and the matching #5 jersey place her at CCRI in 2025-26.',
                   },
                   {
                     name: 'Abigail Huskin',
@@ -14087,11 +14091,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: vcweplayhard.com (Presto) 403. On the 2025-26 roster (So. G 5-9, Calabasas CA); one 2025-26 box score (13 min, 0 pts at Allan Hancock 2026-02-18); no season totals found',
+                    origin_gp: 20,
+                    origin_min: 120,
+                    origin_pts: 19,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Danielle Salazar',
@@ -14113,7 +14116,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'Not on Ventura 2025-26 stats or roster; site shows her in 2024-25 only (Fr. G; 22 GP; 3 GS; 410 MIN; 139 PTS). Search 2026-11-06: ESPN lists a Danielle Salazar (G Jr. 5-7) at Westminster (MO) in 2025-26; not confirmed as the same person',
+                      'Not on Ventura 2025-26 stats or roster; site shows her in 2024-25 only (Fr. G; 22 GP; 3 GS; 410 MIN; 139 PTS). Search 2026-11-06: ESPN lists a Danielle Salazar (G Jr. 5-7) at Westminster (MO) in 2025-26; not confirmed as the same person. Checked in Chrome 2026-11-17: not on the Ventura 2025-26 roster.',
                   },
                   {
                     name: 'Siena Hoban',
@@ -14131,11 +14134,10 @@
                     matched: true,
                     qualifying: true,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked (Presto WAF); SBCC recaps show her playing in 2025-26 (Nov 2025 buzzer-beater; Feb 2026 6 pts 12 reb vs Oxnard); 2025-26 roster So PG 5-4, Sonoma Valley HS; no 2025-26 totals found (2024-25: 27 GP, 3 GS)',
+                    origin_gp: 28,
+                    origin_min: 856,
+                    origin_pts: 222,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Emily Dana',
@@ -14221,9 +14223,9 @@
                     elite_team: false,
                     origin_gp: 15,
                     origin_min: null,
-                    origin_pts: 26,
+                    origin_pts: 25,
                     origin_note:
-                      'A search summary of her bio shows 15 GP, GS shown as a dash (0), and 1.7 ppg. PTS computed as 1.7 x 15 = 25.5, rounded to 26. The minutes reading (15 total) looks like a parsing error, so MIN is blank. Fr G, Killeen TX.',
+                      'Read in Chrome 2026-11-17. Temple lists 15 minutes against 25 points, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Shayla Doss',
@@ -14241,11 +14243,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 19,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 143,
                     origin_note:
-                      'blocked (Presto WAF 202/403 on two tries). UMHB roster lists Shayla Doss (G Jr. 5-1, Waldo AR / Magnolia HS, from National Park College); NPC coverage names Kishaliya or Kishaylia Doss (Magnolia), probably the same player under a different name. No stats found',
+                      'Read in Chrome 2026-11-17. National Park stats list her as Kishaliya Doss (So G, 2024-25 and 2025-26), the only Doss. Scott confirmed the match on 2026-11-17. 76 minutes for 19 starts, so minutes were not tracked; GS and PTS summed from her game log.',
                   },
                   {
                     name: 'Norah Walkup',
@@ -14289,7 +14291,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'miles.prestosports.com blocked (403). Search shows her at Miles in 2023-24 (Fr., 31 GP) and 2024-25 (So.); the 2025-26 roster excerpt does not list her. She probably was not at Miles in 2025-26 (not confirmed). McMurry 2026-27 lists her as So. from Miles CC',
+                      'miles.prestosports.com blocked (403). Search shows her at Miles in 2023-24 (Fr., 31 GP) and 2024-25 (So.); the 2025-26 roster excerpt does not list her. She probably was not at Miles in 2025-26 (not confirmed). McMurry 2026-27 lists her as So. from Miles CC. Checked in Chrome 2026-11-17: not on the Miles 2025-26 roster (10 players); she played there in 2023-24 and 2024-25.',
                   },
                   {
                     name: 'Camaria Toles Frierson',
@@ -14351,11 +14353,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'Campus is CCBC Essex: 2025-26 roster lists #23 F Fr., Baltimore MD / Kenwood HS, previous college Neosho CC. ccbcessexknights.com (Presto) 403, so no stats',
+                    origin_gp: 9,
+                    origin_min: 84,
+                    origin_pts: 18,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: "A'tyia Allen",
@@ -14421,7 +14422,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'blocked (ecccathletics.com and the MACCC stats site are Presto; 403/202 on two tries). ECCC recaps confirm she played in 2025-26 (16 pts in 40 min at Northwest); no season totals found',
+                      'blocked (ecccathletics.com and the MACCC stats site are Presto; 403/202 on two tries). ECCC recaps confirm she played in 2025-26 (16 pts in 40 min at Northwest); no season totals found. Checked in Chrome 2026-11-17: on the East Central CC 2025-26 roster, but her bio has no stats table.',
                   },
                   {
                     name: 'Shiloh Hatch',
@@ -14549,11 +14550,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: rccathletics.com (Presto) 403. Viewpoints (November 2025) confirms she was a sophomore guard at RCC in 2025-26; RCC recap gives 17 pts, 10 reb at Fullerton 2026-02-04; team played 28 games; no season totals found',
+                    origin_gp: 28,
+                    origin_min: 789,
+                    origin_pts: 242,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Deja Lee',
@@ -14615,11 +14615,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: barstow.prestosports.com returned 403. A Cerritos recap (2025-11-21) credits her with 11 pts and 17 reb for Barstow, so she played in 2025-26; no 2025-26 roster or season totals found (2024-25 bio: Fr. F/C, Phelan CA, 21 GP)',
+                    origin_gp: 28,
+                    origin_min: 515,
+                    origin_pts: 227,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Leeschelle Sohappy',
@@ -14637,11 +14636,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      "blocked: bellevuecollege.edu women's basketball page and nwacsports.com returned 403; Bellevue news recaps show her playing in 2025-26",
+                    origin_gp: 28,
+                    origin_min: 757,
+                    origin_pts: 231,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Miranda Morales',
@@ -14834,11 +14832,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked: psuhazletonsports.com and psuacsports.com (Presto) returned 403. Search confirms her at Hazleton in 2025-26 (F, 2nd year, Luzerne PA; 21 pts at Shenango, 12 at Mont Alto); no season totals found',
+                    origin_gp: 21,
+                    origin_min: 641,
+                    origin_pts: 177,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Maliah Preston',
@@ -14945,11 +14942,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'blocked (mccscots.com Presto 403 twice). Played 2025-26 as a sophomore (G/F 5-7, Huntley IL), ISCC honorable mention All-Conference; game recaps give 11, 8, and 23 pts but no season totals. 2024-25: 30 GP, 8.7 PPG',
+                    origin_gp: 27,
+                    origin_min: 764,
+                    origin_pts: 338,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Mariya Babilius',
@@ -14989,11 +14985,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 23,
+                    origin_min: 529,
+                    origin_pts: 186,
                     origin_note:
-                      'Blocked (Presto WAF); no season totals found. Site also uses the name Atinuke Bamgbose. 2025-26 game lines: 9 pts vs Camden CC (2025-11-08), 15 pts and 6 reb vs Brookdale (Feb 2026)',
+                      'Read in Chrome 2026-11-17. RCSJ lists her as Atinuke Bamgbose.',
                   },
                   {
                     name: 'Keyerra Moore',
@@ -15033,11 +15029,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'sbccvaqueros.com (Presto) blocked. Search confirms her on the 2025-26 roster (So. G 5-11, Kansas City / Pembroke Hill; co-captain). Her bio page, labeled 2024-25, reportedly shows 29 GP and 7.3 ppg, which may be 2025-26 numbers; left blank because the season could not be confirmed',
+                    origin_gp: 29,
+                    origin_min: 466,
+                    origin_pts: 96,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Ava Bucci',
@@ -15098,11 +15093,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'bergenccbulldogs.com (Presto) 403 twice. 2025-26 roster lists her #1 So G, Lodi; no 2025-26 stats found in search',
+                    origin_gp: 8,
+                    origin_min: 241,
+                    origin_pts: 88,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Jamilah Hayles',
@@ -15142,11 +15136,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 19,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 159,
                     origin_note:
-                      'On the 2025-26 roster (#2, So PG 5-4, Trinidad and Tobago). Stats page blocked (Presto 403). Recaps give game points only (for example 17 vs UCNJ and 14 vs Delaware Tech). No season line found.',
+                      'Read in Chrome 2026-11-17. Essex lists minutes far below her points, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Kate Gilroy',
@@ -15168,7 +15162,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'Oakton stats site not found (oaktonsports.net is Oakton High School); 2024 article says she signed with Southwestern Michigan College',
+                      'Oakton stats site not found (oaktonsports.net is Oakton High School); 2024 article says she signed with Southwestern Michigan College. Checked in Chrome 2026-11-17: oaktonathletics.com has no 2025-26 roster.',
                   },
                   {
                     name: 'Taylor Krall',
@@ -15207,11 +15201,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 18,
+                    origin_min: 220,
+                    origin_pts: 97,
                     origin_note:
-                      'blocked (Presto bot check); identity not confirmed',
+                      "Read in Chrome 2026-11-17. SEARK lists her as To'Bariona (bio) and Bariona (stats), SO G from Baton Rouge, 4'10. Scott confirmed the match on 2026-11-17 (the 5'7 in players.csv is a placeholder). GS not tracked.",
                   },
                   {
                     name: 'Dawn Roberson',
@@ -15254,7 +15248,8 @@
                     origin_gp: null,
                     origin_min: null,
                     origin_pts: null,
-                    origin_note: 'blocked (curl 403 and WebFetch 403)',
+                    origin_note:
+                      'blocked (curl 403 and WebFetch 403). Checked in Chrome 2026-11-17: panola.prestosports.com is in maintenance mode. The site moved to panolaathletics.com (bio: www.panolaathletics.com/sports/wbkb/2025-26/players/jayajohnson98z5)',
                   },
                   {
                     name: 'Jonqora Moore',
@@ -15297,7 +15292,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'nwacsports.com blocked. gowvc.com lists her only on the 2024-25 roster (So G 5-5, Arlington TX, no stats); no 2025-26 roster entry found, so she may not have played there in 2025-26',
+                      'nwacsports.com blocked. gowvc.com lists her only on the 2024-25 roster (So G 5-5, Arlington TX, no stats); no 2025-26 roster entry found, so she may not have played there in 2025-26. Checked in Chrome 2026-11-17: not in the Wenatchee Valley 2025-26 NWAC stats.',
                   },
                   {
                     name: 'Precious Candler',
@@ -15380,11 +15375,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 1,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 2,
                     origin_note:
-                      'Fr PG 5-6, Wilmington NC (New Hanover HS). Her bio logs only one game (2026-02-26 vs RCSJ-Gloucester: 2 pts), so the season totals appear incomplete. Fields left blank.',
+                      'Read in Chrome 2026-11-17. site lists 1 minute with 4 shots in her one game; MIN blank.',
                   },
                   {
                     name: 'Lundyn McCutchen',
@@ -15445,11 +15440,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
+                    origin_gp: 20,
+                    origin_min: 561,
+                    origin_pts: 203,
                     origin_note:
-                      'blocked (curl 202 and WebFetch 403). HVCC roster spells her Gracemary Baumann (So F 5-9, Albany / Colonie HS); recaps show her playing in Nov 2025; no 2025-26 totals found. 2024-25: 20 GP, 8.4 PPG',
+                      'Read in Chrome 2026-11-17. bio name Gracemary Baumann.',
                   },
                   {
                     name: 'Kieonna Christmas',
@@ -15467,11 +15462,11 @@
                     matched: true,
                     qualifying: true,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 29,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 517,
                     origin_note:
-                      'blocked (Presto stats sites 403). Daily Gazette gives 2025-26 averages only: 17.8 PPG, 11.9 RPG (So, Fonda-Fultonville), NJCAA D3 first-team All-American; no GP, so totals not computed',
+                      'Read in Chrome 2026-11-17. FMCC lists 444 minutes against 517 points, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Sha Cooper',
@@ -15489,11 +15484,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 28,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 111,
                     origin_note:
-                      'no athletics site found (fmcc.edu/athletics returns 404); the Region III and NJCAA stats sites are Presto (blocked)',
+                      'Read in Chrome 2026-11-17. FMCC lists her as Sharazade Cooper. It lists 233 minutes for 27 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Sophia Brondo',
@@ -15683,11 +15678,10 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
-                    origin_min: null,
-                    origin_pts: null,
-                    origin_note:
-                      'No stats page reachable (Presto). A season-end release gives 13.5 ppg, 4.6 apg, and 3.8 spg (All-Conference, Fr G, Gorham ME) but no GP, so totals cannot be computed. The team went 21-7.',
+                    origin_gp: 25,
+                    origin_min: 727,
+                    origin_pts: 338,
+                    origin_note: 'Read in Chrome 2026-11-17.',
                   },
                   {
                     name: 'Amia Moore',
@@ -15749,11 +15743,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 32,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 116,
                     origin_note:
-                      'Region 4 page renders only with JavaScript; sandburg.prestosports.com and njcaastats.prestosports.com blocked (403 twice). Unchecked search snippet: 32 GP, 22 GS, 164 MIN, 3.6 ppg (team played 32 games, but 164 MIN conflicts with her 27-min start at Madison 2026-02-21, so fields left blank)',
+                      'Read in Chrome 2026-11-17. Carl Sandburg lists 164 minutes for 22 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Arianna Butler',
@@ -15841,7 +15835,7 @@
                     origin_min: null,
                     origin_pts: null,
                     origin_note:
-                      'lassenathletics.com (Presto) 403/202. 2025-26 roster lists her #5 So G 5-2, Reno NV; 3C2A transfer list (2026-07) lists Nisa Rodriguez to Willamette. No stats found',
+                      'lassenathletics.com (Presto) 403/202. 2025-26 roster lists her #5 So G 5-2, Reno NV; 3C2A transfer list (2026-07) lists Nisa Rodriguez to Willamette. No stats found. Checked in Chrome 2026-11-17: her Lassen bio has no stats table.',
                   },
                   {
                     name: 'Selena Espinoza',
@@ -15903,11 +15897,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 25,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 180,
                     origin_note:
-                      'On the 2025-26 roster (So G 5-5, Bloomfield IN, #5). No individual stats found; Presto blocked. Do not use the 25 GP / 23 GS / 154 PTS line, which belongs to Melanie Wyatt. Both Wyatts signed with Wilmington.',
+                      'Read in Chrome 2026-11-17. Lincoln Trail lists 209 minutes for 24 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Melanie Wyatt',
@@ -15925,11 +15919,11 @@
                     matched: true,
                     qualifying: false,
                     elite_team: false,
-                    origin_gp: null,
+                    origin_gp: 25,
                     origin_min: null,
-                    origin_pts: null,
+                    origin_pts: 154,
                     origin_note:
-                      'blocked (Presto WAF); the domain is a guess I could not confirm',
+                      'Read in Chrome 2026-11-17. Lincoln Trail lists 193 minutes for 23 starts, so minutes were not tracked; MIN blank.',
                   },
                   {
                     name: 'Gabbie Ball',
@@ -15959,8 +15953,8 @@
                   count_matched: 165,
                   count_qualifying: 6,
                   count_elite: 3,
-                  count_origin: 64,
-                  avg_origin_min: 469.83,
+                  count_origin: 88,
+                  avg_origin_min: 487.02,
                   avg_min: 116.17,
                   avg_pts_per30: 8.7,
                   avg_reb_per30: 5.42,
@@ -16023,7 +16017,7 @@
               top100_sos_count: 100,
               has_stats: true,
               has_lookup_stats: true,
-              origin_stats_count: 294,
+              origin_stats_count: 328,
             },
           },
           outgoing: {
@@ -16422,6 +16416,27 @@
                     origin_note: '',
                   },
                   {
+                    name: 'Sameera Elmasri',
+                    other_school: 'Palm Beach Atlantic',
+                    level: 'D2',
+                    d3_team: 'Johns Hopkins',
+                    class: 'GR',
+                    min: 0,
+                    pts: 0,
+                    reb: 0,
+                    ast: 0,
+                    pts_per30: 0.0,
+                    reb_per30: 0.0,
+                    ast_per30: 0.0,
+                    matched: true,
+                    qualifying: false,
+                    elite_team: true,
+                    origin_gp: null,
+                    origin_min: null,
+                    origin_pts: null,
+                    origin_note: '',
+                  },
+                  {
                     name: 'Ava Byrne',
                     other_school: 'Shippensburg',
                     level: 'D2',
@@ -16695,6 +16710,27 @@
                     origin_note: '',
                   },
                   {
+                    name: 'Endya Greene',
+                    other_school: 'Monroe',
+                    level: 'D2',
+                    d3_team: 'SUNY Old Westbury',
+                    class: 'JR',
+                    min: 433,
+                    pts: 252,
+                    reb: 78,
+                    ast: 23,
+                    pts_per30: 17.46,
+                    reb_per30: 5.4,
+                    ast_per30: 1.59,
+                    matched: true,
+                    qualifying: true,
+                    elite_team: false,
+                    origin_gp: null,
+                    origin_min: null,
+                    origin_pts: null,
+                    origin_note: '',
+                  },
+                  {
                     name: 'Mykey Avni',
                     other_school: 'Francis Marion',
                     level: 'D2',
@@ -16822,16 +16858,16 @@
                   },
                 ],
                 agg: {
-                  count_total: 27,
-                  count_matched: 27,
-                  count_qualifying: 24,
-                  count_elite: 1,
+                  count_total: 29,
+                  count_matched: 29,
+                  count_qualifying: 25,
+                  count_elite: 2,
                   count_origin: 0,
                   avg_origin_min: 0.0,
-                  avg_min: 429.38,
-                  avg_pts_per30: 12.32,
-                  avg_reb_per30: 6.82,
-                  avg_ast_per30: 1.62,
+                  avg_min: 429.52,
+                  avg_pts_per30: 12.52,
+                  avg_reb_per30: 6.76,
+                  avg_ast_per30: 1.61,
                   max_min: {
                     player: 'Riley Walden',
                     team: 'Willamette',
@@ -17355,7 +17391,7 @@
               data_dir: 'myapp/data/2027',
               stats_dir: 'myapp/data/2026',
               transfers_filename: 'transfers_outgoing.csv',
-              total_transfers: 55,
+              total_transfers: 57,
               qualifying_threshold: 100,
               top_n_badge: 100,
               npi_snapshot_date: '2026-02-28',
@@ -17505,7 +17541,7 @@
       }
 
       function divisionHeader() {
-        return isOutgoing() ? 'Destination Division' : 'Source Division';
+        return isOutgoing() ? 'Destination division' : 'Source division';
       }
 
       function renderSummaryHeader() {
@@ -17522,7 +17558,7 @@
     <th class="stats-only" data-type="num">Avg REB/30 <span class="sort-arrow"></span></th>
     <th class="stats-only" data-type="num">Avg AST/30 <span class="sort-arrow"></span></th>`;
         document.getElementById('summaryTitle').textContent =
-          `Summary by ${divisionHeader()}`;
+          `Summary by ${divisionHeader().toLowerCase()}`;
       }
 
       function renderSummary() {
@@ -17679,10 +17715,10 @@
       <table class="players" data-bucket="${b.name}">
       <thead><tr>
         <th class="left" data-col="name" data-type="str">Player <span class="sort-arrow"></span></th>
-        <th class="left" data-col="d3_team" data-type="str">D3 Team <span class="sort-arrow"></span></th>
-        <th data-col="class" data-type="str" class="stats-only">Class <span class="sort-arrow"></span></th>
+        <th class="left" data-col="d3_team" data-type="str">D3 team <span class="sort-arrow"></span></th>
+        <th data-col="class" data-type="str" class="stats-only code">Class <span class="sort-arrow"></span></th>
         <th class="left" data-col="other_school" data-type="str">${otherHdr} <span class="sort-arrow"></span></th>
-        <th data-col="level" data-type="str">Lvl <span class="sort-arrow"></span></th>
+        <th data-col="level" data-type="str" class="code">Lvl <span class="sort-arrow"></span></th>
         ${
           originCols
             ? `<th data-col="origin_gp" data-type="num">GP at origin<br><span class="sub">${priorLabel}</span> <span class="sort-arrow"></span></th>
@@ -17719,9 +17755,9 @@
           return `<tr class="${cls}">
           <td class="left">${p.name}${eliteBadge}</td>
           <td class="left">${teamCell}</td>
-          <td class="stats-only">${p.class || dash}</td>
+          <td class="stats-only code">${p.class || dash}</td>
           <td class="left">${otherSchool}</td>
-          <td>${levelPill(p.level)}</td>
+          <td class="code">${levelPill(p.level)}</td>
           ${
             originCols
               ? `<td title="${p.origin_note || ''}">${p.origin_gp == null ? dash : fmtInt(p.origin_gp)}</td>
@@ -17755,6 +17791,9 @@
             headers.forEach(th => {
               th.tabIndex = 0;
               th.setAttribute('aria-sort', 'none');
+              // Numeric headers put the arrow first, so the label's right edge lines up with the numbers.
+              const arrow = th.querySelector('.sort-arrow');
+              if (arrow && th.dataset.type === 'num') th.prepend(arrow);
               th.addEventListener('keydown', e => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
@@ -17808,7 +17847,7 @@
 
         const dirWord = isOutgoing() ? 'Outgoing' : 'Incoming';
         document.getElementById('subtitle').textContent =
-          `${CURRENT_LABEL} ${dirWord} Transfers by ${divisionHeader()}` +
+          `${CURRENT_LABEL} ${dirWord.toLowerCase()} transfers by ${divisionHeader().toLowerCase()}` +
           (CURRENT_TEAM ? ` (${CURRENT_TEAM} only)` : '');
 
         const meta = DATA.meta;

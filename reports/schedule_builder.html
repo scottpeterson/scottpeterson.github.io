@@ -176,10 +176,19 @@
       .report-schedule_builder .theme-ctl .seglabel {
         font-size: 0.75rem;
         font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
         color: var(--muted);
         padding-left: 2px;
+      }
+      @media (max-width: 600px) {
+        .report-schedule_builder :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
+        .report-schedule_builder button,
+        .report-schedule_builder select,
+        .report-schedule_builder .theme-seg button,
+        .report-schedule_builder .seg button {
+          min-height: 44px;
+        }
       }
       .report-schedule_builder * {
         box-sizing: border-box;
@@ -339,7 +348,7 @@
         padding: 8px 4px;
         font-size: 12px;
         font-weight: 600;
-        text-align: center;
+        text-align: right;
         border-bottom: 2px solid var(--rule);
         position: sticky;
         top: 0;
@@ -365,9 +374,12 @@
         margin-left: 3px;
         font-size: 12px;
       }
+      .report-schedule_builder th .sort-arrow.pre {
+        margin: 0 3px 0 0;
+      }
       .report-schedule_builder td {
         padding: 3px 4px;
-        text-align: center;
+        text-align: right;
         border-bottom: 1px solid var(--line);
         color: var(--ink);
       }
@@ -387,6 +399,14 @@
       .report-schedule_builder td.opp-name {
         text-align: left;
         padding-left: 8px;
+      }
+      .report-schedule_builder th.ctr,
+      .report-schedule_builder td.ctr {
+        text-align: center;
+      }
+      .report-schedule_builder th.txt,
+      .report-schedule_builder td.txt {
+        text-align: left;
       }
       .report-schedule_builder td select.opp-select {
         width: 100%;
@@ -448,7 +468,6 @@
         margin-right: 6px;
         padding: 1px 5px;
         border-radius: 3px;
-        text-transform: uppercase;
       }
       .report-schedule_builder .slot-tag.conf {
         background: var(--tag-conf-bg);
@@ -669,34 +688,39 @@
                   Opponent <span class="sort-arrow" aria-hidden="true"></span>
                 </th>
                 <th data-sort="rank" tabindex="0" aria-sort="none">
-                  Pre&nbsp;Rank
-                  <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span
+                  >Pre&nbsp;Rank
                 </th>
                 <th data-sort="oppNpi" tabindex="0" aria-sort="descending">
-                  Opp&nbsp;NPI
-                  <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span
+                  >Opp&nbsp;NPI
                 </th>
-                <th data-sort="result" tabindex="0" aria-sort="none">
+                <th
+                  data-sort="result"
+                  tabindex="0"
+                  aria-sort="none"
+                  class="ctr"
+                >
                   W / L <span class="sort-arrow" aria-hidden="true"></span>
                 </th>
                 <th data-sort="wp" tabindex="0" aria-sort="none">
-                  WP <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span>WP
                 </th>
                 <th data-sort="sos" tabindex="0" aria-sort="none">
-                  SOS <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span>SOS
                 </th>
                 <th data-sort="qwb" tabindex="0" aria-sort="none">
-                  QWB <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span>QWB
                 </th>
                 <th data-sort="gn" tabindex="0" aria-sort="none">
-                  Game&nbsp;NPI
-                  <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span
+                  >Game&nbsp;NPI
                 </th>
                 <th data-sort="winRank" tabindex="0" aria-sort="none">
-                  Win&nbsp;Rank
-                  <span class="sort-arrow" aria-hidden="true"></span>
+                  <span class="sort-arrow pre" aria-hidden="true"></span
+                  >Win&nbsp;Rank
                 </th>
-                <th data-sort="count" tabindex="0" aria-sort="none">
+                <th data-sort="count" tabindex="0" aria-sort="none" class="txt">
                   Count <span class="sort-arrow" aria-hidden="true"></span>
                 </th>
               </tr>
@@ -705,15 +729,15 @@
           </table>
           <div class="legend">
             <span
-              ><span class="slot-tag conf">CONF</span> conference regular-season
+              ><span class="slot-tag conf">Conf</span> conference regular-season
               game (auto-populated, editable)</span
             >
             <span
-              ><span class="slot-tag tourney">TOURN</span> conference tournament
+              ><span class="slot-tag tourney">Tourn</span> conference tournament
               game</span
             >
             <span
-              ><span class="slot-tag nonconf">NON-CONF</span> non-conference
+              ><span class="slot-tag nonconf">Non-conf</span> non-conference
               slot</span
             >
           </div>
@@ -2073,7 +2097,10 @@
           tdOpp.className = 'opp-name';
           const tag = document.createElement('span');
           tag.className = 'slot-tag ' + r.source.toLowerCase().replace('-', '');
-          tag.textContent = r.source === 'NON-CONF' ? 'NON-CONF' : r.source;
+          tag.textContent =
+            { CONF: 'Conf', TOURN: 'Tourn', 'NON-CONF': 'Non-conf' }[
+              r.source
+            ] || r.source;
           tdOpp.appendChild(tag);
           const select = document.createElement('select');
           select.className = 'opp-select';
@@ -2114,6 +2141,7 @@
 
           // W/L toggle
           const tdWl = document.createElement('td');
+          tdWl.className = 'ctr';
           const wlSel = document.createElement('select');
           wlSel.className = 'wl-select ' + r.result;
           wlSel.dataset.idx = r.idx;
@@ -2163,7 +2191,7 @@
           // Count
           const tdC = document.createElement('td');
           tdC.className =
-            isCounting && r.oppName ? 'count-true' : 'count-false';
+            'txt ' + (isCounting && r.oppName ? 'count-true' : 'count-false');
           tdC.textContent = r.oppName ? (isCounting ? 'TRUE' : 'FALSE') : '';
           tr.appendChild(tdC);
 

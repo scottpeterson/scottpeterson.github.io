@@ -175,8 +175,6 @@
       .report-d3hoops_ballots .brand {
         font-size: 12px;
         font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
         opacity: 0.9;
         margin-bottom: var(--s1);
       }
@@ -204,8 +202,6 @@
       }
       .report-d3hoops_ballots .caption {
         font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
         color: var(--ink-3);
         font-weight: 600;
         margin-bottom: var(--s1);
@@ -313,8 +309,6 @@
         font-size: 12px;
         color: var(--ink);
         white-space: nowrap;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
       }
       .report-d3hoops_ballots .reg.zero .n {
         color: var(--ink-3);
@@ -415,19 +409,17 @@
       }
       .report-d3hoops_ballots th,
       .report-d3hoops_ballots td {
-        text-align: center;
+        text-align: right;
       }
       .report-d3hoops_ballots thead th {
         background: var(--head);
         color: #fff;
         font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
         padding: 9px 10px;
         cursor: pointer;
         user-select: none;
         white-space: nowrap;
-        text-align: center;
+        text-align: right;
       }
       .report-d3hoops_ballots thead th:hover {
         background: var(--head-hover);
@@ -435,7 +427,7 @@
       .report-d3hoops_ballots tbody td {
         padding: 7px 10px;
         border-top: 1px solid var(--line);
-        text-align: center;
+        text-align: right;
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
         vertical-align: middle;
@@ -447,7 +439,9 @@
         background: var(--hover);
       }
       .report-d3hoops_ballots th.id,
-      .report-d3hoops_ballots td.id {
+      .report-d3hoops_ballots td.id,
+      .report-d3hoops_ballots th.txt,
+      .report-d3hoops_ballots td.txt {
         text-align: left;
       }
       .report-d3hoops_ballots td.strong {
@@ -514,6 +508,17 @@
         content: ' \25BC';
         font-size: 0.75em;
       }
+      .report-d3hoops_ballots th.num::after {
+        content: none;
+      }
+      .report-d3hoops_ballots th.num[aria-sort='ascending']::before {
+        content: '\25B2 ';
+        font-size: 0.75em;
+      }
+      .report-d3hoops_ballots th.num[aria-sort='descending']::before {
+        content: '\25BC ';
+        font-size: 0.75em;
+      }
       .report-d3hoops_ballots #history {
         margin-top: var(--s6);
       }
@@ -576,6 +581,17 @@
         margin-top: var(--s6);
         color: var(--ink-3);
         font-size: 12px;
+      }
+      @media (max-width: 600px) {
+        .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
+          color: inherit;
+        }
+        .report-d3hoops_ballots button,
+        .report-d3hoops_ballots select,
+        .report-d3hoops_ballots .seg button,
+        .report-d3hoops_ballots .mchip {
+          min-height: 44px;
+        }
       }
       @media (max-width: 820px) {
         .report-d3hoops_ballots :where(h1, h2, h3, h4, h5, h6) {
@@ -1277,12 +1293,14 @@
         // Fill a table. cols: [label, type, className]; cells are [html, sortValue].
         function fill(id, cols, rows, onSort) {
           const tbl = document.getElementById(id);
+          // Identifier columns carry their own class; other numeric columns align right, text columns left.
+          const cls = c => c[2] || (c[1] === 'num' ? 'num' : 'txt');
           tbl.tHead.innerHTML =
             '<tr>' +
             cols
               .map(
                 c =>
-                  `<th scope="col" class="${c[2] || ''}" data-type="${c[1]}" aria-sort="none">${c[0]}</th>`
+                  `<th scope="col" class="${cls(c)}" data-type="${c[1]}" aria-sort="none">${c[0]}</th>`
               )
               .join('') +
             '</tr>';
@@ -1293,7 +1311,7 @@
                 r.cells
                   .map(
                     (c, i) =>
-                      `<td class="${cols[i][2] || ''} ${c[2] || ''}" data-v="${esc(c[1])}">${c[0]}</td>`
+                      `<td class="${cls(cols[i])} ${c[2] || ''}" data-v="${esc(c[1])}">${c[0]}</td>`
                   )
                   .join('') +
                 '</tr>'
