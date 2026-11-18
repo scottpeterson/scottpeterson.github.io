@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log('Loading data for:', pageConfig.dataSource);
         try {
           await window.tableController.loadData(pageConfig.dataSource);
+          // Pages with a Conference Bids card (season simulations) build it
+          // from the rows the table just loaded.
+          if (window.conferenceBids) {
+            window.conferenceBids.render(window.tableController.currentData);
+          }
         } catch (error) {
           console.error('Failed to load data:', error);
         }

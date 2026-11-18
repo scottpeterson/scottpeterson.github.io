@@ -3623,3 +3623,104 @@ main:has(.bb) {
 .theme-ctl {
   display: none;
 }
+
+/* ===========================================================================
+   Conference Bids card (Season Simulations)
+   ---------------------------------------------------------------------------
+   INTENT: a four-column summary under the team table. The table is as wide as
+   its content needs, never the full card, so each number sits near its
+   conference. Numeric columns are right-aligned so place values line up.
+   js/conference-bids.js fills the rows and puts a sort button in each header.
+   =========================================================================== */
+.conference-bids-note {
+  color: var(--text-3);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  margin: var(--space-1) 0 var(--space-2);
+  max-width: 30rem;
+}
+
+.conference-bids-wrap {
+  max-width: 30rem;
+  overflow-x: auto;
+}
+
+.conference-bids-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.conference-bids-table th,
+.conference-bids-table td {
+  padding: var(--space-1) 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+/* The outer columns drop their side padding, so the table's edges line up
+   with the heading and the note above it. */
+.conference-bids-table th:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.conference-bids-table tr > :last-child {
+  padding-right: 0;
+}
+
+.conference-bids-table thead th {
+  border-bottom: 1px solid var(--navy-900);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.conference-bids-table tbody tr:last-child > * {
+  border-bottom: 1px solid var(--navy-900);
+}
+
+.conference-bids-table tfoot th,
+.conference-bids-table tfoot td {
+  border-bottom: none;
+  color: var(--navy-900);
+  font-weight: 600;
+}
+
+/* A header is a button, so the keyboard reaches it. The arrow shows the
+   sorted column and its direction. */
+.conference-bids-sort {
+  background: none;
+  border: none;
+  color: var(--navy-900);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  min-height: var(--control-h);
+  padding: 0;
+  white-space: nowrap;
+}
+
+.conference-bids-sort:hover {
+  color: var(--blue-600);
+}
+
+.conference-bids-sort:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+.conference-bids-table th[aria-sort='descending'] .conference-bids-sort::after {
+  content: ' \2193';
+}
+
+.conference-bids-table th[aria-sort='ascending'] .conference-bids-sort::after {
+  content: ' \2191';
+}
+
+@media screen and (max-width: 600px) {
+  .conference-bids-sort {
+    min-height: 44px;
+  }
+}

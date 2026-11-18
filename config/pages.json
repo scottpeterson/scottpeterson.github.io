@@ -187,6 +187,7 @@
     "hasSearch": true,
     "searchPlaceholder": "Search for team...",
     "dataSource": "seasonSimulations",
+    "conferenceBids": true,
     "columns": [
       "Team",
       "Conf",

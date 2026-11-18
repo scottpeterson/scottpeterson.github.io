@@ -60,3 +60,29 @@
     </table>
   </div>
 </section>
+{{#CONFERENCE_BIDS}}
+<!-- Average bids per simulation by conference. js/conference-bids.js fills the
+     rows from the same data as the table above, so no second data file. -->
+<section class="table-section conference-bids" id="conferenceBids" hidden>
+  <h2>Conference Bids</h2>
+  <p class="conference-bids-note">
+    Average bids per simulation for each conference: its automatic bid (AQ) plus
+    its at-large bids. Sorted by total bids.
+  </p>
+  <div class="conference-bids-wrap">
+    <table class="conference-bids-table" id="conferenceBidsTable">
+      <thead>
+        <tr>
+          <th scope="col" data-key="conf">Conference</th>
+          <th scope="col" data-key="aq">AQ</th>
+          <th scope="col" data-key="atLarge">At-Large</th>
+          <th scope="col" data-key="total">Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</section>
+<script src="js/conference-bids.js"></script>
+{{/CONFERENCE_BIDS}}

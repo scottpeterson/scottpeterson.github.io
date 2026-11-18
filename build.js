@@ -726,6 +726,7 @@ ${cards}
     const flags = {
       HAS_SEARCH: data.hasSearch,
       SHOW_PROGRESS: data.showProgress,
+      CONFERENCE_BIDS: data.conferenceBids,
       LAST_UPDATED: data.lastUpdated,
       LEGEND: data.legend,
       salesEnabled: data.salesEnabled,
@@ -1330,6 +1331,7 @@ ${cards.join('\n')}
           sectionTitle: pageConfig.sectionTitle,
           hasSearch: pageConfig.hasSearch,
           showProgress: pageConfig.showProgress,
+          conferenceBids: pageConfig.conferenceBids,
           searchPlaceholder: pageConfig.searchPlaceholder,
           columns: pageConfig.columns,
         });
