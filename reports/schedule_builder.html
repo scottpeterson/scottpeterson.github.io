@@ -616,7 +616,7 @@
       <div class="report-schedule_builder">
         <div class="top">
           <div>
-            <h1>D-III Women's Basketball Schedule Builder</h1>
+            <h1>D3 Women's Basketball Schedule Builder</h1>
             <p class="subtitle">
               2026-27 preseason planning. Build a schedule and see whether its
               NCAA Power Index (NPI) reaches your goal.
@@ -730,7 +730,7 @@
           <div class="legend">
             <span
               ><span class="slot-tag conf">Conf</span> conference regular-season
-              game (auto-populated, editable)</span
+              game. The page enters it, and you can change it.</span
             >
             <span
               ><span class="slot-tag tourney">Tourn</span> conference tournament
@@ -1894,9 +1894,9 @@
           let floorOpp = (floorGn - 20) / 0.8;
           if (floorOpp > BASELINE_QUALITY)
             floorOpp = ((floorGn + 16) * 15) / 22;
-          floorText = ` Your 15th-best counting win is currently worth about an opponent with NPI ${floorOpp.toFixed(1)}; to push that floor up, target non-conf opponents above that number.`;
+          floorText = ` Your 15th-best counting win is worth about a win over an opponent with NPI ${floorOpp.toFixed(1)}. To raise that floor, schedule non-conference opponents above that number.`;
         } else {
-          floorText = ` You don't yet have 15 counting wins, so every additional win helps raise your average.`;
+          floorText = ` You have fewer than 15 counting wins, so each new win helps raise your average.`;
         }
 
         let regime;
@@ -1908,21 +1908,21 @@
           return (
             `With ${record.w}-${record.l}, you're ${margin.toFixed(1)} above the ${goalName} threshold.` +
             floorText +
-            ` You can take one or two strategic risks against higher-NPI opponents. The quality-win bonus upside is worth it when you think you can win.`
+            ` You can schedule one or two higher-NPI opponents as a risk. If you think you can win those games, the quality win bonus (QWB) is worth the risk.`
           );
         }
         if (regime === 'thin') {
           return (
-            `You're only ${margin.toFixed(1)} above the ${goalName} threshold. That is a thin margin.` +
+            `You're only ${margin.toFixed(1)} above the ${goalName} threshold.` +
             floorText +
-            ` One more loss likely drops you under the cutoff. Favor opponents you can beat whose NPI is still high enough to improve your counting-win floor. Avoid scheduling likely losses just for QWB upside.`
+            ` One more loss will likely drop you under the cutoff. Schedule opponents you can beat, with an NPI high enough to raise your counting-win floor. Do not schedule likely losses only for the quality win bonus (QWB).`
           );
         }
         // below
         return (
           `You're ${Math.abs(margin).toFixed(1)} below the ${goalName} threshold.` +
           floorText +
-          ` Consider stepping the goal down, or upgrade your non-conf schedule so that your counting wins average higher. Flipping even one current loss into a win is usually the fastest way to climb.`
+          ` Lower the goal, or schedule stronger non-conference opponents to raise the average of your counting wins. A change of one current loss to a win usually raises your NPI more than any other change.`
         );
       }
 
