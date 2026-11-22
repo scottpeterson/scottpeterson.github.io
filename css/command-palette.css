@@ -37,6 +37,8 @@
 }
 
 .command-palette {
+  /* Keeps the ring edge visible in forced colors mode. */
+  outline: 1px solid transparent;
   position: fixed;
   top: 20%;
   left: 50%;
@@ -262,6 +264,8 @@
    ========================================================================== */
 
 .team-summary-modal {
+  /* Keeps the ring edge visible in forced colors mode. */
+  outline: 1px solid transparent;
   position: fixed;
   top: 50%;
   left: 50%;

@@ -16,6 +16,10 @@
      other "website dark mode" overlays from recoloring the page. */
   color-scheme: light;
 
+  /* Translucent card edge, drawn as a ring inside the card's box-shadow so
+     ring and shadow read as one edge. Single light theme, so no dark value. */
+  --edge: rgb(37 39 59 / 10%);
+
   /* Brand / chrome. The blues clear WCAG AA (4.5:1) with white text on them
      and as link text on white; the 2026-11-07 contrast sweep measured the
      old #3498db at 3.2:1. */
@@ -1203,7 +1207,7 @@ footer {
 .search-input:focus,
 .filter-select:focus {
   border-color: var(--blue-500);
-  outline: none;
+  outline: 1px solid transparent;
   box-shadow: var(--shadow-focus), var(--elev-1);
   background: #fff;
 }
@@ -1440,7 +1444,7 @@ footer {
 .form-input:focus,
 .form-textarea:focus {
   border-color: var(--blue-500);
-  outline: none;
+  outline: 1px solid transparent;
   box-shadow: var(--shadow-focus), var(--elev-1);
   background: #fff;
 }
@@ -1854,8 +1858,10 @@ footer {
   padding: 20px;
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
   border-radius: var(--r-md);
-  box-shadow: var(--elev-bar);
-  border: 1px solid #e9ecef;
+  box-shadow:
+    0 0 0 1px var(--edge),
+    var(--elev-bar);
+  border: 1px solid transparent;
 }
 
 .legend-section h2 {
@@ -1881,10 +1887,12 @@ footer {
   padding: 12px;
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: var(--r-sm);
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   /* The fill matches the legend panel behind it, so a resting shadow marks
      each item's edge (surface contrast, 2026-11-07). */
-  box-shadow: var(--elev-0);
+  box-shadow:
+    0 0 0 1px var(--edge),
+    var(--elev-0);
   transition: all 0.2s ease;
 }
 
@@ -1968,6 +1976,7 @@ footer {
 }
 
 .distances-form .form-select:hover {
+  outline: 1px solid transparent;
   border-color: var(--blue-500);
   box-shadow: var(--shadow-focus), var(--elev-1);
 }
@@ -1978,8 +1987,10 @@ footer {
   border-radius: var(--r-md);
   padding: 30px;
   text-align: center;
-  box-shadow: var(--elev-bar);
-  border: 1px solid #e9ecef;
+  box-shadow:
+    0 0 0 1px var(--edge),
+    var(--elev-bar);
+  border: 1px solid transparent;
 }
 
 .distance-miles {
@@ -2040,9 +2051,11 @@ footer {
   padding: 20px 24px;
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
   border-radius: 10px;
-  border: 1px solid #e9ecef;
+  border: 1px solid transparent;
   /* The fill matches the page card behind it; the shadow marks its edge. */
-  box-shadow: var(--elev-0);
+  box-shadow:
+    0 0 0 1px var(--edge),
+    var(--elev-0);
   color: var(--text-3);
   font-size: var(--fs-small);
   line-height: 1.7;
@@ -2124,6 +2137,7 @@ footer {
 }
 
 .ryan-form .form-select:hover {
+  outline: 1px solid transparent;
   border-color: var(--blue-500);
   box-shadow: var(--shadow-focus), var(--elev-1);
 }
@@ -2714,7 +2728,7 @@ footer {
 
 .form-input:focus,
 .form-select:focus {
-  outline: none;
+  outline: 1px solid transparent;
   border-color: var(--blue-500);
   box-shadow: var(--shadow-focus);
 }
@@ -3085,7 +3099,7 @@ footer {
 }
 
 .bb-filter:focus {
-  outline: none;
+  outline: 1px solid transparent;
   border-color: var(--blue-500);
   box-shadow: var(--shadow-focus);
 }
@@ -3121,7 +3135,7 @@ footer {
 }
 
 .bb-chip:focus-visible {
-  outline: none;
+  outline: 1px solid transparent;
   box-shadow: var(--shadow-focus);
 }
 
@@ -3172,7 +3186,7 @@ footer {
 .bb-host-btn:focus-visible,
 .bb-remove:focus-visible,
 .bb-tab:focus-visible {
-  outline: none;
+  outline: 1px solid transparent;
   box-shadow: var(--shadow-focus);
 }
 

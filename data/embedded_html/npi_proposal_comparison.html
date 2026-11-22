@@ -30,6 +30,7 @@
     <style>
       :root {
         color-scheme: light;
+        --edge: rgba(37, 39, 59, 0.1);
         --bg: #f4f3ef;
         --surface: #ffffff;
         --surface2: #ecebe5;
@@ -62,6 +63,7 @@
       }
       :root[data-theme='dark'] {
         color-scheme: dark;
+        --edge: rgba(255, 255, 255, 0.1);
         --bg: #15181d;
         --surface: #1d2128;
         --surface2: #252a32;
@@ -95,6 +97,7 @@
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme='light']) {
           color-scheme: dark;
+          --edge: rgba(255, 255, 255, 0.1);
           --bg: #15181d;
           --surface: #1d2128;
           --surface2: #252a32;
@@ -300,11 +303,13 @@
       }
       .stat {
         background: var(--surface);
-        border: 1px solid var(--line);
+        border: 1px solid transparent;
         border-radius: 6px;
         padding: 10px 16px;
         min-width: 150px;
-        box-shadow: var(--lift);
+        box-shadow:
+          0 0 0 1px var(--edge),
+          var(--lift);
       }
       .stat .v {
         font-size: 24px;
