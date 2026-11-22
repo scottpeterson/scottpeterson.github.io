@@ -613,5 +613,15 @@
     "dataSource": null,
     "showInNav": false,
     "embedHtml": "data/embedded_html/npi_proposal_comparison.html"
+  },
+  "odac": {
+    "title": "ODAC",
+    "heading": "ODAC scheduling and NPI",
+    "description": "",
+    "sectionTitle": "ODAC scheduling and NPI",
+    "hasSearch": false,
+    "dataSource": null,
+    "showInNav": false,
+    "embedHtml": "data/embedded_html/odac_scheduling_tool.html"
   }
 }
