@@ -338,6 +338,10 @@
         width: 18px;
         margin: 0;
       }
+      .mchip .was {
+        color: var(--ink-3);
+        font-weight: 400;
+      }
       .philosophy {
         background: var(--opinion);
         border-radius: 14px;
@@ -690,6 +694,10 @@
               <tbody></tbody>
             </table>
           </div>
+        </div>
+        <div id="dropped-box" class="missed-box hidden">
+          <div class="caption" id="dropped-cap">Dropped out</div>
+          <div class="missed" id="dropped"></div>
         </div>
         <div id="missed-box" class="missed-box">
           <div class="caption">Just missed</div>
@@ -1496,6 +1504,22 @@
             .map(
               t =>
                 `<button type="button" class="mchip" data-team="${esc(t.team)}">${logo(t.team)}${esc(t.team)}</button>`
+            )
+            .join('');
+          const ranked = new Set(b.teams.map(t => t.team));
+          const dropped = prev
+            ? prev.teams.filter(t => !ranked.has(t.team))
+            : [];
+          document
+            .getElementById('dropped-box')
+            .classList.toggle('hidden', dropped.length === 0);
+          document.getElementById('dropped-cap').textContent = prev
+            ? `Dropped out since my ${prev.poll} ballot`
+            : '';
+          document.getElementById('dropped').innerHTML = dropped
+            .map(
+              t =>
+                `<button type="button" class="mchip" data-team="${esc(t.team)}">${logo(t.team)}${esc(t.team)}<span class="was">was ${t.rank}</span></button>`
             )
             .join('');
           document
