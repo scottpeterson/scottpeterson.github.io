@@ -7,7 +7,7 @@
     <meta name="darkreader-lock" />
     <meta
       name="theme-color"
-      content="#f4f3ef"
+      content="#e6eff7"
       media="(prefers-color-scheme: light)"
     />
     <meta
@@ -30,18 +30,21 @@
     <style>
       :root {
         color-scheme: light;
-        --bg: #f4f3ef;
+        --brand: #005aab;
+        --bg: #e6eff7;
         --surface: #ffffff;
-        --surface2: #ecebe5;
+        --surface2: #dde7f1;
         --line: #d8d5cb;
         --edge: rgba(37, 39, 59, 0.1);
         --ink: #1e2229;
         --muted: #616873;
-        --link: #1f4e79;
+        --link: #005aab;
         --pos: #257049;
         --neg: #b03a37;
-        --accent: #1f5fbf;
-        --chip: #e9e7df;
+        --accent: #005aab;
+        --chip: #dde7f1;
+        --track: #d3dde8;
+        --hatch: #a3b1c0;
         --ctl: #7d828b;
         --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23616873' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         --s1: 4px;
@@ -84,6 +87,8 @@
         --accent: #7fb0ff;
         --chip: #2e343d;
         --ctl: #737b86;
+        --track: #3a414c;
+        --hatch: #5a6370;
         --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a7adb7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       }
       @media (prefers-color-scheme: dark) {
@@ -102,6 +107,8 @@
           --accent: #7fb0ff;
           --chip: #2e343d;
           --ctl: #737b86;
+          --track: #3a414c;
+          --hatch: #5a6370;
           --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a7adb7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         }
       }
@@ -128,6 +135,10 @@
       h1,
       h2 {
         letter-spacing: -0.01em;
+      }
+      h2,
+      h3 {
+        line-height: 1.2;
       }
       a {
         color: var(--link);
@@ -166,6 +177,21 @@
         font-size: var(--fs-small);
         color: var(--muted);
       }
+      .title-band {
+        align-self: stretch;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 14px;
+        padding: var(--s5);
+      }
+      .title-band h1 {
+        color: #fff;
+      }
+      .title-band .sub {
+        color: #e6eff7;
+        margin: 0;
+        max-width: 760px;
+      }
       .pos {
         color: var(--pos);
       }
@@ -190,6 +216,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--s1);
+        max-width: 100%;
       }
       .caption {
         font-size: var(--fs-caption);
@@ -305,6 +332,37 @@
         border-radius: 999px;
         padding: 0 var(--s4);
         cursor: pointer;
+      }
+      details.group {
+        background: var(--surface);
+        border-radius: 14px;
+        box-shadow:
+          0 0 0 1px var(--edge),
+          0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: var(--s4) var(--s5) var(--s5);
+        margin-top: var(--s5);
+      }
+      details.group:not([open]) {
+        padding-bottom: var(--s4);
+      }
+      details.group summary h2 {
+        margin: 0;
+      }
+      details.group[open] > summary {
+        margin-bottom: var(--s4);
+      }
+      .group .tablewrap,
+      .group .chart,
+      .group .card {
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .group h3 {
+        padding-top: var(--s4);
+        border-top: 1px solid var(--line);
       }
       .group summary {
         list-style: none;
@@ -473,8 +531,9 @@
         fill: transparent;
         cursor: pointer;
       }
-      .chart .hit:focus {
-        outline: none;
+      .chart .hit:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
       .chart .hit:focus + .dot,
       .chart .hit:hover + .dot {
@@ -494,6 +553,131 @@
       .measure {
         margin-top: var(--s3);
       }
+      .card {
+        background: var(--surface);
+        border: 1px solid transparent;
+        border-radius: 14px;
+        padding: var(--s4);
+        margin-top: var(--s3);
+        box-shadow:
+          0 0 0 1px var(--edge),
+          0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr) max-content;
+        gap: var(--s1) var(--s3);
+        align-items: center;
+      }
+      .bars .lab {
+        font-size: var(--fs-small);
+        max-width: 260px;
+        line-height: 1.3;
+      }
+      .bars .track {
+        position: relative;
+        height: 16px;
+        background: var(--track);
+        border-radius: 4px;
+      }
+      .bars .fill {
+        display: block;
+        height: 100%;
+        border-radius: 4px;
+        background: var(--accent);
+      }
+      .bars .fill.dropped {
+        background: repeating-linear-gradient(
+          45deg,
+          var(--hatch) 0 4px,
+          transparent 4px 8px
+        );
+      }
+      .bars .line {
+        position: absolute;
+        top: -3px;
+        bottom: -3px;
+        width: 2px;
+        background: var(--ink);
+      }
+      .bars .val {
+        font-size: var(--fs-small);
+        text-align: right;
+        white-space: nowrap;
+      }
+      .bars .cut {
+        grid-column: 1/-1;
+        font-size: var(--fs-caption);
+        font-weight: 500;
+        color: var(--muted);
+        padding: var(--s2) 0 var(--s1);
+      }
+      .bars .gap {
+        grid-column: 1/3;
+        text-align: right;
+        font-size: var(--fs-caption);
+        color: var(--muted);
+        padding: var(--s1) 0;
+      }
+      .bars .gap + .gap {
+        grid-column: 3;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--s2) var(--s4);
+        font-size: var(--fs-small);
+        color: var(--muted);
+        margin: var(--s2) 0 0;
+      }
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--s2);
+      }
+      .sw {
+        display: inline-block;
+        width: 20px;
+        height: 12px;
+        border-radius: 3px;
+        background: var(--accent);
+      }
+      .sw.dropped {
+        background: repeating-linear-gradient(
+          45deg,
+          var(--hatch) 0 4px,
+          transparent 4px 8px
+        );
+        border: 1px solid var(--line);
+      }
+      .sw.line {
+        width: 2px;
+        height: 16px;
+        border-radius: 0;
+        background: var(--ink);
+      }
+      tr.changed td {
+        background: var(--chip);
+      }
+      h3 {
+        margin-top: var(--s5);
+      }
+      .addrow {
+        margin-top: var(--s4);
+      }
+      #wi-opp {
+        max-width: min(420px, 100%);
+      }
+      button.rm {
+        height: var(--control-h);
+        border: 1px solid var(--ctl);
+        background: transparent;
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 0 var(--s4);
+        cursor: pointer;
+        margin-left: var(--s2);
+      }
       footer {
         margin-top: var(--s6);
         padding-top: var(--s4);
@@ -504,6 +688,9 @@
         main {
           padding: var(--s4) var(--s4) var(--s6);
         }
+        details.group {
+          padding: var(--s3) var(--s4) var(--s4);
+        }
         h1 {
           font-size: var(--fs-h2);
         }
@@ -513,20 +700,24 @@
         .rank input[type='range'] {
           width: 140px;
         }
+        .bars .lab {
+          max-width: 130px;
+        }
       }
     </style>
   </head>
   <body>
     <main>
       <div class="top">
-        <div>
+        <div class="title-band">
           <h1>ODAC scheduling and NPI</h1>
           <p class="sub">
             What fewer or more league games, changed across the whole ODAC,
             would do to each ODAC team's NPI. A league game ends in a win for
             one ODAC team and a loss for the other, or in soccer a tie for both.
             Played against a non-conference opponent instead, both teams can
-            win.
+            win. The Change results section recalculates every ODAC team's NPI
+            for the results you choose.
           </p>
         </div>
         <div class="controls">
@@ -596,17 +787,93 @@
         <div id="summary"></div>
       </details>
       <details class="group" open>
+        <summary><h2>Change results</h2></summary>
+        <p class="lede">
+          Set any game's result, mark a game as not played, or add a game
+          against any Division III team. A game between two ODAC teams changes
+          for both teams. Every ODAC team's NPI is then recalculated together.
+          Teams outside the ODAC keep their current NPI.
+        </p>
+        <div class="controls">
+          <div class="ctl">
+            <label class="caption" for="wi-team">Team</label
+            ><select id="wi-team"></select>
+          </div>
+          <div class="ctl" id="wi-preset-ctl">
+            <label class="caption" for="wi-preset">Scenario</label
+            ><select id="wi-preset"></select>
+          </div>
+          <div class="ctl">
+            <span class="caption">Changes</span>
+            <div class="toggles">
+              <button type="button" id="wi-reset">Reset all</button>
+            </div>
+          </div>
+        </div>
+        <p class="lede small" id="wi-note" aria-live="polite"></p>
+        <h3>Schedule</h3>
+        <p class="lede small">
+          Played shows the real result. Game NPI is the value the result adds,
+          and a tie shows its win value and its loss value. Counts shows whether
+          that value is in the team's NPI.
+        </p>
+        <div id="wi-sched"></div>
+        <div class="controls addrow">
+          <div class="ctl">
+            <label class="caption" for="wi-opp">Add a game against</label
+            ><select id="wi-opp"></select>
+          </div>
+          <div class="ctl">
+            <label class="caption" for="wi-site">Site</label
+            ><select id="wi-site">
+              <option value="H">Home</option>
+              <option value="A">Away</option>
+              <option value="N">Neutral</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label class="caption" for="wi-res">Result</label
+            ><select id="wi-res"></select>
+          </div>
+          <div class="ctl">
+            <span class="caption">&nbsp;</span>
+            <div class="toggles">
+              <button type="button" id="wi-add">Add game</button>
+            </div>
+          </div>
+        </div>
+        <h3>Which games count</h3>
+        <p class="lede small">
+          Each bar is one game NPI. The dark line is the team NPI. A gap of 1.0
+          or more between two wins is labeled. A tie shows twice: its win half
+          with the wins and its loss half with the losses.
+        </p>
+        <div class="legend">
+          <span><i class="sw"></i>Counts</span
+          ><span><i class="sw dropped"></i>Dropped</span
+          ><span><i class="sw line"></i>Team NPI</span>
+        </div>
+        <div class="card"><div class="bars" id="wi-bars"></div></div>
+        <h3>ODAC teams with these changes</h3>
+        <div id="wi-teams"></div>
+        <h3>Nearby in the rankings</h3>
+        <div id="wi-near"></div>
+      </details>
+      <details class="group" open>
         <summary><h2>League games and opponent strength</h2></summary>
         <p class="lede">
-          This chart shows the average strength of a team's opponents, not the
-          team's own NPI. That average mixes the team's league opponents with
-          the non-conference opponents it schedules. On the left, the shaded
-          area runs from the weakest non-conference schedule any ODAC team
-          played this season to the strongest. On the right, where every game is
-          a league game, it runs from the weakest league schedule to the
-          strongest. League schedules still differ, because a team never plays
-          itself and a schedule short of a full round robin skips some ODAC
-          teams.
+          The chart shows the average strength of a team's opponents. The team's
+          own NPI is in the tables below. The average mixes the team's league
+          opponents with the non-conference opponents it schedules.
+        </p>
+        <p class="lede">
+          The shaded area is the range of that average. At the left edge, with
+          no league games, the range runs from the weakest non-conference
+          schedule any ODAC team played this season to the strongest. At the
+          right edge, every game is a league game, and the low and high ends are
+          the weakest and strongest league schedules. A team never plays itself,
+          and a schedule short of a full round robin skips some ODAC teams. So
+          league schedules still differ.
         </p>
         <div class="ctl measure">
           <span class="caption" id="lbl-measure">Opponents' average</span>
@@ -624,8 +891,8 @@
       <details class="group" open>
         <summary><h2>ODAC teams</h2></summary>
         <p class="lede">
-          Sorted by NPI rank. Records and league game counts cover games against
-          Division III teams only, because only those games count in NPI. Every
+          Sorted by NPI rank. Only games against Division III teams count in
+          NPI. So records and league game counts cover those games only. Every
           ODAC team's NPI is recalculated together, so a change to one team
           reaches its league opponents.
         </p>
@@ -686,7 +953,8 @@
           <dt>Replacement opponent</dt>
           <dd>
             A team with the NPI of whoever holds the chosen national rank in the
-            D3 Datacast ratings the page uses. The default is rank 100.
+            D3 Datacast ratings named in the league summary. The default is rank
+            100.
           </dd>
         </dl>
       </details>
@@ -699,9 +967,10 @@
           <dd>
             Team NPI is the average of the team's game NPIs, with the location
             weights above. Once the team has its minimum number of wins, a win
-            below its NPI drops out. A loss at or above its NPI drops out too,
-            except the team's worst loss, which always counts. A tie counts as
-            half a win and half a loss, and each half follows its own rule.
+            below its NPI does not count. The same goes for a loss at or above
+            its NPI, except the team's worst loss, which always counts. A tie
+            counts as half a win and half a loss. The win part follows the rule
+            for wins. The loss part follows the rule for losses.
           </dd>
           <dt>What changes</dt>
           <dd>
@@ -720,7 +989,7 @@
           </dd>
         </dl>
       </details>
-      <footer>Built 2026-11-22 12:35 PM Eastern.</footer>
+      <footer>Built 2026-11-23 3:54 PM Eastern.</footer>
     </main>
     <script id="data" type="application/json">
       {
@@ -744,6 +1013,7 @@
               "winWeight": { "H": 1.0, "A": 1.0, "N": 1.0 },
               "lossWeight": { "H": 1.0, "A": 1.0, "N": 1.0 }
             },
+            "presets": [],
             "ranking": [
               ["Rowan", 68.536],
               ["Chicago", 68.442],
@@ -4114,6 +4384,44 @@
               "winWeight": { "H": 1.0, "A": 1.0, "N": 1.0 },
               "lossWeight": { "H": 1.0, "A": 1.0, "N": 1.0 }
             },
+            "presets": [
+              {
+                "label": "Shenandoah: the ODAC final at Lynchburg is not played",
+                "team": "Shenandoah",
+                "edits": [
+                  {
+                    "date": "20261107",
+                    "team": "Shenandoah",
+                    "opp": "Lynchburg",
+                    "res": ""
+                  }
+                ]
+              },
+              {
+                "label": "Randolph-Macon: three one-goal losses become two wins and a tie",
+                "team": "Randolph-Macon",
+                "edits": [
+                  {
+                    "date": "20261007",
+                    "team": "Randolph-Macon",
+                    "opp": "Shenandoah",
+                    "res": "T"
+                  },
+                  {
+                    "date": "20261017",
+                    "team": "Randolph-Macon",
+                    "opp": "Bridgewater (VA)",
+                    "res": "W"
+                  },
+                  {
+                    "date": "20261031",
+                    "team": "Randolph-Macon",
+                    "opp": "Washington & Lee",
+                    "res": "W"
+                  }
+                ]
+              }
+            ],
             "ranking": [
               ["Williams", 63.362],
               ["Middlebury", 62.387],
@@ -7300,6 +7608,7 @@
               "winWeight": { "H": 1.0, "A": 1.0, "N": 1.0 },
               "lossWeight": { "H": 1.0, "A": 1.0, "N": 1.0 }
             },
+            "presets": [],
             "ranking": [
               ["Washington U.", 66.273],
               ["Wesleyan", 65.641],
@@ -11612,6 +11921,7 @@
               "winWeight": { "H": 0.9, "A": 1.1, "N": 1.0 },
               "lossWeight": { "H": 1.1, "A": 0.9, "N": 1.0 }
             },
+            "presets": [],
             "ranking": [
               ["Tufts", 92.295],
               ["Middlebury", 82.362],
@@ -13814,6 +14124,7 @@
               "winWeight": { "H": 0.9, "A": 1.1, "N": 1.0 },
               "lossWeight": { "H": 1.1, "A": 0.9, "N": 1.0 }
             },
+            "presets": [],
             "ranking": [
               ["UW-Whitewater", 78.707],
               ["Cortland", 78.617],
@@ -15565,6 +15876,78 @@
           });
           return { npi: npi, rank: rank };
         }
+        const OPPOSITE = { W: 'L', L: 'W', T: 'T', '': '' },
+          OPPOSITE_SITE = { H: 'A', A: 'H', N: 'N' };
+        // Edits: {date, team, opp, res}, res '' for not played. Added: {team, opp (Datacast name), loc, res}.
+        function editSchedules(sport, edits, added) {
+          const byDc = new Map(sport.teams.map(t => [t.dc, t])),
+            npi = new Map(sport.ranking);
+          const names = new Map(
+            sport.ranking.map(([n], i) => [n, sport.rankingNames[i]])
+          );
+          const wanted = new Map();
+          edits.forEach(e => {
+            wanted.set(e.date + '|' + e.team + '|' + e.opp, e.res);
+            wanted.set(e.date + '|' + e.opp + '|' + e.team, OPPOSITE[e.res]);
+          });
+          const schedules = new Map();
+          sport.teams.forEach(t => {
+            const games = [];
+            t.games.forEach(g => {
+              const k = g.date + '|' + t.name + '|' + g.opp;
+              if (wanted.has(k)) {
+                if (wanted.get(k))
+                  games.push(Object.assign({}, g, { res: wanted.get(k) }));
+              } else games.push(g);
+            });
+            schedules.set(t.name, games);
+          });
+          added.forEach(a => {
+            const opp = byDc.get(a.opp),
+              sides = [
+                [
+                  a.team,
+                  opp ? opp.name : names.get(a.opp),
+                  a.opp,
+                  a.loc,
+                  a.res,
+                ],
+              ];
+            if (opp)
+              sides.push([
+                opp.name,
+                a.team,
+                sport.teams.find(t => t.name === a.team).dc,
+                OPPOSITE_SITE[a.loc],
+                OPPOSITE[a.res],
+              ]);
+            sides.forEach(([me, oppName, oppDc, loc, res]) => {
+              schedules
+                .get(me)
+                .push({
+                  date: 'added',
+                  opp: oppName,
+                  oppNpi: npi.get(oppDc),
+                  res: res,
+                  loc: loc,
+                  lg: false,
+                  score: '',
+                  post: false,
+                });
+            });
+          });
+          return schedules;
+        }
+        function whatIf(sport, edits, added) {
+          const base = leagueNpis(
+            sport,
+            new Map(sport.teams.map(t => [t.name, t.games]))
+          );
+          const schedules = editSchedules(sport, edits, added);
+          return Object.assign(scenario(sport, base, schedules), {
+            schedules: schedules,
+          });
+        }
         function referenceNpi(sport, rank) {
           const r = Math.max(1, Math.min(rank, sport.ranking.length));
           return sport.ranking[r - 1][1];
@@ -15671,6 +16054,8 @@
         return {
           winValue,
           lossValue,
+          entries,
+          select,
           scoreTeam,
           mulberry32,
           fewerSchedules,
@@ -15682,6 +16067,8 @@
           moreAverage,
           rankOf,
           referenceNpi,
+          editSchedules,
+          whatIf,
         };
       })();
       if (typeof module !== 'undefined') module.exports = NPI;
@@ -15725,7 +16112,7 @@
             );
           document.querySelectorAll('meta[name=theme-color]').forEach(m => {
             m.removeAttribute('media');
-            m.content = d ? '#15181d' : '#f4f3ef';
+            m.content = d ? '#15181d' : '#e6eff7';
           });
         }
         document.querySelectorAll('.th').forEach(b =>
@@ -15902,7 +16289,6 @@
               rows.forEach(r => body.appendChild(r));
             };
             th.tabIndex = 0;
-            th.setAttribute('role', 'button');
             th.addEventListener('click', go);
             th.addEventListener('keydown', e => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -15913,7 +16299,7 @@
           });
         }
         const wrap = (head, rows, sortable) =>
-          '<div class="tablewrap"><table' +
+          '<div class="tablewrap" tabindex="0" role="region" aria-label="Table"><table' +
           (sortable ? ' class="sortable"' : '') +
           '><thead>' +
           head +
@@ -16547,6 +16933,504 @@
           bindSort($('funnel-teams').querySelector('table'));
         }
 
+        // Change results
+        let edits = new Map(),
+          added = [],
+          focus = null,
+          presetIdx = '';
+        const editKey = (date, team, opp) => date + '|' + team + '|' + opp;
+        const isOdac = n => sport.teams.some(t => t.name === n);
+        function loadChanges() {
+          edits = new Map();
+          added = [];
+          let saved = null;
+          try {
+            saved = JSON.parse(store.get('changes-' + sport.sport) || 'null');
+          } catch (e) {
+            saved = null;
+          }
+          if (saved) {
+            (saved.edits || []).forEach(e => {
+              const t = teamByName(e.team);
+              if (t && t.games.some(g => g.date === e.date && g.opp === e.opp))
+                edits.set(editKey(e.date, e.team, e.opp), e);
+            });
+            const dcs = new Set(sport.ranking.map(([n]) => n));
+            added = (saved.added || []).filter(
+              a => teamByName(a.team) && dcs.has(a.opp)
+            );
+            focus = teamByName(saved.focus) ? saved.focus : null;
+          }
+          if (focus === null) focus = sport.teams[0].name;
+        }
+        function saveChanges() {
+          store.set(
+            'changes-' + sport.sport,
+            JSON.stringify({
+              edits: [...edits.values()],
+              added: added,
+              focus: focus,
+            })
+          );
+        }
+        function currentResult(t, g) {
+          const mine = edits.get(editKey(g.date, t.name, g.opp));
+          if (mine) return mine.res;
+          const theirs = edits.get(editKey(g.date, g.opp, t.name));
+          if (theirs) return { W: 'L', L: 'W', T: 'T', '': '' }[theirs.res];
+          return g.res;
+        }
+        function setResult(t, g, res) {
+          edits.delete(editKey(g.date, g.opp, t.name));
+          edits.delete(editKey(g.date, t.name, g.opp));
+          if (res !== g.res)
+            edits.set(editKey(g.date, t.name, g.opp), {
+              date: g.date,
+              team: t.name,
+              opp: g.opp,
+              res: res,
+            });
+        }
+        const recordOf = games => {
+          const w = games.filter(g => g.res === 'W').length,
+            l = games.filter(g => g.res === 'L').length,
+            ti = games.filter(g => g.res === 'T').length;
+          return w + '-' + l + (ti ? '-' + ti : '');
+        };
+        function resultSeg(k, val) {
+          const opts = (sport.ties ? ['W', 'L', 'T'] : ['W', 'L']).concat(
+            k[0] === 'a' ? [] : ['']
+          );
+          return (
+            '<div class="seg" role="group" aria-label="Result">' +
+            opts
+              .map(
+                v =>
+                  '<button type="button" data-wi="' +
+                  k +
+                  '" data-v="' +
+                  v +
+                  '" aria-pressed="' +
+                  (val === v) +
+                  '"' +
+                  (val === v ? ' class="active"' : '') +
+                  '>' +
+                  (v || 'Not played') +
+                  '</button>'
+              )
+              .join('') +
+            '</div>'
+          );
+        }
+        function countText(k, f) {
+          if (!f) return '-';
+          if (Math.abs(k - f) < 1e-12) return 'Yes';
+          if (k === 0) return 'No';
+          return Math.round((100 * k) / f) + '%';
+        }
+        function renderWhatIf() {
+          const presets = sport.presets || [];
+          $('wi-team').innerHTML = sport.teams
+            .map(
+              t =>
+                '<option' +
+                (t.name === focus ? ' selected' : '') +
+                '>' +
+                esc(t.name) +
+                '</option>'
+            )
+            .join('');
+          $('wi-preset-ctl').hidden = presets.length === 0;
+          $('wi-preset').innerHTML =
+            '<option value="">Choose a scenario</option>' +
+            presets
+              .map(
+                (p, i) =>
+                  '<option value="' +
+                  i +
+                  '"' +
+                  (String(i) === presetIdx ? ' selected' : '') +
+                  '>' +
+                  esc(p.label) +
+                  '</option>'
+              )
+              .join('');
+          $('wi-opp').innerHTML = sport.ranking
+            .map(([n, v], i) =>
+              sport.teams.some(t => t.dc === n && t.name === focus)
+                ? ''
+                : '<option value="' +
+                  esc(n) +
+                  '">' +
+                  (i + 1) +
+                  '. ' +
+                  esc(sport.rankingNames[i]) +
+                  '</option>'
+            )
+            .join('');
+          $('wi-res').innerHTML = (sport.ties ? ['W', 'L', 'T'] : ['W', 'L'])
+            .map(v => '<option value="' + v + '">' + RES[v] + '</option>')
+            .join('');
+          const sc = NPI.whatIf(sport, [...edits.values()], added),
+            t = teamByName(focus);
+          const oppNpi = n => (n in sc.npi ? sc.npi[n] : null);
+          const rows = t.games.map((g, i) => ({
+            k: 'g' + i,
+            g: g,
+            res: currentResult(t, g),
+            opp: g.opp,
+            npi: oppNpi(g.opp) === null ? g.oppNpi : oppNpi(g.opp),
+            loc: g.loc,
+          }));
+          added.forEach((a, i) => {
+            if (a.team === focus)
+              rows.push({
+                k: 'a' + i,
+                g: null,
+                res: a.res,
+                opp: sport.rankingNames[
+                  sport.ranking.findIndex(([n]) => n === a.opp)
+                ],
+                npi: 0,
+                loc: a.loc,
+                a: a,
+              });
+          });
+          added.forEach((a, i) => {
+            const o = sport.teams.find(x => x.dc === a.opp);
+            if (o && o.name === focus)
+              rows.push({
+                k: 'm' + i,
+                g: null,
+                res: { W: 'L', L: 'W', T: 'T' }[a.res],
+                opp: a.team,
+                npi: 0,
+                loc: { H: 'A', A: 'H', N: 'N' }[a.loc],
+                mirror: true,
+              });
+          });
+          rows.forEach(r => {
+            if (!r.g) {
+              const dc = r.mirror ? teamByName(r.opp).dc : r.a.opp;
+              const odac = sport.teams.find(x => x.dc === dc);
+              r.npi = odac
+                ? sc.npi[odac.name]
+                : sport.ranking.find(([n]) => n === dc)[1];
+            }
+          });
+          const played = rows.filter(r => r.res !== '');
+          const scored = NPI.scoreTeam(
+            played.map(r => ({ oppNpi: r.npi, res: r.res, loc: r.loc })),
+            sport.params,
+            sc.npi[focus]
+          );
+          played.forEach((r, i) => {
+            r.kept = scored.kept[i];
+          });
+          renderBars(played, scored.npi);
+          const p = sport.params,
+            val = r =>
+              r.res === 'W'
+                ? f3(NPI.winValue(p, r.npi))
+                : r.res === 'L'
+                  ? f3(NPI.lossValue(p, r.npi))
+                  : r.res === 'T'
+                    ? f3(NPI.winValue(p, r.npi)) +
+                      ' / ' +
+                      f3(NPI.lossValue(p, r.npi))
+                    : '-';
+          const body = rows
+            .map(r => {
+              const changed = r.g ? r.res !== r.g.res : true;
+              const was = r.g
+                ? r.g.res +
+                  ' ' +
+                  esc(r.g.score) +
+                  (r.g.post ? ', ODAC tournament' : '')
+                : r.mirror
+                  ? 'Added on ' + esc(r.opp) + "'s schedule"
+                  : 'Added';
+              const ctl = r.mirror
+                ? RES[r.res]
+                : resultSeg(r.k, r.res) +
+                  (r.k[0] === 'a'
+                    ? ' <button type="button" class="rm" data-rm="' +
+                      r.k.slice(1) +
+                      '">Remove</button>'
+                    : '');
+              return (
+                '<tr' +
+                (changed ? ' class="changed"' : '') +
+                '><td class="lead" data-sort="' +
+                (r.g ? r.g.date : '99999999') +
+                '">' +
+                (r.g ? day(r.g.date) : 'Added') +
+                '</td><td class="lead" data-sort="' +
+                esc(r.opp) +
+                '">' +
+                (r.loc === 'A' ? 'at ' : 'vs ') +
+                esc(r.opp) +
+                (r.loc === 'N' ? ' (neutral)' : '') +
+                '</td><td class="txt">' +
+                was +
+                '</td><td class="txt">' +
+                ctl +
+                '</td><td data-sort="' +
+                r.npi +
+                '">' +
+                f3(r.npi) +
+                '</td><td>' +
+                val(r) +
+                '</td><td>' +
+                (r.res === '' ? '-' : countText(r.kept[0], r.kept[1])) +
+                '</td></tr>'
+              );
+            })
+            .join('');
+          $('wi-sched').innerHTML = wrap(
+            '<tr><th class="lead" aria-sort="ascending">Date</th><th class="lead" aria-sort="none">Opponent</th><th class="txt" aria-sort="none">Played</th><th class="txt" aria-sort="none">Result</th><th aria-sort="none">Opponent NPI</th><th aria-sort="none">Game NPI</th><th aria-sort="none">Counts</th></tr>',
+            body,
+            true
+          );
+          bindSort($('wi-sched').querySelector('table'));
+          const n = edits.size + added.length;
+          $('wi-note').textContent = n
+            ? n +
+              ' change' +
+              (n === 1 ? '' : 's') +
+              ' in ' +
+              sport.label.toLowerCase() +
+              '. ' +
+              focus +
+              ': NPI ' +
+              f3(t.npi) +
+              ' to ' +
+              f3(sc.npi[focus]) +
+              ', rank ' +
+              t.rank +
+              ' to ' +
+              sc.rank[focus] +
+              '.'
+            : 'No changes. Every game shows its real result.';
+          const teamRows = sport.teams
+            .map(x => {
+              const now = recordOf(x.games),
+                then = recordOf(sc.schedules.get(x.name));
+              return (
+                '<tr><td class="lead">' +
+                esc(x.name) +
+                '</td><td data-sort="' +
+                x.rank +
+                '">' +
+                now +
+                '</td><td>' +
+                then +
+                '</td><td data-sort="' +
+                x.npi +
+                '">' +
+                f3(x.npi) +
+                '</td><td data-sort="' +
+                sc.npi[x.name] +
+                '">' +
+                f3(sc.npi[x.name]) +
+                change(x.npi, sc.npi[x.name], false) +
+                '</td><td>' +
+                x.rank +
+                '</td><td data-sort="' +
+                sc.rank[x.name] +
+                '">' +
+                sc.rank[x.name] +
+                change(x.rank, sc.rank[x.name], true) +
+                '</td></tr>'
+              );
+            })
+            .join('');
+          $('wi-teams').innerHTML = wrap(
+            '<tr class="band"><th class="lead"></th><th colspan="2">Record</th><th colspan="2">NPI</th><th colspan="2">Rank</th></tr><tr><th class="lead" aria-sort="none">Team</th><th aria-sort="none">Now</th><th aria-sort="none">Changed</th><th aria-sort="none">Now</th><th aria-sort="none">Changed</th><th aria-sort="ascending">Now</th><th aria-sort="none">Changed</th></tr>',
+            teamRows,
+            true
+          );
+          bindSort($('wi-teams').querySelector('table'));
+          const moved = new Map(sport.teams.map(x => [x.dc, sc.npi[x.name]]));
+          const nat = sport.ranking.map(([dc, v], i) => ({
+            dc: dc,
+            name: sport.rankingNames[i],
+            was: v,
+            npi: moved.has(dc) ? moved.get(dc) : v,
+            i: i,
+          }));
+          nat.sort((a, b) => {
+            const x =
+              Math.floor(b.npi * 1000 + 0.5) - Math.floor(a.npi * 1000 + 0.5);
+            return x || a.i - b.i;
+          });
+          const at = nat.findIndex(r => r.dc === t.dc),
+            lo = Math.max(0, at - 5),
+            near = nat.slice(lo, at + 6);
+          $('wi-near').innerHTML = wrap(
+            '<tr><th aria-sort="ascending">Rank</th><th class="lead" aria-sort="none">Team</th><th aria-sort="none">NPI</th><th aria-sort="none">Change</th></tr>',
+            near
+              .map(
+                (r, j) =>
+                  '<tr' +
+                  (r.dc === t.dc ? ' class="changed"' : '') +
+                  '><td>' +
+                  (lo + j + 1) +
+                  '</td><td class="lead">' +
+                  esc(r.name) +
+                  '</td><td>' +
+                  f3(r.npi) +
+                  '</td><td data-sort="' +
+                  (r.npi - r.was) +
+                  '">' +
+                  (Math.abs(r.npi - r.was) < 0.0005
+                    ? '-'
+                    : sign(r.npi - r.was)) +
+                  '</td></tr>'
+              )
+              .join(''),
+            true
+          );
+          bindSort($('wi-near').querySelector('table'));
+        }
+        // Which games count: one bar per win and per loss. A tie has a win half and a loss half.
+        function renderBars(played, npi) {
+          const p = sport.params,
+            [wins, losses] = NPI.entries(
+              played.map(r => ({ oppNpi: r.npi, res: r.res, loc: r.loc })),
+              p
+            ),
+            kept = NPI.select(wins, losses, npi, p.minWins);
+          const keptW = new Map();
+          kept.forEach(([w, v, i]) => {
+            const k = i + '|' + v;
+            keptW.set(k, (keptW.get(k) || 0) + w);
+          });
+          const name = r =>
+            (r.loc === 'A' ? 'at ' : r.loc === 'H' ? 'vs ' : 'N ') +
+            r.opp +
+            (r.g && r.g.post ? ' (ODAC tournament)' : '') +
+            (r.res === 'T' ? ' (tie)' : '');
+          const all = wins
+            .concat(losses)
+            .map(e => e[1])
+            .concat([npi]);
+          const lo = Math.max(0, Math.floor(Math.min(...all) / 10) * 10 - 10),
+            hi = Math.ceil(Math.max(...all) / 10) * 10;
+          const pct = v => (((v - lo) / (hi - lo)) * 100).toFixed(2) + '%';
+          const bar = (e, label) => {
+            const on = (keptW.get(e[2] + '|' + e[1]) || 0) > 0;
+            return (
+              '<span class="lab">' +
+              esc(label) +
+              '</span><span class="track" role="img" aria-label="' +
+              esc(label) +
+              ': ' +
+              f3(e[1]) +
+              (on ? ', counts' : ', dropped') +
+              '"><span class="fill' +
+              (on ? '' : ' dropped') +
+              '" style="width:' +
+              pct(e[1]) +
+              '"></span><span class="line" style="left:' +
+              pct(npi) +
+              '"></span></span><span class="val">' +
+              f3(e[1]) +
+              '</span>'
+            );
+          };
+          const ws = wins.slice().sort((a, b) => b[1] - a[1]),
+            ls = losses.slice().sort((a, b) => a[1] - b[1]);
+          let h = '',
+            taken = 0,
+            cut = false;
+          if (ws.length) {
+            h += '<div class="cut">Wins, best first</div>';
+            ws.forEach((e, k) => {
+              h += bar(e, k + 1 + '. ' + name(played[e[2]]));
+              taken += e[0];
+              if (k < ws.length - 1) {
+                const d = e[1] - ws[k + 1][1];
+                if (d >= 1)
+                  h +=
+                    '<span class="gap">Gap between wins ' +
+                    (k + 1) +
+                    ' and ' +
+                    (k + 2) +
+                    '</span><span class="gap">−' +
+                    f3(d) +
+                    '</span>';
+                if (cut === false && taken >= p.minWins - 1e-9) {
+                  cut = true;
+                  h +=
+                    '<div class="cut">Minimum of ' +
+                    p.minWins +
+                    ' wins reached. Wins below count only when they raise the NPI.</div>';
+                }
+              }
+            });
+          }
+          if (ls.length) {
+            h += '<div class="cut">Losses, worst first</div>';
+            ls.forEach(e => {
+              h += bar(e, name(played[e[2]]));
+            });
+          }
+          $('wi-bars').innerHTML = h;
+        }
+        $('wi-team').addEventListener('change', e => {
+          focus = e.target.value;
+          saveChanges();
+          renderWhatIf();
+        });
+        $('wi-preset').addEventListener('change', e => {
+          const pr = (sport.presets || [])[+e.target.value];
+          if (!pr) return;
+          edits = new Map(
+            pr.edits.map(x => [editKey(x.date, x.team, x.opp), x])
+          );
+          added = [];
+          focus = pr.team;
+          presetIdx = e.target.value;
+          saveChanges();
+          renderWhatIf();
+        });
+        $('wi-reset').addEventListener('click', () => {
+          edits = new Map();
+          added = [];
+          presetIdx = '';
+          saveChanges();
+          renderWhatIf();
+        });
+        $('wi-add').addEventListener('click', () => {
+          presetIdx = '';
+          added.push({
+            team: focus,
+            opp: $('wi-opp').value,
+            loc: $('wi-site').value,
+            res: $('wi-res').value,
+          });
+          saveChanges();
+          renderWhatIf();
+        });
+        $('wi-sched').addEventListener('click', e => {
+          const b = e.target.closest('button');
+          if (!b) return;
+          if (b.dataset.rm !== undefined) {
+            added.splice(+b.dataset.rm, 1);
+          } else if (b.dataset.wi) {
+            const k = b.dataset.wi;
+            if (k[0] === 'a') added[+k.slice(1)].res = b.dataset.v;
+            else {
+              const t = teamByName(focus);
+              setResult(t, t.games[+k.slice(1)], b.dataset.v);
+            }
+          } else return;
+          presetIdx = '';
+          saveChanges();
+          renderWhatIf();
+        });
+
         function render() {
           syncInputs();
           an = NPI.analyze(sport, refRank, draw, extra);
@@ -16574,12 +17458,14 @@
           renderTeams();
           renderRemoved();
           renderAdded();
+          renderWhatIf();
         }
 
         fillSportSelect();
         $('sport').addEventListener('change', () => {
           sport = DATA.sports.find(s => s.sport === $('sport').value);
           store.set('sport', sport.sport);
+          loadChanges();
           render();
         });
         const onRank = v => {
@@ -16621,6 +17507,7 @@
             }
           }, 150);
         });
+        loadChanges();
         render();
       })();
     </script>
