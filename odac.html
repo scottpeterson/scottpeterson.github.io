@@ -415,6 +415,9 @@
           padding: 0 var(--s3);
           text-align: center;
         }
+        .embed-odac .rank input.wide {
+          width: 112px;
+        }
         .embed-odac .seg {
           display: inline-flex;
           align-items: stretch;
@@ -475,6 +478,7 @@
             0 1px 3px rgba(0, 0, 0, 0.08);
           padding: var(--s4) var(--s5) var(--s5);
           margin-top: var(--s5);
+          outline: 1px solid transparent;
         }
         .embed-odac details.group:not([open]) {
           padding-bottom: var(--s4);
@@ -614,6 +618,14 @@
         }
         .embed-odac dl.how dd p:last-child {
           margin: 0;
+        }
+        .embed-odac .rules {
+          margin: 0 0 var(--s3);
+          padding-left: 1.25em;
+          max-width: 760px;
+        }
+        .embed-odac .rules li {
+          margin: var(--s1) 0;
         }
         .embed-odac .chart {
           position: relative;
@@ -1010,6 +1022,89 @@
               <div id="wi-near"></div>
             </details>
             <details class="group" open>
+              <summary><h2>Choosing a non-conference opponent</h2></summary>
+              <p class="lede">
+                The value of one more game depends on how far the opponent's NPI
+                is from the team's, and on which results would count. Each
+                result is weighted by its chance. The chances are fit on this
+                season's Division III results in the sport, from the NPI gap and
+                the site. Those same results set the NPIs, so the chances are
+                somewhat too confident.
+              </p>
+              <div class="controls">
+                <div class="ctl">
+                  <label class="caption" for="pk-team">Team</label
+                  ><select id="pk-team"></select>
+                </div>
+                <div class="ctl">
+                  <label class="caption" for="pk-npi">Team NPI</label>
+                  <div class="rank">
+                    <input id="pk-npi" class="wide" type="number" step="0.1" />
+                  </div>
+                </div>
+                <div class="ctl">
+                  <span class="caption" id="lbl-pkw">Wins</span>
+                  <div class="seg" role="group" aria-labelledby="lbl-pkw">
+                    <button
+                      type="button"
+                      class="pkw"
+                      data-min="0"
+                      id="pk-w0"
+                    ></button
+                    ><button
+                      type="button"
+                      class="pkw"
+                      data-min="1"
+                      id="pk-w1"
+                    ></button>
+                  </div>
+                </div>
+                <div class="ctl">
+                  <label class="caption" for="pk-n">Games that count</label>
+                  <div class="rank">
+                    <input id="pk-n" type="number" min="1" step="1" />
+                  </div>
+                </div>
+              </div>
+              <div class="controls">
+                <div class="ctl">
+                  <label class="caption" for="pk-opp">Opponent</label
+                  ><select id="pk-opp"></select>
+                </div>
+                <div class="ctl">
+                  <label class="caption" for="pk-onpi">Opponent NPI</label>
+                  <div class="rank">
+                    <input id="pk-onpi" class="wide" type="number" step="0.1" />
+                  </div>
+                </div>
+                <div class="ctl">
+                  <label class="caption" for="pk-site">Site</label
+                  ><select id="pk-site">
+                    <option value="H">Home</option>
+                    <option value="A">Away</option>
+                    <option value="N">Neutral</option>
+                  </select>
+                </div>
+              </div>
+              <div id="pk-out"></div>
+              <p class="lede small" id="pk-note" aria-live="polite"></p>
+              <h3>Rules for this team</h3>
+              <ul class="rules" id="pk-rules"></ul>
+              <h3>Expected value by opponent</h3>
+              <p class="lede small">
+                Expected value in game NPI points, for the team, wins setting,
+                and site above. Divide by the games that count, plus one, for
+                the change in team NPI.
+              </p>
+              <div class="chart" id="pk-chart"></div>
+              <h3>Best opponent by team rank</h3>
+              <p class="lede small">
+                Neutral site, with the wins setting above. The last column gives
+                the opponent ranks worth more than an average league opponent.
+              </p>
+              <div id="pk-ranks"></div>
+            </details>
+            <details class="group" open>
               <summary><h2>League games and opponent strength</h2></summary>
               <p class="lede">
                 The chart shows the average strength of a team's opponents. The
@@ -1021,11 +1116,14 @@
                 The shaded area is the range of that average. At the left edge,
                 with no league games, the range runs from the weakest
                 non-conference schedule any ODAC team played this season to the
-                strongest. At the right edge, every game is a league game, and
+                strongest. At the right edge, every game is a league game.
+              </p>
+              <p class="lede">
+                For winning percentage, the range ends at .500. For NPI, league
+                schedules still differ. A team never plays itself, and a
+                schedule short of a full round robin skips some ODAC teams. So
                 the low and high ends are the weakest and strongest league
-                schedules. A team never plays itself, and a schedule short of a
-                full round robin skips some ODAC teams. So league schedules
-                still differ.
+                schedules.
               </p>
               <div class="ctl measure">
                 <span class="caption" id="lbl-measure">Opponents' average</span>
@@ -1039,6 +1137,7 @@
               </div>
               <div class="chart" id="funnel"></div>
               <p class="lede small" id="funnel-note"></p>
+              <p class="lede small" id="funnel-note2"></p>
               <div id="funnel-table"></div>
               <div id="funnel-teams"></div>
             </details>
@@ -1148,7 +1247,7 @@
                 </dd>
               </dl>
             </details>
-            <footer>Built 2026-11-23 3:54 PM Eastern.</footer>
+            <footer>Built 2026-11-24 2:56 PM Eastern.</footer>
           </main>
         </div>
       </section>
@@ -2005,130 +2104,130 @@
                 "teams": 13,
                 "measures": {
                   "wp": {
-                    "league": 0.49431050867776877,
-                    "best": ["Washington & Lee", 0.7278680770553835],
-                    "worst": ["Sweet Briar", 0.1746794871794872],
-                    "fullHigh": 0.5564094058676102,
-                    "fullLow": 0.43888748313090414,
-                    "roundRobinHigh": 0.5351889279665982,
-                    "roundRobinLow": 0.46062752445782634,
+                    "league": 0.4958620215093618,
+                    "best": ["Washington & Lee", 0.7663516429963798],
+                    "worst": ["Sweet Briar", 0.14583333333333334],
+                    "fullHigh": 0.5,
+                    "fullLow": 0.5,
+                    "roundRobinHigh": 0.5,
+                    "roundRobinLow": 0.5,
                     "points": [
                       {
                         "team": "Washington & Lee",
                         "league": 10,
                         "games": 16,
-                        "all": 0.5963623487097268,
-                        "leagueAvg": 0.5174589117023327,
-                        "roundRobin": 0.46062752445782634,
-                        "nonconf": 0.7278680770553835
+                        "all": 0.6328524987278373,
+                        "leagueAvg": 0.5527530121667119,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.7663516429963798
                       },
                       {
                         "team": "Batten",
                         "league": 10,
                         "games": 16,
-                        "all": 0.5343573822494585,
-                        "leagueAvg": 0.5338933802265846,
-                        "roundRobin": 0.4657444835221538,
-                        "nonconf": 0.5351307189542484
+                        "all": 0.5612391561719154,
+                        "leagueAvg": 0.5628198347490143,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5586046918767508
                       },
                       {
                         "team": "Lynchburg",
                         "league": 10,
                         "games": 18,
-                        "all": 0.5361213189354314,
-                        "leagueAvg": 0.5033611673414305,
-                        "roundRobin": 0.46971273749040776,
-                        "nonconf": 0.5770715084279325
+                        "all": 0.5610084632143456,
+                        "leagueAvg": 0.5296069004524887,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6002604166666666
                       },
                       {
                         "team": "Bridgewater (VA)",
                         "league": 10,
                         "games": 17,
-                        "all": 0.5498517053880375,
-                        "leagueAvg": 0.5077251953412945,
-                        "roundRobin": 0.47378541919466843,
-                        "nonconf": 0.6100324340262421
+                        "all": 0.5712834076019289,
+                        "leagueAvg": 0.5302742355683532,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6298679390784654
                       },
                       {
                         "team": "Shenandoah",
                         "league": 10,
                         "games": 18,
-                        "all": 0.5328045438823303,
-                        "leagueAvg": 0.47117408198097055,
-                        "roundRobin": 0.4781713841069491,
-                        "nonconf": 0.6098426212590299
+                        "all": 0.5483753923092158,
+                        "leagueAvg": 0.4765569153069153,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6381484885620915
                       },
                       {
                         "team": "Roanoke",
                         "league": 11,
                         "games": 18,
-                        "all": 0.5387854377018464,
-                        "leagueAvg": 0.4737946199827005,
-                        "roundRobin": 0.49132927884379124,
-                        "nonconf": 0.6409138655462184
+                        "all": 0.5445076926952572,
+                        "leagueAvg": 0.480950082183195,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6443839377856406
                       },
                       {
                         "team": "Randolph-Macon",
                         "league": 11,
                         "games": 16,
-                        "all": 0.4735029253351138,
-                        "leagueAvg": 0.4761869644803081,
-                        "roundRobin": 0.49352226129993154,
-                        "nonconf": 0.46759803921568627
+                        "all": 0.47401134713562154,
+                        "leagueAvg": 0.4782053359593466,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.46478457172342624
                       },
                       {
                         "team": "Randolph",
                         "league": 10,
                         "games": 15,
-                        "all": 0.44060176192916134,
-                        "leagueAvg": 0.4904175030336021,
-                        "roundRobin": 0.4909180946332649,
-                        "nonconf": 0.3409702797202797
+                        "all": 0.44265262787321613,
+                        "leagueAvg": 0.4875137403446227,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.3529304029304029
                       },
                       {
                         "team": "Eastern Mennonite",
                         "league": 10,
                         "games": 17,
-                        "all": 0.47624731940088894,
-                        "leagueAvg": 0.43888748313090414,
-                        "roundRobin": 0.5057771632607159,
-                        "nonconf": 0.5296185140722957
+                        "all": 0.46682349690112396,
+                        "leagueAvg": 0.43064596759449697,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5185056816248766
                       },
                       {
                         "team": "Guilford",
                         "league": 10,
                         "games": 14,
-                        "all": 0.5642082490891094,
-                        "leagueAvg": 0.5564094058676102,
-                        "roundRobin": 0.5143555946332649,
-                        "nonconf": 0.5837053571428571
+                        "all": 0.5534452271584624,
+                        "leagueAvg": 0.5430284462269757,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5794871794871795
                       },
                       {
                         "team": "Sweet Briar",
                         "league": 10,
                         "games": 12,
-                        "all": 0.4085482075758779,
-                        "leagueAvg": 0.455321951655156,
-                        "roundRobin": 0.5143555946332649,
-                        "nonconf": 0.1746794871794872
+                        "all": 0.38552795584045585,
+                        "leagueAvg": 0.4334668803418803,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.14583333333333334
                       },
                       {
                         "team": "Averett",
                         "league": 10,
                         "games": 13,
-                        "all": 0.5366268470951133,
-                        "leagueAvg": 0.5358501953412944,
-                        "roundRobin": 0.5287786715563418,
-                        "nonconf": 0.5392156862745098
+                        "all": 0.5103061594011821,
+                        "leagueAvg": 0.5117153149138443,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5056089743589743
                       },
                       {
                         "team": "Hollins",
                         "league": 10,
                         "games": 12,
-                        "all": 0.4584907723210742,
-                        "leagueAvg": 0.4694196960160582,
-                        "roundRobin": 0.5351889279665982,
-                        "nonconf": 0.40384615384615385
+                        "all": 0.41923360204610205,
+                        "leagueAvg": 0.4319264763014763,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.3557692307692308
                       }
                     ]
                   },
@@ -4528,7 +4627,13 @@
                   ]
                 }
               ],
-              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 54 adds 0.5 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 8."
+              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 54 adds 0.5 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 8.",
+              "chances": {
+                "slope": 0.398911329476787,
+                "home": 0.1854653634436581,
+                "tie": 0.6724566049810122,
+                "games": 3449
+              }
             },
             {
               "sport": "mso",
@@ -5395,121 +5500,121 @@
                 "teams": 12,
                 "measures": {
                   "wp": {
-                    "league": 0.4978832704436887,
-                    "best": ["Roanoke", 0.6161594462346341],
-                    "worst": ["Bridgewater (VA)", 0.48647741147741147],
-                    "fullHigh": 0.5508262759294751,
-                    "fullLow": 0.43741188141923437,
-                    "roundRobinHigh": 0.537120849137103,
-                    "roundRobinLow": 0.45984812186437574,
+                    "league": 0.5001427679417898,
+                    "best": ["Lynchburg", 0.6360094037615046],
+                    "worst": ["Averett", 0.49221611721611724],
+                    "fullHigh": 0.5,
+                    "fullLow": 0.5,
+                    "roundRobinHigh": 0.5,
+                    "roundRobinLow": 0.5,
                     "points": [
                       {
                         "team": "Lynchburg",
                         "league": 10,
                         "games": 17,
-                        "all": 0.5297595741082811,
-                        "leagueAvg": 0.47241188141923435,
-                        "roundRobin": 0.45984812186437574,
-                        "nonconf": 0.6116848493783478
+                        "all": 0.5636943314278955,
+                        "leagueAvg": 0.513073780794369,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6360094037615046
                       },
                       {
                         "team": "Washington & Lee",
                         "league": 10,
                         "games": 16,
-                        "all": 0.5246887766999513,
-                        "leagueAvg": 0.5061900769079561,
-                        "roundRobin": 0.46893903095528483,
-                        "nonconf": 0.555519943019943
+                        "all": 0.5478955123716153,
+                        "leagueAvg": 0.519924136321195,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5945144724556489
                       },
                       {
                         "team": "Shenandoah",
                         "league": 9,
                         "games": 17,
-                        "all": 0.524682073551815,
-                        "leagueAvg": 0.4592588156120148,
-                        "roundRobin": 0.4803026673189212,
-                        "nonconf": 0.5982832387340902
+                        "all": 0.5376393944892397,
+                        "leagueAvg": 0.47464806435394674,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6085046408914443
                       },
                       {
                         "team": "Randolph-Macon",
                         "league": 9,
                         "games": 13,
-                        "all": 0.546061963921871,
-                        "leagueAvg": 0.5508262759294751,
-                        "roundRobin": 0.4819260439422978,
-                        "nonconf": 0.5353422619047619
+                        "all": 0.5584089498458991,
+                        "leagueAvg": 0.5638891802784991,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5460784313725491
                       },
                       {
                         "team": "Bridgewater (VA)",
                         "league": 10,
                         "games": 17,
-                        "all": 0.45761533497260143,
-                        "leagueAvg": 0.43741188141923437,
-                        "roundRobin": 0.474919892199304,
-                        "nonconf": 0.48647741147741147
+                        "all": 0.46906034522247414,
+                        "leagueAvg": 0.44883008331537744,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.4979607193754695
                       },
                       {
                         "team": "Hampden-Sydney",
                         "league": 11,
                         "games": 16,
-                        "all": 0.4919481416470097,
-                        "leagueAvg": 0.47829731972533823,
-                        "roundRobin": 0.47829731972533823,
-                        "nonconf": 0.5219799498746867
+                        "all": 0.5029079816812014,
+                        "leagueAvg": 0.4813582186647202,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5503174603174603
                       },
                       {
                         "team": "Batten",
                         "league": 10,
                         "games": 17,
-                        "all": 0.5274549968435418,
-                        "leagueAvg": 0.5463884896063689,
-                        "roundRobin": 0.49671680873306256,
-                        "nonconf": 0.500407150039503
+                        "all": 0.5264217056593218,
+                        "leagueAvg": 0.5480651194350885,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.49550254312251213
                       },
                       {
                         "team": "Roanoke",
                         "league": 9,
                         "games": 16,
-                        "all": 0.564703655585041,
-                        "leagueAvg": 0.524682485079802,
-                        "roundRobin": 0.505870849137103,
-                        "nonconf": 0.6161594462346341
+                        "all": 0.5605375559468052,
+                        "leagueAvg": 0.516824521081487,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6167400293450713
                       },
                       {
                         "team": "Guilford",
                         "league": 9,
                         "games": 14,
-                        "all": 0.4794345656616223,
-                        "leagueAvg": 0.4481477045009037,
-                        "roundRobin": 0.5007572127734666,
-                        "nonconf": 0.5357509157509157
+                        "all": 0.4731187346733566,
+                        "leagueAvg": 0.4447028098988883,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5242673992673993
                       },
                       {
                         "team": "Randolph",
                         "league": 10,
                         "games": 14,
-                        "all": 0.48921347722624814,
-                        "leagueAvg": 0.4836900769079562,
-                        "roundRobin": 0.5079000699163237,
-                        "nonconf": 0.503021978021978
+                        "all": 0.47565041536182623,
+                        "leagueAvg": 0.46889592949190473,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.49253663003663006
                       },
                       {
                         "team": "Eastern Mennonite",
                         "league": 10,
                         "games": 17,
-                        "all": 0.5293370392532658,
-                        "leagueAvg": 0.5329285222861074,
-                        "roundRobin": 0.5157304748055522,
-                        "nonconf": 0.5242063492063492
+                        "all": 0.5140718097590707,
+                        "leagueAvg": 0.5144946170100969,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5134677994004619
                       },
                       {
                         "team": "Averett",
                         "league": 9,
                         "games": 14,
-                        "all": 0.5356987379972232,
-                        "leagueAvg": 0.5396380043245368,
-                        "roundRobin": 0.537120849137103,
-                        "nonconf": 0.5286080586080586
+                        "all": 0.5035202441300407,
+                        "leagueAvg": 0.509800314637776,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.49221611721611724
                       }
                     ]
                   },
@@ -7752,7 +7857,13 @@
                   ]
                 }
               ],
-              "weightsText": "The result counts 15% and the opponent's NPI counts 85%. A win over a team above 54 adds 0.75 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 10."
+              "weightsText": "The result counts 15% and the opponent's NPI counts 85%. A win over a team above 54 adds 0.75 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 10.",
+              "chances": {
+                "slope": 0.4375173398580369,
+                "home": 0.20556909438884846,
+                "tie": 0.6621320536214971,
+                "games": 3416
+              }
             },
             {
               "sport": "wvb",
@@ -8602,130 +8713,130 @@
                 "teams": 13,
                 "measures": {
                   "wp": {
-                    "league": 0.49248392605987545,
-                    "best": ["Guilford", 0.6950877705225531],
-                    "worst": ["Hollins", 0.3475274725274725],
-                    "fullHigh": 0.536992266992267,
-                    "fullLow": 0.45365893365893367,
-                    "roundRobinHigh": 0.536602733686067,
-                    "roundRobinLow": 0.46517416225749564,
+                    "league": 0.4919264175260178,
+                    "best": ["Washington & Lee", 0.7061037307224214],
+                    "worst": ["Hollins", 0.32939814814814816],
+                    "fullHigh": 0.5,
+                    "fullLow": 0.5,
+                    "roundRobinHigh": 0.5,
+                    "roundRobinLow": 0.5,
                     "points": [
                       {
                         "team": "Washington & Lee",
                         "league": 12,
                         "games": 27,
-                        "all": 0.5873934465963452,
-                        "leagueAvg": 0.46561507936507934,
-                        "roundRobin": 0.46561507936507934,
-                        "nonconf": 0.6848161403813577
+                        "all": 0.6065322352550522,
+                        "leagueAvg": 0.4820678659208408,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.7061037307224214
                       },
                       {
                         "team": "Batten",
                         "league": 12,
                         "games": 28,
-                        "all": 0.5000606983863569,
-                        "leagueAvg": 0.4651741622574956,
-                        "roundRobin": 0.46517416225749564,
-                        "nonconf": 0.526225600483003
+                        "all": 0.515615444661772,
+                        "leagueAvg": 0.4785066123595872,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5434470688884108
                       },
                       {
                         "team": "Bridgewater (VA)",
                         "league": 12,
                         "games": 25,
-                        "all": 0.5051122507122507,
-                        "leagueAvg": 0.466602733686067,
-                        "roundRobin": 0.46660273368606703,
-                        "nonconf": 0.5406594971979588
+                        "all": 0.5200989053831159,
+                        "leagueAvg": 0.4832549504412586,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5541087099448304
                       },
                       {
                         "team": "Lynchburg",
                         "league": 12,
                         "games": 28,
-                        "all": 0.4721277726739282,
-                        "leagueAvg": 0.4651741622574956,
-                        "roundRobin": 0.46517416225749564,
-                        "nonconf": 0.4773429804862526
+                        "all": 0.48610833521838076,
+                        "leagueAvg": 0.47889241482872297,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.4915202755106241
                       },
                       {
                         "team": "Randolph-Macon",
                         "league": 12,
                         "games": 25,
-                        "all": 0.5453446703998428,
-                        "leagueAvg": 0.49326940035273364,
-                        "roundRobin": 0.49326940035273364,
-                        "nonconf": 0.5934141504433281
+                        "all": 0.5489605850374729,
+                        "leagueAvg": 0.49764576963280244,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5963281069494765
                       },
                       {
                         "team": "Roanoke",
                         "league": 12,
                         "games": 21,
-                        "all": 0.5008020748332734,
-                        "leagueAvg": 0.48898368606701936,
-                        "roundRobin": 0.4889836860670194,
-                        "nonconf": 0.5165599265216123
+                        "all": 0.5054839985242078,
+                        "leagueAvg": 0.48931243629946913,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5270460814905259
                       },
                       {
                         "team": "Shenandoah",
                         "league": 13,
                         "games": 24,
-                        "all": 0.4812978533811867,
-                        "leagueAvg": 0.45365893365893367,
-                        "roundRobin": 0.49146384479717814,
-                        "nonconf": 0.5139620312347585
+                        "all": 0.4832348638085901,
+                        "leagueAvg": 0.457693085012219,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5134206023861196
                       },
                       {
                         "team": "Randolph",
                         "league": 12,
                         "games": 24,
-                        "all": 0.4764978256954144,
-                        "leagueAvg": 0.5018805114638448,
-                        "roundRobin": 0.5018805114638448,
-                        "nonconf": 0.451115139926984
+                        "all": 0.4710837208177025,
+                        "leagueAvg": 0.49452792066255075,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.4476395209728543
                       },
                       {
                         "team": "Eastern Mennonite",
                         "league": 12,
                         "games": 24,
-                        "all": 0.43646506036904587,
-                        "leagueAvg": 0.5088249559082892,
-                        "roundRobin": 0.5088249559082892,
-                        "nonconf": 0.36410516482980254
+                        "all": 0.4267221447260539,
+                        "leagueAvg": 0.50162333129057,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.35182095816153786
                       },
                       {
                         "team": "Averett",
                         "league": 12,
                         "games": 20,
-                        "all": 0.5181750879503333,
-                        "leagueAvg": 0.5157694003527337,
-                        "roundRobin": 0.5157694003527337,
-                        "nonconf": 0.5217836193467329
+                        "all": 0.5076921921201097,
+                        "leagueAvg": 0.5052067917533211,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5114202926702927
                       },
                       {
                         "team": "Guilford",
                         "league": 12,
                         "games": 20,
-                        "all": 0.5924967484206615,
-                        "leagueAvg": 0.524102733686067,
-                        "roundRobin": 0.524102733686067,
-                        "nonconf": 0.6950877705225531
+                        "all": 0.5799198669793635,
+                        "leagueAvg": 0.5139787215778825,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.678831585081585
                       },
                       {
                         "team": "Hollins",
                         "league": 12,
                         "games": 20,
-                        "all": 0.4484726292226292,
-                        "leagueAvg": 0.5157694003527337,
-                        "roundRobin": 0.5157694003527337,
-                        "nonconf": 0.3475274725274725
+                        "all": 0.4327094212677737,
+                        "leagueAvg": 0.501583603347524,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.32939814814814816
                       },
                       {
                         "team": "Sweet Briar",
                         "league": 13,
                         "games": 24,
-                        "all": 0.5106748387288051,
-                        "leagueAvg": 0.536992266992267,
-                        "roundRobin": 0.536602733686067,
-                        "nonconf": 0.4795724235083503
+                        "all": 0.4764427210851696,
+                        "leagueAvg": 0.5119352958905854,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.43449695086058726
                       }
                     ]
                   },
@@ -12065,7 +12176,13 @@
                   ]
                 }
               ],
-              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 55.5 adds 0.6 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 10."
+              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 55.5 adds 0.6 points per NPI point above it. Every game weighs the same, home or road. Minimum wins kept: 10.",
+              "chances": {
+                "slope": 0.420562195334555,
+                "home": 0.26908698115521107,
+                "tie": 0.0,
+                "games": 5017
+              }
             },
             {
               "sport": "fh",
@@ -12419,94 +12536,94 @@
                 "teams": 9,
                 "measures": {
                   "wp": {
-                    "league": 0.45568168787983027,
-                    "best": ["Lynchburg", 0.671413180902345],
-                    "worst": ["Sweet Briar", 0.3613195278111245],
-                    "fullHigh": 0.512641898864809,
-                    "fullLow": 0.41541967664258683,
-                    "roundRobinHigh": 0.512641898864809,
-                    "roundRobinLow": 0.41541967664258683,
+                    "league": 0.4542862893207965,
+                    "best": ["Lynchburg", 0.6801136419480073],
+                    "worst": ["Sweet Briar", 0.30358451072736786],
+                    "fullHigh": 0.5,
+                    "fullLow": 0.5,
+                    "roundRobinHigh": 0.5,
+                    "roundRobinLow": 0.5,
                     "points": [
                       {
                         "team": "Washington & Lee",
                         "league": 8,
                         "games": 16,
-                        "all": 0.533170856061723,
-                        "leagueAvg": 0.41541967664258683,
-                        "roundRobin": 0.41541967664258683,
-                        "nonconf": 0.650922035480859
+                        "all": 0.55554121150822,
+                        "leagueAvg": 0.4426937441643324,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6683886788521076
                       },
                       {
                         "team": "Lynchburg",
                         "league": 8,
                         "games": 18,
-                        "all": 0.5619592777745512,
-                        "leagueAvg": 0.4251418988648091,
-                        "roundRobin": 0.425141898864809,
-                        "nonconf": 0.671413180902345
+                        "all": 0.5800176162082766,
+                        "leagueAvg": 0.45489758403361347,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6801136419480073
                       },
                       {
                         "team": "Shenandoah",
                         "league": 8,
                         "games": 16,
-                        "all": 0.5112583849329205,
-                        "leagueAvg": 0.4223641210870313,
-                        "roundRobin": 0.42236412108703125,
-                        "nonconf": 0.6001526487788098
+                        "all": 0.5267129604034596,
+                        "leagueAvg": 0.4259453781512605,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6274805426556588
                       },
                       {
                         "team": "Randolph-Macon",
                         "league": 8,
                         "games": 16,
-                        "all": 0.4389087762297902,
-                        "leagueAvg": 0.4362530099759202,
-                        "roundRobin": 0.43625300997592015,
-                        "nonconf": 0.4415645424836601
+                        "all": 0.44461694217160547,
+                        "leagueAvg": 0.4494312527642636,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.4398026315789474
                       },
                       {
                         "team": "Bridgewater (VA)",
                         "league": 8,
                         "games": 18,
-                        "all": 0.5026947816163503,
-                        "leagueAvg": 0.4534313725490196,
-                        "roundRobin": 0.45343137254901955,
-                        "nonconf": 0.5421055088702148
+                        "all": 0.5018032685408846,
+                        "leagueAvg": 0.44024007629367534,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5510538223386521
                       },
                       {
                         "team": "Batten",
                         "league": 8,
                         "games": 18,
-                        "all": 0.47082248103919927,
-                        "leagueAvg": 0.464030787753698,
-                        "roundRobin": 0.46403078775369794,
-                        "nonconf": 0.4762558356676004
+                        "all": 0.4629288493775078,
+                        "leagueAvg": 0.44754195537864266,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.4752383645765999
                       },
                       {
                         "team": "Roanoke",
                         "league": 8,
                         "games": 16,
-                        "all": 0.5396668518959541,
-                        "leagueAvg": 0.4758771929824561,
-                        "roundRobin": 0.4758771929824561,
-                        "nonconf": 0.603456510809452
+                        "all": 0.5291514632168657,
+                        "leagueAvg": 0.46348062251216277,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.5948223039215687
                       },
                       {
                         "team": "Sweet Briar",
                         "league": 8,
                         "games": 15,
-                        "all": 0.43313590348420067,
-                        "leagueAvg": 0.49597523219814244,
-                        "roundRobin": 0.4959752321981424,
-                        "nonconf": 0.3613195278111245
+                        "all": 0.39853408344894414,
+                        "leagueAvg": 0.48161495958032335,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.30358451072736786
                       },
                       {
                         "team": "Eastern Mennonite",
                         "league": 8,
                         "games": 16,
-                        "all": 0.44575984999262863,
-                        "leagueAvg": 0.512641898864809,
-                        "roundRobin": 0.512641898864809,
-                        "nonconf": 0.37887780112044817
+                        "all": 0.4040358721086275,
+                        "leagueAvg": 0.4827310310088948,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.3253407132083603
                       }
                     ]
                   },
@@ -14268,7 +14385,13 @@
                   ]
                 }
               ],
-              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 52.5 adds 0.5 points per NPI point above it. Road wins and home losses weigh 1.1 games. Home wins and road losses weigh 0.9. Minimum wins kept: 6.5."
+              "weightsText": "The result counts 20% and the opponent's NPI counts 80%. A win over a team above 52.5 adds 0.5 points per NPI point above it. Road wins and home losses weigh 1.1 games. Home wins and road losses weigh 0.9. Minimum wins kept: 6.5.",
+              "chances": {
+                "slope": 0.3811485081731377,
+                "home": 0.37414231943747817,
+                "tie": 0.0,
+                "games": 1417
+              }
             },
             {
               "sport": "fb",
@@ -14780,85 +14903,85 @@
                 "teams": 8,
                 "measures": {
                   "wp": {
-                    "league": 0.5208333333333334,
-                    "best": ["Bridgewater (VA)", 0.6666666666666666],
-                    "worst": ["Roanoke", 0.1875],
-                    "fullHigh": 0.5833333333333334,
-                    "fullLow": 0.4166666666666667,
-                    "roundRobinHigh": 0.5793650793650794,
-                    "roundRobinLow": 0.4682539682539683,
+                    "league": 0.5238095238095238,
+                    "best": ["Hampden-Sydney", 0.625],
+                    "worst": ["Roanoke", 0.21428571428571427],
+                    "fullHigh": 0.5,
+                    "fullLow": 0.5,
+                    "roundRobinHigh": 0.5,
+                    "roundRobinLow": 0.5,
                     "points": [
                       {
                         "team": "Hampden-Sydney",
                         "league": 6,
                         "games": 9,
-                        "all": 0.47530864197530864,
-                        "leagueAvg": 0.4166666666666667,
-                        "roundRobin": 0.4682539682539683,
-                        "nonconf": 0.5925925925925926
+                        "all": 0.5218253968253967,
+                        "leagueAvg": 0.4702380952380952,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.625
                       },
                       {
                         "team": "Randolph-Macon",
                         "league": 6,
                         "games": 9,
-                        "all": 0.47376543209876537,
-                        "leagueAvg": 0.4166666666666667,
-                        "roundRobin": 0.4841269841269842,
-                        "nonconf": 0.5879629629629629
+                        "all": 0.5059523809523809,
+                        "leagueAvg": 0.44940476190476186,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.6190476190476191
                       },
                       {
                         "team": "Washington & Lee",
                         "league": 6,
                         "games": 9,
-                        "all": 0.4444444444444444,
-                        "leagueAvg": 0.5,
-                        "roundRobin": 0.5000000000000001,
+                        "all": 0.4583333333333333,
+                        "leagueAvg": 0.5208333333333334,
+                        "roundRobin": 0.5,
                         "nonconf": 0.3333333333333333
                       },
                       {
                         "team": "Shenandoah",
                         "league": 6,
                         "games": 9,
-                        "all": 0.5092592592592592,
-                        "leagueAvg": 0.5833333333333334,
-                        "roundRobin": 0.5158730158730159,
-                        "nonconf": 0.3611111111111111
+                        "all": 0.5178571428571428,
+                        "leagueAvg": 0.5952380952380952,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.36309523809523814
                       },
                       {
                         "team": "Roanoke",
                         "league": 6,
                         "games": 8,
-                        "all": 0.421875,
-                        "leagueAvg": 0.5,
-                        "roundRobin": 0.5238095238095238,
-                        "nonconf": 0.1875
+                        "all": 0.41294642857142855,
+                        "leagueAvg": 0.4791666666666667,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.21428571428571427
                       },
                       {
                         "team": "Bridgewater (VA)",
                         "league": 6,
                         "games": 9,
-                        "all": 0.6111111111111112,
-                        "leagueAvg": 0.5833333333333334,
-                        "roundRobin": 0.5476190476190477,
-                        "nonconf": 0.6666666666666666
+                        "all": 0.6051587301587301,
+                        "leagueAvg": 0.5952380952380952,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.625
                       },
                       {
                         "team": "Averett",
                         "league": 6,
                         "games": 9,
-                        "all": 0.46759259259259256,
-                        "leagueAvg": 0.5833333333333334,
-                        "roundRobin": 0.5476190476190477,
-                        "nonconf": 0.23611111111111108
+                        "all": 0.44047619047619047,
+                        "leagueAvg": 0.550595238095238,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.22023809523809523
                       },
                       {
                         "team": "Guilford",
                         "league": 6,
                         "games": 9,
-                        "all": 0.5138888888888888,
-                        "leagueAvg": 0.5833333333333334,
-                        "roundRobin": 0.5793650793650794,
-                        "nonconf": 0.375
+                        "all": 0.4642857142857143,
+                        "leagueAvg": 0.5297619047619048,
+                        "roundRobin": 0.5,
+                        "nonconf": 0.3333333333333333
                       }
                     ]
                   },
@@ -15723,7 +15846,13 @@
                   ]
                 }
               ],
-              "weightsText": "The result counts 40% and the opponent's NPI counts 60%. A win over a team above 54 adds 0.25 points per NPI point above it. Road wins and home losses weigh 1.1 games. Home wins and road losses weigh 0.9. Minimum wins kept: 5."
+              "weightsText": "The result counts 40% and the opponent's NPI counts 60%. A win over a team above 54 adds 0.25 points per NPI point above it. Road wins and home losses weigh 1.1 games. Home wins and road losses weigh 0.9. Minimum wins kept: 5.",
+              "chances": {
+                "slope": 0.2579923894937857,
+                "home": 0.36779299222187206,
+                "tie": 0.0,
+                "games": 1051
+              }
             }
           ]
         }
@@ -16740,6 +16869,35 @@
             wp: "opponents' winning percentage",
             npi: "opponents' NPI",
           };
+          function wpNote(m, G) {
+            const off = m.points.filter(p => {
+              const s = p.league / p.games;
+              return (
+                p.all > s * m.fullHigh + (1 - s) * m.best[1] + 1e-9 ||
+                p.all < s * m.fullLow + (1 - s) * m.worst[1] - 1e-9
+              );
+            });
+            const league = m.points
+              .filter(p => p.leagueAvg !== null)
+              .map(p => p.leagueAvg);
+            return (
+              "Each opponent's winning percentage leaves out its games against the team, as the NCAA does, with ties as half a win. In a season of league games only, with every ODAC team played the same number of times, every team's opponents come to " +
+              fmtM(m.fullHigh) +
+              ': each game among the other ODAC teams gives one win, and each of them plays the same number of those games.' +
+              " This season, league opponents' records also hold their non-conference games, so a team's league opponents run from " +
+              fmtM(Math.min(...league)) +
+              ' to ' +
+              fmtM(Math.max(...league)) +
+              '.' +
+              (off.length
+                ? ' For that reason ' +
+                  off.length +
+                  ' of ' +
+                  m.points.length +
+                  ' dots fall outside the band.'
+                : '')
+            );
+          }
           function renderFunnel() {
             document
               .querySelectorAll('.ms')
@@ -16917,7 +17075,16 @@
               fmtM(lo) +
               '</text>';
             // On a narrow chart these labels cover the dots. The table's last row gives the same two values.
-            if (narrow === false) {
+            if (measure === 'wp')
+              svg +=
+                '<text class="ink" x="' +
+                (X(1) - 6) +
+                '" y="' +
+                (Y(fhi) + 18) +
+                '" text-anchor="end">League games only ' +
+                fmtM(fhi) +
+                '</text>';
+            else if (narrow === false) {
               svg +=
                 '<text class="ink" x="' +
                 (X(1) - 6) +
@@ -16975,8 +17142,10 @@
                   fmtM(p.all) +
                   '<br>League opponents ' +
                   (p.leagueAvg === null ? '-' : fmtM(p.leagueAvg)) +
-                  '<br>Full round robin ' +
-                  fmtM(p.roundRobin) +
+                  '' +
+                  (measure === 'wp'
+                    ? ''
+                    : '<br>Full round robin ' + fmtM(p.roundRobin)) +
                   '<br>Non-conference opponents ' +
                   (p.nonconf === null ? '-' : fmtM(p.nonconf));
                 tip.style.display = 'block';
@@ -17057,18 +17226,20 @@
               fmtM(top(now / G)) +
               '. Each dot is an ODAC team this season, regular-season games against Division III teams only, placed at its own share of league games. The table uses a ' +
               G +
-              "-game season, the middle ODAC team's count. With every game a league game, the strongest and weakest league schedules come from this season's league schedules and from a full round robin against every other ODAC team. A full round robin alone runs from " +
-              fmtM(m.roundRobinLow) +
-              ' to ' +
-              fmtM(m.roundRobinHigh) +
-              '.' +
-              (measure === 'npi'
-                ? " In every game's NPI, the result counts " +
+              "-game season, the middle ODAC team's count.";
+            $('funnel-note2').textContent =
+              measure === 'npi'
+                ? "With every game a league game, the strongest and weakest league schedules come from this season's league schedules and from a full round robin against every other ODAC team. A full round robin alone runs from " +
+                  fmtM(m.roundRobinLow) +
+                  ' to ' +
+                  fmtM(m.roundRobinHigh) +
+                  '.' +
+                  " In every game's NPI, the result counts " +
                   Math.round((1 - sport.params.sosWeight) * 100) +
                   "% and the opponent's NPI " +
                   Math.round(sport.params.sosWeight * 100) +
                   '%, and a win over a strong opponent adds a bonus. So a team that wins its league games and a team that loses them finish far apart in NPI even when their opponents are the same.'
-                : " Winning percentages come from each opponent's Division III record, with ties as half a win.");
+                : wpNote(m, G);
             const rows = m.points
               .slice()
               .sort((a, b) => b.all - a.all)
@@ -17606,6 +17777,492 @@
             renderWhatIf();
           });
 
+          // Choosing a non-conference opponent
+          const SITE = { H: 1, A: -1, N: 0 };
+          const sig = x => 1 / (1 + Math.exp(-x));
+          let pick = null;
+          const f1 = x => x.toFixed(1),
+            sgn2 = x => (x >= 0 ? '+' : '−') + Math.abs(x).toFixed(2),
+            sgn3 = x => (x >= 0 ? '+' : '−') + Math.abs(x).toFixed(3);
+          const leagueOppNpi = () => sport.funnel.measures.npi.league;
+          const rankAt = x => 1 + sport.ranking.filter(([, v]) => v > x).length;
+          function chances(gap, site) {
+            const c = sport.chances,
+              z = c.slope * gap + c.home * SITE[site],
+              pL = sig(-c.tie - z),
+              pLT = sig(c.tie - z);
+            return [1 - pLT, pLT - pL, pL];
+          }
+          // Shortcut: each result's game NPI minus the team NPI, kept or dropped by the selection rules, weighted by its chance.
+          // It leaves out the worst-loss rule and the shift one more game gives the team NPI.
+          function gameValue(x, T, site, minMet) {
+            const p = sport.params,
+              [pw, pt, pl] = chances(T - x, site),
+              ww = p.winWeight[site],
+              lw = p.lossWeight[site];
+            const w = NPI.winValue(p, x) - T,
+              l = NPI.lossValue(p, x) - T,
+              cw = minMet ? Math.max(0, w) : w,
+              cl = Math.min(0, l);
+            return {
+              pw: pw,
+              pt: pt,
+              pl: pl,
+              w: w,
+              l: l,
+              cw: cw,
+              cl: cl,
+              ev: pw * ww * cw + (pt * (ww * cw + lw * cl)) / 2 + pl * lw * cl,
+            };
+          }
+          const scan = (T, site, minMet) => {
+            const out = [];
+            for (let x = T - 20; x <= T + 20 + 1e-9; x += 0.05)
+              out.push([x, gameValue(x, T, site, minMet).ev]);
+            return out;
+          };
+          function winBreakeven(T) {
+            let lo = 0,
+              hi = 100;
+            for (let i = 0; i < 60; i++) {
+              const m = (lo + hi) / 2;
+              if (NPI.winValue(sport.params, m) < T) lo = m;
+              else hi = m;
+            }
+            return lo;
+          }
+          function pickDefaults(name) {
+            const p = sport.params,
+              t = teamByName(name) || sport.teams[0];
+            const wins = t.games.reduce(
+              (a, g) => a + (g.res === 'W' ? 1 : g.res === 'T' ? 0.5 : 0),
+              0
+            );
+            const kept = NPI.scoreTeam(t.games, p, t.npi).kept.reduce(
+              (a, k) => a + k[0],
+              0
+            );
+            return {
+              team: t.name,
+              npi: t.npi,
+              minMet: wins >= p.minWins - 1e-9,
+              counted: Math.round(kept * 10) / 10,
+              opp: 'league',
+              onpi: leagueOppNpi(),
+              site: pick ? pick.site : 'N',
+            };
+          }
+          function renderPick() {
+            if (
+              pick === null ||
+              (pick.team && teamByName(pick.team) === undefined)
+            )
+              pick = pickDefaults(focus);
+            const p = sport.params,
+              T = pick.npi,
+              mw = p.minWins;
+            $('pk-team').innerHTML =
+              sport.teams
+                .map(
+                  t =>
+                    '<option' +
+                    (t.name === pick.team ? ' selected' : '') +
+                    '>' +
+                    esc(t.name) +
+                    '</option>'
+                )
+                .join('') +
+              '<option value=""' +
+              (pick.team ? '' : ' selected') +
+              '>Other team</option>';
+            $('pk-npi').value = f3(T);
+            $('pk-n').value = pick.counted;
+            document.querySelectorAll('.pkw').forEach(b => {
+              const on = (b.dataset.min === '1') === pick.minMet;
+              b.classList.toggle('active', on);
+              b.setAttribute('aria-pressed', on);
+            });
+            $('pk-w0').textContent = 'Short of ' + mw;
+            $('pk-w1').textContent = mw + ' or more';
+            $('pk-opp').innerHTML =
+              '<option value="league"' +
+              (pick.opp === 'league' ? ' selected' : '') +
+              '>Average league opponent</option>' +
+              sport.ranking
+                .map(
+                  ([n], i) =>
+                    '<option value="' +
+                    i +
+                    '"' +
+                    (pick.opp === String(i) ? ' selected' : '') +
+                    '>' +
+                    (i + 1) +
+                    '. ' +
+                    esc(sport.rankingNames[i]) +
+                    '</option>'
+                )
+                .join('') +
+              '<option value=""' +
+              (pick.opp === '' ? ' selected' : '') +
+              '>Other opponent</option>';
+            $('pk-onpi').value = f3(pick.onpi);
+            $('pk-site').value = pick.site;
+            const X = pick.onpi,
+              g = gameValue(X, T, pick.site, pick.minMet),
+              L = leagueOppNpi(),
+              gl = gameValue(L, T, pick.site, pick.minMet);
+            const yes = v => (v ? 'Yes' : 'No'),
+              wv = NPI.winValue(p, X),
+              lv = NPI.lossValue(p, X);
+            const tieCount =
+              g.cw !== 0 && g.cl !== 0
+                ? 'Yes'
+                : g.cw !== 0
+                  ? 'Win part'
+                  : g.cl !== 0
+                    ? 'Loss part'
+                    : 'No';
+            const rows = [['Win', g.pw, f3(wv), yes(g.cw !== 0)]]
+              .concat(
+                sport.ties
+                  ? [['Tie', g.pt, f3(wv) + ' / ' + f3(lv), tieCount]]
+                  : []
+              )
+              .concat([['Loss', g.pl, f3(lv), yes(g.cl !== 0)]]);
+            $('pk-out').innerHTML = wrap(
+              '<tr><th class="lead" aria-sort="none">Result</th><th aria-sort="none">Chance</th><th aria-sort="none">Game NPI</th><th aria-sort="none">Counts</th></tr>',
+              rows
+                .map(
+                  r =>
+                    '<tr><td class="lead">' +
+                    r[0] +
+                    '</td><td data-sort="' +
+                    r[1] +
+                    '">' +
+                    Math.round(r[1] * 100) +
+                    '%</td><td>' +
+                    r[2] +
+                    '</td><td>' +
+                    r[3] +
+                    '</td></tr>'
+                )
+                .join(''),
+              true
+            );
+            bindSort($('pk-out').querySelector('table'));
+            const per = v => sgn3(v / (pick.counted + 1));
+            const curve = scan(T, pick.site, pick.minMet),
+              best = curve.reduce((a, b) => (b[1] > a[1] ? b : a)),
+              worst = curve
+                .filter(c => c[0] > T)
+                .reduce((a, b) => (b[1] < a[1] ? b : a));
+            $('pk-note').textContent =
+              'Expected value of this game: ' +
+              sgn2(g.ev) +
+              ' game NPI points, about ' +
+              per(g.ev) +
+              ' in team NPI with ' +
+              pick.counted +
+              ' game' +
+              (pick.counted === 1 ? '' : 's') +
+              ' counting.' +
+              (pick.opp === 'league'
+                ? ''
+                : ' An average league opponent (NPI ' +
+                  f1(L) +
+                  ') at the same site: ' +
+                  sgn2(gl.ev) +
+                  ' points, about ' +
+                  per(gl.ev) +
+                  '.') +
+              " These values use a shortcut: each result's game NPI minus the team NPI, weighted by its chance. The shortcut leaves out the rule that keeps the worst loss.";
+            // Range around the best opponent that beats an average league opponent.
+            const bi = curve.indexOf(best);
+            let a = bi,
+              b = bi;
+            while (a > 0 && curve[a - 1][1] >= gl.ev) a--;
+            while (b < curve.length - 1 && curve[b + 1][1] >= gl.ev) b++;
+            const xw = winBreakeven(T),
+              xl = T / p.sosWeight;
+            const rules = [
+              'Best opponent: NPI ' +
+                f1(best[0]) +
+                ', ' +
+                f1(Math.abs(T - best[0])) +
+                ' points ' +
+                (best[0] <= T ? 'below' : 'above') +
+                ' the team, about rank ' +
+                rankAt(best[0]) +
+                '. Expected value ' +
+                sgn2(best[1]) +
+                ' points.',
+              gl.ev >= best[1] - 0.005
+                ? 'An average league opponent is about as good as the best non-conference opponent.'
+                : 'Opponents from NPI ' +
+                  f1(curve[a][0]) +
+                  ' to ' +
+                  f1(curve[b][0]) +
+                  ' (about rank ' +
+                  rankAt(curve[b][0]) +
+                  ' to ' +
+                  rankAt(curve[a][0]) +
+                  ') are worth more than an average league opponent.',
+              worst[1] >= 0
+                ? ''
+                : 'Worst stronger opponent: NPI ' +
+                  f1(worst[0]) +
+                  ', ' +
+                  f1(worst[0] - T) +
+                  ' points above the team. A loss there is likely, and its game NPI (' +
+                  f1(NPI.lossValue(p, worst[0])) +
+                  ') is under the team NPI, so it counts.',
+              pick.minMet
+                ? 'A win over an opponent below NPI ' +
+                  f1(xw) +
+                  ' is worth less than the team NPI, so it drops out. Those games add almost nothing, and a loss in one counts.'
+                : 'Until the team has ' +
+                  mw +
+                  ' wins, every win counts. A win over an opponent below NPI ' +
+                  f1(xw) +
+                  ' lowers the team NPI.',
+              'A loss to an opponent at NPI ' +
+                f1(xl) +
+                " or above is worth at least the team NPI, so it drops out, unless it is the team's worst loss.",
+            ];
+            $('pk-rules').innerHTML = rules
+              .filter(r => r)
+              .map(r => '<li>' + esc(r) + '</li>')
+              .join('');
+            renderPickChart(curve, T, X, L, best);
+            const ranks = [10, 25, 50, 100, 150, 200, 300].filter(
+              r => r <= sport.ranking.length
+            );
+            const rankRow = r => {
+              const t = sport.ranking[r - 1][1],
+                c = scan(t, 'N', pick.minMet),
+                bx = c.reduce((a, b) => (b[1] > a[1] ? b : a)),
+                le = gameValue(L, t, 'N', pick.minMet).ev;
+              const i = c.indexOf(bx);
+              let a = i,
+                b = i;
+              while (a > 0 && c[a - 1][1] >= le) a--;
+              while (b < c.length - 1 && c[b + 1][1] >= le) b++;
+              const range =
+                le >= bx[1] - 0.005
+                  ? 'League opponent about as good'
+                  : rankAt(c[b][0]) + ' to ' + rankAt(c[a][0]);
+              return (
+                '<tr><td>' +
+                r +
+                '</td><td>' +
+                f3(t) +
+                '</td><td>' +
+                f1(bx[0]) +
+                '</td><td>' +
+                rankAt(bx[0]) +
+                '</td><td class="txt">' +
+                range +
+                '</td></tr>'
+              );
+            };
+            $('pk-ranks').innerHTML = wrap(
+              '<tr class="band"><th></th><th></th><th colspan="2">Best opponent</th><th></th></tr><tr><th aria-sort="ascending">Team rank</th><th aria-sort="none">Team NPI</th><th aria-sort="none">NPI</th><th aria-sort="none">Rank</th><th class="txt" aria-sort="none">Ranks worth more than a league opponent</th></tr>',
+              ranks.map(rankRow).join(''),
+              true
+            );
+            bindSort($('pk-ranks').querySelector('table'));
+          }
+          function renderPickChart(curve, T, X, L, best) {
+            const box = $('pk-chart'),
+              W = Math.max(320, Math.min(1080, box.clientWidth - 16)),
+              narrow = W < 560;
+            const marks = [
+              [best[0], 'Best ' + f1(best[0])],
+              [L, (narrow ? 'League ' : 'League average ') + f1(L)],
+            ]
+              .concat(pick.opp === 'league' ? [] : [[X, 'Opponent ' + f1(X)]])
+              .filter(
+                m => m[0] >= curve[0][0] && m[0] <= curve[curve.length - 1][0]
+              );
+            const H = (narrow ? 280 : 340) + 18 * marks.length,
+              ml = narrow ? 44 : 52,
+              mr = 16,
+              mt = 30 + 18 * marks.length,
+              mb = 52;
+            const x0 = curve[0][0],
+              x1 = curve[curve.length - 1][0];
+            const ys = curve.map(c => c[1]).concat([0]);
+            let y0 = Math.min(...ys),
+              y1 = Math.max(...ys);
+            const pad = (y1 - y0) * 0.1 || 1;
+            y0 -= pad;
+            y1 += pad;
+            const Xs = v => ml + ((W - ml - mr) * (v - x0)) / (x1 - x0),
+              Ys = v => mt + ((H - mt - mb) * (y1 - v)) / (y1 - y0);
+            const step =
+              y1 - y0 > 12 ? 4 : y1 - y0 > 6 ? 2 : y1 - y0 > 2 ? 1 : 0.5;
+            let svg =
+              '<svg viewBox="0 0 ' +
+              W +
+              ' ' +
+              H +
+              '" role="img" aria-label="Expected value of one game by opponent NPI">';
+            for (let v = Math.ceil(y0 / step) * step; v <= y1; v += step)
+              svg +=
+                '<line class="grid" x1="' +
+                ml +
+                '" x2="' +
+                (W - mr) +
+                '" y1="' +
+                Ys(v) +
+                '" y2="' +
+                Ys(v) +
+                '"/><text x="' +
+                (ml - 8) +
+                '" y="' +
+                (Ys(v) + 4) +
+                '" text-anchor="end">' +
+                (Math.abs(v) < 1e-9 ? '0' : (v > 0 ? '+' : '−') + Math.abs(v)) +
+                '</text>';
+            for (let v = Math.ceil(x0 / 5) * 5; v <= x1; v += narrow ? 10 : 5)
+              svg +=
+                '<text x="' +
+                Xs(v) +
+                '" y="' +
+                (H - mb + 20) +
+                '" text-anchor="middle">' +
+                v +
+                '</text>';
+            svg +=
+              '<text x="' +
+              (ml + W - mr) / 2 +
+              '" y="' +
+              (H - 8) +
+              '" text-anchor="middle">Opponent NPI</text>';
+            svg +=
+              '<line class="avg" x1="' +
+              ml +
+              '" x2="' +
+              (W - mr) +
+              '" y1="' +
+              Ys(0) +
+              '" y2="' +
+              Ys(0) +
+              '"/>';
+            svg +=
+              '<line class="ref" x1="' +
+              Xs(T) +
+              '" x2="' +
+              Xs(T) +
+              '" y1="' +
+              mt +
+              '" y2="' +
+              (H - mb) +
+              '"/><text x="' +
+              (Xs(T) + 4) +
+              '" y="' +
+              (H - mb - 6) +
+              '">Team NPI ' +
+              f1(T) +
+              '</text>';
+            svg +=
+              '<path class="edge" d="' +
+              curve
+                .map(
+                  (c, i) =>
+                    (i ? 'L' : 'M') +
+                    Xs(c[0]).toFixed(1) +
+                    ',' +
+                    Ys(c[1]).toFixed(1)
+                )
+                .join('') +
+              '"/>';
+            // Each marker's label sits in its own row above the plot, with a line down to the dot.
+            // Right-aligned labels go rightmost first, so no label crosses a line from a row above it.
+            const placed = marks.map(([x, label]) => ({
+              x: x,
+              label: label,
+              end: Xs(x) > label.length * 7 + 8,
+            }));
+            placed.sort((a, b) =>
+              a.end === b.end ? (a.end ? b.x - a.x : a.x - b.x) : a.end ? -1 : 1
+            );
+            placed.forEach((m, k) => {
+              const cx = Xs(m.x),
+                cy = Ys(gameValue(m.x, T, pick.site, pick.minMet).ev),
+                ty = 18 + 18 * k;
+              svg +=
+                '<line class="ref" x1="' +
+                cx +
+                '" x2="' +
+                cx +
+                '" y1="' +
+                (ty + 5) +
+                '" y2="' +
+                (cy - 6) +
+                '"/><circle class="dot" cx="' +
+                cx +
+                '" cy="' +
+                cy +
+                '" r="5"/><text class="ink" x="' +
+                (cx + (m.end ? 4 : -4)) +
+                '" y="' +
+                ty +
+                '" text-anchor="' +
+                (m.end ? 'end' : 'start') +
+                '">' +
+                esc(m.label) +
+                '</text>';
+            });
+            box.innerHTML = svg + '</svg>';
+          }
+          $('pk-team').addEventListener('change', e => {
+            if (e.target.value) {
+              const site = pick.site;
+              pick = pickDefaults(e.target.value);
+              pick.site = site;
+            } else pick.team = '';
+            renderPick();
+          });
+          $('pk-npi').addEventListener('change', e => {
+            const v = parseFloat(e.target.value);
+            if (isFinite(v)) {
+              pick.npi = v;
+              pick.team = '';
+            }
+            renderPick();
+          });
+          $('pk-n').addEventListener('change', e => {
+            const v = parseFloat(e.target.value);
+            if (v > 0) pick.counted = v;
+            renderPick();
+          });
+          document.querySelectorAll('.pkw').forEach(b =>
+            b.addEventListener('click', () => {
+              pick.minMet = b.dataset.min === '1';
+              renderPick();
+            })
+          );
+          $('pk-opp').addEventListener('change', e => {
+            const v = e.target.value;
+            pick.opp = v;
+            if (v === 'league') pick.onpi = leagueOppNpi();
+            else if (v !== '') pick.onpi = sport.ranking[+v][1];
+            renderPick();
+          });
+          $('pk-onpi').addEventListener('change', e => {
+            const v = parseFloat(e.target.value);
+            if (isFinite(v)) {
+              pick.onpi = v;
+              pick.opp = '';
+            }
+            renderPick();
+          });
+          $('pk-site').addEventListener('change', e => {
+            pick.site = e.target.value;
+            renderPick();
+          });
+
           function render() {
             syncInputs();
             an = NPI.analyze(sport, refRank, draw, extra);
@@ -17634,6 +18291,7 @@
             renderRemoved();
             renderAdded();
             renderWhatIf();
+            renderPick();
           }
 
           fillSportSelect();
@@ -17641,6 +18299,7 @@
             sport = DATA.sports.find(s => s.sport === $('sport').value);
             store.set('sport', sport.sport);
             loadChanges();
+            pick = null;
             render();
           });
           const onRank = v => {
@@ -17681,6 +18340,7 @@
               if (w !== lastW) {
                 lastW = w;
                 renderFunnel();
+                renderPick();
               }
             }, 150);
           });
