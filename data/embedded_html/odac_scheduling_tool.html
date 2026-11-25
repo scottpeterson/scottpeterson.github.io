@@ -1089,7 +1089,7 @@
           </dd>
         </dl>
       </details>
-      <footer>Built 2026-11-25 2:58 PM Eastern.</footer>
+      <footer>Built 2026-11-25 3:06 PM Eastern.</footer>
     </main>
     <script id="data" type="application/json">
       {
@@ -1939,6 +1939,7 @@
               "St. Elizabeth"
             ],
             "unplayedLeague": 0,
+            "lastAtLarge": { "team": "Middlebury", "rank": 36, "bids": 21 },
             "funnel": {
               "season": 16,
               "teams": 13,
@@ -5335,6 +5336,7 @@
               "Gallaudet"
             ],
             "unplayedLeague": 0,
+            "lastAtLarge": { "team": "Bates", "rank": 34, "bids": 22 },
             "funnel": {
               "season": 16,
               "teams": 12,
@@ -8548,6 +8550,7 @@
               "Medgar Evers"
             ],
             "unplayedLeague": 0,
+            "lastAtLarge": { "team": "St. Olaf", "rank": 43, "bids": 21 },
             "funnel": {
               "season": 24,
               "teams": 13,
@@ -12371,6 +12374,7 @@
               "Transylvania"
             ],
             "unplayedLeague": 0,
+            "lastAtLarge": { "team": "Swarthmore", "rank": 17, "bids": 10 },
             "funnel": {
               "season": 16,
               "teams": 9,
@@ -14738,6 +14742,7 @@
               "Eureka"
             ],
             "unplayedLeague": 4,
+            "lastAtLarge": { "team": "Heidelberg", "rank": 34, "bids": 12 },
             "funnel": {
               "season": 9,
               "teams": 8,
@@ -16108,7 +16113,7 @@
             drawn: drawn,
           };
         }
-        function summary(npi, rank) {
+        function summary(npi, rank, atLargeCut) {
           const names = Object.keys(npi),
             out = {
               average: names.reduce((s, k) => s + npi[k], 0) / names.length,
@@ -16116,6 +16121,8 @@
           [25, 50, 100].forEach(c => {
             out['top' + c] = names.filter(k => rank[k] <= c).length;
           });
+          if (atLargeCut)
+            out.atLarge = names.filter(k => rank[k] <= atLargeCut).length;
           return out;
         }
         function moreAccumulator(sport, extra) {
@@ -16142,7 +16149,11 @@
                   npi[t.name] += sc.npi[t.name];
                   rank[t.name] += sc.rank[t.name];
                 });
-                const s = summary(sc.npi, sc.rank);
+                const s = summary(
+                  sc.npi,
+                  sc.rank,
+                  sport.lastAtLarge && sport.lastAtLarge.rank
+                );
                 Object.keys(s).forEach(k => {
                   totals[k] = (totals[k] || 0) + s[k];
                 });
@@ -16438,12 +16449,14 @@
           '</tbody></table></div>';
 
         function renderSummary() {
+          const cut = sport.lastAtLarge && sport.lastAtLarge.rank;
           const now = NPI.summary(
             Object.fromEntries(sport.teams.map(t => [t.name, t.npi])),
-            Object.fromEntries(sport.teams.map(t => [t.name, t.rank]))
+            Object.fromEntries(sport.teams.map(t => [t.name, t.rank])),
+            cut
           );
           const fewer = an.fewer
-              ? NPI.summary(an.fewer.npi, an.fewer.rank)
+              ? NPI.summary(an.fewer.npi, an.fewer.rank, cut)
               : null,
             avg = currentAvg();
           const more = avg ? avg.summary : undefined;
@@ -16465,7 +16478,15 @@
             line('Average ODAC NPI', 'average', true) +
               line('ODAC teams in the top 25', 'top25') +
               line('ODAC teams in the top 50', 'top50') +
-              line('ODAC teams in the top 100', 'top100'),
+              line('ODAC teams in the top 100', 'top100') +
+              (cut
+                ? line(
+                    'ODAC teams at rank ' +
+                      cut +
+                      ' or better, the last at-large spot',
+                    'atLarge'
+                  )
+                : ''),
             false
           );
           $('ref-note').textContent = an.removed.length
@@ -16481,12 +16502,28 @@
             : 'No two ODAC ' +
               sport.label.toLowerCase() +
               ' teams meet twice in the regular season. A league game comes off only when two teams meet twice, so the fewer league games column shows dashes.';
-          $('avg-note').textContent = avg
-            ? 'The more league games columns average ' +
-              avg.draws +
-              ' random draws, so the top 25, 50, and 100 counts can be fractions.'
-            : 'Averaging random draws.';
+          $('avg-note').textContent = avg ? '' : 'Averaging random draws.';
+          $('avg-note').hidden = Boolean(avg);
           if (!avg) startAverage();
+        }
+        // Where a rank sits against the last at-large spot. A lower rank number is a better place.
+        function atLargeText(rank) {
+          const al = sport.lastAtLarge;
+          if (!al) return '';
+          const d = rank - al.rank,
+            places = n => n + ' place' + (n === 1 ? '' : 's');
+          return (
+            'Rank ' +
+            rank +
+            (d === 0
+              ? ' is the last at-large spot'
+              : ' is ' +
+                places(Math.abs(d)) +
+                (d > 0 ? ' worse' : ' better') +
+                ' than the last at-large spot, rank ' +
+                al.rank) +
+            '.'
+          );
         }
         function countChange(now, then, mean) {
           const d = then - now;
@@ -17386,7 +17423,8 @@
               t.rank +
               ' to ' +
               sc.rank[focus] +
-              '.'
+              '. ' +
+              atLargeText(sc.rank[focus])
             : 'No changes. Every game shows its real result.';
           const teamRows = sport.teams
             .map(x => {
@@ -17798,7 +17836,9 @@
             ' counting.' +
             (pick.opp === 'league'
               ? ''
-              : ' An average league opponent (NPI ' +
+              : ' An average league opponent (about rank ' +
+                rankAt(L) +
+                ', NPI ' +
                 f1(L) +
                 ') at the same site: ' +
                 sgn2(gl.ev) +
@@ -17815,55 +17855,63 @@
           const xw = winBreakeven(T),
             xl = T / p.sosWeight;
           const rules = [
-            'Best opponent: NPI ' +
-              f1(best[0]) +
-              ', ' +
-              f1(Math.abs(T - best[0])) +
-              ' points ' +
-              (best[0] <= T ? 'below' : 'above') +
-              ' the team, about rank ' +
+            'Best opponent: about rank ' +
               rankAt(best[0]) +
+              ' (NPI ' +
+              f1(best[0]) +
+              '). The team is rank ' +
+              rankAt(T) +
               '. Expected value ' +
               sgn2(best[1]) +
               ' points.',
             gl.ev >= best[1] - 0.005
               ? 'An average league opponent is about as good as the best non-conference opponent.'
-              : 'Opponents from NPI ' +
-                f1(curve[a][0]) +
-                ' to ' +
-                f1(curve[b][0]) +
-                ' (about rank ' +
+              : 'Opponents ranked about ' +
                 rankAt(curve[b][0]) +
                 ' to ' +
                 rankAt(curve[a][0]) +
+                ' (NPI ' +
+                f1(curve[b][0]) +
+                ' to ' +
+                f1(curve[a][0]) +
                 ') are worth more than an average league opponent.',
             worst[1] >= 0
               ? ''
-              : 'Worst stronger opponent: NPI ' +
+              : 'Worst stronger opponent: about rank ' +
+                rankAt(worst[0]) +
+                ' (NPI ' +
                 f1(worst[0]) +
-                ', ' +
-                f1(worst[0] - T) +
-                ' points above the team. A loss there is likely, and its game NPI (' +
+                '). A loss there is likely, and its game NPI (' +
                 f1(NPI.lossValue(p, worst[0])) +
                 ') is under the team NPI, so it counts.',
             pick.minMet
-              ? 'A win over an opponent below NPI ' +
+              ? 'A win over an opponent ranked worse than about ' +
+                rankAt(xw) +
+                ' (NPI ' +
                 f1(xw) +
-                ' is worth less than the team NPI, so it drops out. Those games add almost nothing, and a loss in one counts.'
+                ') is worth less than the team NPI, so it drops out. Those games add almost nothing, and a loss in one counts.'
               : 'Until the team has ' +
                 mw +
-                ' wins, every win counts. A win over an opponent below NPI ' +
+                ' wins, every win counts. A win over an opponent ranked worse than about ' +
+                rankAt(xw) +
+                ' (NPI ' +
                 f1(xw) +
-                ' lowers the team NPI.',
-            'A loss to an opponent at NPI ' +
-              f1(xl) +
-              " or above is worth at least the team NPI, so it drops out, unless it is the team's worst loss.",
+                ') lowers the team NPI.',
+            xl > sport.ranking[0][1]
+              ? 'Every loss counts. A loss drops out only against an opponent at NPI ' +
+                f1(xl) +
+                ' or above, and no team is that high.'
+              : 'A loss to an opponent ranked about ' +
+                rankAt(xl) +
+                ' or better (NPI ' +
+                f1(xl) +
+                ") is worth at least the team NPI, so it drops out, unless it is the team's worst loss.",
           ];
           $('pk-rules').innerHTML = rules
             .filter(r => r)
             .map(r => '<li>' + esc(r) + '</li>')
             .join('');
-          renderPickChart(curve, T, X, L, best);
+          renderPickChart(T, X, L, best);
           const ranks = [10, 25, 50, 100, 150, 200, 300].filter(
             r => r <= sport.ranking.length
           );
@@ -17902,32 +17950,40 @@
           );
           bindSort($('pk-ranks').querySelector('table'));
         }
-        function renderPickChart(curve, T, X, L, best) {
+        // One point per Division III opponent, by rank, rank 1 on the left.
+        function renderPickChart(T, X, L, best) {
           const box = $('pk-chart'),
             W = Math.max(320, Math.min(1080, box.clientWidth - 16)),
-            narrow = W < 560;
+            narrow = W < 560,
+            N = sport.ranking.length;
+          const curve = sport.ranking.map(([, v], i) => [
+            i + 1,
+            gameValue(v, T, pick.site, pick.minMet).ev,
+          ]);
           const marks = [
-            [best[0], 'Best ' + f1(best[0])],
-            [L, (narrow ? 'League ' : 'League average ') + f1(L)],
-          ]
-            .concat(pick.opp === 'league' ? [] : [[X, 'Opponent ' + f1(X)]])
-            .filter(
-              m => m[0] >= curve[0][0] && m[0] <= curve[curve.length - 1][0]
-            );
+            [rankAt(best[0]), best[0], 'Best: rank ' + rankAt(best[0])],
+            [
+              rankAt(L),
+              L,
+              (narrow ? 'League: rank ' : 'League average: rank ') + rankAt(L),
+            ],
+          ].concat(
+            pick.opp === 'league'
+              ? []
+              : [[rankAt(X), X, 'Opponent: rank ' + rankAt(X)]]
+          );
           const H = (narrow ? 280 : 340) + 18 * marks.length,
             ml = narrow ? 44 : 52,
             mr = 16,
             mt = 30 + 18 * marks.length,
-            mb = 52;
-          const x0 = curve[0][0],
-            x1 = curve[curve.length - 1][0];
+            mb = 70;
           const ys = curve.map(c => c[1]).concat([0]);
           let y0 = Math.min(...ys),
             y1 = Math.max(...ys);
           const pad = (y1 - y0) * 0.1 || 1;
           y0 -= pad;
           y1 += pad;
-          const Xs = v => ml + ((W - ml - mr) * (v - x0)) / (x1 - x0),
+          const Xs = r => ml + ((W - ml - mr) * (r - 1)) / (N - 1),
             Ys = v => mt + ((H - mt - mb) * (y1 - v)) / (y1 - y0);
           const step =
             y1 - y0 > 12 ? 4 : y1 - y0 > 6 ? 2 : y1 - y0 > 2 ? 1 : 0.5;
@@ -17936,7 +17992,7 @@
             W +
             ' ' +
             H +
-            '" role="img" aria-label="Expected value of one game by opponent NPI">';
+            '" role="img" aria-label="Expected value of one game by opponent rank">';
           for (let v = Math.ceil(y0 / step) * step; v <= y1; v += step)
             svg +=
               '<line class="grid" x1="' +
@@ -17954,21 +18010,49 @@
               '" text-anchor="end">' +
               (Math.abs(v) < 1e-9 ? '0' : (v > 0 ? '+' : '−') + Math.abs(v)) +
               '</text>';
-          for (let v = Math.ceil(x0 / 5) * 5; v <= x1; v += narrow ? 10 : 5)
-            svg +=
-              '<text x="' +
-              Xs(v) +
-              '" y="' +
-              (H - mb + 20) +
-              '" text-anchor="middle">' +
-              v +
-              '</text>';
+          const every = narrow ? 100 : 50;
+          [1]
+            .concat(
+              Array.from(
+                { length: Math.floor(N / every) },
+                (_, k) => (k + 1) * every
+              )
+            )
+            .filter(r => r <= N)
+            .forEach(r => {
+              svg +=
+                '<line class="grid" x1="' +
+                Xs(r) +
+                '" x2="' +
+                Xs(r) +
+                '" y1="' +
+                (H - mb) +
+                '" y2="' +
+                (H - mb + 5) +
+                '"/><text class="ink" x="' +
+                Xs(r) +
+                '" y="' +
+                (H - mb + 20) +
+                '" text-anchor="middle">' +
+                r +
+                '</text><text x="' +
+                Xs(r) +
+                '" y="' +
+                (H - mb + 36) +
+                '" text-anchor="middle">' +
+                f1(sport.ranking[r - 1][1]) +
+                '</text>';
+            });
           svg +=
             '<text x="' +
             (ml + W - mr) / 2 +
             '" y="' +
             (H - 8) +
-            '" text-anchor="middle">Opponent NPI</text>';
+            '" text-anchor="middle">' +
+            (narrow
+              ? 'Opponent rank, NPI under it'
+              : 'Opponent rank, with its NPI under it') +
+            '</text>';
           svg +=
             '<line class="avg" x1="' +
             ml +
@@ -17979,21 +18063,25 @@
             '" y2="' +
             Ys(0) +
             '"/>';
+          const tr = rankAt(T),
+            tEnd = Xs(tr) > W - 110;
           svg +=
             '<line class="ref" x1="' +
-            Xs(T) +
+            Xs(tr) +
             '" x2="' +
-            Xs(T) +
+            Xs(tr) +
             '" y1="' +
             mt +
             '" y2="' +
             (H - mb) +
             '"/><text x="' +
-            (Xs(T) + 4) +
+            (Xs(tr) + (tEnd ? -4 : 4)) +
             '" y="' +
             (H - mb - 6) +
-            '">Team NPI ' +
-            f1(T) +
+            '" text-anchor="' +
+            (tEnd ? 'end' : 'start') +
+            '">Team: rank ' +
+            tr +
             '</text>';
           svg +=
             '<path class="edge" d="' +
@@ -18009,17 +18097,18 @@
             '"/>';
           // Each marker's label sits in its own row above the plot, with a line down to the dot.
           // Right-aligned labels go rightmost first, so no label crosses a line from a row above it.
-          const placed = marks.map(([x, label]) => ({
-            x: x,
+          const placed = marks.map(([r, v, label]) => ({
+            x: r,
+            v: v,
             label: label,
-            end: Xs(x) > label.length * 7 + 8,
+            end: Xs(r) > label.length * 7 + 8,
           }));
           placed.sort((a, b) =>
             a.end === b.end ? (a.end ? b.x - a.x : a.x - b.x) : a.end ? -1 : 1
           );
           placed.forEach((m, k) => {
             const cx = Xs(m.x),
-              cy = Ys(gameValue(m.x, T, pick.site, pick.minMet).ev),
+              cy = Ys(gameValue(m.v, T, pick.site, pick.minMet).ev),
               ty = 18 + 18 * k;
             svg +=
               '<line class="ref" x1="' +
@@ -18105,6 +18194,15 @@
             ' in the ODAC. NPI from D3 Datacast, updated ' +
             sport.updated +
             '.' +
+            (sport.lastAtLarge
+              ? ' The NCAA gave ' +
+                sport.lastAtLarge.bids +
+                ' at-large bids. In these ratings the last one goes to ' +
+                sport.lastAtLarge.team +
+                ', at rank ' +
+                sport.lastAtLarge.rank +
+                '.'
+              : '') +
             (sport.unplayedLeague
               ? ' The season is not over: ' +
                 sport.unplayedLeague +
