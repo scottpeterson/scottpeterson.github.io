@@ -204,6 +204,9 @@
         align-items: flex-start;
         gap: var(--s4);
       }
+      [hidden] {
+        display: none !important;
+      }
       .controls {
         display: flex;
         gap: var(--s4);
@@ -738,42 +741,6 @@
             ><select id="sport"></select>
           </div>
           <div class="ctl">
-            <label class="caption" for="rank-num"
-              >Replacement opponent rank</label
-            >
-            <div class="rank">
-              <input
-                id="rank-range"
-                type="range"
-                min="1"
-                step="1"
-                aria-label="Replacement opponent rank"
-              /><input id="rank-num" type="number" min="1" step="1" /><span
-                class="small"
-                id="rank-npi"
-              ></span>
-            </div>
-          </div>
-          <div class="ctl">
-            <span class="caption" id="lbl-extra">League games added</span>
-            <div class="seg" role="group" aria-labelledby="lbl-extra">
-              <button type="button" class="ex" data-extra="1">1</button
-              ><button type="button" class="ex" data-extra="2">2</button
-              ><button type="button" class="ex" data-extra="3">3</button
-              ><button type="button" class="ex" data-extra="4">4</button
-              ><button type="button" class="ex" data-extra="5">5</button>
-            </div>
-          </div>
-          <div class="ctl">
-            <label class="caption" for="draw-num">Random draw</label>
-            <div class="rank">
-              <input id="draw-num" type="number" min="1" step="1" />
-              <div class="toggles">
-                <button type="button" id="draw-again">Draw again</button>
-              </div>
-            </div>
-          </div>
-          <div class="ctl">
             <span class="caption" id="lbl-theme">Theme</span>
             <div class="seg" role="group" aria-labelledby="lbl-theme">
               <button type="button" class="th" data-theme="light">Light</button
@@ -797,6 +764,97 @@
         <p class="lede small" id="ref-note"></p>
         <p class="lede small" id="avg-note"></p>
         <div id="summary"></div>
+      </details>
+      <details class="group" open>
+        <summary><h2>League games and opponent strength</h2></summary>
+        <p class="lede">
+          The chart shows the average strength of a team's opponents. The team's
+          own NPI is in the tables below. The average mixes the team's league
+          opponents with the non-conference opponents it schedules.
+        </p>
+        <p class="lede">
+          The shaded area is the range of that average. At the left edge, with
+          no league games, the range runs from the weakest non-conference
+          schedule any ODAC team played this season to the strongest. At the
+          right edge, every game is a league game.
+        </p>
+        <p class="lede">
+          For winning percentage, the range ends at .500. For NPI, league
+          schedules still differ. A team never plays itself, and a schedule
+          short of a full round robin skips some ODAC teams. So the low and high
+          ends are the weakest and strongest league schedules.
+        </p>
+        <div class="ctl measure">
+          <span class="caption" id="lbl-measure">Opponents' average</span>
+          <div class="seg" role="group" aria-labelledby="lbl-measure">
+            <button type="button" class="ms" data-measure="wp">
+              Winning percentage</button
+            ><button type="button" class="ms" data-measure="npi">NPI</button>
+          </div>
+        </div>
+        <div class="chart" id="funnel"></div>
+        <p class="lede small" id="funnel-note"></p>
+        <p class="lede small" id="funnel-note2"></p>
+        <div id="funnel-table"></div>
+        <div id="funnel-teams"></div>
+      </details>
+      <details class="group" open>
+        <summary><h2>ODAC teams</h2></summary>
+        <p class="lede">
+          Sorted by NPI rank. Only games against Division III teams count in
+          NPI. So records and league game counts cover those games only. Every
+          ODAC team's NPI is recalculated together, so a change to one team
+          reaches its league opponents.
+        </p>
+        <div id="teams"></div>
+      </details>
+      <details class="group" open>
+        <summary><h2>Fewer league games</h2></summary>
+        <div class="controls" id="fewer-controls">
+          <div class="ctl">
+            <label class="caption" for="rank-num"
+              >Replacement opponent rank</label
+            >
+            <div class="rank">
+              <input
+                id="rank-range"
+                type="range"
+                min="1"
+                step="1"
+                aria-label="Replacement opponent rank"
+              /><input id="rank-num" type="number" min="1" step="1" /><span
+                class="small"
+                id="rank-npi"
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div id="removed"></div>
+      </details>
+      <details class="group" open>
+        <summary><h2>More league games</h2></summary>
+        <div class="controls">
+          <div class="ctl">
+            <span class="caption" id="lbl-extra">League games added</span>
+            <div class="seg" role="group" aria-labelledby="lbl-extra">
+              <button type="button" class="ex" data-extra="1">1</button
+              ><button type="button" class="ex" data-extra="2">2</button
+              ><button type="button" class="ex" data-extra="3">3</button
+              ><button type="button" class="ex" data-extra="4">4</button
+              ><button type="button" class="ex" data-extra="5">5</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <label class="caption" for="draw-num">Random draw</label>
+            <div class="rank">
+              <input id="draw-num" type="number" min="1" step="1" />
+              <div class="toggles">
+                <button type="button" id="draw-again">Draw again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="added"></div>
       </details>
       <details class="group" open>
         <summary><h2>Change results</h2></summary>
@@ -949,57 +1007,6 @@
         <div id="pk-ranks"></div>
       </details>
       <details class="group" open>
-        <summary><h2>League games and opponent strength</h2></summary>
-        <p class="lede">
-          The chart shows the average strength of a team's opponents. The team's
-          own NPI is in the tables below. The average mixes the team's league
-          opponents with the non-conference opponents it schedules.
-        </p>
-        <p class="lede">
-          The shaded area is the range of that average. At the left edge, with
-          no league games, the range runs from the weakest non-conference
-          schedule any ODAC team played this season to the strongest. At the
-          right edge, every game is a league game.
-        </p>
-        <p class="lede">
-          For winning percentage, the range ends at .500. For NPI, league
-          schedules still differ. A team never plays itself, and a schedule
-          short of a full round robin skips some ODAC teams. So the low and high
-          ends are the weakest and strongest league schedules.
-        </p>
-        <div class="ctl measure">
-          <span class="caption" id="lbl-measure">Opponents' average</span>
-          <div class="seg" role="group" aria-labelledby="lbl-measure">
-            <button type="button" class="ms" data-measure="wp">
-              Winning percentage</button
-            ><button type="button" class="ms" data-measure="npi">NPI</button>
-          </div>
-        </div>
-        <div class="chart" id="funnel"></div>
-        <p class="lede small" id="funnel-note"></p>
-        <p class="lede small" id="funnel-note2"></p>
-        <div id="funnel-table"></div>
-        <div id="funnel-teams"></div>
-      </details>
-      <details class="group" open>
-        <summary><h2>ODAC teams</h2></summary>
-        <p class="lede">
-          Sorted by NPI rank. Only games against Division III teams count in
-          NPI. So records and league game counts cover those games only. Every
-          ODAC team's NPI is recalculated together, so a change to one team
-          reaches its league opponents.
-        </p>
-        <div id="teams"></div>
-      </details>
-      <details class="group" open>
-        <summary><h2>Fewer league games</h2></summary>
-        <div id="removed"></div>
-      </details>
-      <details class="group" open>
-        <summary><h2>More league games</h2></summary>
-        <div id="added"></div>
-      </details>
-      <details class="group" open>
         <summary><h2>Business rules</h2></summary>
         <dl class="how">
           <dt>League game</dt>
@@ -1082,7 +1089,7 @@
           </dd>
         </dl>
       </details>
-      <footer>Built 2026-11-24 2:56 PM Eastern.</footer>
+      <footer>Built 2026-11-25 2:58 PM Eastern.</footer>
     </main>
     <script id="data" type="application/json">
       {
@@ -16461,16 +16468,19 @@
               line('ODAC teams in the top 100', 'top100'),
             false
           );
-          $('ref-note').textContent =
-            'The replacement opponent plays at an NPI of ' +
-            f3(an.ref) +
-            ', the rating of ' +
-            sport.rankingNames[an.refRank - 1] +
-            ' at rank ' +
-            an.refRank +
-            ' in the D3 Datacast ratings of ' +
-            sport.updated +
-            '.';
+          $('ref-note').textContent = an.removed.length
+            ? 'The replacement opponent plays at an NPI of ' +
+              f3(an.ref) +
+              ', the rating of ' +
+              sport.rankingNames[an.refRank - 1] +
+              ' at rank ' +
+              an.refRank +
+              ' in the D3 Datacast ratings of ' +
+              sport.updated +
+              '.'
+            : 'No two ODAC ' +
+              sport.label.toLowerCase() +
+              ' teams meet twice in the regular season. A league game comes off only when two teams meet twice, so the fewer league games column shows dashes.';
           $('avg-note').textContent = avg
             ? 'The more league games columns average ' +
               avg.draws +
@@ -16550,6 +16560,7 @@
         }
 
         function renderRemoved() {
+          $('fewer-controls').hidden = an.removed.length === 0;
           if (!an.removed.length) {
             $('removed').innerHTML =
               '<p class="lede">No two ODAC teams meet twice in the ' +
