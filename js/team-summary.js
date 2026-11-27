@@ -6,7 +6,7 @@
  *
  * Features:
  * - Searches team names across all data sources
- * - Aggregates data from NPI, Season Simulations, Rankings, etc.
+ * - Aggregates data from NPI, Season Simulations, Rankings, and other pages
  * - Displays a modal with all relevant team statistics
  *
  * Dependencies:
@@ -130,8 +130,8 @@
         { key: 'Roster Published?', label: 'Roster' },
       ],
     },
-    // Conference rankings - loaded for conference rank lookup, but not displayed as a section
-    // (no fields means it won't render a section, but data will be cached)
+    // Conference rankings: loaded for the conference rank lookup. The entry has no fields, so
+    // it renders no section, but the data is cached.
     conferenceRankings: {
       title: 'Conference Rankings',
       fields: [],
@@ -323,9 +323,10 @@
 
   /**
    * Formats a value for display with the approved display formats
-   * (js/formats.js). field.format picks the kind: 'rank' (#54), 'chance'
-   * (<1%, 81%, >99%), 'percent' (81%), or 'signed' (+9.9). Without one, a
-   * number shows field.decimals places, or as an integer when none is set.
+   * (js/formats.js). field.format picks the kind. The kinds are 'rank' (#54),
+   * 'chance' (<1%, 81%, >99%), 'percent' (81%), and 'signed' (+9.9).
+   * Without a kind, a number shows field.decimals places. If
+   * field.decimals is not set, the number shows as an integer.
    */
   function formatValue(value, field) {
     const F = window.D3Formats;
@@ -350,7 +351,7 @@
 
   /**
    * Gets the bid status tier for highlighting.
-   * Returns: 'green' for AQ or AL-01 through AL-21 (tournament bound)
+   * Returns: 'green' for an automatic qualifier (AQ) or AL-01 through AL-21 (tournament bound)
    *          'orange' for AL-22 through AL-36 (bubble)
    *          'red' for all other values (outside looking in)
    */

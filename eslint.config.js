@@ -25,9 +25,10 @@ module.exports = [
         window: 'readonly',
         document: 'readonly',
         console: 'readonly',
-        // Cross-file global functions are declared via /* exported */ directives in
-        // the files that define them (e.g. js/navigation.js), so no-unused-vars
-        // doesn't flag their definitions. With no-undef off, the call sites are fine.
+        // Cross-file global functions are declared through /* exported */ directives
+        // in the files that define them (for example js/navigation.js). So
+        // no-unused-vars doesn't flag their definitions. With no-undef off, the call
+        // sites are fine.
       },
     },
     rules: {

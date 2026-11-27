@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-// build.js - Simple build system for generating HTML pages from templates
+// build.js: a simple build system that generates HTML pages from templates.
 //
-// Data Obfuscation:
-// This build system includes a data encoding step that transforms raw JSON files
-// in /data/ into obfuscated versions in /data-encoded/. The encoding uses XOR
-// with a rotating key followed by base64. This deters casual scraping and makes
-// it harder for LLMs to directly parse the data from network requests.
+// Data obfuscation: the build encodes the raw JSON files in /data/ into
+// obfuscated copies in /data-encoded/. The encoding uses XOR (exclusive or) with
+// a rotating key, followed by base64. The encoding deters casual scraping. It
+// also makes it harder for LLMs to parse the data from network requests.
 //
-// The client-side data-loader.js contains the corresponding decode function.
+// The client-side data-loader.js contains the matching decode function.
 
 const fs = require('fs').promises;
 const { watch } = require('fs');
@@ -27,15 +26,17 @@ class TemplateEngine {
 
   // Write generated HTML, formatted through Prettier first.
   //
-  // INTENT / root-cause fix: the pre-commit hook runs `prettier --write` on
+  // INTENT, a root-cause fix: the pre-commit hook runs `prettier --write` on
   // committed HTML, so the files in git are Prettier-formatted. If the build
   // emitted RAW HTML, every `npm run build` would show phantom whitespace diffs
-  // against those committed files until the hook reformatted them. By running the
-  // same Prettier (with the project's .prettierrc, resolved per-file) here, the
-  // build's output is byte-identical to what the hook produces — so rebuilding is
-  // idempotent and safe to run anytime with zero churn. Always use this for HTML
-  // instead of fs.writeFile; if Prettier can't parse the output (syntax bug in a
-  // template), fail loudly rather than silently shipping malformed HTML.
+  // against those committed files until the hook reformatted them.
+  //
+  // This function runs the same Prettier, with the project's .prettierrc resolved
+  // per file. So the build's output is byte-identical to what the hook produces.
+  // Rebuilding is then idempotent and safe to run anytime with zero churn. Always
+  // use this for HTML instead of fs.writeFile. If Prettier can't parse the output
+  // (a syntax bug in a template), fail loudly instead of shipping malformed HTML
+  // without notice.
   async writeHtml(filepath, html) {
     const options = await prettier.resolveConfig(filepath);
     const formatted = await prettier.format(html, { ...options, filepath });
@@ -56,10 +57,10 @@ class TemplateEngine {
     return encoded.toString('base64');
   }
 
-  // Convert distances CSV to JSON for the data pipeline
-  // Reads data/calculated_distances.csv and produces data/distances.json with:
+  // Convert the distances CSV to JSON for the data pipeline.
+  // It reads data/calculated_distances.csv and writes data/distances.json in this shape:
   //   { teams: [...sorted unique names...], distances: { "SchoolA|SchoolB": { miles, source } } }
-  // Keys are alphabetically sorted so lookup is bidirectional without duplicates.
+  // Keys are sorted alphabetically, so a lookup works in both directions without duplicates.
   async convertDistancesCSV() {
     const csvPath = 'data/calculated_distances.csv';
     try {
@@ -236,13 +237,15 @@ class TemplateEngine {
     return this.isFeatureEnabled(pageConfig.featureFlag);
   }
 
-  // Generate navigation HTML based on config and feature flags.
-  // Single source of truth for the site's top-level navigation: order, labels,
-  // hrefs, and which config key each maps to. 'reports' is special — it renders
-  // as a dropdown in the header nav. EVERYTHING that needs to know the menu
-  // (header nav HTML, reports/index.html nav, the CMD+K command palette) derives
-  // from this one list, so the menu can't drift between surfaces. Add/rename a
-  // page here once and every surface updates on the next build.
+  // Generate navigation HTML based on config and feature flags. This list is the
+  // single source of truth for the site's top-level navigation. It sets the
+  // order, labels, and hrefs, and the config key each item maps to. 'reports' is
+  // special. It renders as a dropdown in the header nav.
+  //
+  // The header nav HTML, the reports/index.html nav, and the Command+K command
+  // palette all derive from this one list. So the menu can't drift between those
+  // surfaces. Add or rename a page here once. Every surface then updates on the
+  // next build.
   navConfig() {
     return [
       { key: 'index', label: 'Home', href: '/' },
@@ -290,14 +293,16 @@ class TemplateEngine {
     ];
   }
 
-  // Flat navigation list for the CMD+K command palette, inlined into each page as
-  // window.__NAV_ITEMS__. Built from the SAME navConfig() and the SAME visibility
-  // gating as generateNavigation (config present, showInNav, feature flag), so
-  // the palette is always in lockstep with the real menu — no hand-maintained
-  // second copy to drift. The Reports dropdown collapses to a single "Reports"
-  // entry pointing at the index (individual reports aren't palette destinations),
-  // and only appears when at least one report exists. js/command-palette.js
-  // enriches each {title, href} with an icon/description/shortcut.
+  // Flat navigation list for the Command+K command palette, inlined into each
+  // page as window.__NAV_ITEMS__. It comes from the SAME navConfig() and the SAME
+  // visibility checks as generateNavigation (config present, showInNav, and the
+  // feature flag). So the palette always matches the real menu, with no
+  // hand-maintained second copy to drift.
+  //
+  // The Reports dropdown collapses to a single "Reports" entry that points at the
+  // index. Individual reports aren't palette destinations. The entry appears only
+  // when at least one report exists. The script js/command-palette.js adds an
+  // icon, description, and shortcut to each {title, href}.
   async getPaletteNavItems() {
     const items = [];
     for (const item of this.navConfig()) {
@@ -323,9 +328,9 @@ class TemplateEngine {
     return items;
   }
 
-  // `absolute` emits root-relative hrefs (leading /) so pages living in a
-  // subdirectory (reports/index.html) can share this exact same nav instead of
-  // hand-maintaining their own copy that drifts.
+  // `absolute` emits root-relative hrefs (leading /). Pages in a subdirectory
+  // (reports/index.html) can then share this exact nav. They don't need a
+  // hand-maintained copy that drifts.
   async generateNavigation({ absolute = false, reports = null } = {}) {
     const navItems = [];
     const href = h =>
@@ -374,14 +379,15 @@ class TemplateEngine {
     return navItems.join('\n          ');
   }
 
-  // Render the complete <nav class="main-nav"> block — the chrome wrapper plus
-  // the canonical nav items from generateNavigation. This is the SINGLE source
-  // for the header markup of every JS-generated page (reports/index.html via
-  // regenerateReportsIndex, and each wrapped report page via wrap-reports.js,
-  // which imports this engine). Keep this wrapper byte-identical to the one in
-  // templates/base.html so root pages and report pages share one header.
-  // `reports` can be passed explicitly (wrap-reports.js does) so the dropdown is
-  // built from an in-memory list instead of the reports/ dir mid-write.
+  // Render the complete <nav class="main-nav"> block: the chrome wrapper plus
+  // the canonical nav items from generateNavigation. This function is the SINGLE
+  // source for the header markup of every JS-generated page. Those pages are
+  // reports/index.html (through regenerateReportsIndex) and each wrapped report
+  // page (through wrap-reports.js, which imports this engine). Keep this wrapper
+  // byte-identical to the one in templates/base.html, so root pages and report
+  // pages share one header. A caller can pass `reports` explicitly, as
+  // wrap-reports.js does. The dropdown is then built from an in-memory list
+  // instead of the reports/ dir while it is mid-write.
   async renderNavShell({ absolute = false, reports = null } = {}) {
     const navItems = await this.generateNavigation({ absolute, reports });
     return `<nav class="main-nav">
@@ -433,7 +439,7 @@ class TemplateEngine {
           // Match multiline titles
           const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/i);
           if (titleMatch) {
-            // Normalize whitespace and remove " - The D3 Stat Lab" suffix if present
+            // Normalize whitespace and delete the " - The D3 Stat Lab" suffix if present
             title = titleMatch[1]
               .replace(/\s+/g, ' ')
               .trim()
@@ -454,9 +460,9 @@ class TemplateEngine {
       }
 
       // Deterministic order: fs.readdir order is filesystem-defined and varies
-      // by machine, which made the main-page Reports dropdown (this list) and
-      // reports/index.html disagree, and could reorder on a fresh clone. Sort by
-      // title once here so every consumer shares one stable order.
+      // by machine. That order made the main-page Reports dropdown (this list)
+      // and reports/index.html disagree. It could also reorder on a fresh clone.
+      // Sort by title once here so every consumer shares one stable order.
       reports.sort((a, b) => a.title.localeCompare(b.title));
 
       return reports;
@@ -470,9 +476,9 @@ class TemplateEngine {
   // `absolute` prefixes hrefs with / so the dropdown works from a subdirectory
   // page (reports/index.html) as well as the root pages.
   async generateReportsDropdown(absolute = false, reports = null) {
-    // Callers may pass an explicit reports list (wrap-reports.js does, from its
-    // in-memory set) to avoid a disk read while the wrapped files are mid-write;
-    // otherwise read the current reports/ directory.
+    // Callers may pass an explicit reports list to avoid a disk read while the
+    // wrapped files are mid-write. The script wrap-reports.js does this, from
+    // its in-memory set. Otherwise read the current reports/ directory.
     const reportList = reports || (await this.getReportsList());
 
     if (reportList.length === 0) {
@@ -500,7 +506,7 @@ ${dropdownItems}
   }
 
   // Regenerate reports/index.html based on current reports directory contents
-  // This ensures the reports index stays in sync when files are added/removed
+  // The rebuild keeps the reports index in sync when files are added or deleted
   async regenerateReportsIndex() {
     const reports = await this.getReportsList();
 
@@ -522,10 +528,10 @@ ${dropdownItems}
       )
       .join('\n');
 
-    // Reuse the canonical nav shell (absolute hrefs since this page is one dir
-    // down). This keeps reports/index.html in lockstep with every other page —
-    // it picks up new nav items, feature-flag gating, and label changes
-    // automatically, instead of a hand-maintained copy that drifts.
+    // Reuse the canonical nav shell, with absolute hrefs because
+    // reports/index.html is one dir down. The index then stays in step with
+    // every other page. It gets new nav items, feature-flag checks, and label
+    // changes automatically, with no hand-maintained copy that drifts.
     const navShell = await this.renderNavShell({ absolute: true });
 
     const html = `<!doctype html>
@@ -586,14 +592,15 @@ ${cards}
     console.log('✓ Generated reports/index.html');
   }
 
-  // Simple template replacement
+  // Simple template replacement.
+  //
   // Turn a standalone HTML document into a page body for the site shell.
   //
-  // Output order matters: the scoped <style> comes first so the report's own
-  // rules apply on first paint, then the report body inside its scope wrapper,
-  // then the report's scripts. Scripts go after the markup they query because
-  // they are appended to <main>, not <head>, and most reports run their init
-  // code at parse time rather than waiting for DOMContentLoaded.
+  // Output order matters. The scoped <style> comes first, so the report's own
+  // rules apply on first paint. Then comes the report body inside its scope
+  // wrapper, then the report's scripts. Scripts go after the markup they query
+  // because they are appended to <main> instead of <head>. Most reports run
+  // their init code at parse time instead of waiting for DOMContentLoaded.
   async renderEmbeddedHtml(pageKey, pageConfig) {
     const {
       extractStyles,
@@ -635,8 +642,9 @@ ${cards}
     // Handle arrays
     result = this.handleArrays(result, data);
 
-    // Plain-text values (from config/page data) — HTML-escaped on interpolation
-    // so a literal "<"/"&" in copy can't break or inject markup.
+    // Plain-text values (from config/page data). They are HTML-escaped on
+    // interpolation, so a literal "<" or "&" in copy can't break or inject
+    // markup.
     const textMappings = {
       PAGE_TITLE: data.title,
       PAGE_HEADING: data.heading,
@@ -646,9 +654,9 @@ ${cards}
       LAST_UPDATED: data.lastUpdated,
     };
 
-    // Pre-rendered, build-generated markup — inserted verbatim. These are
-    // trusted HTML/inline-script fragments the build assembled itself; escaping
-    // them would corrupt the intended markup.
+    // Pre-rendered, build-generated markup, inserted verbatim. These are
+    // trusted HTML and inline-script fragments that the build assembled itself.
+    // Escaping them would corrupt the intended markup.
     const markupMappings = {
       CONTENT: data.content || '',
       NAV_ITEMS: data.navItems || '',
@@ -666,26 +674,29 @@ ${cards}
 
     for (const [key, value] of Object.entries(markupMappings)) {
       const regex = new RegExp(`{{${key}}}`, 'g');
-      // Replacer function so any `$` in the markup (e.g. inline-script dollar
-      // signs) is inserted literally, not interpreted as a $-pattern.
+      // Replacer function, so any `$` in the markup (for example,
+      // inline-script dollar signs) is inserted literally instead of read as
+      // a $-pattern.
       result = result.replace(regex, () => value || '');
     }
 
     return result;
   }
 
-  // HTML-escape a dynamic text value before it lands in generated markup.
+  // HTML-escape a dynamic text value before it goes into generated markup.
   //
-  // INTENT: config/pages.json (and report metadata) is plain text authored by a
-  // human; without escaping, a literal "<", ">", or "&" in a value would emit
-  // invalid markup or, worse, inject tags. This escapes the characters that are
-  // significant in the only contexts build.js interpolates these values into:
-  // HTML text and double-quoted attributes. Apostrophes are DELIBERATELY not
-  // escaped — every attribute in the templates is double-quoted (Prettier
-  // enforces this), so a bare ' can never break out, and escaping it would only
-  // litter readable copy like "Women's" with &#39;. Config is verified free of
-  // pre-existing entities/tags, so there is no double-encoding risk. Only use
-  // this for TEXT — never on build-generated markup (it would corrupt the HTML).
+  // INTENT: config/pages.json (and report metadata) is plain text that a person
+  // writes. Without escaping, a literal "<", ">", or "&" in a value would emit
+  // invalid markup or, worse, inject tags. This function escapes the characters
+  // that matter in the only contexts where build.js interpolates these values:
+  // HTML text and double-quoted attributes.
+  //
+  // Apostrophes are DELIBERATELY not escaped. Every attribute in the templates
+  // is double-quoted (Prettier enforces this), so a bare ' can never break out.
+  // Escaping it would only fill readable copy like "Women's" with numeric
+  // entities. The config has no pre-existing entities or tags, so there is no
+  // double-encoding risk. Use this only for TEXT, and never on build-generated
+  // markup, which it would corrupt.
   escapeHtml(value) {
     return String(value ?? '')
       .replace(/&/g, '&amp;')
@@ -694,13 +705,14 @@ ${cards}
       .replace(/"/g, '&quot;');
   }
 
-  // Guard against shipping a page with unrendered template syntax. Scans for any
-  // surviving mustache token — a section ({{#X}}/{{^X}}/{{/X}}) or a plain
-  // variable ({{X}}) — and throws if found. No generated page legitimately
-  // contains "{{", so a hit is always a build bug: a typo'd token, a conditional
-  // missing from the flags map in handleConditionals, or a new {{VAR}} with no
-  // entry in renderTemplate's mappings. Throwing here makes that loud at build
-  // time instead of leaving literal braces visible on the live page.
+  // Guard against shipping a page with unrendered template syntax. It scans for
+  // any remaining mustache token, either a section ({{#X}}/{{^X}}/{{/X}}) or a
+  // plain variable ({{X}}), and throws if it finds one. No generated page should
+  // contain "{{". So a hit is always a build bug. It can be a typo'd token, a
+  // conditional missing from the flags map in handleConditionals, or a new {{X}}
+  // with no entry in renderTemplate's mappings. Throwing here makes the
+  // bug loud at build time, instead of leaving literal braces visible on the
+  // live page.
   assertNoUnresolvedTokens(html, filename) {
     const leftover = html.match(/{{[^}]*}}/g);
     if (leftover) {
@@ -711,13 +723,13 @@ ${cards}
     }
   }
 
-  // Handle conditional sections {{#VAR}} content {{/VAR}} (and the inverted
-  // {{^VAR}} content {{/VAR}}).
+  // Handle conditional sections {{#X}} content {{/X}} (and the inverted
+  // {{^X}} content {{/X}}).
   //
   // INTENT: one data-driven pass over a single source-of-truth table instead of
   // 11 copy-pasted if/else blocks. To add a conditional, add ONE row here and use
-  // the token in a template — nothing else changes. The map key is the literal
-  // token name as written in the template ({{#TOKEN}}); the value is the data
+  // the token in a template. Nothing else changes. The map key is the literal
+  // token name as written in the template ({{#TOKEN}}). The value is the data
   // property that decides truthiness. Each token is handled in both forms:
   //   {{#TOKEN}}…{{/TOKEN}}  keep when truthy, strip when falsy
   //   {{^TOKEN}}…{{/TOKEN}}  keep when falsy,  strip when truthy (mustache inverse)
@@ -789,26 +801,27 @@ ${cards}
     return result;
   }
 
-  // "Last updated" for a data file = the file's own modification time, i.e. when
-  // the underlying data actually changed on disk. The author's data pipeline
-  // writes each JSON when its data changes, so the mtime IS the real
-  // "data changed" moment — which is exactly what this line must show.
+  // "Last updated" for a data file is the file's own modification time, that is,
+  // when the data changed on disk. The author's data pipeline writes each JSON
+  // when its data changes. So the mtime is the real "data changed" moment, which
+  // is what this line must show.
   //
-  // The only refinement over a bare mtime is pinning the timezone for the
-  // display string, so the formatted date doesn't shift with the build machine's
-  // locale (the instant is the same; only the rendering is fixed to Eastern).
+  // The only change from a bare mtime is a fixed timezone for the display string.
+  // The formatted date then doesn't shift with the build machine's locale. The
+  // instant is the same. Only the rendering uses Eastern time.
   //
-  // NOTE: this is deliberately the filesystem mtime, NOT the git commit date.
-  // The commit date is "when the data was committed", which lags the real change
-  // and is wrong here. The tradeoff is that mtime isn't preserved by a fresh
-  // `git clone`, so this line is not reproducible in a clean CI checkout — that's
-  // accepted in exchange for showing the true data-change time.
+  // NOTE: this is deliberately the filesystem mtime. The git commit date records
+  // when the data was committed, which lags the real change, so it is wrong here.
+  // The tradeoff: a fresh `git clone` doesn't keep the mtime, so this line is not
+  // reproducible in a clean CI checkout. That cost is accepted in exchange for
+  // the true data-change time.
   async getDataUpdatedDate(filePath) {
     try {
       const stats = await fs.stat(filePath);
       // Approved update-line format: "November 12, 2026, 7:14 AM ET" (no
-      // leading zero on the hour, ET for both EST and EDT). Built from parts
-      // because toLocaleString writes "at" and "EST".
+      // leading zero on the hour, and Eastern Time (ET) for both standard
+      // and daylight time). Built from parts because toLocaleString writes
+      // "at" and "EST".
       const parts = Object.fromEntries(
         new Intl.DateTimeFormat('en-US', {
           timeZone: 'America/New_York',
@@ -829,13 +842,17 @@ ${cards}
     }
   }
 
-  // Feature-card icon set (design system phase 5). One deliberate icon system:
-  // a small Feather-style line-icon set, stroke = currentColor (colored via the
-  // .feature-icon CSS token), replacing the emoji that used to live in
-  // config/pages.json. config stores a semantic KEY (e.g. "chart"); this maps it
-  // to inline SVG. Unknown keys fall through to the raw value so nothing breaks.
+  // Feature-card icon set (design system phase 5). It is one deliberate icon
+  // system: a small Feather-style set of line icons. Each icon uses stroke =
+  // currentColor, colored through the .feature-icon CSS token. The set replaced
+  // the emoji that used to be in config/pages.json.
+  //
+  // The config stores a semantic KEY (for example "chart"). This map turns it
+  // into inline SVG. Unknown keys fall through to the raw value, so nothing
+  // breaks.
+  //
   // NOTE: templates/premium-page.html (the single-product fallback) inlines the
-  // same four glyphs — keep them in sync with this map if you change them.
+  // same four glyphs. Keep them in sync with this map if you change them.
   featureIcon(name) {
     const attrs =
       'viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
@@ -865,19 +882,20 @@ ${cards}
         '<path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/>',
     };
     if (!paths[name]) {
-      // Unknown key: fall through to the raw config value (e.g. an emoji), but
-      // escape it — it's untrusted text landing in markup. Known keys below
-      // return trusted inline SVG and must NOT be escaped.
+      // Unknown key: fall through to the raw config value (for example, an
+      // emoji), but escape it. It is untrusted text that goes into markup.
+      // Known keys below return trusted inline SVG and must NOT be escaped.
       return this.escapeHtml(name);
     }
     return `<svg ${attrs}>${paths[name]}</svg>`;
   }
 
   // Build the renderable pieces for a single product: the centered header block
-  // and the body (sample + features + pricing). Returned separately so callers
-  // can place the header in a <summary> (collapsed area) while the body lives in
-  // the disclosure. globalSalesEnabled is the master kill switch — a product's
-  // purchase form only shows when both it AND product.salesEnabled are true.
+  // and the body (sample, features, and pricing). They are returned separately,
+  // so callers can put the header in a <summary> (the collapsed area) and the
+  // body in the disclosure. The flag globalSalesEnabled is the master kill
+  // switch. A product's purchase form shows only when both it AND
+  // product.salesEnabled are true.
   buildProductPieces(product, globalSalesEnabled) {
     const isActive = product.active;
     const sectionClass = isActive
@@ -950,12 +968,13 @@ ${cards}
       ? `<p class="urgency-note">${this.escapeHtml(product.urgencyNote)}</p>`
       : '';
 
-    // Build form/CTA based on sales status. A product with externalUrl sells
-    // on its own site, so the CTA is a link there instead of the Stripe form.
+    // Build the form or call-to-action (CTA) based on sales status. A product
+    // with externalUrl sells on its own site, so the CTA is a link there
+    // instead of the Stripe form.
     let formHtml;
     if (product.emailSignup) {
       // Free report sent by email. The form posts to signupEndpoint when
-      // signupEnabled is true; otherwise the card shows signupClosedMessage.
+      // signupEnabled is true. Otherwise the card shows signupClosedMessage.
       // premium.js ignores this form because it has no data-stripe-link.
       if (product.signupEnabled && product.signupEndpoint) {
         formHtml = `
@@ -1065,7 +1084,8 @@ ${pricingFeaturesHtml}
         </div>
       </section>`;
 
-    // Countdown element: rendered as a placeholder, JS fills in the number
+    // Countdown element: rendered as a placeholder. The page script writes
+    // the number.
     const countdownHtml = product.countdownDate
       ? `<p class="product-countdown" data-countdown-date="${product.countdownDate}">
               <span class="countdown-label">${this.escapeHtml(product.countdownLabel || 'Returns in')}</span>
@@ -1109,13 +1129,14 @@ ${pricingFeaturesHtml}
       .join('\n');
   }
 
-  // Render the collapsible "secondary" area: inactive/upcoming product(s) plus
-  // the shared audience ("Perfect For") section, all under ONE large caret in a
-  // native <details> that defaults closed. This keeps an out-of-season product
-  // (and the appeal copy that trails it) from occupying a full screen above the
-  // FAQ. The lead inactive product's header is the <summary> so the collapsed
-  // state still announces what's inside. If there are no inactive products the
-  // audience section is returned on its own (uncollapsed), preserving layout.
+  // Render the collapsible "secondary" area. It holds inactive or upcoming
+  // products plus the shared audience ("Perfect For") section, all under ONE
+  // large caret in a native <details> that defaults closed. An out-of-season
+  // product, and the appeal copy after it, then can't fill a full screen above
+  // the FAQ. The lead inactive product's header is the <summary>, so the
+  // collapsed state still shows what's inside. If there are no inactive
+  // products, the audience section is returned on its own (not collapsed),
+  // which keeps the layout.
   renderOffseasonArea(inactiveProducts, audienceHtml, globalSalesEnabled) {
     if (!inactiveProducts || inactiveProducts.length === 0) {
       return audienceHtml;
@@ -1171,7 +1192,7 @@ ${pricingFeaturesHtml}
 
     // One card per product on sale, side by side (Scott, 2026-11-17: "two cards
     // side-by-side ... one for the pdf reports and one for the school report
-    // cards"). Each card reads its copy from config/pages.json; the home* fields
+    // cards"). Each card reads its copy from config/pages.json. The home* fields
     // override the Premium page copy where the card needs a shorter version.
     const premium = this.config.premium;
     const products = ((premium && premium.products) || []).filter(
@@ -1182,7 +1203,8 @@ ${pricingFeaturesHtml}
     }
 
     const cards = products.map(product => {
-      // Original price shown struck-through when present (e.g. $49 -> $39)
+      // Original price shown struck through when present (for example, $49
+      // -> $39)
       const originalPrice = product.priceOriginal
         ? `<span class="home-premium__price-original">${this.escapeHtml(product.priceOriginal)}</span>`
         : '';
@@ -1194,7 +1216,7 @@ ${pricingFeaturesHtml}
       const featuresHtml = features
         ? `<ul class="home-premium__features">\n          ${features}\n        </ul>`
         : '';
-      // The PDF report sells on premium.html itself; a product sold on its own
+      // The PDF report sells on premium.html itself. A product sold on its own
       // site (externalUrl) links to its section of the Premium page.
       const href = product.externalUrl
         ? `premium.html#product-${product.id}`
@@ -1227,12 +1249,12 @@ ${cards.join('\n')}
       // Handle special home page content
       let tableContent = '';
       if (pageKey === 'index') {
-        // Use home content template for index page.
-        // Rendered through renderTemplate so the hero can pull
-        // {{PAGE_HEADING}}/{{PAGE_DESCRIPTION}} from config/pages.json and the
-        // {{PREMIUM_BAND}} teaser (built from the active premium product so its
-        // copy/price stay in sync with the Premium page). Config stays the
-        // single source of truth for home copy.
+        // Use the home content template for the index page. It renders through
+        // renderTemplate so the hero can read
+        // {{PAGE_HEADING}}/{{PAGE_DESCRIPTION}} from config/pages.json. It also
+        // gets the {{PREMIUM_BAND}} teaser, built from the active premium
+        // product so its copy and price match the Premium page. Config stays
+        // the single source of truth for home copy.
         tableContent = this.renderTemplate(this.templates.homeContent, {
           heading: pageConfig.heading,
           description: pageConfig.description,
@@ -1258,10 +1280,10 @@ ${cards.join('\n')}
           pageConfig.products &&
           pageConfig.products.length > 0
         ) {
-          // Multi-product mode: active products render expanded at the top;
-          // inactive/upcoming products (+ the shared "Perfect For" appeal) drop
-          // into one large-caret collapse below, so an out-of-season product
-          // doesn't bury the FAQ. Order preserves config order within each group.
+          // Multi-product mode: active products render expanded at the top.
+          // Inactive or upcoming products, plus the shared "Perfect For" appeal,
+          // go into one large-caret collapse below. So an out-of-season product
+          // doesn't bury the FAQ. Order keeps config order within each group.
           const activeProducts = pageConfig.products.filter(p => p.active);
           const inactiveProducts = pageConfig.products.filter(p => !p.active);
 
@@ -1312,18 +1334,22 @@ ${cards.join('\n')}
           sectionTitle: pageConfig.sectionTitle,
         });
       } else if (pageConfig.embedHtml) {
-        // Embedded standalone HTML (e.g. bethany.html). The config points at a
-        // self-contained document under data/embedded_html/; the build pulls
-        // its <style>, <body>, and scripts apart and drops them into the site
-        // shell. This is the hidden-page twin of wrap-reports.js: same
-        // extraction and CSS scoping (lib/embed-html.js), but the page is a
-        // root-level destination page with showInNav false rather than a
-        // reports/ entry that appears in the Reports dropdown.
+        // Embedded standalone HTML (for example, bethany.html). The config
+        // points at a self-contained document under data/embedded_html/. The
+        // build pulls its <style>, <body>, and scripts apart and puts them
+        // into the site shell. This code path is the hidden-page twin of
+        // wrap-reports.js, with the same extraction and CSS scoping
+        // (lib/embed-html.js).
+        //
+        // The difference is the output. Here it is a root-level destination
+        // page with showInNav false. From wrap-reports.js it is a reports/
+        // entry that appears in the Reports dropdown.
         tableContent = await this.renderEmbeddedHtml(pageKey, pageConfig);
       } else if (pageConfig.isReferencePage) {
-        // Static reference page: evergreen notes (no data source, no search).
-        // The template is plain markup, but render it through renderTemplate so
-        // it picks up the same token substitution as every other page.
+        // Static reference page with evergreen notes. It has neither a data
+        // source nor a search box. The template is plain markup. Render it
+        // through renderTemplate anyway, so it gets the same token substitution
+        // as every other page.
         tableContent = this.renderTemplate(this.templates.referencePage, {});
       } else if (pageConfig.dataSource) {
         // Render table page content for data-driven pages
@@ -1337,16 +1363,17 @@ ${cards.join('\n')}
         });
       }
 
-      // Get last updated date for data file (the data file's own mtime — when
-      // the data actually changed; see getDataUpdatedDate).
+      // Get the last-updated date for the data file. That is the data file's
+      // own mtime, when the data changed (see getDataUpdatedDate).
       let lastUpdated = null;
       if (pageConfig.dataSource) {
         const dataFilePath = `data/${pageConfig.dataSource}.json`;
         lastUpdated = await this.getDataUpdatedDate(dataFilePath);
       } else if (pageConfig.isDistancesPage) {
-        // The distances page's data comes from a CSV (data/distances.json is
-        // regenerated every build, so its mtime is always "now" and useless).
-        // Use the source CSV's mtime — the real "distance data changed" signal.
+        // The distances page's data comes from a CSV. The file
+        // data/distances.json is regenerated every build, so its mtime is
+        // always "now" and useless. Use the source CSV's mtime, which is the
+        // real "distance data changed" signal.
         lastUpdated = await this.getDataUpdatedDate(
           'data/calculated_distances.csv'
         );
@@ -1365,17 +1392,17 @@ ${cards.join('\n')}
         !pageConfig.isSimplePage &&
         pageKey !== 'index';
 
-      // Command palette is always included in the build
-      // The actual feature flag check is done client-side via URL parameter
-      // This allows testing without rebuilding
+      // The build always includes the command palette. The feature flag
+      // check happens client-side, through a URL parameter. The URL
+      // parameter allows testing without a rebuild.
       const commandPaletteEnabled = true;
 
-      // Per-page runtime config inlined into <head>. The client only ever reads
-      // dataSource + columnMappings (main.js / table-controls.js), so we inline
-      // just those — no need to ship (or fetch) the whole multi-page config.
-      // When a dataSource exists we also kick off its (cacheable) fetch right
-      // here so the download overlaps document parsing instead of starting after
-      // DOMContentLoaded. data-loader.js consumes both globals.
+      // Per-page runtime config inlined into <head>. The client only reads
+      // dataSource and columnMappings (main.js and table-controls.js). So we
+      // inline only those, and do not ship or fetch the whole multi-page config.
+      // When a dataSource exists, we also start its (cacheable) fetch here. The
+      // download then overlaps document parsing instead of starting after
+      // DOMContentLoaded. The script data-loader.js consumes both globals.
       const runtimeConfig = {};
       if (pageConfig.dataSource) {
         runtimeConfig.dataSource = pageConfig.dataSource;
@@ -1384,10 +1411,11 @@ ${cards.join('\n')}
         runtimeConfig.columnMappings = pageConfig.columnMappings;
       }
 
-      // Inline the canonical nav list so the CMD+K command palette renders the
-      // exact same menu as the header (see getPaletteNavItems). Identical on
-      // every page, but cheap to embed, and keeps the palette's source of truth
-      // server-side instead of a hand-maintained JS copy.
+      // Inline the canonical nav list so the Command+K command palette renders
+      // the exact same menu as the header (see getPaletteNavItems). The list is
+      // identical on every page, but cheap to embed. It keeps the palette's
+      // source of truth on the server instead of in a hand-maintained
+      // client-side copy.
       const paletteNavItems = await this.getPaletteNavItems();
       const headPreload = `<script>
         window.__PAGE_CONFIG__ = ${JSON.stringify(runtimeConfig)};
@@ -1410,8 +1438,9 @@ ${cards.join('\n')}
         // Home page renders its own full-bleed hero (in the {{HERO}} slot above
         // <main>) instead of the generic header.
         showDefaultHeader: pageKey !== 'index',
-        // Home page gets body.home for the transparent-over-hero nav treatment;
-        // other pages get an empty class (default solid sticky nav).
+        // The home page gets body.home for the transparent-over-hero nav
+        // treatment. Other pages get an empty class (the default solid sticky
+        // nav).
         bodyClass: pageKey === 'index' ? 'home' : '',
         hero:
           pageKey === 'index'
@@ -1436,10 +1465,11 @@ ${cards.join('\n')}
       // Determine output filename
       const filename = `${pageKey}.html`;
 
-      // Fail loudly on any unresolved mustache token. A surviving {{...}} means a
-      // template references a conditional/variable the build never filled in (a
-      // typo'd token, a missing flags-map row, or a new {{VAR}} with no mapping).
-      // Catching it here turns a silent broken-page bug into a build failure.
+      // Fail loudly on any unresolved mustache token. A remaining {{...}} means a
+      // template references a conditional or variable that the build never set.
+      // It can be a typo'd token, a missing flags-map row, or a new {{X}}
+      // variable with no mapping. Catching it here turns a silent broken-page bug
+      // into a build failure.
       this.assertNoUnresolvedTokens(fullPage, filename);
 
       // Write file (Prettier-formatted so output matches the committed files)
@@ -1459,7 +1489,7 @@ ${cards.join('\n')}
       await this.loadTemplates();
       await this.loadConfig();
 
-      // Filter out special config keys that start with underscore
+      // Skip special config keys that start with "_"
       const pages = Object.keys(this.config).filter(
         key => !key.startsWith('_')
       );
@@ -1470,7 +1500,7 @@ ${cards.join('\n')}
       }
 
       // Regenerate reports/index.html based on current reports directory
-      // This ensures nav stays in sync when report files are added/removed
+      // The rebuild keeps the nav in sync when report files are added or deleted
       await this.regenerateReportsIndex();
 
       // Convert distances CSV to JSON before encoding
@@ -1487,11 +1517,11 @@ ${cards.join('\n')}
   }
 
   // Delete every file the build generates, so the next build starts clean. This
-  // is the exact inverse of generateAll's outputs: one <pageKey>.html per config
-  // page, reports/index.html, the whole data-encoded/ dir, and the generated
-  // data/distances.json. Source files (templates, config, styles, js, raw data,
-  // hand-authored reports/*.html) are never touched. Missing files are ignored
-  // so clean is safe to run repeatedly.
+  // function is the exact inverse of generateAll's outputs. Those are one
+  // <pageKey>.html per config page, reports/index.html, the whole data-encoded/
+  // dir, and the generated data/distances.json. It never touches source files
+  // (templates, config, styles, js, raw data, hand-authored reports/*.html).
+  // Missing files are ignored, so clean is safe to run repeatedly.
   async clean() {
     console.log('🧹 Cleaning generated files...\n');
     await this.loadConfig();
@@ -1518,7 +1548,7 @@ ${cards.join('\n')}
       await tryUnlink(file);
     }
 
-    // The entire data-encoded/ dir is build output — clear it.
+    // The entire data-encoded/ dir is build output. Clear it.
     try {
       const encoded = await fs.readdir('data-encoded');
       for (const file of encoded) {
@@ -1535,13 +1565,15 @@ ${cards.join('\n')}
     );
   }
 
-  // Watch source files and rebuild on change. Deliberately watches ONLY pure
-  // source locations (templates, config, js, styles.css) — never data/ or
-  // reports/, because the build writes into those (data/distances.json,
-  // reports/index.html), which would retrigger the watcher in an infinite loop.
+  // Watch source files and rebuild on change. It watches ONLY pure source
+  // locations on purpose. Those are templates, config, js, and styles.css. The
+  // build writes into data/ and reports/ (data/distances.json,
+  // reports/index.html). Watching them would retrigger the watcher in an
+  // infinite loop.
+  //
   // Edits to data or reports during a dev session need a manual `npm run build`.
-  // Uses Node's built-in fs.watch (recursive; supported on macOS/Windows and
-  // Node 20+ Linux) so there's no watcher dependency.
+  // Node's built-in fs.watch is recursive on macOS, Windows, and Node 20+ Linux,
+  // so there's no watcher dependency.
   async dev() {
     await this.generateAll();
 
@@ -1549,8 +1581,8 @@ ${cards.join('\n')}
     let timer = null;
     const scheduleRebuild = filename => {
       clearTimeout(timer);
-      // Debounce: editors fire several events per save, and a recursive watch
-      // can echo; coalesce into one rebuild.
+      // Debounce: editors fire several events per save. A recursive watch can
+      // also echo. Coalesce them into one rebuild.
       timer = setTimeout(async () => {
         console.log(`\n♻️  Change detected (${filename}) — rebuilding...`);
         try {

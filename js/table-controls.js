@@ -68,8 +68,8 @@ class TableController {
       console.error('Error loading table data:', error);
       this.showDataLoadingError(dataSource);
     } finally {
-      // Reveal the (now fully-rendered) table — success or error — so the user
-      // never sees the intermediate empty/narrow state.
+      // Reveal the fully rendered table, on success or error, so the user
+      // never sees the intermediate empty or narrow state.
       this.revealTable();
     }
   }
@@ -115,8 +115,8 @@ class TableController {
     data.forEach((row, dataIndex) => {
       const tr = document.createElement('tr');
 
-      // Store the original data index on the row element
-      // This ensures we can always look up the correct data even after sorting
+      // Store the original data index on the row element, so we can always
+      // find the correct data, even after sorting
       tr.setAttribute('data-index', dataIndex);
 
       headers.forEach((header, _headerIndex) => {
@@ -280,9 +280,10 @@ class TableController {
   }
 
   // Format values based on column type. The formats follow the approved
-  // display formats in js/formats.js (ranks #54, whole percentages, <1% and
-  // >99% for simulation chances, signed values that can go below zero,
-  // heights 5'8.1). The raw value stays in the cell's data-sort attribute.
+  // display formats in js/formats.js. Those are ranks (#54), whole
+  // percentages, <1% and >99% for simulation chances, signed values that
+  // can go below zero, and heights (5'8.1). The raw value stays in the
+  // cell's data-sort attribute.
   formatValue(value, headerText) {
     // Handle null/undefined/empty values but preserve zero
     if (value === null || value === undefined || value === '') {
@@ -303,8 +304,9 @@ class TableController {
     const currentPage =
       path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
 
-    // Every column here holds a rank. "Strength of Record" and "Wins Above
-    // Bubble" are ranks on the composite page, not the metric values.
+    // Every column here holds a rank. On the composite page, "Strength of
+    // Record" and "Wins Above Bubble" are ranks, and the metric values are
+    // elsewhere.
     const rankColumns = [
       'rank',
       'npi rank',
@@ -333,7 +335,7 @@ class TableController {
       'top16%',
     ];
     // Values that can go below zero, with their decimals. STDEV on the
-    // current season page goes below zero; the composite page's Stdev does not.
+    // current season page goes below zero. The composite page's Stdev does not.
     const signedColumns = {
       'value diff': 3,
       'rank diff': 0,
@@ -370,7 +372,7 @@ class TableController {
     if (chanceColumns.includes(cleanHeader)) {
       return F.chance(value);
     }
-    // Returning is stored as "68.62%"; preseason Win% as a fraction (0.75),
+    // Returning is stored as "68.62%". Preseason Win% as a fraction (0.75),
     // conference Win% as "75.0%".
     if (cleanHeader === 'returning' || cleanHeader === 'win%') {
       const isFraction =
@@ -412,7 +414,7 @@ class TableController {
     // Clean header text by removing sort indicators and other symbols
     const cleanHeader = headerText.replace(/[↕↑↓]/g, '').toLowerCase().trim();
 
-    // Define which columns should have red font for negative values
+    // Columns that show negative values in red font
     // Format: { 'page-identifier': ['column1', 'column2'] }
     // Note: 'value diff' uses gradient coloring instead, so it's not listed here
     const negativeValueColumns = {
@@ -426,7 +428,7 @@ class TableController {
     const currentPage =
       path.substring(path.lastIndexOf('/') + 1).replace('.html', '') || 'index';
 
-    // Check if this column should have red font for negative values
+    // Check whether this column shows negative values in red font
     const pageColumns = negativeValueColumns[currentPage];
     if (pageColumns && pageColumns.includes(cleanHeader)) {
       // Parse the value and check if it's negative
@@ -478,8 +480,8 @@ class TableController {
 
     // NOTE: these are intentional data-visualization colors (categorical bid
     // types), NOT theme chrome, so they do not map to the design tokens.
-    // Each clears WCAG AA (4.5:1) on both the white and the striped row
-    // (#e9ecef); the 2026-11-07 contrast sweep measured the former forest
+    // Each clears Web Content Accessibility Guidelines (WCAG) AA (4.5:1) on
+    // both the white and the striped row (#e9ecef). The 2026-11-07 contrast sweep measured the former forest
     // green, dodger blue, and dark orange at 4.4, 3.2, and 2.3.
     if (bidType === 'AQ') {
       // Green for automatic qualifier
@@ -511,7 +513,7 @@ class TableController {
     }
 
     // Columns to apply gradient to, with their gradient direction
-    // 'standard' = for columns with positive/negative values, pivots on 0 (green for positive, red for negative)
+    // 'standard' = for columns with positive and negative values, centered on 0 (green for positive, red for negative)
     // 'range' = for all-positive columns, green for max, red for min (higher is better)
     // 'inverted' = for all-positive columns, red for max, green for min (lower is better)
     const gradientColumns = {
@@ -576,7 +578,7 @@ class TableController {
     });
   }
 
-  // Calculate gradient color
+  // Calculate the gradient color.
   // direction: 'standard' = green for high/positive, red for low/negative
   //            'inverted' = red for high, green for low (for columns where lower is better)
   getGradientColor(value, min, max, direction = 'standard') {
@@ -736,7 +738,7 @@ class TableController {
         }
       });
 
-      // Reapply alternating row colors to visible rows
+      // Restripe only the visible rows
       this.reapplyRowColors();
 
       this.showNoResults(visibleRows === 0);
@@ -844,7 +846,7 @@ class TableController {
   }
 
   // Parse bid type value for sorting
-  // Returns a numeric value where: AQ = 0, AL-01 = 1, AL-02 = 2, etc.
+  // Returns a numeric value: AQ (automatic qualifier) = 0, AL-01 = 1, AL-02 = 2, and so on.
   // Non-bid values get a high number to sort last
   parseBidTypeValue(value) {
     if (typeof value !== 'string') {
@@ -869,7 +871,7 @@ class TableController {
   }
 
   // Parse a numeric value, handling accounting notation where parentheses denote negatives
-  // e.g., "(5.2)" becomes -5.2, "5.2" stays 5.2
+  // For example, "(5.2)" becomes -5.2, and "5.2" stays 5.2
   parseNumericValue(value) {
     if (typeof value !== 'string') {
       return parseFloat(value);
@@ -877,7 +879,7 @@ class TableController {
 
     const trimmed = value.trim();
 
-    // Skip error values like #DIV/0!, #N/A, #VALUE!, etc.
+    // Skip spreadsheet error values such as "#DIV/0!", "#N/A", and "#VALUE!".
     if (trimmed.startsWith('#') || trimmed === '' || trimmed === '-') {
       return NaN;
     }
@@ -928,7 +930,8 @@ class TableController {
 
       // Sort rows
       rows.sort((a, b) => {
-        // Sort on the raw value populateTable stored, not the display text.
+        // Sort on the raw value that populateTable stored in data-sort. If
+        // data-sort is missing, use the display text.
         const sortText = cell => (cell.dataset.sort ?? cell.textContent).trim();
         const aVal = sortText(a.cells[columnIndex]);
         const bVal = sortText(b.cells[columnIndex]);

@@ -1,11 +1,12 @@
 // bracket-builder.js - Bracket Builder page logic
 //
-// Loads bracket_builder.json (via the encoded data pipeline): the field of 64
-// with seed, seed line, conference, region, nonconference opponents in the
-// field, the driving distance for every pair, and prior NCAA tournament
-// meetings. Users place teams into first-round slots by drag and drop or by
-// tapping a team and then a slot. Every change re-runs the committee checks at
-// three levels: first-round game, opening-weekend pod, and quadrant.
+// Loads bracket_builder.json through the encoded data pipeline. That JSON has
+// the field of 64 with seed, seed line, conference, region, and nonconference
+// opponents in the field. It also has the driving distance for every pair and
+// prior NCAA tournament meetings. Users place teams into first-round slots by
+// drag and drop, or by tapping a team and then a slot. Every change re-runs the
+// committee checks for each first-round game, opening-weekend pod, and
+// quadrant.
 // The bracket saves to localStorage after every change and restores on load.
 
 (function () {
@@ -15,7 +16,7 @@
   // Quadrants in bracket order. The semifinals pair the two left quadrants
   // and the two right quadrants.
   const QUADRANTS = ['Top left', 'Bottom left', 'Top right', 'Bottom right'];
-  // Tint per quadrant; matches .bb-quadrant--N in styles.css
+  // Tint per quadrant. Matches .bb-quadrant--N in styles.css
   const QUADRANT_COLORS = [
     '--blue-500',
     '--orange-500',
@@ -23,9 +24,9 @@
     '--warning',
   ];
 
-  // Four pods per quadrant. Each pod holds two first-round games, listed as
-  // the seed lines the committee pattern expects. Pods A and B form one half
-  // of the quadrant, C and D the other.
+  // Each quadrant has four pods. Each pod holds two first-round games,
+  // listed as the seed lines the committee pattern expects. Pods A and B are
+  // on one side of the quadrant. Pods C and D are on the other side.
   const PODS = [
     {
       name: 'A',
@@ -405,7 +406,8 @@
     const guaranteedPods = new Set();
     const members = quadrantTeams(q);
 
-    // Top-8 seeds: at most two per quadrant, in opposite halves.
+    // Top-8 seeds: at most two per quadrant, on opposite sides
+    // of it.
     const top8 = [];
     PODS.forEach((pod, p) => {
       for (const t of podTeams(q, p)) {
@@ -712,7 +714,7 @@
     return slot;
   }
 
-  // Computes every check once; render() and the share image both read it.
+  // Computes every check once. Render() and the share image both read it.
   function evaluate() {
     const result = {
       quadrants: [],
@@ -852,7 +854,7 @@
     try {
       localStorage.setItem(storageKey(), JSON.stringify({ slots, hosts }));
     } catch (err) {
-      // Storage unavailable; the bracket still works for this visit.
+      // Storage unavailable. The bracket still works for this visit.
     }
   }
 
@@ -905,9 +907,9 @@
       .trim();
   }
 
-  // Draws a classic bracket: the two left quadrants run left to right, the
-  // two right quadrants mirror them, and the Final Four sits in the center.
-  // Later rounds are empty lines because no games are played yet.
+  // Draws the bracket. The two left quadrants run left to right. The two
+  // right quadrants mirror them. The Final Four is in the center. Later
+  // rounds are empty lines because no games are played yet.
   function drawBracket() {
     const result = evaluate();
     const scale = 2;
@@ -956,7 +958,7 @@
     // Returns the y of the quadrant winner's line.
     function drawQuadrant(q, x0, y0, dir) {
       const rx = x => (dir === 1 ? x0 + x : x0 - x);
-      // Faint quadrant tint, the same color the page uses for this quadrant
+      // Faint quadrant tint in this quadrant's color
       ctx.save();
       ctx.globalAlpha = 0.06;
       ctx.fillStyle = cssVar(QUADRANT_COLORS[q]);
@@ -1076,8 +1078,8 @@
       drawQuadrant(3, rightX, top + quadH + quadGap, -1),
     ];
 
-    // Final Four: each side's two quadrant winners meet in a semifinal, and
-    // the semifinal winners meet in the center.
+    // Final Four: each side's two quadrant winners meet in a semifinal. The
+    // semifinal winners meet in the center.
     const innerL = leftX + sideW;
     const innerR = rightX - sideW;
     const semiL = (winners[0] + winners[1]) / 2;

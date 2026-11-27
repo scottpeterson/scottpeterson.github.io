@@ -4,11 +4,11 @@
  * wrap-reports.js - Wraps standalone HTML reports with site navigation
  *
  * PURPOSE:
- * This script enables a zero-config workflow for publishing standalone HTML reports.
- * Drop an HTML file into data/static_reports_html/, run npm run wrap-reports,
- * and the report appears on the site with full navigation.
+ * This script publishes standalone HTML reports with no configuration.
+ * Drop an HTML file into data/static_reports_html/ and run npm run wrap-reports.
+ * The report then appears on the site with full navigation.
  *
- * HOW IT WORKS:
+ * Steps:
  * 1. Scans data/static_reports_html/ for HTML files
  * 2. Extracts <title>, <style>, <body>, and external scripts from each
  * 3. Wraps content in site template with nav/header/footer
@@ -16,16 +16,16 @@
  * 5. Outputs wrapped reports to reports/{slug}.html
  * 6. Delegates reports/index.html to build.js (single source of truth)
  *
- * NAV / INDEX SINGLE SOURCE OF TRUTH:
- * The header nav and reports/index.html are owned by build.js (TemplateEngine).
- * This script imports that engine and calls engine.renderNavShell() for the
- * wrapped pages and engine.regenerateReportsIndex() for the index, so the menu
- * and index never drift from the rest of the site. This file no longer carries
- * its own hardcoded nav or index markup.
+ * Nav and index source:
+ * build.js (TemplateEngine) generates the header nav and reports/index.html.
+ * This script imports that engine. It calls engine.renderNavShell() for the
+ * wrapped pages and engine.regenerateReportsIndex() for the index. So the menu
+ * and index never drift from the rest of the site. wrap-reports.js has no hardcoded
+ * nav or index markup.
  *
  * CSS ISOLATION (implemented in lib/embed-html.js, shared with build.js):
- * Reports often have global styles targeting body, *, etc.
- * To prevent conflicts with the site styles, we:
+ * Reports often have global styles that target body, *, and other elements.
+ * To prevent conflicts with the site styles, wrap-reports.js does these steps:
  * - Wrap report content in a div with class .report-{slug}
  * - Transform CSS selectors: body {} -> .report-{slug} {}
  * - Site styles load first, then scoped report styles
@@ -79,10 +79,10 @@ function slugToTitle(slug) {
  * Returns the first match or null
  */
 /**
- * Generate the wrapped HTML for a single report.
- * `nav` is the canonical <nav> shell rendered once by build.js
- * (engine.renderNavShell) and shared across all wrapped pages — client-side
- * navigation.js handles the active-link highlight, so no per-page nav needed.
+ * Generate the wrapped HTML for a single report. `nav` is the canonical <nav>
+ * shell that build.js renders once (engine.renderNavShell). All wrapped pages
+ * share it. The client-side navigation.js handles the active-link highlight,
+ * so no page needs its own nav.
  */
 function generateWrappedReport(report, nav) {
   const {
@@ -95,9 +95,10 @@ function generateWrappedReport(report, nav) {
     carriedMetas,
   } = report;
 
-  // Metas the source report writes for its readers and its checkers: the
-  // description, the abbreviations the style linter skips (ste-allow), and the
-  // brand colors the contrast checker exempts (contrast-allow). Dropping them
+  // Copy the metas the source report writes for its readers and its checkers.
+  // They are the description, the abbreviations the style linter skips
+  // (ste-allow), and the brand colors the contrast checker exempts
+  // (contrast-allow). Dropping them
   // failed every wrapped report on 2026-11-17 (missing description, "Leverage"
   // and "PG" flagged although each report allows them).
   const carriedMetaTags = carriedMetas.map(m => `    ${m}\n`).join('');
@@ -114,9 +115,9 @@ function generateWrappedReport(report, nav) {
     )
     .join('\n');
 
-  // data-theme="light": the site ships one light theme. Reports carry their
-  // own dark theme keyed on :root:not([data-theme="light"]), which a phone in
-  // dark mode would switch on over the site's light page.
+  // data-theme="light": the site ships one light theme. Reports have their
+  // own dark theme keyed on :root:not([data-theme="light"]). A phone in dark
+  // mode would switch that theme on over the site's light page.
   return `<!doctype html>
 <html lang="en" data-theme="light">
   <head>
@@ -251,9 +252,9 @@ async function main() {
 
     console.log(`📄 Found ${htmlFiles.length} reports to process...\n`);
 
-    // Clean up stale reports in output dir that no longer have a source file.
-    // Without this, old files linger in reports/ and get picked up by build.js
-    // for the nav dropdown, creating broken links.
+    // Delete stale reports in the output dir that no longer have a source
+    // file. Otherwise old files stay in reports/, and build.js lists them in
+    // the nav dropdown as broken links.
     const sourceBasenames = new Set(htmlFiles.map(f => path.basename(f)));
     try {
       const existingOutputFiles = await fs.readdir(OUTPUT_DIR);
@@ -269,7 +270,8 @@ async function main() {
         console.log('');
       }
     } catch (e) {
-      // Output dir may not exist yet — that's fine, nothing to clean
+      // The output dir may not exist yet. Then there is nothing to
+      // clean.
     }
 
     // Process all reports
@@ -280,10 +282,10 @@ async function main() {
       console.log(`  ✓ Processed ${file} → ${report.slug}.html`);
     }
 
-    // Build the canonical nav once via build.js (single source of truth). Pass
-    // the reports explicitly (shaped like getReportsList: { slug, title, file },
-    // title-sorted to match) so the dropdown is built from this in-memory set
-    // rather than the reports/ dir, which is still mid-write here.
+    // Build the canonical nav once through build.js, the single source of truth.
+    // Pass the reports explicitly, shaped like getReportsList ({ slug, title,
+    // file }) and sorted by title to match. The dropdown is then built from this
+    // in-memory set. The reports/ dir is still mid-write here.
     const engine = new TemplateEngine();
     await engine.loadConfig();
     const navReports = reports
@@ -294,8 +296,9 @@ async function main() {
       reports: navReports,
     });
 
-    // Generate wrapped reports (Prettier-formatted via writeHtml so the output
-    // matches what the pre-commit hook produces — no idempotency drift).
+    // Generate wrapped reports, Prettier-formatted through writeHtml. The
+    // output then matches what the pre-commit hook produces, so a rerun
+    // changes no files.
     console.log('\n📝 Generating wrapped reports...\n');
     for (const report of reports) {
       const html = generateWrappedReport(report, nav);
@@ -304,9 +307,9 @@ async function main() {
       console.log(`  ✓ Generated ${outputPath}`);
     }
 
-    // reports/index.html is owned solely by build.js — regenerate it from the
-    // now-complete reports/ dir so wrap-reports and `npm run build` produce the
-    // exact same index.
+    // Only build.js generates reports/index.html. Regenerate it from the
+    // now-complete reports/ dir, so wrap-reports and `npm run build` produce
+    // the exact same index.
     await engine.regenerateReportsIndex();
 
     console.log(`\n✅ Successfully wrapped ${reports.length} reports!`);

@@ -1,6 +1,6 @@
 # Column Mapping Examples
 
-## How the New Mapping System Works
+## The new mapping system
 
 You can now define exactly how your human-readable column headers map to JSON properties in `config/pages.json`.
 
@@ -113,4 +113,4 @@ Team Name | Points Scored | Win Percentage | Conference Name
 3. Run `npm run build` to regenerate pages
 4. Replace JSON data file with your Excel export
 
-The system will handle the rest automatically!
+The system handles the rest.

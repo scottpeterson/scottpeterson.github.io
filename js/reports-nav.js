@@ -28,11 +28,11 @@
     }
 
     // "You are here" highlighting for the Reports section. The nav is shared,
-    // build-generated markup with NO server-side active state (navigation.js's
-    // setActiveNavLink only matches root pages by filename, and the dropdown's
-    // report links are absolute /reports/* paths). So when we're on the reports
-    // index or any wrapped report page, mark the Reports trigger active and the
-    // matching dropdown entry active here, client-side.
+    // build-generated markup with no active state from the server. The function
+    // setActiveNavLink in navigation.js matches only root pages by filename.
+    // The dropdown's report links are absolute /reports/* paths. So on the
+    // reports index or any wrapped report page, this code marks the Reports
+    // trigger and the matching dropdown entry active, client-side.
     const currentPath = window.location.pathname;
     if (currentPath.startsWith('/reports/') || currentPath === '/reports') {
       trigger.classList.add('active');
@@ -43,11 +43,11 @@
       });
     }
 
-    // Mobile: Toggle dropdown on click. Detect mobile with the same breakpoint
-    // the CSS uses. Do not test whether the hamburger is visible: navigation.js
-    // hides the hamburger while the drawer is open, which is exactly when this
-    // handler runs, so that test always said "desktop" and the tap navigated
-    // away instead of expanding the submenu.
+    // Mobile: toggle the dropdown on click. Detect mobile with the same
+    // breakpoint the CSS uses. The script navigation.js hides the hamburger while the
+    // drawer is open, which is exactly when this handler runs. So a test of
+    // whether the hamburger is visible always said "desktop", and the tap
+    // navigated away instead of expanding the submenu. Do not use that test.
     const mobileQuery = window.matchMedia('(max-width: 768px)');
     trigger.addEventListener('click', function (e) {
       if (mobileQuery.matches) {

@@ -1,5 +1,7 @@
 # scottpeterson.github.io
 
+<!-- ste-allow: III, DIII -->
+
 This is a statistics focused website, with an even more specific focus on Division III Women's Basketball.
 
 The main statistic published is the NCAA Power Index (NPI) for DIII Women's Basketball. This statistic is published by the NCAA, but only later in the year and less frequently. The aim here is to update NPI daily once the season starts.

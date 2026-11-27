@@ -2,28 +2,31 @@
 //
 // INTENT: show how many NCAA Tournament bids each conference averages per
 // simulation, split into its automatic bid (AQ) and its at-large bids. The
-// numbers come from the team rows the main table already loaded: a team's AQ%
-// is its share of simulations with the automatic bid, so the sum of AQ% over a
+// numbers come from the team rows the main table already loaded. A team's AQ%
+// is its share of simulations with the automatic bid. So the sum of AQ% over a
 // conference's teams is that conference's average automatic bids per
 // simulation. The same holds for At-Large%. No second data file exists, so the
 // card always agrees with the table above it.
 //
 // The published percentages are rounded to 0.1%, so raw sums drift by a few
-// thousandths (42.993 automatic bids where the field has 43). Two rules remove
-// the drift:
+// thousandths (42.993 automatic bids where the field has 43).
+//
+// These rules remove the drift:
 //   1. A conference's AQ is a whole number: it has one automatic bid or none.
-//   2. The at-large column is scaled to the at-large bids left in the field
-//      (FIELD_SIZE minus the automatic bids), then rounded with the largest
-//      remainder method so the displayed cells add up to the displayed total.
-// If the raw at-large sum is not within AT_LARGE_TOLERANCE of that count, the
-// data does not describe a FIELD_SIZE-team field and the card shows plain
-// rounded sums instead.
+//   2. The at-large column is multiplied so it sums to the at-large bids left
+//      in the field (FIELD_SIZE minus the automatic bids). It is then rounded
+//      with the largest remainder method, so the displayed cells add up to the
+//      displayed total.
+//
+// The raw at-large sum can differ from that count by more than
+// AT_LARGE_TOLERANCE. Then the data does not describe a FIELD_SIZE-team field.
+// The card then shows plain rounded sums instead.
 
 (function () {
   const FIELD_SIZE = 64;
   const AT_LARGE_TOLERANCE = 0.25;
 
-  // "82.1%" -> 0.821; "-" or blank -> 0
+  // "82.1%" -> 0.821. "-" or blank -> 0
   function share(value) {
     const number = parseFloat(String(value).replace('%', ''));
     return Number.isFinite(number) ? number / 100 : 0;

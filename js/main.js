@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
       } else {
         console.warn('No page config or data source found for current page');
-        // No async data to load — reveal the table so it isn't left hidden by
-        // the is-loading class.
+        // No async data to load. Reveal the table so the is-loading class
+        // doesn't leave it hidden.
         window.tableController.revealTable();
       }
     }

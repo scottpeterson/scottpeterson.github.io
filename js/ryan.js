@@ -1,9 +1,9 @@
 // ryan.js - Tournament proximity page logic
 //
-// Loads tournament_proximity.json (via the encoded data pipeline) which contains
-// 64 tournament teams and their nearby opponents within 499 driving miles.
-// Populates a dropdown with teams sorted alphabetically (with quadrant seed shown),
-// and on selection displays nearby teams in two side-by-side tables sorted by quadrant seed.
+// Loads tournament_proximity.json through the encoded data pipeline. That JSON holds 64
+// tournament teams and their nearby opponents within 499 driving miles. Populates a dropdown
+// with teams sorted alphabetically, with the quadrant seed shown. When the user picks a
+// team, displays the nearby teams in two side-by-side tables sorted by quadrant seed.
 
 (function () {
   const teamSelect = document.getElementById('ryan-team-select');
@@ -133,7 +133,8 @@
         .slice()
         .sort((a, b) => a.quadrant_seed - b.quadrant_seed);
 
-      // Split into two halves — left gets the extra row if odd count
+      // Split the rows into two tables. The left table gets the
+      // extra row if the count is odd.
       const mid = Math.ceil(sorted.length / 2);
       const leftRows = sorted.slice(0, mid);
       const rightRows = sorted.slice(mid);

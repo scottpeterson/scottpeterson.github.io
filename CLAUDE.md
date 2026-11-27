@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+<!-- ste-allow: IBM -->
+
+Claude Code (claude.ai/code) reads these instructions when it works with code in this repository.
 
 ## Project Overview
 
@@ -50,28 +52,32 @@ Pages include interactive data tables with:
 
 ## Design System
 
-**Before any UI, CSS, or template change, read `docs/design-system.md`** — the catalog of
-components and the design-token reference. The look & feel is intentional; keep it consistent.
+**Before any UI, CSS, or template change, read `docs/design-system.md`**. It is the catalog of
+components and the design-token reference. The look & feel is intentional. Keep it consistent.
 
 Rules (these override convenience):
 
-- **Use the design tokens** defined in `:root` at the top of `styles.css` — colors
-  (`--navy-900`, `--blue-500`, `--orange-500`, text ramp `--text-1..4`), gradients
-  (`--grad-brand`, `--grad-chrome`, `--grad-accent`), elevation (`--elev-1..3`), radius
-  (`--r-sm/md/lg/pill`), type (`--font-sans`, `--font-mono`, and the `--fs-caption..h1` scale of 12, 14, 16, 20, 24, 32 px), spacing (`--space-1..5`). **Never introduce a
-  raw hex/rgb color, px radius, or one-off gradient/shadow when a token exists.** If a genuinely
-  new value is needed, add a token rather than a literal.
+- **Use the design tokens** defined in `:root` at the top of `styles.css`:
+  - colors: `--navy-900`, `--blue-500`, `--orange-500`, and the text ramp `--text-1..4`
+  - gradients: `--grad-brand`, `--grad-chrome`, `--grad-accent`
+  - elevation: `--elev-1..3`
+  - radius: `--r-sm/md/lg/pill`
+  - type: `--font-sans`, `--font-mono`, and the `--fs-caption..h1` scale of 12, 14, 16, 20, 24, 32 px
+  - spacing: `--space-1..5`
+
+  **Never introduce a raw hex/rgb color, px radius, or one-off gradient/shadow when a token
+  exists.** If a new value is needed, add a token instead of a literal.
 - **Reuse components, don't fork them.** There is one button system (`.btn` + `.btn--*`), one
   card system (`.card` + modifiers), one `.eyebrow`. Do not create a new button/card class for a
-  one-off — use or extend the shared component.
+  one-off. Use or extend the shared component.
 - **Strokes are signal, used sparingly.** Rounded elements use the `background-clip`
   padding-box/border-box gradient technique (see `header` in `styles.css`), **never
   `border-image`** (it can't follow `border-radius`). Reserve left-border accents for genuine
   callouts (alerts/warnings), not default card chrome.
-- **Match the type scale and the 8px spacing rhythm.** No ad-hoc font sizes. Type is IBM
-  Plex Sans (Plex Mono for code) at weights 400, 500, and 600; no other family, no 700.
-- After CSS/template/config changes, run `npm run build` and validate locally (the build emits
-  raw HTML; the pre-commit hook prettier-formats it).
+- **Match the type scale and the 8px spacing rhythm.** Do not add ad-hoc font sizes. Type is IBM
+  Plex Sans (Plex Mono for code) at weights 400, 500, and 600. Use only that family and those weights.
+- After CSS, template, or config changes, run `npm run build` and check the result locally. The
+  build emits raw HTML. The pre-commit hook then formats it with prettier.
 
 ## Development Workflow
 
@@ -81,11 +87,11 @@ This project uses a Node.js build system to generate HTML files from configurati
 
 - Run `npm run build` to regenerate all HTML files from `config/pages.json`
 - The build system reads page configurations and generates corresponding HTML files
-- Always run the build after making changes to `config/pages.json`
+- Always run the build after you change `config/pages.json`
 
 ### Testing Changes
 
-Since this is a static site, test changes by:
+This is a static site. Test changes by:
 
 1. Opening HTML files directly in a browser, or
 2. Using a local web server: `python -m http.server 8000` or `npx serve`
@@ -128,19 +134,19 @@ The mobile navigation system includes:
 
 1. Edit `styles.css` for visual changes
 2. Test responsive behavior across different screen sizes
-3. Verify mobile navigation still functions properly
+3. Check that mobile navigation still works
 
 ## Deployment
 
-This site is deployed via GitHub Pages: GitHub serves the committed HTML directly, so the
-**hosting** needs no build step or CI pipeline — pushing to `main` publishes whatever HTML is
-in the repo.
+GitHub Pages serves the committed HTML directly, so the **hosting** needs no build step or CI
+pipeline. Pushing to `main` publishes whatever HTML is in the repository.
 
 That does **not** mean you can skip the build locally. The HTML files are generated artifacts.
-After editing `config/pages.json`, `templates/`, `build.js`, `styles.css`, or any input under
-`data/`, you must run `npm run build` (and `npm run wrap-reports` when report inputs change),
-then commit the regenerated HTML. Because nothing rebuilds in CI, **the commit is the build** —
-if you forget, the published site silently lags your source changes.
+
+After you edit `config/pages.json`, `templates/`, `build.js`, `styles.css`, or any input under
+`data/`, run `npm run build`. When report inputs change, also run `npm run wrap-reports`. Then
+commit the regenerated HTML. Nothing rebuilds in CI, so **the commit is the build**. If you
+forget, the published site lags your source changes without any warning.
 
 ---
 
@@ -148,7 +154,7 @@ if you forget, the published site silently lags your source changes.
 
 ### Add Comments on Tricky Parts
 
-When working in this codebase, **add code comments on tricky parts**. This helps both you and future agents (including Claude) understand:
+When you work in this codebase, **comment the code that is hard to follow**. The comments help you and future agents (including Claude) understand:
 
 - Why certain approaches were chosen
 - What edge cases are being handled
@@ -156,7 +162,7 @@ When working in this codebase, **add code comments on tricky parts**. This helps
 - Browser-specific workarounds or quirks
 - Complex logic that isn't immediately obvious
 
-Comments should explain the **why**, not just the **what**.
+Comments should explain **why** the code does something. The code already shows **what** it does.
 
 ### Document Intent to Protect Against Misguided Refactors
 

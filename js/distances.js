@@ -1,9 +1,10 @@
 // distances.js - Distance calculator page logic
 //
-// Loads pre-computed driving distances between D3 WBB schools from distances.json
-// (via the encoded data pipeline). Populates two dropdowns with sorted school names,
-// enables a Calculate button when two different schools are selected, and performs
-// bidirectional lookup using alphabetically-sorted pair keys ("SchoolA|SchoolB").
+// Loads pre-computed driving distances between D3 WBB schools from distances.json,
+// through the encoded data pipeline. Populates two dropdowns with sorted school
+// names. Enables a Calculate button when the user picks two different schools.
+// Finds a pair in either order with alphabetically sorted pair keys
+// ("SchoolA|SchoolB").
 
 (function () {
   const schoolA = document.getElementById('school-a');
@@ -21,7 +22,7 @@
 
   let distanceData = null;
 
-  // Update Calculate button state: enabled only when two different schools are selected
+  // Update the Calculate button state: enabled only for two different schools
   function updateButtonState() {
     const a = schoolA.value;
     const b = schoolB.value;
@@ -46,7 +47,7 @@
     return [a, b].sort().join('|');
   }
 
-  // Look up distance and display result or error
+  // Find the distance and display the result or an error
   function calculate() {
     const a = schoolA.value;
     const b = schoolB.value;
@@ -90,9 +91,9 @@
     }
   }
 
-  // Send a distance request via the same Formspree endpoint the contact form uses.
-  // No UI — just fires a POST with the two school names so the site owner knows
-  // which pairs are missing from the CSV.
+  // Send a distance request through the same Formspree endpoint the contact form
+  // uses. It has no UI. It sends a POST with the two school names, so the site
+  // owner knows which pairs are missing from the CSV.
   async function requestDistance() {
     const a = schoolA.value;
     const b = schoolB.value;

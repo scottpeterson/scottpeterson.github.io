@@ -1,8 +1,10 @@
 // navigation.js - Mobile navigation functionality
 
 // Assembles obfuscated email addresses on page load to prevent scraping.
-// Usage: <span class="email-protect" data-user="name" data-domain="example.com"></span>
-// The email is never in the HTML source as a complete string, defeating simple scrapers.
+// Markup: an element with class "email-protect" and the attributes
+// data-user="name" and data-domain="example.com".
+// The email is never in the HTML source as a complete string, so simple
+// scrapers cannot read it.
 function initEmailProtection() {
   try {
     const emailElements = document.querySelectorAll('.email-protect');
@@ -51,10 +53,11 @@ function initMobileNav() {
       closeMenu();
     });
 
-    // Close menu when a nav link is clicked. The Reports dropdown trigger is
-    // excluded: on mobile, reports-nav.js turns that tap into "expand the
-    // submenu inside the drawer", so closing the drawer here would hide the
-    // submenu the moment it opened. The submenu's own links still close it.
+    // Close the menu when a user clicks a nav link. The Reports dropdown
+    // trigger is excluded. On mobile, reports-nav.js turns that tap into
+    // "expand the submenu inside the drawer". Closing the drawer here would
+    // hide the submenu the moment it opened. The submenu's own links still
+    // close it.
     const navLinks = navMenu.querySelectorAll('a:not(.dropdown-trigger)');
     navLinks.forEach(function (link) {
       link.addEventListener('click', function () {
@@ -81,7 +84,8 @@ function initMobileNav() {
       navOverlay.classList.remove('active');
       document.body.style.overflow = '';
 
-      // Delay hamburger display to ensure menu has transitioned out
+      // Delay the hamburger display until the menu's exit
+      // transition ends
       setTimeout(function () {
         menuToggle.classList.remove('hidden');
       }, 300); // Match this to your transition time
@@ -98,12 +102,13 @@ function initMobileNav() {
   }
 }
 
-// Keep in-page anchor jumps (e.g. the home page's "Explore the data" button ->
-// #explore) clear of the sticky nav. The nav wraps to a variable number of rows
-// depending on viewport width/zoom, so a fixed CSS offset can't be right at every
-// size. Measure the real nav height and set it as scroll-padding-top on the
-// scroll container; this insets where #anchor targets come to rest so they never
-// hide behind the nav. Re-measured on resize.
+// Keep in-page anchor jumps (for example the home page's "Explore the data"
+// button -> #explore) clear of the sticky nav. The nav wraps to a variable number
+// of rows, depending on viewport width and zoom. So a fixed CSS offset can't be
+// right at every size. Measure the real nav height and set it as
+// scroll-padding-top on the scroll container. The padding moves where #anchor
+// targets stop, so they never hide behind the nav. The code measures again on
+// resize.
 function syncNavScrollOffset() {
   try {
     const nav = document.querySelector('.main-nav');
@@ -121,12 +126,15 @@ function syncNavScrollOffset() {
   }
 }
 
-// Home page only: the nav sits transparent over the hero image so the photo
-// fills the viewport on arrival, then flips to the solid chrome once the hero
-// scrolls past (otherwise the light nav text would vanish over the white content
-// below). An IntersectionObserver on the hero — offset by the nav's height — is
-// cheaper and jank-free vs a scroll handler. No-ops on every non-home page (the
-// hero element only exists there), so it's safe to call unconditionally.
+// Home page only: the nav is transparent over the hero image, so the photo fills
+// the viewport on arrival. Once the hero scrolls past, the nav changes to the
+// solid chrome. Otherwise the light nav text would vanish over the white content
+// below.
+//
+// An IntersectionObserver on the hero, offset by the nav's height, is cheaper
+// than a scroll handler and does not stutter. The hero element exists only on
+// the home page. So the function does nothing on other pages and is safe to call
+// on every page.
 function initHomeNavScrim() {
   try {
     const hero = document.querySelector('.home-hero');
@@ -160,9 +168,9 @@ function initHomeNavScrim() {
 
     let observer = applyObserver();
 
-    // The nav height changes when it wraps to more/fewer rows across breakpoints,
-    // which shifts the trigger line — rebuild the observer on resize so the flip
-    // point stays accurate.
+    // The nav height changes when it wraps to more or fewer rows across
+    // breakpoints. That change moves the trigger line. So rebuild the observer on
+    // resize to keep the switch point accurate.
     let resizeTimer = null;
     window.addEventListener('resize', function () {
       window.clearTimeout(resizeTimer);
@@ -207,10 +215,10 @@ function setActiveNavLink() {
   }
 }
 
-// Expose the page-init helpers on window, matching how the other modules publish
-// their globals (window.dataLoader, window.tableController). main.js
-// invokes these from its DOMContentLoaded handler; the explicit exports make the
-// cross-file contract greppable and keep them from reading as unused.
+// Expose the page-init helpers on window. The other modules also publish their
+// globals on window (window.dataLoader, window.tableController). main.js calls
+// these from its DOMContentLoaded handler. The explicit exports make the
+// cross-file contract greppable, and lint does not report them as unused.
 window.initEmailProtection = initEmailProtection;
 window.initMobileNav = initMobileNav;
 window.syncNavScrollOffset = syncNavScrollOffset;

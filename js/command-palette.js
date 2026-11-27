@@ -1,11 +1,11 @@
 /**
- * Command Palette (CMD+K) - Navigation and Team Search
+ * Command Palette (Command+K)
  *
  * A Superhuman-inspired command palette for quick navigation and team search.
- * Feature-flagged via URL parameter: ?cmdK=true
+ * Before it was always enabled, the URL parameter ?cmdK=true controlled it.
  *
  * Features:
- * - CMD+K (Mac) or Ctrl+K (Windows/Linux) to open
+ * - Command+K (Mac) or Ctrl+K (Windows/Linux) to open
  * - Arrow keys to navigate, Enter to select, Escape to close
  * - Quick navigation to any page
  * - "Search Team" action to view aggregated team data
@@ -21,10 +21,7 @@
   // Feature Flag Check
   // ==========================================================================
 
-  /**
-   * Command palette is now always enabled.
-   * Previously was gated by URL parameter ?cmdK=true
-   */
+  /** The command palette is always enabled. Before, the URL parameter ?cmdK=true controlled it. */
   function isCommandPaletteEnabled() {
     return true;
   }
@@ -38,13 +35,14 @@
   /**
    * Presentation enrichment for nav items, keyed by href.
    *
-   * The nav itself (which pages exist, their labels, order, and feature-flag
-   * gating) is the SERVER's source of truth: build.js inlines it as
+   * The SERVER decides which pages the nav has, with their labels, order, and
+   * feature-flag checks. The build (build.js) inlines that list as
    * window.__NAV_ITEMS__ (see getPaletteNavItems in build.js). This map adds
-   * only the palette-specific decoration — icon, description, and any keyboard
-   * shortcut — so the two never drift on membership/labels. An href with no
-   * entry here still appears, falling back to the default 'navigate' icon and no
-   * description, so a newly-added page shows up in CMD+K automatically.
+   * only the palette's own decoration. It adds the icon, the description, and
+   * any keyboard shortcut. So the two never drift on membership or labels.
+   *
+   * An href with no entry here still appears, with the default 'navigate' icon
+   * and no description. So a new page appears in Command+K automatically.
    */
   const NAV_ENRICHMENT = {
     '/': { icon: 'home' },
@@ -100,10 +98,11 @@
 
   /**
    * Build the palette's navigation items from the build-injected nav list,
-   * decorated via NAV_ENRICHMENT. window.__NAV_ITEMS__ is inlined in <head>
-   * (before this body script runs), so it's available at module init. If it's
-   * somehow absent (e.g. a stale cached page from before this change), we degrade
-   * to a nav-less palette rather than ship a second, drift-prone hardcoded copy.
+   * decorated through NAV_ENRICHMENT. The global window.__NAV_ITEMS__ is inlined
+   * in <head> before this body script runs, so it's available at module init. It
+   * can be absent, for example on a stale cached page from before this change.
+   * Then we fall back to a palette without nav items. We do not ship a second
+   * hardcoded copy that could drift.
    */
   function buildNavigationItems() {
     const injected = Array.isArray(window.__NAV_ITEMS__)
@@ -204,7 +203,7 @@
     // Publishing Tracker - clipboard for tracking
     clipboard:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>',
-    // Distances - map pin for travel between schools
+    // Distances - map marker for travel between schools
     mapPin:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
     // Reports - document for analysis writeups
@@ -352,8 +351,8 @@
   }
 
   /**
-   * Renders the team search mode UI with its own search input.
-   * Only re-renders the results list, not the input (to preserve cursor position).
+   * Renders the team search mode UI with its own search input. It re-renders only
+   * the results list and leaves the input alone, which keeps the cursor position.
    */
   function renderTeamSearchMode() {
     const existingInput = palette.querySelector('.team-search-input');
@@ -428,9 +427,7 @@
       });
   }
 
-  /**
-   * Sets up the team search input event handlers.
-   */
+  /** Attaches the event handlers for the team search input. */
   function setupTeamSearchInput() {
     const input = palette.querySelector('.team-search-input');
     if (!input) {
@@ -440,7 +437,7 @@
     // Focus the input
     setTimeout(() => input.focus(), 0);
 
-    // Handle input changes - just update results, not the whole thing
+    // Handle input changes: update only the results list
     input.addEventListener('input', () => {
       renderTeamSearchMode();
     });
@@ -539,9 +536,7 @@
     }
   }
 
-  /**
-   * Selects the currently highlighted item.
-   */
+  /** Selects the highlighted item. */
   function selectItem(index = selectedIndex) {
     const item = filteredItems[index];
     if (item === undefined) {
@@ -617,7 +612,7 @@
     }
     isOpen = true;
 
-    // Track CMD+K opens in GoatCounter (with retry for async loading)
+    // Track Command+K opens in GoatCounter (with retry for async loading)
     trackEvent('cmd-k-opened');
 
     // Reset state
@@ -674,7 +669,7 @@
    * Handles keyboard events for navigation and shortcuts.
    */
   function handleKeyDown(e) {
-    // CMD/Ctrl + K to toggle palette
+    // Command/Ctrl + K to toggle palette
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
       e.preventDefault();
       togglePalette();
@@ -701,7 +696,7 @@
             '.team-summary-modal.active'
           );
           if (teamModal) {
-            // Team summary will handle its own escape key via stopPropagation
+            // Team summary handles its own Escape key through stopPropagation
             return;
           }
         }
@@ -843,7 +838,8 @@
     init();
   }
 
-  // Expose API for external use (e.g., for team-summary.js to close palette)
+  // Expose an API for external use (for example, so team-summary.js can
+  // close the palette)
   window.commandPalette = {
     open: openPalette,
     close: closePalette,

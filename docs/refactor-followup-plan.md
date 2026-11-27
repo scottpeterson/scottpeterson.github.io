@@ -1,62 +1,82 @@
-# Refactor Follow-Up — Running Ledger
+# Refactor follow-up ledger
 
-> **Intent:** A single place to track the build-system and design-system cleanup that grew out of
-> the static-site refactor (and a follow-up code review). It records what's **done** versus what
-> genuinely **remains**, so neither this agent nor a future one re-does finished work or loses the
-> open threads. Update the tables here as items land. Design-token specifics live in
-> `docs/design-system.md` (§4 mirrors the design rows below); build/deploy expectations live in
-> `CLAUDE.md`.
+<!-- ste-allow: CMD, JS -->
 
-## How the site builds (one-paragraph refresher)
+> **Intent:** This ledger tracks the build-system and design-system cleanup that grew out of the
+> static-site refactor and a follow-up code review. It records what is **done** and what still
+> **remains**. With it, no agent repeats finished work or loses an open item. Update the tables
+> here as items land. Design-token details are in `docs/design-system.md`, where §4 mirrors the
+> design rows below. Build and deploy expectations are in `CLAUDE.md`.
 
-`config/pages.json` + `templates/*.html` → `node build.js build` → Prettier-formatted HTML at the
-repo root. Standalone reports go through `node wrap-reports.js`, which now **delegates** nav and
-the reports index to `build.js` (single source of truth — `navConfig()`). GitHub Pages serves the
-committed HTML directly; nothing rebuilds in CI, so the committed HTML must be regenerated and
-committed by hand after any source change. There is intentionally **no** committed-HTML-equals-
-fresh-build CI guard — see the decision row below.
+## Site build
+
+1. `node build.js build` reads `config/pages.json` and `templates/*.html`.
+2. It writes Prettier-formatted HTML at the repository root.
+
+Standalone reports go through `node wrap-reports.js`. That script **delegates** the nav and the
+reports index to `build.js`, which is the single source for both (`navConfig()`). GitHub Pages
+serves the committed HTML directly.
+
+Nothing rebuilds in CI. So after any source change, regenerate
+the HTML and commit it by hand. The repository has **no** CI check that compares the committed
+HTML with a fresh build. The decision row below gives the reason.
 
 ## Done
 
-| #   | Item                                                        | Notes                                                                                                                                                                                                                                                             |
-| --- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| —   | `dev` / `clean` build commands                              | `node build.js dev` (watch templates/config/js/css) and `clean` (remove generated artifacts).                                                                                                                                                                     |
-| —   | Generalized `handleConditionals`                            | Single data-driven loop over a `flags` map; handles `{{#TOKEN}}` and `{{^TOKEN}}`. Build asserts no `{{ }}` survives (`assertNoUnresolvedTokens`).                                                                                                                |
-| —   | HTML-escape interpolated config values                      | `escapeHtml` applied to text mappings (titles, headings, nav labels, report/product fields). Markup mappings stay verbatim by design.                                                                                                                             |
-| —   | CMD+K palette auto-syncs with nav                           | Palette reads `window.__NAV_ITEMS__` (emitted by build from `navConfig()`); `command-palette.js` enriches with icons/shortcuts. No more hand-maintained nav list to drift.                                                                                        |
-| 5   | Consolidate reports generation                              | `build.js` is the sole owner of nav + `reports/index.html` (`renderNavShell`, `regenerateReportsIndex`); `wrap-reports.js` delegates. Removed the drifted hardcoded `generateNav` / `generateIndexPage`.                                                          |
-| 6   | Fix Prettier drift in `command-palette.css` / `reports.css` | Root cause: `.stylelintrc.json` stylistic rules fought Prettier (pre-commit ran prettier then stylelint, leaving files dirty). Stripped to errors-only config.                                                                                                    |
-| 7   | Read-only verification scripts                              | `lint:check`, `lint:check:js`, `lint:check:css`, `format:check`, `verify` — non-mutating CI-style checks.                                                                                                                                                         |
-| 8   | Tokenize reports/palette CSS + table runtime colors         | `reports.css` and `command-palette.css` on tokens (conservatively for the dark/isolated palette); `table-controls.js` no-results color → `--text-3`; data-viz colors left raw on purpose (commented).                                                             |
-| 9   | Update stale docs                                           | This file, plus `CLAUDE.md` deployment clarification and `docs/design-system.md` reframed from plan → reference + status.                                                                                                                                         |
-| 10  | Build-check guard decision                                  | **Decided: no guard.** "Last updated" uses filesystem mtime, which isn't preserved on a fresh clone, so a "committed HTML == fresh build" CI check would false-positive. The commit-is-the-build discipline (documented in `CLAUDE.md`) is the safeguard instead. |
+| #   | Item                                                          | Notes                                                                                                                                                                                                                                                                           |
+| --- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -   | `dev` and `clean` build commands                              | `node build.js dev` watches templates, config, JS, and CSS. `clean` removes generated files.                                                                                                                                                                                    |
+| -   | Generalized `handleConditionals`                              | One data-driven loop over a `flags` map handles `{{#TOKEN}}` and `{{^TOKEN}}`. The build asserts that no `{{ }}` remains (`assertNoUnresolvedTokens`).                                                                                                                          |
+| -   | HTML-escape interpolated config values                        | `escapeHtml` applies to text mappings. Those are titles, headings, nav labels, and report and product fields. Markup mappings stay verbatim by design.                                                                                                                          |
+| -   | CMD+K palette syncs with the nav                              | The palette reads `window.__NAV_ITEMS__`, which the build emits from `navConfig()`. `command-palette.js` adds icons and shortcuts. No hand-maintained nav list is left to drift.                                                                                                |
+| 5   | Consolidate reports generation                                | `build.js` alone generates the nav and `reports/index.html` (`renderNavShell`, `regenerateReportsIndex`). `wrap-reports.js` delegates to it. The drifted hardcoded `generateNav` and `generateIndexPage` are gone.                                                              |
+| 6   | Fix Prettier drift in `command-palette.css` and `reports.css` | The stylistic rules in `.stylelintrc.json` conflicted with Prettier. The pre-commit hook ran prettier, then stylelint, and left files dirty. The config now has error rules only.                                                                                               |
+| 7   | Read-only check scripts                                       | `lint:check`, `lint:check:js`, `lint:check:css`, `format:check`, and `verify` are CI-style checks that change no files.                                                                                                                                                         |
+| 8   | Tokenize reports and palette CSS, and table runtime colors    | `reports.css` and `command-palette.css` use tokens. The dark, isolated palette uses them conservatively. The no-results color in `table-controls.js` is now `--text-3`. Data-viz colors stay raw on purpose, with a comment.                                                    |
+| 9   | Update stale docs                                             | This file, a deployment note in `CLAUDE.md`, and `docs/design-system.md`, which changed from a plan to a reference with status.                                                                                                                                                 |
+| 10  | Build-check decision                                          | **Decided: no check.** "Last updated" uses the filesystem mtime, which a fresh clone does not keep. So a CI check that compares committed HTML with a fresh build would report false failures. The rule that the commit is the build, in `CLAUDE.md`, is the safeguard instead. |
 
-Design-system pieces already shipped (detail in `design-system.md` §4): token `:root` foundation,
-brand/navy gradients → `--grad-*`, footer `border-image` → `background-clip`, `:focus-visible`
-site-wide, emoji → inline-SVG icon set, unified `.btn` button system (single `:disabled`),
-merged `.explore-card`/`.home-card`, shared `.eyebrow` base, the near-duplicate gray/border
-color collapse, and a full shadow token system (every `box-shadow` resolves to a token; see
-`design-system.md` §3 "Shadows").
+These design-system pieces shipped earlier. `design-system.md` §4 has the details.
 
-## Resolved (was "Remaining")
+- the token `:root` foundation
+- brand and navy gradients moved to `--grad-*`
+- the footer `border-image` replaced by `background-clip`
+- `:focus-visible` on the whole site
+- an inline-SVG icon set in place of emoji
+- one `.btn` button system with a single `:disabled`
+- one rule for `.explore-card` and `.home-card`
+- a shared `.eyebrow` base
+- the near-duplicate gray and border colors merged
+- a full shadow token system, so every `box-shadow` resolves to a token (`design-system.md` §3
+  "Shadows")
 
-> **Correction:** the first cut of this table (written from shallow greps) overstated the open
-> work — reading the actual CSS showed the buttons/cards/eyebrow consolidation was already shipped
-> in a prior pass, just via _grouped selectors_ rather than new generic class names. Each item is
-> now at a definite end state; verify any claim below by reading `styles.css`, not this table.
+## Resolved items
 
-| Item                             | Resolution                                                                                                                                                                                                                                   |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.btn` migration                 | ✅ **done** — legacy classes grouped into one `.btn` base + variants; `:focus-visible` added; single `:disabled`. (They were grouped, not renamed, to keep JS/HTML selectors working.)                                                       |
-| `.explore-card`/`.home-card` dup | ✅ **done** — share one rule. Generic `.card--lg` across the other (already-tokenized) large surfaces is **deferred** as churn-for-marginal-gain.                                                                                            |
-| `.eyebrow` consolidation         | ✅ **done** — `.eyebrow` base + `.home-badge`/`.home-premium__eyebrow` context variants; templates emit the variants by design.                                                                                                              |
-| Divider "system"                 | ✅ **resolved as decline** — the three treatments are distinct components (dark-menu separator / heading underline / section `<hr>`), already tokenized; unifying them would couple unrelated things for no win.                             |
-| Color near-dupe tail             | ✅ **done** — `#e0e0e0`(×3)/`#dee2e6` → `--border`; `#777`(×2)/`#888`/`#aaa` → `--text-3/4`. Distinct accents (honor-gold family, verified gold, audience rust, `#93a1b0`, `#e9ecef` surface tint, `#229954` gradient stop) kept on purpose. |
+> **Correction:** The first version of this table came from quick greps and listed too much open
+> work. The CSS showed that an earlier pass already merged the buttons, cards, and eyebrow. That
+> pass used _grouped selectors_ instead of new generic class names. Each item now has a final
+> state. To check any claim below, read `styles.css`, not this table.
 
-**Consciously deferred (not debt):** generic `.card--lg` extraction; a `--surface-2/3` family for
-the light-surface tints (`#e9ecef`/`#f8f9fa`/`#f5f5f5`); tokenizing single-use warm accents. Do
-any of these only when a change is already in that area.
+| Item                                       | Resolution                                                                                                                                                                                                                                                                                    |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.btn` migration                           | **Done.** The legacy classes are grouped into one `.btn` base plus variants. `:focus-visible` is added, with a single `:disabled`. The classes were grouped instead of renamed, so JS and HTML selectors keep working.                                                                        |
+| `.explore-card` and `.home-card` duplicate | **Done.** The two share one rule. A generic `.card--lg` for the other large surfaces, which already use tokens, is **deferred**. The change would cost more than it gains.                                                                                                                    |
+| `.eyebrow` consolidation                   | **Done.** An `.eyebrow` base has the context variants `.home-badge` and `.home-premium__eyebrow`. Templates emit the variants by design.                                                                                                                                                      |
+| Divider system                             | **Declined.** The three treatments are separate components. They are the dark-menu separator, the heading underline, and the section `<hr>`. All three already use tokens. Merging them would couple unrelated components with no benefit.                                                    |
+| Near-duplicate colors                      | **Done.** `#e0e0e0` (3 uses) and `#dee2e6` became `--border`. `#777` (2 uses), `#888`, and `#aaa` became `--text-3/4`. Distinct accents stay on purpose: the honor-gold family, the verified gold, the audience rust, `#93a1b0`, the `#e9ecef` surface tint, and the `#229954` gradient stop. |
 
-**Verification when revisiting:** `npm run build`, then diff a representative page of each type
-(home, a table page e.g. `npi`, `premium`, `contact`, `success`) before/after — the goal for these
-sweeps is _zero_ intended visual change.
+## Deferred on purpose
+
+These items are deferred on purpose. They are not debt. Do one only when a change already touches that
+area.
+
+- a generic `.card--lg` class
+- a `--surface-2/3` family for the light-surface tints (`#e9ecef`, `#f8f9fa`, `#f5f5f5`)
+- tokens for single-use warm accents
+
+## Check after a change
+
+1. Run `npm run build`.
+2. Compare one page of each type before and after the change. Use the home page, a table page
+   such as `npi`, `premium`, `contact`, and `success`.
+3. Confirm _zero_ intended visual change. That is the goal of these cleanups.

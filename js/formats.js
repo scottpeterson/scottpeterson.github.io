@@ -1,6 +1,6 @@
 // Display formats for numbers a reader sees in the data tables and the team
 // summary. Scott approved one format per kind of value on 2026-11-12 (the
-// "Formats" section of TERMINOLOGY.md in the d3-bball-npi repo); the D3 WBB
+// "Formats" section of TERMINOLOGY.md in the d3-bball-npi repo). The D3 WBB
 // sites and the team PDFs all follow it, so keep this file in step with it:
 //
 //   rank                  #54
@@ -13,7 +13,8 @@
 // INTENT: these functions change only the text in a cell. The raw value stays
 // in the data and in the cell's data-sort attribute (table-controls.js), so
 // sorting and coloring never parse the display text. Do not "simplify" the
-// sort back to textContent: "#54", "<1%", and "5'8.1" do not parse as numbers.
+// sort back to textContent. Strings such as "#54", "<1%", and "5'8.1" do not
+// parse as numbers.
 //
 // The spreadsheet exports write negatives in accounting style, "(1.99)", and
 // errors as "#N/A" or "#DIV/0!". toNumber reads the first and returns NaN for
@@ -84,8 +85,8 @@
     return isNaN(n) ? value : fixed(n, 0) + '%';
   }
 
-  // A simulation chance. A simulated 0.0% or 100.0% does not mean a team is
-  // eliminated or has clinched, so those show as <1% and >99%.
+  // Format a simulation chance. A simulated 0.0% or 100.0% does not mean a
+  // team is eliminated or clinched a spot, so those show as <1% and >99%.
   function chance(value) {
     const n = percentNumber(value, false);
     if (isNaN(n)) {

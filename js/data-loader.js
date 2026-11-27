@@ -1,11 +1,11 @@
 // data-loader.js - Data loading and management
 //
-// Data Obfuscation:
-// This loader fetches encoded data from /data-encoded/ and decodes it client-side.
-// The encoding uses XOR with a key followed by base64. This deters casual scraping
-// and makes it harder for bots/LLMs to directly parse raw JSON from network requests.
+// Data obfuscation: this loader fetches encoded data from /data-encoded/ and
+// decodes it client-side. The encoding uses XOR (exclusive or) with a key,
+// followed by base64. The encoding deters casual scraping. It also makes it
+// harder for bots and LLMs to parse raw JSON from network requests.
 //
-// The corresponding encode function lives in build.js.
+// The matching encode function is in build.js.
 
 // Obfuscation key - must match the key in build.js
 const OBFUSCATION_KEY = 'D3StatLab2025';
@@ -40,10 +40,10 @@ class DataLoader {
   }
 
   // Load this page's configuration. The build inlines the current page's config
-  // into the document <head> as window.__PAGE_CONFIG__ (just dataSource +
-  // columnMappings, the only fields read at runtime), so the common path needs
-  // no network request. Falls back to fetching the full config/pages.json and
-  // selecting the current page if the inline config is somehow absent.
+  // into the document <head> as window.__PAGE_CONFIG__. It holds only
+  // dataSource and columnMappings, the only fields read at runtime. So the
+  // common path needs no network request. If the inline config is absent, the
+  // loader fetches the full config/pages.json and selects the current page.
   async loadPageConfig() {
     if (this.pageConfig) {
       return this.pageConfig;
@@ -76,10 +76,10 @@ class DataLoader {
     }
 
     try {
-      // Reuse the in-flight request the document <head> kicked off for this page's
-      // data, if it matches — otherwise fetch now. The prefetch is single-use (a
-      // Response body can't be read twice), and the cache.has() guard above means
-      // a given source is only loaded once anyway.
+      // Reuse the in-flight request that the document <head> started for this
+      // page's data, if it matches. Otherwise fetch now. A Response body can't
+      // be read twice, so the prefetch is single-use. The cache.has() check
+      // above already means a given source loads only once.
       let response;
       const prefetch = window.__DATA_PREFETCH__;
       if (prefetch && prefetch.source === dataSource && prefetch.promise) {

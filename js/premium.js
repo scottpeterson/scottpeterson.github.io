@@ -1,13 +1,14 @@
 // premium.js - Stripe Checkout Integration for Premium Access
 // Supports both single-form (legacy) and multi-form (multi-product) layouts.
 //
-// Single-form mode: Uses element IDs (id="premium-form", id="email", etc.)
+// Single-form mode: uses element IDs such as id="premium-form" and id="email",
 //   and the global STRIPE_CONFIG.paymentLink.
 //
-// Multi-form mode: Finds all forms with class "premium-form" and reads each
-//   form's Stripe Payment Link from its data-stripe-link attribute. Form fields
-//   are found via class selectors (.product-email, .product-honor, .product-checkout-button)
-//   scoped within each form. Adding a new product requires zero JS changes.
+// Multi-form mode: finds all forms with class "premium-form" and reads each
+//   form's Stripe Payment Link from its data-stripe-link attribute. It finds
+//   the form fields with class selectors (.product-email, .product-honor,
+//   .product-checkout-button) inside each form. A new product needs no
+//   JavaScript changes.
 
 /**
  * Stripe Configuration (used only for single-form legacy mode)
@@ -42,8 +43,8 @@ function initPremiumForm(
     const url = new URL(stripeLink);
     url.searchParams.append('prefilled_email', emailInput.value);
 
-    // Redirect to Stripe Payment Link with user email
-    // Team will be collected via Stripe's custom field
+    // Redirect to the Stripe Payment Link with the user's
+    // email. Stripe's custom field collects the team.
     window.location.href = url.toString();
   });
 }
@@ -103,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Calculate and display day countdowns for product sections.
- * Finds elements with data-countdown-date attribute and fills in the days remaining.
+ * Calculate and display day countdowns for product sections. Finds elements with a
+ * data-countdown-date attribute and writes the days remaining into them.
  */
 function initCountdowns() {
   const countdowns = document.querySelectorAll(
@@ -125,7 +126,7 @@ function initCountdowns() {
     if (daysRemaining > 0) {
       daysEl.textContent = `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
     } else {
-      // Target date has passed — hide the countdown
+      // The target date is past. Hide the countdown.
       el.style.display = 'none';
     }
   });
